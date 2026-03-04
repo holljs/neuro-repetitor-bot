@@ -5,6 +5,7 @@ import os
 import sqlite3
 import datetime
 import aiohttp
+import base64
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -78,18 +79,44 @@ def get_subjects_keyboard():
     buttons.sort(key=lambda x: x.text)
     return ReplyKeyboardMarkup(keyboard=[buttons[i:i + 2] for i in range(0, len(buttons), 2)], resize_keyboard=True)
 
-async def ask_neuro_explain(question, correct, user_ans, solution=""):
+# --- НОВЫЙ БЛОК ДЛЯ РАБОТЫ С КАРТИНКАМИ И LLAVA ---
+
+def encode_image_to_base64(filepath):
+    """Превращает картинку с сервера в строку Base64 для нейросети"""
+    if not filepath or not os.path.exists(filepath):
+        return None
     try:
+        with open(filepath, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+            ext = "png" if filepath.endswith(".png") else "jpeg"
+            return f"data:image/{ext};base64,{encoded_string}"
+    except Exception as e:
+        logging.error(f"Ошибка кодирования картинки: {e}")
+        return None
+
+async def ask_neuro_explain(question, correct, user_ans, img_path=None):
+    """Отправляет вопрос, ответ и КАРТИНКУ на сервер LLaVA"""
+    try:
+        img_base64 = encode_image_to_base64(img_path)
+        
         async with aiohttp.ClientSession() as session:
-            # Передаем еще и официальное решение, чтобы нейросеть объясняла точно!
-            payload = {"question": question, "correct_answer": correct, "user_answer": user_ans, "solution": solution}
-            async with session.post(f"{SERVER_URL}/explain/", json=payload, timeout=20) as resp:
+            payload = {
+                "question": question, 
+                "correct_answer": correct, 
+                "user_answer": user_ans,
+                "image_url": img_base64 # Отправляем картинку в виде строки
+            }
+            # Таймаут 60 сек, т.к. анализ картинок занимает время
+            async with session.post(f"{SERVER_URL}/explain/", json=payload, timeout=60) as resp:
                 if resp.status == 200:
                     data = await resp.json()
                     return data.get("explanation", "Ошибка нейросети.")
-    except:
-        pass
-    return f"Правильный ответ: {correct}\n\nОфициальное решение:\n{solution}"
+    except Exception as e:
+        logging.error(f"Сбой связи с мозгом: {e}")
+        
+    return f"Правильный ответ: {correct}"
+
+# --------------------------------------------------
 
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message, state: FSMContext):
@@ -211,7 +238,7 @@ async def check_answer(message: types.Message, state: FSMContext):
             "question": q.get('question', ''),
             "correct_answer": q['correct_answer'],
             "user_answer": message.text,
-            "solution": q.get('solution', '') # Запоминаем решение для нейросети!
+            "img": q.get('img') # Запоминаем картинку для нейросети!
         })
         
     await state.update_data(score=new_score, mistakes=mistakes, current_index=data['current_index'] + 1)
@@ -230,7 +257,8 @@ async def start_explanation(callback_query: types.CallbackQuery, state: FSMConte
     
     # Разбираем первые 3 ошибки
     for m in mistakes[:3]:
-        explanation = await ask_neuro_explain(m['question'], m['correct_answer'], m['user_answer'], m.get('solution', ''))
+        # Передаем путь к картинке (m.get('img')) в функцию
+        explanation = await ask_neuro_explain(m['question'], m['correct_answer'], m['user_answer'], m.get('img'))
         await callback_query.message.answer(f"❓ <b>Вопрос:</b> {m['question'][:100]}...\n\n💡 <b>Разбор:</b>\n{explanation}", parse_mode="HTML")
         await asyncio.sleep(1)
         
