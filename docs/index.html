@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейро-репетитор</title>
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="screen-loading" class="screen"><p>Загрузка...</p></div>
+        <div id="screen-main-menu" class="screen" style="display: none;">
+            <h1>Нейро-репетитор</h1>
+            <p>Выберите тип экзамена:</p>
+            <button class="button" data-exam-type="ege">🎓 ЕГЭ (11 класс)</button>
+            <button class="button" data-exam-type="oge">📚 ОГЭ (9 класс)</button>
+        </div>
+        <div id="screen-subjects" class="screen" style="display: none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
