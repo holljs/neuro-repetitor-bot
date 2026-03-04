@@ -79,10 +79,11 @@ def get_subjects_keyboard():
     buttons.sort(key=lambda x: x.text)
     return ReplyKeyboardMarkup(keyboard=[buttons[i:i + 2] for i in range(0, len(buttons), 2)], resize_keyboard=True)
 
-# --- НОВЫЙ БЛОК ДЛЯ РАБОТЫ С КАРТИНКАМИ И LLAVA ---
+
+# --- ФУНКЦИИ НЕЙРОСЕТИ И КАРТИНОК ---
 
 def encode_image_to_base64(filepath):
-    """Превращает картинку с сервера в строку Base64 для нейросети"""
+    """Конвертирует локальную картинку в Base64 для отправки в LLaVA"""
     if not filepath or not os.path.exists(filepath):
         return None
     try:
@@ -95,7 +96,6 @@ def encode_image_to_base64(filepath):
         return None
 
 async def ask_neuro_explain(question, correct, user_ans, img_path=None):
-    """Отправляет вопрос, ответ и КАРТИНКУ на сервер LLaVA"""
     try:
         img_base64 = encode_image_to_base64(img_path)
         
@@ -104,19 +104,18 @@ async def ask_neuro_explain(question, correct, user_ans, img_path=None):
                 "question": question, 
                 "correct_answer": correct, 
                 "user_answer": user_ans,
-                "image_url": img_base64 # Отправляем картинку в виде строки
+                "image_url": img_base64
             }
-            # Таймаут 60 сек, т.к. анализ картинок занимает время
             async with session.post(f"{SERVER_URL}/explain/", json=payload, timeout=60) as resp:
                 if resp.status == 200:
                     data = await resp.json()
                     return data.get("explanation", "Ошибка нейросети.")
     except Exception as e:
         logging.error(f"Сбой связи с мозгом: {e}")
-        
     return f"Правильный ответ: {correct}"
 
-# --------------------------------------------------
+
+# --- ОБРАБОТЧИКИ БОТА ---
 
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message, state: FSMContext):
@@ -158,6 +157,7 @@ async def process_subject(message: types.Message, state: FSMContext):
     await state.update_data(questions=questions, current_index=0, score=0, subject=subject_code, mistakes=[])
     await show_question(message, state)
 
+
 @dp.pre_checkout_query()
 async def checkout(query: PreCheckoutQuery): 
     await bot.answer_pre_checkout_query(query.id, ok=True)
@@ -167,6 +167,7 @@ async def got_payment(message: types.Message):
     sub = message.successful_payment.invoice_payload
     add_subscription(message.from_user.id, sub)
     await message.answer(f"🎉 Оплата прошла! Жми /start")
+
 
 # --- ГЛАВНАЯ ФУНКЦИЯ ВЫВОДА ВОПРОСА ---
 async def show_question(message: types.Message, state: FSMContext):
@@ -199,7 +200,6 @@ async def show_question(message: types.Message, state: FSMContext):
     try:
         if img_path:
             if str(img_path).startswith("http"):
-                # Если это ссылка на интернет (старый парсер)
                 await message.answer_photo(img_path, caption=text[:1000], parse_mode="HTML")
             else:
                 # ЗАЩИТА ОТ БИТЫХ КАРТИНОК И ПУСТЫХ ФАЙЛОВ
@@ -209,40 +209,51 @@ async def show_question(message: types.Message, state: FSMContext):
                 else:
                     await message.answer(text[:4096], parse_mode="HTML")
         else:
-            # Если картинки нет
             await message.answer(text[:4096], parse_mode="HTML")
             
     except Exception as e:
         logging.error(f"Telegram не смог прожевать картинку: {e}")
-        # Если Telegram выдал IMAGE_PROCESS_FAILED, отправляем просто текст
         await message.answer(text[:4096], parse_mode="HTML")
 
     await state.set_state(TestState.answering_question)
 
+
 @dp.message(TestState.answering_question)
 async def check_answer(message: types.Message, state: FSMContext):
-    user_ans = message.text.strip().lower().replace(',', '.').replace(' ', '')
-    data = await state.get_data()
-    q = data['questions'][data['current_index']]
-    correct = str(q['correct_answer']).strip().lower().replace(',', '.').replace(' ', '')
-    mistakes = data.get('mistakes', [])
-    new_score = data['score']
-    
-    if user_ans == correct:
-        await message.answer("✅ Верно!")
-        new_score += 1
-    else:
-        text = f"❌ Неверно.\nПравильный ответ: {q['correct_answer']}"
-        await message.answer(text)
-        mistakes.append({
-            "question": q.get('question', ''),
-            "correct_answer": q['correct_answer'],
-            "user_answer": message.text,
-            "img": q.get('img') # Запоминаем картинку для нейросети!
-        })
+    try:
+        user_ans = message.text.strip().lower().replace(',', '.').replace(' ', '')
+        data = await state.get_data()
+        q = data['questions'][data['current_index']]
         
-    await state.update_data(score=new_score, mistakes=mistakes, current_index=data['current_index'] + 1)
-    await show_question(message, state)
+        # БЕЗОПАСНОЕ ПОЛУЧЕНИЕ ОТВЕТА (Защита от падений)
+        raw_correct = q.get('correct_answer', 'Нет ответа')
+        correct = str(raw_correct).strip().lower().replace(',', '.').replace(' ', '')
+        
+        mistakes = data.get('mistakes', [])
+        new_score = data['score']
+        
+        if user_ans == correct:
+            await message.answer("✅ Верно!")
+            new_score += 1
+        else:
+            text = f"❌ Неверно.\nПравильный ответ: {raw_correct}"
+            await message.answer(text)
+            mistakes.append({
+                "question": q.get('question', ''),
+                "correct_answer": raw_correct,
+                "user_answer": message.text,
+                "solution": q.get('solution', ''),
+                "img": q.get('img') # Запоминаем картинку для нейросети
+            })
+            
+        await state.update_data(score=new_score, mistakes=mistakes, current_index=data['current_index'] + 1)
+        await show_question(message, state)
+        
+    except Exception as e:
+        logging.error(f"Ошибка проверки ответа: {e}")
+        await message.answer("Произошла техническая ошибка. Пожалуйста, начните тест заново /start")
+        await state.clear()
+
 
 @dp.callback_query(F.data == "start_explanation")
 async def start_explanation(callback_query: types.CallbackQuery, state: FSMContext):
@@ -257,7 +268,7 @@ async def start_explanation(callback_query: types.CallbackQuery, state: FSMConte
     
     # Разбираем первые 3 ошибки
     for m in mistakes[:3]:
-        # Передаем путь к картинке (m.get('img')) в функцию
+        # Передаем картинку в функцию!
         explanation = await ask_neuro_explain(m['question'], m['correct_answer'], m['user_answer'], m.get('img'))
         await callback_query.message.answer(f"❓ <b>Вопрос:</b> {m['question'][:100]}...\n\n💡 <b>Разбор:</b>\n{explanation}", parse_mode="HTML")
         await asyncio.sleep(1)
@@ -265,13 +276,14 @@ async def start_explanation(callback_query: types.CallbackQuery, state: FSMConte
     await callback_query.message.answer("Разбор завершен! Жми /start")
     await state.clear()
 
+
 @dp.callback_query(F.data == "go_menu")
 async def go_menu(callback_query: types.CallbackQuery, state: FSMContext):
     await state.clear()
     await cmd_start(callback_query.message, state)
 
 async def main():
-    print("Бот запущен!")
+    print("🤖 Бот запущен! Ошибки защищены.")
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
