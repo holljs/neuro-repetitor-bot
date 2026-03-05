@@ -5,7 +5,7 @@ import json
 import replicate
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 from typing import Optional
 from datetime import datetime
 from fastapi.responses import JSONResponse
@@ -40,7 +40,7 @@ class CheckRequest(BaseModel):
     image_url: str
     student_id: Optional[int] = None  # Для сохранения статистики
 
-    @validator("image_url")
+    @field_validator("image_url")
     def is_base64(cls, v):
         try:
             base64.b64decode(v, validate=True)
@@ -159,5 +159,6 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
 
