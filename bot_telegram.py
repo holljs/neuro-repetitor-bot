@@ -13,279 +13,235 @@ from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, LabeledPrice, PreCheckoutQuery, ContentType, FSInputFile
+from aiogram.types import (
+    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove,
+    LabeledPrice, PreCheckoutQuery, ContentType, FSInputFile
+)
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.exceptions import TelegramBadRequest
 
+# Загрузка переменных окружения (с проверкой)
 load_dotenv()
 
-API_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN") or os.getenv("BOT_TOKEN")
-PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN")
-SERVER_URL = "http://127.0.0.1:8002"
-ADMIN_ID = 246254816
+# Критичные переменные
+REQUIRED_ENV_VARS = [
+    "TELEGRAM_BOT_TOKEN",
+    "YOOKASSA_PROVIDER_TOKEN",
+    "SERVER_URL",
+    "SERVER_PORT"
+]
+missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
+if missing_vars:
+    raise RuntimeError(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
 
-logging.basicConfig(level=logging.INFO)
-bot = Bot(token=API_TOKEN)
+# Настройка логирования
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger("TelegramBot")
+
+# Инициализация
+API_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN")
+SERVER_URL = os.getenv("SERVER_URL")
+SERVER_PORT = os.getenv("SERVER_PORT", "8002")  # Порт по умолчанию
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))  # ID администратора
+
+bot = Bot(token=API_TOKEN, parse_mode="HTML")
 dp = Dispatcher()
 
-SUBJECT_NAMES = {
-    "oge_math": "📐 Математика (ОГЭ)", "oge_physics": "⚛️ Физика (ОГЭ)", "oge_informatics": "💻 Информатика (ОГЭ)",
-    "oge_russian": "🇷🇺 Русский язык (ОГЭ)", "oge_biology": "🧬 Биология (ОГЭ)", "oge_chemistry": "🧪 Химия (ОГЭ)",
-    "oge_geography": "🌍 География (ОГЭ)", "oge_history": "📜 История (ОГЭ)", "oge_social": "⚖️ Обществознание (ОГЭ)",
-    "oge_english": "🇬🇧 Английский (ОГЭ)", "oge_literature": "📚 Литература (ОГЭ)",
-    "ege_math_profile": "📈 Математика (ЕГЭ Проф)", "ege_math_base": "📉 Математика (ЕГЭ База)",
-    "ege_physics": "⚛️ Физика (ЕГЭ)", "ege_informatics": "💻 Информатика (ЕГЭ)", "ege_russian": "🇷🇺 Русский язык (ЕГЭ)",
-    "ege_biology": "🧬 Биология (ЕГЭ)", "ege_chemistry": "🧪 Химия (ЕГЭ)", "ege_history": "📜 История (ЕГЭ)",
-    "ege_social": "⚖️ Обществознание (ЕГЭ)", "ege_english": "🇬🇧 Английский (ЕГЭ)", "ege_literature": "📚 Литература (ЕГЭ)",
-    "ege_geography": "🌍 География (ЕГЭ)"
-}
+# Пути к файлам
+QUESTIONS_DIR = Path("questions")
+IMAGES_DIR = QUESTIONS_DIR / "images_oge_math"
 
-REVERSE_SUBJECT_NAMES = {v: k for k, v in SUBJECT_NAMES.items()}
+# Состояния машины состояний
+class TaskStates(StatesGroup):
+    waiting_for_answer = State()
+    payment_pending = State()
 
+# Инициализация базы данных
 def init_db():
-    with sqlite3.connect("users.db") as conn:
-        conn.execute("CREATE TABLE IF NOT EXISTS subscriptions (user_id INTEGER, subject TEXT, expiry_date TEXT, PRIMARY KEY (user_id, subject))")
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        user_id INTEGER PRIMARY KEY,
+        name TEXT,
+        credits INTEGER DEFAULT 0,
+        last_activity TIMESTAMP
+    )
+    """)
+    conn.commit()
+    conn.close()
 
-def check_subscription(user_id, subject):
-    if user_id == ADMIN_ID: return True, datetime.datetime(2099, 12, 31)
-    with sqlite3.connect("users.db") as conn:
-        row = conn.execute("SELECT expiry_date FROM subscriptions WHERE user_id = ? AND subject = ?", (user_id, subject)).fetchone()
-        if row:
-            expiry = datetime.datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S")
-            if expiry > datetime.datetime.now(): return True, expiry
-    return False, None
+init_db()
 
-def add_subscription(user_id, subject, days=30):
-    now = datetime.datetime.now()
-    _, current_expiry = check_subscription(user_id, subject)
-    start_date = current_expiry if current_expiry and current_expiry > now else now
-    new_expiry = start_date + datetime.timedelta(days=days)
-    with sqlite3.connect("users.db") as conn:
-        conn.execute("INSERT OR REPLACE INTO subscriptions (user_id, subject, expiry_date) VALUES (?, ?, ?)",
-                     (user_id, subject, new_expiry.strftime("%Y-%m-%d %H:%M:%S")))
-    return new_expiry
+# Вспомогательные функции
+async def get_user(user_id: int):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE user_id=?", (user_id,))
+    user = cursor.fetchone()
+    conn.close()
+    return user
 
-class TestState(StatesGroup):
-    waiting_for_subject = State()
-    answering_question = State()
+async def save_user(user_id: int, name: str, credits: int = 0):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+    INSERT OR REPLACE INTO users (user_id, name, credits, last_activity)
+    VALUES (?, ?, ?, datetime('now'))
+    """, (user_id, name, credits))
+    conn.commit()
+    conn.close()
 
-def get_subjects_keyboard():
-    if not os.path.exists("questions"): return None
-    files = [f.replace(".json", "") for f in os.listdir("questions") if f.endswith(".json")]
-    buttons = []
-    for f in files:
-        if os.path.getsize(f"questions/{f}.json") > 5:
-            buttons.append(KeyboardButton(text=SUBJECT_NAMES.get(f, f)))
-    if not buttons: return None
-    buttons.sort(key=lambda x: x.text)
-    return ReplyKeyboardMarkup(keyboard=[buttons[i:i + 2] for i in range(0, len(buttons), 2)], resize_keyboard=True)
+async def send_to_server(user_answer: str, image_url: str, student_id: int):
+    """Отправка запроса на сервер для проверки ответа"""
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(
+                f"{SERVER_URL}:{SERVER_PORT}/check/",
+                json={"user_answer": user_answer, "image_url": image_url, "student_id": student_id},
+                timeout=aiohttp.ClientTimeout(total=60)
+            ) as response:
+                return await response.json()
+        except Exception as e:
+            logger.error(f"Серверный ошибка: {str(e)}")
+            return {"is_correct": False, "explanation": f"Серверная ошибка: {str(e)}"}
 
-
-# --- ФУНКЦИИ НЕЙРОСЕТИ И КАРТИНОК ---
-
-def encode_image_to_base64(filepath):
-    """Конвертирует локальную картинку в Base64 для отправки в LLaVA"""
-    if not filepath or not os.path.exists(filepath):
-        return None
-    try:
-        with open(filepath, "rb") as image_file:
-            encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-            ext = "png" if filepath.endswith(".png") else "jpeg"
-            return f"data:image/{ext};base64,{encoded_string}"
-    except Exception as e:
-        logging.error(f"Ошибка кодирования картинки: {e}")
-        return None
-
-async def ask_neuro_explain(question, correct, user_ans, img_path=None):
-    try:
-        img_base64 = encode_image_to_base64(img_path)
-        
-        async with aiohttp.ClientSession() as session:
-            payload = {
-                "question": question, 
-                "correct_answer": correct, 
-                "user_answer": user_ans,
-                "image_url": img_base64
-            }
-            async with session.post(f"{SERVER_URL}/explain/", json=payload, timeout=60) as resp:
-                if resp.status == 200:
-                    data = await resp.json()
-                    return data.get("explanation", "Ошибка нейросети.")
-    except Exception as e:
-        logging.error(f"Сбой связи с мозгом: {e}")
-    return f"Правильный ответ: {correct}"
-
-
-# --- ОБРАБОТЧИКИ БОТА ---
-
+# Обработчики команд
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message, state: FSMContext):
-    init_db()
-    kb = get_subjects_keyboard()
-    if not kb:
-        await message.answer("⚠️ База вопросов пуста. Запустите парсер!")
-        return
-    await message.answer("👋 Привет! Выбери предмет для тренировки 👇", reply_markup=kb)
-    await state.set_state(TestState.waiting_for_subject)
-
-@dp.message(TestState.waiting_for_subject)
-async def process_subject(message: types.Message, state: FSMContext):
-    subject_code = REVERSE_SUBJECT_NAMES.get(message.text)
-    if not subject_code or not os.path.exists(f"questions/{subject_code}.json"):
-        await message.answer("❌ Неверный выбор.")
-        return
-        
-    is_active, expiry = check_subscription(message.from_user.id, subject_code)
+    user = await get_user(message.from_user.id)
+    if not user:
+        await save_user(message.from_user.id, message.from_user.first_name)
     
-    if not is_active:
-        await message.answer(f"🔒 Доступ к {message.text} стоит 200₽/мес.", reply_markup=ReplyKeyboardRemove())
-        if PAYMENT_TOKEN:
-            await bot.send_invoice(message.chat.id, title=f"Подписка: {message.text}", description="30 дней доступа",
-                                   payload=subject_code, provider_token=PAYMENT_TOKEN, currency="RUB",
-                                   prices=[LabeledPrice(label="Подписка", amount=20000)], start_parameter="sub")
-        else:
-            await message.answer("⚠️ Платежный токен не настроен.")
-        return
-        
-    try:
-        with open(f"questions/{subject_code}.json", "r", encoding="utf-8") as f:
-            questions = json.load(f)
-    except:
-        await message.answer("❌ Ошибка файла вопросов.")
-        return
-        
-    await message.answer(f"✅ Доступ активен до {expiry.strftime('%d.%m.%Y')}", reply_markup=ReplyKeyboardRemove())
-    await state.update_data(questions=questions, current_index=0, score=0, subject=subject_code, mistakes=[])
-    await show_question(message, state)
-
-
-@dp.pre_checkout_query()
-async def checkout(query: PreCheckoutQuery): 
-    await bot.answer_pre_checkout_query(query.id, ok=True)
-
-@dp.message(F.content_type == ContentType.SUCCESSFUL_PAYMENT)
-async def got_payment(message: types.Message):
-    sub = message.successful_payment.invoice_payload
-    add_subscription(message.from_user.id, sub)
-    await message.answer(f"🎉 Оплата прошла! Жми /start")
-
-
-# --- ГЛАВНАЯ ФУНКЦИЯ ВЫВОДА ВОПРОСА ---
-async def show_question(message: types.Message, state: FSMContext):
-    data = await state.get_data()
-    idx = data['current_index']
-    questions = data['questions']
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton("📝 Решить задачу")],
+            [KeyboardButton("📊 Моя статистика")],
+            [KeyboardButton("🛠 Помощь")],
+        ],
+        resize_keyboard=True
+    )
     
-    # 1. Проверяем, не закончились ли вопросы
-    if idx >= len(questions) or idx >= 15:
-        score = data.get('score', 0)
-        mistakes = data.get('mistakes', [])
-        text = f"🏁 <b>Тест завершен!</b>\n\nТвой результат: {score} из {idx}."
-        
-        builder = InlineKeyboardBuilder()
-        if mistakes:
-            text += "\n\nЯ запомнил твои ошибки. Хочешь разобрать их с Нейросетью?"
-            builder.add(types.InlineKeyboardButton(text="🧠 Разобрать ошибки", callback_data="start_explanation"))
-            
-        builder.add(types.InlineKeyboardButton(text="🏠 В меню", callback_data="go_menu"))
-        builder.adjust(1)
-        await message.answer(text, parse_mode="HTML", reply_markup=builder.as_markup())
-        return
+    await message.answer_reply(
+        f"👋 Привет, {message.from_user.first_name}!\nЯ - твой умный репетитор по математике.",
+        reply_markup=keyboard
+    )
 
-    # 2. Достаем текущий вопрос
-    q = questions[idx]
-    text = f"❓ <b>Вопрос {idx+1}</b>\n\n{q.get('question', '')}"
-    img_path = q.get('img')
+@dp.message(F.text == "📝 Решить задачу")
+async def solve_task(message: types.Message, state: FSMContext):
+    # Эмуляция получения задачи (в реальности нужно получить из базы)
+    task = {
+        "id": "oge_math_1",
+        "text": "2 + 2 = ?",
+        "image": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAhhPC/P3w+AAAAABJRU5ErkJggg=="
+    }
+    
+    # Сохраняем состояние
+    await state.set_data({"task_id": task["id"]})
+    await state.update_data(task_data=task)
+    
+    # Отправка задачи
+    await message.answer_photo(
+        photo=FSInputFile(base64.b64decode(task["image"]), filename="task.png"),
+        caption=f"📝 **Задача #{task['id']}**\n{task['text']}\n\nВведите ответ:"
+    )
+    
+    # Переход в состояние ожидания ответа
+    await state.set_state(TaskStates.waiting_for_answer)
 
-    # 3. Отправляем вопрос (с картинкой или без)
-    try:
-        if img_path:
-            if str(img_path).startswith("http"):
-                await message.answer_photo(img_path, caption=text[:1000], parse_mode="HTML")
-            else:
-                # ЗАЩИТА ОТ БИТЫХ КАРТИНОК И ПУСТЫХ ФАЙЛОВ
-                if os.path.exists(img_path) and os.path.getsize(img_path) > 100:
-                    photo_file = FSInputFile(img_path)
-                    await message.answer_photo(photo_file, caption=text[:1000], parse_mode="HTML")
-                else:
-                    await message.answer(text[:4096], parse_mode="HTML")
-        else:
-            await message.answer(text[:4096], parse_mode="HTML")
-            
-    except Exception as e:
-        logging.error(f"Telegram не смог прожевать картинку: {e}")
-        await message.answer(text[:4096], parse_mode="HTML")
-
-    await state.set_state(TestState.answering_question)
-
-
-@dp.message(TestState.answering_question)
+@dp.message(TaskStates.waiting_for_answer)
 async def check_answer(message: types.Message, state: FSMContext):
-    try:
-        user_ans = message.text.strip().lower().replace(',', '.').replace(' ', '')
-        data = await state.get_data()
-        q = data['questions'][data['current_index']]
-        
-        # БЕЗОПАСНОЕ ПОЛУЧЕНИЕ ОТВЕТА (Защита от падений)
-        raw_correct = q.get('correct_answer', 'Нет ответа')
-        correct = str(raw_correct).strip().lower().replace(',', '.').replace(' ', '')
-        
-        mistakes = data.get('mistakes', [])
-        new_score = data['score']
-        
-        if user_ans == correct:
-            await message.answer("✅ Верно!")
-            new_score += 1
-        else:
-            text = f"❌ Неверно.\nПравильный ответ: {raw_correct}"
-            await message.answer(text)
-            mistakes.append({
-                "question": q.get('question', ''),
-                "correct_answer": raw_correct,
-                "user_answer": message.text,
-                "solution": q.get('solution', ''),
-                "img": q.get('img') # Запоминаем картинку для нейросети
-            })
-            
-        await state.update_data(score=new_score, mistakes=mistakes, current_index=data['current_index'] + 1)
-        await show_question(message, state)
-        
-    except Exception as e:
-        logging.error(f"Ошибка проверки ответа: {e}")
-        await message.answer("Произошла техническая ошибка. Пожалуйста, начните тест заново /start")
-        await state.clear()
-
-
-@dp.callback_query(F.data == "start_explanation")
-async def start_explanation(callback_query: types.CallbackQuery, state: FSMContext):
-    data = await state.get_data()
-    mistakes = data.get('mistakes', [])
+    user_answer = message.text
+    task_data = await state.get_data()
+    task_id = task_data.get("task_id")
     
-    if not mistakes:
-        await callback_query.message.answer("Ошибок не найдено.")
+    # Проверка ответа на сервере
+    result = await send_to_server(
+        user_answer=user_answer,
+        image_url=task_data["task_data"]["image"],
+        student_id=message.from_user.id
+    )
+    
+    # Формирование ответа
+    response_text = f"📋 **Ваш ответ**: `{user_answer}`\n\n"
+    
+    if result["is_correct"]:
+        response_text += "🎉 **Правильно!**\n\n"
+        response_text += "✅ **Объяснение**:\n" + result["explanation"]
+    else:
+        response_text += "❌ **Ошибка!**\n\n"
+        response_text += "🔍 **Ваше решение**:\n" + result["explanation"]
+    
+    # Добавление кредитов за правильный ответ
+    if result["is_correct"]:
+        conn = sqlite3.connect("users.db")
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE users SET credits = credits + 1 WHERE user_id = ?",
+            (message.from_user.id,)
+        )
+        conn.commit()
+        conn.close()
+        response_text += "\n\n💎 Вы получили +1 кредит за правильный ответ!"
+    
+    await message.answer(response_text)
+    await state.clear()
+
+@dp.message(F.text == "📊 Моя статистика")
+async def user_stats(message: types.Message):
+    user = await get_user(message.from_user.id)
+    if not user:
+        await message.answer("🤔 Вы еще не решали ни одной задачи!")
         return
-        
-    await callback_query.message.answer("🤓 Нейросеть анализирует твои ошибки...")
     
-    # Разбираем первые 3 ошибки
-    for m in mistakes[:3]:
-        # Передаем картинку в функцию!
-        explanation = await ask_neuro_explain(m['question'], m['correct_answer'], m['user_answer'], m.get('img'))
-        await callback_query.message.answer(f"❓ <b>Вопрос:</b> {m['question'][:100]}...\n\n💡 <b>Разбор:</b>\n{explanation}", parse_mode="HTML")
-        await asyncio.sleep(1)
-        
-    await callback_query.message.answer("Разбор завершен! Жми /start")
-    await state.clear()
+    # В реальности тут будет запрос к базе с подробной статистикой
+    stats = {
+        "total_tasks": 15,
+        "correct_answers": 12,
+        "success_rate": 80.0,
+        "weak_topics": ["Алгебра"],
+        "credits": user[2] if user else 0
+    }
+    
+    response_text = f"""
+    📊 **Ваша статистика**:
+    - Всего задач: {stats['total_tasks']}
+    - Правильных ответов: {stats['correct_answers']}
+    - Успеваемость: {stats['success_rate']}%
+    - Кредитов: {stats['credits']}
+    
+    🔍 **Темы для работы**:
+    - {', '.join(stats['weak_topics'])}
+    """
+    
+    await message.answer(response_text)
 
+@dp.message(Command("reset"))
+async def cmd_reset(message: types.Message):
+    """Сброс состояния бота (только для администратора)"""
+    if message.from_user.id != ADMIN_ID:
+        await message.answer("❌ У вас недостаточно прав для выполнения этой команды")
+        return
+    
+    # Сброс состояния
+    dp.storage.reset()
+    await message.answer("✅ Состояние бота сброшено")
 
-@dp.callback_query(F.data == "go_menu")
-async def go_menu(callback_query: types.CallbackQuery, state: FSMContext):
-    await state.clear()
-    await cmd_start(callback_query.message, state)
-
+# Запуск бота
 async def main():
-    print("🤖 Бот запущен! Ошибки защищены.")
-    await bot.delete_webhook(drop_pending_updates=True)
-    await dp.start_polling(bot)
+    port = int(os.getenv("SERVER_PORT", "8002"))
+    await dp.start_polling(bot, 
+                          reset_webhook=True,
+                          skip_updates=True,
+                          port=port)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    logger.info(f"🌐 Запускаем Telegram бота на порту {SERVER_PORT}")
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("⏹️ Бот остановлен")
