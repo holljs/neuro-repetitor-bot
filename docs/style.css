@@ -1,45 +1,241 @@
+/* Основные стили */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
     margin: 0;
-    padding: 15px;
-    text-align: center;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+    line-height: 1.5;
+}
+
+#app {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .screen {
-    width: 100%;
+    display: none;
 }
 
-.button {
+.screen.active {
     display: block;
-    width: 100%;
-    padding: 15px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 10px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Главное меню */
+#main-menu {
+    text-align: center;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.menu-btn {
     background-color: #4a76a8;
     color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
     font-size: 16px;
-    cursor: pointer;
     font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.button:hover {
-    background-color: #5b8ac2;
+.menu-btn:hover {
+    background-color: #3a6590;
 }
 
-.option-button {
-    background-color: #e1e3e6;
-    color: #000;
+/* Экран выбора экзамена */
+#exam-type {
+    text-align: center;
 }
 
-.option-button:hover {
-    background-color: #d1d3d6;
+.exam-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #e1e3e6;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
+.exam-btn:hover {
+    background-color: #f0f2f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
 
-h1 {
-    font-size: 24px;
-    color: #000;
+.exam-icon {
+    font-size: 32px;
+    margin-right: 15px;
+}
+
+.exam-info h3 {
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
+.exam-info p {
+    margin: 0;
+    color: #7a7d85;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Экран задачи */
+#task-image-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#task-image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#task-text {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+#user-answer {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e1e3e6;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #3a6590;
+}
+
+/* Экран результата */
+#result-icon {
+    font-size: 64px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#result-icon.result-correct {
+    color: #00c853;
+}
+
+#result-icon.result-incorrect {
+    color: #ff5252;
+}
+
+#result-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#result-explanation {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    white-space: pre-line;
+}
+
+.next-btn {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.next-btn:hover {
+    background-color: #3a6590;
+}
+
+/* Экран статистики */
+.stat-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Экран загрузки */
+.spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top: 4px solid #4a76a8;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Адаптив */
+@media (max-width: 500px) {
+    #app {
+        padding: 10px;
+    }
+    
+    .menu-btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .exam-btn {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .exam-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .exam-info {
+        width: 100%;
+    }
 }
