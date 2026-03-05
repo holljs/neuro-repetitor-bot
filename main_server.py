@@ -154,9 +154,10 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        app,
+        "main_server:app",  # <--- Вот это изменение!
         host="0.0.0.0",
-        port=8080,  # Новый порт
+        port=8080,
         workers=2
     )
+
 
