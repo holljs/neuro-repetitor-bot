@@ -44,8 +44,8 @@ logger = logging.getLogger("TelegramBot")
 # Инициализация
 API_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN")
-SERVER_URL = os.getenv("SERVER_URL")
-SERVER_PORT = os.getenv("SERVER_PORT", "8002")  # Порт по умолчанию
+SERVER_URL = os.getenv("SERVER_URL", "http://127.0.0.1")
+SERVER_PORT = os.getenv("SERVER_PORT", "8080")  # Новый порт
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))  # ID администратора
 
 bot = Bot(token=API_TOKEN, parse_mode="HTML")
@@ -245,3 +245,4 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
