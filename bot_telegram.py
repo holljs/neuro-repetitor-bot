@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import os
+import random
 import sqlite3
 import datetime
 import aiohttp
@@ -54,6 +55,16 @@ dp = Dispatcher()
 # Пути к файлам
 QUESTIONS_DIR = Path("questions")
 IMAGES_DIR = QUESTIONS_DIR / "images_oge_math"
+DB_FILE = QUESTIONS_DIR / "oge_math.json" # <--- ДОБАВИЛИ
+
+# Загружаем базу задач в память
+try: # <--- ДОБАВИЛИ
+    with open(DB_FILE, 'r', encoding='utf-8') as f:
+        ALL_TASKS = json.load(f)
+    logger.info(f"✅ Успешно загружено {len(ALL_TASKS)} задач из {DB_FILE}")
+except Exception as e:
+    logger.error(f"❌ Не удалось загрузить базу задач: {e}")
+    ALL_TASKS = []
 
 # Состояния машины состояний
 class TaskStates(StatesGroup):
@@ -133,24 +144,45 @@ async def cmd_start(message: types.Message, state: FSMContext):
 
 @dp.message(F.text == "📝 Решить задачу")
 async def solve_task(message: types.Message, state: FSMContext):
-    # Эмуляция получения задачи (в реальности нужно получить из базы)
-    task = {
-        "id": "oge_math_1",
-        "text": "2 + 2 = ?",
-        "image": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAhhPC/P3w+AAAAABJRU5ErkJggg=="
-    }
+    # --- Новая логика ---
+    if not ALL_TASKS:
+        await message.answer("😕 К сожалению, база задач пуста или не загрузилась. Обратитесь к администратору.")
+        return
+
+    # 1. Выбираем случайную задачу
+    task = random.choice(ALL_TASKS)
+    task_id = task.get("id", "N/A")
+    task_text = task.get("text", "")
+    image_filename = task.get("image_file")
+
+    if not image_filename:
+        await message.answer("😕 Ошибка в структуре задачи (нет файла картинки). Попробуйте еще раз.")
+        return
+
+    image_path = IMAGES_DIR / image_filename
+
+    if not image_path.exists():
+        await message.answer(f"😕 Не могу найти файл картинки для задачи: {image_filename}. Попробуйте другую.")
+        return
+        
+    # 2. Готовим картинку для отправки в LLaVA (Base64)
+    with open(image_path, "rb") as image_file:
+        image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
+
+    # 3. Сохраняем все нужные данные в состояние
+    await state.set_data({
+        "task_id": task_id,
+        "image_base64": image_base64
+    })
     
-    # Сохраняем состояние
-    await state.set_data({"task_id": task["id"]})
-    await state.update_data(task_data=task)
-    
-    # Отправка задачи
+    # 4. Отправляем задачу пользователю
+    photo = FSInputFile(image_path)
     await message.answer_photo(
-        photo=FSInputFile(base64.b64decode(task["image"]), filename="task.png"),
-        caption=f"📝 **Задача #{task['id']}**\n{task['text']}\n\nВведите ответ:"
+        photo=photo,
+        caption=f"📝 **Задача #{task_id}**\n\n{task_text}\n\nВведите ваш ответ:"
     )
     
-    # Переход в состояние ожидания ответа
+    # 5. Переходим в состояние ожидания ответа
     await state.set_state(TaskStates.waiting_for_answer)
 
 @dp.message(TaskStates.waiting_for_answer)
@@ -162,7 +194,7 @@ async def check_answer(message: types.Message, state: FSMContext):
     # Проверка ответа на сервере
     result = await send_to_server(
         user_answer=user_answer,
-        image_url=task_data["task_data"]["image"],
+        image_url=task_data.get("image_base64"), # <--- ИЗМЕНИЛИ
         student_id=message.from_user.id
     )
     
@@ -245,4 +277,5 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
