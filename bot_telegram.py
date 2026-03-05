@@ -12,6 +12,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
+from aiogram.client.default import DefaultBotProperties  # <--- ДОБАВИЛИ ЭТУ СТРОКУ
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import (
@@ -50,7 +51,11 @@ SERVER_URL = os.getenv("SERVER_URL", "http://127.0.0.1")
 SERVER_PORT = os.getenv("SERVER_PORT", "8080") # Новый порт
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0")) # ID администратора
 
-bot = Bot(token=API_TOKEN, parse_mode="HTML")
+# Меняем инициализацию бота:
+bot = Bot(
+    token=API_TOKEN, 
+    default=DefaultBotProperties(parse_mode="HTML")
+)
 dp = Dispatcher()
 
 # Пути к файлам
@@ -276,4 +281,5 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
