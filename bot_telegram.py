@@ -31,6 +31,7 @@ REQUIRED_ENV_VARS = [
     "SERVER_URL",
     "SERVER_PORT"
 ]
+
 missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
 if missing_vars:
     raise RuntimeError(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
@@ -46,8 +47,8 @@ logger = logging.getLogger("TelegramBot")
 API_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN")
 SERVER_URL = os.getenv("SERVER_URL", "http://127.0.0.1")
-SERVER_PORT = os.getenv("SERVER_PORT", "8080")  # Новый порт
-ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))  # ID администратора
+SERVER_PORT = os.getenv("SERVER_PORT", "8080") # Новый порт
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0")) # ID администратора
 
 bot = Bot(token=API_TOKEN, parse_mode="HTML")
 dp = Dispatcher()
@@ -118,7 +119,7 @@ async def send_to_server(user_answer: str, image_url: str, student_id: int):
             ) as response:
                 return await response.json()
         except Exception as e:
-            logger.error(f"Серверный ошибка: {str(e)}")
+            logger.error(f"Серверная ошибка: {str(e)}")
             return {"is_correct": False, "explanation": f"Серверная ошибка: {str(e)}"}
 
 # Обработчики команд
@@ -130,17 +131,17 @@ async def cmd_start(message: types.Message, state: FSMContext):
     
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton("📝 Решить задачу")],
-            [KeyboardButton("📊 Моя статистика")],
-            [KeyboardButton("🛠 Помощь")],
+            [KeyboardButton(text="📝 Решить задачу")],
+            [KeyboardButton(text="📊 Моя статистика")],
+            [KeyboardButton(text="🛠 Помощь")],
         ],
         resize_keyboard=True
     )
     
     await message.answer(
-    f"👋 Привет, {message.from_user.first_name}!\nЯ - твой умный репетитор по математике.",
-    reply_markup=keyboard
-)
+        f"👋 Привет, {message.from_user.first_name}!\nЯ - твой умный репетитор по математике.",
+        reply_markup=keyboard
+    )
 
 @dp.message(F.text == "📝 Решить задачу")
 async def solve_task(message: types.Message, state: FSMContext):
@@ -148,19 +149,19 @@ async def solve_task(message: types.Message, state: FSMContext):
     if not ALL_TASKS:
         await message.answer("😕 К сожалению, база задач пуста или не загрузилась. Обратитесь к администратору.")
         return
-
+        
     # 1. Выбираем случайную задачу
     task = random.choice(ALL_TASKS)
     task_id = task.get("id", "N/A")
     task_text = task.get("text", "")
     image_filename = task.get("image_file")
-
+    
     if not image_filename:
         await message.answer("😕 Ошибка в структуре задачи (нет файла картинки). Попробуйте еще раз.")
         return
-
+        
     image_path = IMAGES_DIR / image_filename
-
+    
     if not image_path.exists():
         await message.answer(f"😕 Не могу найти файл картинки для задачи: {image_filename}. Попробуйте другую.")
         return
@@ -168,7 +169,7 @@ async def solve_task(message: types.Message, state: FSMContext):
     # 2. Готовим картинку для отправки в LLaVA (Base64)
     with open(image_path, "rb") as image_file:
         image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-
+        
     # 3. Сохраняем все нужные данные в состояние
     await state.set_data({
         "task_id": task_id,
@@ -194,21 +195,18 @@ async def check_answer(message: types.Message, state: FSMContext):
     # Проверка ответа на сервере
     result = await send_to_server(
         user_answer=user_answer,
-        image_url=task_data.get("image_base64"), # <--- ИЗМЕНИЛИ
+        image_url=task_data.get("image_base64"),
         student_id=message.from_user.id
     )
     
     # Формирование ответа
-   response_text = f"📋 <b>Ваш ответ</b>: <code>{user_answer}</code>\n\n"
-if result["is_correct"]:
-    response_text += "🎉 <b>Правильно!</b>\n\n"
-    response_text += "✅ <b>Объяснение</b>:\n" + result["explanation"]
-else:
-    response_text += "❌ <b>Ошибка!</b>\n\n"
-    response_text += "🔍 <b>Ваше решение</b>:\n" + result["explanation"]
+    response_text = f"📋 <b>Ваш ответ</b>: <code>{user_answer}</code>\n\n"
     
-    # Добавление кредитов за правильный ответ
     if result["is_correct"]:
+        response_text += "🎉 <b>Правильно!</b>\n\n"
+        response_text += "✅ <b>Объяснение</b>:\n" + result["explanation"]
+        
+        # Добавление кредитов за правильный ответ
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
         cursor.execute(
@@ -218,6 +216,9 @@ else:
         conn.commit()
         conn.close()
         response_text += "\n\n💎 Вы получили +1 кредит за правильный ответ!"
+    else:
+        response_text += "❌ <b>Ошибка!</b>\n\n"
+        response_text += "🔍 <b>Решение</b>:\n" + result["explanation"]
     
     await message.answer(response_text)
     await state.clear()
@@ -238,14 +239,14 @@ async def user_stats(message: types.Message):
         "credits": user[2] if user else 0
     }
     
-   response_text = f"""
-   📊 <b>Ваша статистика</b>:
+    response_text = f"""
+    📊 <b>Ваша статистика</b>:
     - Всего задач: {stats['total_tasks']}
     - Правильных ответов: {stats['correct_answers']}
     - Успеваемость: {stats['success_rate']}%
     - Кредитов: {stats['credits']}
     
-    🔍 **Темы для работы**:
+    🔍 <b>Темы для работы</b>:
     - {', '.join(stats['weak_topics'])}
     """
     
@@ -264,18 +265,14 @@ async def cmd_reset(message: types.Message):
 
 # Запуск бота
 async def main():
-    port = int(os.getenv("SERVER_PORT", "8002"))
+    port = int(os.getenv("SERVER_PORT", "8080")) # Исправил порт по умолчанию на 8080
     await dp.start_polling(bot, 
                           reset_webhook=True,
-                          skip_updates=True,
-                          port=port)
+                          skip_updates=True) # Убрал аргумент port, т.к. start_polling для aiogram 3 его не принимает
 
 if __name__ == "__main__":
-    logger.info(f"🌐 Запускаем Telegram бота на порту {SERVER_PORT}")
+    logger.info(f"🌐 Запускаем Telegram бота. Сервер API ожидается на порту {SERVER_PORT}")
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
-
-
-
