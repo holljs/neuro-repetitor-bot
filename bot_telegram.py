@@ -137,10 +137,10 @@ async def cmd_start(message: types.Message, state: FSMContext):
         resize_keyboard=True
     )
     
-    await message.answer_reply(
-        f"👋 Привет, {message.from_user.first_name}!\nЯ - твой умный репетитор по математике.",
-        reply_markup=keyboard
-    )
+    await message.answer(
+    f"👋 Привет, {message.from_user.first_name}!\nЯ - твой умный репетитор по математике.",
+    reply_markup=keyboard
+)
 
 @dp.message(F.text == "📝 Решить задачу")
 async def solve_task(message: types.Message, state: FSMContext):
@@ -179,7 +179,7 @@ async def solve_task(message: types.Message, state: FSMContext):
     photo = FSInputFile(image_path)
     await message.answer_photo(
         photo=photo,
-        caption=f"📝 **Задача #{task_id}**\n\n{task_text}\n\nВведите ваш ответ:"
+        caption=f"📝 <b>Задача #{task_id}</b>\n\n{task_text}\n\nВведите ваш ответ:"
     )
     
     # 5. Переходим в состояние ожидания ответа
@@ -199,14 +199,13 @@ async def check_answer(message: types.Message, state: FSMContext):
     )
     
     # Формирование ответа
-    response_text = f"📋 **Ваш ответ**: `{user_answer}`\n\n"
-    
-    if result["is_correct"]:
-        response_text += "🎉 **Правильно!**\n\n"
-        response_text += "✅ **Объяснение**:\n" + result["explanation"]
-    else:
-        response_text += "❌ **Ошибка!**\n\n"
-        response_text += "🔍 **Ваше решение**:\n" + result["explanation"]
+   response_text = f"📋 <b>Ваш ответ</b>: <code>{user_answer}</code>\n\n"
+if result["is_correct"]:
+    response_text += "🎉 <b>Правильно!</b>\n\n"
+    response_text += "✅ <b>Объяснение</b>:\n" + result["explanation"]
+else:
+    response_text += "❌ <b>Ошибка!</b>\n\n"
+    response_text += "🔍 <b>Ваше решение</b>:\n" + result["explanation"]
     
     # Добавление кредитов за правильный ответ
     if result["is_correct"]:
@@ -239,8 +238,8 @@ async def user_stats(message: types.Message):
         "credits": user[2] if user else 0
     }
     
-    response_text = f"""
-    📊 **Ваша статистика**:
+   response_text = f"""
+   📊 <b>Ваша статистика</b>:
     - Всего задач: {stats['total_tasks']}
     - Правильных ответов: {stats['correct_answers']}
     - Успеваемость: {stats['success_rate']}%
@@ -277,5 +276,6 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
