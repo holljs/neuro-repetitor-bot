@@ -1,4 +1,34 @@
+# Секретные файлы
 .env
-*.log
+.env.local
+.env.production
+
+# Python
 __pycache__/
-*.db
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*.suo
