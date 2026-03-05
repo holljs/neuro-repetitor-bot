@@ -153,12 +153,10 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv("SERVER_PORT", "8002"))
-    logger.info(f"🌐 Запускаем сервер на порту {port}")
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=port,
-        workers=2,
-        reload=os.getenv("ENV") == "development"
+        port=8080,  # Новый порт
+        workers=2
     )
+
