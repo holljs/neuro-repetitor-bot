@@ -26,16 +26,16 @@ load_dotenv()
 
 # Критичные переменные
 REQUIRED_ENV_VARS = [
-    "TELEGRAM_BOT_TOKEN",
-    "YOOKASSA_PROVIDER_TOKEN",
+    "BOT_TOKEN",         # <-- Ищем токен под тем именем, что у вас в .env
     "SERVER_URL",
     "SERVER_PORT"
+    # Токен Юkassa пока убрали из обязательных, чтобы бот смог запуститься
 ]
 
 missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
 if missing_vars:
     raise RuntimeError(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
-
+    
 # Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
@@ -44,8 +44,8 @@ logging.basicConfig(
 logger = logging.getLogger("TelegramBot")
 
 # Инициализация
-API_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN")
+API_TOKEN = os.getenv("BOT_TOKEN")                    # <-- Берем ваш BOT_TOKEN
+PAYMENT_TOKEN = os.getenv("YOOKASSA_PROVIDER_TOKEN", "") # <-- Делаем необязательным
 SERVER_URL = os.getenv("SERVER_URL", "http://127.0.0.1")
 SERVER_PORT = os.getenv("SERVER_PORT", "8080") # Новый порт
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0")) # ID администратора
@@ -276,3 +276,4 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
