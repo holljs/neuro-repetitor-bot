@@ -4,20 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нейро-репетитор</title>
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </head>
 <body>
-    <div id="app-container">
-        <div id="screen-loading" class="screen"><p>Загрузка...</p></div>
-        <div id="screen-main-menu" class="screen" style="display: none;">
-            <h1>Нейро-репетитор</h1>
-            <p>Выберите тип экзамена:</p>
-            <button class="button" data-exam-type="ege">🎓 ЕГЭ (11 класс)</button>
-            <button class="button" data-exam-type="oge">📚 ОГЭ (9 класс)</button>
+    <div id="app">
+        <!-- Главное меню -->
+        <div id="main-menu" class="screen active">
+            <h1>🧠 Нейро-репетитор</h1>
+            <div class="menu-options">
+                <button class="menu-btn" onclick="showScreen('exam-type')">📝 Решить задачу</button>
+                <button class="menu-btn" onclick="showScreen('stats')">📊 Моя статистика</button>
+                <button class="menu-btn" onclick="showHelp()">🛠 Помощь</button>
+                <button class="menu-btn" onclick="showProfile()">👤 Мой профиль</button>
+            </div>
         </div>
-        <div id="screen-subjects" class="screen" style="display: none;"></div>
+
+        <!-- Выбор экзамена -->
+        <div id="exam-type" class="screen">
+            <h2>Выберите тип экзамена:</h2>
+            <button class="exam-btn" onclick="selectExamType('oge')">
+                <div class="exam-icon">📚</div>
+                <div class="exam-info">
+                    <h3>ОГЭ (9 класс)</h3>
+                    <p>Основной государственный экзамен</p>
+                </div>
+            </button>
+            <button class="exam-btn" onclick="selectExamType('ege')">
+                <div class="exam-icon">🎓</div>
+                <div class="exam-info">
+                    <h3>ЕГЭ (11 класс)</h3>
+                    <p>Единый государственный экзамен</p>
+                </div>
+            </button>
+        </div>
+
+        <!-- Экран загрузки -->
+        <div id="loading" class="screen">
+            <div class="spinner"></div>
+            <p>Загрузка...</p>
+        </div>
+
+        <!-- Экран задачи -->
+        <div id="task-screen" class="screen">
+            <div id="task-image-container"></div>
+            <div id="task-text"></div>
+            <input type="text" id="user-answer" placeholder="Введите ответ...">
+            <button class="submit-btn" onclick="submitAnswer()">Отправить</button>
+        </div>
+
+        <!-- Экран результата -->
+        <div id="result-screen" class="screen">
+            <div id="result-icon"></div>
+            <h2 id="result-title"></h2>
+            <div id="result-explanation"></div>
+            <button class="next-btn" onclick="nextTask()">Следующая задача</button>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Инициализация VK Bridge
+        const bridge = window.vkBridge || window.bridge;
+        let currentTask = null;
+        let currentExamType = null;
+
+        // Инициализация приложения
+        function initApp() {
+            bridge.send('VKWebAppInit');
+            showScreen('main-menu');
+        }
+
+        // Показать экран
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // Выбор типа экзамена
+        function selectExamType(type) {
+            currentExamType = type;
+            showScreen('loading');
+            getRandomTask();
+        }
+
+        // Получение случайной задачи
+        async function getRandomTask() {
+            try {
+                const response = await fetch(
+                    `${SERVER_URL}:${SERVER_PORT}/random_task/?exam_type=${currentExamType}`
+                );
+                const data = await response.json();
+                currentTask = data;
+                showTask();
+            } catch (error) {
+                showError('Ошибка получения задачи: ' + error.message);
+            }
+        }
+
+        // Показать задачу
+        function showTask() {
+            document.getElementById('task-image-container').innerHTML = 
+                `<img src="${currentTask.image}" alt="Задача">`;
+            document.getElementById('task-text').textContent = currentTask.text;
+            document.getElementById('user-answer').value = '';
+            showScreen('task-screen');
+        }
+
+        // Отправка ответа
+        async function submitAnswer() {
+            const userAnswer = document.getElementById('user-answer').value;
+            if (!userAnswer) return;
+
+            showScreen('loading');
+            
+            try {
+                const response = await fetch(
+                    `${SERVER_URL}:${SERVER_PORT}/check/`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            user_answer: userAnswer,
+                            image_url: currentTask.image,
+                            student_id: await getUserID()
+                        })
+                    }
+                );
+                
+                const result = await response.json();
+                showResult(result);
+            } catch (error) {
+                showError('Ошибка проверки ответа: ' + error.message);
+            }
+        }
+
+        // Показать результат
+        function showResult(result) {
+            document.getElementById('result-icon').className = 
+                result.is_correct ? 'result-correct' : 'result-incorrect';
+            document.getElementById('result-title').textContent = 
+                result.is_correct ? '🎉 Правильно!' : '❌ Ошибка!';
+            document.getElementById('result-explanation').innerHTML = 
+                result.explanation;
+            showScreen('result-screen');
+        }
+
+        // Переход к следующей задаче
+        function nextTask() {
+            showScreen('loading');
+            getRandomTask();
+        }
+
+        // Показать статистику
+        async function showStats() {
+            showScreen('loading');
+            try {
+                const response = await fetch(
+                    `${SERVER_URL}:${SERVER_PORT}/analytics/${await getUserID()}`
+                );
+                const stats = await response.json();
+                
+                let statsHTML = `
+                    <h2>📊 Ваша статистика</h2>
+                    <div class="stat-card">
+                        <p>Успеваемость: <b>${stats.success_rate.toFixed(1)}%</b></p>
+                        <p>Кредитов: <b>${stats.credits}</b></p>
+                    </div>
+                    <h3>Темы для работы:</h3>
+                    <ul>
+                `;
+                
+                stats.weak_topics.forEach(topic => {
+                    statsHTML += `<li>${topic}</li>`;
+                });
+                
+                statsHTML += '</ul>';
+                document.getElementById('stats-screen').innerHTML = statsHTML;
+                showScreen('stats-screen');
+            } catch (error) {
+                showError('Ошибка получения статистики: ' + error.message);
+            }
+        }
+
+        // Получить ID пользователя
+        async function getUserID() {
+            // Реальная реализация должна получать ID из VK
+            // Здесь демонстрационная реализация
+            return Math.floor(Math.random() * 1000000);
+        }
+
+        // Показать помощь
+        function showHelp() {
+            alert('Помощь по работе с приложением:\n\n' +
+                  '1. Выберите тип экзамена\n' +
+                  '2. Решите задачу\n' +
+                  '3. Введите ответ\n' +
+                  '4. Нажмите "Отправить"\n' +
+                  '5. Получите результат с объяснением');
+        }
+
+        // Показать профиль
+        function showProfile() {
+            // Реальная реализация должна показывать профиль пользователя
+            alert('В разработке...');
+        }
+
+        // Показать ошибку
+        function showError(message) {
+            alert('Ошибка: ' + message);
+            showScreen('main-menu');
+        }
+
+        // Конфигурация сервера
+        const SERVER_URL = window.location.origin;
+        const SERVER_PORT = 8002;
+
+        // Инициализация
+        window.onload = initApp;
+    </script>
 </body>
 </html>
