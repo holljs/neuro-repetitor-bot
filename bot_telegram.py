@@ -171,10 +171,9 @@ async def solve_task(message: types.Message, state: FSMContext):
         await message.answer(f"😕 Не могу найти файл картинки: {image_path_str}. Попробуйте другую.")
         return
         
-    # 2. Готовим картинку для отправки в LLaVA (Data URI)
+    # 2. Готовим картинку для отправки в LLaVA (Base64)
     with open(image_path, "rb") as image_file:
-        raw_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-        image_base64 = f"data:image/png;base64,{raw_base64}"  # <--- Добавили префикс!
+        image_base64 = base64.b64encode(image_file.read()).decode("utf-8") # Без префикса!
         
     # 3. Сохраняем все нужные данные в состояние
     await state.set_data({
@@ -282,6 +281,7 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
 
