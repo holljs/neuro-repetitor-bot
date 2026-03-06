@@ -126,7 +126,7 @@ async def check_answer_vision(request: CheckRequest):
     if not os.getenv("REPLICATE_API_TOKEN"):
         raise HTTPException(status_code=500, detail="Replicate API token not configured")
 
-     prompt_text = f"""
+    prompt_text = f"""
     Ты — профессиональный и доброжелательный репетитор ОГЭ/ЕГЭ.
     
     Вводные данные:
@@ -202,4 +202,3 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
-
