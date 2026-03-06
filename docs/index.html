@@ -68,6 +68,9 @@
         let currentTask = null;
         let currentExamType = null;
 
+        // Конфигурация сервера (ПРАВИЛЬНЫЙ NGINX ПУТЬ)
+        const SERVER_URL = "https://neuro-master.online/repetitor-api";
+
         // Инициализация приложения
         function initApp() {
             bridge.send('VKWebAppInit');
@@ -93,7 +96,7 @@
         async function getRandomTask() {
             try {
                 const response = await fetch(
-                    `${SERVER_URL}:${SERVER_PORT}/random_task/?exam_type=${currentExamType}`
+                    `${SERVER_URL}/random_task/?exam_type=${currentExamType}`
                 );
                 const data = await response.json();
                 currentTask = data;
@@ -120,14 +123,15 @@
             showScreen('loading');
             
             try {
-                const response = await fetch(
-                    `${SERVER_URL}:${SERVER_PORT}/check/`,
+               const response = await fetch(
+                    `${SERVER_URL}/check/`,
                     {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             user_answer: userAnswer,
                             image_url: currentTask.image,
+                            task_text: currentTask.text, // Передаем текст для нейросети!
                             student_id: await getUserID()
                         })
                     }
@@ -162,7 +166,7 @@
             showScreen('loading');
             try {
                 const response = await fetch(
-                    `${SERVER_URL}:${SERVER_PORT}/analytics/${await getUserID()}`
+                    `${SERVER_URL}/analytics/${await getUserID()}`
                 );
                 const stats = await response.json();
                 
@@ -190,8 +194,6 @@
 
         // Получить ID пользователя
         async function getUserID() {
-            // Реальная реализация должна получать ID из VK
-            // Здесь демонстрационная реализация
             return Math.floor(Math.random() * 1000000);
         }
 
@@ -207,7 +209,6 @@
 
         // Показать профиль
         function showProfile() {
-            // Реальная реализация должна показывать профиль пользователя
             alert('В разработке...');
         }
 
@@ -217,11 +218,7 @@
             showScreen('main-menu');
         }
 
-        // Конфигурация сервера
-        const SERVER_URL = window.location.origin;
-        const SERVER_PORT = 8002;
-
-        // Инициализация
+        // Инициализация при загрузке
         window.onload = initApp;
     </script>
 </body>
