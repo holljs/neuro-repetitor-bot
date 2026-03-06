@@ -123,7 +123,7 @@ async def check_answer_vision(request: CheckRequest):
 
         return ai_verdict
 
-   except Exception as e: # <--- ЭТОТ БЛОК ОСТАВЛЯЕМ
+    except Exception as e:  # <--- ЭТОТ БЛОК ОСТАВЛЯЕМ
         logger.error(f"🚨 Unexpected Error: {e}")
         raise HTTPException(
             status_code=500,
@@ -135,25 +135,15 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
     """Сохранение результата в базу данных"""
     try:
         # Здесь должна быть реализация сохранения в БД
-        # Например, через SQLAlchemy или Databases
         logger.info(f"💾 Сохранение результата для ученика {student_id}")
-        # Примерный код:
-        # await database.execute(
-        #     "INSERT INTO tasks ...",
-        #     {"student_id": student_id, ...}
-        # )
     except Exception as e:
         logger.error(f"💥 Ошибка сохранения: {e}")
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "main_server:app",  # <--- Вот это изменение!
+    uvicorn.run(  # Исправлен запуск без строки "main_server:"
+        app,  # Передаем сам объект app
         host="0.0.0.0",
         port=8080,
         workers=2
     )
-
-
-
-
