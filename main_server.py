@@ -141,9 +141,10 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(  # Исправлен запуск без строки "main_server:"
-        app,  # Передаем сам объект app
+    uvicorn.run(
+        "main_server:app",  # <--- Поставьте здесь кавычки и название файла!
         host="0.0.0.0",
         port=8080,
         workers=2
     )
+
