@@ -123,13 +123,7 @@ async def check_answer_vision(request: CheckRequest):
 
         return ai_verdict
 
-    except replicate.ReplicateError as e:
-        logger.error(f"💥 Replicate Error: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Replicate API error: {str(e)}"
-        )
-    except Exception as e:
+   except Exception as e: # <--- ЭТОТ БЛОК ОСТАВЛЯЕМ
         logger.error(f"🚨 Unexpected Error: {e}")
         raise HTTPException(
             status_code=500,
@@ -159,6 +153,7 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
 
 
