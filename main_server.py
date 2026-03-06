@@ -38,8 +38,9 @@ app = FastAPI(
 class CheckRequest(BaseModel):
     user_answer: str
     image_url: str
-    student_id: Optional[int] = None  # Для сохранения статистики
-
+    task_text: str = ""           # <--- Добавили текст задачи
+    student_id: Optional[int] = None
+    
     @field_validator("image_url")
     def is_base64(cls, v):
         try:
@@ -72,8 +73,8 @@ async def check_answer_vision(request: CheckRequest):
     # Подготовка промпта
     prompt_text = f"""
     Ты — строгий ЕГЭ/ОГЭ-репетитор по математике.
-    Задание: [ТУТ БУДЕТ ТЕКСТ С КАРТИНКИ].
-    Ученик дал ответ: "{request.user_answer}".
+    Текст задания: {request.task_text}.
+    Внимательно изучи прикрепленную картинку, реши задачу по шагам и проверь ответ ученика: "{request.user_answer}".
     Вердикт в формате JSON:
     {{
     "is_correct": true/false,
@@ -155,6 +156,7 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
 
 
