@@ -2,6 +2,7 @@ import os
 import logging
 import base64
 import json
+import re
 import replicate
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -109,21 +110,30 @@ async def check_answer_vision(request: CheckRequest):
         raw_response = "".join(output).strip()
 
         # Обработка формата ответа
-        if raw_response.startswith("```json"):
-            raw_response = raw_response.replace("```json", "").replace("```", "").strip()
-        elif raw_response.startswith("```"):
-            raw_response = raw_response.replace("```", "").strip()
+        # Очищаем от случайных экранирований нейросети
+        raw_response = raw_response.replace("\\_", "_").replace("\\", "")
 
-        # Очищаем от случайных слэшей нейросети
-        raw_response = raw_response.replace("\\_", "_")
-
-        # Парсинг JSON
+        # Умный поиск JSON внутри любого текста (даже если нейросеть "наболтала" лишнего)
+        import re
+        json_match = re.search(r'\{.*?\}', raw_response, re.DOTALL)
+        
         try:
-            ai_verdict = json.loads(raw_response)
-        except json.JSONDecodeError:
+            if json_match:
+                clean_json_str = json_match.group(0)
+                ai_verdict = json.loads(clean_json_str)
+                
+                # Если нейросеть добавила полезный текст ПОСЛЕ json, приклеим его к объяснению
+                tail_text = raw_response.replace(clean_json_str, "").strip()
+                if tail_text and "explanation" in ai_verdict:
+                    ai_verdict["explanation"] += f"\n\n(Дополнение ИИ: {tail_text})"
+            else:
+                ai_verdict = json.loads(raw_response)
+        except Exception:
+            # Если JSON вообще сломан, отдаем как чистый текст, убрав мусор
+            clean_text = re.sub(r'["{}\[\]]', '', raw_response).replace('is_correct: false,', '').replace('explanation:', '').strip()
             ai_verdict = {
                 "is_correct": False,
-                "explanation": raw_response
+                "explanation": clean_text
             }
 
         # Сохранение статистики (если указан student_id)
@@ -156,6 +166,7 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
 
 
