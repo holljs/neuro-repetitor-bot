@@ -155,20 +155,20 @@ async def solve_task(message: types.Message, state: FSMContext):
         await message.answer("😕 К сожалению, база задач пуста или не загрузилась. Обратитесь к администратору.")
         return
         
-   # 1. Выбираем случайную задачу
+  # 1. Выбираем случайную задачу
     task = random.choice(ALL_TASKS)
     task_id = task.get("id", "N/A")
-    task_text = task.get("question", "")      # <-- Изменили на "question"
-    image_path_str = task.get("img")          # <-- Изменили на "img"
+    task_text = task.get("question", "")      # <-- ДОЛЖНО БЫТЬ "question"
+    image_path_str = task.get("img")          # <-- ДОЛЖНО БЫТЬ "img"
     
     if not image_path_str:
         await message.answer("😕 Ошибка в структуре задачи (нет файла картинки). Попробуйте еще раз.")
         return
         
-    image_path = Path(image_path_str)         # <-- Берем готовый путь прямо из базы
+    image_path = Path(image_path_str)         # <-- Берем путь целиком
     
     if not image_path.exists():
-        await message.answer(f"😕 Не могу найти файл картинки для задачи: {image_filename}. Попробуйте другую.")
+        await message.answer(f"😕 Не могу найти файл картинки: {image_path_str}. Попробуйте другую.")
         return
         
     # 2. Готовим картинку для отправки в LLaVA (Base64)
@@ -281,6 +281,7 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
 
