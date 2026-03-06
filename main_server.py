@@ -113,6 +113,9 @@ async def check_answer_vision(request: CheckRequest):
         elif raw_response.startswith("```"):
             raw_response = raw_response.replace("```", "").strip()
 
+        # Очищаем от случайных слэшей нейросети
+        raw_response = raw_response.replace("\\_", "_")
+
         # Парсинг JSON
         try:
             ai_verdict = json.loads(raw_response)
@@ -152,5 +155,6 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
 
