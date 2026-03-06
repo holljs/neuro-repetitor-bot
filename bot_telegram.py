@@ -113,13 +113,13 @@ async def save_user(user_id: int, name: str, credits: int = 0):
     conn.commit()
     conn.close()
 
-async def send_to_server(user_answer: str, image_url: str, student_id: int):
+async def send_to_server(user_answer: str, image_url: str, task_text: str, student_id: int): # Добавили task_text
     """Отправка запроса на сервер для проверки ответа"""
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(
                 f"{SERVER_URL}:{SERVER_PORT}/check/",
-                json={"user_answer": user_answer, "image_url": image_url, "student_id": student_id},
+                json={"user_answer": user_answer, "image_url": image_url, "task_text": task_text, "student_id": student_id},
                 timeout=aiohttp.ClientTimeout(total=60)
             ) as response:
                 return await response.json()
@@ -178,6 +178,7 @@ async def solve_task(message: types.Message, state: FSMContext):
     # 3. Сохраняем все нужные данные в состояние
     await state.set_data({
         "task_id": task_id,
+        "task_text": task_text,     # <--- Сохраняем текст для следующего шага
         "image_base64": image_base64
     })
     
@@ -201,6 +202,7 @@ async def check_answer(message: types.Message, state: FSMContext):
     result = await send_to_server(
         user_answer=user_answer,
         image_url=task_data.get("image_base64"),
+        task_text=task_data.get("task_text", ""), # <--- Отправляем текст!
         student_id=message.from_user.id
     )
     
@@ -281,6 +283,7 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
 
