@@ -86,8 +86,13 @@ async def check_answer_vision(request: CheckRequest):
         logger.info("🚀 Отправляем задачу на проверку в LLaVA...")
         model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
         
+       # Убеждаемся, что префикс есть
+        final_image_url = request.image_url
+        if final_image_url and not final_image_url.startswith("data:image"):
+            final_image_url = f"data:image/png;base64,{final_image_url}"
+
         input_data = {
-            "image": request.image_url,
+            "image": final_image_url,  # <--- Используем переменную с префиксом
             "prompt": prompt_text,
             "max_tokens": 800,
             "temperature": 0.2
@@ -147,4 +152,5 @@ if __name__ == "__main__":
         port=8080,
         workers=2
     )
+
 
