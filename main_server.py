@@ -101,7 +101,8 @@ async def get_random_task(exam_type: str = "oge"):
     # Готовим картинку для браузера
     with open(image_path, "rb") as image_file:
         raw_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-        image_data_uri = f"data:image/png;base64,{raw_base64}"
+        # ИСПРАВЛЕНИЕ: Формат картинок в базе - JPEG
+        image_data_uri = f"data:image/jpeg;base64,{raw_base64}"
         
     return {
         "id": task.get("id"),
@@ -202,3 +203,4 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
