@@ -152,8 +152,9 @@ async def check_answer_vision(request: CheckRequest):
         model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
         
         final_image_url = request.image_url
-        if final_image_url and not final_image_url.startswith("data:image"):
-            final_image_url = f"data:image/png;base64,{final_image_url}"
+        # Если префикса нет (а фронтенд его обрезал), добавляем его для Replicate!
+        if not final_image_url.startswith("data:image"):
+            final_image_url = f"data:image/jpeg;base64,{final_image_url}"
 
         input_data = {
             "image": final_image_url,
@@ -203,4 +204,5 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
 
