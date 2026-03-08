@@ -130,8 +130,9 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             user_answer: userAnswer,
-                            image_url: currentTask.image,
-                            task_text: currentTask.text, // Передаем текст для нейросети!
+                            // ИСПРАВЛЕНИЕ: Отправляем чистый base64 на сервер
+                            image_url: currentTask.image.split(',')[1], 
+                            task_text: currentTask.text, 
                             student_id: await getUserID()
                         })
                     }
