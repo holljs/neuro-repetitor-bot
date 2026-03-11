@@ -60,8 +60,24 @@
             <div id="task-image-container"></div>
             <div id="task-text"></div>
             
-            <!-- НОВАЯ КНОПКА ЖАЛОБЫ -->
-            <button id="report-broken-btn" style="background: none; border: none; color: #ff5252; cursor: pointer; font-size: 13px; text-decoration: underline; margin-bottom: 15px; display: block; width: 100%; text-align: right;">🚩 Задание обрезано/С ошибкой?</button>
+           <!-- НОВАЯ УМНАЯ КНОПКА ЖАЛОБЫ (Логика прямо в HTML) -->
+<button onclick="
+    if (!currentTask || !currentTask.id) return;
+    if (confirm('Вы уверены, что задача отображается некорректно? Она будет удалена из базы.')) {
+        document.getElementById('loading-text').textContent = 'Удаляем задачу...';
+        showScreen('loading');
+        fetch(SERVER_URL + '/report_task/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ task_id: currentTask.id })
+        }).then(() => {
+            getRandomTask();
+        }).catch(err => {
+            console.error(err);
+            getRandomTask();
+        });
+    }
+" style="background: none; border: none; color: #ff5252; cursor: pointer; font-size: 13px; text-decoration: underline; margin-bottom: 15px; display: block; width: 100%; text-align: right;">🚩 Задание обрезано/ С ошибкой</button>
 
             <input type="text" id="user-answer" placeholder="Введите ответ...">
             <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
