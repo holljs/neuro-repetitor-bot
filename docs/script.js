@@ -123,6 +123,33 @@ function showTask() {
     showScreen(taskScreen);
 }
 
+// --- ФУНКЦИЯ: ПОЖАЛОВАТЬСЯ НА ЗАДАЧУ ---
+async function reportTask() {
+    if (!currentTask || !currentTask.id) return;
+    
+    // Подтверждение, чтобы не нажимали случайно
+    if (!confirm("Вы уверены, что задача отображается некорректно? Она будет удалена из базы.")) {
+        return;
+    }
+
+    // 1. Отправляем сигнал на сервер
+    try {
+        await fetch(`${TEST_API_URL}/report_task/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ task_id: currentTask.id })
+        });
+    } catch (e) {
+        console.error("Не удалось отправить жалобу:", e);
+    }
+
+    // 2. Визуально "пропускаем" задачу для ученика
+    // Не засчитываем это как ошибку, просто грузим новую
+    loadingScreen.innerHTML = "<p>Удаляем задачу... Загружаем новую!</p><div class='spinner'></div>";
+    showScreen(loadingScreen);
+    getRandomTask(); 
+}
+
 // ОТПРАВКА ОТВЕТА
 async function submitAnswer() {
     const userAnswer = document.getElementById('user-answer').value.trim();
@@ -190,61 +217,6 @@ function showFinishScreen() {
     }
     
     showScreen(testFinishScreen);
-}
-
-// === РАЗБОР ОШИБОК ===
-
-window.startReview = function() {
-    currentReviewIndex = 0;
-    loadReviewForCurrentMistake();
-}
-
-async function loadReviewForCurrentMistake(simplify = false) {
-    const mistake = mistakes[currentReviewIndex];
-    
-    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
-    document.getElementById('review-user-answer').textContent = mistake.user_answer;
-    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
-    document.getElementById('review-explanation').innerHTML = "<i>⏳ Нейросеть пишет подробное объяснение. Подождите 10-20 секунд...</i>";
-    
-    showScreen(reviewScreen);
-
-    try {
-       const response = await fetch(`${TEST_API_URL}/review/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                user_answer: mistake.user_answer,
-                image_url: mistake.task.image.split(',')[1], 
-                task_text: mistake.task.text, 
-                simplify: simplify 
-            })
-        });
-        
-        const result = await response.json();
-        document.getElementById('review-explanation').innerHTML = result.explanation;
-    } catch (error) {
-        document.getElementById('review-explanation').innerHTML = `<span style="color:red;">Ошибка связи с сервером.</span>`;
-    }
-}
-
-window.simplifyReview = function() {
-    document.getElementById('review-explanation').innerHTML = "<i>⏳ Прошу нейросеть объяснить проще...</i>";
-    loadReviewForCurrentMistake(true);
-}
-
-window.nextReview = function() {
-    currentReviewIndex++;
-    if (currentReviewIndex < mistakes.length) {
-        loadReviewForCurrentMistake();
-    } else {
-        alert("Все ошибки разобраны! Вы молодец!");
-        showScreen(mainMenuScreen);
-    }
-}
-
-window.finishSession = function() {
-    showScreen(mainMenuScreen);
 }
 
 // Запуск
