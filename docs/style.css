@@ -214,6 +214,80 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* --- НОВЫЕ СТИЛИ ДЛЯ УМНОГО ТЕСТА И РАЗБОРА ОШИБОК --- */
+
+/* Прогресс-бар сверху задачи */
+.progress-bar { 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #4a76a8; 
+    margin-bottom: 15px; 
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* Карточка с ошибкой ученика */
+.mistake-card { 
+    background: #ffebee; 
+    border: 1px solid #ffcdd2; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    font-size: 15px;
+}
+
+/* Блок с длинным объяснением от ИИ */
+.explanation-box { 
+    background: #f0f4f8; 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-top: 15px; 
+    text-align: left; 
+    font-size: 14px; 
+    line-height: 1.6; 
+    white-space: pre-wrap; /* Чтобы переносы строк от ИИ работали */
+    border: 1px solid #dce1e6;
+}
+
+/* Группа кнопок (в ряд) для разбора ошибок */
+.btn-group { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+/* Вторичная кнопка (серая) для "Объясни проще" */
+.btn-secondary { 
+    background-color: #e0e0e0; 
+    color: #333; 
+    flex: 1; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+
+/* Контейнер для картинки при разборе (чуть меньше, чем основная) */
+#review-image-container {
+    text-align: center;
+    margin: 15px 0;
+}
+#review-image-container img {
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
 /* Адаптив */
 @media (max-width: 500px) {
     #app {
