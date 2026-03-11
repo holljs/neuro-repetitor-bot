@@ -70,7 +70,6 @@ class CheckRequest(BaseModel):
     @field_validator("image_url")
     def is_base64(cls, v):
         try:
-            # Если пришел data URI, отрезаем префикс для проверки
             if v.startswith('data:image'):
                 v_clean = v.split('base64,')[1]
             else:
@@ -79,6 +78,14 @@ class CheckRequest(BaseModel):
         except Exception as e:
             raise ValueError(f"Invalid Base64 image: {str(e)}")
         return v
+
+# --- НОВЫЙ КЛАСС ДЛЯ РАЗБОРА ОШИБОК ---
+class ReviewRequest(BaseModel):
+    user_answer: str
+    image_url: str
+    task_text: Optional[str] = None
+    student_id: Optional[int] = None
+    simplify: bool = False # Флаг "Объясни проще"
 
 # --- МАРШРУТЫ ДЛЯ ВК (ФРОНТЕНД) ---
 @app.get("/random_task/")
@@ -204,5 +211,6 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
 
 
