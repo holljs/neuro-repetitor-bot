@@ -6,14 +6,23 @@
     <title>Нейро-репетитор</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <style>
+        /* Дополнительные стили для новых экранов */
+        .progress-bar { font-size: 14px; font-weight: bold; color: #4a76a8; margin-bottom: 10px; }
+        .mistake-card { background: #ffebee; border: 1px solid #ffcdd2; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
+        .explanation-box { background: #f0f4f8; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left; font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
+        .btn-secondary { background: #e0e0e0; color: #333; flex: 1; padding: 10px; border: none; border-radius: 8px; font-weight: bold; }
+    </style>
 </head>
 <body>
     <div id="app">
+
         <!-- Главное меню -->
         <div id="main-menu" class="screen active">
             <h1>🧠 Нейро-репетитор</h1>
             <div class="menu-options">
-                <button class="menu-btn" onclick="showScreen('exam-type')">📝 Решить задачу</button>
+                <button class="menu-btn" onclick="showScreen('exam-type')">📝 Начать тест (15 вопросов)</button>
                 <button class="menu-btn" onclick="showScreen('stats')">📊 Моя статистика</button>
                 <button class="menu-btn" onclick="showHelp()">🛠 Помощь</button>
                 <button class="menu-btn" onclick="showProfile()">👤 Мой профиль</button>
@@ -23,14 +32,14 @@
         <!-- Выбор экзамена -->
         <div id="exam-type" class="screen">
             <h2>Выберите тип экзамена:</h2>
-            <button class="exam-btn" onclick="selectExamType('oge')">
+            <button class="exam-btn" onclick="startTest('oge')">
                 <div class="exam-icon">📚</div>
                 <div class="exam-info">
                     <h3>ОГЭ (9 класс)</h3>
                     <p>Основной государственный экзамен</p>
                 </div>
             </button>
-            <button class="exam-btn" onclick="selectExamType('ege')">
+            <button class="exam-btn" onclick="startTest('ege')">
                 <div class="exam-icon">🎓</div>
                 <div class="exam-info">
                     <h3>ЕГЭ (11 класс)</h3>
@@ -42,184 +51,250 @@
         <!-- Экран загрузки -->
         <div id="loading" class="screen">
             <div class="spinner"></div>
-            <p>Загрузка...</p>
+            <p id="loading-text">Загрузка...</p>
         </div>
 
-        <!-- Экран задачи -->
+        <!-- Экран задачи (Во время теста) -->
         <div id="task-screen" class="screen">
+            <div class="progress-bar" id="test-progress">Вопрос 1 из 15</div>
             <div id="task-image-container"></div>
             <div id="task-text"></div>
             <input type="text" id="user-answer" placeholder="Введите ответ...">
-            <button class="submit-btn" onclick="submitAnswer()">Отправить</button>
+            <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
         </div>
 
-        <!-- Экран результата -->
-        <div id="result-screen" class="screen">
-            <div id="result-icon"></div>
-            <h2 id="result-title"></h2>
-            <div id="result-explanation"></div>
-            <button class="next-btn" onclick="nextTask()">Следующая задача</button>
+        <!-- Экран промежуточного результата (Верно/Неверно) -->
+        <div id="quick-result-screen" class="screen">
+            <div id="quick-result-icon"></div>
+            <h2 id="quick-result-title"></h2>
+            <button class="next-btn" onclick="nextTask()">Следующий вопрос</button>
         </div>
+
+        <!-- Экран ЗАВЕРШЕНИЯ ТЕСТА -->
+        <div id="test-finish-screen" class="screen">
+            <h2>🏁 Тест завершен!</h2>
+            <p style="font-size: 18px; margin: 15px 0;">Твой результат: <b id="final-score"></b> из 15</p>
+            <p style="margin-bottom: 20px;">Ошибок допущено: <b id="final-mistakes" style="color: red;"></b></p>
+            
+            <div id="review-buttons">
+                <button class="submit-btn" onclick="startReview()">🧠 Разобрать ошибки</button>
+            </div>
+            <button class="menu-btn" style="margin-top: 15px;" onclick="finishSession()">В главное меню</button>
+        </div>
+
+        <!-- Экран РАЗБОРА ОШИБОК -->
+        <div id="review-screen" class="screen">
+            <div class="progress-bar" id="review-progress">Разбор ошибки 1</div>
+            
+            <div class="mistake-card">
+                <p><b>Твой неверный ответ:</b> <span id="review-user-answer" style="color:red;"></span></p>
+            </div>
+            
+            <div id="review-image-container"></div>
+            
+            <div class="explanation-box" id="review-explanation">
+                Загружаю объяснение от нейросети...
+            </div>
+            
+            <div class="btn-group">
+                <button class="btn-secondary" onclick="simplifyReview()">Объясни проще 🍎</button>
+                <button class="submit-btn" onclick="nextReview()">Дальше ➡️</button>
+            </div>
+        </div>
+
     </div>
 
     <script>
-        // Инициализация VK Bridge
         const bridge = window.vkBridge || window.bridge;
-        let currentTask = null;
-        let currentExamType = null;
-
-        // Конфигурация сервера (ПРАВИЛЬНЫЙ NGINX ПУТЬ)
         const SERVER_URL = "https://neuro-master.online/repetitor-api";
 
-        // Инициализация приложения
+        // --- ПЕРЕМЕННЫЕ СОСТОЯНИЯ ТЕСТА ---
+        const TEST_LENGTH = 15;
+        let currentTask = null;
+        let currentExamType = null;
+        let questionNumber = 1;
+        let score = 0;
+        let mistakes = []; // Копилка ошибок
+        
+        // Переменные для разбора
+        let currentReviewIndex = 0;
+
         function initApp() {
             bridge.send('VKWebAppInit');
             showScreen('main-menu');
         }
 
-        // Показать экран
         function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(el => {
-                el.classList.remove('active');
-            });
+            document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
             document.getElementById(screenId).classList.add('active');
         }
 
-        // Выбор типа экзамена
-        function selectExamType(type) {
+        // 1. ЗАПУСК ТЕСТА
+        function startTest(type) {
             currentExamType = type;
+            questionNumber = 1;
+            score = 0;
+            mistakes = [];
+            document.getElementById('loading-text').textContent = "Ищем задачу...";
             showScreen('loading');
             getRandomTask();
         }
 
-        // Получение случайной задачи
+        // Получение задачи
         async function getRandomTask() {
             try {
-                const response = await fetch(
-                    `${SERVER_URL}/random_task/?exam_type=${currentExamType}`
-                );
+                const response = await fetch(`${SERVER_URL}/random_task/?exam_type=${currentExamType}`);
                 const data = await response.json();
                 currentTask = data;
                 showTask();
             } catch (error) {
-                showError('Ошибка получения задачи: ' + error.message);
+                alert('Ошибка получения задачи: ' + error.message);
+                showScreen('main-menu');
             }
         }
 
-        // Показать задачу
+        // Показ задачи
         function showTask() {
-            document.getElementById('task-image-container').innerHTML = 
-                `<img src="${currentTask.image}" alt="Задача">`;
-            document.getElementById('task-text').textContent = currentTask.text;
+            document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
+            document.getElementById('task-image-container').innerHTML = `<img src="${currentTask.image}" alt="Задача" style="max-width: 100%; border-radius: 8px;">`;
+            document.getElementById('task-text').textContent = currentTask.text || "";
             document.getElementById('user-answer').value = '';
             showScreen('task-screen');
         }
 
-        // Отправка ответа
+        // 2. ОТПРАВКА ОТВЕТА (БЫСТРАЯ ПРОВЕРКА)
         async function submitAnswer() {
-            const userAnswer = document.getElementById('user-answer').value;
+            const userAnswer = document.getElementById('user-answer').value.trim();
             if (!userAnswer) return;
-
+            
+            document.getElementById('loading-text').textContent = "Проверяю...";
             showScreen('loading');
             
             try {
-               const response = await fetch(
-                    `${SERVER_URL}/check/`,
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            user_answer: userAnswer,
-                            // ИСПРАВЛЕНИЕ: Отправляем чистый base64 на сервер
-                            image_url: currentTask.image.split(',')[1], 
-                            task_text: currentTask.text, 
-                            student_id: await getUserID()
-                        })
-                    }
-                );
-                
-                const result = await response.json();
-                showResult(result);
-            } catch (error) {
-                showError('Ошибка проверки ответа: ' + error.message);
-            }
-        }
-
-        // Показать результат
-        function showResult(result) {
-            document.getElementById('result-icon').className = 
-                result.is_correct ? 'result-correct' : 'result-incorrect';
-            document.getElementById('result-title').textContent = 
-                result.is_correct ? '🎉 Правильно!' : '❌ Ошибка!';
-            document.getElementById('result-explanation').innerHTML = 
-                result.explanation;
-            showScreen('result-screen');
-        }
-
-        // Переход к следующей задаче
-        function nextTask() {
-            showScreen('loading');
-            getRandomTask();
-        }
-
-        // Показать статистику
-        async function showStats() {
-            showScreen('loading');
-            try {
-                const response = await fetch(
-                    `${SERVER_URL}/analytics/${await getUserID()}`
-                );
-                const stats = await response.json();
-                
-                let statsHTML = `
-                    <h2>📊 Ваша статистика</h2>
-                    <div class="stat-card">
-                        <p>Успеваемость: <b>${stats.success_rate.toFixed(1)}%</b></p>
-                        <p>Кредитов: <b>${stats.credits}</b></p>
-                    </div>
-                    <h3>Темы для работы:</h3>
-                    <ul>
-                `;
-                
-                stats.weak_topics.forEach(topic => {
-                    statsHTML += `<li>${topic}</li>`;
+               const response = await fetch(`${SERVER_URL}/check/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_answer: userAnswer,
+                        image_url: currentTask.image.split(',')[1], 
+                        task_text: currentTask.text, 
+                        student_id: 12345 // Заглушка, если ID не принципиален
+                    })
                 });
                 
-                statsHTML += '</ul>';
-                document.getElementById('stats-screen').innerHTML = statsHTML;
-                showScreen('stats-screen');
+                const result = await response.json();
+                handleQuickResult(result.is_correct, userAnswer);
             } catch (error) {
-                showError('Ошибка получения статистики: ' + error.message);
+                alert('Ошибка проверки ответа: ' + error.message);
+                showScreen('task-screen');
             }
         }
 
-        // Получить ID пользователя
-        async function getUserID() {
-            return Math.floor(Math.random() * 1000000);
+        // 3. ОБРАБОТКА РЕЗУЛЬТАТА ВОПРОСА
+        function handleQuickResult(isCorrect, userAnswer) {
+            const titleEl = document.getElementById('quick-result-title');
+            
+            if (isCorrect) {
+                titleEl.textContent = '🎉 Верно!';
+                titleEl.style.color = 'green';
+                score++;
+            } else {
+                titleEl.textContent = '❌ Неверно!';
+                titleEl.style.color = 'red';
+                // СОХРАНЯЕМ ОШИБКУ
+                mistakes.push({
+                    task: currentTask,
+                    user_answer: userAnswer
+                });
+            }
+            
+            showScreen('quick-result-screen');
         }
 
-        // Показать помощь
-        function showHelp() {
-            alert('Помощь по работе с приложением:\n\n' +
-                  '1. Выберите тип экзамена\n' +
-                  '2. Решите задачу\n' +
-                  '3. Введите ответ\n' +
-                  '4. Нажмите "Отправить"\n' +
-                  '5. Получите результат с объяснением');
+        // 4. ПЕРЕХОД К СЛЕДУЮЩЕМУ ВОПРОСУ ИЛИ ФИНАЛ
+        function nextTask() {
+            questionNumber++;
+            if (questionNumber <= TEST_LENGTH) {
+                document.getElementById('loading-text').textContent = "Грузим вопрос...";
+                showScreen('loading');
+                getRandomTask();
+            } else {
+                showFinishScreen();
+            }
         }
 
-        // Показать профиль
-        function showProfile() {
-            alert('В разработке...');
+        // 5. ЭКРАН ЗАВЕРШЕНИЯ ТЕСТА
+        function showFinishScreen() {
+            document.getElementById('final-score').textContent = score;
+            document.getElementById('final-mistakes').textContent = mistakes.length;
+            
+            const reviewBtnBlock = document.getElementById('review-buttons');
+            if (mistakes.length > 0) {
+                reviewBtnBlock.style.display = 'block';
+            } else {
+                reviewBtnBlock.style.display = 'none';
+            }
+            
+            showScreen('test-finish-screen');
         }
 
-        // Показать ошибку
-        function showError(message) {
-            alert('Ошибка: ' + message);
+        // --- БЛОК РАЗБОРА ОШИБОК ---
+
+        function startReview() {
+            currentReviewIndex = 0;
+            loadReviewForCurrentMistake();
+        }
+
+        async function loadReviewForCurrentMistake(simplify = false) {
+            const mistake = mistakes[currentReviewIndex];
+            
+            // Настраиваем UI
+            document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
+            document.getElementById('review-user-answer').textContent = mistake.user_answer;
+            document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
+            document.getElementById('review-explanation').innerHTML = "<i>⏳ Нейросеть пишет подробное объяснение. Подождите 10-20 секунд...</i>";
+            
+            showScreen('review-screen');
+
+            // Запрашиваем длинное объяснение с сервера
+            try {
+               const response = await fetch(`${SERVER_URL}/review/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_answer: mistake.user_answer,
+                        image_url: mistake.task.image.split(',')[1], 
+                        task_text: mistake.task.text, 
+                        simplify: simplify // Флаг упрощения
+                    })
+                });
+                
+                const result = await response.json();
+                document.getElementById('review-explanation').innerHTML = result.explanation;
+            } catch (error) {
+                document.getElementById('review-explanation').innerHTML = `<span style="color:red;">Ошибка связи с сервером. Не удалось загрузить объяснение.</span>`;
+            }
+        }
+
+        function simplifyReview() {
+            document.getElementById('review-explanation').innerHTML = "<i>⏳ Прошу нейросеть объяснить проще (на яблоках)...</i>";
+            loadReviewForCurrentMistake(true); // Перезагружаем с флагом simplify
+        }
+
+        function nextReview() {
+            currentReviewIndex++;
+            if (currentReviewIndex < mistakes.length) {
+                loadReviewForCurrentMistake();
+            } else {
+                alert("Все ошибки разобраны! Вы молодец!");
+                finishSession();
+            }
+        }
+
+        function finishSession() {
             showScreen('main-menu');
         }
 
-        // Инициализация при загрузке
         window.onload = initApp;
     </script>
 </body>
