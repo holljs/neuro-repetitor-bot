@@ -90,33 +90,60 @@ class ReviewRequest(BaseModel):
 # --- МАРШРУТЫ ДЛЯ ВК (ФРОНТЕНД) ---
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge"):
-    """Возвращает случайную задачу для фронтенда ВК (с картинкой в Base64)"""
+    """Возвращает случайную задачу для фронтенда ВК (с самоочисткой битых)"""
+    global ALL_TASKS
+    
     if not ALL_TASKS:
         raise HTTPException(status_code=500, detail="База задач пуста")
-        
-    task = random.choice(ALL_TASKS)
-    image_path_str = task.get("img")
-    
-    if not image_path_str:
-        raise HTTPException(status_code=500, detail="В задаче нет пути к картинке")
-        
-    image_path = Path(image_path_str)
-    
-    if not image_path.exists():
-        raise HTTPException(status_code=404, detail="Файл картинки не найден на сервере")
-        
-    # Готовим картинку для браузера
-    with open(image_path, "rb") as image_file:
-        raw_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-        # ИСПРАВЛЕНИЕ: Формат картинок в базе - JPEG
-        image_data_uri = f"data:image/jpeg;base64,{raw_base64}"
-        
-    return {
-        "id": task.get("id"),
-        "text": task.get("question"),
-        "image": image_data_uri
-    }
 
+    # Делаем до 10 попыток найти нормальную задачу
+    for _ in range(10):
+        if not ALL_TASKS:
+            raise HTTPException(status_code=500, detail="База задач закончилась (все были битые)")
+            
+        task = random.choice(ALL_TASKS)
+        task_id = task.get("id")
+        image_path_str = task.get("img")
+        
+        if not image_path_str:
+            # Если пути вообще нет, удаляем задачу из базы
+            ALL_TASKS = [t for t in ALL_TASKS if str(t.get("id")) != str(task_id)]
+            continue # Пробуем следующую
+            
+        image_path = Path(image_path_str)
+        
+        if not image_path.exists():
+            # КАРТИНКА БИТАЯ! Удаляем задачу навсегда
+            logger.warning(f"⚠️ Найдена битая задача {task_id}. Файл {image_path} не существует. Удаляем из базы!")
+            ALL_TASKS = [t for t in ALL_TASKS if str(t.get("id")) != str(task_id)]
+            
+            # Сразу перезаписываем файл, чтобы не наткнуться на нее после рестарта
+            try:
+                with open(DB_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(ALL_TASKS, f, ensure_ascii=False, indent=4)
+            except Exception as e:
+                logger.error(f"Не удалось перезаписать базу при очистке: {e}")
+                
+            continue # Пробуем вытянуть следующую задачу!
+
+        # Если мы дошли сюда, значит файл существует! Грузим его.
+        try:
+            with open(image_path, "rb") as image_file:
+                raw_base64 = base64.b64encode(image_file.read()).decode("utf-8")
+                image_data_uri = f"data:image/jpeg;base64,{raw_base64}"
+                
+            return {
+                "id": task.get("id"),
+                "text": task.get("question"),
+                "image": image_data_uri
+            }
+        except Exception as e:
+            logger.error(f"Ошибка при чтении файла {image_path}: {e}")
+            ALL_TASKS = [t for t in ALL_TASKS if str(t.get("id")) != str(task_id)]
+            continue
+
+    # Если за 10 попыток не нашли нормальную (что вряд ли)
+    raise HTTPException(status_code=404, detail="Слишком много битых задач подряд. Попробуйте еще раз.")
 # --- ОСНОВНЫЕ МАРШРУТЫ (ПРОВЕРКА) ---
 
 @app.get("/")
@@ -257,6 +284,7 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
 
 
 
