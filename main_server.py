@@ -127,80 +127,93 @@ async def root():
         "port": os.getenv("SERVER_PORT", "8080"),
         "timestamp": datetime.utcnow().isoformat()
     })
-
+    
 @app.post("/check/")
-async def check_answer_vision(request: CheckRequest):
-    """Проверка ответа через LLaVA"""
+async def check_answer_fast(request: CheckRequest):
+    """БЫСТРАЯ ПРОВЕРКА ОТВЕТА (Только Да/Нет)"""
     if not os.getenv("REPLICATE_API_TOKEN"):
         raise HTTPException(status_code=500, detail="Replicate API token not configured")
-
-    prompt_text = f"""
-    Ты — профессиональный и доброжелательный репетитор ОГЭ/ЕГЭ.
-    
-    Вводные данные:
-    - Номер задания: {request.task_text}
-    - Ответ ученика: "{request.user_answer}"
-    
-    Твоя задача:
-    1. Главное условие задачи, все графики, формулы и числа находятся ТОЛЬКО НА КАРТИНКЕ. Внимательно изучи картинку.
-    2. Пойми по картинке, к какому предмету (Математика, Физика и т.д.) относится задача, и реши её по шагам самостоятельно.
-    3. Сравни свой правильный ответ с ответом ученика.
-
-    ВЫДАЙ ОТВЕТ СТРОГО В ФОРМАТЕ JSON. Никакого текста до или после скобок {{ }}.
-    Формат ответа:
-    {{
-      "is_correct": true (если ответ совпал) или false (если есть ошибка),
-      "explanation": "Здесь напиши подробное пошаговое решение на русском языке, опираясь на данные с картинки. Обязательно напиши правильный ответ. Если ученик ошибся, объясни, в чем именно его ошибка."
-    }}
-    """
-
-    try:
-        logger.info("🚀 Отправляем задачу на проверку в LLaVA...")
-        model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
         
+    prompt_text = f"""Ты строгий проверяющий ОГЭ/ЕГЭ. 
+    На картинке условие задачи. Ученик дал ответ: "{request.user_answer}".
+    Внимательно реши задачу сам и сравни с ответом ученика.
+    ВЫДАЙ ОТВЕТ СТРОГО В ФОРМАТЕ JSON. Никакого текста.
+    Формат: {{ "is_correct": true }} или {{ "is_correct": false }}
+    """
+    
+    try:
+        model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
         final_image_url = request.image_url
-        # Если префикса нет (а фронтенд его обрезал), добавляем его для Replicate!
         if not final_image_url.startswith("data:image"):
             final_image_url = f"data:image/jpeg;base64,{final_image_url}"
-
+            
         input_data = {
             "image": final_image_url,
             "prompt": prompt_text,
-            "max_tokens": 800,
-            "temperature": 0.2
+            "max_tokens": 50, # МИНИМУМ токенов для скорости
+            "temperature": 0.1
+        }
+        
+        output = replicate.run(model_id, input=input_data, wait=True, timeout=60)
+        raw_response = "".join(output).strip()
+        
+        # Пытаемся вытащить JSON
+        json_match = re.search(r'\{.*?\}', raw_response, re.DOTALL)
+        if json_match:
+            ai_verdict = json.loads(json_match.group(0))
+        else:
+            # Резервный вариант, если ИИ не дал JSON
+            ai_verdict = {"is_correct": "true" in raw_response.lower()}
+            
+        return ai_verdict
+        
+    except Exception as e:
+        logger.error(f"🚨 Fast Check Error: {e}")
+        # Если ИИ упал, засчитываем как ошибку, чтобы потом разобрать
+        return {"is_correct": False, "error": str(e)}
+
+@app.post("/review/")
+async def review_answer_detailed(request: ReviewRequest):
+    """ПОДРОБНЫЙ РАЗБОР ОШИБКИ (Или объяснение 'для чайников')"""
+    if not os.getenv("REPLICATE_API_TOKEN"):
+        raise HTTPException(status_code=500, detail="Replicate API token not configured")
+        
+    # Выбираем промпт в зависимости от флага simplify
+    if request.simplify:
+        prompt_text = f"""На картинке задание ОГЭ/ЕГЭ. Ученик не понял стандартное решение. 
+        Его неправильный ответ: "{request.user_answer}".
+        Объясни, как решать эту задачу максимально простым языком, "на пальцах", для новичков. Приведи понятные примеры или аналогии.
+        Ответь просто текстом на русском языке (без JSON). Напиши правильный ответ в конце."""
+    else:
+        prompt_text = f"""Ты профессиональный репетитор. На картинке условие задачи. 
+        Ученик дал НЕВЕРНЫЙ ответ: "{request.user_answer}".
+        Напиши подробное пошаговое решение этой задачи на русском языке, опираясь на данные с картинки. Объясни, в чем именно ошибка ученика, и напиши правильный ответ.
+        Ответь просто текстом (без JSON)."""
+        
+    try:
+        logger.info(f"🚀 Отправляем задачу на РАЗБОР (Simplify: {request.simplify})...")
+        model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
+        
+        final_image_url = request.image_url
+        if not final_image_url.startswith("data:image"):
+            final_image_url = f"data:image/jpeg;base64,{final_image_url}"
+            
+        input_data = {
+            "image": final_image_url,
+            "prompt": prompt_text,
+            "max_tokens": 1000, # Даем много токенов для развернутого ответа
+            "temperature": 0.4 # Чуть больше креативности для объяснений
         }
         
         output = replicate.run(model_id, input=input_data, wait=True, timeout=300)
-        raw_response = "".join(output).strip()
-
-        # Очистка и парсинг
-        raw_response = raw_response.replace("\\_", "_").replace("\\", "")
-        json_match = re.search(r'\{.*?\}', raw_response, re.DOTALL)
+        explanation_text = "".join(output).strip()
         
-        try:
-            if json_match:
-                clean_json_str = json_match.group(0)
-                ai_verdict = json.loads(clean_json_str)
-                tail_text = raw_response.replace(clean_json_str, "").strip()
-                if tail_text and "explanation" in ai_verdict:
-                    ai_verdict["explanation"] += f"\n\n(Дополнение ИИ: {tail_text})"
-            else:
-                ai_verdict = json.loads(raw_response)
-        except Exception:
-            clean_text = re.sub(r'["{}\[\]]', '', raw_response).replace('is_correct: false,', '').replace('explanation:', '').strip()
-            ai_verdict = {
-                "is_correct": False,
-                "explanation": clean_text
-            }
-
-        if request.student_id:
-            await save_task_result(request.student_id, request.user_answer, ai_verdict)
-
-        return ai_verdict
-
+        # Поскольку мы больше не требуем JSON, возвращаем просто текст
+        return {"explanation": explanation_text}
+        
     except Exception as e:
-        logger.error(f"🚨 Unexpected Error: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
+        logger.error(f"🚨 Review Error: {e}")
+        return {"explanation": "Извини, сервер перегружен, не могу написать объяснение прямо сейчас."}
 
 async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
     try:
@@ -211,6 +224,7 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
 
 
 
