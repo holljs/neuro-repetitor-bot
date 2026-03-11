@@ -148,87 +148,124 @@ async def cmd_start(message: types.Message, state: FSMContext):
         reply_markup=keyboard
     )
 
+# Сколько вопросов в одном тесте
+TEST_LENGTH = 15 
+
 @dp.message(F.text == "📝 Решить задачу")
 async def solve_task(message: types.Message, state: FSMContext):
-    # --- Новая логика ---
     if not ALL_TASKS:
-        await message.answer("😕 К сожалению, база задач пуста или не загрузилась. Обратитесь к администратору.")
+        await message.answer("😕 База задач пуста.")
         return
-        
-  # 1. Выбираем случайную задачу
+
+    # Получаем текущие данные теста или создаем новые
+    data = await state.get_data()
+    current_question_num = data.get("current_question_num", 1)
+    mistakes = data.get("mistakes", []) # Здесь будем копить ошибки
+    score = data.get("score", 0)
+
+    # 1. Выбираем случайную задачу
     task = random.choice(ALL_TASKS)
     task_id = task.get("id", "N/A")
-    task_text = task.get("question", "")      # <-- ДОЛЖНО БЫТЬ "question"
-    image_path_str = task.get("img")          # <-- ДОЛЖНО БЫТЬ "img"
+    task_text = task.get("question", "")
+    image_path_str = task.get("img")
     
     if not image_path_str:
-        await message.answer("😕 Ошибка в структуре задачи (нет файла картинки). Попробуйте еще раз.")
+        await message.answer("😕 Ошибка в структуре задачи. Попробуйте еще раз.")
         return
-        
-    image_path = Path(image_path_str)         # <-- Берем путь целиком
-    
+
+    image_path = Path(image_path_str)
     if not image_path.exists():
-        await message.answer(f"😕 Не могу найти файл картинки: {image_path_str}. Попробуйте другую.")
+        await message.answer(f"😕 Не могу найти файл картинки: {image_path_str}")
         return
-        
-    # 2. Готовим картинку для отправки в LLaVA (Base64)
+
+    # 2. Готовим картинку (Base64)
     with open(image_path, "rb") as image_file:
-        image_base64 = base64.b64encode(image_file.read()).decode("utf-8") # Без префикса!
-        
-    # 3. Сохраняем все нужные данные в состояние
+        image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
+
+    # 3. Сохраняем прогресс в состояние
     await state.set_data({
-        "task_id": task_id,
-        "task_text": task_text,     # <--- Сохраняем текст для следующего шага
-        "image_base64": image_base64
+        "current_question_num": current_question_num,
+        "mistakes": mistakes,
+        "score": score,
+        "current_task": {
+            "task_id": task_id,
+            "task_text": task_text,
+            "image_base64": image_base64,
+            "image_path": image_path_str # сохраняем путь для разбора ошибок
+        }
     })
-    
+
     # 4. Отправляем задачу пользователю
     photo = FSInputFile(image_path)
     await message.answer_photo(
         photo=photo,
-        caption=f"📝 <b>Задача #{task_id}</b>\n\n{task_text}\n\nВведите ваш ответ:"
+        caption=f"📝 <b>Вопрос {current_question_num} из {TEST_LENGTH}</b>\n\n{task_text}\n\nВведите ваш ответ:"
     )
     
-    # 5. Переходим в состояние ожидания ответа
     await state.set_state(TaskStates.waiting_for_answer)
 
 @dp.message(TaskStates.waiting_for_answer)
 async def check_answer(message: types.Message, state: FSMContext):
     user_answer = message.text
-    task_data = await state.get_data()
-    task_id = task_data.get("task_id")
+    data = await state.get_data()
     
-    # Проверка ответа на сервере
+    current_task = data["current_task"]
+    current_question_num = data["current_question_num"]
+    mistakes = data["mistakes"]
+    score = data["score"]
+
+    loading_msg = await message.answer("🤔 Проверяю...")
+    
+    # Проверка ответа на сервере (Пока сервер отвечает по-старому, но мы берем только статус)
     result = await send_to_server(
         user_answer=user_answer,
-        image_url=task_data.get("image_base64"),
-        task_text=task_data.get("task_text", ""), # <--- Отправляем текст!
+        image_url=current_task["image_base64"],
+        task_text=current_task["task_text"],
         student_id=message.from_user.id
     )
-    
-    # Формирование ответа
-    response_text = f"📋 <b>Ваш ответ</b>: <code>{user_answer}</code>\n\n"
-    
-    if result["is_correct"]:
-        response_text += "🎉 <b>Правильно!</b>\n\n"
-        response_text += "✅ <b>Объяснение</b>:\n" + result["explanation"]
-        
-        # Добавление кредитов за правильный ответ
+    await loading_msg.delete()
+
+    # Формируем реакцию
+    if result.get("is_correct", False):
+        await message.answer("✅ <b>Верно!</b>")
+        score += 1
+        # Начисляем 1 кредит за верный ответ
         conn = sqlite3.connect("users.db")
         cursor = conn.cursor()
-        cursor.execute(
-            "UPDATE users SET credits = credits + 1 WHERE user_id = ?",
-            (message.from_user.id,)
-        )
+        cursor.execute("UPDATE users SET credits = credits + 1 WHERE user_id = ?", (message.from_user.id,))
         conn.commit()
         conn.close()
-        response_text += "\n\n💎 Вы получили +1 кредит за правильный ответ!"
     else:
-        response_text += "❌ <b>Ошибка!</b>\n\n"
-        response_text += "🔍 <b>Решение</b>:\n" + result["explanation"]
-    
-    await message.answer(response_text)
-    await state.clear()
+        await message.answer("❌ <b>Неверно.</b> Запомнил твою ошибку.")
+        # Сохраняем ошибку в копилку
+        mistakes.append({
+            "task": current_task,
+            "user_answer": user_answer
+        })
+
+    # Увеличиваем счетчик вопросов
+    current_question_num += 1
+
+    # Решаем, что делать дальше: следующий вопрос или конец теста
+    if current_question_num <= TEST_LENGTH:
+        # Обновляем состояние и запускаем следующий вопрос
+        await state.update_data(current_question_num=current_question_num, mistakes=mistakes, score=score)
+        await solve_task(message, state) 
+    else:
+        # ТЕСТ ЗАВЕРШЕН
+        result_text = f"🏁 <b>Тест завершен!</b>\n\nТвой результат: {score} из {TEST_LENGTH}.\nОшибок: {len(mistakes)}."
+        
+        if len(mistakes) > 0:
+            # Показываем кнопку разбора
+            builder = InlineKeyboardBuilder()
+            builder.button(text="🧠 Разобрать ошибки", callback_data="start_review")
+            await message.answer(result_text, reply_markup=builder.as_markup())
+        else:
+            await message.answer(result_text + "\n\nИдеально! Ты гений! 🎉")
+            
+        # Сбрасываем процесс теста, но оставляем mistakes в state data для коллбека разбора!
+        await state.set_state(None) 
+        await state.update_data(current_question_num=1, score=0)
 
 @dp.message(F.text == "📊 Моя статистика")
 async def user_stats(message: types.Message):
@@ -283,6 +320,7 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
 
