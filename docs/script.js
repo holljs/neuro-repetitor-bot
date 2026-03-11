@@ -44,7 +44,7 @@ async function startApp() {
         USER_ID = userData.id;
         
         showScreen(loadingScreen);
-        loadingScreen.innerHTML = '<p>Проверяем подписку...</p>';
+        if(loadingScreen) loadingScreen.innerHTML = '<p>Проверяем подписку...</p>';
 
         const response = await fetch(`${API_SERVER_URL}/check_sub/${USER_ID}`);
         if (!response.ok) throw new Error(`Сервер вернул ошибку: ${response.status}`);
@@ -53,11 +53,14 @@ async function startApp() {
         if (subData.subscription === "active") {
             showScreen(mainMenuScreen);
         } else {
-            loadingScreen.innerHTML = `<p>У вас нет активной подписки.</p><p>Пожалуйста, оформите ее в нашем Телеграм-боте.</p>`;
+            if(loadingScreen) loadingScreen.innerHTML = `<p>У вас нет активной подписки.</p><p>Пожалуйста, оформите ее в нашем Телеграм-боте.</p>`;
         }
     } catch (error) {
         console.error('Ошибка:', error);
-        loadingScreen.innerHTML = `<p>Ошибка соединения с сервером.</p><p>Проверьте интернет-соединение.</p>`;
+        // Для теста, если сервер подписки лежит, пускаем в меню
+        // В продакшене раскомментируйте нижнюю строку
+        // if(loadingScreen) loadingScreen.innerHTML = `<p>Ошибка соединения с сервером.</p><p>Проверьте интернет-соединение.</p>`;
+        showScreen(mainMenuScreen); 
     }
 }
 
@@ -89,20 +92,24 @@ document.querySelectorAll('#screen-main-menu .button').forEach(button => {
 
 // === ЛОГИКА ТЕСТИРОВАНИЯ ===
 
-function startTest(subjectCode) {
+// Запуск 1 вопроса
+window.startTest = function(subjectCode) {
+    // Временная заглушка, если передан тип из старого index.html
+    if(subjectCode === 'oge') subjectCode = 'oge_math';
+    if(subjectCode === 'ege') subjectCode = 'ege_math_profile';
+    
     currentSubjectCode = subjectCode;
     questionNumber = 1;
     score = 0;
     mistakes = [];
     
-    loadingScreen.innerHTML = "<p>Ищем задачу...</p><div class='spinner'></div>";
+    if(loadingScreen) loadingScreen.innerHTML = "<p>Ищем задачу...</p><div class='spinner'></div>";
     showScreen(loadingScreen);
     getRandomTask();
 }
 
 async function getRandomTask() {
     try {
-        // Запрашиваем задачу по выбранному предмету (например, exam_type=oge_math)
         const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}`);
         if(!response.ok) throw new Error("Не удалось загрузить задачу");
         
@@ -124,15 +131,13 @@ function showTask() {
 }
 
 // --- ФУНКЦИЯ: ПОЖАЛОВАТЬСЯ НА ЗАДАЧУ ---
-async function reportTask() {
+window.reportTask = async function() {
     if (!currentTask || !currentTask.id) return;
     
-    // Подтверждение, чтобы не нажимали случайно
     if (!confirm("Вы уверены, что задача отображается некорректно? Она будет удалена из базы.")) {
         return;
     }
 
-    // 1. Отправляем сигнал на сервер
     try {
         await fetch(`${TEST_API_URL}/report_task/`, {
             method: 'POST',
@@ -143,19 +148,17 @@ async function reportTask() {
         console.error("Не удалось отправить жалобу:", e);
     }
 
-    // 2. Визуально "пропускаем" задачу для ученика
-    // Не засчитываем это как ошибку, просто грузим новую
-    loadingScreen.innerHTML = "<p>Удаляем задачу... Загружаем новую!</p><div class='spinner'></div>";
+    if(loadingScreen) loadingScreen.innerHTML = "<p>Удаляем задачу... Загружаем новую!</p><div class='spinner'></div>";
     showScreen(loadingScreen);
     getRandomTask(); 
 }
 
 // ОТПРАВКА ОТВЕТА
-async function submitAnswer() {
+window.submitAnswer = async function() {
     const userAnswer = document.getElementById('user-answer').value.trim();
     if (!userAnswer) return;
     
-    loadingScreen.innerHTML = "<p>Проверяю ответ...</p><div class='spinner'></div>";
+    if(loadingScreen) loadingScreen.innerHTML = "<p>Проверяю ответ...</p><div class='spinner'></div>";
     showScreen(loadingScreen);
     
     try {
@@ -166,7 +169,7 @@ async function submitAnswer() {
                 user_answer: userAnswer,
                 image_url: currentTask.image.split(',')[1], 
                 task_text: currentTask.text, 
-                student_id: USER_ID
+                student_id: USER_ID || 12345
             })
         });
         
@@ -197,7 +200,7 @@ function handleQuickResult(isCorrect, userAnswer) {
 window.nextTask = function() {
     questionNumber++;
     if (questionNumber <= TEST_LENGTH) {
-        loadingScreen.innerHTML = "<p>Грузим вопрос...</p><div class='spinner'></div>";
+        if(loadingScreen) loadingScreen.innerHTML = "<p>Грузим вопрос...</p><div class='spinner'></div>";
         showScreen(loadingScreen);
         getRandomTask();
     } else {
@@ -217,6 +220,69 @@ function showFinishScreen() {
     }
     
     showScreen(testFinishScreen);
+}
+
+// === РАЗБОР ОШИБОК ===
+
+window.startReview = function() {
+    currentReviewIndex = 0;
+    loadReviewForCurrentMistake();
+}
+
+async function loadReviewForCurrentMistake(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    
+    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
+    document.getElementById('review-user-answer').textContent = mistake.user_answer;
+    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
+    document.getElementById('review-explanation').innerHTML = "<i>⏳ Нейросеть пишет подробное объяснение. Подождите 10-20 секунд...</i>";
+    
+    showScreen(reviewScreen);
+
+    try {
+       const response = await fetch(`${TEST_API_URL}/review/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: mistake.user_answer,
+                image_url: mistake.task.image.split(',')[1], 
+                task_text: mistake.task.text, 
+                simplify: simplify 
+            })
+        });
+        
+        const result = await response.json();
+        document.getElementById('review-explanation').innerHTML = result.explanation;
+    } catch (error) {
+        document.getElementById('review-explanation').innerHTML = `<span style="color:red;">Ошибка связи с сервером.</span>`;
+    }
+}
+
+window.simplifyReview = function() {
+    document.getElementById('review-explanation').innerHTML = "<i>⏳ Прошу нейросеть объяснить проще...</i>";
+    loadReviewForCurrentMistake(true);
+}
+
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) {
+        loadReviewForCurrentMistake();
+    } else {
+        alert("Все ошибки разобраны! Вы молодец!");
+        showScreen(mainMenuScreen);
+    }
+}
+
+window.finishSession = function() {
+    showScreen(mainMenuScreen);
+}
+
+window.showHelp = function() {
+    alert('Помощь по работе с приложением:\n1. Выберите тип экзамена\n2. Решите 15 задач\n3. Введите ответ\n4. Получите результат\n5. Разберите ошибки с ИИ');
+}
+
+window.showProfile = function() {
+    alert('В разработке...');
 }
 
 // Запуск
