@@ -267,6 +267,143 @@ async def check_answer(message: types.Message, state: FSMContext):
         await state.set_state(None) 
         await state.update_data(current_question_num=1, score=0)
 
+# --- НОВЫЙ БЛОК: РАЗБОР ОШИБОК И ОБЪЯСНЕНИЯ ---
+
+from aiogram import F
+from aiogram.types import CallbackQuery
+
+# Новая функция специально для запроса объяснений (чтобы не трогать старую send_to_server)
+async def send_to_server_review(user_answer: str, image_url: str, task_text: str, student_id: int, simplify: bool = False):
+    """Отправка запроса на сервер для ПОДРОБНОГО РАЗБОРА (или упрощения)"""
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(
+                f"{SERVER_URL}:{SERVER_PORT}/review/", # <--- Новый эндпоинт на сервере!
+                json={
+                    "user_answer": user_answer, 
+                    "image_url": image_url, 
+                    "task_text": task_text, 
+                    "student_id": student_id,
+                    "simplify": simplify # Флаг "объясни проще"
+                },
+                timeout=aiohttp.ClientTimeout(total=120) # Ждем дольше, т.к. ответ длинный
+            ) as response:
+                return await response.json()
+        except Exception as e:
+            logger.error(f"Серверная ошибка (Review): {str(e)}")
+            return {"explanation": f"Серверная ошибка: {str(e)}"}
+
+@dp.callback_query(F.data == "start_review")
+async def start_review_process(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    mistakes = data.get("mistakes", [])
+    
+    if not mistakes:
+        await callback.message.answer("Ошибок для разбора нет! Поздравляю! 🎉")
+        await callback.answer()
+        return
+
+    await callback.message.answer("Начинаем разбор полетов! 🛠\nСейчас я подробно объясню каждую твою ошибку.")
+    
+    # Начинаем с первой ошибки (индекс 0)
+    await state.update_data(current_review_index=0)
+    await show_next_mistake_review(callback.message, state)
+    await callback.answer()
+
+async def show_next_mistake_review(message: types.Message, state: FSMContext):
+    """Функция, которая достает ошибку и просит ИИ ее разобрать"""
+    data = await state.get_data()
+    mistakes = data.get("mistakes", [])
+    idx = data.get("current_review_index", 0)
+    
+    if idx >= len(mistakes):
+        await message.answer("Все ошибки разобраны! Ты молодец, что учишься на них. 💪\nЖми '📝 Решить задачу', чтобы начать новый тест.")
+        # Очищаем ошибки после разбора
+        await state.update_data(mistakes=[], current_review_index=0)
+        return
+        
+    current_mistake = mistakes[idx]
+    task_info = current_mistake["task"]
+    user_answer = current_mistake["user_answer"]
+    
+    # Сообщаем ученику, какую задачу разбираем
+    msg_text = f"❌ <b>Ошибка {idx + 1} из {len(mistakes)}</b>\n"
+    msg_text += f"Твой неверный ответ: <code>{user_answer}</code>\n\n"
+    msg_text += "⏳ Генерирую подробное объяснение..."
+    
+    # Отправляем фото задачи снова (чтобы ученик вспомнил условие)
+    photo = FSInputFile(task_info["image_path"])
+    loading_msg = await message.answer_photo(photo=photo, caption=msg_text)
+    
+    # --- ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР ЗА ОБЪЯСНЕНИЕМ ---
+    result = await send_to_server_review(
+        user_answer=user_answer,
+        image_url=task_info["image_base64"],
+        task_text=task_info["task_text"],
+        student_id=message.from_user.id,
+        simplify=False
+    )
+    
+    await loading_msg.delete()
+    
+    # Формируем ответ с объяснением
+    explanation_text = f"📚 <b>Подробный разбор:</b>\n{result.get('explanation', 'Нет объяснения.')}"
+    
+    # Делаем кнопки: "Дальше" и "Объясни проще"
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Объясни проще 🍎", callback_data="simplify_review")
+    builder.button(text="Следующая ошибка ➡️", callback_data="next_review")
+    builder.adjust(1) # Кнопки одна под другой
+    
+    await message.answer(explanation_text, reply_markup=builder.as_markup())
+
+@dp.callback_query(F.data == "next_review")
+async def process_next_review(callback: CallbackQuery, state: FSMContext):
+    """Переход к следующей ошибке"""
+    data = await state.get_data()
+    idx = data.get("current_review_index", 0)
+    
+    # Увеличиваем индекс и показываем следующую ошибку
+    await state.update_data(current_review_index=idx + 1)
+    await show_next_mistake_review(callback.message, state)
+    await callback.answer()
+
+@dp.callback_query(F.data == "simplify_review")
+async def process_simplify_review(callback: CallbackQuery, state: FSMContext):
+    """Кнопка 'Объясни проще'"""
+    data = await state.get_data()
+    mistakes = data.get("mistakes", [])
+    idx = data.get("current_review_index", 0)
+    current_mistake = mistakes[idx]
+    task_info = current_mistake["task"]
+    user_answer = current_mistake["user_answer"]
+
+    # Меняем кнопку на сообщение ожидания
+    await callback.message.edit_reply_markup(reply_markup=None)
+    loading_msg = await callback.message.answer("⏳ Прошу нейросеть объяснить проще (на яблоках)...")
+    
+    # Снова обращаемся к серверу, но с флагом simplify=True
+    result = await send_to_server_review(
+        user_answer=user_answer,
+        image_url=task_info["image_base64"],
+        task_text=task_info["task_text"],
+        student_id=callback.from_user.id,
+        simplify=True
+    )
+    
+    await loading_msg.delete()
+    
+    explanation_text = f"🍎 <b>Объяснение для новичков:</b>\n{result.get('explanation', 'Нет объяснения.')}"
+    
+    # Возвращаем только кнопку "Следующая ошибка"
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Следующая ошибка ➡️", callback_data="next_review")
+    await callback.message.answer(explanation_text, reply_markup=builder.as_markup())
+    
+    await callback.answer()
+
+# -----------------------------------------------------------
+
 @dp.message(F.text == "📊 Моя статистика")
 async def user_stats(message: types.Message):
     user = await get_user(message.from_user.id)
@@ -320,6 +457,7 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("⏹️ Бот остановлен")
+
 
 
 
