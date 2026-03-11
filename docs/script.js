@@ -130,34 +130,6 @@ function showTask() {
     showScreen(taskScreen);
 }
 
-// --- ФУНКЦИЯ: ПОЖАЛОВАТЬСЯ НА ЗАДАЧУ ---
-document.getElementById('report-broken-btn').addEventListener('click', async () => {
-    if (!currentTask || !currentTask.id) return;
-    
-    if (!confirm("Вы уверены, что задача отображается некорректно? Она будет удалена из базы.")) {
-        return;
-    }
-
-    try {
-        await fetch(`${TEST_API_URL}/report_task/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ task_id: currentTask.id })
-        });
-    } catch (e) {
-        console.error("Не удалось отправить жалобу:", e);
-    }
-
-    if(loadingScreen) loadingScreen.innerHTML = "<p>Удаляем задачу... Загружаем новую!</p><div class='spinner'></div>";
-    showScreen(loadingScreen);
-    getRandomTask(); 
-});
-
-    if(loadingScreen) loadingScreen.innerHTML = "<p>Удаляем задачу... Загружаем новую!</p><div class='spinner'></div>";
-    showScreen(loadingScreen);
-    getRandomTask(); 
-}
-
 // ОТПРАВКА ОТВЕТА
 window.submitAnswer = async function() {
     const userAnswer = document.getElementById('user-answer').value.trim();
