@@ -118,6 +118,7 @@ async def get_random_task(exam_type: str = "oge"):
     }
 
 # --- ОСНОВНЫЕ МАРШРУТЫ (ПРОВЕРКА) ---
+
 @app.get("/")
 async def root():
     """Статус сервера"""
@@ -127,10 +128,43 @@ async def root():
         "port": os.getenv("SERVER_PORT", "8080"),
         "timestamp": datetime.utcnow().isoformat()
     })
+
+# ДОБАВЛЕННЫЕ КЛАССЫ (если вы их еще не добавили в начало файла, пусть будут здесь)
+class ReportRequest(BaseModel):
+    task_id: str
+
+class ReviewRequest(BaseModel):
+    user_answer: str
+    image_url: str
+    task_text: Optional[str] = None
+    student_id: Optional[int] = None
+    simplify: bool = False
+
+# --- МАРШРУТ 1: УДАЛЕНИЕ ПЛОХОЙ ЗАДАЧИ ---
+@app.post("/report_task/")
+async def report_broken_task(request: ReportRequest):
+    global ALL_TASKS
+    task_id_to_remove = request.task_id
     
+    original_length = len(ALL_TASKS)
+    ALL_TASKS = [task for task in ALL_TASKS if str(task.get("id")) != str(task_id_to_remove)]
+    
+    if len(ALL_TASKS) < original_length:
+        try:
+            with open(DB_FILE, 'w', encoding='utf-8') as f:
+                json.dump(ALL_TASKS, f, ensure_ascii=False, indent=4)
+            logger.info(f"🗑️ Задача {task_id_to_remove} НАВСЕГДА удалена из базы (осталось {len(ALL_TASKS)}).")
+            return {"success": True, "message": "Task removed"}
+        except Exception as e:
+            logger.error(f"Ошибка при перезаписи JSON файла: {e}")
+            return {"success": False, "error": "Could not write to file"}
+            
+    return {"success": False, "message": "Task not found"}
+
+# --- МАРШРУТ 2: БЫСТРАЯ ПРОВЕРКА (ДЛЯ ТЕСТА) ---
 @app.post("/check/")
 async def check_answer_fast(request: CheckRequest):
-    """БЫСТРАЯ ПРОВЕРКА ОТВЕТА (Только Да/Нет)"""
+    """Только Да/Нет. Экономим время и токены во время теста."""
     if not os.getenv("REPLICATE_API_TOKEN"):
         raise HTTPException(status_code=500, detail="Replicate API token not configured")
         
@@ -150,39 +184,39 @@ async def check_answer_fast(request: CheckRequest):
         input_data = {
             "image": final_image_url,
             "prompt": prompt_text,
-            "max_tokens": 50, # МИНИМУМ токенов для скорости
+            "max_tokens": 50, # МИНИМУМ токенов
             "temperature": 0.1
         }
         
         output = replicate.run(model_id, input=input_data, wait=True, timeout=60)
         raw_response = "".join(output).strip()
         
-        # Пытаемся вытащить JSON
         json_match = re.search(r'\{.*?\}', raw_response, re.DOTALL)
         if json_match:
             ai_verdict = json.loads(json_match.group(0))
         else:
-            # Резервный вариант, если ИИ не дал JSON
             ai_verdict = {"is_correct": "true" in raw_response.lower()}
+            
+        if request.student_id:
+            await save_task_result(request.student_id, request.user_answer, ai_verdict)
             
         return ai_verdict
         
     except Exception as e:
         logger.error(f"🚨 Fast Check Error: {e}")
-        # Если ИИ упал, засчитываем как ошибку, чтобы потом разобрать
         return {"is_correct": False, "error": str(e)}
 
+# --- МАРШРУТ 3: ПОДРОБНЫЙ РАЗБОР ОШИБОК ---
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
-    """ПОДРОБНЫЙ РАЗБОР ОШИБКИ (Или объяснение 'для чайников')"""
+    """Длинный текст. Вызывается только после окончания теста."""
     if not os.getenv("REPLICATE_API_TOKEN"):
         raise HTTPException(status_code=500, detail="Replicate API token not configured")
         
-    # Выбираем промпт в зависимости от флага simplify
     if request.simplify:
         prompt_text = f"""На картинке задание ОГЭ/ЕГЭ. Ученик не понял стандартное решение. 
         Его неправильный ответ: "{request.user_answer}".
-        Объясни, как решать эту задачу максимально простым языком, "на пальцах", для новичков. Приведи понятные примеры или аналогии.
+        Объясни, как решать эту задачу максимально простым языком, "на пальцах", для новичков. Приведи понятные примеры.
         Ответь просто текстом на русском языке (без JSON). Напиши правильный ответ в конце."""
     else:
         prompt_text = f"""Ты профессиональный репетитор. На картинке условие задачи. 
@@ -201,14 +235,13 @@ async def review_answer_detailed(request: ReviewRequest):
         input_data = {
             "image": final_image_url,
             "prompt": prompt_text,
-            "max_tokens": 1000, # Даем много токенов для развернутого ответа
-            "temperature": 0.4 # Чуть больше креативности для объяснений
+            "max_tokens": 1000, # Много токенов для объяснения
+            "temperature": 0.4
         }
         
         output = replicate.run(model_id, input=input_data, wait=True, timeout=300)
         explanation_text = "".join(output).strip()
         
-        # Поскольку мы больше не требуем JSON, возвращаем просто текст
         return {"explanation": explanation_text}
         
     except Exception as e:
@@ -224,6 +257,7 @@ async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
+
 
 
 
