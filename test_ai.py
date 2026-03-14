@@ -18,10 +18,14 @@ def test_smart_crop():
     Координаты от 0 до 1000.
     """
 
-    model = "google/gemini-1.5-flash"
+   model = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
+    
+    # И заменим 'image' на 'image', как требует эта модель
     output = replicate.run(model, input={
         "image": f"data:image/jpeg;base64,{img_data}",
-        "prompt": prompt
+        "prompt": prompt,
+        "top_p": 1,
+        "temperature": 0.2
     })
     
     print("🤖 Ответ ИИ:", "".join(output))
