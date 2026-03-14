@@ -3,68 +3,62 @@ import json
 import base64
 import replicate
 from PIL import Image
-from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+os.environ["REPLICATE_API_TOKEN"] = os.getenv("REPLICATE_API_TOKEN")
 
-# Настройки страниц с ответами (укажи свои)
-ANSWER_PAGES_RANGE = range(229, 239) 
+def crop_image(image_path, box, output_name):
+    """Вырезает область из картинки по координатам 0-1000"""
+    with Image.open(image_path) as img:
+        w, h = img.size
+        ymin, xmin, ymax, xmax = box
+        left = xmin * w / 1000
+        top = ymin * h / 1000
+        right = xmax * w / 1000
+        bottom = ymax * h / 1000
+        
+        # Вырезаем с небольшим запасом
+        cropped = img.crop((max(0, left-5), max(0, top-5), min(w, right+5), min(h, bottom+5)))
+        cropped.save(output_name, quality=95)
+        return output_name
 
-def get_task_coords_and_answers(page_image_path):
-    """Просим ИИ найти задачи и ответы на странице"""
-    with open(page_image_path, "rb") as f:
-        img_data = base64.b64encode(f.read()).decode("utf-8")
+def process_smart_task(topic, p1, p2=None):
+    """ИИ анализирует страницу и режет задачи"""
+    base_path = f"questions/images_oge_math/{topic}"
+    img1_path = f"{base_path}/page_{p1}.jpg"
     
-    prompt = """
-    Проанализируй страницу учебника математики. 
-    1. Найди каждую отдельную задачу.
-    2. Для каждой задачи верни:
-       - 'number': номер задачи (например, 139)
-       - 'box': координаты [ymin, xmin, ymax, xmax] в процентах (0-1000)
-       - 'text': краткое условие
-       - 'extra_ref': если задача ссылается на рисунок на другой странице (например, 'рис 10 на стр 21'), напиши 'page_21'
-    Верни строго JSON списком.
-    """
+    with open(img1_path, "rb") as f:
+        img1_data = base64.b64encode(f.read()).decode("utf-8")
     
-    # Используем Gemini 1.5 Flash через Replicate
-    model = "google/gemini-1.5-flash"
-    output = replicate.run(model, input={
-        "image": f"data:image/jpeg;base64,{img_data}",
-        "prompt": prompt
-    })
-    
-    return json.loads("".join(output))
+    images = [f"data:image/jpeg;base64,{img1_data}"]
+    prompt = f"Найди все задачи на странице {p1}. Для каждой задачи верни JSON список: " \
+             "{'number': 'номер', 'box_2d': [ymin, xmin, ymax, xmax]}"
 
-def crop_and_save_task(page_img_path, task_data, topic_folder):
-    """Вырезаем задачу и сохраняем"""
-    img = Image.open(page_img_path)
-    w, h = img.size
-    
-    # Конвертируем координаты из 0-1000 в пиксели
-    ymin, xmin, ymax, xmax = task_data['box']
-    left = xmin * w / 1000
-    top = ymin * h / 1000
-    right = xmax * w / 1000
-    bottom = ymax * h / 1000
-    
-    # Вырезаем
-    task_img = img.crop((left, top, right, bottom))
-    
-    output_path = Path(f"questions/images_oge_math/{topic_folder}/task_{task_data['number']}.jpg")
-    task_img.save(output_path, quality=95)
-    print(f"🎯 Вырезана задача №{task_data['number']}")
+    # Если передана вторая страница (с рисунками)
+    if p2:
+        img2_path = f"{base_path}/page_{p2}.jpg"
+        with open(img2_path, "rb") as f:
+            img2_data = base64.b64encode(f.read()).decode("utf-8")
+        images.append(f"data:image/jpeg;base64,{img2_data}")
+        prompt += f" Также проверь, нет ли на странице {p2} рисунков к этим задачам."
 
-def run_ai_factory(topic_folder, pages):
-    print(f"🚀 Запуск ИИ-фабрики для темы: {topic_folder}")
-    for p in pages:
-        page_img = f"questions/images_oge_math/{topic_folder}/page_{p}.jpg"
-        if os.path.exists(page_img):
-            tasks = get_task_coords_and_answers(page_img)
-            for task in tasks:
-                crop_and_save_task(page_img, task, topic_folder)
+    print(f"⏳ ИИ анализирует страницу {p1}...")
+    output = replicate.run("google/gemini-3-flash", input={"images": images, "prompt": prompt})
+    
+    try:
+        # Убираем лишние символы ```json если они есть
+        clean_output = "".join(output).replace("```json", "").replace("```", "").strip()
+        tasks = json.loads(clean_output)
+        
+        for task in tasks:
+            out_file = f"{base_path}/task_{task['number']}.jpg"
+            crop_image(img1_path, task['box_2d'], out_file)
+            print(f"✅ Готово: Задача №{task['number']}")
+            
+    except Exception as e:
+        print(f"❌ Ошибка парсинга ИИ: {e}\nОтвет ИИ: {output}")
 
 if __name__ == "__main__":
-    # Пример: запускаем для темы "Вычисления"
-    # run_ai_factory("topic_02_calc", range(31, 48))
-    print("AI Cropper готов. Вызови run_ai_factory для нужной темы.")
+    # ТЕСТ: Нарезаем задачи со страницы 20
+    process_smart_task("topic_01_models", 20, 21)
