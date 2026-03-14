@@ -199,45 +199,85 @@ function showFinishScreen() {
     showScreen(testFinishScreen);
 }
 
-// === РАЗБОР ОШИБОК ===
+// === РАЗБОР ОШИБОК (ОБНОВЛЕННАЯ ЛОГИКА) ===
 
 window.startReview = function() {
     currentReviewIndex = 0;
     loadReviewForCurrentMistake();
 }
 
-async function loadReviewForCurrentMistake(simplify = false) {
+// 1. Подгружаем данные ошибки (ПОКАЗЫВАЕМ ОТВЕТЫ, НЕ ЗАПУСКАЕМ ИИ)
+function loadReviewForCurrentMistake() {
     const mistake = mistakes[currentReviewIndex];
     
+    // Настраиваем прогресс
     document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
-    document.getElementById('review-user-answer').textContent = mistake.user_answer;
+    
+    // Вставляем твой и правильный ответы в карточку (которую мы добавили в HTML)
+    const answersBlock = document.getElementById('review-answers-block');
+    if (answersBlock) {
+        answersBlock.innerHTML = `
+            <p><b>❌ Твой ответ:</b> <span style="color:red;">${mistake.user_answer}</span></p>
+            <p><b>✅ Правильный ответ:</b> <span style="color:green;">${mistake.task.answer || "будет в разборе"}</span></p>
+        `;
+    }
+    
+    // Показываем картинку
     document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
-    document.getElementById('review-explanation').innerHTML = "<i>⏳ Нейросеть пишет подробное объяснение. Подождите 10-20 секунд...</i>";
+    
+    // СБРОС: Возвращаем кнопку запуска ИИ вместо текста ожидания
+    document.getElementById('review-explanation').innerHTML = `
+        <button class="submit-btn" id="ai-start-btn" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>
+    `;
+    
+    // Прячем кнопку "Объясни проще" до получения первого ответа от ИИ
+    const simpBtn = document.getElementById('simplify-btn');
+    if (simpBtn) simpBtn.style.display = 'none';
     
     showScreen(reviewScreen);
+}
+
+// 2. ЗАПУСК ИИ (только по нажатию кнопки)
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    const explanationBox = document.getElementById('review-explanation');
+    
+    // Показываем статус загрузки
+    explanationBox.innerHTML = simplify ? "<i>⏳ Прошу нейросеть объяснить на яблоках...</i>" : "<i>⏳ Нейросеть пишет подробное решение...</i>";
 
     try {
-       const response = await fetch(`${TEST_API_URL}/review/`, {
+        const response = await fetch(`${TEST_API_URL}/review/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 user_answer: mistake.user_answer,
                 image_url: mistake.task.image.split(',')[1], 
-                task_text: mistake.task.text, 
-                simplify: simplify 
+                task_text: mistake.task.text,
+                simplify: simplify
             })
         });
         
         const result = await response.json();
-        document.getElementById('review-explanation').innerHTML = result.explanation;
-    } catch (error) {
-        document.getElementById('review-explanation').innerHTML = `<span style="color:red;">Ошибка связи с сервером.</span>`;
-    }
-}
+        explanationBox.innerHTML = result.explanation;
+        
+        // Показываем кнопку "Объясни проще", если это был основной разбор
+        const simpBtn = document.getElementById('simplify-btn');
+        if (!simplify && simpBtn) {
+            simpBtn.style.display = 'block';
+        }
+        
+        // После разбора добавляем кнопку "Не понял, хочу подробнее" прямо под текст
+        if (!simplify) {
+             explanationBox.innerHTML += `
+                <div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 10px;">
+                    <button class="btn-secondary" onclick="runAIExplanation(true)">🤔 Все равно не понял, объясни еще проще</button>
+                </div>
+             `;
+        }
 
-window.simplifyReview = function() {
-    document.getElementById('review-explanation').innerHTML = "<i>⏳ Прошу нейросеть объяснить проще...</i>";
-    loadReviewForCurrentMistake(true);
+    } catch (error) {
+        explanationBox.innerHTML = `<span style="color:red;">Ошибка сервера. Не удалось получить разбор.</span>`;
+    }
 }
 
 window.nextReview = function() {
@@ -255,7 +295,7 @@ window.finishSession = function() {
 }
 
 window.showHelp = function() {
-    alert('Помощь по работе с приложением:\n1. Выберите тип экзамена\n2. Решите 15 задач\n3. Введите ответ\n4. Получите результат\n5. Разберите ошибки с ИИ');
+    alert('Помощь:\n1. Решите 15 задач\n2. Проверьте правильные ответы\n3. Если не поняли - нажмите "Разбор с ИИ"');
 }
 
 window.showProfile = function() {
