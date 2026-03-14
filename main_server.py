@@ -170,23 +170,18 @@ class ReviewRequest(BaseModel):
 # --- МАРШРУТ 1: УДАЛЕНИЕ ПЛОХОЙ ЗАДАЧИ ---
 @app.post("/report_task/")
 async def report_broken_task(request: ReportRequest):
-    global ALL_TASKS
-    task_id_to_remove = request.task_id
+    task_id = request.task_id
     
-    original_length = len(ALL_TASKS)
-    ALL_TASKS = [task for task in ALL_TASKS if str(task.get("id")) != str(task_id_to_remove)]
-    
-    if len(ALL_TASKS) < original_length:
-        try:
-            with open(DB_FILE, 'w', encoding='utf-8') as f:
-                json.dump(ALL_TASKS, f, ensure_ascii=False, indent=4)
-            logger.info(f"🗑️ Задача {task_id_to_remove} НАВСЕГДА удалена из базы (осталось {len(ALL_TASKS)}).")
-            return {"success": True, "message": "Task removed"}
-        except Exception as e:
-            logger.error(f"Ошибка при перезаписи JSON файла: {e}")
-            return {"success": False, "error": "Could not write to file"}
-            
-    return {"success": False, "message": "Task not found"}
+    # Просто логируем жалобу в файл, не трогая основную базу
+    try:
+        with open("reports.txt", "a", encoding="utf-8") as f:
+            f.write(f"{datetime.now()}: Жалоба на задачу ID {task_id}\n")
+        
+        logger.info(f"🚩 Получена жалоба на задачу {task_id}. Записано в reports.txt")
+        return {"success": True, "message": "Спасибо! Мы проверим это задание."}
+    except Exception as e:
+        logger.error(f"Ошибка записи жалобы: {e}")
+        return {"success": False, "error": "Internal error"}
 
 # --- МАРШРУТ 2: БЫСТРАЯ ПРОВЕРКА (ДЛЯ ТЕСТА) ---
 @app.post("/check/")
@@ -253,7 +248,13 @@ async def review_answer_detailed(request: ReviewRequest):
         
     try:
         logger.info(f"🚀 Отправляем задачу на РАЗБОР (Simplify: {request.simplify})...")
-        model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
+        # Если задача сложная (например, ОГЭ/ЕГЭ профиль), используем мощную модель
+        # Если просят "объясни проще", используем модель попроще, чтобы сэкономить
+        if request.simplify:
+            model_id = "yorickvp/llava-13b:..." # Быстрая и дешевая для простых объяснений
+        else:
+            # Для вдумчивого разбора сложных задач
+            model_id = "google/gemini-3.1-pro" # "Умная" модель с глубоким анализом
         
         final_image_url = request.image_url
         if not final_image_url.startswith("data:image"):
