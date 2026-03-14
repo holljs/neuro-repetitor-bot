@@ -79,7 +79,12 @@
     }
 " style="background: none; border: none; color: #ff5252; cursor: pointer; font-size: 13px; text-decoration: underline; margin-bottom: 15px; display: block; width: 100%; text-align: right;">🚩 Задание обрезано/ С ошибкой</button>
 
-            <input type="text" id="user-answer" placeholder="Введите ответ...">
+          <div style="width: 100%;">
+              <input type="text" id="user-answer" placeholder="Введите ответ..." style="margin-bottom: 5px;">
+              <p style="font-size: 11px; color: #7a7d85; margin: 0 0 15px 5px; text-align: left;">
+            * Пишите целое число или десятичную дробь (например: 5 или 0,5)
+              </p>
+         </div>
             <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
         </div>
 
@@ -102,32 +107,26 @@
             <button class="menu-btn" style="margin-top: 15px;" onclick="finishSession()">В главное меню</button>
         </div>
 
-        <!-- Экран РАЗБОРА ОШИБОК -->
-        <div id="review-screen" class="screen">
+       <div id="review-screen" class="screen">
             <div class="progress-bar" id="review-progress">Разбор ошибки 1</div>
             
-            <div class="mistake-card">
-                <p><b>Твой неверный ответ:</b> <span id="review-user-answer" style="color:red;"></span></p>
+            <div class="mistake-card" id="review-answers-block" style="text-align: left; background: #fff4f4;">
+                <p><b>❌ Твой ответ:</b> <span id="review-user-answer" style="color:red;"></span></p>
+                <p id="correct-answer-row"><b>✅ Правильный ответ:</b> <span id="review-correct-answer" style="color:green;"></span></p>
             </div>
             
             <div id="review-image-container"></div>
             
-            <div class="explanation-box" id="review-explanation">
-                Загружаю объяснение от нейросети...
+            <div class="explanation-box" id="review-explanation" style="text-align: center;">
+                <button class="submit-btn" id="ai-start-btn" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>
             </div>
             
             <div class="btn-group">
-                <button class="btn-secondary" onclick="simplifyReview()">Объясни проще 🍎</button>
+                <button class="btn-secondary" id="simplify-btn" onclick="runAIExplanation(true)" style="display:none;">Объясни проще 🍎</button>
                 <button class="submit-btn" onclick="nextReview()">Дальше ➡️</button>
             </div>
         </div>
-
-    </div>
-
-    <script>
-        const bridge = window.vkBridge || window.bridge;
-        const SERVER_URL = "https://neuro-master.online/repetitor-api";
-
+        
         // --- ПЕРЕМЕННЫЕ СОСТОЯНИЯ ТЕСТА ---
         const TEST_LENGTH = 15;
         let currentTask = null;
