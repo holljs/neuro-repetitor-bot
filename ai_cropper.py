@@ -47,14 +47,24 @@ def process_smart_task(topic, p1, p2=None):
     output = replicate.run("google/gemini-3-flash", input={"images": images, "prompt": prompt})
     
     try:
-        # Убираем лишние символы ```json если они есть
-        clean_output = "".join(output).replace("```json", "").replace("```", "").strip()
+        # Улучшенная очистка ответа ИИ от лишнего текста
+        full_text = "".join(output)
+        if "```json" in full_text:
+            clean_output = full_text.split("```json")[1].split("```")[0].strip()
+        elif "```" in full_text:
+            clean_output = full_text.split("```")[1].split("```")[0].strip()
+        else:
+            # Ищем начало массива [ и конец ]
+            start = full_text.find("[")
+            end = full_text.rfind("]") + 1
+            clean_output = full_text[start:end]
+            
         tasks = json.loads(clean_output)
         
         for task in tasks:
             out_file = f"{base_path}/task_{task['number']}.jpg"
             crop_image(img1_path, task['box_2d'], out_file)
-            print(f"✅ Готово: Задача №{task['number']}")
+            print(f"✅ Успешно вырезана задача №{task['number']}")
             
     except Exception as e:
         print(f"❌ Ошибка парсинга ИИ: {e}\nОтвет ИИ: {output}")
