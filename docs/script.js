@@ -93,19 +93,44 @@ document.querySelectorAll('#screen-main-menu .button').forEach(button => {
 // === ЛОГИКА ТЕСТИРОВАНИЯ ===
 
 // Запуск 1 вопроса
-window.startTest = function(subjectCode) {
-    // Временная заглушка, если передан тип из старого index.html
+window.startTest = async function(subjectCode) {
+    // 1. Корректируем коды предметов
     if(subjectCode === 'oge') subjectCode = 'oge_math';
     if(subjectCode === 'ege') subjectCode = 'ege_math_profile';
     
-    currentSubjectCode = subjectCode;
-    questionNumber = 1;
-    score = 0;
-    mistakes = [];
-    
-    if(loadingScreen) loadingScreen.innerHTML = "<p>Ищем задачу...</p><div class='spinner'></div>";
+    // 2. Показываем загрузку и проверку оплаты
+    if(loadingScreen) loadingScreen.innerHTML = "<p>Проверяем баланс и готовим тест...</p><div class='spinner'></div>";
     showScreen(loadingScreen);
-    getRandomTask();
+
+    try {
+        // 3. Запрос на сервер для списания 3 кредитов
+        const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ task_id: USER_ID || 12345 }) // Отправляем ID пользователя
+        });
+        
+        const payResult = await payResponse.json();
+
+        if (payResult.success) {
+            // Если оплата прошла — инициализируем тест
+            currentSubjectCode = subjectCode;
+            questionNumber = 1;
+            score = 0;
+            mistakes = [];
+            
+            console.log(`✅ Оплачено. Новый баланс: ${payResult.new_balance}`);
+            getRandomTask(); // Идем за первой задачей
+        } else {
+            // Если кредитов нет — возвращаем в меню
+            alert("⛔ " + (payResult.error || "Недостаточно кредитов. Нужно 3 кр. для теста."));
+            showScreen(mainMenuScreen);
+        }
+    } catch (error) {
+        console.error('Ошибка оплаты:', error);
+        alert('Ошибка связи с сервером при списании кредитов.');
+        showScreen(mainMenuScreen);
+    }
 }
 
 async function getRandomTask() {
