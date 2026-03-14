@@ -41,7 +41,7 @@ body {
     margin-top: 30px;
 }
 
-.menu-btn {
+.menu-btn, .button {
     background-color: #4a76a8;
     color: white;
     border: none;
@@ -51,14 +51,16 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-align: center;
+    width: 100%;
 }
 
-.menu-btn:hover {
+.menu-btn:hover, .button:hover {
     background-color: #3a6590;
 }
 
-/* Экран выбора экзамена */
-#exam-type {
+/* Экран выбора экзамена и предметов */
+#exam-type, #screen-subjects {
     text-align: center;
 }
 
@@ -72,6 +74,7 @@ body {
     margin: 10px 0;
     cursor: pointer;
     transition: all 0.2s;
+    width: 100%;
 }
 
 .exam-btn:hover {
@@ -85,17 +88,8 @@ body {
     margin-right: 15px;
 }
 
-.exam-info h3 {
-    margin: 0 0 5px 0;
-    text-align: left;
-}
-
-.exam-info p {
-    margin: 0;
-    color: #7a7d85;
-    font-size: 14px;
-    text-align: left;
-}
+.exam-info h3 { margin: 0 0 5px 0; text-align: left; }
+.exam-info p { margin: 0; color: #7a7d85; font-size: 14px; text-align: left; }
 
 /* Экран задачи */
 #task-image-container {
@@ -113,17 +107,18 @@ body {
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 #user-answer {
     width: 100%;
+    box-sizing: border-box;
     padding: 15px;
     border: 1px solid #e1e3e6;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .submit-btn {
@@ -136,110 +131,64 @@ body {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s;
+    margin-top: 10px;
 }
 
-.submit-btn:hover {
-    background-color: #3a6590;
-}
-
-/* Экран результата */
-#result-icon {
-    font-size: 64px;
-    text-align: center;
-    margin: 20px 0;
-}
-
-#result-icon.result-correct {
-    color: #00c853;
-}
-
-#result-icon.result-incorrect {
-    color: #ff5252;
-}
-
-#result-title {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#result-explanation {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    white-space: pre-line;
-}
-
-.next-btn {
-    background-color: #4a76a8;
-    color: white;
+/* Ссылка на жалобу */
+.report-link {
+    background: none;
     border: none;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 500;
+    color: #ff5252;
     cursor: pointer;
-    transition: background-color 0.2s;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    text-align: right;
+    opacity: 0.8;
 }
 
-.next-btn:hover {
-    background-color: #3a6590;
+.hint {
+    font-size: 11px;
+    color: #7a7d85;
+    margin: 0 0 15px 5px;
+    text-align: left;
 }
 
-/* Экран статистики */
-.stat-card {
-    background-color: white;
-    border-radius: 12px;
+/* Экран результата и Финала */
+.final-card {
+    background: white;
     padding: 20px;
-    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#topic-stats {
+    text-align: left;
+    margin: 15px 0;
+    padding: 15px;
+    background: #ffffff;
+    border-left: 4px solid #ff4444;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Экран загрузки */
-.spinner {
-    border: 4px solid rgba(0,0,0,0.1);
-    border-radius: 50%;
-    border-top: 4px solid #4a76a8;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto;
-}
+#topic-stats b { display: block; margin-bottom: 8px; color: #d32f2f; }
+#topic-stats ul { margin: 0; padding-left: 20px; color: #555; }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* --- НОВЫЕ СТИЛИ ДЛЯ УМНОГО ТЕСТА И РАЗБОРА ОШИБОК --- */
-
-/* Прогресс-бар сверху задачи */
-.progress-bar { 
-    font-size: 14px; 
-    font-weight: bold; 
-    color: #4a76a8; 
-    margin-bottom: 15px; 
-    text-align: center;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-/* Карточка с ошибкой ученика */
+/* Разбор ошибок */
 .mistake-card { 
-    background: #ffebee; 
+    background: #fff4f4; 
     border: 1px solid #ffcdd2; 
     padding: 15px; 
     border-radius: 8px; 
     margin-bottom: 15px; 
-    font-size: 15px;
+    text-align: left;
 }
 
-/* Блок с длинным объяснением от ИИ */
 .explanation-box { 
     background: #f0f4f8; 
     padding: 15px; 
@@ -248,68 +197,47 @@ body {
     text-align: left; 
     font-size: 14px; 
     line-height: 1.6; 
-    white-space: pre-wrap; /* Чтобы переносы строк от ИИ работали */
+    white-space: pre-wrap;
     border: 1px solid #dce1e6;
 }
 
-/* Группа кнопок (в ряд) для разбора ошибок */
-.btn-group { 
-    display: flex; 
-    gap: 10px; 
-    margin-top: 20px; 
+.btn-group { display: flex; gap: 10px; margin-top: 20px; }
+
+/* Специальные кнопки */
+.button.secondary, .btn-secondary {
+    background-color: #ebedf0 !important;
+    color: #4a76a8 !important;
 }
 
-/* Вторичная кнопка (серая) для "Объясни проще" */
-.btn-secondary { 
-    background-color: #e0e0e0; 
-    color: #333; 
-    flex: 1; 
-    padding: 15px; 
-    border: none; 
-    border-radius: 10px; 
-    font-weight: 500;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.back-btn {
+    background: none !important;
+    color: #828282 !important;
+    font-size: 14px !important;
+    text-decoration: underline;
+    border: none;
+    margin-top: 20px;
 }
 
-.btn-secondary:hover {
-    background-color: #d0d0d0;
+/* Спиннер загрузки */
+.spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top: 4px solid #4a76a8;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
 }
 
-/* Контейнер для картинки при разборе (чуть меньше, чем основная) */
-#review-image-container {
-    text-align: center;
-    margin: 15px 0;
-}
-#review-image-container img {
-    max-width: 90%;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Адаптив */
 @media (max-width: 500px) {
-    #app {
-        padding: 10px;
-    }
-    
-    .menu-btn {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-    
-    .exam-btn {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .exam-icon {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    
-    .exam-info {
-        width: 100%;
-    }
+    #app { padding: 10px; }
+    .exam-btn { flex-direction: column; text-align: center; }
+    .exam-icon { margin-right: 0; margin-bottom: 10px; }
+    .exam-info { width: 100%; }
 }
