@@ -1,6 +1,19 @@
 import os
 import replicate
 import base64
+from dotenv import load_dotenv
+
+# Загружаем переменные из файла .env
+load_dotenv()
+
+# Проверяем, подгрузился ли токен
+api_token = os.getenv("REPLICATE_API_TOKEN")
+
+if not api_token:
+    print("❌ Ошибка: Токен не найден в .env! Проверь файл .env.")
+else:
+    # Явно передаем токен в переменную окружения, которую ждет библиотека replicate
+    os.environ["REPLICATE_API_TOKEN"] = api_token
 
 PAGE_PATH = "questions/images_oge_math/topic_01_models/page_20.jpg"
 
@@ -12,10 +25,9 @@ def test_smart_crop():
     with open(PAGE_PATH, "rb") as f:
         img_data = base64.b64encode(f.read()).decode("utf-8")
 
-    # Используем модель из твоего списка
     model = "google/gemini-3-flash"
     
-    print("⏳ Запрос к Gemini 3 Flash...")
+    print(f"⏳ Запрос к {model} (токен подгружен)...")
     try:
         output = replicate.run(
             model,
@@ -24,7 +36,7 @@ def test_smart_crop():
                 "prompt": "Найди задачу номер 1. Верни JSON: {'box_2d': [ymin, xmin, ymax, xmax]}"
             }
         )
-        print("🤖 Ответ:", "".join(output))
+        print("🤖 Ответ ИИ:", "".join(output))
     except Exception as e:
         print(f"❌ Ошибка: {e}")
 
