@@ -295,5 +295,20 @@ window.finishSession = function() { showScreen(mainMenuScreen); }
 window.showHelp = function() { alert('Помощь в разработке...'); }
 window.showProfile = function() { alert('Профиль в разработке...'); }
 
+// Функция для увеличения картинки при клике
+document.addEventListener('click', function (e) {
+    // Проверяем, что кликнули именно по картинке задачи
+    if (e.target.tagName === 'IMG' && (e.target.classList.contains('question-image') || e.target.classList.contains('task-img'))) {
+        const fullScreen = document.createElement('div');
+        // Стили для затемнения экрана и центрирования картинки
+        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center; cursor:zoom-out;";
+        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%; object-fit:contain; border: 2px solid white;">`;
+        
+        // Закрываем при повторном клике
+        fullScreen.onclick = () => fullScreen.remove();
+        document.body.appendChild(fullScreen);
+    }
+});
+
 // САМАЯ ВАЖНАЯ СТРОЧКА В КОНЦЕ
 startApp();
