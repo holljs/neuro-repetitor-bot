@@ -30,54 +30,9 @@ def slice_pdf(pdf_path, start_page, end_page, topic_folder):
     doc.close()
 
 if __name__ == "__main__":
-slice_pdf("math_oge.pdf", 31, 47, "topic_02_calc")
-
-# § 3. Единицы измерения величин (стр. 50-60)
-slice_pdf("math_oge.pdf", 50, 60, "topic_03_units")
-
-# § 4. Уравнения и неравенства (стр. 61-71)
-slice_pdf("math_oge.pdf", 61, 71, "topic_04_eq_ineq")
-
-# § 5. Координатная прямая (стр. 72-89)
-slice_pdf("math_oge.pdf", 72, 89, "topic_05_line")
-
-# § 6. Графики и диаграммы (стр. 90-106)
-slice_pdf("math_oge.pdf", 90, 106, "topic_06_charts")
-
-# § 7. Графики функций (стр. 107-126)
-slice_pdf("math_oge.pdf", 107, 126, "topic_07_functions")
-
-# § 8. Алгебраические выражения (стр. 127-133)
-slice_pdf("math_oge.pdf", 127, 133, "topic_08_expr")
-
-# § 9. Выражение величины из формулы (стр. 134-142)
-slice_pdf("math_oge.pdf", 134, 142, "topic_09_formulas")
-
-# § 10. Последовательности (Прогрессии) (стр. 143-148)
-slice_pdf("math_oge.pdf", 143, 148, "topic_10_seq")
-
-# § 11. Текстовые задачи (стр. 149-157)
-slice_pdf("math_oge.pdf", 149, 157, "topic_11_text")
-
-# § 12. Текстовые задачи (сложные) (стр. 158-167)
-slice_pdf("math_oge.pdf", 158, 167, "topic_12_hard_text")
-
-# § 13. Теория вероятностей (стр. 168-173)
-slice_pdf("math_oge.pdf", 168, 173, "topic_13_prob")
-
-
-# --- ЧАСТЬ 2. ГЕОМЕТРИЯ ---
-
-# § 1. Подсчёт углов (Треугольники, окружности) (стр. 174-189)
-slice_pdf("math_oge.pdf", 174, 189, "topic_geom_01_angles")
-
-# § 2. Площади фигур (стр. 190-205)
-slice_pdf("math_oge.pdf", 190, 205, "topic_geom_02_areas")
-
-# § 3. Реальная планиметрия (стр. 206-214)
-slice_pdf("math_oge.pdf", 206, 214, "topic_geom_03_pract")
-
-# § 4. Выбор верных утверждений (стр. 215-228)
-slice_pdf("math_oge.pdf", 215, 228, "topic_geom_04_logic")
+    # РЕЖЕМ ТЕМУ 2 (Вычисления)
+    slice_pdf("math_oge.pdf", 31, 47, "topic_02_calc")
     
-    print("🚀 Нарезчик готов. Раскомментируй нужную строку в коде для запуска!")
+    # Когда закончишь с одной, просто закомментируй строку выше 
+    # и раскомментируй следующую тему:
+    # slice_pdf("math_oge.pdf", 61, 71, "topic_04_eq_ineq")
