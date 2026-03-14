@@ -228,66 +228,55 @@ async def check_answer_fast(request: CheckRequest):
         logger.error(f"🚨 Fast Check Error: {e}")
         return {"is_correct": False, "error": str(e)}
 
-# --- МАРШРУТ 3: ПОДРОБНЫЙ РАЗБОР ОШИБОК ---
+# 1. МАРШРУТ ДЛЯ НАЧАЛА ТЕСТА (Списываем 3 кредита)
+@app.post("/start_test_payment/")
+async def pay_for_test(request: ReportRequest): # Используем тот же класс с task_id или student_id
+    student_id = request.task_id # Допустим, передаем ID ученика
+    balance = db.get_balance(student_id)
+    
+    if balance < 3:
+        return {"success": False, "error": "Недостаточно кредитов"}
+    
+    db.update_balance(student_id, -3)
+    return {"success": True, "new_balance": balance - 3}
+
+# 2. МАРШРУТ РАЗБОРА (Теперь БЕСПЛАТНЫЙ на Flash модели)
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
-    """Длинный текст. Вызывается только после окончания теста."""
-    if not os.getenv("REPLICATE_API_TOKEN"):
-        raise HTTPException(status_code=500, detail="Replicate API token not configured")
-        
+    # Используем супер-дешевый Flash из твоих документов
+    model_id = "google/gemini-3-flash" # [cite: 100]
+    
+    # Промпт оставляем, но списание кредитов УБИРАЕМ
+    prompt_text = f"Ты ИИ-репетитор. Ученик ошибся в задаче. Объясни решение..."
+
+    # 2. ВЫБОР МОДЕЛИ: Переходим на Flash (в 4-10 раз дешевле Pro!)
+    # Согласно твоим докам: $0.50 за 1 млн входных токенов
+    model_id = "google/gemini-3-flash" # 
+
     if request.simplify:
-        prompt_text = f"""На картинке задание ОГЭ/ЕГЭ. Ученик не понял стандартное решение. 
-        Его неправильный ответ: "{request.user_answer}".
-        Объясни, как решать эту задачу максимально простым языком, "на пальцах", для новичков. Приведи понятные примеры.
-        Ответь просто текстом на русском языке (без JSON). Напиши правильный ответ в конце."""
+        prompt_text = f"На картинке задание. Ученик ответил: '{request.user_answer}'. Объясни решение максимально просто, 'на яблоках'."
     else:
-        prompt_text = f"""Ты профессиональный репетитор. На картинке условие задачи. 
-        Ученик дал НЕВЕРНЫЙ ответ: "{request.user_answer}".
-        Напиши подробное пошаговое решение этой задачи на русском языке, опираясь на данные с картинки. Объясни, в чем именно ошибка ученика, и напиши правильный ответ.
-        Ответь просто текстом (без JSON)."""
-        
+        prompt_text = f"Ты репетитор. На картинке задача. Ученик ошибся, ответив '{request.user_answer}'. Напиши пошаговое верное решение."
+
     try:
-        logger.info(f"🚀 Отправляем задачу на РАЗБОР (Simplify: {request.simplify})...")
-        # Если задача сложная (например, ОГЭ/ЕГЭ профиль), используем мощную модель
-        # Если просят "объясни проще", используем модель попроще, чтобы сэкономить
-        if request.simplify:
-            model_id = "yorickvp/llava-13b:..." # Быстрая и дешевая для простых объяснений
-        else:
-            # Для вдумчивого разбора сложных задач
-            model_id = "google/gemini-3.1-pro" # "Умная" модель с глубоким анализом
-        
         final_image_url = request.image_url
         if not final_image_url.startswith("data:image"):
             final_image_url = f"data:image/jpeg;base64,{final_image_url}"
-            
-        input_data = {
-            "image": final_image_url,
-            "prompt": prompt_text,
-            "max_tokens": 1000, # Много токенов для объяснения
-            "temperature": 0.4
-        }
+
+        # Запускаем экономную модель Flash
+        output = replicate.run(
+            model_id,
+            input={
+                "images": [final_image_url],
+                "prompt": prompt_text,
+                "temperature": 0.7,
+                "max_output_tokens": 1000
+            }
+        )
         
-        output = replicate.run(model_id, input=input_data, wait=True, timeout=300)
         explanation_text = "".join(output).strip()
-        
         return {"explanation": explanation_text}
         
     except Exception as e:
-        logger.error(f"🚨 Review Error: {e}")
-        return {"explanation": "Извини, сервер перегружен, не могу написать объяснение прямо сейчас."}
-
-async def save_task_result(student_id: int, user_answer: str, ai_verdict: dict):
-    try:
-        logger.info(f"💾 Сохранение результата для ученика {student_id}")
-    except Exception as e:
-        logger.error(f"💥 Ошибка сохранения: {e}")
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main_server:app", host="0.0.0.0", port=8080, workers=2)
-
-
-
-
-
-
+        logger.error(f"🚨 Flash Review Error: {e}")
+        return {"explanation": "Извини, нейросеть сейчас занята, попробуй через минуту."}
