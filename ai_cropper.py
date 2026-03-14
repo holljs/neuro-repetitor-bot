@@ -60,5 +60,12 @@ def process_smart_task(topic, p1, p2=None):
         print(f"❌ Ошибка парсинга ИИ: {e}\nОтвет ИИ: {output}")
 
 if __name__ == "__main__":
-    # ТЕСТ: Нарезаем задачи со страницы 20
-    process_smart_task("topic_01_models", 20, 21)
+    # Указываем папку темы и страницы, которые нужно обработать
+    topic = "topic_01_models"
+    
+    # Давай для начала нарежем страницы с 20 по 22
+    for page_num in range(20, 23):
+        # Если это 20-я страница, передаем 21-ю как контекст для рисунков
+        context_page = 21 if page_num == 20 else None
+        
+        process_smart_task(topic, page_num, context_page)
