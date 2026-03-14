@@ -136,7 +136,7 @@ function showTask() {
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     
     // ИСПРАВЛЕНО: Обратные кавычки для корректного отображения Base64
-    document.getElementById('task-image-container').innerHTML = `<img src="${currentTask.image}" alt="Задача" style="max-width: 100%; border-radius: 8px;">`;
+    document.getElementById('task-image-container').innerHTML = `<img src="${currentTask.image}" class="question-image" alt="Задача" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
     
     document.getElementById('task-text').textContent = currentTask.text || "";
     document.getElementById('user-answer').value = '';
@@ -249,7 +249,7 @@ function loadReviewForCurrentMistake() {
         `;
     }
     
-    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
+    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" class="question-image" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
     document.getElementById('review-explanation').innerHTML = `
         <button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>
     `;
