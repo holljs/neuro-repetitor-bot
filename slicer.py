@@ -31,6 +31,6 @@ def slice_pdf(pdf_path, start_page, end_page, topic_folder):
 
 if __name__ == "__main__":
     # ПРИМЕР ЗАПУСКА: Режем § 2. Вычисления (стр. 31-47)
-    # slice_pdf("math_oge.pdf", 31, 47, "topic_02_calc")
+    slice_pdf("math_oge.pdf", 8, 30, "topic_01_models")
     
     print("🚀 Нарезчик готов. Раскомментируй нужную строку в коде для запуска!")
