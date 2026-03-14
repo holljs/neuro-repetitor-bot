@@ -1,0 +1,1245 @@
+nohup: ignoring input
+2026-03-08 19:32:45,310 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     Started parent process [512938]
+2026-03-08 19:32:47,089 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+2026-03-08 19:32:47,118 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+2026-03-08 19:32:47,220 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+INFO:     Started server process [512940]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2026-03-08 19:32:47,238 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+INFO:     Started server process [512941]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     79.124.40.174:55008 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+2026-03-08 19:47:09,394 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 19:47:13,867 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 19:47:13,994 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 19:47:13,997 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 554125
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     176.65.148.55:49768 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     193.142.146.230:40222 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-08 20:19:10,172 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 20:19:14,607 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 20:19:14,733 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 20:19:14,817 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 2352
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-08 20:29:57,768 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 20:30:04,714 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 20:30:04,886 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 20:30:04,888 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 17169
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-08 20:31:02,415 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 20:31:15,848 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 20:31:16,066 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 20:31:16,068 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 56233
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-08 20:55:58,501 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 20:56:11,044 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 20:56:11,165 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 20:56:11,249 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 122830
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     198.235.24.58:51414 - "GET / HTTP/1.0" 200 OK
+INFO:     134.122.121.5:59324 - "GET / HTTP/1.1" 200 OK
+INFO:     134.122.121.5:59332 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     198.235.24.233:64274 - "GET / HTTP/1.1" 200 OK
+INFO:     20.64.105.156:41126 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-08 22:28:57,552 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-08 22:29:03,068 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-08 22:29:03,189 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-08 22:29:03,191 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 437321
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     Received SIGHUP, restarting processes.
+INFO:     Waiting for child process [512940]
+/usr/lib/python3.10/multiprocessing/resource_tracker.py:104: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn('resource_tracker: process died unexpectedly, '
+INFO:     Waiting for child process [512941]
+2026-03-08 22:48:12,888 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+2026-03-08 22:48:12,898 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+2026-03-08 22:48:13,100 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+2026-03-08 22:48:13,108 - NeuroRepetitor - INFO - ✅ База задач загружена в API: 123 шт.
+INFO:     Started server process [519370]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [519371]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     217.181.129.29:53484 - "GET / HTTP/1.0" 200 OK
+INFO:     199.45.154.142:34336 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.142:46826 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.142:46886 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.142:58136 - "GET /security.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     93.123.109.30:38548 - "GET / HTTP/1.1" 200 OK
+INFO:     93.123.109.30:38548 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     45.156.87.91:38472 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     31.56.208.208:38094 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     79.101.93.196:42942 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     152.32.228.20:52364 - "GET / HTTP/1.1" 200 OK
+INFO:     152.32.228.20:52378 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52382 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52394 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52400 - "GET /config.json HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52410 - "GET /sse HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52418 - "GET /mcp HTTP/1.1" 404 Not Found
+INFO:     152.32.228.20:52434 - "GET /mcp-sse HTTP/1.1" 404 Not Found
+INFO:     81.29.142.100:49202 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.100:49202 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     45.205.1.8:56688 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     85.217.140.53:47974 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     120.86.239.193:5029 - "POST /GponForm/diag_Form?images/ HTTP/1.1" 404 Not Found
+INFO:     45.156.87.91:50288 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     117.50.245.253:63386 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     176.65.148.52:36480 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     87.121.84.57:33158 - "GET /cgi-bin/luci/%3Bstok%3D/locale HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.77.56:60556 - "GET / HTTP/1.1" 200 OK
+INFO:     34.158.79.105:4220 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     142.93.2.42:50514 - "CONNECT / HTTP/1.1" 405 Method Not Allowed
+INFO:     65.49.1.66:22070 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.70:54263 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     65.49.1.70:53127 - "GET /?format=json HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     65.49.1.66:27012 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     34.158.79.105:2662 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     74.0.42.221:65151 - "GET / HTTP/1.1" 200 OK
+INFO:     162.142.125.119:44924 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.119:49006 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.119:49058 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.119:36112 - "GET /wiki HTTP/1.1" 404 Not Found
+INFO:     45.205.1.8:35914 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     193.142.146.230:46774 - "POST /goform/set_LimitClient_cfg HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     117.50.245.253:31286 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     87.121.84.57:35066 - "GET /cgi-bin/luci/%3Bstok%3D/locale HTTP/1.1" 404 Not Found
+INFO:     165.245.191.110:41908 - "GET / HTTP/1.1" 200 OK
+INFO:     220.71.241.197:56636 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     165.232.40.42:56432 - "GET / HTTP/1.1" 200 OK
+INFO:     170.64.177.126:44844 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:50414 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.52:59906 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.218.118.203:38904 - "GET / HTTP/1.1" 200 OK
+INFO:     18.218.118.203:51652 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     87.121.84.172:35846 - "GET /ip HTTP/1.1" 404 Not Found
+INFO:     152.42.218.175:59064 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     165.232.40.42:41956 - "GET / HTTP/1.1" 200 OK
+INFO:     180.149.125.169:48489 - "GET /c/ HTTP/1.1" 404 Not Found
+INFO:     45.205.1.3:4542 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     85.11.183.23:38206 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     54.158.52.69:24492 - "GET / HTTP/1.1" 200 OK
+INFO:     193.142.146.230:58608 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     165.232.43.198:49420 - "GET / HTTP/1.1" 200 OK
+INFO:     79.124.40.174:34758 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     180.83.15.102:57453 - "GET / HTTP/1.0" 200 OK
+INFO:     167.71.140.233:54756 - "GET / HTTP/1.1" 200 OK
+INFO:     79.124.40.174:41858 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.77.56:57492 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:26670 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     165.245.191.110:51706 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:38408 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     170.64.177.126:32910 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:51530 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     89.42.231.182:41732 - "GET /../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     89.42.231.182:41738 - "GET /../../../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     89.42.231.182:41752 - "GET /static/link/../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     165.22.184.62:26000 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     45.153.34.27:27466 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     176.65.139.46:37726 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:27890 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     186.236.240.56:51974 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     186.236.240.56:59544 - "GET /manager/text HTTP/1.1" 404 Not Found
+INFO:     186.236.240.56:59552 - "GET /html HTTP/1.1" 404 Not Found
+INFO:     186.236.240.56:59556 - "GET /tomcat/html HTTP/1.1" 404 Not Found
+INFO:     170.64.177.126:58720 - "GET / HTTP/1.1" 200 OK
+INFO:     45.156.87.91:52430 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     167.71.140.233:36262 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:39616 - "GET / HTTP/1.1" 200 OK
+INFO:     205.210.31.75:62644 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:59230 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     165.232.40.42:46606 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.215:22530 - "GET /../../../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     204.76.203.215:22544 - "GET /../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     204.76.203.215:22546 - "GET /static/link/../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     176.65.139.46:51572 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:25468 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     172.245.21.30:37914 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.43.198:52474 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.73:39794 - "GET /../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     204.76.203.73:39802 - "GET /../../../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     204.76.203.73:39816 - "GET /static/link/../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     65.49.1.38:11340 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.40:62933 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     65.49.1.48:23505 - "GET /?format=json HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     65.49.1.38:58026 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+INFO:     45.156.87.91:48390 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     170.64.177.126:43468 - "GET / HTTP/1.1" 200 OK
+INFO:     109.105.210.98:39504 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.191.110:53596 - "GET / HTTP/1.1" 200 OK
+INFO:     34.158.79.105:40948 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     176.65.148.52:41710 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     134.209.152.49:52300 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:39492 - "GET / HTTP/1.1" 200 OK
+INFO:     87.236.176.23:58185 - "GET / HTTP/1.1" 200 OK
+INFO:     109.105.209.23:43260 - "GET / HTTP/1.1" 200 OK
+INFO:     109.105.209.22:49212 - "POST /mcp HTTP/1.1" 404 Not Found
+INFO:     109.105.209.22:49212 - "GET /sse HTTP/1.1" 404 Not Found
+INFO:     109.105.209.24:60568 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     152.42.218.175:35208 - "GET / HTTP/1.1" 200 OK
+INFO:     64.227.2.92:59076 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:43878 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     68.183.185.175:57610 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:40004 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.90.204:54132 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:50786 - "GET / HTTP/1.1" 200 OK
+INFO:     167.71.223.42:47656 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:30338 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     104.236.121.106:44894 - "GET / HTTP/1.1" 200 OK
+INFO:     35.216.201.9:34096 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     35.216.144.195:34834 - "GET / HTTP/1.1" 200 OK
+INFO:     35.216.144.195:34844 - "GET / HTTP/1.1" 200 OK
+INFO:     35.216.144.195:34852 - "GET /config.json HTTP/1.1" 404 Not Found
+INFO:     35.216.144.195:34858 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     35.216.144.195:34862 - "GET /telescope/requests HTTP/1.1" 404 Not Found
+INFO:     35.216.144.195:34872 - "GET /info.php HTTP/1.1" 404 Not Found
+INFO:     35.216.144.195:34874 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     35.216.144.195:34878 - "GET /server-status HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.214:8932 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.214:8950 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.214:17132 - "GET /security.txt HTTP/1.1" 404 Not Found
+INFO:     147.185.132.10:53732 - "GET / HTTP/1.0" 200 OK
+INFO:     152.42.204.253:34610 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.218.175:51608 - "GET / HTTP/1.1" 200 OK
+INFO:     194.163.159.81:56461 - "GET / HTTP/1.0" 200 OK
+INFO:     117.209.83.121:48392 - "GET /boaform/admin/formLogin?username=ec8&psd=ec8 HTTP/1.0" 404 Not Found
+INFO:     172.203.245.82:35720 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     165.245.187.143:41308 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.77.56:37488 - "GET / HTTP/1.1" 200 OK
+INFO:     18.218.118.203:47188 - "GET / HTTP/1.1" 200 OK
+INFO:     18.218.118.203:57928 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.71.223.42:44788 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:55824 - "GET / HTTP/1.1" 200 OK
+INFO:     167.71.140.233:33496 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.184.119:39788 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     167.71.140.233:42184 - "GET / HTTP/1.1" 200 OK
+INFO:     193.32.162.28:43084 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     193.32.162.28:43168 - "POST /_next HTTP/1.1" 404 Not Found
+INFO:     193.32.162.28:43174 - "POST /api HTTP/1.1" 404 Not Found
+INFO:     193.32.162.28:43176 - "POST /_next/server HTTP/1.1" 404 Not Found
+INFO:     193.32.162.28:43188 - "POST /app HTTP/1.1" 404 Not Found
+INFO:     193.32.162.28:43192 - "POST /api/route HTTP/1.1" 404 Not Found
+INFO:     68.183.185.175:45684 - "GET / HTTP/1.1" 200 OK
+INFO:     104.236.121.106:53458 - "GET / HTTP/1.1" 200 OK
+INFO:     136.116.202.5:30014 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30014 - "GET /.e4994 HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30014 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30026 - "GET /.env.local HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30042 - "GET /.env.production HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30052 - "GET /.env.development HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30060 - "GET /.env.dev HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30066 - "GET /.env.prod HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30072 - "GET /.env.test HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30076 - "GET /.env.staging HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30092 - "GET /.env.backup HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30100 - "GET /.env.save HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30108 - "GET /.env.old HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30124 - "GET /.env.bak HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30132 - "GET /.env.tmp HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30134 - "GET /.env.swp HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:30148 - "GET /.env~ HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53944 - "GET /.env.example HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53952 - "GET /.env.sample HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53958 - "GET /.env.dist HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53968 - "GET /.env.template HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53974 - "GET /.env.production.local HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53986 - "GET /.env.development.local HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:53998 - "GET /.env.test.local HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54008 - "GET /.envrc HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54018 - "GET /.flaskenv HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54032 - "GET /env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54046 - "GET /env.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54062 - "GET /env.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54078 - "GET /app/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54090 - "GET /src/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54094 - "GET /config/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54100 - "GET /backend/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54110 - "GET /frontend/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54126 - "GET /api/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54132 - "GET /server/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54134 - "GET /client/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54138 - "GET /web/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54148 - "GET /public/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54164 - "GET /private/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54180 - "GET /var/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54194 - "GET /docker-compose.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54204 - "GET /docker-compose.yaml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54208 - "GET /docker-compose.override.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54216 - "GET /docker-compose.dev.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54226 - "GET /docker-compose.prod.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54232 - "GET /config.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54246 - "GET /config.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54252 - "GET /settings.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54254 - "GET /settings.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54266 - "GET /secrets.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54270 - "GET /credentials.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54272 - "GET /app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54280 - "GET /main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54284 - "GET /index.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54296 - "GET /server.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54312 - "GET /bundle.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54322 - "GET /app.bundle.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54328 - "GET /main.bundle.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54332 - "GET /vendor.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54348 - "GET /chunk.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:54360 - "GET /static/js/main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63294 - "GET /static/js/app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63300 - "GET /static/js/bundle.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63324 - "GET /dist/main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63338 - "GET /dist/app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63360 - "GET /dist/bundle.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63368 - "GET /build/static/js/main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63390 - "GET /assets/index.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63408 - "GET /assets/app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63430 - "GET /_next/static/chunks/main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63452 - "GET /_next/static/chunks/app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63460 - "GET /js/app.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63480 - "GET /js/main.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63498 - "GET /settings.py HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63524 - "GET /config.py HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63548 - "GET /secrets.py HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63566 - "GET /config/secrets.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63582 - "GET /config/master.key HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63596 - "GET /wp-config.php.bak HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63618 - "GET /wp-config.php.old HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63640 - "GET /wp-config.php.save HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63658 - "GET /wp-config.php.txt HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63666 - "GET /wp-config.php~ HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63690 - "GET /config/app.php HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63708 - "GET /application.properties HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63726 - "GET /application.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63752 - "GET /application.yaml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63758 - "GET /application-dev.properties HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63768 - "GET /application-prod.properties HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63782 - "GET /appsettings.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63802 - "GET /appsettings.Development.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63820 - "GET /appsettings.Production.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63838 - "GET /config.yaml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63850 - "GET /config.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63874 - "GET /config.toml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63888 - "GET /serverless.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63902 - "GET /serverless.yaml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63932 - "GET /config/production.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63940 - "GET /config/development.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63956 - "GET /config/default.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63968 - "GET /config/local.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63978 - "GET /conf/settings.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:63988 - "GET /data/config.json HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:64012 - "GET /actuator/env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24134 - "GET /actuator/configprops HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24146 - "GET /api/config HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24162 - "GET /api/settings HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24176 - "GET /api/env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24182 - "GET /backup/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24190 - "GET /backups/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24202 - "GET /old/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24218 - "GET /temp/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24234 - "GET /tmp/.env HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24236 - "GET /.streamlit/secrets.toml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24246 - "GET /root/.streamlit/secrets.toml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24260 - "GET /root/.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24270 - "GET /home/ubuntu/.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24274 - "GET /home/ec2-user/.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24288 - "GET /home/node/.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24298 - "GET /terraform.tfvars HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24310 - "GET /terraform.tfstate HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24324 - "GET /ecosystem.config.js HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24334 - "GET /secrets.yaml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24340 - "GET /secrets.yml HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24346 - "GET /.secrets HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24362 - "GET /.env.vault HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24366 - "GET /.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     136.116.202.5:24368 - "GET /.aws/config HTTP/1.1" 404 Not Found
+INFO:     118.193.36.149:14556 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     101.36.127.24:52924 - "GET / HTTP/1.1" 200 OK
+INFO:     101.36.127.24:53038 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     101.36.127.24:53196 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     101.36.127.24:53194 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     167.71.140.233:50212 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:60018 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     165.232.43.198:43558 - "GET / HTTP/1.1" 200 OK
+INFO:     220.71.241.197:44224 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     31.56.208.208:36410 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     139.59.6.234:46838 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.191.110:60904 - "GET / HTTP/1.1" 200 OK
+INFO:     159.65.156.72:48104 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.90.204:34576 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.187.143:51652 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.71.226.196:57504 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:37542 - "GET / HTTP/1.1" 200 OK
+INFO:     68.183.93.253:55242 - "GET / HTTP/1.1" 200 OK
+INFO:     170.64.177.126:34916 - "GET / HTTP/1.1" 200 OK
+INFO:     104.236.121.106:59196 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:47624 - "GET /json/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     178.128.30.185:35596 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.67.232:50816 - "GET / HTTP/1.1" 200 OK
+INFO:     142.93.213.36:42048 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:46754 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     165.227.165.2:24794 - "GET / HTTP/1.1" 200 OK
+INFO:     64.227.139.104:41684 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     139.59.89.35:49522 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.218.194:53228 - "GET /ip HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     45.156.128.43:48560 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.218.175:48362 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.109.134:43046 - "GET / HTTP/1.1" 200 OK
+INFO:     3.93.60.88:26784 - "GET / HTTP/1.1" 200 OK
+INFO:     193.142.146.230:44574 - "POST /goform/set_LimitClient_cfg HTTP/1.1" 404 Not Found
+INFO:     93.174.95.106:51470 - "GET / HTTP/1.1" 200 OK
+INFO:     93.174.95.106:51860 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     134.209.150.160:57952 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.96.91:46170 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.43.198:53084 - "GET / HTTP/1.1" 200 OK
+INFO:     79.124.40.174:54226 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     152.42.204.253:39866 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:37654 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:53850 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     221.138.207.149:52796 - "GET / HTTP/1.0" 200 OK
+INFO:     79.124.40.174:38844 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     45.205.1.8:33172 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     165.232.40.42:33876 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:50758 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     68.183.93.253:52870 - "GET / HTTP/1.1" 200 OK
+INFO:     104.236.121.106:59310 - "GET / HTTP/1.1" 200 OK
+INFO:     159.65.156.72:58518 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:42426 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     165.245.187.143:49812 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     91.230.168.201:51631 - "GET / HTTP/1.1" 200 OK
+INFO:     91.230.168.242:44919 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     89.42.231.182:27758 - "GET /../../../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     139.59.6.234:45418 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:59200 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.67.232:44598 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.32.134:43468 - "GET / HTTP/1.1" 200 OK
+INFO:     45.156.129.133:35222 - "GET / HTTP/1.1" 200 OK
+INFO:     185.226.197.72:50074 - "GET / HTTP/1.1" 200 OK
+INFO:     207.154.217.154:26184 - "GET /azenv.php HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     149.86.227.60:38084 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.100.159:45734 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.150.160:52442 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.191.110:55178 - "GET / HTTP/1.1" 200 OK
+INFO:     142.93.213.36:54448 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     117.50.245.253:62512 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     157.245.96.91:51208 - "GET / HTTP/1.1" 200 OK
+INFO:     146.190.82.177:54024 - "GET / HTTP/1.1" 200 OK
+INFO:     5.61.209.96:34204 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     139.59.36.115:40652 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     45.205.1.8:58328 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     164.90.180.153:27499 - "GET / HTTP/1.0" 200 OK
+INFO:     134.122.65.91:20170 - "GET /query?q=SHOW+DIAGNOSTICS HTTP/1.1" 404 Not Found
+INFO:     139.59.146.174:9224 - "GET /solr/admin/info/system HTTP/1.1" 404 Not Found
+INFO:     165.22.20.104:53156 - "GET /cgi-bin/authLogin.cgi HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     138.197.188.4:38478 - "GET /v2/_catalog HTTP/1.1" 404 Not Found
+INFO:     209.38.226.223:29078 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.146.174:9232 - "GET /solr/admin/cores?action=STATUS&wt=json HTTP/1.1" 404 Not Found
+INFO:     159.89.103.19:24986 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     178.128.221.39:36264 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     64.227.139.104:33208 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.77.56:43266 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:57792 - "GET / HTTP/1.1" 200 OK
+INFO:     188.166.219.219:54670 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:47550 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.67.232:46922 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.197.148:54510 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.204.253:42914 - "GET / HTTP/1.1" 200 OK
+INFO:     64.62.156.24:48392 - "GET / HTTP/1.1" 200 OK
+INFO:     64.62.156.36:12049 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     64.62.156.29:2421 - "GET /?format=json HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     64.62.156.24:34184 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+INFO:     205.210.31.251:56235 - "GET / HTTP/1.0" 200 OK
+INFO:     149.86.227.60:34968 - "GET / HTTP/1.1" 200 OK
+INFO:     159.65.156.72:60634 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.36.115:36106 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.187.143:47930 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.184.119:43608 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     157.245.100.159:41998 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.67.232:38006 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.109.134:44846 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:48152 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.96.91:36206 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.52:57942 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:48904 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     198.235.24.81:60882 - "GET / HTTP/1.1" 200 OK
+INFO:     68.183.81.163:34760 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:49944 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.32.134:42976 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.204.253:59238 - "GET / HTTP/1.1" 200 OK
+INFO:     85.217.140.45:49418 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.51:37930 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.51:23912 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.51:23930 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.51:40156 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     149.86.227.60:43918 - "GET / HTTP/1.1" 200 OK
+INFO:     68.183.93.253:35598 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:27968 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     139.59.6.234:46778 - "GET / HTTP/1.1" 200 OK
+INFO:     64.227.139.104:40230 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     165.245.187.143:48486 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:45024 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.109.134:50066 - "GET / HTTP/1.1" 200 OK
+INFO:     192.109.200.221:59306 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     139.59.89.35:44856 - "GET / HTTP/1.1" 200 OK
+WARNING:  Unsupported upgrade request.
+INFO:     209.38.136.74:43740 - "CONNECT / HTTP/1.1" 405 Method Not Allowed
+INFO:     167.71.226.196:50850 - "GET / HTTP/1.1" 200 OK
+INFO:     142.93.213.36:54588 - "GET / HTTP/1.1" 200 OK
+INFO:     52.165.81.64:53678 - "GET /hudson HTTP/1.1" 404 Not Found
+INFO:     81.29.142.6:40656 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.6:40656 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     170.64.177.126:46492 - "GET / HTTP/1.1" 200 OK
+INFO:     165.232.40.42:43372 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.36.115:56760 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.204.253:38942 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     104.155.119.125:55642 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:45668 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     185.107.80.93:52934 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:47168 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     165.245.191.110:36494 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:59550 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:59456 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     5.61.209.96:42978 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     68.183.93.253:40918 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.184.119:32290 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     68.183.81.163:49694 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.100.159:47356 - "GET / HTTP/1.1" 200 OK
+INFO:     143.110.185.35:32948 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     104.236.121.106:48260 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.32.134:48784 - "GET / HTTP/1.1" 200 OK
+INFO:     34.158.79.105:64094 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     139.59.89.35:46832 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.67.232:60814 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.71.48.103:55040 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.90.204:39688 - "GET / HTTP/1.1" 200 OK
+INFO:     139.59.6.234:50050 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.109.134:40692 - "GET / HTTP/1.1" 200 OK
+INFO:     20.171.8.182:44336 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     176.65.148.66:52500 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.66:52500 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.66:52500 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     176.65.148.66:52506 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.66:52510 - "POST /_next HTTP/1.1" 404 Not Found
+INFO:     167.71.223.42:41812 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.96.91:60038 - "GET / HTTP/1.1" 200 OK
+INFO:     134.209.152.49:44178 - "GET / HTTP/1.1" 200 OK
+INFO:     192.109.200.221:39934 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     139.59.36.115:53396 - "GET / HTTP/1.1" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 16:49:09,735 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 16:49:14,988 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 16:49:15,107 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 16:49:15,120 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 16:49:33,030 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 16:49:41,238 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 16:49:41,372 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 16:49:41,380 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     134.209.150.160:41806 - "GET / HTTP/1.1" 200 OK
+2026-03-11 16:50:19,978 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 16:50:27,995 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 16:50:28,145 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 16:50:28,147 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 16:51:09,882 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 16:51:12,829 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 16:51:12,948 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 16:51:12,955 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     204.76.203.30:51676 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     178.128.30.185:37926 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.100.159:50826 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:48984 - "GET / HTTP/1.1" 200 OK
+INFO:     170.64.177.126:59868 - "GET / HTTP/1.1" 200 OK
+INFO:     68.183.182.18:38474 - "GET / HTTP/1.1" 200 OK
+INFO:     172.245.21.30:58488 - "GET / HTTP/1.1" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 18:15:28,364 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 18:15:33,230 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 18:15:33,447 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 18:15:33,536 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     176.65.132.45:51048 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 18:29:59,231 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 18:30:11,910 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 18:30:12,030 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 18:30:12,033 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 18:30:23,854 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 18:30:27,844 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 18:30:27,960 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 18:30:27,962 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     112.46.214.48:55719 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:26408 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:56517 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:5655 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:27944 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:28432 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:28993 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:29462 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:58828 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:8670 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:59608 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:9747 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:60352 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:10733 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:11216 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:61530 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:12140 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:12621 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:34813 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:13629 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:14137 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:36332 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:15155 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:15681 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:64972 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:16661 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:38924 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:17749 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:18274 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:18800 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:40902 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:3311 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:3775 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:42394 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:4598 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:21975 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:5404 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:23053 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:44923 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:24119 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:45910 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:7321 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:7731 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:47545 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:48034 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:8911 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:9318 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:9654 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:28592 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:50598 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:10840 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:11244 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:30632 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:12070 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:53322 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:53857 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:54361 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:13696 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:14106 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:34148 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:34658 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:57131 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:35843 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:36380 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:58649 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:59145 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:59661 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:60178 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:18100 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:18469 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:39806 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:40295 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:19611 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:19954 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:41823 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:42279 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:21151 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:43300 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:43788 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:1728 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:22729 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:45280 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:45780 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:23764 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:24176 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:47295 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:25064 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:48376 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:6407 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:6909 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:49916 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:7965 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:8511 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:51467 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:28217 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:10113 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:53050 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:29363 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:11665 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:12242 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:55227 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:55797 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:13738 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:14298 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:32077 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:15403 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:58430 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:33288 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:17003 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:34103 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:18010 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:60962 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.213.81:61504 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:53268 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     112.46.213.81:62035 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:36051 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:36451 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:36867 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:21652 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:22194 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.214.48:38011 - "GET / HTTP/1.1" 200 OK
+INFO:     112.46.212.81:23184 - "GET / HTTP/1.1" 200 OK
+INFO:     103.18.14.52:34077 - "GET /boaform/admin/formLogin?username=ec8&psd=ec8 HTTP/1.0" 404 Not Found
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 19:08:54,038 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 19:08:59,753 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 19:08:59,961 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 19:08:59,963 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /report_task/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "POST /report_task/ HTTP/1.0" 404 Not Found
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "POST /report_task/ HTTP/1.0" 404 Not Found
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     159.65.13.145:59904 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.51.203:51596 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     34.201.34.132:34592 - "GET / HTTP/1.1" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     205.210.31.183:61220 - "GET / HTTP/1.1" 200 OK
+INFO:     143.110.185.35:38888 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:49178 - "GET / HTTP/1.1" 200 OK
+INFO:     128.71.165.64:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     128.71.165.64:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 20:02:49,855 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 20:02:52,805 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 20:02:52,922 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 20:02:53,008 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     128.71.165.64:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     128.71.165.64:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "OPTIONS /check/ HTTP/1.0" 200 OK
+2026-03-11 20:04:01,242 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 20:04:05,337 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 20:04:05,468 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 20:04:05,555 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 20:04:18,024 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 20:04:26,884 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 20:04:27,096 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 20:04:27,182 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 20:04:45,839 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 20:04:57,792 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 20:04:57,925 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 20:04:57,928 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 200 OK
+2026-03-11 20:05:12,655 - NeuroRepetitor - INFO - 🚀 Отправляем задачу на проверку в LLaVA...
+2026-03-11 20:05:18,304 - httpx - INFO - HTTP Request: POST https://api.replicate.com/v1/predictions "HTTP/1.1 201 Created"
+2026-03-11 20:05:18,427 - httpx - INFO - HTTP Request: GET https://api.replicate.com/v1/models/yorickvp/llava-13b/versions/b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb "HTTP/1.1 200 OK"
+2026-03-11 20:05:18,513 - NeuroRepetitor - INFO - 💾 Сохранение результата для ученика 12345
+INFO:     91.226.166.179:0 - "POST /check/ HTTP/1.0" 200 OK
+INFO:     91.226.166.179:0 - "GET /random_task/?exam_type=oge HTTP/1.0" 500 Internal Server Error
+INFO:     188.166.181.194:42590 - "GET / HTTP/1.1" 200 OK
+INFO:     211.38.225.43:42641 - "GET / HTTP/1.0" 200 OK
+INFO:     167.172.90.204:36178 - "GET / HTTP/1.1" 200 OK
+INFO:     91.226.166.179:0 - "GET / HTTP/1.0" 200 OK
+INFO:     162.243.55.222:45690 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     117.50.245.253:39122 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     79.124.40.174:45982 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     104.236.121.106:46478 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:48540 - "GET / HTTP/1.1" 200 OK
+INFO:     79.124.40.174:43170 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     135.237.125.160:52686 - "GET /manager/text/list HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:64078 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     159.65.13.145:58158 - "GET / HTTP/1.1" 200 OK
+INFO:     165.245.186.165:42900 - "GET / HTTP/1.1" 200 OK
+INFO:     68.183.182.18:60926 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.70:40300 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.70:51080 - "GET /WebInterface/ HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:42158 - "GET /static/historypage.js HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:57560 - "GET /license.txt HTTP/1.1" 404 Not Found
+INFO:     185.180.141.70:52306 - "GET /wp-json HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:45314 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.67:47748 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     185.180.141.70:57566 - "GET /version HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:41656 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.67:41666 - "GET /cgi-bin/main.pl HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:41682 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     185.180.141.68:50280 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.70:57570 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     185.180.141.68:35662 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.67:39250 - "GET /webfig/ HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:45110 - "GET /Telerik.Web.UI.WebResource.axd?type=rau HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:34138 - "GET /ssi.cgi/Login.htm HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:34152 - "GET /cgi-bin/authLogin.cgi HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:34168 - "GET /js/NewWindow_2_all.js HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:51452 - "GET /login.html HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:48822 - "GET /jasperserver/login.html HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:48838 - "GET /jasperserver-pro/login.html HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:59372 - "GET /jasperserverTest/login.html HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:59382 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.141.68:55984 - "GET /showLogin.cc HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:49258 - "GET /console HTTP/1.1" 404 Not Found
+INFO:     185.180.141.67:47344 - "GET /zabbix/favicon.ico HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:49274 - "GET /owncloud/status.php HTTP/1.1" 404 Not Found
+INFO:     185.180.141.68:47990 - "GET /status.php HTTP/1.1" 404 Not Found
+INFO:     185.180.141.68:46344 - "GET /ext-js/app/common/zld_product_spec.js HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:42162 - "GET /css/images/PTZOptics_powerby.png HTTP/1.1" 404 Not Found
+INFO:     185.180.141.68:46358 - "GET /api/session/properties HTTP/1.1" 404 Not Found
+INFO:     185.180.141.70:46328 - "GET /partymgr/control/main HTTP/1.1" 404 Not Found
+INFO:     185.180.141.69:42174 - "GET /admin/ HTTP/1.1" 404 Not Found
+INFO:     172.245.21.30:61066 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.197.148:33980 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:42370 - "GET / HTTP/1.1" 200 OK
+INFO:     193.142.146.230:37064 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     104.152.52.123:57423 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     188.166.181.194:54336 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.52:45668 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     104.236.121.106:55072 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:44736 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     161.35.157.220:45076 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:32138 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:4950 - "GET /bins/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:12362 - "GET /bin/ HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:59592 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:62224 - "GET /backup/ HTTP/1.1" 404 Not Found
+INFO:     45.156.129.195:55800 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:10362 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     112.165.183.169:41432 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     167.172.90.204:56438 - "GET / HTTP/1.1" 200 OK
+INFO:     188.166.219.219:40190 - "GET / HTTP/1.1" 200 OK
+INFO:     52.165.81.253:48498 - "GET /actuator/health HTTP/1.1" 404 Not Found
+INFO:     185.38.149.140:55150 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:43484 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     135.237.123.227:36880 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     159.65.13.145:34464 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:58622 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+INFO:     178.128.30.185:52208 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:60720 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     149.86.227.60:38584 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     146.190.82.177:46110 - "GET / HTTP/1.1" 200 OK
+INFO:     188.166.181.194:42650 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:59842 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     159.65.13.145:54574 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:50606 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:33832 - "GET / HTTP/1.1" 200 OK
+INFO:     45.205.1.8:50808 - "GET /geoserver/wfs?request=ListStoredQueries&service=wfs&version=2.0.0 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.122:42332 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.122:40056 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.122:59324 - "GET /wiki HTTP/1.1" 404 Not Found
+INFO:     193.142.146.230:37412 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     178.128.30.185:34574 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:35192 - "GET / HTTP/1.1" 200 OK
+INFO:     134.199.165.206:39586 - "GET / HTTP/1.1" 200 OK
+INFO:     64.62.156.222:24526 - "GET / HTTP/1.1" 200 OK
+INFO:     64.62.156.225:45287 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     64.62.156.224:48795 - "GET /?format=json HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     64.62.156.222:61332 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     3.130.168.2:53992 - "GET / HTTP/1.1" 200 OK
+INFO:     3.130.168.2:54820 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     188.166.181.194:44166 - "GET / HTTP/1.1" 200 OK
+INFO:     104.164.62.7:38188 - "GET / HTTP/1.1" 200 OK
+INFO:     104.164.62.7:38190 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     104.164.62.7:38194 - "GET /dashboard HTTP/1.1" 404 Not Found
+INFO:     104.164.62.7:38200 - "GET /panel HTTP/1.1" 404 Not Found
+INFO:     104.164.62.7:38208 - "GET /xui HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.172.90.204:40474 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:63750 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     31.56.208.208:48816 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:57686 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:45776 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     85.11.183.19:42632 - "GET / HTTP/1.1" 200 OK
+INFO:     159.89.4.191:38962 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:20182 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:1792 - "GET /bins/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.18:16248 - "GET /bin/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:22676 - "GET /backup/ HTTP/1.1" 404 Not Found
+INFO:     167.172.90.204:39560 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:37008 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.100:58884 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.100:58884 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     176.65.148.66:44208 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.66:44208 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.66:44208 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     176.65.148.66:44220 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.66:44234 - "POST /_next HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     91.230.168.254:49463 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     195.184.76.178:45209 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     134.209.252.42:40042 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.30:37664 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     220.71.241.197:41952 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     149.86.227.60:57006 - "GET / HTTP/1.1" 200 OK
+INFO:     193.142.146.230:56276 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     103.83.148.7:51066 - "GET /boaform/admin/formLogin?username=admin&psd=admin HTTP/1.0" 404 Not Found
+INFO:     176.65.148.52:34658 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:37706 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     85.11.183.23:52612 - "GET / HTTP/1.1" 200 OK
+INFO:     18.208.181.202:49896 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.51.203:50668 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     159.89.4.191:44600 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     167.172.90.204:42768 - "GET / HTTP/1.1" 200 OK
+INFO:     18.97.19.158:42474 - "GET / HTTP/1.1" 200 OK
+INFO:     159.65.193.17:40134 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:33004 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:17186 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     164.92.154.166:42964 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     159.89.4.191:35788 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     117.50.245.253:32776 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     167.172.51.203:50528 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     45.156.87.91:36848 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     138.68.163.70:52926 - "GET / HTTP/1.1" 200 OK
+INFO:     138.68.163.70:52930 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     36.41.184.119:36382 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     152.42.170.168:52062 - "GET / HTTP/1.1" 200 OK
+INFO:     79.124.40.174:33748 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     185.226.197.75:36616 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:46760 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     79.124.40.174:43340 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     18.116.101.220:41646 - "GET / HTTP/1.1" 200 OK
+INFO:     18.116.101.220:45248 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:48380 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     80.82.77.139:55454 - "GET / HTTP/1.1" 200 OK
+INFO:     80.82.77.139:55958 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     178.218.105.72:32837 - "GET / HTTP/1.1" 200 OK
+INFO:     157.245.197.148:56940 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.184.119:43701 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     178.128.30.185:35320 - "GET / HTTP/1.1" 200 OK
+INFO:     220.71.241.197:52922 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     220.71.241.197:42524 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     167.172.90.204:46166 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.184.119:25101 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     188.166.219.219:51336 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     34.158.79.105:64072 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     198.235.24.200:59736 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:43470 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     65.49.1.222:27950 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.224:61701 - "GET /?format=json HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     65.49.1.222:34938 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+INFO:     206.168.34.32:3552 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.32:58694 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.32:58714 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.32:38878 - "GET /wiki HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.153.127:16290 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.153.127:30496 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.153.127:30516 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     66.132.153.127:30534 - "GET /security.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     45.156.129.131:46452 - "GET / HTTP/1.1" 200 OK
+INFO:     176.65.148.52:50440 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     185.247.137.160:51417 - "GET / HTTP/1.1" 200 OK
+INFO:     152.42.170.168:44210 - "GET / HTTP/1.1" 200 OK
+INFO:     87.236.176.236:33005 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:37732 - "GET / HTTP/1.1" 200 OK
+INFO:     192.159.99.125:64424 - "GET / HTTP/1.0" 200 OK
+INFO:     149.86.227.60:33084 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.90.204:39592 - "GET / HTTP/1.1" 200 OK
+INFO:     205.210.31.214:56467 - "GET / HTTP/1.0" 200 OK
+INFO:     117.50.245.253:41614 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     142.93.224.178:40598 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     192.159.99.113:49952 - "GET / HTTP/1.0" 200 OK
+INFO:     117.50.245.253:35672 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     3.151.241.153:46190 - "GET / HTTP/1.1" 200 OK
+INFO:     3.151.241.153:39012 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     178.128.30.185:41292 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:59004 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:42266 - "GET / HTTP/1.1" 200 OK
+INFO:     95.214.55.63:42278 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     95.214.55.63:42288 - "POST /_next HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:42296 - "POST /api HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:42306 - "POST /_next/server HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:42320 - "POST /app HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:42324 - "POST /api/route HTTP/1.1" 404 Not Found
+INFO:     124.198.131.24:52378 - "GET / HTTP/1.0" 200 OK
+INFO:     3.137.144.149:48994 - "GET / HTTP/1.1" 200 OK
+INFO:     3.137.144.149:54598 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     152.42.170.168:40714 - "GET / HTTP/1.1" 200 OK
+INFO:     149.86.227.60:56226 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:36204 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:43166 - "GET /bins/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:43030 - "GET /bin/ HTTP/1.1" 404 Not Found
+INFO:     176.120.22.147:33430 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.18:8846 - "GET /backup/ HTTP/1.1" 404 Not Found
+INFO:     167.172.90.204:33014 - "GET / HTTP/1.1" 200 OK
+INFO:     85.217.140.28:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     220.71.241.197:45140 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     35.195.87.186:59826 - "GET / HTTP/1.1" 200 OK
+INFO:     31.56.208.208:49984 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:21184 - "GET / HTTP/1.0" 200 OK
+INFO:     216.180.246.103:21184 - "GET / HTTP/1.0" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     216.180.246.103:26436 - "GET / HTTP/1.1" 200 OK
+INFO:     216.180.246.103:26436 - "GET /manage/account/login HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /admin/index.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /index.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /%2BCSCOE%2B/logon.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /cgi-bin/login.cgi HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /login.htm HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /login.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /login.jsp HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /doc/index.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /remote/login HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /admin/login.asp HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /web/ HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /webpages/login.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.103:26436 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     45.153.34.138:46220 - "GET /script HTTP/1.1" 404 Not Found
+INFO:     45.153.34.138:46228 - "GET /script HTTP/1.1" 404 Not Found
+INFO:     45.153.34.138:46236 - "GET /script HTTP/1.1" 404 Not Found
+INFO:     149.86.227.60:41340 - "GET / HTTP/1.1" 200 OK
+INFO:     179.61.251.19:48574 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     179.61.251.19:54864 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:40268 - "GET / HTTP/1.1" 200 OK
+INFO:     178.128.30.185:52284 - "GET / HTTP/1.1" 200 OK
+INFO:     52.165.80.115:38762 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.30:44308 - "GET /json/ HTTP/1.1" 404 Not Found
+INFO:     181.214.99.119:51796 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     34.158.79.105:59482 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     36.41.184.119:10157 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     152.42.170.168:57826 - "GET / HTTP/1.1" 200 OK
+INFO:     167.172.90.204:37692 - "GET / HTTP/1.1" 200 OK
+INFO:     220.125.185.114:50823 - "GET / HTTP/1.0" 200 OK
+INFO:     45.156.128.47:58690 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     157.245.77.56:59162 - "GET / HTTP/1.1" 200 OK
+INFO:     62.72.42.160:51860 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     95.214.55.63:54128 - "GET / HTTP/1.1" 200 OK
+INFO:     34.158.79.105:53668 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     193.142.146.230:59264 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     149.86.227.60:44084 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.6:6652 - "GET / HTTP/1.1" 200 OK
+INFO:     81.29.142.6:6652 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     220.71.241.197:41598 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     178.128.30.185:56554 - "GET / HTTP/1.1" 200 OK
+INFO:     117.50.245.253:26210 - "POST /cgi-bin/ViewLog.asp HTTP/1.1" 404 Not Found
+INFO:     Received SIGTERM, exiting.
+INFO:     Received SIGHUP, restarting processes.
+INFO:     Waiting for child process [519370]
+INFO:     Waiting for child process [519371]
+INFO:     Terminated child process [642839]
+INFO:     Terminated child process [642842]
+INFO:     Waiting for child process [642839]
+INFO:     Waiting for child process [642842]
+INFO:     Stopping parent process [512938]
