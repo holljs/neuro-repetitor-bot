@@ -138,4 +138,162 @@ function showTask() {
     // ИСПРАВЛЕНО: Обратные кавычки для корректного отображения Base64
     document.getElementById('task-image-container').innerHTML = `<img src="${currentTask.image}" alt="Задача" style="max-width: 100%; border-radius: 8px;">`;
     
-    document.getElementById('task-text').textContent = current
+    document.getElementById('task-text').textContent = currentTask.text || "";
+    document.getElementById('user-answer').value = '';
+    
+    showScreen(taskScreen);
+}
+
+window.submitAnswer = async function() {
+    const userAnswer = document.getElementById('user-answer').value.trim();
+    if (!userAnswer) return;
+    
+    if(loadingScreen) loadingScreen.innerHTML = "<p>Проверяю ответ...</p><div class='spinner'></div>";
+    showScreen(loadingScreen);
+    
+    try {
+       const response = await fetch(`${TEST_API_URL}/check/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: userAnswer,
+                image_url: currentTask.image.split(',')[1], 
+                task_text: currentTask.text, 
+                student_id: USER_ID || 12345
+            })
+        });
+        
+        const result = await response.json();
+        handleQuickResult(result.is_correct, userAnswer);
+    } catch (error) {
+        alert('Ошибка проверки ответа: ' + error.message);
+        showScreen(taskScreen);
+    }
+}
+
+function handleQuickResult(isCorrect, userAnswer) {
+    const titleEl = document.getElementById('quick-result-title');
+    
+    if (isCorrect) {
+        titleEl.textContent = '🎉 Верно!';
+        titleEl.style.color = 'green';
+        score++;
+    } else {
+        titleEl.textContent = '❌ Неверно!';
+        titleEl.style.color = 'red';
+        mistakes.push({ task: currentTask, user_answer: userAnswer });
+    }
+    
+    showScreen(quickResultScreen);
+}
+
+window.nextTask = function() {
+    questionNumber++;
+    if (questionNumber <= TEST_LENGTH) {
+        if(loadingScreen) loadingScreen.innerHTML = "<p>Грузим вопрос...</p><div class='spinner'></div>";
+        showScreen(loadingScreen);
+        getRandomTask();
+    } else {
+        showFinishScreen();
+    }
+}
+
+function showFinishScreen() {
+    document.getElementById('final-score').textContent = score;
+    document.getElementById('final-mistakes').textContent = mistakes.length;
+    
+    let topicAnalysis = {};
+    mistakes.forEach(m => {
+        let t = m.task.topic || "Общая тема";
+        topicAnalysis[t] = (topicAnalysis[t] || 0) + 1;
+    });
+
+    let statsHTML = "";
+    if (mistakes.length > 0) {
+        statsHTML = `<div id="topic-stats">
+                        <b>🚩 Рекомендуем повторить темы:</b><ul>`;
+        for (let topic in topicAnalysis) {
+            statsHTML += `<li>${topic} (${topicAnalysis[topic]} ошиб.)</li>`;
+        }
+        statsHTML += `</ul></div>`;
+    }
+
+    const oldStats = document.getElementById('topic-stats');
+    if (oldStats) oldStats.remove();
+    
+    const reviewBtnBlock = document.getElementById('review-buttons');
+    if (mistakes.length > 0) {
+        reviewBtnBlock.style.display = 'block';
+        reviewBtnBlock.insertAdjacentHTML('beforebegin', statsHTML);
+    } else {
+        reviewBtnBlock.style.display = 'none';
+    }
+    
+    showScreen(testFinishScreen);
+}
+
+window.startReview = function() {
+    currentReviewIndex = 0;
+    loadReviewForCurrentMistake();
+}
+
+function loadReviewForCurrentMistake() {
+    const mistake = mistakes[currentReviewIndex];
+    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
+    
+    const answersBlock = document.getElementById('review-answers-block');
+    if (answersBlock) {
+        answersBlock.innerHTML = `
+            <p><b>❌ Твой ответ:</b> <span style="color:red;">${mistake.user_answer}</span></p>
+            <p><b>✅ Правильный ответ:</b> <span style="color:green;">${mistake.task.answer || "см. в разборе"}</span></p>
+        `;
+    }
+    
+    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" style="max-width: 100%; border-radius: 8px;">`;
+    document.getElementById('review-explanation').innerHTML = `
+        <button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>
+    `;
+    
+    showScreen(reviewScreen);
+}
+
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    const explanationBox = document.getElementById('review-explanation');
+    explanationBox.innerHTML = simplify ? "<i>⏳ Объясняю просто...</i>" : "<i>⏳ Пишу решение...</i>";
+
+    try {
+        const response = await fetch(`${TEST_API_URL}/review/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: mistake.user_answer,
+                image_url: mistake.task.image.split(',')[1], 
+                task_text: mistake.task.text,
+                simplify: simplify
+            })
+        });
+        
+        const result = await response.json();
+        explanationBox.innerHTML = result.explanation;
+    } catch (error) {
+        explanationBox.innerHTML = `<span style="color:red;">Ошибка сервера.</span>`;
+    }
+}
+
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) {
+        loadReviewForCurrentMistake();
+    } else {
+        alert("Все разборы окончены!");
+        showScreen(mainMenuScreen);
+    }
+}
+
+window.finishSession = function() { showScreen(mainMenuScreen); }
+window.showHelp = function() { alert('Помощь в разработке...'); }
+window.showProfile = function() { alert('Профиль в разработке...'); }
+
+// САМАЯ ВАЖНАЯ СТРОЧКА В КОНЦЕ
+startApp();
