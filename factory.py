@@ -14,16 +14,16 @@ os.environ["REPLICATE_API_TOKEN"] = os.getenv("REPLICATE_API_TOKEN")
 # ТАБЛИЦА ТЕМ (Меняй только здесь!)
 # ==========================================
 TASKS_CONFIG = [
-    {"topic": "topic_01_models", "pages": range(8, 31)},      # Практические задачи
-    {"topic": "topic_02_calc",   "pages": range(31, 50)},     # Вычисления
-    {"topic": "topic_03_units",  "pages": range(50, 61)},     # Единицы измерения
+   # {"topic": "topic_01_models", "pages": range(8, 31)},      # Практические задачи
+   # {"topic": "topic_02_calc",   "pages": range(31, 50)},     # Вычисления
+   # {"topic": "topic_03_units",  "pages": range(50, 61)},     # Единицы измерения
     {"topic": "topic_04_eq",     "pages": range(61, 72)},     # Уравнения
-    {"topic": "topic_05_line",   "pages": range(72, 90)},     # Координатная прямая
-    {"topic": "topic_06_charts", "pages": range(90, 107)},    # Графики и диаграммы
-    {"topic": "topic_07_funcs",  "pages": range(107, 127)},   # Графики функций
-    {"topic": "topic_08_expr",   "pages": range(127, 134)},   # Выражения
-    {"topic": "topic_09_form",   "pages": range(134, 143)},   # Формулы
-    {"topic": "topic_10_seq",    "pages": range(143, 149)},   # Последовательности
+   # {"topic": "topic_05_line",   "pages": range(72, 90)},     # Координатная прямая
+   # {"topic": "topic_06_charts", "pages": range(90, 107)},    # Графики и диаграммы
+   # {"topic": "topic_07_funcs",  "pages": range(107, 127)},   # Графики функций
+   # {"topic": "topic_08_expr",   "pages": range(127, 134)},   # Выражения
+   # {"topic": "topic_09_form",   "pages": range(134, 143)},   # Формулы
+   # {"topic": "topic_10_seq",    "pages": range(143, 149)},   # Последовательности
 ]
 
 PDF_PATH = "math_oge.pdf" # Проверь имя файла!
