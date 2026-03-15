@@ -1,242 +1,332 @@
 [
     {
-        "id": "topic_04_eq_1",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x + 2,6 = 3,4.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "1",
+        "task_text": "Решите уравнение x + 2,6 = 3,4.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_2",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x - 4,2 = 6,9.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "2",
+        "task_text": "Решите уравнение x - 4,2 = 6,9.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_3",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 6x = 1,2.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "3",
+        "task_text": "Решите уравнение 6x = 1,2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_4",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 0,3x = 15.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "4",
+        "task_text": "Решите уравнение 0,3x = 15.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_5",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 3x - 8 = 15.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "5",
+        "task_text": "Решите уравнение 3x - 8 = 15.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_6",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 1/5 x + 4 = 2 1/3.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "6",
+        "task_text": "Решите уравнение 1/5 x + 4 = 2 1/3.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_7",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 2x + 3 = 5x - 27.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "7",
+        "task_text": "Решите уравнение 2x + 3 = 5x - 27.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_8",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 3x - 24 = 6x + 3.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "8",
+        "task_text": "Решите уравнение 3x - 24 = 6x + 3.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_9",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 5(x - 2) + 3x = 6.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "9",
+        "task_text": "Решите уравнение 5(x - 2) + 3x = 6.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_10",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 3(x - 4) - 7x = 8.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "10",
+        "task_text": "Решите уравнение 3(x - 4) - 7x = 8.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_11",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 6x - 2(4x - 1) = 7.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "11",
+        "task_text": "Решите уравнение 6x - 2(4x - 1) = 7.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_12",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 3(2x + 5) - 2(3x + 1) = 2.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "12",
+        "task_text": "Решите уравнение 3(2x + 5) - 2(3x + 1) = 2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_13",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 0,2x - 0,1(2x - 6) = 0,6.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "13",
+        "task_text": "Решите уравнение 0,2x - 0,1(2x - 6) = 0,6.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_14",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 5(x - 8) - 4(5x + 2) = 12.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "14",
+        "task_text": "Решите уравнение 5(x - 8) - 4(5x + 2) = 12.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_15",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x - 5(x + 4) = 2(x - 8) + 8.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "15",
+        "task_text": "Решите уравнение x - 5(x + 4) = 2(x - 8) + 8.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_16",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 2x + 4(x - 3) = 5(x + 1) - 9.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "16",
+        "task_text": "Решите уравнение 2x + 4(x - 3) = 5(x + 1) - 9.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_17",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x + 22 + 8(x - 2) = 3(4 - x).",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "17",
+        "task_text": "Решите уравнение x + 22 + 8(x - 2) = 3(4 - x).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_18",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x - 19 - 3(x - 2) = 3(4 - x).",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "18",
+        "task_text": "Решите уравнение x - 19 - 3(x - 2) = 3(4 - x).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_19",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x : 1 2/3 = 3 1/2.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "19",
+        "task_text": "Решите уравнение x : 1 2/3 = 3 1/2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_20",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 5 1/6 : x = -31.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "20",
+        "task_text": "Решите уравнение 5 1/6 : x = -31.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_21",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x - x/8 = 7/16.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "21",
+        "task_text": "Решите уравнение x - x/8 = 7/16.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_22",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x + x/9 = 6.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "22",
+        "task_text": "Решите уравнение x + x/9 = 6.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_23",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x + x/11 = 24/11.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "23",
+        "task_text": "Решите уравнение x + x/11 = 24/11.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_24",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x/5 + x/15 = -2/3.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "24",
+        "task_text": "Решите уравнение x/5 + x/15 = -2/3.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_25",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x/3 + x/6 + x = -9/2.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "25",
+        "task_text": "Решите уравнение x/3 + x/6 + x = -9/2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_26",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение x/5 - x/10 + x = 22/5.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "26",
+        "task_text": "Решите уравнение x/5 - x/10 + x = 22/5.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_27",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 11/(x + 3) = 11/2.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "27",
+        "task_text": "Решите уравнение 11/(x + 3) = 11/2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_28",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 21/(x - 4) = 21/4.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "28",
+        "task_text": "Решите уравнение 21/(x - 4) = 21/4.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_29",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение (x + 5)/(x + 15) = 3/4.",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "29",
+        "task_text": "Решите уравнение (x + 5)/(x + 15) = 3/4.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     },
     {
-        "id": "topic_04_eq_30",
-        "topic": "topic_04_eq",
-        "text": "Решите уравнение 9/(x - 2) = 2/(x - 9).",
-        "answer": "",
-        "exam_type": "oge_math",
-        "image": ""
+        "number": "30",
+        "task_text": "Решите уравнение 9/(x - 2) = 2/(x - 9).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
     }
 ]
