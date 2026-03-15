@@ -55,6 +55,7 @@ app.add_middleware(
 class CheckRequest(BaseModel):
     user_answer: str
     image_url: str
+    task_id: str  # <-- Добавь эту строку!
     student_id: Optional[int] = None
 
 class ReviewRequest(BaseModel):
