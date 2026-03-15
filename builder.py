@@ -3,7 +3,7 @@ import os
 import re
 
 # Пути
-ANSWERS_FILE = 'ответы математика огэ.txt'
+ANSWERS_FILE = 'answers_math.txt'
 DATA_DIR = 'questions/images_oge_math/topic_04_eq/'
 OUTPUT_FILE = 'questions/oge_math.json'
 
