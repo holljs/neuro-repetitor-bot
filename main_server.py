@@ -105,42 +105,52 @@ async def pay_for_test(request: ReportRequest):
 async def check_answer_smart(request: CheckRequest):
     """Умная проверка: сравниваем ответ ученика с эталоном из базы через ИИ"""
     
-    # 1. Ищем задачу в локальной базе по URL или ID
-    task_in_db = next((t for t in ALL_TASKS if t.get("image") == request.image_url), None)
+    # 1. Ищем задачу в ALL_TASKS по ID (который пришел из фронтенда)
+    # В CheckRequest должно быть поле task_id
+    task_id = getattr(request, 'task_id', None)
+    task_in_db = next((t for t in ALL_TASKS if t.get("id") == task_id), None)
     
     if not task_in_db or not task_in_db.get("answer"):
-        # Если ответа в базе нет, фолбэчимся на визуальную проверку (как было)
-        logger.warning("Ответ не найден в базе, используем визуальную проверку")
-        return await check_answer_visual(request)
+        logger.warning(f"⚠️ Ответ для задачи {task_id} не найден в базе")
+        return {"is_correct": False, "error": "Ответ отсутствует в базе"}
 
-    correct_answer = task_in_db["answer"]
-    
-    # 2. Просим Gemini сравнить ответы
-    model_id = "google/gemini-3-flash" # Используем дешевую и умную модель
+    correct_answer = str(task_in_db["answer"])
+    user_answer = request.user_answer.strip()
+
+    # 2. Быстрая проверка на точное совпадение (чтобы не тратить токены)
+    if user_answer.replace('.', ',') == correct_answer.replace('.', ','):
+        return {"is_correct": True}
+
+    # 3. Если не совпало "в лоб", вызываем Gemini как эксперта
+    model_id = "google/gemini-3-flash" 
     
     prompt = f"""
-    Ты — строгий, но справедливый учитель математики.
-    Сравни ответ ученика с правильным ответом.
+    Ты — эксперт-математик. Проверь, совпадает ли ответ ученика с правильным ответом.
+    Они могут быть записаны по-разному, но быть математически равны.
     
-    Правильный ответ: {correct_answer}
-    Ответ ученика: {user_answer}
+    ПРАВИЛЬНЫЙ ОТВЕТ: {correct_answer}
+    ОТВЕТ УЧЕНИКА: {user_answer}
     
-    Математически ли они эквивалентны? 
-    Учитывай разные формы записи: дроби, запятые вместо точек, лишние пробелы, или если в ответе написано "x=2" вместо просто "2".
+    Примеры эквивалентности:
+    - "0,5" и "1/2" — ВЕРНО
+    - "x=2" и "2" — ВЕРНО
+    - "sqrt(12)" и "2*sqrt(3)" — ВЕРНО
+    - "корень из 2" и "sqrt(2)" — ВЕРНО
     
-    Ответи строго в формате JSON: {{"is_correct": true/false}}
+    Если ответы равны, ответь 'true', если нет — 'false'.
+    Верни строго JSON: {{"is_correct": true/false}}
     """
 
     try:
+        # Важно: Gemini 3 Flash очень быстрая и дешевая
         output = replicate.run(model_id, input={"prompt": prompt})
-        res = "".join(output)
-        # Ищем true/false в ответе ИИ
-        is_correct = "true" in res.lower()
-        return {"is_correct": is_correct, "debug_correct": correct_answer}
+        res = "".join(output).lower()
+        is_correct = "true" in res
+        return {"is_correct": is_correct}
     except Exception as e:
-        logger.error(f"Smart check error: {e}")
-        # Если ИИ упал, сравниваем просто как строки (на всякий случай)
-        return {"is_correct": request.user_answer.strip() == str(correct_answer).strip()}
+        logger.error(f"❌ Ошибка ИИ-проверки: {e}")
+        # Запасной вариант: простое сравнение
+        return {"is_correct": user_answer == correct_answer}
 
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
