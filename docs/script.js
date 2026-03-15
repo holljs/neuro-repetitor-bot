@@ -92,17 +92,24 @@ function showTask() {
     const imageContainer = document.getElementById('task-image-container');
     const taskTextElement = document.getElementById('task-text');
 
-    // ОЧИСТКА ТЕКСТА (убираем "Решите уравнения" и номер задачи)
-    if (currentTask.text) {
-        let cleanText = currentTask.text
+    // Берем текст из любого доступного поля (task_text или text)
+    let rawText = currentTask.task_text || currentTask.text || "";
+    
+    if (rawText) {
+        // Чистим от лишних слов и номеров
+        let cleanText = rawText
             .replace(/Решите уравнения/gi, '')
             .replace(/Решите уравнение/gi, '')
-            .replace(/^\d+[\.\)]\s*/, '') // Номер в начале
-            .replace(/\s\d+[\.\)]\s/, ' ') // Номер в середине
+            .replace(/^\d+[\.\)]\s*/, '') 
             .trim();
+        
         taskTextElement.textContent = cleanText;
         taskTextElement.style.display = 'block';
-    } else { taskTextElement.style.display = 'none'; }
+    } else { 
+        taskTextElement.style.display = 'none'; 
+    }
+
+    // Остальной код (картинки, инпуты) оставляем как есть...
 
     // КАРТИНКА (прячем если пустая)
     if (currentTask.image && currentTask.image.length > 50) {
