@@ -145,20 +145,21 @@ function showTask() {
 }
 
 window.submitAnswer = async function() {
-    const userAnswer = document.getElementById('user-answer').value.trim();
+    // Взяли ответ, убрали пробелы по краям и заменили точку на запятую
+    let userAnswer = document.getElementById('user-answer').value.trim().replace('.', ',');
+    
     if (!userAnswer) return;
     
-    if(loadingScreen) loadingScreen.innerHTML = "<p>Проверяю ответ...</p><div class='spinner'></div>";
     showScreen(loadingScreen);
     
     try {
-       const response = await fetch(`${TEST_API_URL}/check/`, {
+        const response = await fetch(`${TEST_API_URL}/check/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 user_answer: userAnswer,
-                image_url: currentTask.image.split(',')[1], 
-                task_text: currentTask.text, 
+                // Передаем ID задачи, чтобы сервер точно знал, с чем сравнивать
+                task_id: currentTask.id, 
                 student_id: USER_ID || 12345
             })
         });
@@ -166,7 +167,7 @@ window.submitAnswer = async function() {
         const result = await response.json();
         handleQuickResult(result.is_correct, userAnswer);
     } catch (error) {
-        alert('Ошибка проверки ответа: ' + error.message);
+        console.error('Ошибка проверки:', error);
         showScreen(taskScreen);
     }
 }
