@@ -102,19 +102,45 @@ async def pay_for_test(request: ReportRequest):
     return {"success": True, "new_balance": 97} # Заглушка баланса
 
 @app.post("/check/")
-async def check_answer_fast(request: CheckRequest):
-    """Быстрая проверка Да/Нет (LLaVA)"""
-    model_id = "yorickvp/llava-13b:b5f6212d032508382d61ff00469ddda3e32fd8a0e75dc39d8a4191bb742157fb"
+async def check_answer_smart(request: CheckRequest):
+    """Умная проверка: сравниваем ответ ученика с эталоном из базы через ИИ"""
     
-    prompt = f'Ученик ответил "{request.user_answer}". Верно? Ответь СТРОГО JSON: {{"is_correct": true/false}}'
+    # 1. Ищем задачу в локальной базе по URL или ID
+    task_in_db = next((t for t in ALL_TASKS if t.get("image") == request.image_url), None)
     
+    if not task_in_db or not task_in_db.get("answer"):
+        # Если ответа в базе нет, фолбэчимся на визуальную проверку (как было)
+        logger.warning("Ответ не найден в базе, используем визуальную проверку")
+        return await check_answer_visual(request)
+
+    correct_answer = task_in_db["answer"]
+    
+    # 2. Просим Gemini сравнить ответы
+    model_id = "google/gemini-3-flash" # Используем дешевую и умную модель
+    
+    prompt = f"""
+    Ты — строгий, но справедливый учитель математики.
+    Сравни ответ ученика с правильным ответом.
+    
+    Правильный ответ: {correct_answer}
+    Ответ ученика: {user_answer}
+    
+    Математически ли они эквивалентны? 
+    Учитывай разные формы записи: дроби, запятые вместо точек, лишние пробелы, или если в ответе написано "x=2" вместо просто "2".
+    
+    Ответи строго в формате JSON: {{"is_correct": true/false}}
+    """
+
     try:
-        output = replicate.run(model_id, input={"image": request.image_url, "prompt": prompt, "temperature": 0.1})
+        output = replicate.run(model_id, input={"prompt": prompt})
         res = "".join(output)
+        # Ищем true/false в ответе ИИ
         is_correct = "true" in res.lower()
-        return {"is_correct": is_correct}
+        return {"is_correct": is_correct, "debug_correct": correct_answer}
     except Exception as e:
-        return {"is_correct": False, "error": str(e)}
+        logger.error(f"Smart check error: {e}")
+        # Если ИИ упал, сравниваем просто как строки (на всякий случай)
+        return {"is_correct": request.user_answer.strip() == str(correct_answer).strip()}
 
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
