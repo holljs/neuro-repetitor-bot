@@ -85,27 +85,39 @@ def smart_crop_and_stitch(topic, p1, p2=None):
         with Image.open(img1_path) as main_img:
             w, h = main_img.size
             for t in tasks:
-                # Координаты основной задачи
-                y0, x0, y1, x1 = [c * h / 1000 if i%2==0 else c * w / 1000 for i, c in enumerate(t['box_2d'])]
-                task_part = main_img.crop((x0, y0, x1, y1))
-                
-                # Если нужна склейка с рисунком со второй страницы
-                if t.get('needs_stitch') and p2 and 'stitch_box' in t:
-                    with Image.open(img2_path) as side_img:
-                        sw, sh = side_img.size
-                        sy0, sx0, sy1, sx1 = [c * sh / 1000 if i%2==0 else c * sw / 1000 for i, c in enumerate(t['stitch_box'])]
-                        stitch_part = side_img.crop((sx0, sy0, sx1, sy1))
-                        
-                        # Создаем "бутерброд" (текст сверху, рисунок снизу)
-                        new_img = Image.new('RGB', (max(task_part.width, stitch_part.width), task_part.height + stitch_part.height + 10), (255,255,255))
-                        new_img.paste(task_part, (0, 0))
-                        new_img.paste(stitch_part, (0, task_part.height + 10))
-                        task_part = new_img
+                # 1. Сначала сохраняем текст в отдельный лог/базу (опционально для отладки)
+                print(f"📝 Обработка задачи {t.get('number')}: {t.get('task_text')[:50]}...")
 
-                task_part.save(base_path / f"task_{t['number']}.jpg", quality=95)
-                print(f"✅ Готово: Задача {t['number']}")
-    except:
-        print(f"⚠️ Ошибка на стр {p1}, пропускаю...")
+                # 2. Проверяем: нужно ли резать картинку?
+                # Режем только если has_visual = true И координаты не нулевые
+                if t.get('has_visual') is True and t.get('box_2d') != [0,0,0,0]:
+                    y0, x0, y1, x1 = [c * h / 1000 if i%2==0 else c * w / 1000 for i, c in enumerate(t['box_2d'])]
+                    task_part = main_img.crop((x0, y0, x1, y1))
+                    
+                    # Логика склейки (если она была нужна)
+                    if t.get('needs_stitch') and p2 and 'stitch_box' in t:
+                        with Image.open(img2_path) as side_img:
+                            sw, sh = side_img.size
+                            sy0, sx0, sy1, sx1 = [c * sh / 1000 if i%2==0 else c * sw / 1000 for i, c in enumerate(t['stitch_box'])]
+                            stitch_part = side_img.crop((sx0, sy0, sx1, sy1))
+                            
+                            new_img = Image.new('RGB', (max(task_part.width, stitch_part.width), task_part.height + stitch_part.height + 10), (255,255,255))
+                            new_img.paste(task_part, (0, 0))
+                            new_img.paste(stitch_part, (0, task_part.height + 10))
+                            task_part = new_img
+
+                    task_part.save(base_path / f"task_{t['number']}.jpg", quality=95)
+                    print(f"🖼️ Картинка сохранена для №{t['number']}")
+                else:
+                    print(f"✅ Задача №{t['number']} принята как чистый текст")
+
+        # ВАЖНО: Нам нужно где-то сохранить этот текст! 
+        # Давай создадим временный JSON файл для этой страницы, чтобы builder.py его потом собрал
+        with open(base_path / f"data_page_{p1}.json", "w", encoding="utf-8") as f:
+            json.dump(tasks, f, ensure_ascii=False, indent=4)
+
+    except Exception as e:
+        print(f"⚠️ Ошибка на стр {p1}: {e}")
 
 if __name__ == "__main__":
     for config in TASKS_CONFIG:
