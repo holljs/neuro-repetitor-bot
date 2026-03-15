@@ -17,7 +17,7 @@ TASKS_CONFIG = [
    # {"topic": "topic_01_models", "pages": range(8, 31)},      # Практические задачи
    # {"topic": "topic_02_calc",   "pages": range(31, 50)},     # Вычисления
    # {"topic": "topic_03_units",  "pages": range(50, 61)},     # Единицы измерения
-    {"topic": "topic_04_eq",     "pages": range(61, 72)},     # Уравнения
+    {"topic": "topic_04_eq",     "pages": range(61, 62)},     # Уравнения
    # {"topic": "topic_05_line",   "pages": range(72, 90)},     # Координатная прямая
    # {"topic": "topic_06_charts", "pages": range(90, 107)},    # Графики и диаграммы
    # {"topic": "topic_07_funcs",  "pages": range(107, 127)},   # Графики функций
