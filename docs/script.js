@@ -16,7 +16,7 @@ let USER_ID = null;
 const OGE_SUBJECTS = { "oge_russian": "🇷🇺 Русский язык", "oge_math": "🧮 Математика" };
 const EGE_SUBJECTS = { "ege_russian": "🇷🇺 Русский язык", "ege_math_profile": "📐 Математика (профиль)" };
 
-// ПЕРЕМЕННЫЕ СОСТОЯНИЯ
+// СОСТОЯНИЕ ТЕСТА
 const TEST_LENGTH = 15;
 let currentTask = null;
 let currentSubjectCode = null;
@@ -30,6 +30,7 @@ function showScreen(screenElement) {
     if(screenElement) screenElement.style.display = 'block';
 }
 
+// 1. ЗАПУСК
 async function startApp() {
     try {
         const userData = await vkBridge.send('VKWebAppGetUserInfo');
@@ -42,7 +43,7 @@ async function startApp() {
     } catch (error) { showScreen(mainMenuScreen); }
 }
 
-// Кнопки меню
+// 2. ВЫБОР ПРЕДМЕТА
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => {
         const examType = button.dataset.examType;
@@ -59,6 +60,7 @@ document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     });
 });
 
+// 3. НАЧАЛО ТЕСТА
 window.startTest = async function(subjectCode) {
     showScreen(loadingScreen);
     try {
@@ -84,23 +86,27 @@ async function getRandomTask() {
     } catch (e) { showScreen(mainMenuScreen); }
 }
 
+// 4. ОТОБРАЖЕНИЕ ЗАДАЧИ
 function showTask() {
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     const imageContainer = document.getElementById('task-image-container');
     const taskTextElement = document.getElementById('task-text');
 
-    // Очистка номера (удаляет "27." или "Решите 27.")
+    // ОЧИСТКА ТЕКСТА (убираем "Решите уравнения" и номер задачи)
     if (currentTask.text) {
-        let cleanText = currentTask.text.replace(/Решите уравнения\s*/gi, '')
-                                      .replace(/^\d+[\.\)]\s*/, '')
-                                      .replace(/\s\d+[\.\)]\s/, ' ')
-                                      .trim();
+        let cleanText = currentTask.text
+            .replace(/Решите уравнения/gi, '')
+            .replace(/Решите уравнение/gi, '')
+            .replace(/^\d+[\.\)]\s*/, '') // Номер в начале
+            .replace(/\s\d+[\.\)]\s/, ' ') // Номер в середине
+            .trim();
         taskTextElement.textContent = cleanText;
         taskTextElement.style.display = 'block';
     } else { taskTextElement.style.display = 'none'; }
 
+    // КАРТИНКА (прячем если пустая)
     if (currentTask.image && currentTask.image.length > 50) {
-        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
+        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
 
@@ -108,7 +114,7 @@ function showTask() {
     showScreen(taskScreen);
 }
 
-// ВОТ ЭТА ФУНКЦИЯ МОГЛА СЛОМАТЬСЯ
+// 5. ПРОВЕРКА ОТВЕТА (Исправленная!)
 window.submitAnswer = async function() {
     let userAnswer = document.getElementById('user-answer').value.trim().replace('.', ',');
     if (!userAnswer) return;
@@ -135,7 +141,8 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = '<span style="color:green">🎉 Верно!</span>';
         score++;
     } else {
-        titleEl.innerHTML = `<span style="color:red">❌ Неверно!</span><br><small>Ожидалось: ${currentTask.answer || 'не указано'}</small>`;
+        titleEl.innerHTML = `<span style="color:red; display:block; margin-bottom:10px;">❌ Неверно!</span>
+                             <small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b><br>Твой ввод: <b>${userAnswer}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
     showScreen(quickResultScreen);
@@ -147,23 +154,95 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
+// 6. ФИНАЛ И АНАЛИТИКА
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
+    
+    let topicAnalysis = {};
+    mistakes.forEach(m => {
+        let t = m.task.topic || "Общая тема";
+        topicAnalysis[t] = (topicAnalysis[t] || 0) + 1;
+    });
+
+    let statsHTML = "";
+    if (mistakes.length > 0) {
+        statsHTML = `<div id="topic-stats"><b>🚩 Рекомендуем повторить темы:</b><ul>`;
+        for (let topic in topicAnalysis) { statsHTML += `<li>${topic} (${topicAnalysis[topic]} ошиб.)</li>`; }
+        statsHTML += `</ul></div>`;
+    }
+
+    const oldStats = document.getElementById('topic-stats');
+    if (oldStats) oldStats.remove();
+    
+    const reviewBtnBlock = document.getElementById('review-buttons');
+    if (mistakes.length > 0) {
+        reviewBtnBlock.style.display = 'block';
+        reviewBtnBlock.insertAdjacentHTML('beforebegin', statsHTML);
+    } else { reviewBtnBlock.style.display = 'none'; }
+    
     showScreen(testFinishScreen);
 }
 
+// 7. РАЗБОР ОШИБОК И ИИ
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); }
 
 function loadReviewForCurrentMistake() {
     const mistake = mistakes[currentReviewIndex];
-    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
+    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
+    
     document.getElementById('review-answers-block').innerHTML = `
-        <p><b>❌ Твой ответ:</b> ${mistake.user_answer}</p>
-        <p><b>✅ Правильный ответ:</b> ${mistake.task.answer || "---"}</p>`;
+        <p><b>❌ Твой ответ:</b> <span style="color:red;">${mistake.user_answer}</span></p>
+        <p><b>✅ Правильный ответ:</b> <span style="color:green;">${mistake.task.answer || "---"}</span></p>
+    `;
+    
+    const reviewImgContainer = document.getElementById('review-image-container');
+    if (mistake.task.image && mistake.task.image.length > 50) {
+        reviewImgContainer.innerHTML = `<img src="${mistake.task.image}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
+    } else { reviewImgContainer.innerHTML = `<div style="padding:10px; background:#f9f9f9; border-radius:8px;">${mistake.task.text}</div>`; }
+    
+    document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
     showScreen(reviewScreen);
 }
 
-window.finishSession = () => showScreen(mainMenuScreen);
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    const explanationBox = document.getElementById('review-explanation');
+    explanationBox.innerHTML = simplify ? "<i>⏳ Объясняю просто...</i>" : "<i>⏳ Пишу решение...</i>";
 
+    try {
+        const response = await fetch(`${TEST_API_URL}/review/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: mistake.user_answer,
+                image_url: mistake.task.image ? mistake.task.image.split(',')[1] : null, 
+                task_text: mistake.task.text,
+                simplify: simplify
+            })
+        });
+        const result = await response.json();
+        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px;">${result.explanation}</div>
+                                    <button class="button secondary" onclick="runAIExplanation(true)" style="margin-top:10px;">🍎 Объяснить проще</button>`;
+    } catch (error) { explanationBox.innerHTML = `Ошибка сервера.`; }
+}
+
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake();
+    else showScreen(mainMenuScreen);
+}
+
+// 8. ЗУМ КАРТИНОК
+document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('question-image')) {
+        const fullScreen = document.createElement('div');
+        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center;";
+        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%; object-fit:contain;">`;
+        fullScreen.onclick = () => fullScreen.remove();
+        document.body.appendChild(fullScreen);
+    }
+});
+
+window.finishSession = () => showScreen(mainMenuScreen);
 startApp();
