@@ -135,74 +135,36 @@ async function getRandomTask() {
 function showTask() {
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     
-    // ИСПРАВЛЕНО: Обратные кавычки для корректного отображения Base64
-    document.getElementById('task-image-container').innerHTML = `<img src="${currentTask.image}" class="question-image" alt="Задача" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
+    const imageContainer = document.getElementById('task-image-container');
+    const taskTextElement = document.getElementById('task-text');
+
+    // 1. УМНАЯ ОЧИСТКА ТЕКСТА ОТ НОМЕРОВ
+    if (currentTask.text) {
+        // Убираем номер в начале (цифры, потом точка или скобка, потом пробел)
+        let cleanText = currentTask.text.replace(/^\d+[\.\)]\s*/, ''); 
+        taskTextElement.textContent = cleanText;
+        taskTextElement.style.display = 'block';
+        
+        // Делаем текст красивым (крупным)
+        taskTextElement.style.fontSize = "22px";
+        taskTextElement.style.fontWeight = "bold";
+        taskTextElement.style.margin = "20px 0";
+    } else {
+        taskTextElement.style.display = 'none';
+    }
+
+    // 2. СКРЫВАЕМ БИТУЮ КАРТИНКУ
+    // Если картинки нет или это пустая ссылка
+    if (currentTask.image && currentTask.image.length > 50) { 
+        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" alt="Задача" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
+        imageContainer.style.display = 'block';
+    } else {
+        imageContainer.innerHTML = ""; // Очищаем контейнер
+        imageContainer.style.display = 'none'; // Скрываем его совсем
+    }
     
-    document.getElementById('task-text').textContent = currentTask.text || "";
     document.getElementById('user-answer').value = '';
-    
     showScreen(taskScreen);
-}
-
-window.submitAnswer = async function() {
-    // Взяли ответ, убрали пробелы по краям и заменили точку на запятую
-    let userAnswer = document.getElementById('user-answer').value.trim().replace('.', ',');
-    
-    if (!userAnswer) return;
-    
-    showScreen(loadingScreen);
-    
-    try {
-        const response = await fetch(`${TEST_API_URL}/check/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                user_answer: userAnswer,
-                // Передаем ID задачи, чтобы сервер точно знал, с чем сравнивать
-                task_id: currentTask.id, 
-                student_id: USER_ID || 12345
-            })
-        });
-        
-        const result = await response.json();
-        handleQuickResult(result.is_correct, userAnswer);
-    } catch (error) {
-        console.error('Ошибка проверки:', error);
-        showScreen(taskScreen);
-    }
-}
-
-function handleQuickResult(isCorrect, userAnswer) {
-    const titleEl = document.getElementById('quick-result-title');
-    const resultScreen = document.getElementById('quick-result-screen');
-    
-    if (isCorrect) {
-        titleEl.textContent = '🎉 Верно!';
-        titleEl.style.color = 'green';
-        score++;
-    } else {
-        titleEl.textContent = '❌ Неверно!';
-        titleEl.style.color = 'red';
-        // ДОБАВЛЯЕМ ЭТО:
-        const correctHint = document.createElement('p');
-        correctHint.innerHTML = `Ожидалось: <b>${currentTask.answer}</b><br>Твой ввод: <b>${userAnswer}</b>`;
-        correctHint.style.fontSize = "14px";
-        titleEl.appendChild(correctHint);
-        
-        mistakes.push({ task: currentTask, user_answer: userAnswer });
-    }
-    showScreen(quickResultScreen);
-}
-
-window.nextTask = function() {
-    questionNumber++;
-    if (questionNumber <= TEST_LENGTH) {
-        if(loadingScreen) loadingScreen.innerHTML = "<p>Грузим вопрос...</p><div class='spinner'></div>";
-        showScreen(loadingScreen);
-        getRandomTask();
-    } else {
-        showFinishScreen();
-    }
 }
 
 function showFinishScreen() {
@@ -256,7 +218,13 @@ function loadReviewForCurrentMistake() {
         `;
     }
     
-    document.getElementById('review-image-container').innerHTML = `<img src="${mistake.task.image}" class="question-image" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
+    const reviewImgContainer = document.getElementById('review-image-container');
+if (mistake.task.image && mistake.task.image.length > 50) {
+    reviewImgContainer.innerHTML = `<img src="${mistake.task.image}" class="question-image" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
+    reviewImgContainer.style.display = 'block';
+} else {
+    reviewImgContainer.style.display = 'none';
+}
     document.getElementById('review-explanation').innerHTML = `
         <button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>
     `;
