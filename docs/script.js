@@ -174,6 +174,7 @@ window.submitAnswer = async function() {
 
 function handleQuickResult(isCorrect, userAnswer) {
     const titleEl = document.getElementById('quick-result-title');
+    const resultScreen = document.getElementById('quick-result-screen');
     
     if (isCorrect) {
         titleEl.textContent = '🎉 Верно!';
@@ -182,9 +183,14 @@ function handleQuickResult(isCorrect, userAnswer) {
     } else {
         titleEl.textContent = '❌ Неверно!';
         titleEl.style.color = 'red';
+        // ДОБАВЛЯЕМ ЭТО:
+        const correctHint = document.createElement('p');
+        correctHint.innerHTML = `Ожидалось: <b>${currentTask.answer}</b><br>Твой ввод: <b>${userAnswer}</b>`;
+        correctHint.style.fontSize = "14px";
+        titleEl.appendChild(correctHint);
+        
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    
     showScreen(quickResultScreen);
 }
 
