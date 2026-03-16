@@ -48,9 +48,11 @@ def build_database():
                     else:
                         task['answer'] = "---"
                     
-                    # Обеспечиваем наличие нужных полей для ВК
-                    task['task_text'] = task.get('text', task.get('task_text', ''))
-                    final_tasks.append(task)
+                  # Дублируем текст в оба поля, чтобы и сервер, и ВК его видели
+                  content = task.get('text') or task.get('task_text', '')
+                  task['text'] = content      # Это для сервера (curl)
+                  task['task_text'] = content # Это для script.js
+                  final_tasks.append(task)
     
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(final_tasks, f, ensure_ascii=False, indent=4)
