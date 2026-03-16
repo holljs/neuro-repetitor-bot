@@ -29,11 +29,12 @@ def build_database():
     
     final_tasks = []
 
-    # 1. Ищем все папки внутри questions (topic_01_models, topic_04_eq и т.д.)
-    for topic_folder in QUESTIONS_ROOT.iterdir():
-        if topic_folder.is_dir() and topic_folder.name.startswith("topic_"):
+    # 1. Ищем ВСЕ папки с названием topic_ во всем проекте
+    # Теперь неважно, лежат они в images_oge_math или в корне
+    for topic_folder in Path('questions').rglob('topic_*'):
+        if topic_folder.is_dir():
             topic_name = topic_folder.name
-            print(f"📁 Обработка темы: {topic_name}")
+            print(f"📁 Нашел тему: {topic_name} по пути {topic_folder}")
 
            # 2. Ищем JSON файлы РЕКУРСИВНО (во всех подпапках темы)
             for json_file in topic_folder.rglob("*.json"):
