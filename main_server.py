@@ -41,6 +41,15 @@ except Exception as e:
     logger.error(f"❌ Ошибка загрузки базы: {e}")
     ALL_TASKS = []
 
+def normalize_math_text(text: str):
+    if not text:
+        return ""
+    # Убираем пробелы, меняем запятые на точки
+    text = text.lower().replace(" ", "").replace(",", ".")
+    # Заменяем все виды длинных тире на обычный минус
+    text = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text)
+    return text.strip()
+
 app = FastAPI(title="Neuro Repetitor API", version="1.3.0")
 
 app.add_middleware(
@@ -54,8 +63,7 @@ app.add_middleware(
 # --- МОДЕЛИ ДАННЫХ ---
 class CheckRequest(BaseModel):
     user_answer: str
-    image_url: str
-    task_id: str  # <-- Добавь эту строку!
+    task_id: str  
     student_id: Optional[int] = None
 
 class ReviewRequest(BaseModel):
@@ -104,55 +112,43 @@ async def pay_for_test(request: ReportRequest):
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
-    """Умная проверка: сравниваем ответ ученика с эталоном из базы через ИИ"""
+    """Умная проверка: сначала база, потом ИИ"""
     
-    # 1. Ищем задачу в ALL_TASKS по ID (который пришел из фронтенда)
-    # В CheckRequest должно быть поле task_id
-    task_id = getattr(request, 'task_id', None)
-    task_in_db = next((t for t in ALL_TASKS if t.get("id") == task_id), None)
+    # 1. Ищем задачу в базе по ID или номеру
+    task_id = request.task_id
+    task_in_db = next((t for t in ALL_TASKS if str(t.get("number")) == str(task_id) or str(t.get("id")) == str(task_id)), None)
     
-    if not task_in_db or not task_in_db.get("answer"):
-        logger.warning(f"⚠️ Ответ для задачи {task_id} не найден в базе")
-        return {"is_correct": False, "error": "Ответ отсутствует в базе"}
+    if not task_in_db:
+        logger.warning(f"⚠️ Задача {task_id} не найдена в ALL_TASKS")
+        return {"is_correct": False, "error": "Задача не найдена"}
 
-    correct_answer = str(task_in_db["answer"])
-    user_answer = request.user_answer.strip()
+    correct_answer = str(task_in_db.get("answer", ""))
+    user_answer = request.user_answer
 
-    # 2. Быстрая проверка на точное совпадение (чтобы не тратить токены)
-    if user_answer.replace('.', ',') == correct_answer.replace('.', ','):
+    # 2. Быстрая проверка (наша нормализация)
+    if normalize_math_text(user_answer) == normalize_math_text(correct_answer):
         return {"is_correct": True}
 
-    # 3. Если не совпало "в лоб", вызываем Gemini как эксперта
+    # 3. Если не совпало, спрашиваем Gemini
     model_id = "google/gemini-3-flash" 
     
     prompt = f"""
-    Ты — эксперт-математик. Проверь, совпадает ли ответ ученика с правильным ответом.
-    Они могут быть записаны по-разному, но быть математически равны.
-    
-    ПРАВИЛЬНЫЙ ОТВЕТ: {correct_answer}
+    Ты — эксперт-математик. Проверь, равны ли ответы.
+    ЭТАЛОН: {correct_answer}
     ОТВЕТ УЧЕНИКА: {user_answer}
-    
-    Примеры эквивалентности:
-    - "0,5" и "1/2" — ВЕРНО
-    - "x=2" и "2" — ВЕРНО
-    - "sqrt(12)" и "2*sqrt(3)" — ВЕРНО
-    - "корень из 2" и "sqrt(2)" — ВЕРНО
-    
-    Если ответы равны, ответь 'true', если нет — 'false'.
+    Ответишь 'true' если они равны (например 0.5 и 1/2) и 'false' если нет.
     Верни строго JSON: {{"is_correct": true/false}}
     """
 
     try:
-        # Важно: Gemini 3 Flash очень быстрая и дешевая
         output = replicate.run(model_id, input={"prompt": prompt})
         res = "".join(output).lower()
-        is_correct = "true" in res
-        return {"is_correct": is_correct}
+        return {"is_correct": "true" in res}
     except Exception as e:
-        logger.error(f"❌ Ошибка ИИ-проверки: {e}")
-        # Запасной вариант: простое сравнение
-        return {"is_correct": user_answer == correct_answer}
-
+        logger.error(f"❌ Ошибка ИИ: {e}")
+        # Запасной вариант: простое сравнение после очистки
+        return {"is_correct": normalize_math_text(user_answer) == normalize_math_text(correct_answer)}
+        
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
     """Подробный бесплатный разбор на Gemini 3 Flash"""
