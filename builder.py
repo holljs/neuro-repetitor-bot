@@ -15,7 +15,7 @@ def load_all_answers():
         with open(ANSWERS_FILE, 'r', encoding='utf-8') as f:
             for line in f:
                 # Ищем формат topic_XX_YY: ответ
-                match = re.search(r'(topic_\d+_\w+)_(\d+):\s*(.*)', line)
+                match = re.search(r'(topic_\d+)_([\wа-яА-Я]+):\s*(.*)', line)
                 if match:
                     topic_full = match.group(1) # например topic_04_eq
                     task_num = match.group(2)   # например 1
@@ -51,16 +51,33 @@ def build_database():
                             tasks_list = [data]
 
                         for task in tasks_list:
-                            # Извлекаем номер задачи из имени файла или поля number
-                            # Например: data_page_8.json -> берем '8'
-                            file_num = re.search(r'(\d+)', json_file.stem)
-                            task_num = task.get('number') or (file_num.group(1) if file_num else "unknown")
-
-                            # Ключ для ответа: topic_01_8
-                            key = f"{topic_name}_{task_num}"
-                            task['answer'] = answers_map.get(key, "---")
-                            task['id'] = key
+                            # 1. Извлекаем номер задачи
+                            # Сначала ищем в поле 'number' (его заполнил ИИ в Factory)
+                            raw_num = task.get('number')
                             
+                            # Если там пусто, ищем цифру в тексте задачи
+                            if not raw_num:
+                                match = re.search(r'(\d+)', task.get('text', ''))
+                                raw_num = match.group(1) if match else None
+
+                            if raw_num:
+                                # Ключ для поиска в answers_math.txt: "topic_02_123"
+                                key = f"{topic_name}_{raw_num}"
+                                
+                                # Пытаемся найти ответ
+                                task_answer = answers_map.get(key)
+                                
+                                if task_answer:
+                                    task['answer'] = task_answer
+                                    # print(f"✅ Нашел ответ для {key}") # Раскомментируй для проверки
+                                else:
+                                    task['answer'] = "---"
+                                
+                                task['id'] = key
+                            else:
+                                task['answer'] = "---"
+                            
+                            # Наполняем поля текста
                             content = task.get('text') or task.get('task_text', '')
                             task['text'] = content
                             task['task_text'] = content
