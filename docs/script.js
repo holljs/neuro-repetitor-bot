@@ -89,33 +89,41 @@ async function getRandomTask() {
 // 4. ОТОБРАЖЕНИЕ ЗАДАЧИ
 function showTask() {
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
-    const imageContainer = document.getElementById('task-image-container');
     const taskTextElement = document.getElementById('task-text');
+    const imageContainer = document.getElementById('task-image-container');
 
-    // Берем текст из любого доступного поля (task_text или text)
+    // Пытаемся найти текст во всех возможных полях 
     let rawText = currentTask.task_text || currentTask.text || "";
     
+    // Если текста нет, но есть номер, выведем хотя бы его для отладки
+    if (!rawText && currentTask.number) {
+        rawText = "Задача №" + currentTask.number;
+    }
+
     if (rawText) {
-        // Чистим от лишних слов и номеров
+        // Очистка от лишнего мусора 
         let cleanText = rawText
             .replace(/Решите уравнения/gi, '')
             .replace(/Решите уравнение/gi, '')
             .replace(/^\d+[\.\)]\s*/, '') 
             .trim();
         
-        taskTextElement.textContent = cleanText;
+        // Делаем заглавную букву
+        cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
+        
+        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.4;">${cleanText}</div>`;
         taskTextElement.style.display = 'block';
-    } else { 
-        taskTextElement.style.display = 'none'; 
+    } else {
+        taskTextElement.textContent = "Текст задачи не найден в базе";
     }
 
-    // Остальной код (картинки, инпуты) оставляем как есть...
-
-    // КАРТИНКА (прячем если пустая)
+    // Обработка картинок (если есть) 
     if (currentTask.image && currentTask.image.length > 50) {
-        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" style="max-width: 100%; border-radius: 8px; cursor: zoom-in;">`;
+        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" style="width:100%">`;
         imageContainer.style.display = 'block';
-    } else { imageContainer.style.display = 'none'; }
+    } else {
+        imageContainer.style.display = 'none';
+    }
 
     document.getElementById('user-answer').value = '';
     showScreen(taskScreen);
