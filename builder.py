@@ -35,24 +35,29 @@ def build_database():
             with open(os.path.join(DATA_DIR, filename), 'r', encoding='utf-8') as f:
                 page_data = json.load(f)
                 for task in page_data:
-                    # Извлекаем номер из поля "number" или из текста
+                    # 1. Ищем номер задачи
                     raw_number = task.get('number', '')
                     if not raw_number:
                         num_match = re.search(r'(\d+)', task.get('text', ''))
                         raw_number = num_match.group(1) if num_match else None
                     
+                    # 2. Пришиваем ответ
                     if raw_number:
                         task_id = int(raw_number)
-                        # Пытаемся найти ответ по номеру
                         task['answer'] = answers_map.get(task_id, "---")
                     else:
                         task['answer'] = "---"
                     
-                  # Дублируем текст в оба поля, чтобы и сервер, и ВК его видели
-                  content = task.get('text') or task.get('task_text', '')
-                  task['text'] = content      # Это для сервера (curl)
-                  task['task_text'] = content # Это для script.js
-                  final_tasks.append(task)
+                    # 3. ЗАПОЛНЯЕМ ТЕКСТ (Самое важное!)
+                    # Берем данные из любого доступного поля
+                    content = task.get('text') or task.get('task_text', '')
+                    
+                    # Записываем в оба поля сразу для надежности
+                    task['text'] = content      # Это увидит сервер (через curl)
+                    task['task_text'] = content # Это увидит твой script.js в ВК
+                    
+                    # 4. Добавляем готовую задачу в список
+                    final_tasks.append(task)
     
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(final_tasks, f, ensure_ascii=False, indent=4)
