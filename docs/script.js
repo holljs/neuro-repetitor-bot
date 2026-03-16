@@ -129,9 +129,23 @@ function showTask() {
     showScreen(taskScreen);
 }
 
+/ --- ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ОЧИСТКИ ОТВЕТОВ ---
+function normalizeText(str) {
+    if (!str) return "";
+    return str.toString()
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-') // Все виды тире/дефисов -> в стандартный минус
+        .replace(',', '.')                          // Запятые -> в точки
+        .replace(/\s+/g, '')                        // Удаляем абсолютно все пробелы
+        .trim()
+        .toLowerCase();
+}
+
 // 5. ПРОВЕРКА ОТВЕТА (Исправленная!)
 window.submitAnswer = async function() {
-    let userAnswer = document.getElementById('user-answer').value.trim().replace('.', ',');
+    let rawInput = document.getElementById('user-answer').value;
+    // Чистим ввод ученика
+    let userAnswer = normalizeText(rawInput);
+    
     if (!userAnswer) return;
     
     showScreen(loadingScreen);
@@ -140,19 +154,31 @@ window.submitAnswer = async function() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                user_answer: userAnswer,
+                user_answer: userAnswer, // Улетает уже чистый ответ
                 task_id: currentTask.id,
                 student_id: USER_ID || 12345
             })
         });
         const result = await response.json();
-        handleQuickResult(result.is_correct, userAnswer);
-    } catch (error) { showScreen(taskScreen); }
+        
+        // Передаем в результат и флаг правильности, и ЧИСТЫЙ ввод
+        handleQuickResult(result.is_correct, rawInput); 
+    } catch (error) { 
+        showScreen(taskScreen); 
+    }
 }
 
 function handleQuickResult(isCorrect, userAnswer) {
     const titleEl = document.getElementById('quick-result-title');
-    if (isCorrect) {
+    
+    // Нормализуем оба для финальной проверки "на месте"
+    const normUser = normalizeText(userAnswer);
+    const normCorrect = normalizeText(currentTask.answer);
+
+    // Если сервер сказал "неверно", но нормализованные значения совпали — исправляем это!
+    const finalCorrect = isCorrect || (normUser === normCorrect);
+
+    if (finalCorrect) {
         titleEl.innerHTML = '<span style="color:green">🎉 Верно!</span>';
         score++;
     } else {
