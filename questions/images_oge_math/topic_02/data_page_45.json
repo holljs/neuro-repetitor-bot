@@ -1,0 +1,244 @@
+[
+    {
+        "number": "364",
+        "task_text": "Упростите выражение (sqrt(3) + 5)(sqrt(3) - 5).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "365",
+        "task_text": "Упростите выражение (sqrt(7) - 1)(sqrt(7) + 1).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "366",
+        "task_text": "Упростите выражение (sqrt(2) + sqrt(5))(sqrt(2) - sqrt(5)).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "367",
+        "task_text": "Упростите выражение (sqrt(5) - 3)^2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "368",
+        "task_text": "Упростите выражение (sqrt(2) + 1)^2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "369",
+        "task_text": "Упростите выражение (sqrt(5) + sqrt(7))^2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "370",
+        "task_text": "Упростите выражение (sqrt(5) - sqrt(3))^2.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "371*",
+        "task_text": "Упростите выражение (7*sqrt(3) + 14*sqrt(48) - sqrt(147)) : 2*sqrt(3).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "372*",
+        "task_text": "Упростите выражение 2*sqrt(20) + 1,5*sqrt(28) + sqrt(45) - sqrt(63).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "373*",
+        "task_text": "Упростите выражение 3*sqrt(45) + 1,2*sqrt(125) + sqrt(20) - sqrt(500).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "374*",
+        "task_text": "Упростите выражение (3*sqrt(5/6) + 3*sqrt(3/10) - 4*sqrt(5/6)) * sqrt(5/6).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "375*",
+        "task_text": "Упростите выражение (2*sqrt(2/3) - 8*sqrt(3/8) + 4*sqrt(3/2)) : sqrt(2/3).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "376",
+        "task_text": "Упростите выражение sqrt(17^2 - 15^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "377",
+        "task_text": "Упростите выражение sqrt(82^2 - 18^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "378",
+        "task_text": "Упростите выражение sqrt(65^2 - 63^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "379",
+        "task_text": "Упростите выражение sqrt(113^2 - 112^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "380",
+        "task_text": "Упростите выражение sqrt((-18)^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "381",
+        "task_text": "Упростите выражение sqrt((-15)^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "382*",
+        "task_text": "Упростите выражение sqrt((sqrt(8) - 3)^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "383*",
+        "task_text": "Упростите выражение sqrt((sqrt(27) - sqrt(25))^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "384*",
+        "task_text": "Упростите выражение sqrt((4 - sqrt(5))^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "385*",
+        "task_text": "Упростите выражение sqrt((sqrt(16) - sqrt(20))^2).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+]

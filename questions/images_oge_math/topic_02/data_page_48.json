@@ -1,0 +1,178 @@
+[
+    {
+        "number": "1",
+        "task_text": "Вариант 1. Выполните сложение 10 5/6 + 2 7/18.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "2",
+        "task_text": "Выполните вычитание 13,7 - 18,85.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "3",
+        "task_text": "Вычислите 12/17 : 3/34 * (-0,25).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "4",
+        "task_text": "Выполните действия |- 4,5| + |3,6|.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "5",
+        "task_text": "Выполните действия 21,7 : (3 7/15 - 1 2/15).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "6",
+        "task_text": "Сравните числа 1,27 * 10^-3 и 5,41 * 10^-4.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "7",
+        "task_text": "Вычислите sqrt(125/3) * sqrt(3/20).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "8",
+        "task_text": "Упростите выражение 3 / (sqrt(3) + sqrt(2)) + 5 / (sqrt(3) - sqrt(2)).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "1",
+        "task_text": "Вариант 2. Выполните вычитание 5 11/12 - 3 5/6.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "2",
+        "task_text": "Выполните сложение -21,35 + (-15,65).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "3",
+        "task_text": "Вычислите 0,2 * 6/19 : 3/38.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "4",
+        "task_text": "Выполните действия |- 5,5| / |1,1|.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "5",
+        "task_text": "Вычислите (2 5/18 + 7/18) : 0,8.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "6",
+        "task_text": "Сравните числа 2,73 * 10^11 и 1,81 * 10^12.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "7",
+        "task_text": "Вычислите sqrt(64/4).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "number": "8",
+        "task_text": "Упростите выражение 3 / (sqrt(3) + sqrt(2)) - 2 / (sqrt(3) - sqrt(2)).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+]
