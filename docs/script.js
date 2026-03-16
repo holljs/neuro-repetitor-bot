@@ -129,7 +129,7 @@ function showTask() {
     showScreen(taskScreen);
 }
 
-/ --- ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ОЧИСТКИ ОТВЕТОВ ---
+// --- ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ОЧИСТКИ ОТВЕТОВ ---
 function normalizeText(str) {
     if (!str) return "";
     return str.toString()
