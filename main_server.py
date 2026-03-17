@@ -1,6 +1,5 @@
 import os
 import logging
-import base64
 import random
 import json
 import re
@@ -11,54 +10,43 @@ from typing import Optional
 import replicate
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, field_validator
-from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-# !!! ВАЖНО: Импортируй свой модуль базы данных !!!
-# Предполагаем, что файл называется database.py и в нем есть объект db
-# from database import db 
-
-# Настройка логирования
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger("NeuroRepetitor")
-
+# --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-
-# --- НАСТРОЙКИ ПУТЕЙ ---
-QUESTIONS_DIR = Path("questions")
-DB_FILE = QUESTIONS_DIR / "oge_math.json"
-
-try:
-    if DB_FILE.exists():
-        with open(DB_FILE, 'r', encoding='utf-8') as f:
-            ALL_TASKS = json.load(f)
-        logger.info(f"✅ База задач загружена: {len(ALL_TASKS)} шт.")
-    else:
-        ALL_TASKS = []
-        logger.warning("⚠️ Файл базы задач не найден!")
-except Exception as e:
-    logger.error(f"❌ Ошибка загрузки базы: {e}")
-    ALL_TASKS = []
-
-def normalize_math_text(text: str):
-    if not text:
-        return ""
-    # Убираем пробелы, меняем запятые на точки
-    text = text.lower().replace(" ", "").replace(",", ".")
-    # Заменяем все виды длинных тире на обычный минус
-    text = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text)
-    return text.strip()
-
 app = FastAPI(title="Neuro Repetitor API", version="1.3.0")
 
+# --- НАСТРОЙКА CORS (Разрешаем GitHub и локалку) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://holljs.github.io", "http://localhost:3000"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger("NeuroRepetitor")
+
+# --- ЗАГРУЗКА БАЗЫ ---
+QUESTIONS_DIR = Path("questions")
+DB_FILE = QUESTIONS_DIR / "oge_math.json"
+ALL_TASKS = []
+
+if DB_FILE.exists():
+    try:
+        with open(DB_FILE, 'r', encoding='utf-8') as f:
+            ALL_TASKS = json.load(f)
+        logger.info(f"✅ База задач загружена: {len(ALL_TASKS)} шт.")
+    except Exception as e:
+        logger.error(f"❌ Ошибка чтения JSON: {e}")
+
+def normalize_math_text(text: str):
+    if not text: return ""
+    text = text.lower().replace(" ", "").replace(",", ".")
+    text = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text)
+    return text.strip()
 
 # --- МОДЕЛИ ДАННЫХ ---
 class CheckRequest(BaseModel):
@@ -74,80 +62,53 @@ class ReviewRequest(BaseModel):
 
 class ReportRequest(BaseModel):
     task_id: str
+    student_id: Optional[int] = None
 
-# --- МАРШРУТЫ ---
-
-@app.get("/")
-async def root():
-    return {"status": "online", "server_time": datetime.utcnow().isoformat()}
-
-@app.get("/random_task/")
-async def get_random_task(exam_type: str = "oge_math"):
-    """Случайная задача с поддержкой тем и ответов"""
-    tasks_pool = [t for t in ALL_TASKS if t.get("exam_type") == exam_type]
-    if not tasks_pool: tasks_pool = ALL_TASKS
-    if not tasks_pool: raise HTTPException(status_code=500, detail="База пуста")
-    
-    task = random.choice(tasks_pool)
-    return {
-        "id": task.get("id", "unknown"),
-        "topic": task.get("topic", "Общая тема"),
-        "text": task.get("text", ""),
-        "image": task.get("image", ""),
-        "answer": task.get("answer", "")
-    }
-
-@app.post("/start_test_payment/")
-async def pay_for_test(request: ReportRequest):
-    """Списание 3 кредитов за начало теста"""
-    student_id = int(request.task_id) # В JS мы передаем USER_ID в поле task_id
-    
-    # balance = db.get_balance(student_id)
-    # if balance is None or balance < 3:
-    #     return {"success": False, "error": "Недостаточно кредитов (нужно 3)"}
-    
-    # db.update_balance(student_id, -3)
-    logger.info(f"💰 Списано 3 кредита у {student_id}")
-    return {"success": True, "new_balance": 97} # Заглушка баланса
-
+# --- ГЛАВНЫЙ МАРШРУТ ПРОВЕРКИ (С АНАЛИТИКОЙ) ---
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
-    """Умная проверка: сначала база, потом ИИ"""
-    
-    # 1. Ищем задачу в базе по ID или номеру
+    # 1. Ищем задачу
     task_id = request.task_id
-    task_in_db = next((t for t in ALL_TASKS if str(t.get("number")) == str(task_id) or str(t.get("id")) == str(task_id)), None)
+    task = next((t for t in ALL_TASKS if str(t.get("id")) == str(task_id)), None)
     
-    if not task_in_db:
-        logger.warning(f"⚠️ Задача {task_id} не найдена в ALL_TASKS")
+    if not task:
         return {"is_correct": False, "error": "Задача не найдена"}
 
-    correct_answer = str(task_in_db.get("answer", ""))
+    correct_answer = str(task.get("answer", ""))
     user_answer = request.user_answer
+    topic_id = task.get("topic", "unknown") # Наша тема для статистики
 
-    # 2. Быстрая проверка (наша нормализация)
+    # 2. Проверка (Нормализация + Gemini)
+    is_correct = False
     if normalize_math_text(user_answer) == normalize_math_text(correct_answer):
-        return {"is_correct": True}
+        is_correct = True
+    else:
+        # Если не совпало просто, спрашиваем ИИ
+        try:
+            prompt = f"Равны ли математически: '{correct_answer}' и '{user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
+            output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
+            res = "".join(output).lower()
+            is_correct = "true" in res
+        except Exception as e:
+            logger.error(f"AI Error: {e}")
+            is_correct = False
 
-    # 3. Если не совпало, спрашиваем Gemini
-    model_id = "google/gemini-3-flash" 
+    # 3. СОХРАНЯЕМ СТАТИСТИКУ (Выявление пробелов)
+    # Здесь мы пишем в лог, чтобы потом проанализировать
+    # В идеале — сделать запись в БД (student_id, topic_id, is_correct)
+    logger.info(f"📊 СТАТИСТИКА: Студент {request.student_id} | Тема {topic_id} | Верно: {is_correct}")
     
-    prompt = f"""
-    Ты — эксперт-математик. Проверь, равны ли ответы.
-    ЭТАЛОН: {correct_answer}
-    ОТВЕТ УЧЕНИКА: {user_answer}
-    Ответишь 'true' если они равны (например 0.5 и 1/2) и 'false' если нет.
-    Верни строго JSON: {{"is_correct": true/false}}
-    """
+    # Можно добавить функцию записи в файл:
+    with open("user_stats.log", "a") as f:
+        f.write(f"{datetime.now()},{request.student_id},{topic_id},{is_correct}\n")
 
-    try:
-        output = replicate.run(model_id, input={"prompt": prompt})
-        res = "".join(output).lower()
-        return {"is_correct": "true" in res}
-    except Exception as e:
-        logger.error(f"❌ Ошибка ИИ: {e}")
-        # Запасной вариант: простое сравнение после очистки
-        return {"is_correct": normalize_math_text(user_answer) == normalize_math_text(correct_answer)}
+    return {
+        "is_correct": is_correct,
+        "topic": topic_id,
+        "correct_was": correct_answer if not is_correct else None
+    }
+
+# Остальные маршруты (random_task, review и т.д.) оставляй как были в FastAPI...
         
 @app.post("/review/")
 async def review_answer_detailed(request: ReviewRequest):
