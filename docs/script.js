@@ -15,6 +15,11 @@ const reviewScreen = document.getElementById('review-screen');
 let USER_ID = null;
 const OGE_SUBJECTS = { "oge_russian": "🇷🇺 Русский язык", "oge_math": "🧮 Математика" };
 const EGE_SUBJECTS = { "ege_russian": "🇷🇺 Русский язык", "ege_math_profile": "📐 Математика (профиль)" };
+const TOPIC_TRANSLATIONS = {
+    "topic_01": "🏠 Практические задачи",
+    "topic_02": "🔢 Вычисления и дроби",
+    "topic_04_eq": "⚖️ Уравнения"
+};
 
 // СОСТОЯНИЕ ТЕСТА
 const TEST_LENGTH = 15;
@@ -67,7 +72,7 @@ window.startTest = async function(subjectCode) {
         const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ task_id: String(USER_ID || 12345) })
+            body: JSON.stringify({ student_id: USER_ID || 12345 })
         });
         const payResult = await payResponse.json();
         if (payResult.success) {
@@ -92,34 +97,30 @@ function showTask() {
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
 
-    // Пытаемся найти текст во всех возможных полях 
     let rawText = currentTask.task_text || currentTask.text || "";
     
-    // Если текста нет, но есть номер, выведем хотя бы его для отладки
     if (!rawText && currentTask.number) {
         rawText = "Задача №" + currentTask.number;
     }
 
     if (rawText) {
-        // Очистка от лишнего мусора 
         let cleanText = rawText
             .replace(/Решите уравнения/gi, '')
             .replace(/Решите уравнение/gi, '')
             .replace(/^\d+[\.\)]\s*/, '') 
             .trim();
         
-        // Делаем заглавную букву
         cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
-        
         taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.4;">${cleanText}</div>`;
         taskTextElement.style.display = 'block';
     } else {
         taskTextElement.textContent = "Текст задачи не найден в базе";
     }
 
-    // Обработка картинок (если есть) 
-    if (currentTask.image && currentTask.image.length > 50) {
-        imageContainer.innerHTML = `<img src="${currentTask.image}" class="question-image" style="width:100%">`;
+    if (currentTask.image && currentTask.image.length > 5) {
+        // Добавляем домен и порт, если путь относительный
+        const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `${API_SERVER_URL}:8080/${currentTask.image}`;
+        imageContainer.innerHTML = `<img src="${fullImgUrl}" class="question-image" style="width:100%; border-radius:8px;">`;
         imageContainer.style.display = 'block';
     } else {
         imageContainer.style.display = 'none';
@@ -129,23 +130,20 @@ function showTask() {
     showScreen(taskScreen);
 }
 
-// --- ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ОЧИСТКИ ОТВЕТОВ ---
 function normalizeText(str) {
     if (!str) return "";
     return str.toString()
-        .replace(/[\u2012\u2013\u2014\u2212]/g, '-') // Все виды тире/дефисов -> в стандартный минус
-        .replace(',', '.')                          // Запятые -> в точки
-        .replace(/\s+/g, '')                        // Удаляем абсолютно все пробелы
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
+        .replace(',', '.')
+        .replace(/\s+/g, '')
         .trim()
         .toLowerCase();
 }
 
-// 5. ПРОВЕРКА ОТВЕТА (Исправленная!)
+// 5. ПРОВЕРКА ОТВЕТА
 window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
-    // Чистим ввод ученика
     let userAnswer = normalizeText(rawInput);
-    
     if (!userAnswer) return;
     
     showScreen(loadingScreen);
@@ -154,14 +152,12 @@ window.submitAnswer = async function() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                user_answer: userAnswer, // Улетает уже чистый ответ
+                user_answer: userAnswer,
                 task_id: currentTask.id,
                 student_id: USER_ID || 12345
             })
         });
         const result = await response.json();
-        
-        // Передаем в результат и флаг правильности, и ЧИСТЫЙ ввод
         handleQuickResult(result.is_correct, rawInput); 
     } catch (error) { 
         showScreen(taskScreen); 
@@ -170,12 +166,8 @@ window.submitAnswer = async function() {
 
 function handleQuickResult(isCorrect, userAnswer) {
     const titleEl = document.getElementById('quick-result-title');
-    
-    // Нормализуем оба для финальной проверки "на месте"
     const normUser = normalizeText(userAnswer);
     const normCorrect = normalizeText(currentTask.answer);
-
-    // Если сервер сказал "неверно", но нормализованные значения совпали — исправляем это!
     const finalCorrect = isCorrect || (normUser === normCorrect);
 
     if (finalCorrect) {
@@ -195,21 +187,24 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
-// 6. ФИНАЛ И АНАЛИТИКА
+// 6. ФИНАЛ И АНАЛИТИКА (Исправлено!)
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
     
     let topicAnalysis = {};
     mistakes.forEach(m => {
-        let t = m.task.topic || "Общая тема";
+        let t = m.task.topic || "unknown";
         topicAnalysis[t] = (topicAnalysis[t] || 0) + 1;
     });
 
     let statsHTML = "";
     if (mistakes.length > 0) {
-        statsHTML = `<div id="topic-stats"><b>🚩 Рекомендуем повторить темы:</b><ul>`;
-        for (let topic in topicAnalysis) { statsHTML += `<li>${topic} (${topicAnalysis[topic]} ошиб.)</li>`; }
+        statsHTML = `<div id="topic-stats" style="margin-top:15px; text-align:left;"><b>🚩 Рекомендуем повторить темы:</b><ul style="padding-left:20px; margin-top:5px;">`;
+        for (let topic in topicAnalysis) { 
+            const prettyName = TOPIC_TRANSLATIONS[topic] || topic;
+            statsHTML += `<li>${prettyName} (${topicAnalysis[topic]} ошиб.)</li>`; 
+        }
         statsHTML += `</ul></div>`;
     }
 
@@ -238,9 +233,12 @@ function loadReviewForCurrentMistake() {
     `;
     
     const reviewImgContainer = document.getElementById('review-image-container');
-    if (mistake.task.image && mistake.task.image.length > 50) {
-        reviewImgContainer.innerHTML = `<img src="${mistake.task.image}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
-    } else { reviewImgContainer.innerHTML = `<div style="padding:10px; background:#f9f9f9; border-radius:8px;">${mistake.task.text}</div>`; }
+    if (mistake.task.image && mistake.task.image.length > 5) {
+        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `${API_SERVER_URL}:8080/${mistake.task.image}`;
+        reviewImgContainer.innerHTML = `<img src="${fullImgUrl}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
+    } else { 
+        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${mistake.task.task_text || mistake.task.text}</div>`; 
+    }
     
     document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
     showScreen(reviewScreen);
@@ -251,21 +249,29 @@ window.runAIExplanation = async function(simplify = false) {
     const explanationBox = document.getElementById('review-explanation');
     explanationBox.innerHTML = simplify ? "<i>⏳ Объясняю просто...</i>" : "<i>⏳ Пишу решение...</i>";
 
+    const taskText = mistake.task.task_text || mistake.task.text || "Текст задачи";
+    let imageUrl = mistake.task.image || null;
+    if (imageUrl && !imageUrl.startsWith('http')) {
+        imageUrl = `${API_SERVER_URL}:8080/${imageUrl}`;
+    }
+
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                user_answer: mistake.user_answer,
-                image_url: mistake.task.image ? mistake.task.image.split(',')[1] : null, 
-                task_text: mistake.task.text,
+                user_answer: String(mistake.user_answer),
+                image_url: imageUrl, 
+                task_text: taskText,
                 simplify: simplify
             })
         });
         const result = await response.json();
-        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px;">${result.explanation}</div>
-                                    <button class="button secondary" onclick="runAIExplanation(true)" style="margin-top:10px;">🍎 Объяснить проще</button>`;
-    } catch (error) { explanationBox.innerHTML = `Ошибка сервера.`; }
+        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">${result.explanation}</div>
+                                    <button class="button secondary" onclick="runAIExplanation(true)">🍎 Объяснить проще</button>`;
+    } catch (error) { 
+        explanationBox.innerHTML = `⚠️ Ошибка сервера.`; 
+    }
 }
 
 window.nextReview = function() {
