@@ -6,7 +6,7 @@ from pathlib import Path
 # --- НАСТРОЙКИ ---
 ANSWERS_FILE = 'answers_math.txt'
 QUESTIONS_ROOT = Path('questions')
-RAW_DATA_FILE = QUESTIONS_ROOT / 'raw_oge_tasks.json' # Файл, который выдает factory.py
+IMAGES_ROOT = QUESTIONS_ROOT / 'images_oge_math'
 OUTPUT_FILE = QUESTIONS_ROOT / 'oge_math.json'
 
 def load_all_answers():
@@ -15,73 +15,79 @@ def load_all_answers():
     if os.path.exists(ANSWERS_FILE):
         with open(ANSWERS_FILE, 'r', encoding='utf-8') as f:
             for line in f:
-                # Ищем формат topic_XX_YY: ответ (учитываем буквы в номерах)
+                # Формат topic_XX_номер: ответ
                 match = re.search(r'(topic_\d+)_([\wа-яА-Я\)\*]+):\s*(.*)', line)
                 if match:
-                    topic_full = match.group(1)
-                    task_num = match.group(2)
-                    ans_val = match.group(3).strip()
-                    # Чистим ответ от лишних символов, если они есть
-                    answers[f"{topic_full}_{task_num}"] = ans_val
+                    key = f"{match.group(1)}_{match.group(2)}"
+                    answers[key] = match.group(3).strip()
     return answers
 
-def build_database():
-    print("🚀 Начинаю сборку чистой базы данных...")
-    
-    # 1. Загружаем ответы
+def build_final_database():
+    print("🚀 Начинаю финальную сборку базы...")
     answers_dict = load_all_answers()
-    print(f"📖 Загружено ответов из файла: {len(answers_dict)}")
+    final_tasks = []
+    
+    skipped_no_answer = 0
+    skipped_no_image_t1 = 0
 
-    # 2. Загружаем сырые данные из парсера
-    if not RAW_DATA_FILE.exists():
-        print(f"❌ Ошибка: Файл {RAW_DATA_FILE} не найден. Сначала запусти factory.py!")
+    # Проходим по всем папкам тем в images_oge_math
+    if not IMAGES_ROOT.exists():
+        print(f"❌ Директория {IMAGES_ROOT} не найдена!")
         return
 
-    with open(RAW_DATA_FILE, 'r', encoding='utf-8') as f:
-        raw_tasks = json.load(f)
-
-    clean_data = []
-    skipped_no_answer = 0
-    skipped_no_image = 0
-
-    # 3. Фильтруем и чистим
-    for task in raw_tasks:
-        task_id = task.get("id")
-        correct_answer = answers_dict.get(task_id)
-
-        # УСЛОВИЕ 1: Проверка ответа
-        if not correct_answer or correct_answer == "---" or correct_answer == "":
-            skipped_no_answer += 1
-            continue
-
-        # УСЛОВИЕ 2: Проверка картинки для темы 1
-        is_topic_1 = "topic_01" in task.get("topic", "")
-        img_path = task.get("image", "")
+    for topic_dir in sorted(IMAGES_ROOT.iterdir()):
+        if not topic_dir.is_dir(): continue
         
-        if is_topic_1 and (not img_path or img_path == ""):
-            # Попытка найти по номеру страницы, если парсер не привязал
-            page_num = task.get("page")
-            potential_img = f"questions/images_oge_math/topic_01/task_{task.get('number')}.jpg"
-            if os.path.exists(potential_img):
-                task["image"] = potential_img
-            else:
-                skipped_no_image += 1
-                continue 
+        topic_name = topic_dir.name # например, topic_01
+        
+        # Ищем все файлы данных по страницам в этой папке
+        page_files = list(topic_dir.glob("data_page_*.json"))
+        
+        for p_file in page_files:
+            with open(p_file, 'r', encoding='utf-8') as f:
+                try:
+                    page_tasks = json.load(f)
+                except:
+                    continue
 
-        # Если всё ок, добавляем ответ и сохраняем
-        task["answer"] = correct_answer
-        clean_data.append(task)
+                for task in page_tasks:
+                    # Формируем ID для сопоставления с ответом
+                    t_num = str(task.get('number')).strip()
+                    task_id = f"{topic_name}_{t_num}"
+                    
+                    # 1. Проверка ответа
+                    ans = answers_dict.get(task_id)
+                    if not ans or ans == "---":
+                        skipped_no_answer += 1
+                        continue
+                    
+                    # 2. Проверка картинки для темы 1
+                    img_path = task.get('image', '')
+                    if topic_name == "topic_01" and (not img_path or img_path == ""):
+                        skipped_no_image_t1 += 1
+                        continue
 
-    # 4. Сохраняем финальный результат
+                    # Если всё прошло успешно, формируем объект задачи
+                    clean_task = {
+                        "id": task_id,
+                        "topic": topic_name,
+                        "number": t_num,
+                        "task_text": task.get("task_text", ""),
+                        "image": img_path,
+                        "answer": ans,
+                        "has_visual": task.get("has_visual", False)
+                    }
+                    final_tasks.append(clean_task)
+
+    # Сохраняем результат
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(clean_data, f, ensure_ascii=False, indent=4)
+        json.dump(final_tasks, f, ensure_ascii=False, indent=4)
 
-    print(f"---")
-    print(f"✅ Сборка завершена!")
-    print(f"📦 Всего задач в базе: {len(clean_data)}")
-    print(f"🗑 Пропущено (нет ответа): {skipped_no_answer}")
-    print(f"🖼 Пропущено (нет картинки в Topic 1): {skipped_no_image}")
-    print(f"📂 Файл сохранен: {OUTPUT_FILE}")
+    print(f"\n--- ИТОГИ СБОРКИ ---")
+    print(f"✅ Успешно собрано задач: {len(final_tasks)}")
+    print(f"🗑 Отсеяно (нет ответа): {skipped_no_answer}")
+    print(f"🖼 Отсеяно (нет картинки в теме 1): {skipped_no_image_t1}")
+    print(f"📂 Файл готов: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    build_database()
+    build_final_database()
