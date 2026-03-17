@@ -3,9 +3,10 @@ import os
 import re
 from pathlib import Path
 
-# Настройки
+# --- НАСТРОЙКИ ---
 ANSWERS_FILE = 'answers_math.txt'
 QUESTIONS_ROOT = Path('questions')
+RAW_DATA_FILE = QUESTIONS_ROOT / 'raw_oge_tasks.json' # Файл, который выдает factory.py
 OUTPUT_FILE = QUESTIONS_ROOT / 'oge_math.json'
 
 def load_all_answers():
@@ -14,87 +15,72 @@ def load_all_answers():
     if os.path.exists(ANSWERS_FILE):
         with open(ANSWERS_FILE, 'r', encoding='utf-8') as f:
             for line in f:
-                # Ищем формат topic_XX_YY: ответ
-                match = re.search(r'(topic_\d+)_([\wа-яА-Я]+):\s*(.*)', line)
+                # Ищем формат topic_XX_YY: ответ (учитываем буквы в номерах)
+                match = re.search(r'(topic_\d+)_([\wа-яА-Я\)\*]+):\s*(.*)', line)
                 if match:
-                    topic_full = match.group(1) # например topic_04_eq
-                    task_num = match.group(2)   # например 1
-                    ans_val = match.group(3)    # например 0,8
-                    answers[f"{topic_full}_{task_num}"] = ans_val.strip()
+                    topic_full = match.group(1)
+                    task_num = match.group(2)
+                    ans_val = match.group(3).strip()
+                    # Чистим ответ от лишних символов, если они есть
+                    answers[f"{topic_full}_{task_num}"] = ans_val
     return answers
 
 def build_database():
-    answers_map = load_all_answers()
-    print(f"Загружено эталонных ответов из файла: {len(answers_map)}")
+    print("🚀 Начинаю сборку чистой базы данных...")
     
-    final_tasks = []
+    # 1. Загружаем ответы
+    answers_dict = load_all_answers()
+    print(f"📖 Загружено ответов из файла: {len(answers_dict)}")
 
-    # 1. Ищем ВСЕ папки с названием topic_ во всем проекте
-    # Теперь неважно, лежат они в images_oge_math или в корне
-    for topic_folder in Path('questions').rglob('topic_*'):
-        if topic_folder.is_dir():
-            topic_name = topic_folder.name
-            print(f"📁 Нашел тему: {topic_name} по пути {topic_folder}")
+    # 2. Загружаем сырые данные из парсера
+    if not RAW_DATA_FILE.exists():
+        print(f"❌ Ошибка: Файл {RAW_DATA_FILE} не найден. Сначала запусти factory.py!")
+        return
 
-           # 2. Ищем JSON файлы РЕКУРСИВНО (во всех подпапках темы)
-            for json_file in topic_folder.rglob("*.json"):
-                # Пропускаем итоговый файл, если он вдруг попал в поиск
-                if json_file.name == "oge_math.json": continue
-                
-                try:
-                    with open(json_file, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-                        
-                        if isinstance(data, list):
-                            tasks_list = data
-                        else:
-                            tasks_list = [data]
+    with open(RAW_DATA_FILE, 'r', encoding='utf-8') as f:
+        raw_tasks = json.load(f)
 
-                        for task in tasks_list:
-                            # 1. Извлекаем номер задачи
-                            # Сначала ищем в поле 'number' (его заполнил ИИ в Factory)
-                            raw_num = task.get('number')
-                            
-                            # Если там пусто, ищем цифру в тексте задачи
-                            if not raw_num:
-                                match = re.search(r'(\d+)', task.get('text', ''))
-                                raw_num = match.group(1) if match else None
+    clean_data = []
+    skipped_no_answer = 0
+    skipped_no_image = 0
 
-                            if raw_num:
-                                # Ключ для поиска в answers_math.txt: "topic_02_123"
-                                key = f"{topic_name}_{raw_num}"
-                                
-                                # Пытаемся найти ответ
-                                task_answer = answers_map.get(key)
-                                
-                                if task_answer:
-                                    task['answer'] = task_answer
-                                    # print(f"✅ Нашел ответ для {key}") # Раскомментируй для проверки
-                                else:
-                                    task['answer'] = "---"
-                                
-                                task['id'] = key
-                            else:
-                                task['answer'] = "---"
-                            
-                            # Наполняем поля текста
-                            content = task.get('text') or task.get('task_text', '')
-                            task['text'] = content
-                            task['task_text'] = content
-                            task['topic'] = topic_name
-                            
-                            final_tasks.append(task)
-                except Exception as e:
-                    print(f"❌ Ошибка в файле {json_file}: {e}")
+    # 3. Фильтруем и чистим
+    for task in raw_tasks:
+        task_id = task.get("id")
+        correct_answer = answers_dict.get(task_id)
 
-    # Сохраняем итоговый файл
+        # УСЛОВИЕ 1: Проверка ответа
+        if not correct_answer or correct_answer == "---" or correct_answer == "":
+            skipped_no_answer += 1
+            continue
+
+        # УСЛОВИЕ 2: Проверка картинки для темы 1
+        is_topic_1 = "topic_01" in task.get("topic", "")
+        img_path = task.get("image", "")
+        
+        if is_topic_1 and (not img_path or img_path == ""):
+            # Попытка найти по номеру страницы, если парсер не привязал
+            page_num = task.get("page")
+            potential_img = f"questions/images_oge_math/topic_01/task_{task.get('number')}.jpg"
+            if os.path.exists(potential_img):
+                task["image"] = potential_img
+            else:
+                skipped_no_image += 1
+                continue 
+
+        # Если всё ок, добавляем ответ и сохраняем
+        task["answer"] = correct_answer
+        clean_data.append(task)
+
+    # 4. Сохраняем финальный результат
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(final_tasks, f, ensure_ascii=False, indent=4)
-    
-    linked = len([t for t in final_tasks if t['answer'] != "---"])
+        json.dump(clean_data, f, ensure_ascii=False, indent=4)
+
     print(f"---")
-    print(f"✅ Готово! Всего собрано задач: {len(final_tasks)}")
-    print(f"🔗 С пришитыми ответами: {linked}")
+    print(f"✅ Сборка завершена!")
+    print(f"📦 Всего задач в базе: {len(clean_data)}")
+    print(f"🗑 Пропущено (нет ответа): {skipped_no_answer}")
+    print(f"🖼 Пропущено (нет картинки в Topic 1): {skipped_no_image}")
     print(f"📂 Файл сохранен: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
