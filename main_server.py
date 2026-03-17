@@ -9,15 +9,21 @@ from typing import Optional
 
 import replicate
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse # Для красивой админки
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.3.0")
+app = FastAPI(title="Neuro Repetitor API", version="1.4.0")
 
-# --- НАСТРОЙКА CORS (Разрешаем GitHub и локалку) ---
+# РАЗРЕШАЕМ КАРТИНКИ
+if Path("questions").exists():
+    app.mount("/questions", StaticFiles(directory="questions"), name="questions")
+
+# НАСТРОЙКА CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://holljs.github.io", "http://localhost:3000"], 
@@ -64,82 +70,83 @@ class ReportRequest(BaseModel):
     task_id: str
     student_id: Optional[int] = None
 
-# --- ГЛАВНЫЙ МАРШРУТ ПРОВЕРКИ (С АНАЛИТИКОЙ) ---
-@app.post("/check/")
-async def check_answer_smart(request: CheckRequest):
-    # 1. Ищем задачу
-    task_id = request.task_id
-    task = next((t for t in ALL_TASKS if str(t.get("id")) == str(task_id)), None)
-    
-    if not task:
-        return {"is_correct": False, "error": "Задача не найдена"}
+# --- МАРШРУТЫ ---
 
-    correct_answer = str(task.get("answer", ""))
-    user_answer = request.user_answer
-    topic_id = task.get("topic", "unknown") # Наша тема для статистики
+@app.get("/")
+async def root():
+    return {"status": "online", "server_time": datetime.utcnow().isoformat()}
 
-    # 2. Проверка (Нормализация + Gemini)
-    is_correct = False
-    if normalize_math_text(user_answer) == normalize_math_text(correct_answer):
-        is_correct = True
-    else:
-        # Если не совпало просто, спрашиваем ИИ
-        try:
-            prompt = f"Равны ли математически: '{correct_answer}' и '{user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
-            output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
-            res = "".join(output).lower()
-            is_correct = "true" in res
-        except Exception as e:
-            logger.error(f"AI Error: {e}")
-            is_correct = False
+@app.post("/start_test_payment/")
+async def pay_for_test(request: ReportRequest):
+    student_id = request.student_id
+    ADMIN_IDS = [54451631, 12345678] # Твой ID здесь
+    if student_id in ADMIN_IDS:
+        return {"success": True, "new_balance": "unlimited"}
+    return {"success": True, "new_balance": 100}
 
-    # 3. СОХРАНЯЕМ СТАТИСТИКУ (Выявление пробелов)
-    # Здесь мы пишем в лог, чтобы потом проанализировать
-    # В идеале — сделать запись в БД (student_id, topic_id, is_correct)
-    logger.info(f"📊 СТАТИСТИКА: Студент {request.student_id} | Тема {topic_id} | Верно: {is_correct}")
-    
-    # Можно добавить функцию записи в файл:
-    with open("user_stats.log", "a") as f:
-        f.write(f"{datetime.now()},{request.student_id},{topic_id},{is_correct}\n")
-
+@app.get("/random_task/")
+async def get_random_task(exam_type: str = "oge_math"):
+    if not ALL_TASKS: raise HTTPException(status_code=500, detail="База пуста")
+    task = random.choice(ALL_TASKS)
     return {
-        "is_correct": is_correct,
-        "topic": topic_id,
-        "correct_was": correct_answer if not is_correct else None
+        "id": task.get("id", "unknown"),
+        "topic": task.get("topic", "Общая тема"),
+        "text": task.get("text", ""),
+        "image": task.get("image", ""),
+        "answer": task.get("answer", "")
     }
 
-# Остальные маршруты (random_task, review и т.д.) оставляй как были в FastAPI...
-        
-@app.post("/review/")
-async def review_answer_detailed(request: ReviewRequest):
-    """Подробный бесплатный разбор на Gemini 3 Flash"""
-    # Самая дешевая модель из твоих документов 
-    model_id = "google/gemini-3-flash" 
+@app.post("/check/")
+async def check_answer_smart(request: CheckRequest):
+    task = next((t for t in ALL_TASKS if str(t.get("id")) == str(request.task_id)), None)
+    if not task: return {"is_correct": False, "error": "Задача не найдена"}
 
-    if request.simplify:
-        prompt = f"Объясни задачу 'на яблоках'. Ответ ученика: {request.user_answer}"
-    else:
-        prompt = f"Напиши пошаговое решение задачи. Ответ ученика был: {request.user_answer}"
+    correct_answer = str(task.get("answer", ""))
+    is_correct = normalize_math_text(request.user_answer) == normalize_math_text(correct_answer)
+    
+    if not is_correct and correct_answer != "---":
+        try:
+            prompt = f"Равны ли математически: '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
+            output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
+            is_correct = "true" in "".join(output).lower()
+        except: is_correct = False
 
-    try:
-        output = replicate.run(model_id, input={"images": [request.image_url], "prompt": prompt})
-        return {"explanation": "".join(output).strip()}
-    except Exception as e:
-        logger.error(f"Review Error: {e}")
-        return {"explanation": "Ошибка ИИ, попробуй позже."}
+    # ЗАПИСЬ СТАТИСТИКИ
+    with open("user_stats.log", "a") as f:
+        f.write(f"{datetime.now()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
 
-@app.post("/report_task/")
-async def report_broken_task(request: ReportRequest):
-    with open("reports.txt", "a", encoding="utf-8") as f:
-        f.write(f"{datetime.now()}: Жалоба на ID {request.task_id}\n")
-    return {"success": True}
+    return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
 
-# --- АДМИНКА ---
-@app.get("/admin/add_credits")
-async def add_credits(user_id: int, amount: int, key: str):
-    if key != "твой_секретный_ключ": return {"error": "No access"}
-    # db.update_balance(user_id, amount)
-    return {"success": True, "user": user_id, "added": amount}
+# --- АДМИН-ПАНЕЛЬ (НОВОЕ!) ---
+
+@app.get("/admin/dashboard", response_class=HTMLResponse)
+async def admin_dashboard(key: str = Query(None)):
+    if key != "super-repetitor-2026": # Твой секретный пароль в ссылке
+        return "<h1>Доступ закрыт</h1>"
+    
+    stats = {}
+    if os.path.exists("user_stats.log"):
+        with open("user_stats.log", "r") as f:
+            for line in f:
+                parts = line.strip().split(',')
+                if len(parts) == 4:
+                    topic, res = parts[2], parts[3] == "True"
+                    if topic not in stats: stats[topic] = {"ok": 0, "err": 0}
+                    if res: stats[topic]["ok"] += 1
+                    else: stats[topic]["err"] += 1
+
+    # Генерируем простую HTML таблицу
+    rows = "".join([f"<tr><td>{t}</td><td>{d['ok']}</td><td>{d['err']}</td><td>{round(d['ok']/(d['ok']+d['err'])*100)}%</td></tr>" for t, d in stats.items()])
+    
+    return f"""
+    <html>
+        <head><title>Админка</title><style>table{{border-collapse:collapse;width:100%}} th,td{{border:1px solid #ddd;padding:8px;text-align:left}} tr:nth-child(even){{background:#f2f2f2}}</style></head>
+        <body>
+            <h1>📊 Аналитика пробелов по темам</h1>
+            <table><tr><th>Тема</th><th>Верно</th><th>Ошибок</th><th>Успешность</th></tr>{rows}</table>
+        </body>
+    </html>
+    """
 
 if __name__ == "__main__":
     import uvicorn
