@@ -8,40 +8,24 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
-os.environ["REPLICATE_API_TOKEN"] = os.getenv("REPLICATE_API_TOKEN")
 
-# ==========================================
-# ТАБЛИЦА ТЕМ (Меняй только здесь!)
-# ==========================================
+# Настройки
+PDF_PATH = "math_oge.pdf"
 TASKS_CONFIG = [
-    {"topic": "topic_01", "pages": range(8, 31)},       # Практические задачи
-    {"topic": "topic_02", "pages": range(31, 50)},      # Вычисления
-    # {"topic": "topic_03", "pages": range(50, 61)},    # Единицы измерения
-    # {"topic": "topic_04", "pages": range(61, 72)},    # Уравнения
-    # {"topic": "topic_05", "pages": range(72, 90)},    # Координатная прямая
-    # {"topic": "topic_06", "pages": range(90, 107)},   # Графики и диаграммы
-    # {"topic": "topic_07", "pages": range(107, 127)},  # Графики функций
-    # {"topic": "topic_08", "pages": range(127, 134)},  # Выражения
-    # {"topic": "topic_09", "pages": range(134, 143)},  # Формулы
-    # {"topic": "topic_10", "pages": range(143, 149)},  # Последовательности
+    {"topic": "topic_01", "pages": range(8, 31)},  # Практические задачи
+    {"topic": "topic_02", "pages": range(31, 50)}, # Вычисления
 ]
 
-PDF_PATH = "math_oge.pdf" # Проверь имя файла!
-
-# ==========================================
-# ЛОГИКА ФАБРИКИ (Тут менять ничего не надо)
-# ==========================================
-
 def get_page_as_jpg(pdf_path, page_num, output_path):
-    """Превращает страницу PDF в лист JPG"""
     doc = fitz.open(pdf_path)
+    if page_num > len(doc): return False
     page = doc.load_page(page_num - 1)
     pix = page.get_pixmap(matrix=fitz.Matrix(2.5, 2.5))
     pix.save(output_path)
     doc.close()
+    return True
 
 def smart_crop_and_stitch(topic, p1, p2=None):
-    """ИИ режет и склеивает рисунки"""
     base_path = Path(f"questions/images_oge_math/{topic}")
     base_path.mkdir(parents=True, exist_ok=True)
     
@@ -53,75 +37,81 @@ def smart_crop_and_stitch(topic, p1, p2=None):
     
     images = [f"data:image/jpeg;base64,{img1_data}"]
     
-    # Теперь промпт с правильными отступами и нужной переменной page_num (заменили на p1)
+    # --- УЛУЧШЕННЫЙ ПРОМПТ ---
     prompt = (
-        f"Ты — эксперт по оцифровке учебников математики. Оцифруй страницу {p1}.\n"
-        "ГЛАВНОЕ: Мы переходим на текстовый формат задач.\n\n"
-        "ИНСТРУКЦИЯ:\n"
-        "1. Извлеки текст каждой задачи полностью (включая инструкции типа 'Решите уравнение').\n"
-        "2. Если задача содержит график, чертеж или таблицу (то, что нельзя передать текстом), "
-        "установи 'has_visual': true и дай координаты ЭТОГО РИСУНКА в 'box_2d'.\n"
-        "3. Если в задаче ТОЛЬКО текст и формулы, установи 'has_visual': false и 'box_2d': [0,0,0,0].\n"
-        "4. Формулы пиши в простом текстовом виде (например, x^2 + 3x - 4 = 0).\n\n"
-        "5. ВАЖНО: При извлечении task_text удаляй номер задачи из начала строки (например, вместо '18. x + 5' пиши просто 'x + 5')."
-        "Верни СТРОГО JSON список: "
-        "[{'number': 'номер', 'task_text': 'текст задачи', 'has_visual': true/false, 'box_2d': [ymin, xmin, ymax, xmax]}]"
+        f"Ты — эксперт по оцифровке ОГЭ. Страница {p1}.\n"
+        "ЗАДАЧА: Извлеки текст задач. Если задаче нужна схема/таблица, дай координаты.\n\n"
+        "ПРАВИЛА:\n"
+        "1. 'has_visual': true ТОЛЬКО если без картинки задачу НЕ РЕШИТЬ.\n"
+        "2. Если картинка/таблица к задаче находится на ТЕКУЩЕЙ странице, дай координаты в 'box_2d'.\n"
     )
 
     if p2:
         img2_path = base_path / f"page_{p2}.jpg"
-        get_page_as_jpg(PDF_PATH, p2, img2_path)
-        with open(img2_path, "rb") as f:
-            img2_data = base64.b64encode(f.read()).decode("utf-8")
-        images.append(f"data:image/jpeg;base64,{img2_data}")
-        prompt += f" Если задаче нужен рисунок со стр {p2}, добавь 'stitch_box': [ymin, xmin, ymax, xmax] для рисунка."
+        if get_page_as_jpg(PDF_PATH, p2, img2_path):
+            with open(img2_path, "rb") as f:
+                img2_data = base64.b64encode(f.read()).decode("utf-8")
+            images.append(f"data:image/jpeg;base64,{img2_data}")
+            prompt += (
+                f"3. ВАЖНО: Если текст задачи на стр {p1}, а схема/таблица к ней на стр {p2}, "
+                "установи 'needs_stitch': true и дай координаты картинки со второй страницы в 'stitch_box'.\n"
+            )
+
+    prompt += (
+        "\nВерни JSON список:\n"
+        "[ {'number': '1', 'task_text': 'текст', 'has_visual': true, 'box_2d': [ymin, xmin, ymax, xmax], "
+        "'needs_stitch': true/false, 'stitch_box': [ymin, xmin, ymax, xmax]} ]"
+    )
 
     print(f"🧠 ИИ анализирует {topic} (стр {p1})...")
-    output = replicate.run("google/gemini-3-flash", input={"images": images, "prompt": prompt})
-    
     try:
+        output = replicate.run("google/gemini-3-flash", input={"images": images, "prompt": prompt})
         clean_text = "".join(output).replace("```json", "").replace("```", "").strip()
         tasks = json.loads(clean_text)
         
         with Image.open(img1_path) as main_img:
             w, h = main_img.size
             for t in tasks:
-                # 1. Сначала сохраняем текст в отдельный лог/базу (опционально для отладки)
-                print(f"📝 Обработка задачи {t.get('number')}: {t.get('task_text')[:50]}...")
+                img_filename = f"task_{t.get('number')}.jpg"
+                save_path = base_path / img_filename
+                
+                # Логика нарезки и склейки
+                if t.get('has_visual'):
+                    # Режем основной кусок
+                    y0, x0, y1, x1 = [c * h / 1000 if i%2==0 else c * w / 1000 for i, c in enumerate(t.get('box_2d', [0,0,0,0]))]
+                    # Если координат нет, но визуализация нужна — берем всю страницу или пропускаем
+                    task_part = main_img.crop((x0, y0, x1, y1)) if t.get('box_2d') != [0,0,0,0] else main_img
 
-                # 2. Проверяем: нужно ли резать картинку?
-                # Режем только если has_visual = true И координаты не нулевые
-                if t.get('has_visual') is True and t.get('box_2d') != [0,0,0,0]:
-                    y0, x0, y1, x1 = [c * h / 1000 if i%2==0 else c * w / 1000 for i, c in enumerate(t['box_2d'])]
-                    task_part = main_img.crop((x0, y0, x1, y1))
-                    
-                    # Логика склейки (если она была нужна)
+                    # Склеиваем со второй страницей, если ИИ сказал
                     if t.get('needs_stitch') and p2 and 'stitch_box' in t:
                         with Image.open(img2_path) as side_img:
                             sw, sh = side_img.size
                             sy0, sx0, sy1, sx1 = [c * sh / 1000 if i%2==0 else c * sw / 1000 for i, c in enumerate(t['stitch_box'])]
                             stitch_part = side_img.crop((sx0, sy0, sx1, sy1))
                             
+                            # Склейка по вертикали
                             new_img = Image.new('RGB', (max(task_part.width, stitch_part.width), task_part.height + stitch_part.height + 10), (255,255,255))
                             new_img.paste(task_part, (0, 0))
                             new_img.paste(stitch_part, (0, task_part.height + 10))
                             task_part = new_img
 
-                    task_part.save(base_path / f"task_{t['number']}.jpg", quality=95)
-                    print(f"🖼️ Картинка сохранена для №{t['number']}")
+                    task_part.save(save_path, quality=95)
+                    # !!! ВАЖНО: Прописываем путь к картинке в JSON задачи !!!
+                    t['image'] = f"questions/images_oge_math/{topic}/{img_filename}"
+                    print(f"🖼️ Создана склейка для №{t['number']}")
                 else:
-                    print(f"✅ Задача №{t['number']} принята как чистый текст")
+                    t['image'] = "" # Картинка не нужна
 
-        # ВАЖНО: Нам нужно где-то сохранить этот текст! 
-        # Давай создадим временный JSON файл для этой страницы, чтобы builder.py его потом собрал
+        # Сохраняем JSON страницы (теперь с путями к картинкам!)
         with open(base_path / f"data_page_{p1}.json", "w", encoding="utf-8") as f:
             json.dump(tasks, f, ensure_ascii=False, indent=4)
 
     except Exception as e:
-        print(f"⚠️ Ошибка на стр {p1}: {e}")
+        print(f"⚠️ Ошибка: {e}")
 
 if __name__ == "__main__":
+    # Очистка перед запуском (опционально)
+    # os.system("rm -rf questions/images_oge_math/*")
     for config in TASKS_CONFIG:
         for p in config['pages']:
-            # Авто-контекст: всегда смотрим следующую страницу на наличие рисунков
             smart_crop_and_stitch(config['topic'], p, p + 1)
