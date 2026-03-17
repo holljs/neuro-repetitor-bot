@@ -1,93 +1,117 @@
-import json
 import os
-import re
+import json
+import base64
+import fitz  # PyMuPDF
+import replicate
+from PIL import Image
 from pathlib import Path
+from dotenv import load_dotenv
 
-# --- НАСТРОЙКИ ---
-ANSWERS_FILE = 'answers_math.txt'
-QUESTIONS_ROOT = Path('questions')
-IMAGES_ROOT = QUESTIONS_ROOT / 'images_oge_math'
-OUTPUT_FILE = QUESTIONS_ROOT / 'oge_math.json'
+load_dotenv()
 
-def load_all_answers():
-    """Загружает все ответы из файла в один словарь."""
-    answers = {}
-    if os.path.exists(ANSWERS_FILE):
-        with open(ANSWERS_FILE, 'r', encoding='utf-8') as f:
-            for line in f:
-                # Формат topic_XX_номер: ответ
-                match = re.search(r'(topic_\d+)_([\wа-яА-Я\)\*]+):\s*(.*)', line)
-                if match:
-                    key = f"{match.group(1)}_{match.group(2)}"
-                    answers[key] = match.group(3).strip()
-    return answers
+# Настройки
+PDF_PATH = "math_oge.pdf"
+TASKS_CONFIG = [
+    {"topic": "topic_01", "pages": range(8, 31)},  # Практические задачи
+  # {"topic": "topic_02", "pages": range(31, 50)}, # Вычисления
+]
 
-def build_final_database():
-    print("🚀 Начинаю финальную сборку базы...")
-    answers_dict = load_all_answers()
-    final_tasks = []
+def get_page_as_jpg(pdf_path, page_num, output_path):
+    doc = fitz.open(pdf_path)
+    if page_num > len(doc): return False
+    page = doc.load_page(page_num - 1)
+    pix = page.get_pixmap(matrix=fitz.Matrix(2.5, 2.5))
+    pix.save(output_path)
+    doc.close()
+    return True
+
+def smart_crop_and_stitch(topic, p1, p2=None):
+    base_path = Path(f"questions/images_oge_math/{topic}")
+    base_path.mkdir(parents=True, exist_ok=True)
     
-    skipped_no_answer = 0
-    skipped_no_image_t1 = 0
+    img1_path = base_path / f"page_{p1}.jpg"
+    get_page_as_jpg(PDF_PATH, p1, img1_path)
+    
+    with open(img1_path, "rb") as f:
+        img1_data = base64.b64encode(f.read()).decode("utf-8")
+    
+    images = [f"data:image/jpeg;base64,{img1_data}"]
+    
+    # --- УЛУЧШЕННЫЙ ПРОМПТ ---
+    prompt = (
+        f"Ты — эксперт по оцифровке ОГЭ. Страница {p1}.\n"
+        "ЗАДАЧА: Извлеки текст задач. Если задаче нужна схема/таблица, дай координаты.\n\n"
+        "ПРАВИЛА:\n"
+        "1. 'has_visual': true ТОЛЬКО если без картинки задачу НЕ РЕШИТЬ.\n"
+        "2. Если картинка/таблица к задаче находится на ТЕКУЩЕЙ странице, дай координаты в 'box_2d'.\n"
+    )
 
-    # Проходим по всем папкам тем в images_oge_math
-    if not IMAGES_ROOT.exists():
-        print(f"❌ Директория {IMAGES_ROOT} не найдена!")
-        return
+    if p2:
+        img2_path = base_path / f"page_{p2}.jpg"
+        if get_page_as_jpg(PDF_PATH, p2, img2_path):
+            with open(img2_path, "rb") as f:
+                img2_data = base64.b64encode(f.read()).decode("utf-8")
+            images.append(f"data:image/jpeg;base64,{img2_data}")
+            prompt += (
+                f"3. ВАЖНО: Если текст задачи на стр {p1}, а схема/таблица к ней на стр {p2}, "
+                "установи 'needs_stitch': true и дай координаты картинки со второй страницы в 'stitch_box'.\n"
+            )
 
-    for topic_dir in sorted(IMAGES_ROOT.iterdir()):
-        if not topic_dir.is_dir(): continue
+    prompt += (
+        "\nВерни JSON список:\n"
+        "[ {'number': '1', 'task_text': 'текст', 'has_visual': true, 'box_2d': [ymin, xmin, ymax, xmax], "
+        "'needs_stitch': true/false, 'stitch_box': [ymin, xmin, ymax, xmax]} ]"
+    )
+
+    print(f"🧠 ИИ анализирует {topic} (стр {p1})...")
+    try:
+        output = replicate.run("google/gemini-3-flash", input={"images": images, "prompt": prompt})
+        clean_text = "".join(output).replace("```json", "").replace("```", "").strip()
+        tasks = json.loads(clean_text)
         
-        topic_name = topic_dir.name # например, topic_01
-        
-        # Ищем все файлы данных по страницам в этой папке
-        page_files = list(topic_dir.glob("data_page_*.json"))
-        
-        for p_file in page_files:
-            with open(p_file, 'r', encoding='utf-8') as f:
-                try:
-                    page_tasks = json.load(f)
-                except:
-                    continue
+        with Image.open(img1_path) as main_img:
+            w, h = main_img.size
+            for t in tasks:
+                img_filename = f"task_{t.get('number')}.jpg"
+                save_path = base_path / img_filename
+                
+                # Логика нарезки и склейки
+                if t.get('has_visual'):
+                    # Режем основной кусок
+                    y0, x0, y1, x1 = [c * h / 1000 if i%2==0 else c * w / 1000 for i, c in enumerate(t.get('box_2d', [0,0,0,0]))]
+                    # Если координат нет, но визуализация нужна — берем всю страницу или пропускаем
+                    task_part = main_img.crop((x0, y0, x1, y1)) if t.get('box_2d') != [0,0,0,0] else main_img
 
-                for task in page_tasks:
-                    # Формируем ID для сопоставления с ответом
-                    t_num = str(task.get('number')).strip()
-                    task_id = f"{topic_name}_{t_num}"
-                    
-                    # 1. Проверка ответа
-                    ans = answers_dict.get(task_id)
-                    if not ans or ans == "---":
-                        skipped_no_answer += 1
-                        continue
-                    
-                    # 2. Проверка картинки для темы 1
-                    img_path = task.get('image', '')
-                    if topic_name == "topic_01" and (not img_path or img_path == ""):
-                        skipped_no_image_t1 += 1
-                        continue
+                    # Склеиваем со второй страницей, если ИИ сказал
+                    if t.get('needs_stitch') and p2 and 'stitch_box' in t:
+                        with Image.open(img2_path) as side_img:
+                            sw, sh = side_img.size
+                            sy0, sx0, sy1, sx1 = [c * sh / 1000 if i%2==0 else c * sw / 1000 for i, c in enumerate(t['stitch_box'])]
+                            stitch_part = side_img.crop((sx0, sy0, sx1, sy1))
+                            
+                            # Склейка по вертикали
+                            new_img = Image.new('RGB', (max(task_part.width, stitch_part.width), task_part.height + stitch_part.height + 10), (255,255,255))
+                            new_img.paste(task_part, (0, 0))
+                            new_img.paste(stitch_part, (0, task_part.height + 10))
+                            task_part = new_img
 
-                    # Если всё прошло успешно, формируем объект задачи
-                    clean_task = {
-                        "id": task_id,
-                        "topic": topic_name,
-                        "number": t_num,
-                        "task_text": task.get("task_text", ""),
-                        "image": img_path,
-                        "answer": ans,
-                        "has_visual": task.get("has_visual", False)
-                    }
-                    final_tasks.append(clean_task)
+                    task_part.save(save_path, quality=95)
+                    # !!! ВАЖНО: Прописываем путь к картинке в JSON задачи !!!
+                    t['image'] = f"questions/images_oge_math/{topic}/{img_filename}"
+                    print(f"🖼️ Создана склейка для №{t['number']}")
+                else:
+                    t['image'] = "" # Картинка не нужна
 
-    # Сохраняем результат
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(final_tasks, f, ensure_ascii=False, indent=4)
+        # Сохраняем JSON страницы (теперь с путями к картинкам!)
+        with open(base_path / f"data_page_{p1}.json", "w", encoding="utf-8") as f:
+            json.dump(tasks, f, ensure_ascii=False, indent=4)
 
-    print(f"\n--- ИТОГИ СБОРКИ ---")
-    print(f"✅ Успешно собрано задач: {len(final_tasks)}")
-    print(f"🗑 Отсеяно (нет ответа): {skipped_no_answer}")
-    print(f"🖼 Отсеяно (нет картинки в теме 1): {skipped_no_image_t1}")
-    print(f"📂 Файл готов: {OUTPUT_FILE}")
+    except Exception as e:
+        print(f"⚠️ Ошибка: {e}")
 
 if __name__ == "__main__":
-    build_final_database()
+    # Очистка перед запуском (опционально)
+    # os.system("rm -rf questions/images_oge_math/*")
+    for config in TASKS_CONFIG:
+        for p in config['pages']:
+            smart_crop_and_stitch(config['topic'], p, p + 1)
