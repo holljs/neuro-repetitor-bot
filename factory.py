@@ -12,8 +12,16 @@ load_dotenv()
 # Настройки
 PDF_PATH = "math_oge.pdf"
 TASKS_CONFIG = [
-    {"topic": "topic_01", "pages": range(8, 31)},  # Практические задачи
-  # {"topic": "topic_02", "pages": range(31, 50)}, # Вычисления
+ # {"topic": "topic_01", "pages": range(8, 31)},       # Практические задачи
+    {"topic": "topic_02", "pages": range(31, 50)},      # Вычисления
+    {"topic": "topic_03", "pages": range(50, 61)},      # Единицы измерения
+    {"topic": "topic_04", "pages": range(61, 72)},      # Уравнения
+    {"topic": "topic_05", "pages": range(72, 90)},      # Координатная прямая
+    {"topic": "topic_06", "pages": range(90, 107)},     # Графики и диаграммы
+    {"topic": "topic_07", "pages": range(107, 127)},    # Графики функций
+    {"topic": "topic_08", "pages": range(127, 134)},    # Выражения
+    {"topic": "topic_09", "pages": range(134, 143)},    # Формулы
+    {"topic": "topic_10", "pages": range(143, 149)},    # Последовательности
 ]
 
 def get_page_as_jpg(pdf_path, page_num, output_path):
