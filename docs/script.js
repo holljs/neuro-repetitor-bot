@@ -118,9 +118,10 @@ function showTask() {
     }
 
     if (currentTask.image && currentTask.image.length > 5) {
-        // Добавляем домен и порт, если путь относительный
-        const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `${API_SERVER_URL}:8080/${currentTask.image}`;
-        imageContainer.innerHTML = `<img src="${fullImgUrl}" class="question-image" style="width:100%; border-radius:8px;">`;
+        // Жестко прописываем правильный и безопасный путь к картинкам
+        const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
+
+        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
         imageContainer.style.display = 'block';
     } else {
         imageContainer.style.display = 'none';
@@ -234,12 +235,14 @@ function loadReviewForCurrentMistake() {
     
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `${API_SERVER_URL}:8080/${mistake.task.image}`;
-        reviewImgContainer.innerHTML = `<img src="${fullImgUrl}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
+        // Убрали :8080 и прописали чистый путь
+        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
+        // Добавили encodeURI на всякий случай
+        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
     } else { 
         reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${mistake.task.task_text || mistake.task.text}</div>`; 
     }
-    
+        
     document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
     showScreen(reviewScreen);
 }
@@ -252,7 +255,7 @@ window.runAIExplanation = async function(simplify = false) {
     const taskText = mistake.task.task_text || mistake.task.text || "Текст задачи";
     let imageUrl = mistake.task.image || null;
     if (imageUrl && !imageUrl.startsWith('http')) {
-        imageUrl = `${API_SERVER_URL}:8080/${imageUrl}`;
+    imageUrl = `https://neuro-master.online/${imageUrl}`; // Строго без :8080
     }
 
     try {
