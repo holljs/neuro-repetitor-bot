@@ -41,7 +41,7 @@ async function startApp() {
         const userData = await vkBridge.send('VKWebAppGetUserInfo');
         USER_ID = userData.id;
         showScreen(loadingScreen);
-        const response = await fetch(`${API_SERVER_URL}/check_sub/${USER_ID}`);
+        const response = await fetch(`${TEST_API_URL}/check_sub/${USER_ID}`);
         const subData = await response.json();
         if (subData.subscription === "active") { showScreen(mainMenuScreen); } 
         else { loadingScreen.innerHTML = `<p>У вас нет активной подписки.</p>`; }
