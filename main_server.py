@@ -13,11 +13,26 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse # Для красивой админки
+from fastapi.responses import HTMLResponse
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.4.0")
+app = FastAPI(title="Neuro Repetitor API", version="1.5.0")
+
+# --- СЛОВАРЬ ТЕМ ---
+TOPIC_NAMES = {
+    "topic_01": "🏠 Практические задачи (планы, АЗС, шины)",
+    "topic_02": "🔢 Вычисления и дроби",
+    "topic_03": "📏 Единицы измерения",
+    "topic_04": "⚖️ Уравнения",
+    "topic_04_eq": "⚖️ Уравнения",
+    "topic_05": "📍 Координатная прямая",
+    "topic_06": "📊 Графики и диаграммы",
+    "topic_07": "📈 Графики функций",
+    "topic_08": "🧩 Выражения",
+    "topic_09": "🧪 Формулы",
+    "topic_10": "🔢 Последовательности",
+}
 
 # РАЗРЕШАЕМ КАРТИНКИ
 if Path("questions").exists():
@@ -62,13 +77,14 @@ class CheckRequest(BaseModel):
 
 class ReviewRequest(BaseModel):
     user_answer: str
-    image_url: str
+    image_url: Optional[str] = None
+    task_text: Optional[str] = None
     student_id: Optional[int] = None
     simplify: bool = False
 
-class ReportRequest(BaseModel):
-    task_id: str
+class PaymentRequest(BaseModel):
     student_id: Optional[int] = None
+    task_id: Optional[str] = None
 
 # --- МАРШРУТЫ ---
 
@@ -77,22 +93,34 @@ async def root():
     return {"status": "online", "server_time": datetime.utcnow().isoformat()}
 
 @app.post("/start_test_payment/")
-async def pay_for_test(request: ReportRequest):
+async def pay_for_test(request: PaymentRequest):
     student_id = request.student_id
-    ADMIN_IDS = [54451631, 12345678] # Твой ID здесь
+    # ID администраторов для неограниченного доступа (поменяй на свой)
+    ADMIN_IDS = [54451631, 12345678] 
+    
     if student_id in ADMIN_IDS:
-        return {"success": True, "new_balance": "unlimited"}
+        return {"success": True, "new_balance": "unlimited", "message": "Admin bypass"}
+    
+    # В будущем здесь будет обращение к базе данных для списания 1 кредита.
+    # Пока возвращаем True, чтобы пользователи могли проходить тест.
     return {"success": True, "new_balance": 100}
 
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge_math"):
     if not ALL_TASKS: raise HTTPException(status_code=500, detail="База пуста")
     task = random.choice(ALL_TASKS)
+    
+    # Защита путей к картинкам, если в базе записан только файл, а не полный путь
+    img_path = task.get("image", "")
+    if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
+        topic = task.get("topic", "topic_01")
+        img_path = f"questions/images_oge_math/{topic}/{img_path}"
+
     return {
         "id": task.get("id", "unknown"),
         "topic": task.get("topic", "Общая тема"),
-        "text": task.get("text", ""),
-        "image": task.get("image", ""),
+        "text": task.get("task_text", task.get("text", "")),
+        "image": img_path,
         "answer": task.get("answer", "")
     }
 
@@ -109,15 +137,46 @@ async def check_answer_smart(request: CheckRequest):
             prompt = f"Равны ли математически: '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
             output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
             is_correct = "true" in "".join(output).lower()
-        except: is_correct = False
+        except Exception as e: 
+            logger.error(f"Ошибка проверки ИИ: {e}")
+            is_correct = False
 
     # ЗАПИСЬ СТАТИСТИКИ
-    with open("user_stats.log", "a") as f:
-        f.write(f"{datetime.now()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
+    with open("user_stats.log", "a", encoding="utf-8") as f:
+        f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
 
     return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
 
-# --- АДМИН-ПАНЕЛЬ (НОВОЕ!) ---
+@app.post("/review/")
+async def explain_mistake(request: ReviewRequest):
+    content = request.task_text if request.task_text else "Текст задачи не предоставлен"
+    
+    if request.simplify:
+        prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах' (можно использовать примеры с яблоками или пиццей, если это уместно). "
+                  f"Текст задачи: {content}. "
+                  f"Ответ ученика: {request.user_answer}. "
+                  f"Объясни, почему ответ ученика неверен и как правильно рассуждать.")
+    else:
+        prompt = (f"Напиши подробное пошаговое математическое решение задачи. "
+                  f"Текст: {content}. "
+                  f"Ответ ученика: {request.user_answer}. "
+                  f"Укажи, на каком этапе ученик мог допустить ошибку.")
+
+    input_data = {"prompt": prompt}
+    if request.image_url:
+        input_data["image"] = request.image_url
+
+    try:
+        output = replicate.run("google/gemini-3-flash", input=input_data)
+        explanation = "".join(output)
+        # Делаем переносы строк читаемыми для HTML-интерфейса
+        explanation = explanation.replace("\n", "<br>")
+        return {"explanation": explanation}
+    except Exception as e:
+        logger.error(f"Ошибка ИИ при разборе: {e}")
+        return {"explanation": "Извините, произошла ошибка при генерации разбора. Попробуйте еще раз."}
+
+# --- АДМИН-ПАНЕЛЬ ---
 
 @app.get("/admin/dashboard", response_class=HTMLResponse)
 async def admin_dashboard(key: str = Query(None)):
@@ -126,24 +185,41 @@ async def admin_dashboard(key: str = Query(None)):
     
     stats = {}
     if os.path.exists("user_stats.log"):
-        with open("user_stats.log", "r") as f:
+        with open("user_stats.log", "r", encoding="utf-8") as f:
             for line in f:
                 parts = line.strip().split(',')
-                if len(parts) == 4:
-                    topic, res = parts[2], parts[3] == "True"
-                    if topic not in stats: stats[topic] = {"ok": 0, "err": 0}
-                    if res: stats[topic]["ok"] += 1
-                    else: stats[topic]["err"] += 1
+                if len(parts) >= 4:
+                    topic_code, res_str = parts[2], parts[3]
+                    
+                    topic_name = TOPIC_NAMES.get(topic_code, topic_code)
+                    res = (res_str == "True")
+                    
+                    if topic_name not in stats: stats[topic_name] = {"ok": 0, "err": 0}
+                    if res: stats[topic_name]["ok"] += 1
+                    else: stats[topic_name]["err"] += 1
 
-    # Генерируем простую HTML таблицу
     rows = "".join([f"<tr><td>{t}</td><td>{d['ok']}</td><td>{d['err']}</td><td>{round(d['ok']/(d['ok']+d['err'])*100)}%</td></tr>" for t, d in stats.items()])
     
     return f"""
     <html>
-        <head><title>Админка</title><style>table{{border-collapse:collapse;width:100%}} th,td{{border:1px solid #ddd;padding:8px;text-align:left}} tr:nth-child(even){{background:#f2f2f2}}</style></head>
+        <head>
+            <title>Админка: Нейрорепетитор</title>
+            <meta charset="utf-8">
+            <style>
+                body {{ font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }}
+                h1 {{ color: #333; }}
+                table {{ border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+                th, td {{ border: 1px solid #ddd; padding: 12px; text-align: left; }}
+                th {{ background-color: #4CAF50; color: white; }}
+                tr:nth-child(even) {{ background: #f2f2f2; }}
+            </style>
+        </head>
         <body>
             <h1>📊 Аналитика пробелов по темам</h1>
-            <table><tr><th>Тема</th><th>Верно</th><th>Ошибок</th><th>Успешность</th></tr>{rows}</table>
+            <table>
+                <tr><th>Тема</th><th>Верно</th><th>Ошибок</th><th>Успешность</th></tr>
+                {rows}
+            </table>
         </body>
     </html>
     """
