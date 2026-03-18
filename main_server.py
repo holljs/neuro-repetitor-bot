@@ -92,6 +92,10 @@ class PaymentRequest(BaseModel):
 async def root():
     return {"status": "online", "server_time": datetime.utcnow().isoformat()}
 
+@app.get("/check_sub/{user_id}")
+async def check_subscription(user_id: int):
+    return {"subscription": "active"}
+
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = request.student_id
