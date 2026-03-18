@@ -1,0 +1,58 @@
+[
+    {
+        "number": "47",
+        "task_text": "На какой из координатных прямых показано множество решений системы неравенств \n\\begin{cases} -5x - 1 > 0, \\\\ -2x + 7 \\geqslant 1? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            143,
+            146,
+            233,
+            674
+        ],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": "questions/images_oge_math/topic_05/task_47.jpg"
+    },
+    {
+        "number": "48",
+        "task_text": "На какой из координатных прямых показано множество решений системы неравенств \n\\begin{cases} -2 - 3x > 4, \\\\ x + 4 < 10? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            314,
+            169,
+            397,
+            646
+        ],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": "questions/images_oge_math/topic_05/task_48.jpg"
+    },
+    {
+        "number": "49",
+        "task_text": "На какой из координатных прямых показано множество решений системы неравенств \n\\begin{cases} x + 13 \\leqslant 15, \\\\ \\frac{1}{x} \\leqslant 1? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            495,
+            149,
+            579,
+            666
+        ],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": "questions/images_oge_math/topic_05/task_49.jpg"
+    },
+    {
+        "number": "50",
+        "task_text": "Какое из чисел, изображённых на координатной прямой, удовлетворяет системе неравенств \n\\begin{cases} x + 1 \\leqslant -2, \\\\ 2x + 1 < -7? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            664,
+            216,
+            711,
+            596
+        ],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": "questions/images_oge_math/topic_05/task_50.jpg"
+    }
+]

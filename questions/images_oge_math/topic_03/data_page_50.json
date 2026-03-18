@@ -1,0 +1,272 @@
+[
+    {
+        "number": "1",
+        "task_text": "Переведите одни единицы измерения в другие: 5 м в см.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Переведите одни единицы измерения в другие: 20 см в метры.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Переведите одни единицы измерения в другие: 150 км в метры.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Переведите одни единицы измерения в другие: 150 м в километры.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "5",
+        "task_text": "Переведите одни единицы измерения в другие: 7 кг в граммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "Переведите одни единицы измерения в другие: 14,03 кг в граммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "7",
+        "task_text": "Переведите одни единицы измерения в другие: 2300 г в килограммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Переведите одни единицы измерения в другие: 15 800 г в килограммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "9",
+        "task_text": "Переведите одни единицы измерения в другие: 3500 кг в тонны.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "10",
+        "task_text": "Переведите одни единицы измерения в другие: 12,1 т в килограммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "11",
+        "task_text": "Переведите одни единицы измерения в другие: 15 т в килограммы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "12",
+        "task_text": "Переведите одни единицы измерения в другие: 1575 кг в тонны.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "13",
+        "task_text": "Переведите одни единицы измерения в другие: 11 м² в см².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "14",
+        "task_text": "Переведите одни единицы измерения в другие: 16 га в км².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "15",
+        "task_text": "Переведите одни единицы измерения в другие: 12 000 см² в м².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "16",
+        "task_text": "Переведите одни единицы измерения в другие: 4,2 м² в см².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "17",
+        "task_text": "Переведите одни единицы измерения в другие: 5 ар в м².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "18",
+        "task_text": "Переведите одни единицы измерения в другие: 120 000 м² в га.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "19",
+        "task_text": "Переведите одни единицы измерения в другие: 120 минут в часы.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "20",
+        "task_text": "Переведите одни единицы измерения в другие: 12 часов в минуты.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "21",
+        "task_text": "Переведите одни единицы измерения в другие: 15 минут в секунды.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "22",
+        "task_text": "Переведите одни единицы измерения в другие: 240 секунд в минуты.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "23",
+        "task_text": "Переведите одни единицы измерения в другие: 28 м/мин в см/мин.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "24",
+        "task_text": "Переведите одни единицы измерения в другие: 15 км/ч в м/мин.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "25",
+        "task_text": "Переведите одни единицы измерения в другие: 2 л в миллилитры.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "26",
+        "task_text": "Переведите одни единицы измерения в другие: 7000 мл в литры.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "27",
+        "task_text": "Переведите одни единицы измерения в другие: 5 м³ в см³.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "28",
+        "task_text": "Переведите одни единицы измерения в другие: 18 м³ в см³.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "29",
+        "task_text": "Переведите одни единицы измерения в другие: 200 см³ в м³.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "30",
+        "task_text": "Переведите одни единицы измерения в другие: 3000 см³ в м³.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

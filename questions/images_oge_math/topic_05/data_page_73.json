@@ -1,0 +1,75 @@
+[
+    {
+        "number": "7",
+        "task_text": "7. Между какими целыми числами заключено число 260/19?\n\n1) 10 и 11\n2) 11 и 12\n3) 12 и 13\n4) 13 и 14",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "8. Между какими целыми числами заключено число 317/52?\n\n1) 5 и 6\n2) 6 и 7\n3) 7 и 8\n4) 8 и 9",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "9",
+        "task_text": "9. Одно из чисел 72/23, 76/23, 85/23, 88/23 отмечено на прямой точкой. Какое это число?\n\n1) 72/23\n2) 76/23\n3) 85/23\n4) 88/23",
+        "has_visual": true,
+        "box_2d": [
+            342,
+            267,
+            392,
+            552
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_9.jpg"
+    },
+    {
+        "number": "10",
+        "task_text": "10. Одно из чисел 70/13, 75/13, 78/13, 88/13 отмечено на прямой точкой. Какое это число?\n\n1) 70/13\n2) 75/13\n3) 78/13\n4) 88/13",
+        "has_visual": true,
+        "box_2d": [
+            497,
+            203,
+            549,
+            613
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_10.jpg"
+    },
+    {
+        "number": "11",
+        "task_text": "11. Какому из данных промежутков принадлежит число 5/6?\n\n1) [0,5;0,6]\n2) [0,6;0,7]\n3) [0,7;0,8]\n4) [0,8;0,9]",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "12",
+        "task_text": "12. Какому из данных промежутков принадлежит число 7/9?\n\n1) [0,5;0,6]\n2) [0,6;0,7]\n3) [0,7;0,8]\n4) [0,8;0,9]",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "13",
+        "task_text": "13. Какое из следующих чисел заключено между числами 5/12 и 8/15?\n\n1) 0,4\n2) 0,5\n3) 0,6\n4) 0,7",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

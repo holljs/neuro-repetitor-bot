@@ -1,0 +1,182 @@
+[
+    {
+        "number": "47",
+        "task_text": "Упростите выражения: a^5 * a^3",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "48",
+        "task_text": "Упростите выражения: (2xy^2)^3",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "49",
+        "task_text": "Упростите выражения: a^7 : a^5",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "50",
+        "task_text": "Упростите выражения: (1/2 * a^2)^-3",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "51",
+        "task_text": "Упростите выражения: (a^-5 * a^2) / a^-4",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "52",
+        "task_text": "Упростите выражения: (x/2)^10 * (x^2/4)^-4",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "53",
+        "task_text": "Сократите дробь: (x^2 + 4x + 4) / (x + 2)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "54",
+        "task_text": "Сократите дробь: (9a^2 - 6a + 1) / (3a - 1)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "55",
+        "task_text": "Сократите дробь: (24a^5 * b^7 * c^3) / (36a^7 * b^4 * c^2)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "56",
+        "task_text": "Сократите дробь: (4pq(p - q)) / (2p^2(p^2 - q^2))",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "57",
+        "task_text": "Сократите дробь: (a^2 - 64) / (a + 8)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "58",
+        "task_text": "Сократите дробь: (121 - x^2) / (x - 11)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "59",
+        "task_text": "Выполните действия: (3 + x) / 4 + (3x - 7) / 4",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "60",
+        "task_text": "Выполните действия: (a + 4) / b + (2a) / b",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "61",
+        "task_text": "Выполните действия: (2a + b) / (a - 2b) + (a + 3b) / (2b - a)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "62",
+        "task_text": "Выполните действия: (8t + z) / (1 - t) - (t - 3z) / (t - 1)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "63",
+        "task_text": "Выполните действия: (2x - 1) / (y - x) + (x - 4) / (x - y)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "64",
+        "task_text": "Выполните действия: (a + 5) / (4x) * (2x) / (a + 5)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "65",
+        "task_text": "Выполните действия: ((a^2 - b^2) / (2a^2b)) * (4ab) / (a + b)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "66",
+        "task_text": "Выполните действия: (2t) / (t - z) : (3tz) / (t - z)",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

@@ -1,0 +1,164 @@
+[
+    {
+        "number": "179",
+        "task_text": "-x² + 2x - 1 ≥ 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "180",
+        "task_text": "-x² + 4x - 4 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "181",
+        "task_text": "4x² + 4x + 1 > 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "182",
+        "task_text": "x² - 2x + 1 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "183",
+        "task_text": "-5x² + x - 2 > 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "184",
+        "task_text": "-6x² - 2x - 1 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "185",
+        "task_text": "5 / (x - 3) ≤ 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "186",
+        "task_text": "-4 / (2x + 8) ≥ 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "187*",
+        "task_text": "(2x - 5) / (x + 4) > 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "188*",
+        "task_text": "(2x + 8) / (x - 7) < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "189*",
+        "task_text": "(x + 5) / (6x - 3) ≤ 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "190*",
+        "task_text": "(x - 4) / (3x + 9) ≥ 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "191",
+        "task_text": "При каких значениях c выражение c + 18 принимает положительные значения?",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "192",
+        "task_text": "При каких значениях k выражение 15 - 2k принимает отрицательные значения?",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "193",
+        "task_text": "Укажите неравенство, решением которого является любое число. Запишите номер правильного ответа.\n1) x² - 86 > 0\n2) x² + 86 > 0\n3) x² - 86 < 0\n4) x² + 86 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "194",
+        "task_text": "Укажите неравенство, решением которого является любое число. Запишите номер правильного ответа.\n1) -x² + 93 > 0\n2) -x² - 93 > 0\n3) -x² + 93 < 0\n4) -x² - 93 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "195",
+        "task_text": "Укажите неравенство, которое не имеет решений. Запишите номер правильного ответа.\n1) 2x² - 4x - 103 > 0\n2) 2x² - 4x + 103 < 0\n3) 2x² - 4x - 103 < 0\n4) 2x² - 4x + 103 > 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "196",
+        "task_text": "Укажите неравенство, которое не имеет решений. Запишите номер правильного ответа.\n1) 2x² + 5x - 10 > 0\n2) 2x² + 5x + 10 > 0\n3) 2x² + 5x - 10 < 0\n4) 2x² + 5x + 10 < 0",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

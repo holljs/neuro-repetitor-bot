@@ -1,0 +1,97 @@
+[
+    {
+        "number": "35",
+        "task_text": "35. Найдите значение b по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            62,
+            527,
+            240,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_35.jpg"
+    },
+    {
+        "number": "36",
+        "task_text": "36. Найдите значение b по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            256,
+            527,
+            401,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_36.jpg"
+    },
+    {
+        "number": "37",
+        "task_text": "37. Найдите значение b по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            418,
+            527,
+            594,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_37.jpg"
+    },
+    {
+        "number": "38",
+        "task_text": "38. Найдите значение c по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            611,
+            527,
+            773,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_38.jpg"
+    },
+    {
+        "number": "39",
+        "task_text": "39. Найдите значение c по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            790,
+            526,
+            963,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_39.jpg"
+    }
+]

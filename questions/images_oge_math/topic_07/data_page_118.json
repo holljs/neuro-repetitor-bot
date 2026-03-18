@@ -1,0 +1,97 @@
+[
+    {
+        "number": "40",
+        "task_text": "40. Найдите значение с по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            66,
+            529,
+            210,
+            787
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_40.jpg"
+    },
+    {
+        "number": "41",
+        "task_text": "41. Найдите значение с по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            243,
+            527,
+            412,
+            789
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_41.jpg"
+    },
+    {
+        "number": "42",
+        "task_text": "42. На координатной плоскости построены графики уравнений 4y + 1 = x² и x - y = 1. Используя эти графики, решите систему уравнений\n{ 4y + 1 = x²,\n{ x - y = 1.",
+        "has_visual": true,
+        "box_2d": [
+            431,
+            527,
+            589,
+            770
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_42.jpg"
+    },
+    {
+        "number": "43",
+        "task_text": "43. На координатной плоскости построены графики уравнений 5y + x² = 4 и x + 5y + 2 = 0. Используя эти графики, решите систему уравнений\n{ 5y + x² = 4,\n{ x + 5y + 2 = 0.",
+        "has_visual": true,
+        "box_2d": [
+            604,
+            529,
+            759,
+            766
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_43.jpg"
+    },
+    {
+        "number": "44",
+        "task_text": "44. На координатной плоскости отмечены точки A и B. Какое уравнение задаёт прямую, проходящую через эти точки? Запишите номер правильного ответа.\n\n1) y = 3x - 1\n2) y = x/3 - 1\n3) y = x/3\n4) y = x/2 - 2",
+        "has_visual": true,
+        "box_2d": [
+            825,
+            527,
+            964,
+            737
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_44.jpg"
+    }
+]

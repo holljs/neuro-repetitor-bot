@@ -1,310 +1,254 @@
 [
     {
         "number": "65",
-        "task_text": "8 - 3/5 * 15/27",
+        "task_text": "8 - (3/5) * (15/27)",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "66",
         "task_text": "(5 1/19 - 1/19) * 6",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "67",
         "task_text": "(3 1/6 - 2 7/15) : 1 2/5",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "68",
         "task_text": "(2 2/3 + 1 5/6) : 1 1/2",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "69",
-        "task_text": "Запишите в виде десятичной дроби 2 1/10",
+        "task_text": "Запишите в виде десятичной дроби: 2 1/10",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "70",
-        "task_text": "Запишите в виде десятичной дроби 9 3/10",
+        "task_text": "Запишите в виде десятичной дроби: 9 3/10",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "71",
-        "task_text": "Запишите в виде десятичной дроби 12 23/100",
+        "task_text": "Запишите в виде десятичной дроби: 12 23/100",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "72",
-        "task_text": "Запишите в виде десятичной дроби 1 2/100",
+        "task_text": "Запишите в виде десятичной дроби: 1 2/100",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "73",
-        "task_text": "Запишите в виде десятичной дроби 2 333/1000",
+        "task_text": "Запишите в виде десятичной дроби: 2 333/1000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "74",
-        "task_text": "Запишите в виде десятичной дроби 1 37/1000",
+        "task_text": "Запишите в виде десятичной дроби: 1 37/1000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "75",
-        "task_text": "Запишите в виде десятичной дроби 1 1/1000",
+        "task_text": "Запишите в виде десятичной дроби: 1 1/1000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "76",
-        "task_text": "Запишите в виде десятичной дроби 15 12/100",
+        "task_text": "Запишите в виде десятичной дроби: 15 12/100",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "77",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 0,7",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 0,7",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "78",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 3,21",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 3,21",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "79",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 12,03",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 12,03",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "80",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 275,44",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 275,44",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "81",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 0,883",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 0,883",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "82",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 20,085",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 20,085",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "83",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 0,001",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 0,001",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "84",
-        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа 0,0003",
+        "task_text": "Запишите в виде обыкновенной дроби или смешанного числа: 0,0003",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "85",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 183 : 10",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 183 : 10",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "86",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 5205 : 100",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 5205 : 100",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "87",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 628 : 10 000",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 628 : 10 000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "88",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 74 : 1000",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 74 : 1000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "89",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 851 : 1000",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 851 : 1000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "90",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 3 : 100 000",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 3 : 100 000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "91",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 214 : 10",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 214 : 10",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     },
     {
         "number": "92",
-        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей 300 : 10 000",
+        "task_text": "Выполните деление и запишите ответ в виде десятичных дробей: 300 : 10 000",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
     }
 ]

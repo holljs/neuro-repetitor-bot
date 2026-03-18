@@ -1,0 +1,101 @@
+[
+    {
+        "number": "Вариант 1, 1",
+        "task_text": "Из формулы площади параллелограмма S = ah выразите высоту h.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 1, 2",
+        "task_text": "Из формулы силы тока I = q/t выразите время t.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 1, 3",
+        "task_text": "Из формулы периметра параллелограмма 2(a + b) = P выразите a.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 1, 4",
+        "task_text": "Из формулы Эйнштейна для полной энергии E = mc² выразите скорость c.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 1, 5",
+        "task_text": "Давление P (в Па), объём V (в литрах) и температура T (в градусах по шкале Кельвина) некоторой массы газа связаны уравнением PV/T = 1500. Найдите температуру газа T, если его объём V = 30 л, давление P = 20 000 Па.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 1, 6",
+        "task_text": "Потенциальная энергия E тела массой m, находящегося на высоте h от поверхности земли, может быть вычислена по формуле E = mgh. Найдите потенциальную энергию E (в Дж) тела массой 4 кг, находящегося на высоте h = 5 м. Примите g = 10 м/с².",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 2, 1",
+        "task_text": "Из формулы объёма прямоугольного параллелепипеда V = Sh выразите площадь S.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 2, 2",
+        "task_text": "Из формулы скорости v = S/t выразите время t.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 2, 3",
+        "task_text": "Из равенства 3x - 2y = 7 выразите x.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 2, 4",
+        "task_text": "Из формулы энергии заряженного конденсатора W = CU²/2 выразите напряжение U.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "Вариант 2, 5",
+        "task_text": "Давление P (в Па), объём V (в литрах) и температура T (в градусах по шкале Кельвина) некоторой массы газа связаны уравнением PV/T = 500. Найдите давление газа P, если его объём V = 30 л, температура T = 300 K.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

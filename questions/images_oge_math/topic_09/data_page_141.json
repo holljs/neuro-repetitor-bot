@@ -1,0 +1,101 @@
+[
+    {
+        "number": "6",
+        "task_text": "6. Кинетическая энергия E тела массой m, движущегося со скоростью v, может быть вычислена по формуле E = mv²/2. Найдите массу тела m (в кг), если при скорости движения v = 3 м/с его кинетическая энергия E = 18 Дж.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "1",
+        "task_text": "Вариант 3\n1. Из формулы работы силы A = Fh выразите силу F.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "2. Из формулы для нахождения радиуса окружности, вписанной в треугольник, r = S/p выразите полупериметр p.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "3. Из равенства c(t₁ + t₂) = 3 выразите t₁.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "4. Из формулы работы электрического поля A = I²Rt выразите силу тока I.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "5",
+        "task_text": "5. Количество теплоты Q, необходимое для нагревания тела с удельной теплоёмкостью c и массой m на Δt градусов, определяется по формуле Q = cmΔt. Найдите массу тела, если разность температур Δt = 25 °C, удельная теплоёмкость c = 0,8 Дж/(кг · °C), количество теплоты Q = 300 Дж. Ответ выразите в килограммах.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "6. Кинетическая энергия E тела массой m, движущегося со скоростью v, может быть вычислена по формуле E = mv²/2. Найдите кинетическую энергию тела массой m = 3 кг, движущегося со скоростью v = 6 м/с.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "1",
+        "task_text": "Вариант 4\n1. Из формулы силы тяжести F = mg выразите массу m.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "2. Из формулы высоты треугольника h = 2S/a выразите сторону a.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "3. Из равенства 8t = 5z + 4 выразите z.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "4. Из формулы энергии заряженного конденсатора W = q²/2C выразите заряд q.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

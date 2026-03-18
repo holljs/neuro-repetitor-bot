@@ -1,0 +1,116 @@
+[
+    {
+        "number": "1",
+        "task_text": "1. На координатной прямой отмечены точки A, B, C, и D. Одна из них соответствует числу 89/17. Какая это точка?\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            258,
+            281,
+            310,
+            532
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "2. На координатной прямой отмечены точки A, B, C, и D. Одна из них соответствует числу 78/29. Какая это точка?\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            438,
+            180,
+            477,
+            634
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "3. На координатной прямой точки A, B, C и D соответствуют числам 2,056; 2,98; 1,46; 0,02. Какой точке соответствует число 2,056?\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            576,
+            194,
+            616,
+            616
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_3.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "4. На координатной прямой точки A, B, C и D соответствуют числам −1,032; −2,35; −1,62; 2,112. Какой точке соответствует число −1,62?\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            713,
+            193,
+            755,
+            618
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_4.jpg"
+    },
+    {
+        "number": "5",
+        "task_text": "5. Какое из данных ниже чисел принадлежит отрезку [7; 8]?\n1) 68/14\n2) 95/14\n3) 107/14\n4) 113/14",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "6. Какое из данных ниже чисел принадлежит отрезку [9; 10]?\n1) 199/21\n2) 188/21\n3) 177/21\n4) 163/21",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    }
+]

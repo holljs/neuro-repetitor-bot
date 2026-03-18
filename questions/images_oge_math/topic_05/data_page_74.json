@@ -1,0 +1,81 @@
+[
+    {
+        "number": "14",
+        "task_text": "Какое из следующих чисел заключено между числами 9/13 и 13/17?\n\n1) 0,4\n2) 0,5\n3) 0,6\n4) 0,7",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "15",
+        "task_text": "Одно из чисел 10/23, 11/23, 13/23, 15/23 отмечено на прямой точкой. Какое это число?\n\n1) 10/23\n2) 11/23\n3) 13/23\n4) 15/23",
+        "has_visual": true,
+        "box_2d": [
+            248,
+            198,
+            283,
+            612
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_15.jpg"
+    },
+    {
+        "number": "16",
+        "task_text": "Одно из чисел -2/17, -3/17, -4/17, -5/17 отмечено на прямой точкой. Какое это число?\n\n1) -2/17\n2) -3/17\n3) -4/17\n4) -5/17",
+        "has_visual": true,
+        "box_2d": [
+            426,
+            198,
+            460,
+            614
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_16.jpg"
+    },
+    {
+        "number": "17",
+        "task_text": "На координатной прямой отмечено число a. Какое из утверждений для этого числа является верным?\n\n1) 8 - a > 0\n2) 8 - a < 0\n3) a - 7 < 0\n4) a - 9 > 0",
+        "has_visual": true,
+        "box_2d": [
+            584,
+            200,
+            620,
+            612
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_17.jpg"
+    },
+    {
+        "number": "18",
+        "task_text": "На координатной прямой отмечено число a. Какое из утверждений для этого числа является верным?\n\n1) 4 - a < 0\n2) 4 - a > 0\n3) a - 3 < 0\n4) a - 5 > 0",
+        "has_visual": true,
+        "box_2d": [
+            734,
+            197,
+            771,
+            613
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_18.jpg"
+    },
+    {
+        "number": "19",
+        "task_text": "На координатной прямой отмечены числа a и b. Какое из приведённых утверждений для этих чисел неверно?\n\n1) a + b < 0\n2) b - a < 0\n3) ab < 0\n4) b²/a < 0",
+        "has_visual": true,
+        "box_2d": [
+            884,
+            282,
+            924,
+            532
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_19.jpg"
+    }
+]

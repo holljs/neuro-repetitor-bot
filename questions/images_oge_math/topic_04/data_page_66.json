@@ -1,0 +1,182 @@
+[
+    {
+        "number": "127",
+        "task_text": "Квадратный трёхчлен разложен на множители: $x^2 - 7x + c = (x - 2)(x - 5)$. Найдите $c$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "128",
+        "task_text": "Квадратный трёхчлен разложен на множители: $x^2 + 6x + d = (x + 2)(x + 4)$. Найдите $d$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "129",
+        "task_text": "Уравнение $x^2 + px + q = 0$ имеет корни $7; -3$. Найдите $q$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "130",
+        "task_text": "Уравнение $x^2 + px + q = 0$ имеет корни $-4; 9$. Найдите $p$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "131",
+        "task_text": "Разложите на множители квадратный трёхчлен $x^2 + 5x + 4$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "132",
+        "task_text": "Разложите на множители квадратный трёхчлен $x^2 + 5x - 14$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "133",
+        "task_text": "Разложите на множители квадратный трёхчлен $4x^2 - 3x - 1$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "134",
+        "task_text": "Разложите на множители квадратный трёхчлен $2x^2 - 7x - 22$.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "135",
+        "task_text": "Решите систему уравнений: $\\begin{cases} 3x + 2y = 7, \\\\ x - 5y = -9. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "136",
+        "task_text": "Решите систему уравнений: $\\begin{cases} y + 3x = 10, \\\\ 5x - 3y = 12. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "137",
+        "task_text": "Решите систему уравнений: $\\begin{cases} 2x + 5y = 11, \\\\ 3x - 2y = -12. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "138",
+        "task_text": "Решите систему уравнений: $\\begin{cases} 2x - 7y = 25, \\\\ 5x + 2y = 4. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "139",
+        "task_text": "Решите систему уравнений: $\\begin{cases} 4x - 3y = 8, \\\\ 8x + y = 2. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "140",
+        "task_text": "Решите систему уравнений: $\\begin{cases} 3x - 7y = 2, \\\\ 5x + 6y = -32. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "141*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} x - y = 5, \\\\ x^2 + 5x = 0. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "142*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} x + y = 7, \\\\ y^2 - 3y = 0. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "143*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} x^2 + y^2 = 26, \\\\ x - y = -4. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "144*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} x^2 + y^2 = 13, \\\\ xy = 6. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "145*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} (x + 5)(y - 1) = 0, \\\\ 2x + 3y = 5. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "146*",
+        "task_text": "Решите систему уравнений: $\\begin{cases} (x - 3)(y + 2) = 0, \\\\ 5x - 2y = 3. \\end{cases}$",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

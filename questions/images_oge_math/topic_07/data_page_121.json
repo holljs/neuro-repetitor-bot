@@ -1,0 +1,97 @@
+[
+    {
+        "number": "55",
+        "task_text": "55. Используя рисунок, решите систему уравнений \n{\n5y - 6x + 22 = 0,\n2y + x = 15.",
+        "has_visual": true,
+        "box_2d": [
+            73,
+            508,
+            240,
+            789
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_55.jpg"
+    },
+    {
+        "number": "56",
+        "task_text": "56. На рисунке изображён график квадратичной функции y = f(x). Найдите все целые значения x, при которых f(x) < 0. В ответ запишите их сумму.",
+        "has_visual": true,
+        "box_2d": [
+            270,
+            509,
+            410,
+            714
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_56.jpg"
+    },
+    {
+        "number": "57",
+        "task_text": "57. На рисунке изображён график квадратичной функции y = f(x). Найдите все целые значения x, при которых f(x) > 0. В ответ запишите их сумму.",
+        "has_visual": true,
+        "box_2d": [
+            427,
+            509,
+            568,
+            714
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_57.jpg"
+    },
+    {
+        "number": "58",
+        "task_text": "58. На рисунке изображён график квадратичной функции y = f(x). Найдите наибольшее целое значение x, при котором f(x) < 0.",
+        "has_visual": true,
+        "box_2d": [
+            584,
+            509,
+            724,
+            714
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_58.jpg"
+    },
+    {
+        "number": "59",
+        "task_text": "59. На рисунке изображён график квадратичной функции y = f(x). Найдите наименьшее целое значение x, при котором f(x) > 0.",
+        "has_visual": true,
+        "box_2d": [
+            740,
+            509,
+            880,
+            714
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_59.jpg"
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "number": "6",
+        "task_text": "Какое из чисел, изображённых на координатной прямой, удовлетворяет системе неравенств \\begin{cases} 6 - x > 7, \\\\ x + 7 > -2? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            140,
+            217,
+            175,
+            599
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_6.jpg"
+    },
+    {
+        "number": "7",
+        "task_text": "Решите систему неравенств \\begin{cases} 5x - 2 > 8, \\\\ 3x - 4 \\ge 5. \\end{cases} В каком из указанных случаев изображено множество решений системы?",
+        "has_visual": true,
+        "box_2d": [
+            282,
+            83,
+            362,
+            706
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_7.jpg"
+    },
+    {
+        "number": "8",
+        "task_text": "Множество решений какой из систем неравенств показано на рисунке?\n1) \\begin{cases} 5 - x > 3, \\\\ 2 + 3x < -1. \\end{cases} 2) \\begin{cases} x + 2 > 0, \\\\ 6 - x \\ge 4. \\end{cases}\n3) \\begin{cases} x + 1 < 0, \\\\ 2 - x \\ge 0. \\end{cases} 4) \\begin{cases} 3x + 4 > 0, \\\\ x - 3 < 4. \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            421,
+            270,
+            469,
+            545
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_8.jpg"
+    }
+]

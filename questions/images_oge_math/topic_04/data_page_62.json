@@ -1,0 +1,308 @@
+[
+    {
+        "number": "31",
+        "task_text": "(x - 7) / (x - 15) = 3",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "32",
+        "task_text": "28 / (x - 8) = 1",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "33",
+        "task_text": "11 - x / 5 = x / 6",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "34",
+        "task_text": "(x + 5) / 9 - x / 2 = 20",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "35",
+        "task_text": "x² = 4",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "36",
+        "task_text": "x² = 9",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "37",
+        "task_text": "7x² + 21 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "38",
+        "task_text": "x² + 16 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "39",
+        "task_text": "5x² = 10",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "40",
+        "task_text": "7x² = 21",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "41",
+        "task_text": "x² - 8x = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "42",
+        "task_text": "6x² + x = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "43",
+        "task_text": "x² = 3x",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "44",
+        "task_text": "x² = -8x",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "45",
+        "task_text": "x² - 10x + 25 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "46",
+        "task_text": "x² + 8x + 16 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "47",
+        "task_text": "x² + 5x - 6 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "48",
+        "task_text": "x² + 8x + 12 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "49",
+        "task_text": "x² - 2x - 48 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "50",
+        "task_text": "x² - 7x + 6 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "51",
+        "task_text": "-x² + 2x + 3 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "52",
+        "task_text": "-x² + 8x - 15 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "53",
+        "task_text": "2x² + 5x - 3 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "54",
+        "task_text": "2x² - 9x - 5 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "55",
+        "task_text": "3x² - 2x + 4 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "56",
+        "task_text": "x² - 7x + 16 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "57",
+        "task_text": "5x² + 2x - 3 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "58",
+        "task_text": "-5x² + 11x - 2 = 0",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "59",
+        "task_text": "x² + 8x = 9",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "60",
+        "task_text": "x² = 5x - 6",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "61",
+        "task_text": "x² - 3x = x + 30 - x²",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "62",
+        "task_text": "5x² - 2x - 10 = 2x² + x + 8",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "63",
+        "task_text": "14x² - 14x - 14 = 2x² + x + 13",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "64",
+        "task_text": "4x² - 11x + 4 = 2x² + x + 10",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "number": "4",
+        "task_text": "4. А) y = x³ Б) y = -x³ В) y = √x",
+        "has_visual": true,
+        "box_2d": [
+            54,
+            73,
+            283,
+            928
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_4.jpg"
+    },
+    {
+        "number": "5",
+        "task_text": "5. А) y = 2/x Б) y = -4/x В) y = 6/x",
+        "has_visual": true,
+        "box_2d": [
+            300,
+            73,
+            545,
+            928
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_5.jpg"
+    },
+    {
+        "number": "6",
+        "task_text": "6. А) y = |x| Б) y = |x + 2| В) y = |x| + 2",
+        "has_visual": true,
+        "box_2d": [
+            557,
+            73,
+            788,
+            928
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_6.jpg"
+    }
+]

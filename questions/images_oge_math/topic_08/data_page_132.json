@@ -1,0 +1,230 @@
+[
+    {
+        "number": "1",
+        "task_text": "Вариант 1. 1. Упростите выражение (x + 3)(y - 2) + 2x - 3y + 1 и найдите его значение при x = 4√2, y = √2.",
+        "has_visual": false,
+        "box_2d": [
+            126,
+            71,
+            172,
+            725
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Вариант 1. 2. Сократите дробь 24a^5y^4 / (2a^2y)^3.",
+        "has_visual": false,
+        "box_2d": [
+            184,
+            71,
+            230,
+            336
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Вариант 1. 3. Разложите на множители 4px + 3py - 4qx - 3qy.",
+        "has_visual": false,
+        "box_2d": [
+            251,
+            71,
+            270,
+            545
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Вариант 1. 4. Упростите выражение ((9a^2 + b^2)/3 + 2ab) : (3a + b)/6.",
+        "has_visual": false,
+        "box_2d": [
+            290,
+            71,
+            335,
+            561
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "1",
+        "task_text": "Вариант 2. 1. Упростите выражение (t + 2)^2 - (4t + 2) и найдите его значение при t = 3√5.",
+        "has_visual": false,
+        "box_2d": [
+            407,
+            71,
+            451,
+            720
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Вариант 2. 2. Сократите дробь 15x^4b^3 / 5(xb^2)^4.",
+        "has_visual": false,
+        "box_2d": [
+            464,
+            71,
+            509,
+            334
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Вариант 2. 3. Разложите на множители 2ac + 2ad - 5bc - 5bd.",
+        "has_visual": false,
+        "box_2d": [
+            525,
+            71,
+            544,
+            545
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Вариант 2. 4. Упростите выражение 25/(c - 5d) * ((c^2 + 25d^2)/5 - 2cd).",
+        "has_visual": false,
+        "box_2d": [
+            565,
+            71,
+            611,
+            575
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "1",
+        "task_text": "Вариант 3. 1. Упростите выражение (x - 2)(y + 5) - 5x + 2y и найдите его значение при x = 2√3, y = √3.",
+        "has_visual": false,
+        "box_2d": [
+            688,
+            71,
+            730,
+            720
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Вариант 3. 2. Сократите дробь 12b^3c^6 / (3bc^3)^2.",
+        "has_visual": false,
+        "box_2d": [
+            744,
+            71,
+            789,
+            332
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Вариант 3. 3. Разложите на множители 3tx - 2yt - 3zx + 2zy.",
+        "has_visual": false,
+        "box_2d": [
+            803,
+            71,
+            822,
+            545
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Вариант 3. 4. Упростите выражение ((4x^2 + y^2)/2 + 2xy) : (2x + y)/4.",
+        "has_visual": false,
+        "box_2d": [
+            844,
+            71,
+            889,
+            568
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    }
+]

@@ -1,0 +1,116 @@
+[
+    {
+        "number": "30",
+        "task_text": "30. Известно, что число n принадлежит промежутку (-1; 0). В каком из указанных случаев точки с координатами n; 2n; n^2 расположены на координатной прямой в правильном порядке?",
+        "has_visual": true,
+        "box_2d": [
+            227,
+            115,
+            302,
+            700
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_30.jpg"
+    },
+    {
+        "number": "31",
+        "task_text": "31. На координатной прямой отмечено число m. Расположите в порядке убывания числа m^2; m + 1; 1/m.\n1) m^2, 1/m, m + 1\n2) m + 1, m^2, 1/m\n3) 1/m, m^2, m + 1\n4) m + 1, 1/m, m^2",
+        "has_visual": true,
+        "box_2d": [
+            401,
+            306,
+            429,
+            532
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_31.jpg"
+    },
+    {
+        "number": "32",
+        "task_text": "32. Какое из чисел отмечено на координатной прямой точкой A?\n1) √5\n2) √2\n3) √8\n4) √3",
+        "has_visual": true,
+        "box_2d": [
+            574,
+            242,
+            606,
+            604
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_32.jpg"
+    },
+    {
+        "number": "33",
+        "task_text": "33. Какое из чисел отмечено на координатной прямой точкой B?\n1) √2\n2) √9\n3) √16\n4) √3",
+        "has_visual": true,
+        "box_2d": [
+            711,
+            245,
+            742,
+            604
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_33.jpg"
+    },
+    {
+        "number": "34",
+        "task_text": "34. Какое из чисел отмечено на координатной прямой точкой P?\n1) -√4\n2) -1,5\n3) -√2\n4) -√7",
+        "has_visual": true,
+        "box_2d": [
+            854,
+            196,
+            886,
+            590
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_34.jpg"
+    },
+    {
+        "number": "35",
+        "task_text": "35. На координатной прямой отмечены числа a и b. Какое из следующих неравенств верное?\n1) -b > -a\n2) 7 - b > 7 - a\n3) b/5 < a/5\n4) b + 2 > a + 2",
+        "has_visual": true,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": true,
+        "stitch_box": [
+            52,
+            269,
+            78,
+            545
+        ],
+        "image": "questions/images_oge_math/topic_05/task_35.jpg"
+    }
+]

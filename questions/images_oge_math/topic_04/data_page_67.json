@@ -1,0 +1,290 @@
+[
+    {
+        "number": "147",
+        "task_text": "Решите неравенство: -2x < 4.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "148",
+        "task_text": "Решите неравенство: 3x > -9.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "149",
+        "task_text": "Решите неравенство: 41x > 8,2.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "150",
+        "task_text": "Решите неравенство: -0,3x < 9,6.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "151",
+        "task_text": "Решите неравенство: 6 - 5x < 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "152",
+        "task_text": "Решите неравенство: 2x + 18 > 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "153",
+        "task_text": "Решите неравенство: x - 8 ≤ 3x + 6.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "154",
+        "task_text": "Решите неравенство: x + 5 ≤ 2x - 3.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "155",
+        "task_text": "Решите неравенство: 3(x - 5) - x ≥ 1.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "156",
+        "task_text": "Решите неравенство: 2(x + 3) ≥ 2x.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "157",
+        "task_text": "Решите неравенство: 4(x + 1) - 6(2 - x) > 2.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "158",
+        "task_text": "Решите неравенство: 3(x + 2) - 2(5 - x) < 1.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "159",
+        "task_text": "Решите неравенство: 3x - 5(0,6x - 1) < 3.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "160",
+        "task_text": "Решите неравенство: 6x - 3(0,2x + 3) > 2x.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "161",
+        "task_text": "Решите неравенство: (x + 5)(x - 3) < 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "162",
+        "task_text": "Решите неравенство: (x - 2)(x + 1) > 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "163",
+        "task_text": "Решите неравенство: (x - 1)(x - 8) ≥ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "164",
+        "task_text": "Решите неравенство: (x + 5)(x + 7) ≤ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "165",
+        "task_text": "Решите неравенство: x² + 5x < 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "166",
+        "task_text": "Решите неравенство: x² - 9 > 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "167",
+        "task_text": "Решите неравенство: 2x² ≥ 4x.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "168",
+        "task_text": "Решите неравенство: 3x² ≤ 12x.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "169",
+        "task_text": "Решите неравенство: x² - 16 > 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "170",
+        "task_text": "Решите неравенство: x² - 9x < 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "171",
+        "task_text": "Решите неравенство: x² < 25.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "172",
+        "task_text": "Решите неравенство: x² > 4.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "173",
+        "task_text": "Решите неравенство: 2x² - 3x - 5 < 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "174",
+        "task_text": "Решите неравенство: 6x² - 5x - 1 ≤ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "175",
+        "task_text": "Решите неравенство: x² - 3x - 4 ≤ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "176",
+        "task_text": "Решите неравенство: x² + 3x - 4 ≥ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "177",
+        "task_text": "Решите неравенство: x² - 6x + 9 ≥ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "178",
+        "task_text": "Решите неравенство: x² + 10x + 25 ≤ 0.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

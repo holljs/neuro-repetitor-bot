@@ -1,0 +1,40 @@
+[
+    {
+        "number": "7",
+        "task_text": "7. Решите систему неравенств \\begin{cases} 3x - 7 \\le -1, \\\\ 3 - 2x > 5. \\end{cases} В каком из указанных случаев изображено множество решений данной системы?",
+        "has_visual": true,
+        "box_2d": [
+            128,
+            108,
+            225,
+            720
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_7.jpg"
+    },
+    {
+        "number": "8",
+        "task_text": "8. Множество решений какой из систем неравенств показано на рисунке?",
+        "has_visual": true,
+        "box_2d": [
+            270,
+            262,
+            318,
+            550
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_8.jpg"
+    }
+]

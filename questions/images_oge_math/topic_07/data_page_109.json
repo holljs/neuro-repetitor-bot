@@ -1,0 +1,44 @@
+[
+    {
+        "number": "7",
+        "task_text": "7. На рисунке изображены графики функций вида y = kx + b. Установите соответствие между графиками функций и знаками коэффициентов k и b.\nГРАФИКИ\nА. Б. В.\nКОЭФФИЦИЕНТЫ\n1) k < 0, b > 0. 2) k > 0, b < 0. 3) k > 0, b > 0. 4) k < 0, b < 0.",
+        "has_visual": true,
+        "box_2d": [
+            126,
+            171,
+            285,
+            825
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_7.jpg"
+    },
+    {
+        "number": "8",
+        "task_text": "8. На рисунке изображены графики функций вида y = kx + b. Установите соответствие между графиками функций и знаками коэффициентов k и b.\nГРАФИКИ\nА. Б. В.\nКОЭФФИЦИЕНТЫ\n1) k > 0, b < 0. 2) k < 0, b < 0. 3) k < 0, b > 0. 4) k > 0, b > 0.",
+        "has_visual": true,
+        "box_2d": [
+            423,
+            175,
+            584,
+            821
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_8.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "9. На рисунке изображены графики функций вида y = kx + b. Установите соответствие между графиками функций и знаками коэффициентов k и b.\nГРАФИКИ\nА. Б. В.\nКОЭФФИЦИЕНТЫ\n1) k < 0, b < 0. 2) k > 0, b > 0. 3) k < 0, b > 0. 4) k > 0, b < 0.",
+        "has_visual": true,
+        "box_2d": [
+            747,
+            178,
+            903,
+            816
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_9.jpg"
+    }
+]

@@ -1,0 +1,227 @@
+[
+    {
+        "number": "31",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n31. 12 000 г и 15 кг.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "32",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n32. 154 кг и 154 200 г.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "33",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n33. 17 000 кг и 17 т.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "34",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n34. 10 400 г и 11 кг.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "35",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n35. 7 м и 700 см.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "36",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n36. 15 000 м и 15,1 км.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "37",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n37. 750 см и 0,007 км.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "38",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n38. 9 м² и 900 дм².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "39",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n39. 11 ар и 11 100 м².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "40",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n40. 10 000 см² и 1,1 м².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "41",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n41. 5 см² и 123 мм².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "42",
+        "task_text": "Сравните величины и напишите номер правильного ответа: 1) >; 2) <; 3) =\n42. 7 м² и 70 000 см².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "43",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n43. 12 м, 1,2 дм, 120 см.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "44",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n44. 156 см, 210 мм, 15 дм.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "45",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n45. 50 км, 13 400 м, 1 725 000 см.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "46",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n46. 520 кг, 12 ц, 5 000 000 г.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "47",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n47. 12 м², 240 см², 5 дм².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "48",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n48. 1 км², 10 ар, 15 га.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "49",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n49. 15 км², 7 ар, 2,7 га.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "50",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n50. 1 га, 500 ар, 5000 м².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "51",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n51. 60 мин, 0,5 ч, 366 с.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "52",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n52. 36 мин, 2 ч, 1440 с.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "53",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n53. 460 коп., 5 руб.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "54",
+        "task_text": "Среди указанных величин укажите наибольшую. Ответы дайте без единиц измерений\n54. 55 мл, 15 л.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "55",
+        "task_text": "На упаковке зарядного устройства имеется надпись, гарантирующая, что выходное напряжение находится в пределах 12 ± 3,5 В. Какое напряжение не может быть при этом условии? Запишите номер верного ответа.\n1) 15,26 В\n2) 11,08 В\n3) 9,65 В\n4) 8,42 В",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

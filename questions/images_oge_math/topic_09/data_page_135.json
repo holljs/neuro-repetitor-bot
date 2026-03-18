@@ -1,0 +1,128 @@
+[
+    {
+        "number": "13",
+        "task_text": "Из формулы зависимости скорости тела от времени при свободном падении v = v₀ + gt выразите время t.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "14",
+        "task_text": "Из формулы периода колебаний электрического заряда в колебательном контуре T = 2π√(LC) выразите индуктивность L.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "15",
+        "task_text": "Из формулы энергии магнитного поля соленоида W = (B² / 2μ₀) * V выразите объём V.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "16",
+        "task_text": "Из равенства 3ab — 9b = 5 выразите b.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "17",
+        "task_text": "Из уравнения 2x = 7y — 11 выразите y.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "18",
+        "task_text": "Из равенства t² — 2t = a — 1 выразите a.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "19",
+        "task_text": "Из уравнения xy + 5x = 7 выразите x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "20",
+        "task_text": "Из уравнения Менделеева — Клапейрона PV = (m/M) * RT выразите температуру T.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "21",
+        "task_text": "Из формулы кинетической энергии W = mv² / 2 выразите скорость v.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "22",
+        "task_text": "Из формулы кинетической энергии упруго сжатой пружины W = kx² / 2 выразите абсолютную деформацию пружины x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "23",
+        "task_text": "Из формулы центростремительного ускорения a = ω²R выразите угловую скорость ω.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "24",
+        "task_text": "Из формулы закона всемирного тяготения F = G * (m₁m₂ / R²) выразите расстояние R.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "25",
+        "task_text": "Из формулы напряжённости электрического поля точечного заряда E = k * (q / R²) выразите расстояние R.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "26",
+        "task_text": "Из равенства (3cdM / 2a) + cd = 5 выразите M.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

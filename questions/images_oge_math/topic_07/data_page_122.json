@@ -1,0 +1,56 @@
+[
+    {
+        "number": "60*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = ((x^2 - 3)(1 - x)) / (x - 1); y = 2.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "61*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = ((x + 1)(x^2 + 4x - 5)) / (x - 1); y = -4.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "62*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = { 2x + 8, при x <= -2, x^2, при -2 < x < 1, 2 - x, при x >= 1; y = 1.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "63*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = { x + 3, при x <= -3, x + 1, при -3 < x <= 1, 2/x, при x > 1; y = -1.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "64*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = |x^2 + 2x - 3|, y = 3.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "65*",
+        "task_text": "Постройте график функции и определите, сколько общих точек она имеет с заданной прямой: y = x^2 - 2|x| - 3; y = -3.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

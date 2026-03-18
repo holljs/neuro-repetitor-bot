@@ -1,0 +1,137 @@
+[
+    {
+        "number": "15",
+        "task_text": "Разложите на множители: 15. 8(y — 3) — a(3 — y).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "16",
+        "task_text": "Разложите на множители: 16. 6(a — 2) + 5a(2 — a).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "17",
+        "task_text": "Разложите на множители: 17. 3ax — ay + 3bx — by.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "18",
+        "task_text": "Разложите на множители: 18. ab — ac — 7b + 7c.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "19",
+        "task_text": "Разложите на множители: 19. (a + 3)² — (a + 3)(2a — 3).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "20",
+        "task_text": "Разложите на множители: 20. 2(x + y)(x — y) — (x + y)².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "21",
+        "task_text": "Выполните умножение: 21. (3x — 2y)(3x + 2y).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "22",
+        "task_text": "Выполните умножение: 22. (z — 4b)(4b + z).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "23",
+        "task_text": "Выполните умножение: 23. (—2n + 3p²)(3p² + 2n).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "24",
+        "task_text": "Выполните умножение: 24. (5a² — 0,4b²)(0,4b² + 5a²).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "25",
+        "task_text": "Выполните умножение: 25. (2,5x — 0,3y)(2,5x + 0,3y).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "26",
+        "task_text": "Выполните умножение: 26. (a² + 6)(a² — 6).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "27",
+        "task_text": "Разложите на множители: 27. 25 — x².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "28",
+        "task_text": "Разложите на множители: 28. a² — 64b².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "29",
+        "task_text": "Разложите на множители: 29. 36 — x²y².",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

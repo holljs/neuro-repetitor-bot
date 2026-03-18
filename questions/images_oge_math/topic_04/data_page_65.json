@@ -1,0 +1,146 @@
+[
+    {
+        "number": "111",
+        "task_text": "111*. (x + 3)(x - 5) + (x + 3)(x - 3) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "112",
+        "task_text": "112*. (x - 8)(2x - 6) - (x - 8)(x + 1) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "113",
+        "task_text": "113*. (x + 4)^2(x - 5) + (x + 4)(x - 5)^2 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "114",
+        "task_text": "114*. (x - 7)^2(x + 6) - (x - 7)(x + 6)^2 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "115",
+        "task_text": "115*. (x^2 + 8x + 12) / (x + 6) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "116",
+        "task_text": "116*. (x^2 - 7x + 10) / (x - 2) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "117",
+        "task_text": "117*. (x^2 - 10x + 21) / (x^2 - 4) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "118",
+        "task_text": "118*. (x^2 + 10x + 21) / (x^2 - 49) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "119",
+        "task_text": "119*. 3/x^2 - 5/x + 2 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "120",
+        "task_text": "120*. 4/x^2 + 9/x + 5 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "121",
+        "task_text": "121. При каком значении x разность выражений 3x – 8 и 12x – 17 равна 0?",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "122",
+        "task_text": "122. При каком значении x сумма выражений 10x + 1 и 4x – 8 равна 0?",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "123",
+        "task_text": "123. Квадратный трёхчлен разложен на множители: x^2 + 12x – 13 = (x – 1)(x – a). Найдите a.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "124",
+        "task_text": "124. Квадратный трёхчлен разложен на множители: x^2 + 6x – 16 = (x – b)(x + 8). Найдите b.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "125",
+        "task_text": "125. Квадратный трёхчлен разложен на множители: 5x^2 – 3x – 14 = 5(x – 2)(x – a). Найдите a.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "126",
+        "task_text": "126. Квадратный трёхчлен разложен на множители: 4x^2 + 11x – 20 = 4(x – b)(x + 4). Найдите b.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

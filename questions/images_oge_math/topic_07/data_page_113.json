@@ -1,0 +1,59 @@
+[
+    {
+        "number": "18",
+        "task_text": "18. Установите соответствие между графиками функций и формулами, которые их задают.\n1) $y = x^2 + 3$\n2) $y = (x - 3)^2$\n3) $y = -x^2 + 3$\n4) $y = (x + 2)^2 - 3$",
+        "has_visual": true,
+        "box_2d": [
+            84,
+            172,
+            321,
+            923
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_18.jpg"
+    },
+    {
+        "number": "19",
+        "task_text": "19. Установите соответствие между графиками функций и формулами, которые их задают.\n1) $y = x^3$\n2) $y = -x^2 + 3$\n3) $y = x^2 + 3x$\n4) $y = \\frac{3}{x}$",
+        "has_visual": true,
+        "box_2d": [
+            367,
+            172,
+            608,
+            923
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_19.jpg"
+    },
+    {
+        "number": "20",
+        "task_text": "20. Установите соответствие между графиками функций и формулами, которые их задают.\n1) $y = \\frac{4}{x}$\n2) $y = -\\frac{1}{x}$\n3) $y = \\frac{1}{x}$\n4) $y = -\\frac{4}{x}$",
+        "has_visual": true,
+        "box_2d": [
+            686,
+            172,
+            927,
+            923
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_20.jpg"
+    }
+]

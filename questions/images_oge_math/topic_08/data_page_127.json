@@ -1,0 +1,128 @@
+[
+    {
+        "number": "1",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. (5a - 2b) - (3b - 4a).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. (6c - b) - (2c + 3b).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. 2x - (3x + y) + 6y.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. 8x - (3x - 2y) - 7y.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "5",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. 0,5(a - 3b) - (3b + 0,5a).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. 0,1(a + 2b) - (0,2b - 0,2a).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "7",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. (1/3x + y) - 2/3(x + 1,5y).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Раскройте скобки и приведите подобные слагаемые. (1/6x - y) - 5/6(x - 4,2y).",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "9",
+        "task_text": "Упростите выражение и найдите его значение. 5xy + x + y - 2xy - 3xy при x = 2, y = -3.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "10",
+        "task_text": "Упростите выражение и найдите его значение. 2ab + a - b - 5ab + 3ab при a = 2, b = -2.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "11",
+        "task_text": "Упростите выражение и найдите его значение. (5 + a)(b - 6) - ab + 6a при a = 3 + 4√7, b = 7.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "12",
+        "task_text": "Упростите выражение и найдите его значение. (x - 2)(x + 5) - (x + 3)(x - 4) при x = -4,5.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "13",
+        "task_text": "Упростите выражение и найдите его значение. 4a(b - c) + 4ac при a = √3, b = 2√3, c = 3√3.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "14",
+        "task_text": "Упростите выражение и найдите его значение. 3ac - a(c - 3b) - 3ab при a = √2, b = 5√2, c = 2√2.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

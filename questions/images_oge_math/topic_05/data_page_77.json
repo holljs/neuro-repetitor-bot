@@ -1,0 +1,97 @@
+[
+    {
+        "number": "36",
+        "task_text": "36. На координатной прямой отмечены числа a и b. Какое из следующих неравенств неверное?\n1) -b < -a\n2) 13 - b < 13 - a\n3) b/6 < a/6\n4) b + 5 > a + 5",
+        "has_visual": true,
+        "box_2d": [
+            216,
+            245,
+            245,
+            538
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_36.jpg"
+    },
+    {
+        "number": "37",
+        "task_text": "37. На координатной прямой отмечены числа m и n. Какое из следующих неравенств верное?\n1) 5 + m > 5 + n\n2) -4/m < -4/n\n3) 3/m < 3/n\n4) 2 - n > 2 - m",
+        "has_visual": true,
+        "box_2d": [
+            350,
+            244,
+            386,
+            537
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_37.jpg"
+    },
+    {
+        "number": "38",
+        "task_text": "38. Одна из точек, отмеченных на координатной прямой, соответствует числу √14,5. Укажите её.\n1) A\n2) B\n3) C\n4) D",
+        "has_visual": true,
+        "box_2d": [
+            554,
+            112,
+            593,
+            669
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_38.jpg"
+    },
+    {
+        "number": "39",
+        "task_text": "39. Одна из точек, отмеченных на координатной прямой, соответствует числу 2 + √2. Укажите её.\n1) K\n2) N\n3) M\n4) P",
+        "has_visual": true,
+        "box_2d": [
+            695,
+            158,
+            733,
+            632
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_39.jpg"
+    },
+    {
+        "number": "40",
+        "task_text": "40. Одна из точек, отмеченных на координатной прямой, соответствует числу 3 - √6. Укажите её.\n1) E\n2) F\n3) K\n4) N",
+        "has_visual": true,
+        "box_2d": [
+            848,
+            223,
+            887,
+            578
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_40.jpg"
+    }
+]

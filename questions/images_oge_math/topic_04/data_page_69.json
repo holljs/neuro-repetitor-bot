@@ -1,0 +1,200 @@
+[
+    {
+        "number": "197",
+        "task_text": "Решите систему неравенств: \\begin{cases} x > 3, \\\\ x \\ge 7. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "198",
+        "task_text": "Решите систему неравенств: \\begin{cases} x > -3, \\\\ x < 6,5. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "199",
+        "task_text": "Решите систему неравенств: \\begin{cases} 2x < 5, \\\\ -3x \\ge 9. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "200",
+        "task_text": "Решите систему неравенств: \\begin{cases} -5x < -1, \\\\ 6x - 5 < 4x. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "201",
+        "task_text": "Решите систему неравенств: \\begin{cases} 5x > 5x - 3, \\\\ -3x < 2. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "202",
+        "task_text": "Решите систему неравенств: \\begin{cases} 3x + 2 > 0, \\\\ 5x - 3 \\le 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "203",
+        "task_text": "Решите систему неравенств: \\begin{cases} 5 - 3x \\le 0, \\\\ 4 - x < 6. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "204",
+        "task_text": "Решите систему неравенств: \\begin{cases} 2x - 3 > 0, \\\\ 4x - 7 \\le 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "205",
+        "task_text": "Решите систему неравенств: \\begin{cases} 12x - 5 \\le 0, \\\\ 3x + 14 > 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "206",
+        "task_text": "Решите систему неравенств: \\begin{cases} 4x + 2 > 0, \\\\ 3x - 6 \\le 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "207",
+        "task_text": "Решите систему неравенств: \\begin{cases} 5 + 2x < 0, \\\\ x - 7 \\le 4. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "208",
+        "task_text": "Решите систему неравенств: \\begin{cases} -x < 3, \\\\ 2x \\le 5. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "209*",
+        "task_text": "Решите систему неравенств: \\begin{cases} x^2 + 5x - 6 < 0, \\\\ -3x \\le 12. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "210*",
+        "task_text": "Решите систему неравенств: \\begin{cases} x^2 + 7x + 10 < 0, \\\\ -21 - 7x \\le 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "211*",
+        "task_text": "Решите систему неравенств: \\begin{cases} x^2 \\ge 81, \\\\ x^2 + 10x < 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "212*",
+        "task_text": "Решите систему неравенств: \\begin{cases} x^2 \\le 16, \\\\ x^2 + 5x > 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "213*",
+        "task_text": "Решите систему неравенств: \\begin{cases} 2x^2 + 3x - 20 > 0, \\\\ x + 5 \\ge 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "214*",
+        "task_text": "Решите систему неравенств: \\begin{cases} 3x^2 - 3x - 36 \\ge 0, \\\\ x - 5 < 0. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "215*",
+        "task_text": "Решите систему неравенств: \\begin{cases} (x + 2)(x - 3) > 0, \\\\ 2(x + 5) - 3(x - 7) < 6. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "216*",
+        "task_text": "Решите систему неравенств: \\begin{cases} (x + 5)(x - 6) \\ge 0, \\\\ 6(x + 1) < 7x - 3(2 - x). \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "217*",
+        "task_text": "Решите систему неравенств: \\begin{cases} \\frac{2x + 6}{5x - 3} \\ge 0, \\\\ 6 - 2(x - 5) < 10. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "218*",
+        "task_text": "Решите систему неравенств: \\begin{cases} \\frac{7x - 14}{10x + 2} \\le 0, \\\\ 4x - 5(2x + 3) > -15. \\end{cases}",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

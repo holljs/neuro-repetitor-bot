@@ -1,0 +1,38 @@
+[
+    {
+        "number": "1",
+        "task_text": "Упростите выражение (t + 3)² — (6t — 1) и найдите его значение при t = 2√7.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Сократите дробь (4c⁴d⁸) / (20(c²d⁵)²).",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "Разложите на множители 2ab — 3bc — 2ad + 3dc.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "Упростите выражение 4 / (t — 4z) * ((t² + 16z²) / 2 — 4tz).",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

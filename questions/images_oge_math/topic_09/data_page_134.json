@@ -1,0 +1,110 @@
+[
+    {
+        "number": "1",
+        "task_text": "1. Из формулы площади треугольника S = 1/2 * ab * sin C выразите сторону b.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "2. Из формулы площади трапеции S = 1/2 * (a + b)h выразите высоту h.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "3",
+        "task_text": "3. Из формулы плотности заряда σ = q/S выразите площадь S.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "4",
+        "task_text": "4. Из формулы периода колебаний пружинного маятника T = 2π * sqrt(m/k) выразите жёсткость пружины k.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "5",
+        "task_text": "5. Из формулы периода колебаний математического маятника T = 2π * sqrt(l/g) выразите длину подвеса маятника l.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "6. Из формулы суммы n первых членов арифметической прогрессии S_n = ((a_1 + a_n) * n) / 2 выразите n.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "7",
+        "task_text": "7. Из формулы суммы бесконечно убывающей геометрической прогрессии S = b_1 / (1 - q) выразите знаменатель прогрессии q.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "8. Из формулы площади треугольника S = abc / 4R выразите радиус R.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "9",
+        "task_text": "9. Из формулы длины окружности C = πD выразите диаметр D.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "10",
+        "task_text": "10. Из формулы высоты равностороннего треугольника h = (a * sqrt(3)) / 2 выразите сторону треугольника a.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "11",
+        "task_text": "11. Из формулы коэффициента полезного действия для тепловой машины η = (Q_1 - Q_2) / Q_1 выразите теплоту Q_2, получаемую нагревателем.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "12",
+        "task_text": "12. Из формулы количества теплоты, необходимого для нагревания тела Q = cm(t_2 - t_1), выразите конечную температуру t_2.",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

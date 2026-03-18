@@ -1,0 +1,78 @@
+[
+    {
+        "number": "1",
+        "task_text": "1. Установите соответствие между графиками функций и формулами, которые их задают.\nА) Б) В)\n1) y = -4/x\n2) y = -4x - 3\n3) y = x²\n4) y = x³",
+        "has_visual": true,
+        "box_2d": [
+            116,
+            146,
+            260,
+            853
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "2. На рисунке изображён график функции y = f(x). Какие из следующих утверждений о данной функции неверны? Запишите их номера.\n1) f(x) возрастает на промежутке (-∞; 1].\n2) f(-1) < f(3).\n3) Наибольшее значение функции равно 4.\n4) f(0) = 2.",
+        "has_visual": true,
+        "box_2d": [
+            386,
+            528,
+            545,
+            730
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "3. Используя рисунок, решите систему уравнений\n{ 3y = x,\n  xy = 3.",
+        "has_visual": true,
+        "box_2d": [
+            592,
+            531,
+            765,
+            785
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_3.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "4. На рисунке изображены графики уравнений x² + y² = 9 и y + x + 3 = 0. Укажите координаты точки K.",
+        "has_visual": true,
+        "box_2d": [
+            801,
+            532,
+            963,
+            792
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_4.jpg"
+    }
+]

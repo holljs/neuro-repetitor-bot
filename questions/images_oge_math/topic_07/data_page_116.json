@@ -1,0 +1,97 @@
+[
+    {
+        "number": "30",
+        "task_text": "Найдите значение a по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            55,
+            531,
+            218,
+            793
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_30.jpg"
+    },
+    {
+        "number": "31",
+        "task_text": "Найдите значение a по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            247,
+            531,
+            410,
+            793
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_31.jpg"
+    },
+    {
+        "number": "32",
+        "task_text": "Найдите значение a по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            436,
+            531,
+            598,
+            793
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_32.jpg"
+    },
+    {
+        "number": "33",
+        "task_text": "Найдите значение a по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            604,
+            531,
+            767,
+            793
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_33.jpg"
+    },
+    {
+        "number": "34",
+        "task_text": "Найдите значение b по графику функции y = ax² + bx + c, изображённому на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            793,
+            531,
+            956,
+            793
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_34.jpg"
+    }
+]

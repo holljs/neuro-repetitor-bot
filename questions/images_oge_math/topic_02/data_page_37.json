@@ -1,277 +1,227 @@
 [
     {
         "number": "187",
-        "task_text": "3 1/6 : (2.75 - 15/40)",
+        "task_text": "3\\frac{1}{6} : (2,75 - \\frac{15}{40})",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "188",
-        "task_text": "1 11/14 * (3.04 - 6/25)",
+        "task_text": "1\\frac{11}{14} \\cdot (3,04 - \\frac{6}{25})",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "189",
-        "task_text": "2.5 / (1 + 1/24)",
+        "task_text": "\\frac{2,5}{1 + \\frac{1}{24}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "190",
-        "task_text": "0.19 / (2 + 1/9)",
+        "task_text": "\\frac{0,19}{2 + \\frac{1}{9}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "191",
-        "task_text": "21 / (1/14 - 1/15)",
+        "task_text": "\\frac{21}{\\frac{1}{14} - \\frac{1}{15}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "192",
-        "task_text": "10 / (1/9 - 1/6)",
+        "task_text": "\\frac{10}{\\frac{1}{9} - \\frac{1}{6}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "193",
-        "task_text": "Запишите в виде степени: a^5 * a^3",
+        "task_text": "Запишите в виде степени: a^5 \\cdot a^3",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "194",
-        "task_text": "Запишите в виде степени: a^7 * a^8",
+        "task_text": "Запишите в виде степени: a^7 \\cdot a^8",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "195",
-        "task_text": "Запишите в виде степени: a^-3 * a^7",
+        "task_text": "Запишите в виде степени: a^{-3} \\cdot a^7",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "196",
-        "task_text": "Запишите в виде степени: a^10 * a^-6",
+        "task_text": "Запишите в виде степени: a^{10} \\cdot a^{-6}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "197",
         "task_text": "Запишите в виде степени: (x^3)^7",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "198",
         "task_text": "Запишите в виде степени: (x^5)^2",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "199",
-        "task_text": "Запишите в виде степени: (y^-8)^5",
+        "task_text": "Запишите в виде степени: (y^{-8})^5",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "200",
-        "task_text": "Запишите в виде степени: (t^-6)^-2",
+        "task_text": "Запишите в виде степени: (t^{-6})^{-2}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "201",
-        "task_text": "Запишите в виде степени: a^10 / a^3",
+        "task_text": "Запишите в виде степени: \\frac{a^{10}}{a^3}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "202",
-        "task_text": "Запишите в виде степени: y^5 / y^4",
+        "task_text": "Запишите в виде степени: \\frac{y^5}{y^4}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "203",
-        "task_text": "Запишите в виде степени: y^7 / y",
+        "task_text": "Запишите в виде степени: \\frac{y^7}{y}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "204",
-        "task_text": "Запишите в виде степени: k^5 / k",
+        "task_text": "Запишите в виде степени: \\frac{k^5}{k}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "205",
-        "task_text": "Запишите в виде степени: (a^3 * a^-5) / a^7",
+        "task_text": "Запишите в виде степени: \\frac{a^3 \\cdot a^{-5}}{a^7}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "206",
-        "task_text": "Запишите в виде степени: (a^-5 * a^8) / a^2",
+        "task_text": "Запишите в виде степени: \\frac{a^{-5} \\cdot a^8}{a^2}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "207",
-        "task_text": "Запишите в виде степени: y^-8 / (y^-6 * y^-4)",
+        "task_text": "Запишите в виде степени: \\frac{y^{-8}}{y^{-6} \\cdot y^{-4}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "208",
-        "task_text": "Запишите в виде степени: x^-6 / (x^-5 * x^-4)",
+        "task_text": "Запишите в виде степени: \\frac{x^{-6}}{x^{-5} \\cdot x^{-4}}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "209",
-        "task_text": "Какое из следующих выражений равно степени 6^{t-2}? 1) 6^t - 6^2 2) 6^t / 6^-2 3) 6^t / 6^2 4) (6^t)^-2",
+        "task_text": "Какое из следующих выражений равно степени 6^{t-2}?\n1) 6^t - 6^2\n2) \\frac{6^t}{6^{-2}}\n3) \\frac{6^t}{6^2}\n4) (6^t)^{-2}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "210",
-        "task_text": "Какому из следующих выражений равно произведение 49 * 7^y? 1) 7^{y+2} 2) 7^{2y} 3) 343^y 4) 49^{7y}",
+        "task_text": "Какому из следующих выражений равно произведение 49 \\cdot 7^y?\n1) 7^{y+2}\n2) 7^{2y}\n3) 343^y\n4) 49^{7y}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "211",
-        "task_text": "Какому из следующих выражений равна дробь 5^n / 625? 1) 5^n - 5^4 2) 5^{n/4} 3) (1/125)^n 4) 5^{n-4}",
+        "task_text": "Какому из следующих выражений равна дробь \\frac{5^n}{625}?\n1) 5^n - 5^4\n2) 5^{n/4}\n3) (\\frac{1}{125})^n\n4) 5^{n-4}",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     }
 ]

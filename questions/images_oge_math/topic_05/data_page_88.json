@@ -1,0 +1,97 @@
+[
+    {
+        "number": "1",
+        "task_text": "1. Известно, что $x = \\frac{3}{4}$. Одна из точек, отмеченных на координатной прямой, соответствует числу $\\frac{3}{x}$. Укажите эту точку.\n\n1) точка $M$\n2) точка $P$\n3) точка $N$\n4) точка $L$",
+        "has_visual": true,
+        "box_2d": [
+            202,
+            129,
+            240,
+            678
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "2. Какое из чисел отмечено на координатной прямой точкой $A$?\n\n1) $\\sqrt{12}$\n2) $\\sqrt{15}$\n3) $\\sqrt{20}$\n4) $\\sqrt{30}$",
+        "has_visual": true,
+        "box_2d": [
+            342,
+            227,
+            382,
+            585
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "3. На координатной прямой отмечены числа $m$ и $n$. Какое из следующих неравенств верно?\n\n1) $3 - m < 3 - n$\n2) $-\\frac{m}{7} < -\\frac{n}{7}$\n3) $-m > -n$\n4) $2 + m > n + 2$",
+        "has_visual": true,
+        "box_2d": [
+            454,
+            265,
+            486,
+            550
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_3.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "4. Одна из точек, отмеченных на координатной прямой, соответствует числу $\\sqrt{17}$. Какая это точка?\n\n1) $A$\n2) $B$\n3) $C$\n4) $D$",
+        "has_visual": true,
+        "box_2d": [
+            612,
+            171,
+            656,
+            642
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_4.jpg"
+    },
+    {
+        "number": "5",
+        "task_text": "5. На какой из координатных прямых показано множество решений системы неравенств\n$$\\begin{cases} 7 - x > 5, \\\\ 2x - 3 > -5? \\end{cases}$$",
+        "has_visual": true,
+        "box_2d": [
+            784,
+            114,
+            876,
+            700
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_5.jpg"
+    }
+]

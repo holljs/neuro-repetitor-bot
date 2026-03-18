@@ -1,0 +1,59 @@
+[
+    {
+        "number": "1",
+        "task_text": "Постройте графики функций.\n1. A) y = 2x, Б) y = -2x, В) y = 2",
+        "has_visual": true,
+        "box_2d": [
+            203,
+            77,
+            424,
+            919
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "Постройте графики функций.\n2. A) y = x + 3, Б) y = 2 - x, В) y = 0,5x - 2",
+        "has_visual": true,
+        "box_2d": [
+            441,
+            77,
+            665,
+            919
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "Постройте графики функций.\n3. A) y = x^2, Б) y = -x^2 + 4, В) y = x^2 + 4x + 3",
+        "has_visual": true,
+        "box_2d": [
+            680,
+            77,
+            903,
+            919
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_3.jpg"
+    }
+]

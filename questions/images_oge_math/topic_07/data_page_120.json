@@ -1,0 +1,97 @@
+[
+    {
+        "number": "50",
+        "task_text": "50. Две прямые пересекаются в точке A. Вычислите координаты точки A.",
+        "has_visual": true,
+        "box_2d": [
+            63,
+            510,
+            222,
+            804
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_50.jpg"
+    },
+    {
+        "number": "51",
+        "task_text": "51. Две прямые пересекаются в точке A. Вычислите координаты точки A.",
+        "has_visual": true,
+        "box_2d": [
+            238,
+            497,
+            381,
+            807
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_51.jpg"
+    },
+    {
+        "number": "52",
+        "task_text": "52. Используя рисунок, решите систему уравнений { 2y - x = 8, y + 3x + 10 = 0.",
+        "has_visual": false,
+        "box_2d": [
+            386,
+            501,
+            584,
+            781
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "53",
+        "task_text": "53. Используя рисунок, решите систему уравнений { 2y - x = 9, y + 2x = 2.",
+        "has_visual": false,
+        "box_2d": [
+            591,
+            501,
+            770,
+            781
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "54",
+        "task_text": "54. Используя рисунок, решите систему уравнений { 7y - 5x + 18 = 0, 5y + 3x = 20.",
+        "has_visual": false,
+        "box_2d": [
+            776,
+            501,
+            974,
+            783
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    }
+]

@@ -1,0 +1,155 @@
+[
+    {
+        "number": "30",
+        "task_text": "Разложите на множители: $\\frac{4}{9}a^{2}b^{2} - 2\\frac{7}{9}x^{2}y^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "31",
+        "task_text": "Разложите на множители: $6,25x^{2} - 100$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "32",
+        "task_text": "Разложите на множители: $(x + y)^{2} - z^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "33",
+        "task_text": "Разложите на множители: $(a + b)^{2} - (a - b)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "34",
+        "task_text": "Разложите на множители: $(2p - m)^{2} - (p + 2m)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "35",
+        "task_text": "Разложите на множители: $(3a - 2b)^{2} - (4a + b)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "36",
+        "task_text": "Разложите на множители: $25z^{2} - (2t + 3z)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "37",
+        "task_text": "Представьте в виде многочлена: $(3a + 2)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "38",
+        "task_text": "Представьте в виде многочлена: $(2x + 3y)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "39",
+        "task_text": "Представьте в виде многочлена: $(5a - 4d)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "40",
+        "task_text": "Представьте в виде многочлена: $(\\frac{3}{4}t - 3z)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "41",
+        "task_text": "Представьте в виде многочлена: $(0,4a + 0,5b)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "42",
+        "task_text": "Представьте в виде многочлена: $(0,1x + 10y)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "43",
+        "task_text": "Представьте в виде многочлена: $(x + y)^{2} - (x - y)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "44",
+        "task_text": "Представьте в виде многочлена: $(a + 4)^{2} + (a - 4)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "45",
+        "task_text": "Представьте в виде многочлена: $(x - 2)(x + 2) + (x + 2)^{2}$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    },
+    {
+        "number": "46",
+        "task_text": "Представьте в виде многочлена: $(a - 3)^{2} - (a - 3)(a + 3)$",
+        "has_visual": false,
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
+    }
+]

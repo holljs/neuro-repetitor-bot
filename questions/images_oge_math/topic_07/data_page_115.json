@@ -1,0 +1,72 @@
+[
+    {
+        "number": "25",
+        "task_text": "25. На рисунке изображён график квадратичной функции y = f(x). Какие из следующих утверждений о данной функции верны? Запишите их номера.\n\n1) f(0) = -5.\n2) Функция убывает на промежутке [3; +∞).\n3) Наименьшее значение функции равно -4.\n4) Наибольшее значение функции равно 6.",
+        "has_visual": true,
+        "box_2d": [
+            84,
+            565,
+            216,
+            774
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_25.jpg"
+    },
+    {
+        "number": "26",
+        "task_text": "26. На рисунке изображены графики функций y = 5 - x^2 и y = 3 - x. Найдите координаты точки B.",
+        "has_visual": true,
+        "box_2d": [
+            288,
+            568,
+            445,
+            782
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_26.jpg"
+    },
+    {
+        "number": "27",
+        "task_text": "27. На рисунке изображены графики уравнений x^2 + y^2 = 25 и 3y = -4x. Найдите координаты точки B.",
+        "has_visual": true,
+        "box_2d": [
+            484,
+            570,
+            628,
+            785
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_27.jpg"
+    },
+    {
+        "number": "28",
+        "task_text": "28. На рисунке изображены графики функций y = x^2 - 4 и y = x - 2. Найдите координаты точки B.",
+        "has_visual": true,
+        "box_2d": [
+            629,
+            569,
+            771,
+            782
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_28.jpg"
+    },
+    {
+        "number": "29",
+        "task_text": "29. На рисунке изображены графики функций y = 2x - 2 и y = 4/x. Вычислите координаты точки B.",
+        "has_visual": true,
+        "box_2d": [
+            806,
+            569,
+            962,
+            781
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_07/task_29.jpg"
+    }
+]

@@ -1,0 +1,116 @@
+[
+    {
+        "number": "41",
+        "task_text": "На какой из координатных прямых показано множество решений неравенства 81x^2 >= 16?",
+        "has_visual": true,
+        "box_2d": [
+            201,
+            116,
+            303,
+            701
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_41.jpg"
+    },
+    {
+        "number": "42",
+        "task_text": "На какой из координатных прямых показано множество решений неравенства 9x^2 <= 4?",
+        "has_visual": true,
+        "box_2d": [
+            346,
+            116,
+            442,
+            703
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_42.jpg"
+    },
+    {
+        "number": "43",
+        "task_text": "На какой из координатных прямых показано множество решений неравенства 8x - x^2 >= 0?",
+        "has_visual": true,
+        "box_2d": [
+            492,
+            113,
+            584,
+            701
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_43.jpg"
+    },
+    {
+        "number": "44",
+        "task_text": "На какой из координатных прямых показано множество решений неравенства 16x - x^2 <= 0?",
+        "has_visual": true,
+        "box_2d": [
+            632,
+            112,
+            725,
+            705
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_44.jpg"
+    },
+    {
+        "number": "45",
+        "task_text": "Множество решений какого неравенства показано на рисунке?\n1) x^2 - 16 <= 0\n2) x^2 - 16 >= 0\n3) x^2 + 16 <= 0\n4) x^2 + 16 >= 0",
+        "has_visual": true,
+        "box_2d": [
+            748,
+            381,
+            792,
+            616
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_45.jpg"
+    },
+    {
+        "number": "46",
+        "task_text": "Множество решений какого неравенства показано на рисунке?\n1) x^2 - 49x <= 0\n2) x^2 - 49 >= 0\n3) x^2 + 49 <= 0\n4) x^2 - 49 <= 0",
+        "has_visual": true,
+        "box_2d": [
+            875,
+            381,
+            915,
+            616
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_46.jpg"
+    }
+]

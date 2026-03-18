@@ -1,0 +1,146 @@
+[
+    {
+        "number": "Вариант 3, 1",
+        "task_text": "Решите уравнение -0,2x = 7/8.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 2",
+        "task_text": "Решите уравнение 4(x + 1) - 2(x - 3) = 17.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 3",
+        "task_text": "Решите уравнение x^2 - 7x = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 4",
+        "task_text": "Решите уравнение 2x^2 + 3x - 5 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 5",
+        "task_text": "Решите уравнение x^2 - 3x + 5 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 6",
+        "task_text": "Решите систему неравенств {\n2x < 5,\n-3x < 1,2.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 7",
+        "task_text": "Решите неравенство 6x + 1 <= 2x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 3, 8",
+        "task_text": "Решите неравенство x^2 + 3x - 4 >= 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 1",
+        "task_text": "Решите уравнение -5 1/4 x = -0,7.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 2",
+        "task_text": "Решите уравнение 2(x - 8) + 3(x - 1) = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 3",
+        "task_text": "Решите уравнение 2x^2 + 5x = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 4",
+        "task_text": "Решите уравнение 2x^2 - 5x + 2 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 5",
+        "task_text": "Решите уравнение 2x^2 - x + 1 = 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 6",
+        "task_text": "Решите систему неравенств {\n5x > -6,5,\n-6x > 0,6.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 7",
+        "task_text": "Решите неравенство 16 - 5x >= 3x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "Вариант 4, 8",
+        "task_text": "Решите неравенство x^2 - x - 6 <= 0.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

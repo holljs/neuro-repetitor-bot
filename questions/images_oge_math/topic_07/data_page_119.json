@@ -1,0 +1,97 @@
+[
+    {
+        "number": "45",
+        "task_text": "На координатной плоскости отмечены точки A и B. Какое уравнение задаёт прямую, проходящую через эти точки? Запишите номер правильного ответа.\n\n1) y = 1 - 2x\n2) y = 2x + 1\n3) y = x/2 - 1\n4) y = 2/x + 1",
+        "has_visual": true,
+        "box_2d": [
+            103,
+            525,
+            245,
+            735
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_45.jpg"
+    },
+    {
+        "number": "46",
+        "task_text": "На координатной плоскости отмечены точки A и B. Какое уравнение задаёт прямую, проходящую через эти точки? Запишите номер правильного ответа.\n\n1) 3x + 3y = 24\n2) x + y = 8\n3) y - x = 8\n4) y = 2x + 3",
+        "has_visual": true,
+        "box_2d": [
+            309,
+            524,
+            436,
+            719
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_46.jpg"
+    },
+    {
+        "number": "47",
+        "task_text": "На координатной плоскости отмечены точки A и B. Какое уравнение задаёт прямую, проходящую через эти точки? Запишите номер правильного ответа.\n\n1) x + y = -1\n2) 2y + x = 7\n3) y - x = 17\n4) x + 2y = 5",
+        "has_visual": true,
+        "box_2d": [
+            510,
+            524,
+            627,
+            719
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_47.jpg"
+    },
+    {
+        "number": "48",
+        "task_text": "Две прямые пересекаются в точке A. Вычислите координаты точки A.",
+        "has_visual": true,
+        "box_2d": [
+            638,
+            503,
+            799,
+            747
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_48.jpg"
+    },
+    {
+        "number": "49",
+        "task_text": "Две прямые пересекаются в точке A. Вычислите координаты точки A.",
+        "has_visual": true,
+        "box_2d": [
+            804,
+            517,
+            970,
+            770
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_07/task_49.jpg"
+    }
+]

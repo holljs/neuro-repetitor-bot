@@ -1,0 +1,92 @@
+[
+    {
+        "number": "20",
+        "task_text": "В первом ряду концертного зала 28 мест, а в каждом последующем на два места больше, чем в предыдущем. Сколько мест в ряду с номером n?\n1) 28 + 2n 2) 2n 3) 30 + 2n 4) 26 + 2n",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "21",
+        "task_text": "Выписано несколько последовательных членов арифметической прогрессии: ... ; 23; x; -3; -16; ... Найдите член прогрессии, обозначенный буквой x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "22",
+        "task_text": "Выписано несколько последовательных членов арифметической прогрессии: ... ; -65; x; -53; -47; ... Найдите член прогрессии, обозначенный буквой x.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "23",
+        "task_text": "Дана арифметическая прогрессия 36; 27; 18; ... Найдите первый отрицательный член этой прогрессии.\n1) -8 2) -9 3) -1 4) -2",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "24",
+        "task_text": "Арифметическая прогрессия задана условиями a₁ = -12; aₙ₊₁ = aₙ + 7. Какое из данных чисел является членом этой прогрессии?\n1) -7 2) 23 3) 31 4) 39",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "25",
+        "task_text": "Последовательность задана условиями c₁ = -8; cₙ₊₁ = cₙ - 3. Найдите c₁₂.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "26",
+        "task_text": "Дана геометрическая прогрессия 1; 2; 4; ... Найдите восьмой член этой прогрессии.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "27",
+        "task_text": "Дана геометрическая прогрессия 27; 9; 3; ... Найдите шестой член этой прогрессии, умноженный на 18.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "28",
+        "task_text": "Дана геометрическая прогрессия: 3; 6; 12; ... Найдите сумму первых пяти её членов.",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    },
+    {
+        "number": "29",
+        "task_text": "Последовательности заданы несколькими первыми членами. Одна из них — геометрическая прогрессия. Укажите её.\n1) 6; 7; 9; 11; ... 2) 2; 4; 8; 16; ...\n3) 2; 4; 6; 12; ... 4) 1/2; 1/3; 1/4; 1/5; ...",
+        "has_visual": false,
+        "box_2d": null,
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": ""
+    }
+]

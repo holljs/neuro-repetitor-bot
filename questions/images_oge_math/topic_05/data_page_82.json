@@ -1,0 +1,97 @@
+[
+    {
+        "number": "1",
+        "task_text": "Известно, что a = 3/5. Одна из точек, отмеченных на координатной прямой, соответствует числу 1/a. Укажите эту точку.\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            227,
+            182,
+            271,
+            630
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "Какое из чисел отмечено на координатной прямой точкой A?\n1) √3\n2) √7\n3) √5\n4) √11",
+        "has_visual": true,
+        "box_2d": [
+            365,
+            222,
+            406,
+            587
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "На координатной прямой отмечены числа a и b. Какое из следующих неравенств неверно?\n1) a + 5 < b + 5\n2) a/7 > b/7\n3) -b > -a\n4) 7 - a < 7 - b",
+        "has_visual": true,
+        "box_2d": [
+            503,
+            264,
+            542,
+            547
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_3.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "Одна из точек, отмеченных на координатной прямой, соответствует числу √10. Какая это точка?\n1) A\n2) B\n3) C\n4) D",
+        "has_visual": true,
+        "box_2d": [
+            680,
+            172,
+            714,
+            639
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_4.jpg"
+    },
+    {
+        "number": "5",
+        "task_text": "На какой из координатных прямых показано множество решений системы неравенств\n{ 11 + x > 5,\n{ 3x - 1 ≤ 8?",
+        "has_visual": true,
+        "box_2d": [
+            864,
+            102,
+            955,
+            715
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_5.jpg"
+    }
+]

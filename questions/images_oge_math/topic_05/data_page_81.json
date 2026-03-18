@@ -1,0 +1,59 @@
+[
+    {
+        "number": "56",
+        "task_text": "56. Множество решений какой системы неравенств показано на рисунке?\n1) { 4x - 7 <= 5, 2 - x > 5.\n2) { 3x - 1 < -2, 5x + 7 > -3.\n3) { 2x - 7 < -7, x + 3 >= 0.\n4) { 3x - 2 < 4, x + 5 > 10.",
+        "has_visual": true,
+        "box_2d": [
+            73,
+            385,
+            133,
+            613
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_56.jpg"
+    },
+    {
+        "number": "57",
+        "task_text": "57. Множество решений какой системы неравенств показано на рисунке?\n1) { 5x - 1 < 4, 3 - x > 0.\n2) { x + 9 < 0, 2x - 1 > 0.\n3) { x + 6 > 0, 2x - 4 > -20.\n4) { 3x - 12 < 15, x + 9 < 0.",
+        "has_visual": true,
+        "box_2d": [
+            297,
+            349,
+            340,
+            647
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_57.jpg"
+    },
+    {
+        "number": "58",
+        "task_text": "58. Множество решений какой системы неравенств показано на рисунке?\n1) { 3 - x > 0, 5x - 1 < 4.\n2) { 12 - x >= 3, 5 + x < 5.\n3) { x + 9 < 0, 2x - 1 > 0.\n4) { 2x - 6 <= 0, 13 - 5x > -7.",
+        "has_visual": true,
+        "box_2d": [
+            513,
+            348,
+            558,
+            650
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_58.jpg"
+    }
+]

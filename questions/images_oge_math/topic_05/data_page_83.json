@@ -1,0 +1,44 @@
+[
+    {
+        "number": "6",
+        "task_text": "Какое из чисел, изображённых на координатной прямой, удовлетворяет системе неравенств\n\\begin{cases} 7 - x \\le 5, \\\\ 2x + 3 > 0? \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            133,
+            210,
+            174,
+            605
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_6.jpg"
+    },
+    {
+        "number": "7",
+        "task_text": "Решите систему неравенств\n\\begin{cases} 2x - 7 \\le 3, \\\\ 3 - 2x \\le -4. \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            251,
+            102,
+            347,
+            720
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_7.jpg"
+    },
+    {
+        "number": "8",
+        "task_text": "Множество решений какой из систем неравенств показано на рисунке?\n\n1) \\begin{cases} x - 2 < 3, \\\\ x + 12 > -3 \\end{cases}\n2) \\begin{cases} 3x + 4 > -5, \\\\ x - 9 < 0 \\end{cases}\n3) \\begin{cases} 7 - x < 12, \\\\ 2x + 11 > 0 \\end{cases}\n4) \\begin{cases} x - 11 > 2, \\\\ 3 + x < -5 \\end{cases}",
+        "has_visual": true,
+        "box_2d": [
+            410,
+            254,
+            456,
+            565
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_8.jpg"
+    }
+]

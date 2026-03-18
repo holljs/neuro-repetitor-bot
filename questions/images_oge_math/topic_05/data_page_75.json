@@ -1,0 +1,192 @@
+[
+    {
+        "number": "20",
+        "task_text": "На координатной прямой отмечены числа m и n. Какое из приведённых утверждений для этих чисел неверно?\n1) m + n < 0\n2) m - n < 0\n3) mn < 0\n4) m²/n < 0",
+        "has_visual": true,
+        "box_2d": [
+            98,
+            284,
+            137,
+            536
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_20.jpg"
+    },
+    {
+        "number": "21",
+        "task_text": "На координатной прямой отмечены числа p, q и r. Какая из разностей p - r, q - p, r - q положительна?\n1) p - r\n2) q - p\n3) r - q\n4) ни одна из них",
+        "has_visual": true,
+        "box_2d": [
+            227,
+            284,
+            269,
+            536
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_21.jpg"
+    },
+    {
+        "number": "22",
+        "task_text": "На координатной прямой отмечены числа p, q и r. Какая из разностей p - r, q - p, q - r отрицательна?\n1) p - r\n2) q - p\n3) q - r\n4) ни одна из них",
+        "has_visual": true,
+        "box_2d": [
+            355,
+            284,
+            401,
+            536
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_math/topic_05/task_22.jpg"
+    },
+    {
+        "number": "23",
+        "task_text": "О числах a, b, c и d известно, что d > b, d = c, a < b. Сравните числа a и d.\n1) a = d\n2) a < d\n3) a > d\n4) сравнить невозможно",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "24",
+        "task_text": "О числах m, n, p и k известно, что m < k, p = n, p > k. Сравните числа p и m.\n1) p = m\n2) p > m\n3) p < m\n4) сравнить невозможно",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "25",
+        "task_text": "О числах a, b, c и d известно, что d = b, d = c, a = b. Сравните числа a и d.\n1) a = d\n2) a < d\n3) a > d\n4) сравнить невозможно",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "26",
+        "task_text": "О числах m, n, p и k известно, что m < k, p > n, n > k. Сравните числа p и m.\n1) p = m\n2) p > m\n3) p < m\n4) сравнить невозможно",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "27",
+        "task_text": "Какое из следующих неравенств не следует из неравенства -t - k > p?\n1) -t - p > k\n2) -p > k + t\n3) t + k + p > 0\n4) p + t < -k",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "28",
+        "task_text": "Какое из следующих неравенств не следует из неравенства t + k < p?\n1) t - p < -k\n2) p > k + t\n3) t + k - p > 0\n4) -p + t < -k",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "29",
+        "task_text": "Известно, что число a принадлежит промежутку (3; +∞). В каком из указанных случаев точки с координатами a; 2a; a² расположены на координатной прямой в правильном порядке?",
+        "has_visual": true,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": true,
+        "stitch_box": [
+            48,
+            128,
+            131,
+            412
+        ],
+        "image": "questions/images_oge_math/topic_05/task_29.jpg"
+    }
+]

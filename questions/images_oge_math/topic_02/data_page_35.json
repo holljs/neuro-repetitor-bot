@@ -1,332 +1,272 @@
 [
     {
         "number": "123",
-        "task_text": "Округлите дроби до десятых 2,783.",
+        "task_text": "Округлите дроби до десятых: 2,783.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "124",
-        "task_text": "Округлите дроби до десятых 3,1425.",
+        "task_text": "Округлите дроби до десятых: 3,1425.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "125",
-        "task_text": "Округлите дроби до десятых 23,961.",
+        "task_text": "Округлите дроби до десятых: 23,961.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "126",
-        "task_text": "Округлите дроби до десятых 40,56.",
+        "task_text": "Округлите дроби до десятых: 40,56.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "127",
-        "task_text": "Округлите дроби до сотых 0,072 54.",
+        "task_text": "Округлите дроби до сотых: 0,072 54.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "128",
-        "task_text": "Округлите дроби до сотых 1,255 08.",
+        "task_text": "Округлите дроби до сотых: 1,255 08.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "129",
-        "task_text": "Округлите дроби до сотых 10,081.",
+        "task_text": "Округлите дроби до сотых: 10,081.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "130",
-        "task_text": "Округлите дроби до сотых 7,544.",
+        "task_text": "Округлите дроби до сотых: 7,544.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "131",
-        "task_text": "Округлите дроби до сотых 4,499.",
+        "task_text": "Округлите дроби до сотых: 4,499.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "132",
-        "task_text": "Округлите дроби до сотых 13,298.",
+        "task_text": "Округлите дроби до сотых: 13,298.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "133",
-        "task_text": "Округлите дроби до целых 266,1.",
+        "task_text": "Округлите дроби до целых: 266,1.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "134",
-        "task_text": "Округлите дроби до целых 2075,04.",
+        "task_text": "Округлите дроби до целых: 2075,04.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "135",
-        "task_text": "Округлите дроби до целых 555,5.",
+        "task_text": "Округлите дроби до целых: 555,5.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "136",
-        "task_text": "Округлите дроби до целых 200,7.",
+        "task_text": "Округлите дроби до целых: 200,7.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "137",
-        "task_text": "Округлите дроби до целых 167,91.",
+        "task_text": "Округлите дроби до целых: 167,91.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "138",
-        "task_text": "Округлите дроби до целых 19,9.",
+        "task_text": "Округлите дроби до целых: 19,9.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "139",
-        "task_text": "Найдите значения выражений 8,2 * 10.",
+        "task_text": "Найдите значения выражений: 8,2 · 10.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "140",
-        "task_text": "Найдите значения выражений 4,3 * 10.",
+        "task_text": "Найдите значения выражений: 4,3 · 10.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "141",
-        "task_text": "Найдите значения выражений 5,8 : 10.",
+        "task_text": "Найдите значения выражений: 5,8 : 10.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "142",
-        "task_text": "Найдите значения выражений 3,75 : 10.",
+        "task_text": "Найдите значения выражений: 3,75 : 10.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "143",
-        "task_text": "Найдите значения выражений 2,3 * 100.",
+        "task_text": "Найдите значения выражений: 2,3 · 100.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "144",
-        "task_text": "Найдите значения выражений 21,85 * 1000.",
+        "task_text": "Найдите значения выражений: 21,85 · 1000.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "145",
-        "task_text": "Найдите значения выражений 0,035 : 100.",
+        "task_text": "Найдите значения выражений: 0,035 : 100.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "146",
-        "task_text": "Найдите значения выражений 0,0002 * 10 000.",
+        "task_text": "Найдите значения выражений: 0,0002 · 10 000.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "147",
-        "task_text": "Найдите значения выражений 0,0372 : 1000.",
+        "task_text": "Найдите значения выражений: 0,0372 : 1000.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "148",
-        "task_text": "Найдите значения выражений 2,88 : 4.",
+        "task_text": "Найдите значения выражений: 2,88 : 4.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "149",
-        "task_text": "Найдите значения выражений 20,7 : 9.",
+        "task_text": "Найдите значения выражений: 20,7 : 9.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "150",
-        "task_text": "Найдите значения выражений 14,4 : 12.",
+        "task_text": "Найдите значения выражений: 14,4 : 12.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "151",
-        "task_text": "Найдите значения выражений 15,3 : 3.",
+        "task_text": "Найдите значения выражений: 15,3 : 3.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     },
     {
         "number": "152",
-        "task_text": "Найдите значения выражений 1,016 : 8.",
+        "task_text": "Найдите значения выражений: 1,016 : 8.",
         "has_visual": false,
-        "box_2d": [
-            0,
-            0,
-            0,
-            0
-        ]
+        "box_2d": [],
+        "needs_stitch": false,
+        "stitch_box": [],
+        "image": ""
     }
 ]

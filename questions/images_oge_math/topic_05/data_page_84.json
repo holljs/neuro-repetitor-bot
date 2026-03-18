@@ -1,0 +1,72 @@
+[
+    {
+        "number": "1",
+        "task_text": "1. Известно, что x = 2/3. Одна из точек, отмеченных на координатной прямой, соответствует числу 1/x. Укажите эту точку.\n\n1) точка A\n2) точка B\n3) точка C\n4) точка D",
+        "has_visual": true,
+        "box_2d": [
+            203,
+            231,
+            245,
+            576
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_1.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "2. Какое из чисел отмечено на координатной прямой точкой A?\n\n1) √5\n2) √7\n3) √3\n4) √2",
+        "has_visual": true,
+        "box_2d": [
+            342,
+            224,
+            385,
+            586
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_2.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "3. На координатной прямой отмечены числа m и n. Какое из следующих неравенств неверно?\n\n1) 5 - m < 5 - n\n2) -m > -n\n3) m/3 > n/3\n4) m + 7 > n + 7",
+        "has_visual": true,
+        "box_2d": [
+            487,
+            267,
+            514,
+            547
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_3.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "4. Одна из точек, отмеченных на координатной прямой, соответствует числу √7. Какая это точка?\n\n1) B\n2) D\n3) C\n4) A",
+        "has_visual": true,
+        "box_2d": [
+            655,
+            239,
+            703,
+            574
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_4.jpg"
+    },
+    {
+        "number": "5",
+        "task_text": "5. На какой из координатных прямых показано множество решений системы неравенств\n{\n-x + 7 > -3,\n2x + 5 ≥ 7?\n}",
+        "has_visual": true,
+        "box_2d": [
+            871,
+            133,
+            963,
+            686
+        ],
+        "needs_stitch": false,
+        "stitch_box": null,
+        "image": "questions/images_oge_math/topic_05/task_5.jpg"
+    }
+]
