@@ -34,7 +34,15 @@ const EGE_SUBJECTS = { "ege_russian": "🇷🇺 Русский язык", "ege_m
 const TOPIC_TRANSLATIONS = {
     "topic_01": "🏠 Практические задачи",
     "topic_02": "🔢 Вычисления и дроби",
-    "topic_04_eq": "⚖️ Уравнения"
+    "topic_03": "📏 Единицы измерения",
+    "topic_04": "⚖️ Уравнения",
+    "topic_04_eq": "⚖️ Уравнения",
+    "topic_05": "📍 Координатная прямая",
+    "topic_06": "📊 Графики и диаграммы",
+    "topic_07": "📈 Графики функций",
+    "topic_08": "🧩 Выражения",
+    "topic_09": "🧪 Формулы",
+    "topic_10": "🔢 Последовательности"
 };
 
 // СОСТОЯНИЕ ТЕСТА
@@ -196,6 +204,10 @@ function handleQuickResult(isCorrect, userAnswer) {
                              <small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b><br>Твой ввод: <b>${userAnswer}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
+    
+    // 👇 ДОБАВИЛИ ЭТУ СТРОКУ: отрисовываем математику на экране ответа 👇
+    setTimeout(() => { renderMath('quick-result-screen'); }, 100);
+    
     showScreen(quickResultScreen);
 }
 
