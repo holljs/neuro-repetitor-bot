@@ -12,6 +12,22 @@ const quickResultScreen = document.getElementById('quick-result-screen');
 const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 
+// Функция для отрисовки формул KaTeX
+function renderMath(elementId) {
+    const el = document.getElementById(elementId);
+    if (el && window.renderMathInElement) {
+        renderMathInElement(el, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true}, // Для больших формул по центру
+                {left: '$', right: '$', display: false},  // Для формул внутри текста
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false // Чтобы при ошибке в коде сайт не падал, а просто выводил текст
+        });
+    }
+}
+
 let USER_ID = null;
 const OGE_SUBJECTS = { "oge_russian": "🇷🇺 Русский язык", "oge_math": "🧮 Математика" };
 const EGE_SUBJECTS = { "ege_russian": "🇷🇺 Русский язык", "ege_math_profile": "📐 Математика (профиль)" };
@@ -118,16 +134,17 @@ function showTask() {
     }
 
     if (currentTask.image && currentTask.image.length > 5) {
-        // Жестко прописываем правильный и безопасный путь к картинкам
         const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
-
         imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
         imageContainer.style.display = 'block';
     } else {
         imageContainer.style.display = 'none';
     }
-
+    
     document.getElementById('user-answer').value = '';
+    
+    // Вызов рендера математики
+    setTimeout(() => { renderMath('task-text'); }, 100);
     showScreen(taskScreen);
 }
 
@@ -160,7 +177,7 @@ window.submitAnswer = async function() {
         });
         const result = await response.json();
         handleQuickResult(result.is_correct, rawInput); 
-    } catch (error) { 
+    } catch (error) {
         showScreen(taskScreen); 
     }
 }
@@ -188,7 +205,7 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
-// 6. ФИНАЛ И АНАЛИТИКА (Исправлено!)
+// 6. ФИНАЛ И АНАЛИТИКА
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
@@ -235,15 +252,20 @@ function loadReviewForCurrentMistake() {
     
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        // Убрали :8080 и прописали чистый путь
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
-        // Добавили encodeURI на всякий случай
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
     } else { 
         reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${mistake.task.task_text || mistake.task.text}</div>`; 
     }
         
     document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
+    
+    // ВЫЗЫВАЕМ ОТРИСОВКУ МАТЕМАТИКИ ДЛЯ ЭКРАНА ОШИБОК
+    setTimeout(() => { 
+        renderMath('review-answers-block');
+        renderMath('review-image-container'); // если текст задачи вставлен сюда
+    }, 100);
+
     showScreen(reviewScreen);
 }
 
@@ -255,7 +277,7 @@ window.runAIExplanation = async function(simplify = false) {
     const taskText = mistake.task.task_text || mistake.task.text || "Текст задачи";
     let imageUrl = mistake.task.image || null;
     if (imageUrl && !imageUrl.startsWith('http')) {
-    imageUrl = `https://neuro-master.online/${imageUrl}`; // Строго без :8080
+        imageUrl = `https://neuro-master.online/${imageUrl}`; 
     }
 
     try {
@@ -272,6 +294,10 @@ window.runAIExplanation = async function(simplify = false) {
         const result = await response.json();
         explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">${result.explanation}</div>
                                     <button class="button secondary" onclick="runAIExplanation(true)">🍎 Объяснить проще</button>`;
+        
+        // ВЫЗЫВАЕМ ОТРИСОВКУ МАТЕМАТИКИ ДЛЯ ОБЪЯСНЕНИЯ ИИ
+        setTimeout(() => { renderMath('review-explanation'); }, 100);
+
     } catch (error) { 
         explanationBox.innerHTML = `⚠️ Ошибка сервера.`; 
     }
