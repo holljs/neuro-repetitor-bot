@@ -17,11 +17,11 @@ from fastapi.responses import HTMLResponse
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.5.0")
+app = FastAPI(title="Neuro Repetitor API", version="1.6.0")
 
-# --- СЛОВАРЬ ТЕМ ---
+# --- СЛОВАРЬ ТЕМ (ДЛЯ АДМИНКИ) ---
 TOPIC_NAMES = {
-    "topic_01": "🏠 Практические задачи (планы, АЗС, шины)",
+    "topic_01": "🏠 Практические задачи",
     "topic_02": "🔢 Вычисления и дроби",
     "topic_03": "📏 Единицы измерения",
     "topic_04": "⚖️ Уравнения",
@@ -32,6 +32,8 @@ TOPIC_NAMES = {
     "topic_08": "🧩 Выражения",
     "topic_09": "🧪 Формулы",
     "topic_10": "🔢 Последовательности",
+    "grammar": "📚 Грамматика (Англ)",
+    "vocabulary": "📝 Лексика (Англ)"
 }
 
 # РАЗРЕШАЕМ КАРТИНКИ
@@ -41,8 +43,8 @@ if Path("questions").exists():
 # НАСТРОЙКА CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Разрешаем запросы откуда угодно (включая мобильные домены ВК)
-    allow_credentials=False, # Обязательно False, если используем звездочку "*"
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -50,20 +52,30 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
-# --- ЗАГРУЗКА БАЗЫ ---
+# --- ЗАГРУЗКА ВСЕХ БАЗ ДАННЫХ ---
 QUESTIONS_DIR = Path("questions")
-DB_FILE = QUESTIONS_DIR / "oge_math.json"
-ALL_TASKS = []
+DATABASES = {
+    "oge_math": [],
+    "oge_english": []
+}
 
-if DB_FILE.exists():
-    try:
-        with open(DB_FILE, 'r', encoding='utf-8') as f:
-            ALL_TASKS = json.load(f)
-        logger.info(f"✅ База задач загружена: {len(ALL_TASKS)} шт.")
-    except Exception as e:
-        logger.error(f"❌ Ошибка чтения JSON: {e}")
+def load_database(filename, db_key):
+    filepath = QUESTIONS_DIR / filename
+    if filepath.exists():
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                DATABASES[db_key] = json.load(f)
+            logger.info(f"✅ База {db_key} загружена: {len(DATABASES[db_key])} шт.")
+        except Exception as e:
+            logger.error(f"❌ Ошибка чтения JSON {filename}: {e}")
+    else:
+        logger.warning(f"⚠️ Файл {filename} не найден!")
 
-def normalize_math_text(text: str):
+# Загружаем предметы при старте
+load_database("oge_math.json", "oge_math")
+load_database("oge_english.json", "oge_english")
+
+def normalize_text(text: str):
     if not text: return ""
     text = text.lower().replace(" ", "").replace(",", ".")
     text = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text)
@@ -99,22 +111,21 @@ async def check_subscription(user_id: int):
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = request.student_id
-    # ID администраторов для неограниченного доступа (поменяй на свой)
     ADMIN_IDS = [54451631, 12345678] 
     
     if student_id in ADMIN_IDS:
         return {"success": True, "new_balance": "unlimited", "message": "Admin bypass"}
-    
-    # В будущем здесь будет обращение к базе данных для списания 1 кредита.
-    # Пока возвращаем True, чтобы пользователи могли проходить тест.
     return {"success": True, "new_balance": 100}
 
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge_math"):
-    if not ALL_TASKS: raise HTTPException(status_code=500, detail="База пуста")
-    task = random.choice(ALL_TASKS)
+    # Достаем правильную базу в зависимости от выбранного предмета
+    db = DATABASES.get(exam_type, [])
+    if not db: 
+        raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста или не найдена")
     
-    # Защита путей к картинкам, если в базе записан только файл, а не полный путь
+    task = random.choice(db)
+    
     img_path = task.get("image", "")
     if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
         topic = task.get("topic", "topic_01")
@@ -130,15 +141,21 @@ async def get_random_task(exam_type: str = "oge_math"):
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
-    task = next((t for t in ALL_TASKS if str(t.get("id")) == str(request.task_id)), None)
+    # Ищем задачу во всех базах
+    task = None
+    for db in DATABASES.values():
+        task = next((t for t in db if str(t.get("id")) == str(request.task_id)), None)
+        if task: break
+
     if not task: return {"is_correct": False, "error": "Задача не найдена"}
 
     correct_answer = str(task.get("answer", ""))
-    is_correct = normalize_math_text(request.user_answer) == normalize_math_text(correct_answer)
+    is_correct = normalize_text(request.user_answer) == normalize_text(correct_answer)
     
     if not is_correct and correct_answer != "---":
         try:
-            prompt = f"Равны ли математически: '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
+            # Универсальный промпт для сверки ответов
+            prompt = f"Равны ли эти два ответа на тест (учитывай синонимы или математическое равенство): '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
             output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
             is_correct = "true" in "".join(output).lower()
         except Exception as e: 
@@ -156,15 +173,16 @@ async def explain_mistake(request: ReviewRequest):
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
     
     if request.simplify:
-        prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах' (можно использовать примеры с яблоками или пиццей, если это уместно). "
+        prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах' (можно использовать примеры из жизни, если это уместно). "
                   f"Текст задачи: {content}. "
                   f"Ответ ученика: {request.user_answer}. "
-                  f"Объясни, почему ответ ученика неверен и как правильно рассуждать.")
+                  f"Объясни, почему ответ ученика неверен и какое правило здесь работает.")
     else:
-        prompt = (f"Напиши подробное пошаговое математическое решение задачи. "
+        # Универсальный промпт (подходит и для математики, и для языков)
+        prompt = (f"Напиши подробное пошаговое объяснение или решение задачи. "
                   f"Текст: {content}. "
                   f"Ответ ученика: {request.user_answer}. "
-                  f"Укажи, на каком этапе ученик мог допустить ошибку.")
+                  f"Укажи, на каком этапе ученик мог допустить ошибку и как правильно рассуждать.")
 
     input_data = {"prompt": prompt}
     if request.image_url:
@@ -173,7 +191,6 @@ async def explain_mistake(request: ReviewRequest):
     try:
         output = replicate.run("google/gemini-3-flash", input=input_data)
         explanation = "".join(output)
-        # Делаем переносы строк читаемыми для HTML-интерфейса
         explanation = explanation.replace("\n", "<br>")
         return {"explanation": explanation}
     except Exception as e:
@@ -181,10 +198,9 @@ async def explain_mistake(request: ReviewRequest):
         return {"explanation": "Извините, произошла ошибка при генерации разбора. Попробуйте еще раз."}
 
 # --- АДМИН-ПАНЕЛЬ ---
-
 @app.get("/admin/dashboard", response_class=HTMLResponse)
 async def admin_dashboard(key: str = Query(None)):
-    if key != "super-repetitor-2026": # Твой секретный пароль в ссылке
+    if key != "super-repetitor-2026": # Секретный пароль
         return "<h1>Доступ закрыт</h1>"
     
     stats = {}
