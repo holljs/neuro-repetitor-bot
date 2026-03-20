@@ -41,8 +41,8 @@ if Path("questions").exists():
 # НАСТРОЙКА CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://holljs.github.io", "http://localhost:3000"], 
-    allow_credentials=True,
+    allow_origins=["*"],  # Разрешаем запросы откуда угодно (включая мобильные домены ВК)
+    allow_credentials=False, # Обязательно False, если используем звездочку "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
