@@ -29,9 +29,17 @@ function renderMath(elementId) {
 }
 
 let USER_ID = null;
-const OGE_SUBJECTS = { "oge_russian": "🇷🇺 Русский язык", "oge_math": "🧮 Математика" };
-const EGE_SUBJECTS = { "ege_russian": "🇷🇺 Русский язык", "ege_math_profile": "📐 Математика (профиль)" };
+const OGE_SUBJECTS = { 
+    "oge_russian": "🇷🇺 Русский язык", 
+    "oge_math": "🧮 Математика",
+    "oge_english": "🇬🇧 Английский язык" // Добавили Английский!
+};
+const EGE_SUBJECTS = { 
+    "ege_russian": "🇷🇺 Русский язык", 
+    "ege_math_profile": "📐 Математика (профиль)" 
+};
 const TOPIC_TRANSLATIONS = {
+    // Математика
     "topic_01": "🏠 Практические задачи",
     "topic_02": "🔢 Вычисления и дроби",
     "topic_03": "📏 Единицы измерения",
@@ -42,7 +50,10 @@ const TOPIC_TRANSLATIONS = {
     "topic_07": "📈 Графики функций",
     "topic_08": "🧩 Выражения",
     "topic_09": "🧪 Формулы",
-    "topic_10": "🔢 Последовательности"
+    "topic_10": "🔢 Последовательности",
+    // Английский
+    "grammar": "📚 Грамматика (20-28)",
+    "vocabulary": "📝 Лексика (29-34)"
 };
 
 // СОСТОЯНИЕ ТЕСТА
@@ -128,19 +139,31 @@ function showTask() {
     }
 
     if (rawText) {
-        let cleanText = rawText
-            .replace(/Решите уравнения/gi, '')
-            .replace(/Решите уравнение/gi, '')
-            .replace(/^\d+[\.\)]\s*/, '') 
-            .trim();
+        let cleanText = rawText;
         
-        cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
-        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.4;">${cleanText}</div>`;
+        // Очистка только для Математики
+        if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'ege_math_profile') {
+            cleanText = cleanText
+                .replace(/Решите уравнения/gi, '')
+                .replace(/Решите уравнение/gi, '')
+                .replace(/^\d+[\.\)]\s*/, '') 
+                .trim();
+            cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
+        }
+
+        // Красивое форматирование для Английского
+        if (currentSubjectCode === 'oge_english') {
+            // Заменяем ____ на красивую линию
+            cleanText = cleanText.replace(/____/g, '<span style="display:inline-block; width: 60px; border-bottom: 2px solid #333; margin: 0 5px;"></span>');
+        }
+
+        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${cleanText}</div>`;
         taskTextElement.style.display = 'block';
     } else {
         taskTextElement.textContent = "Текст задачи не найден в базе";
     }
 
+    // Показываем картинку только если она есть
     if (currentTask.image && currentTask.image.length > 5) {
         const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
         imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
@@ -156,6 +179,8 @@ function showTask() {
     showScreen(taskScreen);
 }
 
+// Функция идеальна для ОГЭ по английскому: убирает пробелы (did not -> didnot), 
+// так как в бланках ОГЭ ответы пишутся слитно.
 function normalizeText(str) {
     if (!str) return "";
     return str.toString()
@@ -205,9 +230,7 @@ function handleQuickResult(isCorrect, userAnswer) {
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
     
-    // 👇 ДОБАВИЛИ ЭТУ СТРОКУ: отрисовываем математику на экране ответа 👇
     setTimeout(() => { renderMath('quick-result-screen'); }, 100);
-    
     showScreen(quickResultScreen);
 }
 
@@ -267,15 +290,16 @@ function loadReviewForCurrentMistake() {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
     } else { 
-        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${mistake.task.task_text || mistake.task.text}</div>`; 
+        let cleanText = mistake.task.task_text || mistake.task.text;
+        if (cleanText) cleanText = cleanText.replace(/____/g, '<span style="display:inline-block; width: 60px; border-bottom: 2px solid #333; margin: 0 5px;"></span>');
+        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${cleanText}</div>`; 
     }
         
     document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
     
-    // ВЫЗЫВАЕМ ОТРИСОВКУ МАТЕМАТИКИ ДЛЯ ЭКРАНА ОШИБОК
     setTimeout(() => { 
         renderMath('review-answers-block');
-        renderMath('review-image-container'); // если текст задачи вставлен сюда
+        renderMath('review-image-container'); 
     }, 100);
 
     showScreen(reviewScreen);
@@ -307,7 +331,6 @@ window.runAIExplanation = async function(simplify = false) {
         explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">${result.explanation}</div>
                                     <button class="button secondary" onclick="runAIExplanation(true)">🍎 Объяснить проще</button>`;
         
-        // ВЫЗЫВАЕМ ОТРИСОВКУ МАТЕМАТИКИ ДЛЯ ОБЪЯСНЕНИЯ ИИ
         setTimeout(() => { renderMath('review-explanation'); }, 100);
 
     } catch (error) { 
