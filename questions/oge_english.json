@@ -1,0 +1,1136 @@
+[
+    {
+        "id": "eng_oge_p104_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>FARM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>What living beings are the most important on the Earth? You may say “people”, but my grandfather, who is a ____, knows better.",
+        "answer": "farmer",
+        "solution": "Для обозначения профессии или рода занятий к существительному farm (ферма) добавляется суффикс -er, образуя слово farmer (фермер)."
+    },
+    {
+        "id": "eng_oge_p104_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>USE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>He is sure that there are no more ____ creatures than bees.",
+        "answer": "useful",
+        "solution": "Для образования прилагательного со значением «обладающий качеством» от существительного use (польза) используется суффикс -ful. Получаем useful (полезный)."
+    },
+    {
+        "id": "eng_oge_p104_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>ACTUAL</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>He, ____, says that they are essential for life on the planet.",
+        "answer": "actually",
+        "solution": "В данном контексте требуется наречие. Оно образуется от прилагательного actual (фактический) при помощи суффикса -ly. Получаем actually (на самом деле)."
+    },
+    {
+        "id": "eng_oge_p104_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>POSSIBLE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Bees take pollen from one flower to another — without them growing most plants is ____.",
+        "answer": "impossible",
+        "solution": "По смыслу предложения (без пчел выращивание растений неосуществимо) необходимо образовать антоним. Приставка im- служит для образования отрицательных прилагательных от слов, начинающихся на p. Получаем impossible (невозможный)."
+    },
+    {
+        "id": "eng_oge_p104_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>AMAZE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The hardworking insects are ____ in many ways. Their communication, for instance, is very complicated.",
+        "answer": "amazing",
+        "solution": "Для описания признака предмета или живого существа (какие они?) от глагола amaze (удивлять) образуется прилагательное при помощи суффикса -ing. Получаем amazing (удивительные)."
+    },
+    {
+        "id": "eng_oge_p104_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>INFORM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>They use movements to exchange ____.",
+        "answer": "information",
+        "solution": "После глагола exchange (обмениваться) требуется существительное, выступающее в роли дополнения. Оно образуется от глагола inform (информировать) при помощи суффикса -ation. Получаем information (информация)."
+    },
+    {
+        "id": "eng_oge_p112_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>RECENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Travelling is my passion. I enjoy seeing new places. ____, I've been to Moscow.",
+        "answer": "recently",
+        "solution": "Для дополнения предложения необходимо наречие времени. Наречие 'recently' (недавно) образуется от прилагательного 'recent' при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_oge_p112_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>POSSIBLE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>According to them, it's almost ____ to survive in Russia in winter. They were mistaken of course!",
+        "answer": "impossible",
+        "solution": "По контексту (друзья автора были удивлены и ошибались) требуется слово с отрицательным значением. Прилагательное 'impossible' (невозможный) образуется при помощи отрицательной приставки im-."
+    },
+    {
+        "id": "eng_oge_p112_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>CHARM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Moscow covered with snow is an absolutely ____ and bright place.",
+        "answer": "charming",
+        "solution": "Для описания места (перед существительным 'place') требуется прилагательное. Прилагательное 'charming' (очаровательный) образуется от существительного/глагола 'charm' при помощи суффикса -ing."
+    },
+    {
+        "id": "eng_oge_p112_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>COLOUR</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Everything is decorated with ____ lights.",
+        "answer": "colourful",
+        "solution": "Для описания огней (перед существительным 'lights') требуется прилагательное. Прилагательное 'colourful' (красочный, разноцветный) образуется от существительного 'colour' при помощи суффикса -ful."
+    },
+    {
+        "id": "eng_oge_p112_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>ENTERTAIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>I stayed in a hotel near Gorky Park which is a nice place for ____.",
+        "answer": "entertainment",
+        "solution": "После предлога 'for' необходимо использовать существительное. Существительное 'entertainment' (развлечение) образуется от глагола 'entertain' при помощи суффикса -ment."
+    },
+    {
+        "id": "eng_oge_p112_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>BEGIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>I was just a ____ but I quickly improved.",
+        "answer": "beginner",
+        "solution": "Неопределенный артикль 'a' указывает на то, что пропущено существительное в единственном числе, обозначающее человека. Существительное 'beginner' (новичок) образуется от глагола 'begin' при помощи суффикса -er, при этом конечная согласная 'n' удваивается."
+    },
+    {
+        "id": "eng_oge_p120_26",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 26,
+        "task_text": "Преобразуйте слово <b>LEAF</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>If there’s no tent, I can make a kind of a shelter from branches, ____, and grass.",
+        "answer": "leaves",
+        "solution": "В данном предложении перечисляются однородные члены (существительные во множественном числе). Существительное 'leaf' (лист) во множественном числе меняет окончание -f на -v и добавляется -es: leaves."
+    },
+    {
+        "id": "eng_oge_p120_27",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 27,
+        "task_text": "Преобразуйте слово <b>LOOK</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>To me, it ____ like a game but our instructor is very serious about it.",
+        "answer": "looks",
+        "solution": "Глагол 'look' в значении «выглядеть» является глаголом состояния и используется в Present Simple. Так как подлежащее 'it' стоит в 3-м лице единственного числа, к глаголу добавляется окончание -s."
+    },
+    {
+        "id": "eng_oge_p120_28",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 28,
+        "task_text": "Преобразуйте слово <b>PASS</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>I hope you are fine there too. You ____ all of your exams for this year, haven’t you?..",
+        "answer": "havepassed",
+        "solution": "В конце предложения стоит разделительный вопрос (tag question) 'haven’t you?', что указывает на использование времени Present Perfect в утвердительной части. Форма Present Perfect для местоимения 'you' — 'have passed'."
+    },
+    {
+        "id": "eng_oge_p120_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>WOOD</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Originally, it was a ____ bridge, but by 1778 it was rebuilt in stone.",
+        "answer": "wooden",
+        "solution": "Перед существительным 'bridge' необходимо прилагательное, обозначающее материал. Прилагательное от существительного 'wood' (дерево) образуется при помощи суффикса -en: wooden (деревянный)."
+    },
+    {
+        "id": "eng_oge_p120_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>LIKE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>____ most of the bridges, the Stone Bridge has not been completely reconstructed since that time.",
+        "answer": "unlike",
+        "solution": "По смыслу предложения требуется противопоставление: мост не перестраивался в отличие от других. Для этого используется предлог 'unlike' (в отличие от), образованный от 'like' с помощью отрицательной приставки un-."
+    },
+    {
+        "id": "eng_oge_p120_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>ORIGIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>It had only some minor repairs and still preserves the ____ design of the bridge from the 18th century.",
+        "answer": "original",
+        "solution": "Перед существительным 'design' требуется прилагательное. От существительного 'origin' при помощи суффикса -al образуется прилагательное 'original' (оригинальный, первоначальный)."
+    },
+    {
+        "id": "eng_oge_p120_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>ATTRACT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The Potseluev Bridge is another special tourist ____ in Saint Petersburg.",
+        "answer": "attraction",
+        "solution": "После прилагательного 'tourist' должно стоять существительное. От глагола 'attract' (привлекать) при помощи суффикса -ion образуется существительное 'attraction' (достопримечательность)."
+    },
+    {
+        "id": "eng_oge_p120_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>FANTASY</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>From this bridge there is a ____ view of Saint Isaac’s Cathedral.",
+        "answer": "fantastic",
+        "solution": "Перед существительным 'view' необходимо прилагательное. Прилагательное 'fantastic' (фантастический) образуется от 'fantasy' путем замены суффикса."
+    },
+    {
+        "id": "eng_oge_p120_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>OWN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>...who was the ____ of a popular tavern near the bridge.",
+        "answer": "owner",
+        "solution": "В данной позиции (после артикля 'the' и перед предлогом 'of') требуется существительное, обозначающее человека. От глагола 'own' (владеть) при помощи суффикса -er образуется существительное 'owner' (владелец)."
+    },
+    {
+        "id": "eng_oge_p128_26",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 26,
+        "task_text": "Преобразуйте слово <b>CAN</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>Marine researchers wish they ____ get to the bottom of the ocean to explore it, but unfortunately it is not possible now.",
+        "answer": "could",
+        "solution": "В предложениях с глаголом 'wish', выражающих сожаление о невозможности действия в настоящем, используется форма Past Simple. Модальный глагол 'can' меняется на 'could'."
+    },
+    {
+        "id": "eng_oge_p128_27",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 27,
+        "task_text": "Преобразуйте слово <b>BE</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>There ____ no technology yet that can allow people to go so deep under the water.",
+        "answer": "is",
+        "solution": "Используется конструкция 'there is' для констатации факта в настоящем времени. Существительное 'technology' в данном контексте употребляется в единственном числе."
+    },
+    {
+        "id": "eng_oge_p128_28",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 28,
+        "task_text": "Преобразуйте слово <b>IT</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>The ocean is still keeping ____ secrets.",
+        "answer": "its",
+        "solution": "Требуется притяжательное местоимение, относящееся к слову 'ocean' (неодушевленный предмет). Форма 'its' означает 'его/свои'."
+    },
+    {
+        "id": "eng_oge_p128_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>POWER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Tula, an old Russian city, is mentioned in most tourist guidebooks. It was set up as a ____ fortress.",
+        "answer": "powerful",
+        "solution": "Для описания крепости (fortress) требуется прилагательное. Образуем его от существительного 'power' с помощью суффикса -ful."
+    },
+    {
+        "id": "eng_oge_p128_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>FAVOUR</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The place was chosen due to its ____ geographical position — close to the Oka River.",
+        "answer": "favourable",
+        "solution": "Перед существительным 'position' необходимо прилагательное. Образуем 'favourable' (благоприятный) от существительного 'favour' при помощи суффикса -able."
+    },
+    {
+        "id": "eng_oge_p128_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>FAME</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The city is ____ for its Kremlin.",
+        "answer": "famous",
+        "solution": "В конструкции 'is ____ for' требуется прилагательное. Образуем 'famous' (знаменитый) от существительного 'fame' при помощи суффикса -ous."
+    },
+    {
+        "id": "eng_oge_p128_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>ATTRACT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>It was built in the 16th century and is still an important tourist ____.",
+        "answer": "attraction",
+        "solution": "После прилагательного 'tourist' (туристический) требуется существительное. Образуем 'attraction' (достопримечательность) от глагола 'attract' при помощи суффикса -ion."
+    },
+    {
+        "id": "eng_oge_p128_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>TASTE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Tulskiy pryanik is especially ____ when it is freshly baked.",
+        "answer": "tasty",
+        "solution": "Для характеристики пряника после наречия 'especially' требуется прилагательное. Образуем 'tasty' (вкусный) от существительного 'taste' при помощи суффикса -y."
+    },
+    {
+        "id": "eng_oge_p128_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>PATIENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Children are usually very ____ and try to steal a bite of it before the tea is properly served.",
+        "answer": "impatient",
+        "solution": "Контекст предложения (дети пытаются откусить кусочек до подачи чая) указывает на отсутствие терпения. Образуем прилагательное с отрицательной приставкой im- от слова 'patient' — 'impatient' (нетерпеливый)."
+    },
+    {
+        "id": "eng_oge_p136_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>FAME</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>St Petersburg is often called the Venice of the North. And for a good reason — apart from the ____ Neva River the city has lots of other rivers, lakes and ponds.",
+        "answer": "famous",
+        "solution": "Перед существительным 'Neva River' необходимо поставить прилагательное. От существительного 'fame' (слава) образуется прилагательное 'famous' (знаменитый)."
+    },
+    {
+        "id": "eng_oge_p136_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>NAVIGATE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The web of canals makes ____ quite possible.",
+        "answer": "navigation",
+        "solution": "В данном предложении после глагола 'makes' требуется существительное, обозначающее процесс. От глагола 'navigate' (судоходствовать, ориентироваться) образуется существительное 'navigation' (навигация, судоходство)."
+    },
+    {
+        "id": "eng_oge_p136_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>LIKE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>However, ____ in Venice, the people do not use boats as city transport.",
+        "answer": "unlike",
+        "solution": "По смыслу предложения необходимо выразить противопоставление Петербурга и Венеции. Предлог 'unlike' означает 'в отличие от'. Слово 'unlike' образуется от 'like' при помощи отрицательной приставки un-."
+    },
+    {
+        "id": "eng_oge_p136_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>ACTUAL</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>And there is no need — the city boasts its bridges. ____, there are more than a thousand bridges in St Petersburg!",
+        "answer": "actually",
+        "solution": "В начале предложения в качестве вводного слова, подчеркивающего факт, необходимо наречие. Наречие 'actually' (на самом деле, фактически) образуется от прилагательного 'actual' с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_oge_p136_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>DIFFER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>They are presented in ____ styles and decorated with various designs.",
+        "answer": "different",
+        "solution": "Перед существительным 'styles' необходимо прилагательное. От глагола 'differ' (отличаться) образуется прилагательное 'different' (различный, разный)."
+    },
+    {
+        "id": "eng_oge_p136_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>EXPLORE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The names of the bridges can tell a curious ____ a lot about the cultural heritage of the city.",
+        "answer": "explorer",
+        "solution": "После прилагательного 'curious' (любопытный) и перед дополнением должно стоять существительное, обозначающее человека. От глагола 'explore' (исследовать) образуется существительное 'explorer' (исследователь) с помощью суффикса -er."
+    },
+    {
+        "id": "eng_oge_p144_28",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 28,
+        "task_text": "Преобразуйте слово <b>GOOD</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>I invented a story about a bad flu, coughed and sneezed terribly till I was sure they believed me. It was a pity to miss two wonderful parties in one day but it was the ____ way to avoid a quarrel, wasn't it?",
+        "answer": "best",
+        "solution": "Перед пропуском стоит определенный артикль 'the', а за ним следует существительное 'way'. Это указывает на необходимость использования превосходной степени прилагательного. Прилагательное 'good' является исключением и имеет формы: good — better — best."
+    },
+    {
+        "id": "eng_oge_p144_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>HEALTH</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>People talk a lot about diets and eating habits these days. They say ____ eating improves quality of life.",
+        "answer": "healthy",
+        "solution": "В данном предложении пропуск стоит перед существительным (герундием) 'eating'. Нам необходимо прилагательное, чтобы описать тип питания. Образуем прилагательное 'healthy' (здоровый) от существительного 'health' с помощью суффикса -y."
+    },
+    {
+        "id": "eng_oge_p144_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>PRESENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>I’ve recently seen a ____ about the food pyramid we need to keep in mind when we design our menu.",
+        "answer": "presentation",
+        "solution": "Пропуск стоит после неопределенного артикля 'a', что указывает на необходимость существительного в единственном числе. От глагола 'present' (представлять) с помощью суффикса -ation образуем существительное 'presentation' (презентация)."
+    },
+    {
+        "id": "eng_oge_p144_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>DIFFER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>In the second group, there are ____ vegetables and fruit.",
+        "answer": "different",
+        "solution": "Для описания существительных 'vegetables and fruit' требуется прилагательное. От глагола 'differ' (различаться) образуем прилагательное 'different' (различные) с помощью суффикса -ent."
+    },
+    {
+        "id": "eng_oge_p144_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>HARM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Sweets and fats are the smallest group and people should almost totally avoid eating these foods, which can be ____ to the body.",
+        "answer": "harmful",
+        "solution": "После глагола-связки 'be' в конструкции 'can be' обычно следует прилагательное. От существительного 'harm' (вред) с помощью суффикса -ful образуем прилагательное 'harmful' (вредный)."
+    },
+    {
+        "id": "eng_oge_p144_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>REASON</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>I think this approach to the diet is very ____.",
+        "answer": "reasonable",
+        "solution": "Пропуск стоит после наречия степени 'very', что предполагает наличие прилагательного. От существительного 'reason' (разум, причина) образуем прилагательное 'reasonable' (разумный, обоснованный) с помощью суффикса -able."
+    },
+    {
+        "id": "eng_oge_p144_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>AGREE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>However, my friends, who are vegetarians, ____. They think the third group should be avoided completely.",
+        "answer": "disagree",
+        "solution": "В данном предложении требуется глагол-сказуемое. По контексту вегетарианцы имеют противоположное мнение (они считают, что третью группу продуктов — мясо, рыбу — нужно исключить). Для выражения противоположного значения к глаголу 'agree' (соглашаться) добавляем отрицательную приставку dis- и получаем 'disagree' (не соглашаться)."
+    },
+    {
+        "id": "eng_oge_p152_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>BUILD</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>Actually, it's in the ____ next to it, so it takes me just a few seconds to get there.",
+        "answer": "building",
+        "solution": "В данном предложении после определенного артикля «the» и перед предлогом места необходимо использовать существительное. От глагола «build» (строить) образуем существительное «building» (здание) с помощью суффикса «-ing»."
+    },
+    {
+        "id": "eng_oge_p152_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>DRIVE</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>My instructor is a very experienced ____.",
+        "answer": "driver",
+        "solution": "В данном контексте требуется существительное, обозначающее человека (профессию или роль). От глагола «drive» (водить) образуем существительное «driver» (водитель) при помощи суффикса «-er»."
+    },
+    {
+        "id": "eng_oge_p152_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>IMPORTANT</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>He says there are no ____ things when you are on the road, and every mistake could cause serious problems.",
+        "answer": "unimportant",
+        "solution": "По смыслу предложения, так как любая ошибка может привести к серьезным проблемам, на дороге не бывает «неважных» вещей. Для этого образуем прилагательное с противоположным значением от «important» при помощи отрицательной приставки «un-»."
+    },
+    {
+        "id": "eng_oge_p152_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>STRESS</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>I really enjoy my lessons but driving is still very ____ for me.",
+        "answer": "stressful",
+        "solution": "После наречия степени «very» и глагола-связки «is» необходимо прилагательное, характеризующее процесс вождения. От существительного «stress» (стресс) образуем прилагательное «stressful» (стрессовый/напряженный) с помощью суффикса «-ful»."
+    },
+    {
+        "id": "eng_oge_p152_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>DANGER</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>There are lots of ____ situations and I have to be very attentive and careful all the time.",
+        "answer": "dangerous",
+        "solution": "Пропуск находится перед существительным «situations», значит, требуется прилагательное. От существительного «danger» (опасность) образуем прилагательное «dangerous» (опасный) с помощью суффикса «-ous»."
+    },
+    {
+        "id": "eng_oge_p152_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>QUICK</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>The ability to react ____ is also necessary.",
+        "answer": "quickly",
+        "solution": "В данном случае слово характеризует действие (глагол «react» — как реагировать?), поэтому требуется наречие. От прилагательного «quick» (быстрый) образуем наречие «quickly» (быстро) с помощью суффикса «-ly»."
+    },
+    {
+        "id": "eng_oge_p16_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>WONDER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>There were lots of ____ berries on the top.",
+        "answer": "wonderful",
+        "solution": "Для описания существительного berries (какие ягоды?) требуется прилагательное. От существительного wonder при помощи суффикса -ful образуется прилагательное wonderful (чудесные)."
+    },
+    {
+        "id": "eng_oge_p16_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>PROUD</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>My friend ____ explained that the airy dessert was called Anna Pavlova.",
+        "answer": "proudly",
+        "solution": "В данном случае нужно описать действие (объяснила как?). Для этого требуется наречие. Наречия образуются от прилагательных при помощи суффикса -ly: proud + ly = proudly (с гордостью)."
+    },
+    {
+        "id": "eng_oge_p16_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>TRADITION</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>She mentioned that it was a ____ Australian dessert.",
+        "answer": "traditional",
+        "solution": "Перед существительным dessert должно стоять прилагательное, характеризующее его (какой десерт?). От существительного tradition при помощи суффикса -al образуется прилагательное traditional (традиционный)."
+    },
+    {
+        "id": "eng_oge_p16_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>POLITE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Though I didn't want to sound ____ to the hostess, I had to disagree.",
+        "answer": "impolite",
+        "solution": "По смыслу предложения требуется прилагательное с противоположным значением (не хотел казаться каким?). Отрицание в слове polite создается с помощью приставки im-, получается impolite (невежливый)."
+    },
+    {
+        "id": "eng_oge_p16_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>DANCE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Everyone knows that Anna Pavlova was a Russian ballet ____, not an Australian one.",
+        "answer": "dancer",
+        "solution": "В предложении речь идет о профессии или роде деятельности Анны Павловой. От глагола dance (танцевать) при помощи суффикса -er образуется существительное dancer (танцор/танцовщица)."
+    },
+    {
+        "id": "eng_oge_p16_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>PERFORM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>...the people found the ____ so exciting that a special dessert was created in Anna's honour.",
+        "answer": "performance",
+        "solution": "После определенного артикля the и в роли дополнения должно стоять существительное. От глагола perform (выступать) при помощи суффикса -ance образуется существительное performance (выступление/представление)."
+    },
+    {
+        "id": "eng_oge_p160_26",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 26,
+        "task_text": "Преобразуйте слово <b>SHE</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>Miss Marple herself believed that it was her life experience that helped ____ solve the crimes.",
+        "answer": "HER",
+        "solution": "Личное местоимение 'she' (она) в функции дополнения (помогло кому?) должно стоять в объектном падеже — 'her' (ей)."
+    },
+    {
+        "id": "eng_oge_p160_27",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 27,
+        "task_text": "Преобразуйте слово <b>LIVE</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>She often said she ____ all her life in a small village.",
+        "answer": "HADLIVED",
+        "solution": "В косвенной речи при соблюдении правила согласования времен, если действие в придаточном предложении произошло раньше действия в главном (said), используется Past Perfect (had + V3)."
+    },
+    {
+        "id": "eng_oge_p160_28",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 28,
+        "task_text": "Преобразуйте слово <b>BE</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>I believe that, if Miss Marple lived in our time, her knowledge of human nature ____ very useful too!",
+        "answer": "WOULDBE",
+        "solution": "Это условное предложение второго типа (Second Conditional), выражающее маловероятное условие в настоящем. В части с 'if' используется Past Simple (lived), а в главной части — would + начальная форма глагола."
+    },
+    {
+        "id": "eng_oge_p160_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>SCIENCE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>She supported ____ methods in medicine and new tendencies in literature.",
+        "answer": "SCIENTIFIC",
+        "solution": "Для описания существительного 'methods' (методы) требуется прилагательное. Прилагательное 'scientific' (научный) образуется от существительного 'science' при помощи суффикса -ific."
+    },
+    {
+        "id": "eng_oge_p160_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>WRITE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Charles Dickens, the favourite ____ of Queen Victoria, became famous due to his ability to describe and analyse the human character.",
+        "answer": "WRITER",
+        "solution": "По контексту требуется существительное, обозначающее человека по роду деятельности. Оно образуется от глагола 'write' (писать) с помощью суффикса -er — 'writer' (писатель)."
+    },
+    {
+        "id": "eng_oge_p160_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>BEAUTY</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>His heroes were not courageous kings and ____ queens but ordinary people.",
+        "answer": "BEAUTIFUL",
+        "solution": "Для описания существительного 'queens' (королевы) необходимо прилагательное. Прилагательное 'beautiful' (красивый) образуется от существительного 'beauty' при помощи суффикса -ful."
+    },
+    {
+        "id": "eng_oge_p160_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>RAIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>He described their lives in cold and ____ London, their hopes, dreams, and tragedies.",
+        "answer": "RAINY",
+        "solution": "В паре с прилагательным 'cold' (холодный) перед существительным 'London' должно стоять другое прилагательное. 'Rainy' (дождливый) образуется от существительного 'rain' с помощью суффикса -y."
+    },
+    {
+        "id": "eng_oge_p160_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>ORIGIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Dickens’ ____ manner of writing was a new idea in literature.",
+        "answer": "ORIGINAL",
+        "solution": "Для описания манеры письма (manner) требуется прилагательное. Прилагательное 'original' (оригинальный/самобытный) образуется от основы 'origin' с помощью суффикса -al."
+    },
+    {
+        "id": "eng_oge_p160_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>AGREEMENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>His books caused a lot of delight and support as well as misunderstanding and ____.",
+        "answer": "DISAGREEMENT",
+        "solution": "По контексту (союз 'as well as' и слово 'misunderstanding') требуется существительное с отрицательным значением. Оно образуется от 'agreement' (согласие) при помощи отрицательной приставки dis- — 'disagreement' (несогласие)."
+    },
+    {
+        "id": "eng_oge_p24_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>AMAZE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Do you like big cats? Most people may say that yes, they look ____. But the same people would also say that they wouldn't like to encounter those animals in the wild.",
+        "answer": "AMAZING",
+        "solution": "После глагола-связки look (выглядеть) необходимо прилагательное для описания качеств объекта. Прилагательное amazing (удивительные) образуется от глагола amaze с помощью суффикса -ing."
+    },
+    {
+        "id": "eng_oge_p24_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>POWER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Lions, tigers, and leopards are ____ and fast.",
+        "answer": "POWERFUL",
+        "solution": "В данном предложении пропущено прилагательное, которое стоит в одном ряду с прилагательным fast (быстрый). Прилагательное powerful (мощный, сильный) образуется от существительного power с помощью суффикса -ful."
+    },
+    {
+        "id": "eng_oge_p24_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>HARD</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>If attacked by them, a person would ____ escape.",
+        "answer": "HARDLY",
+        "solution": "В предложении требуется наречие, определяющее вероятность действия. Наречие hardly (едва ли, почти не) имеет значение низкой вероятности спасения при нападении хищника."
+    },
+    {
+        "id": "eng_oge_p24_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>DANGER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Fortunately, though big cats are very ____, they try to avoid people.",
+        "answer": "DANGEROUS",
+        "solution": "После наречия степени very (очень) и глагола-связки are требуется прилагательное. Прилагательное dangerous (опасный) образуется от существительного danger с помощью суффикса -ous."
+    },
+    {
+        "id": "eng_oge_p24_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>PROTECT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The scientists insist that big cats need ____. Otherwise, they can be added to the sad list of extinct animals.",
+        "answer": "PROTECTION",
+        "solution": "После глагола need (нуждаться в чем-либо) требуется существительное. Существительное protection (защита) образуется от глагола protect с помощью суффикса -ion."
+    },
+    {
+        "id": "eng_oge_p24_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>APPEAR</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>We don't want them to ____ forever, do we?",
+        "answer": "DISAPPEAR",
+        "solution": "По контексту (вымирание животных) требуется глагол с противоположным значением. Глагол disappear (исчезать) образуется от глагола appear с помощью отрицательной приставки dis-."
+    },
+    {
+        "id": "eng_oge_p32_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>END</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Computers and mass media take a lot of our time. Not only teenagers spend ____ hours in front of their screens but adults, too!",
+        "answer": "endless",
+        "solution": "Для описания существительного 'hours' (часы) необходимо прилагательное. С помощью отрицательного суффикса -less от слова 'end' (конец) образуется прилагательное 'endless' (бесконечные)."
+    },
+    {
+        "id": "eng_oge_p32_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>THREATEN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Some people think that the situation is ____ and something should be done about it. The others say there is no need to dramatise.",
+        "answer": "threatening",
+        "solution": "В данном контексте требуется прилагательное для описания ситуации. От глагола 'threaten' (угрожать) с помощью суффикса -ing образуется причастие в роли прилагательного 'threatening' (угрожающая)."
+    },
+    {
+        "id": "eng_oge_p32_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>NATURE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Virtual technology is a ____ part of the contemporary world and we should accept it.",
+        "answer": "natural",
+        "solution": "Перед существительным 'part' (часть) должно стоять прилагательное. Оно образуется от существительного 'nature' (природа) с помощью суффикса -al: 'natural' (естественная)."
+    },
+    {
+        "id": "eng_oge_p32_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>ENTERTAIN</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Moreover, mass media is not only for ____.",
+        "answer": "entertainment",
+        "solution": "После предлога 'for' (для) необходимо использовать существительное. От глагола 'entertain' (развлекать) с помощью суффикса -ment образуется существительное 'entertainment' (развлечение)."
+    },
+    {
+        "id": "eng_oge_p32_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>WIDE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>It is ____ used for educational and business purposes, too.",
+        "answer": "widely",
+        "solution": "В данном предложении пропуск характеризует глагол-причастие 'used' (используется). Для этого необходимо наречие, которое образуется от прилагательного 'wide' (широкий) при помощи суффикса -ly: 'widely' (широко)."
+    },
+    {
+        "id": "eng_oge_p32_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>BLOG</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The profession of a ____ does not surprise anyone anymore. It feels as common as a driver or a sales manager nowadays.",
+        "answer": "blogger",
+        "solution": "Контекст указывает на название профессии. От существительного 'blog' (блог) с помощью суффикса -er образуется существительное, обозначающее человека по роду деятельности — 'blogger' (блогер). Обратите внимание на удвоение согласной 'g'."
+    },
+    {
+        "id": "eng_oge_p40_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>AMAZE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>What is the most unusual bird in the world? There’s no definite answer to this question - many birds are ____ and can surprise us with their appearance, intelligence and behaviour.",
+        "answer": "amazing",
+        "solution": "Для описания признака предмета (птиц) необходимо прилагательное. От глагола amaze при помощи суффикса -ing образуем прилагательное amazing (удивительные)."
+    },
+    {
+        "id": "eng_oge_p40_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>SWIM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>A penguin is certainly one of them. Though a penguin cannot fly, it is a fantastic ____. The bird uses its wings as flippers to swim underwater.",
+        "answer": "swimmer",
+        "solution": "После прилагательного fantastic требуется существительное, обозначающее того, кто совершает действие. От глагола swim с помощью суффикса -er образуем существительное swimmer (пловец). При этом согласная 'm' удваивается."
+    },
+    {
+        "id": "eng_oge_p40_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>CARE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Penguins live on the ice and their babies hatch when the temperature is freezing. Penguins are ____ parents — they never leave their chicks unattended.",
+        "answer": "caring",
+        "solution": "Перед существительным parents требуется прилагательное в значении «заботливые». От существительного/глагола care при помощи суффикса -ing образуем прилагательное caring."
+    },
+    {
+        "id": "eng_oge_p40_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>DANGER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>They protect them in any ____ situation.",
+        "answer": "dangerous",
+        "solution": "Перед существительным situation необходимо прилагательное. От существительного danger при помощи суффикса -ous образуем прилагательное dangerous (опасный)."
+    },
+    {
+        "id": "eng_oge_p40_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>EASY</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The parents can ____ identify their chick by its voice.",
+        "answer": "easily",
+        "solution": "Для описания действия (как именно могут распознать — identify) требуется наречие. От прилагательного easy при помощи суффикса -ly образуем наречие easily. Буква -y меняется на -i."
+    },
+    {
+        "id": "eng_oge_p40_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>COMMUNICATE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>They take turns feeding and teaching it, and their ____ is quite complicated.",
+        "answer": "communication",
+        "solution": "После притяжательного местоимения their должно стоять существительное. От глагола communicate с помощью суффикса -ion образуем существительное communication (общение)."
+    },
+    {
+        "id": "eng_oge_p48_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>BEAUTY</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Saint Petersburg, one of the most ____ cities in the world, stands on the Neva River.",
+        "answer": "beautiful",
+        "solution": "В данной конструкции (one of the most...) перед существительным cities требуется прилагательное. От существительного beauty (красота) образуем прилагательное beautiful (красивый)."
+    },
+    {
+        "id": "eng_oge_p48_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>SUIT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>One of the reasons why Peter I chose that place for his new capital was that the Neva was ____ for navigation.",
+        "answer": "suitable",
+        "solution": "После глагола-связки was в роли дополнения требуется прилагательное. От глагола suit (подходить) образуем прилагательное suitable (подходящий) с помощью суффикса -able."
+    },
+    {
+        "id": "eng_oge_p48_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>DEVELOP</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Peter I understood how important trade was for the economic ____ of the country.",
+        "answer": "development",
+        "solution": "После прилагательного economic (экономический) должно стоять существительное. От глагола develop (развивать) при помощи суффикса -ment образуем существительное development (развитие)."
+    },
+    {
+        "id": "eng_oge_p48_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>EXPENSE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>He realised that to deliver goods by water was more convenient and less ____ than by land.",
+        "answer": "expensive",
+        "solution": "В предложении используются однородные прилагательные в сравнительной степени (more convenient and less...). Требуется прилагательное от слова expense (расход) — expensive (дорогой)."
+    },
+    {
+        "id": "eng_oge_p48_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>FAME</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>In fact, the Neva River was ____ long before the city of Saint Petersburg was founded.",
+        "answer": "famous",
+        "solution": "После глагола-связки was необходимо прилагательное. От существительного fame (слава) с помощью суффикса -ous образуем прилагательное famous (известный)."
+    },
+    {
+        "id": "eng_oge_p48_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>RUSSIA</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>In 1240, the Battle of the Neva happened there — the ____ Army led by prince Alexander Yaroslavovich defeated the Swedish Army.",
+        "answer": "russian",
+        "solution": "Перед существительным Army требуется определение, указывающее на национальную принадлежность. От названия страны Russia (Россия) образуем прилагательное Russian (русская)."
+    },
+    {
+        "id": "eng_oge_p56_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>PEACE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Like most old cities, Moscow, the capital of Russia, stands on a river. It is wide and ____ and it is called the Moskva River.",
+        "answer": "peaceful",
+        "solution": "В данном предложении пропуск стоит в ряду однородных членов после союза 'and' и относится к описанию реки. Нам необходимо образовать прилагательное от существительного 'peace' (мир, покой). Прилагательное 'peaceful' (мирный, спокойный) образуется при помощи суффикса -ful."
+    },
+    {
+        "id": "eng_oge_p56_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>RUSSIA</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Unlike the city’s name, the English equivalent of the river’s name kept its original pronunciation. In English, it sounds the same as it sounds in ____.",
+        "answer": "russian",
+        "solution": "По контексту требуется указать язык (в русском языке). От названия страны 'Russia' мы образуем прилагательное/название языка 'Russian' с помощью суффикса -an."
+    },
+    {
+        "id": "eng_oge_p56_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>EXTREME</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Of course, the Moskva River is ____ important for the city.",
+        "answer": "extremely",
+        "solution": "Пропуск стоит перед прилагательным 'important' и определяет степень признака. Нам необходимо наречие 'extremely' (чрезвычайно), которое образуется от прилагательного 'extreme' при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_oge_p56_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>INDUSTRY</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>It supplies Moscow with drinking water as well as water for ____ use. The river is an efficient transportation system as it is navigable all year round.",
+        "answer": "industrial",
+        "solution": "В данном случае пропуск стоит перед существительным 'use' и должен его определять. Нам нужно образовать прилагательное от существительного 'industry' (промышленность). Прилагательное 'industrial' (промышленный) образуется с помощью суффикса -ial."
+    },
+    {
+        "id": "eng_oge_p56_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>ATTRACT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Along with that, the riverside makes a very ____ place where the citizens enjoy spending their weekends.",
+        "answer": "attractive",
+        "solution": "Пропуск стоит перед существительным 'place' (место), значит, нам нужно прилагательное. От глагола 'attract' (привлекать) образуется прилагательное 'attractive' (привлекательный) при помощи суффикса -ive."
+    },
+    {
+        "id": "eng_oge_p56_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>POSSIBLE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Many of them say that it’s ____ to find a better place for a family outing.",
+        "answer": "impossible",
+        "solution": "Исходя из общего положительного контекста описания реки как прекрасного места отдыха, фраза 'it’s ... to find a better place' подразумевает 'невозможно найти место лучше'. Мы используем отрицательную приставку im- для образования антонима 'impossible' (невозможный)."
+    },
+    {
+        "id": "eng_oge_p64_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>INFORM</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>Nowadays, if you want to exchange ____ with someone, it’s not important how far away the person is.",
+        "answer": "information",
+        "solution": "В данном контексте требуется существительное (обмениваться чем? информацией). Существительное образуется от глагола inform при помощи суффикса -ation."
+    },
+    {
+        "id": "eng_oge_p64_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>REAL</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>What ____ matters is whether he has access to the Internet or not.",
+        "answer": "really",
+        "solution": "Пропуск стоит перед глаголом matters и характеризует действие. Для этого необходимо наречие, которое образуется от прилагательного real с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_oge_p64_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>EQUIP</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>I know that when people started to experiment with the Internet, it required lots of ____.",
+        "answer": "equipment",
+        "solution": "После конструкции 'lots of' требуется существительное. Существительное «оборудование» образуется от глагола equip с помощью суффикса -ment."
+    },
+    {
+        "id": "eng_oge_p64_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>POSSIBLE</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>Computers and other devices were very large in size and it was ____ to carry them around — they were always kept in a laboratory.",
+        "answer": "impossible",
+        "solution": "Исходя из контекста (компьютеры были огромными), их было нельзя носить с собой. Нужно образовать прилагательное с противоположным значением при помощи отрицательной приставки im-."
+    },
+    {
+        "id": "eng_oge_p64_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>ELECTRON</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>Now ____ devices have got smaller — you can carry them in a handbag or in your pocket.",
+        "answer": "electronic",
+        "solution": "Перед существительным devices требуется прилагательное. Прилагательное electronic (электронный) образуется от существительного electron с помощью суффикса -ic."
+    },
+    {
+        "id": "eng_oge_p64_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>SCIENCE</b> так, чтобы оно лексически и грамматически соответствовало содержанию текста:<br><br>I’m not a ____, or even an engineer, but I’m sure there will be lots of new Internet-related inventions in the near future.",
+        "answer": "scientist",
+        "solution": "В предложении идет перечисление профессий/ролей (scientist, engineer). Существительное, обозначающее человека (ученый), образуется от слова science с помощью суффикса -ist."
+    },
+    {
+        "id": "eng_oge_p72_27",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 27,
+        "task_text": "Преобразуйте слово <b>SEE</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>Daniel wanted to explain further but I interrupted him. “No, the aliens are out. I ____ this film, and believe me, it’s not so funny!",
+        "answer": "have seen",
+        "solution": "Используется Present Perfect, так как говорящий сообщает о своем жизненном опыте (он уже видел фильм), который имеет значение для настоящего момента (он знает, что фильм не смешной)."
+    },
+    {
+        "id": "eng_oge_p72_28",
+        "subject": "oge_english",
+        "topic": "grammar",
+        "number": 28,
+        "task_text": "Преобразуйте слово <b>TWO</b> так, чтобы оно грамматически соответствовало содержанию текста:<br><br>“What’s your ____ choice?”",
+        "answer": "second",
+        "solution": "Для образования порядкового числительного от количественного 'two' (два) используется форма 'second' (второй)."
+    },
+    {
+        "id": "eng_oge_p72_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>EDUCATE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>How many planets are there in our Solar System? Most ____ people would say that there are eight of them.",
+        "answer": "educated",
+        "solution": "Перед существительным 'people' необходимо прилагательное. Причастие прошедшего времени 'educated' (образованный) подходит по смыслу."
+    },
+    {
+        "id": "eng_oge_p72_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>INFORM</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Indeed, you may come across this ____ in a school textbook on astronomy.",
+        "answer": "information",
+        "solution": "После указательного местоимения 'this' требуется существительное. Существительное от глагола 'inform' — 'information' (информация)."
+    },
+    {
+        "id": "eng_oge_p72_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>AGREE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>However, there are those who would ____ with this point of view. They believe that there are nine planets.",
+        "answer": "disagree",
+        "solution": "По контексту требуется глагол с противоположным значением, так как далее говорится, что эти люди верят в 9 планет (а не в 8). Используем отрицательную приставку dis- к глаголу agree: 'disagree' (не соглашаться)."
+    },
+    {
+        "id": "eng_oge_p72_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>RECENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>In fact, ____, space researchers started to talk about a giant planet on the outskirts of the Solar System.",
+        "answer": "recently",
+        "solution": "Для обозначения времени действия в начале предложения используется наречие. Наречие от прилагательного 'recent' (недавний) образуется при помощи суффикса -ly: 'recently' (недавно)."
+    },
+    {
+        "id": "eng_oge_p72_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>POWER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The planet is too far away to be seen from the Earth. It is still invisible even to the ____ Hubble Space Telescope.",
+        "answer": "powerful",
+        "solution": "Перед названием телескопа необходимо прилагательное. Прилагательное от существительного 'power' (мощность) образуется с помощью суффикса -ful: 'powerful' (мощный)."
+    },
+    {
+        "id": "eng_oge_p72_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>DISCOVER</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>However, the scientists have calculated its gravitational influence and are sure we are very close to a new amazing space ____.",
+        "answer": "discovery",
+        "solution": "В конце предложения после прилагательных 'new amazing space' требуется существительное. Существительное от глагола 'discover' (открывать) — 'discovery' (открытие)."
+    },
+    {
+        "id": "eng_oge_p80_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>ATTRACT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Scotland is a popular tourist destination. To me, the main ____ of Scotland is its castles.",
+        "answer": "attraction",
+        "solution": "Для дополнения предложения требуется существительное. Образуем его от глагола 'attract' (привлекать) с помощью суффикса -ion. 'Attraction' в данном контексте означает 'достопримечательность' или 'привлекательная черта'."
+    },
+    {
+        "id": "eng_oge_p80_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>IMPRESS</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The landscape in Scotland is more dramatic than in England and the castles look very ____ there.",
+        "answer": "impressive",
+        "solution": "После связки 'look very' требуется прилагательное для описания внешнего вида замков. Оно образуется от глагола 'impress' (впечатлять) с помощью суффикса -ive. 'Impressive' — впечатляющий."
+    },
+    {
+        "id": "eng_oge_p80_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>ART</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>One doesn’t need to be a poet or an ____ to see their beauty.",
+        "answer": "artist",
+        "solution": "В предложении перечисляются профессии/рода занятий ('poet or an...'). Нам нужно существительное, обозначающее человека. Оно образуется от слова 'art' (искусство) с помощью суффикса -ist. 'Artist' — художник."
+    },
+    {
+        "id": "eng_oge_p80_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>FORGETTABLE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Visiting Edinburgh Castle was an ____ experience.",
+        "answer": "unforgettable",
+        "solution": "Прилагательное 'forgettable' означает 'такой, который легко забыть'. По смыслу текста (восхищение замками) опыт посещения был незабываемым. Для этого используем отрицательную приставку un-."
+    },
+    {
+        "id": "eng_oge_p80_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>SERIOUS</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>But it has been ____ damaged by people.",
+        "answer": "seriously",
+        "solution": "Пропуск стоит перед причастием/глаголом 'damaged' и описывает степень повреждения. Для этого требуется наречие, которое образуется от прилагательного 'serious' с помощью суффикса -ly. 'Seriously damaged' — серьезно поврежден."
+    },
+    {
+        "id": "eng_oge_p80_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>NATION</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Now the castle houses several museums, including the ____ War Museum.",
+        "answer": "National",
+        "solution": "Перед названием музея ('War Museum') требуется определение в виде прилагательного. Оно образуется от существительного 'nation' с помощью суффикса -al. 'National War Museum' — Национальный военный музей."
+    },
+    {
+        "id": "eng_oge_p88_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>FAME</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>When in Russia, most tourists focus on visiting Moscow and St. Petersburg. Of course, these cities are ____ tourist centres but there are lots of other places in the country worth seeing.",
+        "answer": "famous",
+        "solution": "Для описания существительного 'centres' необходимо прилагательное. Образуем его от существительного 'fame' (слава) при помощи суффикса -ous: famous (знаменитый)."
+    },
+    {
+        "id": "eng_oge_p88_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>TRADITION</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The city of Vladimir is one of them. It is a priceless pearl among the other ____ cities of the Golden Ring.",
+        "answer": "traditional",
+        "solution": "Перед существительным 'cities' требуется прилагательное. От существительного 'tradition' (традиция) при помощи суффикса -al образуем прилагательное traditional (традиционный)."
+    },
+    {
+        "id": "eng_oge_p88_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>COLOUR</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The tourists are delighted to see the ____ houses built in the 18th century.",
+        "answer": "colourful",
+        "solution": "Для описания домов (houses) нужно прилагательное. Образуем его от существительного 'colour' (цвет) при помощи суффикса -ful: colourful (красочный, разноцветный)."
+    },
+    {
+        "id": "eng_oge_p88_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>PROTECT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The white-stone churches of the 12th century are part of World Heritage and are under the ____ of UNESCO.",
+        "answer": "protection",
+        "solution": "Артикль 'the' перед пропуском и предлог 'of' после него указывают на то, что здесь должно быть существительное. От глагола 'protect' (защищать) при помощи суффикса -ion образуем существительное protection (защита)."
+    },
+    {
+        "id": "eng_oge_p88_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>PAINT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>There, in Vladimir, you can also see frescos by the Russian ____ Andrei Rublev.",
+        "answer": "painter",
+        "solution": "В данном контексте требуется существительное, обозначающее профессию человека (художник). Образуем его от глагола 'paint' (рисовать) при помощи суффикса -er: painter."
+    },
+    {
+        "id": "eng_oge_p88_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>AGREE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Most historians believe that Andrei Rublev was born in the second half of the 14th century, but they ____ about the exact date and place of his birth. There’s not enough evidence on the artist’s biography yet.",
+        "answer": "disagree",
+        "solution": "По смыслу предложения историки не имеют единого мнения из-за недостатка доказательств. К глаголу 'agree' (соглашаться) необходимо добавить отрицательную приставку dis-, чтобы получить значение «не соглашаться / расходиться во мнениях» — disagree."
+    },
+    {
+        "id": "eng_oge_p96_29",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Преобразуйте слово <b>IMPRESS</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Central Moscow Hippodrome is one of the landmarks of the city. Whether you like horse riding or not, you will find the place remarkable and ____.",
+        "answer": "impressive",
+        "solution": "В данном предложении пропуск должен быть заполнен прилагательным, которое дополняет характеристику места (place). От глагола impress (впечатлять) с помощью суффикса -ive образуется прилагательное impressive (впечатляющий)."
+    },
+    {
+        "id": "eng_oge_p96_30",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 30,
+        "task_text": "Преобразуйте слово <b>CULTURE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>Founded in the first part of the 19th century it is an object of ____ and historical importance.",
+        "answer": "cultural",
+        "solution": "Пропуск находится перед существительным importance (важность) и связан союзом and с другим прилагательным historical. Следовательно, здесь нужно прилагательное. От существительного culture (культура) при помощи суффикса -al образуется прилагательное cultural (культурный)."
+    },
+    {
+        "id": "eng_oge_p96_31",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 31,
+        "task_text": "Преобразуйте слово <b>COMPETE</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The first racing ____ took place there in 1834.",
+        "answer": "competitions",
+        "solution": "Слово стоит после определения racing и перед сказуемым took place, значит, требуется существительное. От глагола compete (соревноваться) образуется существительное competition. В контексте спортивных событий часто используется множественное число — competitions (соревнования)."
+    },
+    {
+        "id": "eng_oge_p96_32",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 32,
+        "task_text": "Преобразуйте слово <b>SUIT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>The Hippodrome had the longest track in Russia and was ____ for sports events of any level.",
+        "answer": "suitable",
+        "solution": "Пропуск является частью сказуемого (was ____). Контекст требует прилагательного «подходящий». От глагола suit (подходить) при помощи суффикса -able образуется прилагательное suitable."
+    },
+    {
+        "id": "eng_oge_p96_33",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 33,
+        "task_text": "Преобразуйте слово <b>CURRENT</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>____, the Hippodrome is under reconstruction as serious modernisation is needed.",
+        "answer": "currently",
+        "solution": "Слово стоит в начале предложения и характеризует всю ситуацию. Для этой роли необходимо наречие. От прилагательного current (текущий) с помощью суффикса -ly образуется наречие currently (в настоящее время)."
+    },
+    {
+        "id": "eng_oge_p96_34",
+        "subject": "oge_english",
+        "topic": "vocabulary",
+        "number": 34,
+        "task_text": "Преобразуйте слово <b>FAVOUR</b> так, чтобы оно грамматически и лексически соответствовало содержанию текста:<br><br>No doubt, the renovated Hippodrome will become one of the ____ places for family outings.",
+        "answer": "favourite",
+        "solution": "Перед существительным places (места) должно стоять прилагательное. От существительного/глагола favour при помощи суффикса -ite образуется прилагательное favourite (любимый)."
+    }
+]
