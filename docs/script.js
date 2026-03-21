@@ -1,7 +1,11 @@
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
-vkBridge.send('VKWebAppInit');
+vkBridge.send('VKWebAppInit').then(() => {
+    startApp(); // Запускаем приложение ТОЛЬКО после того, как ВК дал добро
+}).catch((error) => {
+    startApp(); // На всякий случай запускаем, даже если произошла ошибка
+});
 
 // Экраны
 const loadingScreen = document.getElementById('screen-loading');
@@ -359,4 +363,4 @@ window.nextReview = function() {
 }
 
 window.finishSession = () => showScreen(mainMenuScreen);
-startApp();
+
