@@ -17,10 +17,11 @@ from fastapi.responses import HTMLResponse
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.6.0")
+app = FastAPI(title="Neuro Repetitor API", version="1.7.0")
 
-# --- СЛОВАРЬ ТЕМ (ДЛЯ АДМИНКИ) ---
+# --- СЛОВАРЬ ТЕМ (ДЛЯ АДМИНКИ И ЛОГОВ) ---
 TOPIC_NAMES = {
+    # Математика
     "topic_01": "🏠 Практические задачи",
     "topic_02": "🔢 Вычисления и дроби",
     "topic_03": "📏 Единицы измерения",
@@ -32,8 +33,14 @@ TOPIC_NAMES = {
     "topic_08": "🧩 Выражения",
     "topic_09": "🧪 Формулы",
     "topic_10": "🔢 Последовательности",
+    # Английский
     "grammar": "📚 Грамматика (Англ)",
-    "vocabulary": "📝 Лексика (Англ)"
+    "vocabulary": "📝 Лексика (Англ)",
+    # Русский
+    "syntax": "🏗️ Синтаксис",
+    "punctuation": "✍️ Пунктуация",
+    "orthography": "📝 Орфография",
+    "lexis": "📖 Лексика и грамматика"
 }
 
 # РАЗРЕШАЕМ КАРТИНКИ
@@ -56,7 +63,8 @@ logger = logging.getLogger("NeuroRepetitor")
 QUESTIONS_DIR = Path("questions")
 DATABASES = {
     "oge_math": [],
-    "oge_english": []
+    "oge_english": [],
+    "oge_russian": []
 }
 
 def load_database(filename, db_key):
@@ -71,9 +79,10 @@ def load_database(filename, db_key):
     else:
         logger.warning(f"⚠️ Файл {filename} не найден!")
 
-# Загружаем предметы при старте
+# Загружаем предметы при старте (ТЕПЕРЬ ИХ ТРИ!)
 load_database("oge_math.json", "oge_math")
 load_database("oge_english.json", "oge_english")
+load_database("oge_russian.json", "oge_russian")
 
 def normalize_text(text: str):
     if not text: return ""
@@ -119,10 +128,9 @@ async def pay_for_test(request: PaymentRequest):
 
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge_math"):
-    # Достаем правильную базу в зависимости от выбранного предмета
     db = DATABASES.get(exam_type, [])
     if not db: 
-        raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста или не найдена")
+        raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста")
     
     task = random.choice(db)
     
@@ -141,7 +149,6 @@ async def get_random_task(exam_type: str = "oge_math"):
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
-    # Ищем задачу во всех базах
     task = None
     for db in DATABASES.values():
         task = next((t for t in db if str(t.get("id")) == str(request.task_id)), None)
@@ -154,15 +161,13 @@ async def check_answer_smart(request: CheckRequest):
     
     if not is_correct and correct_answer != "---":
         try:
-            # Универсальный промпт для сверки ответов
-            prompt = f"Равны ли эти два ответа на тест (учитывай синонимы или математическое равенство): '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
+            prompt = f"Равны ли эти два ответа на тест (учитывай синонимы, опечатки или математическое равенство): '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
             output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
             is_correct = "true" in "".join(output).lower()
         except Exception as e: 
             logger.error(f"Ошибка проверки ИИ: {e}")
             is_correct = False
 
-    # ЗАПИСЬ СТАТИСТИКИ
     with open("user_stats.log", "a", encoding="utf-8") as f:
         f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
 
@@ -178,7 +183,6 @@ async def explain_mistake(request: ReviewRequest):
                   f"Ответ ученика: {request.user_answer}. "
                   f"Объясни, почему ответ ученика неверен и какое правило здесь работает.")
     else:
-        # Универсальный промпт (подходит и для математики, и для языков)
         prompt = (f"Напиши подробное пошаговое объяснение или решение задачи. "
                   f"Текст: {content}. "
                   f"Ответ ученика: {request.user_answer}. "
@@ -197,10 +201,9 @@ async def explain_mistake(request: ReviewRequest):
         logger.error(f"Ошибка ИИ при разборе: {e}")
         return {"explanation": "Извините, произошла ошибка при генерации разбора. Попробуйте еще раз."}
 
-# --- АДМИН-ПАНЕЛЬ ---
 @app.get("/admin/dashboard", response_class=HTMLResponse)
 async def admin_dashboard(key: str = Query(None)):
-    if key != "super-repetitor-2026": # Секретный пароль
+    if key != "super-repetitor-2026":
         return "<h1>Доступ закрыт</h1>"
     
     stats = {}
@@ -210,7 +213,6 @@ async def admin_dashboard(key: str = Query(None)):
                 parts = line.strip().split(',')
                 if len(parts) >= 4:
                     topic_code, res_str = parts[2], parts[3]
-                    
                     topic_name = TOPIC_NAMES.get(topic_code, topic_code)
                     res = (res_str == "True")
                     
