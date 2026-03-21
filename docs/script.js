@@ -33,8 +33,8 @@ let USER_ID = null;
 // ТЕ САМЫЕ КНОПКИ С ЭМОДЗИ ДЛЯ ЭКРАНА ВЫБОРА
 const OGE_SUBJECTS = { 
     "oge_math": "🧮 Математика ОГЭ",
-    "oge_russian": "🇷🇺 Русский язык ОГЭ", 
-    "oge_english": "🇬🇧 Английский ОГЭ" 
+    "oge_russian": "📚 Русский язык ОГЭ", 
+    "oge_english": "☕ Английский ОГЭ" 
 };
 
 const EGE_SUBJECTS = { 
