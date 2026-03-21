@@ -1,27 +1,49 @@
-import os
-import logging
-import random
-import json
-import re
-from pathlib import Path
-from datetime import datetime
-from typing import Optional
+const API_SERVER_URL = "https://neuro-master.online";
+const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
-import replicate
-from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query
-from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
+vkBridge.send('VKWebAppInit');
 
-# --- ИНИЦИАЛИЗАЦИЯ ---
-load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.7.0")
+// Экраны
+const loadingScreen = document.getElementById('screen-loading');
+const mainMenuScreen = document.getElementById('screen-main-menu');
+const subjectScreen = document.getElementById('screen-subjects');
+const taskScreen = document.getElementById('task-screen');
+const quickResultScreen = document.getElementById('quick-result-screen');
+const testFinishScreen = document.getElementById('test-finish-screen');
+const reviewScreen = document.getElementById('review-screen');
 
-# --- СЛОВАРЬ ТЕМ (ДЛЯ АДМИНКИ И ЛОГОВ) ---
-TOPIC_NAMES = {
-    # Математика
+// Функция для отрисовки формул KaTeX
+function renderMath(elementId) {
+    const el = document.getElementById(elementId);
+    if (el && window.renderMathInElement) {
+        renderMathInElement(el, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true}, 
+                {left: '$', right: '$', display: false},  
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false 
+        });
+    }
+}
+
+let USER_ID = null;
+
+// ТЕ САМЫЕ КНОПКИ С ЭМОДЗИ ДЛЯ ЭКРАНА ВЫБОРА
+const OGE_SUBJECTS = { 
+    "oge_math": "🧮 Математика ОГЭ",
+    "oge_russian": "🇷🇺 Русский язык ОГЭ", 
+    "oge_english": "🇬🇧 Английский ОГЭ" 
+};
+
+const EGE_SUBJECTS = { 
+    "ege_math_profile": "📐 Математика (профиль)",
+    "ege_russian": "🇷🇺 Русский язык ЕГЭ"
+};
+
+const TOPIC_TRANSLATIONS = {
+    // Математика
     "topic_01": "🏠 Практические задачи",
     "topic_02": "🔢 Вычисления и дроби",
     "topic_03": "📏 Единицы измерения",
@@ -33,219 +55,308 @@ TOPIC_NAMES = {
     "topic_08": "🧩 Выражения",
     "topic_09": "🧪 Формулы",
     "topic_10": "🔢 Последовательности",
-    # Английский
+    // Английский
     "grammar": "📚 Грамматика (Англ)",
     "vocabulary": "📝 Лексика (Англ)",
-    # Русский
-    "syntax": "🏗️ Синтаксис",
-    "punctuation": "✍️ Пунктуация",
-    "orthography": "📝 Орфография",
-    "lexis": "📖 Лексика и грамматика"
+    // Русский
+    "syntax": "🏗️ Синтаксис (Зад. 2-3)",
+    "punctuation": "✍️ Пунктуация (Зад. 4-5)",
+    "orthography": "📝 Орфография (Зад. 6-7)",
+    "lexis": "📖 Лексика и грамматика (Зад. 8-9)"
+};
+
+// СОСТОЯНИЕ ТЕСТА
+const TEST_LENGTH = 15;
+let currentTask = null;
+let currentSubjectCode = null;
+let questionNumber = 1;
+let score = 0;
+let mistakes = []; 
+let currentReviewIndex = 0;
+
+function showScreen(screenElement) {
+    document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
+    if(screenElement) screenElement.style.display = 'block';
 }
 
-# РАЗРЕШАЕМ КАРТИНКИ
-if Path("questions").exists():
-    app.mount("/questions", StaticFiles(directory="questions"), name="questions")
-
-# НАСТРОЙКА CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger("NeuroRepetitor")
-
-# --- ЗАГРУЗКА ВСЕХ БАЗ ДАННЫХ ---
-QUESTIONS_DIR = Path("questions")
-DATABASES = {
-    "oge_math": [],
-    "oge_english": [],
-    "oge_russian": []
+// 1. ЗАПУСК
+async function startApp() {
+    try {
+        const userData = await vkBridge.send('VKWebAppGetUserInfo');
+        USER_ID = userData.id;
+        showScreen(loadingScreen);
+        const response = await fetch(`${TEST_API_URL}/check_sub/${USER_ID}`);
+        const subData = await response.json();
+        if (subData.subscription === "active") { showScreen(mainMenuScreen); } 
+        else { loadingScreen.innerHTML = `<p>У вас нет активной подписки.</p>`; }
+    } catch (error) { showScreen(mainMenuScreen); }
 }
 
-def load_database(filename, db_key):
-    filepath = QUESTIONS_DIR / filename
-    if filepath.exists():
-        try:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                DATABASES[db_key] = json.load(f)
-            logger.info(f"✅ База {db_key} загружена: {len(DATABASES[db_key])} шт.")
-        except Exception as e:
-            logger.error(f"❌ Ошибка чтения JSON {filename}: {e}")
-    else:
-        logger.warning(f"⚠️ Файл {filename} не найден!")
+// 2. ВЫБОР ПРЕДМЕТА
+document.querySelectorAll('#screen-main-menu .button').forEach(button => {
+    button.addEventListener('click', () => {
+        const examType = button.dataset.examType;
+        const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
+        subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
+        for (const code in subjects) {
+            const btn = document.createElement('button');
+            btn.className = 'button';
+            btn.innerText = subjects[code];
+            btn.onclick = () => startTest(code);
+            subjectScreen.appendChild(btn);
+        }
+        showScreen(subjectScreen);
+    });
+});
 
-# Загружаем предметы при старте (ТЕПЕРЬ ИХ ТРИ!)
-load_database("oge_math.json", "oge_math")
-load_database("oge_english.json", "oge_english")
-load_database("oge_russian.json", "oge_russian")
+// 3. НАЧАЛО ТЕСТА
+window.startTest = async function(subjectCode) {
+    showScreen(loadingScreen);
+    try {
+        const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ student_id: USER_ID || 12345 })
+        });
+        const payResult = await payResponse.json();
+        if (payResult.success) {
+            currentSubjectCode = subjectCode;
+            questionNumber = 1; score = 0; mistakes = [];
+            getRandomTask();
+        } else { alert("Недостаточно кредитов"); showScreen(mainMenuScreen); }
+    } catch (e) { showScreen(mainMenuScreen); }
+}
 
-def normalize_text(text: str):
-    if not text: return ""
-    text = text.lower().replace(" ", "").replace(",", ".")
-    text = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text)
-    return text.strip()
+async function getRandomTask() {
+    try {
+        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}`);
+        currentTask = await response.json();
+        showTask();
+    } catch (e) { showScreen(mainMenuScreen); }
+}
 
-# --- МОДЕЛИ ДАННЫХ ---
-class CheckRequest(BaseModel):
-    user_answer: str
-    task_id: str  
-    student_id: Optional[int] = None
+// 4. ОТОБРАЖЕНИЕ ЗАДАЧИ
+function showTask() {
+    document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
+    const taskTextElement = document.getElementById('task-text');
+    const imageContainer = document.getElementById('task-image-container');
 
-class ReviewRequest(BaseModel):
-    user_answer: str
-    image_url: Optional[str] = None
-    task_text: Optional[str] = None
-    student_id: Optional[int] = None
-    simplify: bool = False
-
-class PaymentRequest(BaseModel):
-    student_id: Optional[int] = None
-    task_id: Optional[str] = None
-
-# --- МАРШРУТЫ ---
-
-@app.get("/")
-async def root():
-    return {"status": "online", "server_time": datetime.utcnow().isoformat()}
-
-@app.get("/check_sub/{user_id}")
-async def check_subscription(user_id: int):
-    return {"subscription": "active"}
-
-@app.post("/start_test_payment/")
-async def pay_for_test(request: PaymentRequest):
-    student_id = request.student_id
-    ADMIN_IDS = [54451631, 12345678] 
+    let rawText = currentTask.task_text || currentTask.text || "";
     
-    if student_id in ADMIN_IDS:
-        return {"success": True, "new_balance": "unlimited", "message": "Admin bypass"}
-    return {"success": True, "new_balance": 100}
-
-@app.get("/random_task/")
-async def get_random_task(exam_type: str = "oge_math"):
-    db = DATABASES.get(exam_type, [])
-    if not db: 
-        raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста")
-    
-    task = random.choice(db)
-    
-    img_path = task.get("image", "")
-    if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
-        topic = task.get("topic", "topic_01")
-        img_path = f"questions/images_oge_math/{topic}/{img_path}"
-
-    return {
-        "id": task.get("id", "unknown"),
-        "topic": task.get("topic", "Общая тема"),
-        "text": task.get("task_text", task.get("text", "")),
-        "image": img_path,
-        "answer": task.get("answer", "")
+    if (!rawText && currentTask.number) {
+        rawText = "Задача №" + currentTask.number;
     }
 
-@app.post("/check/")
-async def check_answer_smart(request: CheckRequest):
-    task = None
-    for db in DATABASES.values():
-        task = next((t for t in db if str(t.get("id")) == str(request.task_id)), None)
-        if task: break
+    if (rawText) {
+        let cleanText = rawText;
+        
+        // Очистка только для Математики
+        if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'ege_math_profile') {
+            cleanText = cleanText
+                .replace(/Решите уравнения/gi, '')
+                .replace(/Решите уравнение/gi, '')
+                .replace(/^\d+[\.\)]\s*/, '') 
+                .trim();
+            cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
+        }
 
-    if not task: return {"is_correct": False, "error": "Задача не найдена"}
+        // Красивое форматирование для Английского
+        if (currentSubjectCode === 'oge_english') {
+            cleanText = cleanText.replace(/____/g, '<span style="display:inline-block; width: 60px; border-bottom: 2px solid #333; margin: 0 5px;"></span>');
+        }
 
-    correct_answer = str(task.get("answer", ""))
-    is_correct = normalize_text(request.user_answer) == normalize_text(correct_answer)
+        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${cleanText}</div>`;
+        taskTextElement.style.display = 'block';
+    } else {
+        taskTextElement.textContent = "Текст задачи не найден в базе";
+    }
+
+    if (currentTask.image && currentTask.image.length > 5) {
+        const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
+        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
+        imageContainer.style.display = 'block';
+    } else {
+        imageContainer.style.display = 'none';
+    }
     
-    if not is_correct and correct_answer != "---":
-        try:
-            prompt = f"Равны ли эти два ответа на тест (учитывай синонимы, опечатки или математическое равенство): '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
-            output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
-            is_correct = "true" in "".join(output).lower()
-        except Exception as e: 
-            logger.error(f"Ошибка проверки ИИ: {e}")
-            is_correct = False
+    document.getElementById('user-answer').value = '';
+    setTimeout(() => { renderMath('task-text'); }, 100);
+    showScreen(taskScreen);
+}
 
-    with open("user_stats.log", "a", encoding="utf-8") as f:
-        f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
+function normalizeText(str) {
+    if (!str) return "";
+    return str.toString()
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
+        .replace(',', '.')
+        .replace(/\s+/g, '')
+        .trim()
+        .toLowerCase();
+}
 
-    return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
-
-@app.post("/review/")
-async def explain_mistake(request: ReviewRequest):
-    content = request.task_text if request.task_text else "Текст задачи не предоставлен"
+// 5. ПРОВЕРКА ОТВЕТА
+window.submitAnswer = async function() {
+    let rawInput = document.getElementById('user-answer').value;
+    let userAnswer = normalizeText(rawInput);
+    if (!userAnswer) return;
     
-    if request.simplify:
-        prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах' (можно использовать примеры из жизни, если это уместно). "
-                  f"Текст задачи: {content}. "
-                  f"Ответ ученика: {request.user_answer}. "
-                  f"Объясни, почему ответ ученика неверен и какое правило здесь работает.")
-    else:
-        prompt = (f"Напиши подробное пошаговое объяснение или решение задачи. "
-                  f"Текст: {content}. "
-                  f"Ответ ученика: {request.user_answer}. "
-                  f"Укажи, на каком этапе ученик мог допустить ошибку и как правильно рассуждать.")
+    showScreen(loadingScreen);
+    try {
+        const response = await fetch(`${TEST_API_URL}/check/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: userAnswer,
+                task_id: currentTask.id,
+                student_id: USER_ID || 12345
+            })
+        });
+        const result = await response.json();
+        handleQuickResult(result.is_correct, rawInput); 
+    } catch (error) {
+        showScreen(taskScreen); 
+    }
+}
 
-    input_data = {"prompt": prompt}
-    if request.image_url:
-        input_data["image"] = request.image_url
+function handleQuickResult(isCorrect, userAnswer) {
+    const titleEl = document.getElementById('quick-result-title');
+    const normUser = normalizeText(userAnswer);
+    const normCorrect = normalizeText(currentTask.answer);
+    const finalCorrect = isCorrect || (normUser === normCorrect);
 
-    try:
-        output = replicate.run("google/gemini-3-flash", input=input_data)
-        explanation = "".join(output)
-        explanation = explanation.replace("\n", "<br>")
-        return {"explanation": explanation}
-    except Exception as e:
-        logger.error(f"Ошибка ИИ при разборе: {e}")
-        return {"explanation": "Извините, произошла ошибка при генерации разбора. Попробуйте еще раз."}
-
-@app.get("/admin/dashboard", response_class=HTMLResponse)
-async def admin_dashboard(key: str = Query(None)):
-    if key != "super-repetitor-2026":
-        return "<h1>Доступ закрыт</h1>"
+    if (finalCorrect) {
+        titleEl.innerHTML = '<span style="color:green">🎉 Верно!</span>';
+        score++;
+    } else {
+        titleEl.innerHTML = `<span style="color:red; display:block; margin-bottom:10px;">❌ Неверно!</span>
+                             <small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b><br>Твой ввод: <b>${userAnswer}</b></small>`;
+        mistakes.push({ task: currentTask, user_answer: userAnswer });
+    }
     
-    stats = {}
-    if os.path.exists("user_stats.log"):
-        with open("user_stats.log", "r", encoding="utf-8") as f:
-            for line in f:
-                parts = line.strip().split(',')
-                if len(parts) >= 4:
-                    topic_code, res_str = parts[2], parts[3]
-                    topic_name = TOPIC_NAMES.get(topic_code, topic_code)
-                    res = (res_str == "True")
-                    
-                    if topic_name not in stats: stats[topic_name] = {"ok": 0, "err": 0}
-                    if res: stats[topic_name]["ok"] += 1
-                    else: stats[topic_name]["err"] += 1
+    setTimeout(() => { renderMath('quick-result-screen'); }, 100);
+    showScreen(quickResultScreen);
+}
 
-    rows = "".join([f"<tr><td>{t}</td><td>{d['ok']}</td><td>{d['err']}</td><td>{round(d['ok']/(d['ok']+d['err'])*100)}%</td></tr>" for t, d in stats.items()])
+window.nextTask = function() {
+    questionNumber++;
+    if (questionNumber <= TEST_LENGTH) getRandomTask();
+    else showFinishScreen();
+}
+
+// 6. ФИНАЛ И АНАЛИТИКА
+function showFinishScreen() {
+    document.getElementById('final-score').textContent = score;
+    document.getElementById('final-mistakes').textContent = mistakes.length;
     
-    return f"""
-    <html>
-        <head>
-            <title>Админка: Нейрорепетитор</title>
-            <meta charset="utf-8">
-            <style>
-                body {{ font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }}
-                h1 {{ color: #333; }}
-                table {{ border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
-                th, td {{ border: 1px solid #ddd; padding: 12px; text-align: left; }}
-                th {{ background-color: #4CAF50; color: white; }}
-                tr:nth-child(even) {{ background: #f2f2f2; }}
-            </style>
-        </head>
-        <body>
-            <h1>📊 Аналитика пробелов по темам</h1>
-            <table>
-                <tr><th>Тема</th><th>Верно</th><th>Ошибок</th><th>Успешность</th></tr>
-                {rows}
-            </table>
-        </body>
-    </html>
-    """
+    let topicAnalysis = {};
+    mistakes.forEach(m => {
+        let t = m.task.topic || "unknown";
+        topicAnalysis[t] = (topicAnalysis[t] || 0) + 1;
+    });
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    let statsHTML = "";
+    if (mistakes.length > 0) {
+        statsHTML = `<div id="topic-stats" style="margin-top:15px; text-align:left;"><b>🚩 Рекомендуем повторить темы:</b><ul style="padding-left:20px; margin-top:5px;">`;
+        for (let topic in topicAnalysis) { 
+            const prettyName = TOPIC_TRANSLATIONS[topic] || topic;
+            statsHTML += `<li>${prettyName} (${topicAnalysis[topic]} ошиб.)</li>`; 
+        }
+        statsHTML += `</ul></div>`;
+    }
+
+    const oldStats = document.getElementById('topic-stats');
+    if (oldStats) oldStats.remove();
+    
+    const reviewBtnBlock = document.getElementById('review-buttons');
+    if (mistakes.length > 0) {
+        reviewBtnBlock.style.display = 'block';
+        reviewBtnBlock.insertAdjacentHTML('beforebegin', statsHTML);
+    } else { reviewBtnBlock.style.display = 'none'; }
+    
+    showScreen(testFinishScreen);
+}
+
+// 7. РАЗБОР ОШИБОК И ИИ
+window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); }
+
+function loadReviewForCurrentMistake() {
+    const mistake = mistakes[currentReviewIndex];
+    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
+    
+    document.getElementById('review-answers-block').innerHTML = `
+        <p><b>❌ Твой ответ:</b> <span style="color:red;">${mistake.user_answer}</span></p>
+        <p><b>✅ Правильный ответ:</b> <span style="color:green;">${mistake.task.answer || "---"}</span></p>
+    `;
+    
+    const reviewImgContainer = document.getElementById('review-image-container');
+    if (mistake.task.image && mistake.task.image.length > 5) {
+        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
+        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; border-radius: 8px;">`;
+    } else { 
+        let cleanText = mistake.task.task_text || mistake.task.text;
+        if (cleanText) cleanText = cleanText.replace(/____/g, '<span style="display:inline-block; width: 60px; border-bottom: 2px solid #333; margin: 0 5px;"></span>');
+        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9; border-radius:8px; font-size: 14px;">${cleanText}</div>`; 
+    }
+        
+    document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор этой задачи с ИИ</button>`;
+    
+    setTimeout(() => { 
+        renderMath('review-answers-block');
+        renderMath('review-image-container'); 
+    }, 100);
+
+    showScreen(reviewScreen);
+}
+
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    const explanationBox = document.getElementById('review-explanation');
+    explanationBox.innerHTML = simplify ? "<i>⏳ Объясняю просто...</i>" : "<i>⏳ Пишу решение...</i>";
+
+    const taskText = mistake.task.task_text || mistake.task.text || "Текст задачи";
+    let imageUrl = mistake.task.image || null;
+    if (imageUrl && !imageUrl.startsWith('http')) {
+        imageUrl = `https://neuro-master.online/${imageUrl}`; 
+    }
+
+    try {
+        const response = await fetch(`${TEST_API_URL}/review/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_answer: String(mistake.user_answer),
+                image_url: imageUrl, 
+                task_text: taskText,
+                simplify: simplify
+            })
+        });
+        const result = await response.json();
+        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">${result.explanation}</div>
+                                    <button class="button secondary" onclick="runAIExplanation(true)">🍎 Объяснить проще</button>`;
+        
+        setTimeout(() => { renderMath('review-explanation'); }, 100);
+
+    } catch (error) { 
+        explanationBox.innerHTML = `⚠️ Ошибка сервера.`; 
+    }
+}
+
+// 8. ЗУМ КАРТИНОК
+document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('question-image')) {
+        const fullScreen = document.createElement('div');
+        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center;";
+        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%; object-fit:contain;">`;
+        fullScreen.onclick = () => fullScreen.remove();
+        document.body.appendChild(fullScreen);
+    }
+});
+
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake();
+    else showScreen(mainMenuScreen);
+}
+
+window.finishSession = () => showScreen(mainMenuScreen);
+startApp();
