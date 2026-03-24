@@ -83,17 +83,20 @@ function showScreen(screenElement) {
     if(screenElement) screenElement.style.display = 'block';
 }
 
-// 1. ЗАПУСК
-async function startApp() {
-    try {
-        const userData = await vkBridge.send('VKWebAppGetUserInfo');
-        USER_ID = userData.id;
-        showScreen(loadingScreen);
-        const response = await fetch(`${TEST_API_URL}/check_sub/${USER_ID}`);
-        const subData = await response.json();
-        if (subData.subscription === "active") { showScreen(mainMenuScreen); } 
-        else { loadingScreen.innerHTML = `<p>У вас нет активной подписки.</p>`; }
-    } catch (error) { showScreen(mainMenuScreen); }
+// 1. ЗАПУСК (ПУЛЕНЕПРОБИВАЕМЫЙ)
+function startApp() {
+    // 1. Принудительно выключаем кружок загрузки и показываем меню!
+    showScreen(mainMenuScreen);
+
+    // 2. В фоновом режиме пытаемся получить ID пользователя (без блокировки)
+    vkBridge.send('VKWebAppGetUserInfo')
+        .then(userData => {
+            USER_ID = userData.id;
+            console.log("ID пользователя получен:", USER_ID);
+        })
+        .catch(error => {
+            console.log("ВК не отдал профиль, работаем как гость", error);
+        });
 }
 
 // 2. ВЫБОР ПРЕДМЕТА
@@ -364,3 +367,6 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
+// Запуск без ожиданий
+vkBridge.send('VKWebAppInit');
+startApp();
