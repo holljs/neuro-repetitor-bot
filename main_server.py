@@ -40,7 +40,9 @@ TOPIC_NAMES = {
     "syntax": "🏗️ Синтаксис",
     "punctuation": "✍️ Пунктуация",
     "orthography": "📝 Орфография",
-    "lexis": "📖 Лексика и грамматика"
+    "lexis": "📖 Лексика и грамматика",
+    # Химия
+    "chemistry_part1": "🧪 Химия (Часть 1)"
 }
 
 # РАЗРЕШАЕМ КАРТИНКИ
@@ -64,7 +66,8 @@ QUESTIONS_DIR = Path("questions")
 DATABASES = {
     "oge_math": [],
     "oge_english": [],
-    "oge_russian": []
+    "oge_russian": [],
+    "oge_chemistry": []
 }
 
 def load_database(filename, db_key):
@@ -83,6 +86,7 @@ def load_database(filename, db_key):
 load_database("oge_math.json", "oge_math")
 load_database("oge_english.json", "oge_english")
 load_database("oge_russian.json", "oge_russian")
+load_database("oge_chemistry.json", "oge_chemistry")
 
 def normalize_text(text: str):
     if not text: return ""
