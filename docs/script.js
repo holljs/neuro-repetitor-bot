@@ -1,12 +1,6 @@
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
-vkBridge.send('VKWebAppInit').then(() => {
-    startApp(); // Запускаем приложение ТОЛЬКО после того, как ВК дал добро
-}).catch((error) => {
-    startApp(); // На всякий случай запускаем, даже если произошла ошибка
-});
-
 // Экраны
 const loadingScreen = document.getElementById('screen-loading');
 const mainMenuScreen = document.getElementById('screen-main-menu');
@@ -67,7 +61,7 @@ const TOPIC_TRANSLATIONS = {
     "syntax": "🏗️ Синтаксис (Зад. 2-3)",
     "punctuation": "✍️ Пунктуация (Зад. 4-5)",
     "orthography": "📝 Орфография (Зад. 6-7)",
-    "lexis": "📖 Лексика и грамматика (Зад. 8-9)"
+    "lexis": "📖 Лексика и грамматика (Зад. 8-9)",
     "chemistry_part1": "🧪 Химия (Часть 1)"
 };
 
