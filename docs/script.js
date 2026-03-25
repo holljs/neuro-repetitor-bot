@@ -38,7 +38,8 @@ let USER_ID = null;
 const OGE_SUBJECTS = { 
     "oge_math": "🧮 Математика ОГЭ",
     "oge_russian": "📚 Русский язык ОГЭ", 
-    "oge_english": "☕ Английский ОГЭ" 
+    "oge_english": "☕ Английский ОГЭ",
+    "oge_chemistry": "🧪 Химия ОГЭ"  // <--- Добавили химию!
 };
 
 const EGE_SUBJECTS = { 
@@ -67,6 +68,7 @@ const TOPIC_TRANSLATIONS = {
     "punctuation": "✍️ Пунктуация (Зад. 4-5)",
     "orthography": "📝 Орфография (Зад. 6-7)",
     "lexis": "📖 Лексика и грамматика (Зад. 8-9)"
+    "chemistry_part1": "🧪 Химия (Часть 1)"
 };
 
 // СОСТОЯНИЕ ТЕСТА
