@@ -33,7 +33,8 @@ const OGE_SUBJECTS = {
     "oge_math": "🧮 Математика ОГЭ",
     "oge_russian": "📚 Русский язык ОГЭ", 
     "oge_english": "☕ Английский ОГЭ",
-    "oge_chemistry": "🧪 Химия ОГЭ"  // <--- Добавили химию!
+    "oge_chemistry": "🧪 Химия ОГЭ",
+    "oge_physics": "⚡ Физика ОГЭ"
 };
 
 const EGE_SUBJECTS = { 
@@ -62,7 +63,8 @@ const TOPIC_TRANSLATIONS = {
     "punctuation": "✍️ Пунктуация (Зад. 4-5)",
     "orthography": "📝 Орфография (Зад. 6-7)",
     "lexis": "📖 Лексика и грамматика (Зад. 8-9)",
-    "chemistry_part1": "🧪 Химия (Часть 1)"
+    "chemistry_part1": "🧪 Химия (Часть 1)",
+    "physics_part1": "⚡ Физика (Часть 1)"
 };
 
 // СОСТОЯНИЕ ТЕСТА
