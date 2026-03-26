@@ -145,7 +145,9 @@ async def get_random_task(exam_type: str = "oge_math"):
     img_path = task.get("image", "")
     if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
         topic = task.get("topic", "topic_01")
-        img_path = f"questions/images_oge_math/{topic}/{img_path}"
+        # Проверяем ID задачи: если там есть 'p' (physics), идем в папку физики
+        subject_folder = "images_oge_physics" if "p" in str(task.get("id", "")) else "images_oge_math"
+        img_path = f"questions/{subject_folder}/{topic}/{img_path}"
 
     return {
         "id": task.get("id", "unknown"),
