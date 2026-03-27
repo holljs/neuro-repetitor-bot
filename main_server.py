@@ -144,24 +144,27 @@ async def get_random_task(exam_type: str = "oge_math"):
     
    img_path = task.get("image", "")
     if img_path and not img_path.startswith("http"):
-        # Очищаем имя файла (берём только само название картинки)
+        # 1. Берем только чистое имя файла (например, task_p100.jpg)
         clean_name = img_path.split('/')[-1]
         
-        # Определяем ID и тему
         task_id = str(task.get("id", "")).lower()
         topic = task.get("topic", "topic_01")
-        
+
+        # 2. Определяем папку предмета
         if "p" in task_id:
-            # ФИЗИКА: файлы лежат в куче в images_oge_physics
-            img_path = f"questions/images_oge_physics/{clean_name}"
+            # Физика (без подпапок)
+            subject_path = f"images_oge_physics/{clean_name}"
         elif "c" in task_id:
-            # ХИМИЯ: файлы лежат в куче в images_oge_chemistry
-            img_path = f"questions/images_oge_chemistry/{clean_name}"
+            # Химия (без подпапок)
+            subject_path = f"images_oge_chemistry/{clean_name}"
         else:
-            # МАТЕМАТИКА: возвращаем папку темы (topic_01, topic_02 и т.д.)
-            img_path = f"questions/images_oge_math/{topic}/{clean_name}"
-    
-    # Сразу возвращаем результат
+            # Математика (с топиком)
+            subject_path = f"images_oge_math/{topic}/{clean_name}"
+
+        # 3. Собираем финальный путь БЕЗ дублирования 'questions'
+        img_path = f"questions/{subject_path}"
+
+    # СРАЗУ ВОЗВРАЩАЕМ
     return {
         "id": task.get("id", "unknown"),
         "topic": task.get("topic", "Общая тема"),
