@@ -149,11 +149,13 @@ async def get_random_task(exam_type: str = "oge_math"):
 
         # САМАЯ НАДЕЖНАЯ ПРОВЕРКА ПО ТИПУ ЭКЗАМЕНА
         if exam_type == "oge_physics":
+            # Убираем тему, так как в физике всё в одной папке
             img_path = f"questions/images_oge_physics/{clean_name}"
         elif exam_type == "oge_chemistry":
+            # Убираем тему для химии
             img_path = f"questions/images_oge_chemistry/{clean_name}"
         else:
-            # Для математики (oge_math) и всего остального
+            # Для математики оставляем папку темы
             img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
     return {
