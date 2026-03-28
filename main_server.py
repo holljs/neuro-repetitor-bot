@@ -141,27 +141,21 @@ async def get_random_task(exam_type: str = "oge_math"):
         raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста")
     
     task = random.choice(db)
+    img_path = task.get("image", "")
     
-  img_path = task.get("image", "")
     if img_path and not img_path.startswith("http"):
         clean_name = img_path.split('/')[-1]
-        
-        task_id = str(task.get("id", "")).lower()
         topic = task.get("topic", "topic_01")
 
-        # 1. Если это ФИЗИКА
-        if task_id.startswith("p"):
+        # САМАЯ НАДЕЖНАЯ ПРОВЕРКА ПО ТИПУ ЭКЗАМЕНА
+        if exam_type == "oge_physics":
             img_path = f"questions/images_oge_physics/{clean_name}"
-        
-        # 2. Если это ХИМИЯ
-        elif task_id.startswith("c"):
+        elif exam_type == "oge_chemistry":
             img_path = f"questions/images_oge_chemistry/{clean_name}"
-        
-        # 3. Всё остальное — это МАТЕМАТИКА
         else:
+            # Для математики (oge_math) и всего остального
             img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
-    # --- ВОТ ЭТОТ БЛОК ОБЯЗАТЕЛЬНО ДОЛЖЕН БЫТЬ ТУТ! ---
     return {
         "id": task.get("id", "unknown"),
         "topic": task.get("topic", "Общая тема"),
