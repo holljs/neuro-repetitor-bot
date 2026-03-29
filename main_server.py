@@ -4,6 +4,8 @@ import random
 import json
 import re
 import sqlite3
+import aiohttp  
+import asyncio
 from pathlib import Path
 from datetime import datetime
 from typing import Optional
@@ -44,6 +46,35 @@ app.add_middleware(
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
+
+# --- ФУНКЦИЯ ДЛЯ РАССЫЛКИ ВК ---
+async def send_vk_message(user_id: str, message: str):
+    """Отправляет сообщение пользователю ВК от имени группы"""
+    vk_token = os.getenv("VK_TOKEN")
+    if not vk_token:
+        logger.error("❌ VK_TOKEN не найден в .env")
+        return False
+        
+    url = "https://api.vk.com/method/messages.send"
+    params = {
+        "user_id": user_id,
+        "message": message,
+        "random_id": random.randint(1, 2147483647),
+        "v": "5.131",
+        "access_token": vk_token
+    }
+    
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, data=params) as resp:
+                result = await resp.json()
+                if "error" in result:
+                    logger.error(f"❌ Ошибка отправки ВК: {result['error']['error_msg']}")
+                    return False
+                return True
+    except Exception as e:
+        logger.error(f"❌ Ошибка соединения с ВК: {e}")
+        return False
 
 # --- БАЗЫ ДАННЫХ ВОПРОСОВ ---
 QUESTIONS_DIR = Path("questions")
@@ -238,7 +269,7 @@ async def explain_mistake(request: ReviewRequest):
     except Exception:
         return {"explanation": "Ошибка при генерации разбора."}
 
-# --- АДМИНКА (НАЧИСЛЕНИЕ ВК КРЕДИТОВ ЧЕРЕЗ БРАУЗЕР) ---
+# --- АДМИНКА (НАЧИСЛЕНИЕ ВК КРЕДИТОВ И РАССЫЛКА ЧЕРЕЗ БРАУЗЕР) ---
 @app.get("/admin/give")
 async def admin_give_credits(target_id: str, amount: int, key: str = Query(None)):
     if key != "super-repetitor-2026":
@@ -247,11 +278,37 @@ async def admin_give_credits(target_id: str, amount: int, key: str = Query(None)
     init_vk_user(target_id) # Убеждаемся, что юзер есть в базе
     new_balance = change_vk_credits(target_id, amount)
     
+    # Отправляем уведомление в личку ВК
+    await send_vk_message(target_id, f"🎁 Подарок от администратора!\nНа ваш баланс зачислено: {amount} кр.\nТекущий баланс: {new_balance} кр.")
+    
     return {
         "success": True, 
         "message": f"Пользователю ВК ({target_id}) начислено {amount} кр.",
         "new_balance": new_balance
     }
+
+@app.get("/admin/sendall_vk")
+async def admin_sendall_vk(text: str, key: str = Query(None)):
+    if key != "super-repetitor-2026":
+        return {"error": "Доступ закрыт"}
+        
+    conn = sqlite3.connect("vk_users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id FROM users")
+    users = cursor.fetchall()
+    conn.close()
+    
+    count = 0
+    for user in users:
+        vk_id = user[0]
+        # Рассылаем всем новость
+        success = await send_vk_message(vk_id, f"📢 Новость Нейро-Репетитора:\n\n{text}")
+        if success:
+            count += 1
+        
+        await asyncio.sleep(0.1)  # <--- ВОТ ЭТА ПАУЗА (100 миллисекунд)
+            
+    return {"success": True, "message": f"Рассылка завершена. Доставлено: {count} пользователям."}
 
 if __name__ == "__main__":
     import uvicorn
