@@ -17,9 +17,9 @@ from fastapi.responses import HTMLResponse
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="1.7.0")
+app = FastAPI(title="Neuro Repetitor API", version="2.0.0")
 
-# --- СЛОВАРЬ ТЕМ (ДЛЯ АДМИНКИ И ЛОГОВ) ---
+# --- СЛОВАРЬ ТЕМ ---
 TOPIC_NAMES = {
     # Математика
     "topic_01": "🏠 Практические задачи",
@@ -42,9 +42,11 @@ TOPIC_NAMES = {
     "orthography": "📝 Орфография",
     "lexis": "📖 Лексика и грамматика",
     # Химия
-    "chemistry_part1": "🧪 Химия (Часть 1)",  # <--- ЗАПЯТАЯ!
+    "chemistry_part1": "🧪 Химия (Часть 1)",
     # Физика
-    "physics_part1": "⚡ Физика (Часть 1)"
+    "physics_part1": "⚡ Физика (Часть 1)",
+    # География
+    "geography_part1": "🌍 География (Часть 1)"
 }
 
 # РАЗРЕШАЕМ КАРТИНКИ
@@ -63,14 +65,17 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
-# --- ЗАГРУЗКА ВСЕХ БАЗ ДАННЫХ ---
+# --- БАЗЫ ДАННЫХ И ПРОГРЕСС ---
 QUESTIONS_DIR = Path("questions")
+PROGRESS_FILE = Path("user_progress.json")
+
 DATABASES = {
     "oge_math": [],
     "oge_english": [],
     "oge_russian": [],
     "oge_chemistry": [],
-    "oge_physics": []
+    "oge_physics": [],
+    "oge_geography": []  # Добавили Географию
 }
 
 def load_database(filename, db_key):
@@ -85,12 +90,36 @@ def load_database(filename, db_key):
     else:
         logger.warning(f"⚠️ Файл {filename} не найден!")
 
-# Загружаем предметы при старте (ТЕПЕРЬ ИХ ТРИ!)
+# Загружаем все предметы
 load_database("oge_math.json", "oge_math")
 load_database("oge_english.json", "oge_english")
 load_database("oge_russian.json", "oge_russian")
 load_database("oge_chemistry.json", "oge_chemistry")
 load_database("oge_physics.json", "oge_physics")
+load_database("oge_geography.json", "oge_geography") # Загрузка базы Географии
+
+# --- ЛОГИКА АНТИ-ПОВТОРА ---
+def get_user_progress(user_id: str):
+    if PROGRESS_FILE.exists():
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get(str(user_id), [])
+    return []
+
+def save_user_progress(user_id: str, task_id: str):
+    data = {}
+    if PROGRESS_FILE.exists():
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    
+    uid = str(user_id)
+    if uid not in data:
+        data[uid] = []
+    
+    if task_id not in data[uid]:
+        data[uid].append(task_id)
+        with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
 def normalize_text(text: str):
     if not text: return ""
@@ -102,18 +131,19 @@ def normalize_text(text: str):
 class CheckRequest(BaseModel):
     user_answer: str
     task_id: str  
-    student_id: Optional[int] = None
+    student_id: Optional[str] = None
 
 class ReviewRequest(BaseModel):
     user_answer: str
     image_url: Optional[str] = None
     task_text: Optional[str] = None
-    student_id: Optional[int] = None
+    student_id: Optional[str] = None
     simplify: bool = False
 
 class PaymentRequest(BaseModel):
-    student_id: Optional[int] = None
+    student_id: Optional[str] = None
     task_id: Optional[str] = None
+    test_mode: str = "standard" # Добавили выбор режима (standard / pro)
 
 # --- МАРШРУТЫ ---
 
@@ -128,34 +158,52 @@ async def check_subscription(user_id: int):
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = request.student_id
-    ADMIN_IDS = [54451631, 12345678] 
+    test_mode = request.test_mode
+    ADMIN_IDS = ["54451631", "12345678"] 
     
-    if student_id in ADMIN_IDS:
-        return {"success": True, "new_balance": "unlimited", "message": "Admin bypass"}
-    return {"success": True, "new_balance": 100}
+    # Логика стоимости: 30р за стандарт, 40р за профи (с подробными объяснениями)
+    cost = 40 if test_mode == "pro" else 30
+    
+    if str(student_id) in ADMIN_IDS:
+        return {"success": True, "new_balance": "unlimited", "message": "Admin bypass", "cost": 0}
+    
+    # Здесь в будущем будет списываться стоимость из БД пользователя
+    return {"success": True, "new_balance": 100 - cost, "cost": cost}
 
 @app.get("/random_task/")
-async def get_random_task(exam_type: str = "oge_math"):
+async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"):
     db = DATABASES.get(exam_type, [])
     if not db: 
         raise HTTPException(status_code=500, detail=f"База для предмета {exam_type} пуста")
     
-    task = random.choice(db)
+    # Фильтруем решенные задачи
+    solved_ids = get_user_progress(student_id)
+    available_tasks = [t for t in db if str(t.get("id")) not in solved_ids]
+    
+    if not available_tasks:
+        return {
+            "id": "done",
+            "topic": "done",
+            "text": "🎉 Поздравляем! Ты решил все доступные задачи по этому предмету. Скоро мы добавим новые!",
+            "image": "",
+            "answer": "---",
+            "done": True
+        }
+    
+    task = random.choice(available_tasks)
     img_path = task.get("image", "")
     
     if img_path and not img_path.startswith("http"):
         clean_name = img_path.split('/')[-1]
         topic = task.get("topic", "topic_01")
 
-        # САМАЯ НАДЕЖНАЯ ПРОВЕРКА ПО ТИПУ ЭКЗАМЕНА
         if exam_type == "oge_physics":
-            # Убираем тему, так как в физике всё в одной папке
             img_path = f"questions/images_oge_physics/{clean_name}"
         elif exam_type == "oge_chemistry":
-            # Убираем тему для химии
             img_path = f"questions/images_oge_chemistry/{clean_name}"
+        elif exam_type == "oge_geography": # Путь для Географии
+            img_path = f"questions/images_oge_geography/{clean_name}"
         else:
-            # Для математики оставляем папку темы
             img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
     return {
@@ -186,6 +234,10 @@ async def check_answer_smart(request: CheckRequest):
         except Exception as e: 
             logger.error(f"Ошибка проверки ИИ: {e}")
             is_correct = False
+
+    # Если ответ верный, записываем задачу в "решенные", чтобы она больше не выпадала
+    if is_correct and request.student_id and str(request.student_id) != "guest":
+        save_user_progress(request.student_id, request.task_id)
 
     with open("user_stats.log", "a", encoding="utf-8") as f:
         f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct}\n")
