@@ -74,23 +74,47 @@ async def get_user(user_id: int):
     conn.close()
     return user
 
-async def save_user(user_id: int, name: str, credits: int = 0):
+async def save_user(user_id: int, name: str):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
-    cursor.execute("""
-    INSERT OR REPLACE INTO users (user_id, name, credits, last_activity)
-    VALUES (?, ?, ?, datetime('now'))
-    """, (user_id, name, credits))
+    # Проверяем, есть ли пользователь. Если нет - даем приветственные 5 кредитов
+    cursor.execute("SELECT * FROM users WHERE user_id=?", (user_id,))
+    if not cursor.fetchone():
+        cursor.execute("""
+        INSERT INTO users (user_id, name, credits, last_activity)
+        VALUES (?, ?, ?, datetime('now'))
+        """, (user_id, name, 5)) # <--- ВОТ ЗДЕСЬ СТАВИМ 5
+    else:
+        cursor.execute("""
+        UPDATE users SET name=?, last_activity=datetime('now') WHERE user_id=?
+        """, (name, user_id))
     conn.commit()
     conn.close()
 
+async def deduct_credits(user_id: int, amount: int):
+    """Списывает кредиты. Возвращает True, если успешно, False - если не хватает."""
+    if user_id == ADMIN_ID: return True # Админу всё бесплатно
+    
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT credits FROM users WHERE user_id=?", (user_id,))
+    user = cursor.fetchone()
+    if not user or user[0] < amount:
+        conn.close()
+        return False
+        
+    cursor.execute("UPDATE users SET credits = credits - ? WHERE user_id = ?", (amount, user_id))
+    conn.commit()
+    conn.close()
+    return True
+
 # --- ВЗАИМОДЕЙСТВИЕ С СЕРВЕРОМ (API) ---
 
-async def fetch_random_task(exam_type: str):
-    """Получает случайную задачу от нашего FastAPI сервера"""
+async def fetch_random_task(exam_type: str, student_id: int):
+    """Получает случайную задачу от нашего FastAPI сервера (с учетом анти-повтора)"""
     async with aiohttp.ClientSession() as session:
         try:
-            url = f"{SERVER_URL}:{SERVER_PORT}/random_task/?exam_type={exam_type}"
+            url = f"{SERVER_URL}:{SERVER_PORT}/random_task/?exam_type={exam_type}&student_id={student_id}"
             async with session.get(url, timeout=10) as response:
                 if response.status == 200:
                     return await response.json()
@@ -100,12 +124,11 @@ async def fetch_random_task(exam_type: str):
             return None
 
 async def send_check_to_server(user_answer: str, task_id: str, student_id: int):
-    """Отправка ответа на проверку (теперь серверу нужен только task_id и ответ)"""
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(
                 f"{SERVER_URL}:{SERVER_PORT}/check/",
-                json={"user_answer": user_answer, "task_id": task_id, "student_id": student_id},
+                json={"user_answer": user_answer, "task_id": task_id, "student_id": str(student_id)},
                 timeout=60
             ) as response:
                 return await response.json()
@@ -114,7 +137,6 @@ async def send_check_to_server(user_answer: str, task_id: str, student_id: int):
             return {"is_correct": False, "error": str(e)}
 
 async def send_to_server_review(user_answer: str, image_url: str, task_text: str, student_id: int, simplify: bool = False):
-    """Отправка запроса на сервер для разбора ошибок"""
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(
@@ -123,7 +145,7 @@ async def send_to_server_review(user_answer: str, image_url: str, task_text: str
                     "user_answer": user_answer, 
                     "image_url": image_url, 
                     "task_text": task_text, 
-                    "student_id": student_id,
+                    "student_id": str(student_id),
                     "simplify": simplify
                 },
                 timeout=120
@@ -163,38 +185,71 @@ async def choose_subject_menu(message: types.Message, state: FSMContext):
     builder.button(text="🧪 Химия", callback_data="subj_oge_chemistry")
     builder.button(text="🇷🇺 Русский язык", callback_data="subj_oge_russian")
     builder.button(text="🇬🇧 Англ. язык", callback_data="subj_oge_english")
-    builder.adjust(2) # По 2 кнопки в ряд
+    builder.button(text="🌍 География", callback_data="subj_oge_geography") # Добавили Географию
+    builder.adjust(2) 
     
     await message.answer("📚 Выбери предмет для тренировки:", reply_markup=builder.as_markup())
 
 @dp.callback_query(F.data.startswith("subj_"))
-async def start_test(callback: CallbackQuery, state: FSMContext):
+async def choose_tariff_menu(callback: CallbackQuery, state: FSMContext):
     exam_type = callback.data.replace("subj_", "")
-    await state.update_data(exam_type=exam_type, current_question_num=1, mistakes=[], score=0)
+    await state.update_data(exam_type=exam_type)
     
-    await callback.message.delete()
-    await send_next_task(callback.message, state)
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🟢 Стандарт (3 кр.)", callback_data="tariff_standard")
+    builder.button(text="🔥 Профи (4 кр.)", callback_data="tariff_pro")
+    builder.adjust(1)
+    
+    await callback.message.edit_text(
+        "Выбери формат тренировки:\n\n"
+        "<b>🟢 Стандарт (3 кредита)</b> — обычные разборы ошибок.\n"
+        "<b>🔥 Профи (4 кредита)</b> — разборы ошибок максимально просто, 'на пальцах'.", 
+        reply_markup=builder.as_markup()
+    )
 
-async def send_next_task(message: types.Message, state: FSMContext):
+@dp.callback_query(F.data.startswith("tariff_"))
+async def start_test(callback: CallbackQuery, state: FSMContext):
+    test_mode = callback.data.replace("tariff_", "")
+    cost = 4 if test_mode == "pro" else 3
+    
+    # Списываем кредиты перед началом теста
+    success = await deduct_credits(callback.from_user.id, cost)
+    if not success:
+        await callback.answer("❌ На балансе недостаточно кредитов! Пополните баланс.", show_alert=True)
+        return
+
+    await state.update_data(test_mode=test_mode, current_question_num=1, mistakes=[], score=0)
+    await callback.message.delete()
+    
+    # Передаем user_id напрямую
+    await send_next_task(callback.message, state, callback.from_user.id)
+
+async def send_next_task(message: types.Message, state: FSMContext, user_id: int):
     data = await state.get_data()
     exam_type = data.get("exam_type", "oge_math")
     current_question_num = data.get("current_question_num", 1)
 
-    loading_msg = await message.answer("⏳ Подбираю интересную задачу...")
+    loading_msg = await bot.send_message(user_id, "⏳ Подбираю интересную задачу...")
     
-    # 1. Запрашиваем задачу у сервера
-    task_data = await fetch_random_task(exam_type)
+    # 1. Запрашиваем задачу у сервера (с учетом student_id)
+    task_data = await fetch_random_task(exam_type, user_id)
     await loading_msg.delete()
     
     if not task_data:
-        await message.answer("😕 Не удалось получить задачу от сервера. Попробуй позже.")
+        await bot.send_message(user_id, "😕 Не удалось получить задачу от сервера. Попробуй позже.")
+        return
+        
+    # Если сервер сообщил, что задачи закончились
+    if task_data.get("done"):
+        await bot.send_message(user_id, task_data.get("text", "Все задачи решены!"))
+        await state.set_state(None)
         return
 
     task_id = task_data.get("id", "N/A")
     task_text = task_data.get("text", "Без текста")
     image_path_str = task_data.get("image", "")
 
-    # 2. Готовим картинку (если она есть)
+    # 2. Готовим картинку
     image_base64 = None
     photo = None
     
@@ -205,7 +260,7 @@ async def send_next_task(message: types.Message, state: FSMContext):
                 image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
             photo = FSInputFile(image_path)
 
-    # 3. Сохраняем данные для проверки ответа
+    # 3. Сохраняем данные
     await state.update_data(current_task={
         "task_id": task_id,
         "task_text": task_text,
@@ -213,13 +268,13 @@ async def send_next_task(message: types.Message, state: FSMContext):
         "image_path": image_path_str
     })
 
-    # 4. Отправляем задачу пользователю
+    # 4. Отправляем задачу
     msg_text = f"📝 <b>Вопрос {current_question_num} из {TEST_LENGTH}</b>\n\n{task_text}\n\n<i>Введите ваш ответ:</i>"
     
     if photo:
-        await message.answer_photo(photo=photo, caption=msg_text)
+        await bot.send_photo(chat_id=user_id, photo=photo, caption=msg_text)
     else:
-        await message.answer(msg_text)
+        await bot.send_message(chat_id=user_id, text=msg_text)
     
     await state.set_state(TaskStates.waiting_for_answer)
 
@@ -235,7 +290,6 @@ async def process_answer(message: types.Message, state: FSMContext):
 
     loading_msg = await message.answer("🤔 Проверяю...")
     
-    # Отправляем ответ на проверку нашему серверу
     result = await send_check_to_server(
         user_answer=user_answer,
         task_id=current_task["task_id"],
@@ -246,14 +300,8 @@ async def process_answer(message: types.Message, state: FSMContext):
     if result.get("is_correct", False):
         await message.answer("✅ <b>Верно!</b>")
         score += 1
-        # Начисляем кредиты
-        conn = sqlite3.connect("users.db")
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET credits = credits + 1 WHERE user_id = ?", (message.from_user.id,))
-        conn.commit()
-        conn.close()
+        # Больше не начисляем кредиты за правильный ответ (новая экономика)
     else:
-        correct_ans = result.get('correct_was', 'Неизвестно')
         await message.answer(f"❌ <b>Неверно.</b> Запомнил твою ошибку!")
         mistakes.append({
             "task": current_task,
@@ -262,11 +310,9 @@ async def process_answer(message: types.Message, state: FSMContext):
 
     current_question_num += 1
 
-    # Следующий вопрос или конец теста
     if current_question_num <= TEST_LENGTH:
         await state.update_data(current_question_num=current_question_num, mistakes=mistakes, score=score)
-        # Так как send_next_task принимает message, передаем его
-        await send_next_task(message, state) 
+        await send_next_task(message, state, message.from_user.id) 
     else:
         result_text = f"🏁 <b>Тест завершен!</b>\n\nТвой результат: {score} из {TEST_LENGTH}.\nОшибок: {len(mistakes)}."
         
@@ -294,16 +340,17 @@ async def start_review_process(callback: CallbackQuery, state: FSMContext):
 
     await callback.message.answer("Начинаем разбор полетов! 🛠\nСейчас нейросеть объяснит каждую твою ошибку.")
     await state.update_data(current_review_index=0)
-    await show_next_mistake_review(callback.message, state)
+    await show_next_mistake_review(callback.message, state, callback.from_user.id)
     await callback.answer()
 
-async def show_next_mistake_review(message: types.Message, state: FSMContext):
+async def show_next_mistake_review(message: types.Message, state: FSMContext, user_id: int):
     data = await state.get_data()
     mistakes = data.get("mistakes", [])
     idx = data.get("current_review_index", 0)
+    test_mode = data.get("test_mode", "standard") # Узнаем тариф
     
     if idx >= len(mistakes):
-        await message.answer("Все ошибки разобраны! 💪\nЖми '📝 Решить задачу', чтобы начать новый тест.")
+        await bot.send_message(user_id, "Все ошибки разобраны! 💪\nЖми '📝 Решить задачу', чтобы начать новый тест.")
         await state.update_data(mistakes=[], current_review_index=0)
         return
         
@@ -316,15 +363,15 @@ async def show_next_mistake_review(message: types.Message, state: FSMContext):
     
     if task_info["image_path"] and Path(task_info["image_path"]).exists():
         photo = FSInputFile(task_info["image_path"])
-        loading_msg = await message.answer_photo(photo=photo, caption=msg_text)
+        loading_msg = await bot.send_photo(chat_id=user_id, photo=photo, caption=msg_text)
     else:
-        loading_msg = await message.answer(msg_text)
+        loading_msg = await bot.send_message(chat_id=user_id, text=msg_text)
     
     result = await send_to_server_review(
         user_answer=user_answer,
         image_url=task_info.get("image_base64"),
         task_text=task_info["task_text"],
-        student_id=message.from_user.id,
+        student_id=user_id,
         simplify=False
     )
     
@@ -332,18 +379,20 @@ async def show_next_mistake_review(message: types.Message, state: FSMContext):
     explanation_text = f"📚 <b>Подробный разбор:</b>\n{result.get('explanation', 'Нет объяснения.')}"
     
     builder = InlineKeyboardBuilder()
-    builder.button(text="Объясни проще 🍎", callback_data="simplify_review")
+    # Кнопка "упростить" появляется ТОЛЬКО для тарифа ПРОФИ
+    if test_mode == "pro":
+        builder.button(text="Объясни проще 🍎", callback_data="simplify_review")
     builder.button(text="Следующая ошибка ➡️", callback_data="next_review")
     builder.adjust(1) 
     
-    await message.answer(explanation_text, reply_markup=builder.as_markup())
+    await bot.send_message(chat_id=user_id, text=explanation_text, reply_markup=builder.as_markup())
 
 @dp.callback_query(F.data == "next_review")
 async def process_next_review(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     idx = data.get("current_review_index", 0)
     await state.update_data(current_review_index=idx + 1)
-    await show_next_mistake_review(callback.message, state)
+    await show_next_mistake_review(callback.message, state, callback.from_user.id)
     await callback.answer()
 
 @dp.callback_query(F.data == "simplify_review")
@@ -383,7 +432,7 @@ async def user_stats(message: types.Message):
         await message.answer("🤔 Вы еще не решали ни одной задачи!")
         return
     
-    response_text = f"📊 <b>Ваша статистика</b>:\n- Баланс кредитов: {user[2]}\n- Последняя активность: {user[3]}"
+    response_text = f"📊 <b>Ваша статистика</b>:\n- Баланс кредитов: <b>{user[2]}</b> кр.\n- Последняя активность: {user[3]}"
     await message.answer(response_text)
 
 @dp.message(Command("reset"))
@@ -393,6 +442,58 @@ async def cmd_reset(message: types.Message, state: FSMContext):
         return
     await state.clear()
     await message.answer("✅ Состояние бота сброшено")
+
+@dp.message(Command("give"))
+async def cmd_give(message: types.Message):
+    # Проверка, что команду вызвал админ
+    if message.from_user.id != ADMIN_ID:
+        return
+        
+    try:
+        # Разбиваем сообщение: /give 12345678 100
+        args = message.text.split()
+        target_id = int(args[1])
+        amount = int(args[2])
+        
+        conn = sqlite3.connect("users.db")
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id = ?", (amount, target_id))
+        conn.commit()
+        conn.close()
+        
+        await message.answer(f"✅ Успешно! Начислено {amount} кр. пользователю {target_id}")
+        # Отправляем радостное сообщение самому пользователю
+        await bot.send_message(target_id, f"🎁 <b>Подарок от администратора!</b>\nНа ваш баланс зачислено: {amount} кр.")
+    except Exception as e:
+        await message.answer("❌ Ошибка. Правильный формат:\n`/give 123456789 50`")
+
+@dp.message(Command("sendall"))
+async def cmd_sendall(message: types.Message):
+    if message.from_user.id != ADMIN_ID:
+        return
+        
+    text_to_send = message.text.replace("/sendall", "").strip()
+    if not text_to_send:
+        await message.answer("❌ Напишите текст для рассылки. Пример:\n`/sendall Всем привет, мы добавили географию!`")
+        return
+        
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id FROM users")
+    users = cursor.fetchall()
+    conn.close()
+    
+    count = 0
+    await message.answer("⏳ Начинаю рассылку...")
+    for user in users:
+        try:
+            await bot.send_message(user[0], f"📢 <b>Новость:</b>\n\n{text_to_send}")
+            count += 1
+            await asyncio.sleep(0.1) # Пауза, чтобы Телеграм не заблокировал бота за спам
+        except Exception:
+            pass # Если юзер заблокировал бота, просто пропускаем
+            
+    await message.answer(f"✅ Рассылка завершена! Доставлено: {count} пользователям.")
 
 # --- ЗАПУСК ---
 
