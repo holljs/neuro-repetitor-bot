@@ -15,9 +15,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const isMobileVK = vkPlatform !== 'desktop_web';
 
-// Функция для отрисовки формул KaTeX
-function renderMath(elementId) {
-// ... дальше идет твой обычный код ...
+let USER_ID = null;
 
 // Функция для отрисовки формул KaTeX
 function renderMath(elementId) {
@@ -35,8 +33,6 @@ function renderMath(elementId) {
     }
 }
 
-let USER_ID = null;
-
 // ТЕ САМЫЕ КНОПКИ С ЭМОДЗИ ДЛЯ ЭКРАНА ВЫБОРА
 const OGE_SUBJECTS = { 
     "oge_math": "🧮 Математика ОГЭ",
@@ -44,7 +40,7 @@ const OGE_SUBJECTS = {
     "oge_english": "☕ Английский ОГЭ",
     "oge_chemistry": "🧪 Химия ОГЭ",
     "oge_physics": "⚡ Физика ОГЭ",
-    "oge_geography": "🌍 География ОГЭ" // <--- Добавили нашу новую базу!
+    "oge_geography": "🌍 География ОГЭ"
 };
 
 const EGE_SUBJECTS = { 
@@ -102,7 +98,7 @@ function startApp() {
             USER_ID = userData.id;
             console.log("ID пользователя получен:", USER_ID);
             
-            // СРАЗУ ПОСЛЕ ЭТОГО ПРОСИМ РАЗРЕШИТЬ СООБЩЕНИЯ (Впиши ID своей группы!)
+            // СРАЗУ ПОСЛЕ ЭТОГО ПРОСИМ РАЗРЕШИТЬ СООБЩЕНИЯ
             vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
                 .then(data => {
                     console.log("Разрешение на сообщения получено!", data);
@@ -127,7 +123,6 @@ document.querySelectorAll('#screen-main-menu .button').forEach(button => {
             const btn = document.createElement('button');
             btn.className = 'button';
             btn.innerText = subjects[code];
-            // Теперь кнопка ведет не сразу в тест, а на выбор тарифа
             btn.onclick = () => selectTariff(code, subjects[code]); 
             subjectScreen.appendChild(btn);
         }
@@ -164,7 +159,7 @@ window.startTest = async function(subjectCode, mode) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 student_id: USER_ID || 'guest', 
-                test_mode: currentTestMode // Передаем на сервер, чтобы он знал, сколько списать
+                test_mode: currentTestMode
             })
         });
         const payResult = await payResponse.json();
@@ -182,13 +177,11 @@ window.startTest = async function(subjectCode, mode) {
 
 async function getRandomTask() {
     try {
-        // Обязательно передаем student_id, чтобы сервер не давал старые задачи!
         const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}`);
         currentTask = await response.json();
         
-        // Если сервер ответил, что задачи закончились
         if (currentTask.done) {
-            alert(currentTask.text); // Показываем сообщение "Поздравляем..."
+            alert(currentTask.text);
             showScreen(mainMenuScreen);
             return;
         }
@@ -394,7 +387,6 @@ window.runAIExplanation = async function(simplify = false) {
         });
         const result = await response.json();
         
-        // Кнопка появляется только если куплен тариф PRO
         let proButtonHTML = "";
         if (currentTestMode === "pro" && !simplify) {
             proButtonHTML = `<button class="button secondary" onclick="runAIExplanation(true)" style="margin-top:10px;">🍎 Объяснить проще ("на пальцах")</button>`;
@@ -431,24 +423,21 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
-    // 👤 ЭКРАН ПРОФИЛЯ (С УМНЫМ СКРЫТИЕМ ОПЛАТЫ)
+// 👤 ЭКРАН ПРОФИЛЯ (С УМНЫМ СКРЫТИЕМ ОПЛАТЫ)
 window.showProfile = async function() {
     showScreen(loadingScreen);
     
-    // Получаем реальный баланс пользователя с нашего сервера (замени на свой маршрут, если он другой)
     let userCredits = 5; // Заглушка, пока сервер не пришлет точную цифру
     
     let topUpBlock = "";
     
     if (isMobileVK) {
-        // ДЛЯ ТЕЛЕФОНОВ: Ни слова про оплату! Просто информационное сообщение.
         topUpBlock = `
             <div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">
                 ℹ️ Пополнение баланса доступно только в полной веб-версии ВКонтакте (с компьютера).
             </div>
         `;
     } else {
-        // ДЛЯ КОМПЬЮТЕРОВ: Показываем красивые кнопки оплаты
         topUpBlock = `
             <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
@@ -462,7 +451,6 @@ window.showProfile = async function() {
         `;
     }
 
-    // Собираем экран
     subjectScreen.innerHTML = `
         <h2>👤 Мой профиль</h2>
         <div style="font-size:18px; margin-bottom:10px;">
