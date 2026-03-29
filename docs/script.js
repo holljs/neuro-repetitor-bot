@@ -10,6 +10,15 @@ const quickResultScreen = document.getElementById('quick-result-screen');
 const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 
+// --- ДЕТЕКТОР ПЛАТФОРМЫ ВК ---
+const urlParams = new URLSearchParams(window.location.search);
+const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
+const isMobileVK = vkPlatform !== 'desktop_web';
+
+// Функция для отрисовки формул KaTeX
+function renderMath(elementId) {
+// ... дальше идет твой обычный код ...
+
 // Функция для отрисовки формул KaTeX
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
@@ -413,6 +422,57 @@ window.nextReview = function() {
 }
 
 window.finishSession = () => showScreen(mainMenuScreen);
+
+    // 👤 ЭКРАН ПРОФИЛЯ (С УМНЫМ СКРЫТИЕМ ОПЛАТЫ)
+window.showProfile = async function() {
+    showScreen(loadingScreen);
+    
+    // Получаем реальный баланс пользователя с нашего сервера (замени на свой маршрут, если он другой)
+    let userCredits = 5; // Заглушка, пока сервер не пришлет точную цифру
+    
+    let topUpBlock = "";
+    
+    if (isMobileVK) {
+        // ДЛЯ ТЕЛЕФОНОВ: Ни слова про оплату! Просто информационное сообщение.
+        topUpBlock = `
+            <div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">
+                ℹ️ Пополнение баланса доступно только в полной веб-версии ВКонтакте (с компьютера).
+            </div>
+        `;
+    } else {
+        // ДЛЯ КОМПЬЮТЕРОВ: Показываем красивые кнопки оплаты
+        topUpBlock = `
+            <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+                <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
+                <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">
+                    Пакет "Минимум" (15 кр.) — 150 руб.
+                </button>
+                <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">
+                    Пакет "Максимум" (100 кр.) — 700 руб.
+                </button>
+            </div>
+        `;
+    }
+
+    // Собираем экран
+    subjectScreen.innerHTML = `
+        <h2>👤 Мой профиль</h2>
+        <div style="font-size:18px; margin-bottom:10px;">
+            💰 Твой баланс: <b>${userCredits} кр.</b>
+        </div>
+        
+        ${topUpBlock}
+        
+        <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+    `;
+    
+    showScreen(subjectScreen);
+}
+
+// Заглушка для функции покупки
+window.buyPackage = function(creditsAmount) {
+    alert("Здесь будет вызов ЮКассы для покупки " + creditsAmount + " кредитов!");
+}
 
 // Запуск без ожиданий
 vkBridge.send('VKWebAppInit');
