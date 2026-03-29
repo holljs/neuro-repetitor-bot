@@ -92,19 +92,27 @@ function showScreen(screenElement) {
     if(screenElement) screenElement.style.display = 'block';
 }
 
-// 1. ЗАПУСК (ПУЛЕНЕПРОБИВАЕМЫЙ)
+// 1. ЗАПУСК И ЗАПРОС РАЗРЕШЕНИЙ
 function startApp() {
-    // 1. Принудительно выключаем кружок загрузки и показываем меню!
     showScreen(mainMenuScreen);
 
-    // 2. В фоновом режиме пытаемся получить ID пользователя (без блокировки)
+    // Получаем ID пользователя
     vkBridge.send('VKWebAppGetUserInfo')
         .then(userData => {
             USER_ID = userData.id;
             console.log("ID пользователя получен:", USER_ID);
+            
+            // СРАЗУ ПОСЛЕ ЭТОГО ПРОСИМ РАЗРЕШИТЬ СООБЩЕНИЯ (Впиши ID своей группы!)
+            vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
+                .then(data => {
+                    console.log("Разрешение на сообщения получено!", data);
+                })
+                .catch(error => {
+                    console.log("Пользователь отказался получать сообщения", error);
+                });
         })
         .catch(error => {
-            console.log("ВК не отдал профиль, работаем как гость", error);
+            console.log("ВК не отдал профиль", error);
         });
 }
 
