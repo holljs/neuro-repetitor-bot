@@ -34,7 +34,8 @@ const OGE_SUBJECTS = {
     "oge_russian": "📚 Русский язык ОГЭ", 
     "oge_english": "☕ Английский ОГЭ",
     "oge_chemistry": "🧪 Химия ОГЭ",
-    "oge_physics": "⚡ Физика ОГЭ"
+    "oge_physics": "⚡ Физика ОГЭ",
+    "oge_geography": "🌍 География ОГЭ" // <--- Добавили нашу новую базу!
 };
 
 const EGE_SUBJECTS = { 
@@ -75,6 +76,7 @@ let questionNumber = 1;
 let score = 0;
 let mistakes = []; 
 let currentReviewIndex = 0;
+let currentTestMode = "standard";
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
@@ -97,45 +99,83 @@ function startApp() {
         });
 }
 
-// 2. ВЫБОР ПРЕДМЕТА
+// 2. ВЫБОР ПРЕДМЕТА И ТАРИФА
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => {
         const examType = button.dataset.examType;
         const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
         subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
+        
         for (const code in subjects) {
             const btn = document.createElement('button');
             btn.className = 'button';
             btn.innerText = subjects[code];
-            btn.onclick = () => startTest(code);
+            // Теперь кнопка ведет не сразу в тест, а на выбор тарифа
+            btn.onclick = () => selectTariff(code, subjects[code]); 
             subjectScreen.appendChild(btn);
         }
         showScreen(subjectScreen);
     });
 });
 
+// Новый экран выбора стоимости
+window.selectTariff = function(subjectCode, subjectName) {
+    subjectScreen.innerHTML = `
+        <h2>${subjectName}</h2>
+        <p style="text-align:center; color:#555; margin-bottom:20px;">Выберите формат тренировки:</p>
+        
+        <button class="button" style="margin-bottom:10px;" onclick="startTest('${subjectCode}', 'standard')">
+            🟢 Стандарт (3 кредита)<br><small style="font-size:12px; opacity:0.8;">Обычные разборы ошибок</small>
+        </button>
+        
+        <button class="button" style="background-color:#ff9800; margin-bottom:20px;" onclick="startTest('${subjectCode}', 'pro')">
+            🔥 Профи (4 кредита)<br><small style="font-size:12px; opacity:0.9;">Разборы ошибок "на пальцах"</small>
+        </button>
+        
+        <button class="button secondary" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+    `;
+}
+
 // 3. НАЧАЛО ТЕСТА
-window.startTest = async function(subjectCode) {
+window.startTest = async function(subjectCode, mode) {
+    currentTestMode = mode; // Сохраняем тариф
     showScreen(loadingScreen);
+    
     try {
         const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ student_id: USER_ID || 12345 })
+            body: JSON.stringify({ 
+                student_id: USER_ID || 'guest', 
+                test_mode: currentTestMode // Передаем на сервер, чтобы он знал, сколько списать
+            })
         });
         const payResult = await payResponse.json();
+        
         if (payResult.success) {
             currentSubjectCode = subjectCode;
             questionNumber = 1; score = 0; mistakes = [];
             getRandomTask();
-        } else { alert("Недостаточно кредитов"); showScreen(mainMenuScreen); }
+        } else { 
+            alert("Недостаточно кредитов"); 
+            showScreen(mainMenuScreen); 
+        }
     } catch (e) { showScreen(mainMenuScreen); }
 }
 
 async function getRandomTask() {
     try {
-        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}`);
+        // Обязательно передаем student_id, чтобы сервер не давал старые задачи!
+        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}`);
         currentTask = await response.json();
+        
+        // Если сервер ответил, что задачи закончились
+        if (currentTask.done) {
+            alert(currentTask.text); // Показываем сообщение "Поздравляем..."
+            showScreen(mainMenuScreen);
+            return;
+        }
+        
         showTask();
     } catch (e) { showScreen(mainMenuScreen); }
 }
@@ -213,7 +253,7 @@ window.submitAnswer = async function() {
             body: JSON.stringify({
                 user_answer: userAnswer,
                 task_id: currentTask.id,
-                student_id: USER_ID || 12345
+                student_id: USER_ID || 'guest'
             })
         });
         const result = await response.json();
@@ -336,8 +376,17 @@ window.runAIExplanation = async function(simplify = false) {
             })
         });
         const result = await response.json();
-        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">${result.explanation}</div>
-                                    <button class="button secondary" onclick="runAIExplanation(true)">🍎 Объяснить проще</button>`;
+        
+        // Кнопка появляется только если куплен тариф PRO
+        let proButtonHTML = "";
+        if (currentTestMode === "pro" && !simplify) {
+            proButtonHTML = `<button class="button secondary" onclick="runAIExplanation(true)" style="margin-top:10px;">🍎 Объяснить проще ("на пальцах")</button>`;
+        }
+
+        explanationBox.innerHTML = `<div style="text-align:left; font-size:14px; background:#fff; padding:12px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px;">
+                                        ${result.explanation}
+                                    </div>
+                                    ${proButtonHTML}`;
         
         setTimeout(() => { renderMath('review-explanation'); }, 100);
 
