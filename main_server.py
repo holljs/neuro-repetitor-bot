@@ -161,15 +161,15 @@ async def pay_for_test(request: PaymentRequest):
     test_mode = request.test_mode
     ADMIN_IDS = ["54451631", "12345678"] 
     
-    # Логика стоимости: 30р за стандарт, 40р за профи (с подробными объяснениями)
-    cost = 40 if test_mode == "pro" else 30
+    # Логика стоимости в КРЕДИТАХ: 3 за стандарт, 4 за профи
+    cost = 4 if test_mode == "pro" else 3
     
     if str(student_id) in ADMIN_IDS:
         return {"success": True, "new_balance": "unlimited", "message": "Admin bypass", "cost": 0}
     
     # Здесь в будущем будет списываться стоимость из БД пользователя
     return {"success": True, "new_balance": 100 - cost, "cost": cost}
-
+    
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"):
     db = DATABASES.get(exam_type, [])
