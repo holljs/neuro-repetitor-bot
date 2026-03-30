@@ -158,7 +158,7 @@ window.startTest = async function(subjectCode, mode) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-                student_id: USER_ID || 'guest', 
+                student_id: String(USER_ID || 'guest'), 
                 test_mode: currentTestMode
             })
         });
@@ -263,7 +263,7 @@ window.submitAnswer = async function() {
             body: JSON.stringify({
                 user_answer: userAnswer,
                 task_id: currentTask.id,
-                student_id: USER_ID || 'guest'
+                student_id: String(USER_ID || 'guest')
             })
         });
         const result = await response.json();
