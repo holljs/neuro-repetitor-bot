@@ -40,7 +40,12 @@ const OGE_SUBJECTS = {
     "oge_english": "☕ Английский ОГЭ",
     "oge_chemistry": "🧪 Химия ОГЭ",
     "oge_physics": "⚡ Физика ОГЭ",
-    "oge_geography": "🌍 География ОГЭ"
+    "oge_geography": "🌍 География ОГЭ",
+    // --- НОВЫЕ ПРЕДМЕТЫ ---
+    "oge_biology": "🧬 Биология ОГЭ",
+    "oge_informatics": "💻 Информатика ОГЭ",
+    "oge_history": "📜 История ОГЭ",
+    "oge_social": "📊 Обществознание ОГЭ"
 };
 
 const EGE_SUBJECTS = { 
