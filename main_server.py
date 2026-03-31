@@ -33,7 +33,11 @@ TOPIC_NAMES = {
     "syntax": "🏗️ Синтаксис", "punctuation": "✍️ Пунктуация",
     "orthography": "📝 Орфография", "lexis": "📖 Лексика и грамматика",
     "chemistry_part1": "🧪 Химия (Часть 1)", "physics_part1": "⚡ Физика (Часть 1)",
-    "geography_part1": "🌍 География (Часть 1)"
+    "geography_part1": "🌍 География (Часть 1)",
+    "biology_part1": "🧬 Биология",
+    "informatics_part1": "💻 Информатика",
+    "history_part1": "📜 История",
+    "social_part1": "📊 Обществознание"
 }
 
 if Path("questions").exists():
@@ -79,7 +83,11 @@ async def send_vk_message(user_id: str, message: str):
 # --- БАЗЫ ДАННЫХ ВОПРОСОВ ---
 QUESTIONS_DIR = Path("questions")
 PROGRESS_FILE = Path("user_progress.json")
-DATABASES = {"oge_math": [], "oge_english": [], "oge_russian": [], "oge_chemistry": [], "oge_physics": [], "oge_geography": []}
+DATABASES = {
+    "oge_math": [], "oge_english": [], "oge_russian": [], 
+    "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
+    "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": []
+}
 
 def load_database(filename, db_key):
     filepath = QUESTIONS_DIR / filename
@@ -95,7 +103,11 @@ load_database("oge_russian.json", "oge_russian")
 load_database("oge_chemistry.json", "oge_chemistry")
 load_database("oge_physics.json", "oge_physics")
 load_database("oge_geography.json", "oge_geography")
-
+# --- НОВЫЕ ПРЕДМЕТЫ ---
+load_database("oge_biology.json", "oge_biology")
+load_database("oge_informatics.json", "oge_informatics")
+load_database("oge_history.json", "oge_history")
+load_database("oge_social.json", "oge_social")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
@@ -221,12 +233,17 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     img_path = task.get("image", "")
     
     if img_path and not img_path.startswith("http"):
-        clean_name = img_path.split('/')[-1]
-        topic = task.get("topic", "topic_01")
-        if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
-        elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
-        elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
-        else: img_path = f"questions/images_oge_math/{topic}/{clean_name}"
+        # Если путь уже полный (как у новых предметов), оставляем как есть
+        if img_path.startswith("questions/"):
+            pass 
+        else:
+            # Старая логика для математики, физики и т.д.
+            clean_name = img_path.split('/')[-1]
+            topic = task.get("topic", "topic_01")
+            if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
+            elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
+            elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
+            else: img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
     return {"id": task.get("id", "unknown"), "topic": task.get("topic", "Общая тема"), "text": task.get("task_text", task.get("text", "")), "image": img_path, "answer": task.get("answer", "")}
 
