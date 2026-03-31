@@ -181,12 +181,20 @@ TEST_LENGTH = 15
 async def choose_subject_menu(message: types.Message, state: FSMContext):
     builder = InlineKeyboardBuilder()
     builder.button(text="🧮 Математика", callback_data="subj_oge_math")
+    builder.button(text="🇷🇺 Русский язык", callback_data="subj_oge_russian")
     builder.button(text="⚡ Физика", callback_data="subj_oge_physics")
     builder.button(text="🧪 Химия", callback_data="subj_oge_chemistry")
-    builder.button(text="🇷🇺 Русский язык", callback_data="subj_oge_russian")
     builder.button(text="🇬🇧 Англ. язык", callback_data="subj_oge_english")
-    builder.button(text="🌍 География", callback_data="subj_oge_geography") # Добавили Географию
-    builder.adjust(2) 
+    builder.button(text="🌍 География", callback_data="subj_oge_geography")
+    # --- НОВЫЕ ПРЕДМЕТЫ ---
+    builder.button(text="🧬 Биология", callback_data="subj_oge_biology")
+    builder.button(text="💻 Информатика", callback_data="subj_oge_informatics")
+    builder.button(text="📜 История", callback_data="subj_oge_history")
+    builder.button(text="📊 Обществозн.", callback_data="subj_oge_social")
+    
+    builder.adjust(2) # Кнопки будут по 2 в ряд
+    
+    await message.answer("📚 Выбери предмет для тренировки:", reply_markup=builder.as_markup())
     
     await message.answer("📚 Выбери предмет для тренировки:", reply_markup=builder.as_markup())
 
