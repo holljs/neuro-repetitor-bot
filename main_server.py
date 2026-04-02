@@ -170,9 +170,33 @@ def save_user_progress(user_id: str, task_id: str):
         data[uid].append(task_id)
         with open(PROGRESS_FILE, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=2)
 
-def normalize_text(text: str):
-    if not text: return ""
-    return re.sub(r'[\u2012\u2013\u2014\u2212]', '-', text.lower().replace(" ", "").replace(",", ".")).strip()
+def check_student_answer(student_ans, correct_ans):
+    """Умная проверка ответа для всех предметов (Математика, История, Общество и т.д.)"""
+    if not student_ans or not correct_ans: return False
+    
+    # 1. Приводим всё к верхнему регистру
+    student_ans = str(student_ans).upper()
+    correct_ans = str(correct_ans).upper()
+
+    # 2. ОГЭ История/Биология: Правильный ответ состоит ТОЛЬКО из цифр ("531", "12")
+    if correct_ans.isdigit():
+        # Ученик написал "А-5, Б-3". Вытаскиваем только цифры:
+        clean_student = re.sub(r'\D', '', student_ans)
+        return clean_student == correct_ans
+    
+    # 3. ОГЭ Математика/Физика: Ответ с минусом или дроби ("-3.5", "0,2")
+    elif correct_ans.replace('.', '').replace(',', '').replace('-', '').isdigit():
+        # Оставляем минусы и точки, просто убираем пробелы
+        s_ans = student_ans.replace(" ", "").replace(",", ".")
+        c_ans = correct_ans.replace(" ", "").replace(",", ".")
+        return s_ans == c_ans
+        
+    # 4. Общество/Биология: Текстовый ответ (буквы "АБГЕ", слова "МОНАРХИЯ")
+    else:
+        # Выкидываем все пробелы, точки, запятые, дефисы
+        clean_student = re.sub(r'[\s\-\.,;:]', '', student_ans)
+        clean_correct = re.sub(r'[\s\-\.,;:]', '', correct_ans)
+        return clean_student == clean_correct
 
 # --- МОДЕЛИ ДАННЫХ ---
 class CheckRequest(BaseModel):
@@ -253,7 +277,7 @@ async def check_answer_smart(request: CheckRequest):
     if not task: return {"is_correct": False, "error": "Задача не найдена"}
 
     correct_answer = str(task.get("answer", ""))
-    is_correct = normalize_text(request.user_answer) == normalize_text(correct_answer)
+    is_correct = check_student_answer(request.user_answer, correct_answer)
     
     if not is_correct and correct_answer != "---":
         try:
