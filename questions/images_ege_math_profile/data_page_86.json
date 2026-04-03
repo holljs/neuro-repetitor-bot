@@ -1,0 +1,59 @@
+[
+    {
+        "number": "1",
+        "task_text": "В треугольнике ABC угол C равен 90°, CH — высота, BC = 8, sin A = 0,5. Найдите CH.",
+        "has_visual": true,
+        "box_2d": [
+            120,
+            150,
+            320,
+            450
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_1_page_86.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "На координатной плоскости изображены векторы a и b. Найдите скалярное произведение a * b.",
+        "has_visual": true,
+        "box_2d": [
+            350,
+            100,
+            580,
+            500
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_2_page_86.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "В сосуде, имеющем форму конуса, уровень жидкости достигает 1/2 высоты. Объём жидкости равен 40 мл. Сколько миллилитров жидкости нужно долить, чтобы наполнить сосуд доверху?",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            600,
+            350,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_3_page_86.jpg"
+    }
+]

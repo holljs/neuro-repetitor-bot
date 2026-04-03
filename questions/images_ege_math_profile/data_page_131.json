@@ -1,0 +1,40 @@
+[
+    {
+        "number": "1",
+        "task_text": "В треугольнике ABC угол C равен 90°, AB = 5, BC = 3. Найдите AC.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "2",
+        "task_text": "Найдите скалярное произведение векторов a и b, изображенных на рисунке.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            400,
+            500
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_2_page_131.jpg"
+    }
+]

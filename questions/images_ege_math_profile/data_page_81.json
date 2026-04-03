@@ -1,0 +1,230 @@
+[
+    {
+        "number": "1",
+        "task_text": "В треугольнике ABC угол C равен 90°, AC = 8, BC = 6. Найдите радиус описанной окружности этого треугольника.",
+        "has_visual": true,
+        "box_2d": [
+            100,
+            650,
+            220,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_1_page_81.jpg"
+    },
+    {
+        "number": "2",
+        "task_text": "На координатной плоскости изображены векторы a и b. Найдите скалярное произведение a · b.",
+        "has_visual": true,
+        "box_2d": [
+            230,
+            100,
+            380,
+            450
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_2_page_81.jpg"
+    },
+    {
+        "number": "3",
+        "task_text": "В правильной треугольной пирамиде SABC медианы основания пересекаются в точке O. Площадь основания равна 9, объем пирамиды равен 6. Найдите длину отрезка SO.",
+        "has_visual": true,
+        "box_2d": [
+            390,
+            650,
+            550,
+            920
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_3_page_81.jpg"
+    },
+    {
+        "number": "4",
+        "task_text": "В сборнике билетов по биологии всего 25 билетов. В двух из них встречается вопрос о грибах. На экзамене школьнику достаётся один случайно выбранный билет. Найдите вероятность того, что в этом билете не будет вопроса о грибах.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "5",
+        "task_text": "Вероятность того, что новый фен прослужит больше года, равна 0,97. Вероятность того, что он прослужит больше двух лет, равна 0,86. Найдите вероятность того, что он прослужит меньше двух лет, но больше года.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "6",
+        "task_text": "Найдите корень уравнения √(x - 5) = 4.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "7",
+        "task_text": "Найдите значение выражения (log₂ 16) / (log₂ 4).",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "На рисунке изображен график функции y = f(x) и касательная к нему в точке с абсциссой x₀. Найдите значение производной функции f(x) в точке x₀.",
+        "has_visual": true,
+        "box_2d": [
+            580,
+            100,
+            750,
+            600
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_8_page_81.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Для обогрева помещения, температура в котором поддерживается на уровне Tₚ = 20 °C, используется нагреватель. Температура в помещении меняется по закону... Найдите через сколько минут температура достигнет 25 °C.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "10",
+        "task_text": "Из пункта A в пункт B, расстояние между которыми 150 км, выехал автомобиль. Через 30 минут следом за ним выехал мотоциклист...",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "11",
+        "task_text": "На рисунке изображен график функции f(x) = k/x + a. Найдите f(10).",
+        "has_visual": true,
+        "box_2d": [
+            800,
+            100,
+            950,
+            450
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_ege_math_profile/variant_3/task_11_page_81.jpg"
+    },
+    {
+        "number": "12",
+        "task_text": "Найдите наименьшее значение функции y = x³ - 3x² + 2 на отрезке [1; 4].",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    }
+]
