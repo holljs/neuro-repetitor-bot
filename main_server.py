@@ -86,7 +86,8 @@ PROGRESS_FILE = Path("user_progress.json")
 DATABASES = {
     "oge_math": [], "oge_english": [], "oge_russian": [], 
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
-    "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": []
+    "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
+    "math_ege": [], "russian_ege": []
 }
 
 def load_database(filename, db_key):
@@ -108,6 +109,8 @@ load_database("oge_biology.json", "oge_biology")
 load_database("oge_informatics.json", "oge_informatics")
 load_database("oge_history.json", "oge_history")
 load_database("oge_social.json", "oge_social")
+load_database("math_ege.json", "math_ege")
+load_database("russian_ege.json", "russian_ege")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
@@ -257,17 +260,19 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     img_path = task.get("image", "")
     
     if img_path and not img_path.startswith("http"):
-        # Если путь уже полный (как у новых предметов), оставляем как есть
+        # Если в JSON путь уже начинается с questions/, отдаем его как есть
         if img_path.startswith("questions/"):
             pass 
         else:
-            # Старая логика для математики, физики и т.д.
+            # Старая логика для других предметов
             clean_name = img_path.split('/')[-1]
-            topic = task.get("topic", "topic_01")
             if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
             elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
             elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
-            else: img_path = f"questions/images_oge_math/{topic}/{clean_name}"
+            elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}" # Путь для ЕГЭ Математики
+            else: 
+                topic = task.get("topic", "topic_01")
+                img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
     return {"id": task.get("id", "unknown"), "topic": task.get("topic", "Общая тема"), "text": task.get("task_text", task.get("text", "")), "image": img_path, "answer": task.get("answer", "")}
 
