@@ -49,8 +49,8 @@ const OGE_SUBJECTS = {
 };
 
 const EGE_SUBJECTS = { 
-    "ege_math_profile": "📐 Математика (профиль)",
-    "ege_russian": "🇷🇺 Русский язык ЕГЭ"
+    "math_ege": "📐 Математика (профиль)",
+    "russian_ege": "🖋️ Русский язык ЕГЭ" // Поставил перо, смотрится очень по-экзаменационному
 };
 
 const TOPIC_TRANSLATIONS = {
@@ -210,15 +210,15 @@ function showTask() {
     if (rawText) {
         let cleanText = rawText;
         
-        // Очистка только для Математики
-        if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'ege_math_profile') {
-            cleanText = cleanText
-                .replace(/Решите уравнения/gi, '')
-                .replace(/Решите уравнение/gi, '')
-                .replace(/^\d+[\.\)]\s*/, '') 
-                .trim();
-            cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
-        }
+        // Очистка только для Математики (ОГЭ и ЕГЭ)
+if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'math_ege') {
+    cleanText = cleanText
+        .replace(/Решите уравнения/gi, '')
+        .replace(/Решите уравнение/gi, '')
+        .replace(/^\d+[\.\)]\s*/, '') 
+        .trim();
+    cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
+}
 
         // Красивое форматирование для Английского
         if (currentSubjectCode === 'oge_english') {
