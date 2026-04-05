@@ -273,7 +273,11 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
             if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
             elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
             elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
-            elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}" # Путь для ЕГЭ Математики
+            elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}"
+            # --- ДОБАВЛЯЕМ ЭТИ ДВЕ СТРОЧКИ ---
+            elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
+            elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
+            # ---------------------------------
             else: 
                 topic = task.get("topic", "topic_01")
                 img_path = f"questions/images_oge_math/{topic}/{clean_name}"
