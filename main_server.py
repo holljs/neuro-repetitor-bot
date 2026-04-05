@@ -37,7 +37,9 @@ TOPIC_NAMES = {
     "biology_part1": "🧬 Биология",
     "informatics_part1": "💻 Информатика",
     "history_part1": "📜 История",
-    "social_part1": "📊 Обществознание"
+    "social_part1": "📊 Обществознание",
+    "informatics_ege": "💻 Информатика ЕГЭ",
+    "geography_ege": "🌍 География ЕГЭ"
 }
 
 if Path("questions").exists():
@@ -111,6 +113,8 @@ load_database("oge_history.json", "oge_history")
 load_database("oge_social.json", "oge_social")
 load_database("math_ege.json", "math_ege")
 load_database("russian_ege.json", "russian_ege")
+load_database("inf_ege.json", "inf_ege")
+load_database("geo_ege.json", "geo_ege")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
