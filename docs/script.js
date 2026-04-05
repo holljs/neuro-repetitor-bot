@@ -50,7 +50,9 @@ const OGE_SUBJECTS = {
 
 const EGE_SUBJECTS = { 
     "math_ege": "📐 Математика (профиль)",
-    "russian_ege": "🖋️ Русский язык ЕГЭ" // Поставил перо, смотрится очень по-экзаменационному
+    "russian_ege": "🖋️ Русский язык ЕГЭ",
+    "inf_ege": "💻 Информатика ЕГЭ",
+    "geo_ege": "🌍 География ЕГЭ"
 };
 
 const TOPIC_TRANSLATIONS = {
