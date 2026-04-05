@@ -203,36 +203,34 @@ function showTask() {
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
 
+    // 1. Пытаемся взять текст из разных возможных ключей (универсально для всех баз)
     let rawText = currentTask.task_text || currentTask.text || "";
     
+    // 2. Если текста совсем нет, но есть номер, напишем хотя бы его
     if (!rawText && currentTask.number) {
-        rawText = "Задача №" + currentTask.number;
+        rawText = "Задание №" + currentTask.number;
     }
 
     if (rawText) {
         let cleanText = rawText;
         
-        // Очистка только для Математики (ОГЭ и ЕГЭ)
-if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'math_ege') {
-    cleanText = cleanText
-        .replace(/Решите уравнения/gi, '')
-        .replace(/Решите уравнение/gi, '')
-        .replace(/^\d+[\.\)]\s*/, '') 
-        .trim();
-    cleanText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
-}
-
-        // Красивое форматирование для Английского
-        if (currentSubjectCode === 'oge_english') {
-            cleanText = cleanText.replace(/____/g, '<span style="display:inline-block; width: 60px; border-bottom: 2px solid #333; margin: 0 5px;"></span>');
+        // 3. Очистка лишних слов только для Математики
+        if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'math_ege') {
+            cleanText = cleanText
+                .replace(/Решите уравнения/gi, '')
+                .replace(/Решите уравнение/gi, '')
+                .replace(/^\d+[\.\)]\s*/, '') 
+                .trim();
         }
 
+        // 4. Выводим текст
         taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${cleanText}</div>`;
         taskTextElement.style.display = 'block';
     } else {
-        taskTextElement.textContent = "Текст задачи не найден в базе";
+        taskTextElement.textContent = "Текст задачи не найден";
     }
 
+    // 5. Работа с картинкой
     if (currentTask.image && currentTask.image.length > 5) {
         const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
         imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
@@ -241,6 +239,7 @@ if (currentSubjectCode === 'oge_math' || currentSubjectCode === 'math_ege') {
         imageContainer.style.display = 'none';
     }
     
+    // 6. Сброс ввода, фокус и рендер формул
     document.getElementById('user-answer').value = '';
     setTimeout(() => { renderMath('task-text'); }, 100);
     showScreen(taskScreen);
