@@ -89,7 +89,8 @@ DATABASES = {
     "oge_math": [], "oge_english": [], "oge_russian": [], 
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
-    "math_ege": [], "russian_ege": []
+    "math_ege": [], "russian_ege": [],
+    "inf_ege": [], "geo_ege": []
 }
 
 def load_database(filename, db_key):
