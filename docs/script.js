@@ -10,12 +10,14 @@ const quickResultScreen = document.getElementById('quick-result-screen');
 const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 
-// Детектор платформы ВК
+// Усиленный детектор мобильных устройств (ВК + UserAgent)
 const urlParams = new URLSearchParams(window.location.search);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-const isMobileVK = vkPlatform !== 'desktop_web';
+const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isMobileVK = vkPlatform !== 'desktop_web' || isMobileDevice;
 
 let USER_ID = null;
+let currentExamType = null; // Запоминаем, ОГЭ или ЕГЭ выбрал юзер
 
 // Отрисовка формул KaTeX
 function renderMath(elementId) {
@@ -105,29 +107,50 @@ function startApp() {
         .catch(error => console.log("ВК не отдал профиль", error));
 }
 
+// 📌 НАВИГАЦИЯ: Открытие списка предметов
+window.openSubjects = function(examType) {
+    currentExamType = examType;
+    const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
+    subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
+    
+    for (const code in subjects) {
+        const btn = document.createElement('button');
+        btn.className = 'button';
+        btn.innerText = subjects[code];
+        btn.onclick = () => selectTariff(code, subjects[code]); 
+        subjectScreen.appendChild(btn);
+    }
+    
+    // КНОПКА ВОЗВРАТА В ГЛАВНОЕ МЕНЮ
+    const backBtn = document.createElement('button');
+    backBtn.className = 'button secondary';
+    backBtn.style.marginTop = '20px';
+    backBtn.innerText = '🔙 В главное меню';
+    backBtn.onclick = () => showScreen(mainMenuScreen);
+    subjectScreen.appendChild(backBtn);
+
+    showScreen(subjectScreen);
+}
+
+// Обработчик кнопок ОГЭ / ЕГЭ в главном меню
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => {
         const examType = button.dataset.examType;
-        const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
-        subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
-        for (const code in subjects) {
-            const btn = document.createElement('button');
-            btn.className = 'button';
-            btn.innerText = subjects[code];
-            btn.onclick = () => selectTariff(code, subjects[code]); 
-            subjectScreen.appendChild(btn);
+        if (examType) {
+            openSubjects(examType);
         }
-        showScreen(subjectScreen);
     });
 });
 
+// 📌 НАВИГАЦИЯ: Открытие тарифов с кнопкой "Назад к предметам"
 window.selectTariff = function(subjectCode, subjectName) {
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <p style="text-align:center; color:#555; margin-bottom:20px;">Выберите формат тренировки:</p>
         <button class="button" style="margin-bottom:10px;" onclick="startTest('${subjectCode}', 'standard')">🟢 Стандарт (3 кредита)</button>
         <button class="button" style="background-color:#ff9800; margin-bottom:20px;" onclick="startTest('${subjectCode}', 'pro')">🔥 Профи (4 кредита)</button>
-        <button class="button secondary" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+        
+        <button class="button secondary" onclick="openSubjects(currentExamType)">🔙 Назад к предметам</button>
     `;
 }
 
@@ -233,7 +256,7 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
-// 6. ФИНАЛ И АНАЛИТИКА (С УМНЫМ ИИ-АНАЛИЗОМ)
+// ФИНАЛ И АНАЛИТИКА (С УМНЫМ ИИ-АНАЛИЗОМ)
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
@@ -271,7 +294,6 @@ window.getAIAnalysis = async function() {
     btn.style.display = 'none';
     textBox.innerHTML = "<i>⏳ Нейросеть анализирует твои ошибки... Это займет пару секунд.</i>";
 
-    // Подготавливаем данные для отправки (ОБЕРНУЛИ ВСЁ В STRING, ЧТОБЫ СЕРВЕР НЕ РУГАЛСЯ)
     const mistakesData = mistakes.map(m => ({
         task_text: String(m.task.task_text || m.task.text || "Текст не найден"),
         user_answer: String(m.user_answer || ""),
@@ -286,7 +308,6 @@ window.getAIAnalysis = async function() {
         });
         const result = await response.json();
         
-        // Выводим результат
         textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
     } catch (error) {
         textBox.innerHTML = `⚠️ Ошибка соединения с сервером. Попробуй позже.`;
@@ -346,7 +367,7 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
-// 👤 ЭКРАН ПРОФИЛЯ (С ГЛОБАЛЬНОЙ ИИ-АНАЛИТИКОЙ И БАЛАНСОМ)
+// 👤 ЭКРАН ПРОФИЛЯ (ЖЕСТКОЕ СКРЫТИЕ ОПЛАТЫ НА ТЕЛЕФОНАХ + ИИ)
 window.showProfile = async function() {
     showScreen(loadingScreen);
     
@@ -360,7 +381,7 @@ window.showProfile = async function() {
         if (isMobileVK) {
             topUpBlock = `
                 <div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">
-                    ℹ️ Пополнение баланса доступно только в полной веб-версии ВКонтакте (с компьютера).
+                    ℹ️ Правила ВКонтакте запрещают прием платежей с мобильных устройств. <b>Для пополнения баланса, пожалуйста, зайди в приложение с компьютера.</b>
                 </div>
             `;
         } else {
