@@ -357,6 +357,63 @@ async def analyze_gaps(request: AnalyzeGapsRequest):
         logger.error(f"Ошибка анализа пробелов: {e}")
         return {"analysis": "Не удалось сгенерировать анализ пробелов. Попробуй позже."}
 
+@app.get("/profile_analytics/")
+async def get_profile_analytics(student_id: str):
+    # 1. Получаем реальный баланс ученика из базы
+    current_balance = init_vk_user(student_id)
+
+    user_records = []
+    # 2. Читаем историю ответов из файла логов
+    if Path("user_stats.log").exists():
+        with open("user_stats.log", "r", encoding="utf-8") as f:
+            for line in f:
+                parts = line.strip().split(",")
+                # Проверяем, что лог принадлежит именно этому ученику
+                if len(parts) >= 4 and parts[1] == student_id:
+                    user_records.append({
+                        "topic": parts[2],
+                        "is_correct": parts[3].lower() == "true"
+                    })
+
+    if not user_records:
+        return {
+            "balance": current_balance,
+            "total_solved": 0,
+            "analysis": "📊 У тебя пока нет истории решений. Пройди пару тестов, и здесь появится подробная аналитика твоего прогресса!"
+        }
+
+    # 3. Группируем ответы хронологически по темам
+    topic_history = {}
+    for r in user_records:
+        t = r["topic"]
+        if t not in topic_history:
+            topic_history[t] = []
+        topic_history[t].append("✅" if r["is_correct"] else "❌")
+
+    # 4. Формируем хитрый промпт для ИИ
+    prompt = "Ты умный ИИ-наставник. Вот хронологическая история ответов ученика по темам (от самых первых попыток к последним):\n\n"
+    
+    for t, history in topic_history.items():
+        t_name = TOPIC_NAMES.get(t, t)
+        # Берем только последние 25 попыток по каждой теме
+        recent_history = history[-25:]
+        prompt += f"- {t_name}: {' '.join(recent_history)}\n"
+
+    prompt += "\nПроанализируй эти данные. Определи, в каких темах есть явный прогресс (сначала ❌, потом пошли ✅), где ситуация ухудшается, а где всё стабильно хорошо или стабильно плохо. Напиши подробный мотивирующий отчет по всем предметам, которые решал ученик (на 3-4 абзаца). Обращайся на 'ты'. Используй HTML-теги <b> для выделения тем и <br> для переноса строк."
+
+    try:
+        output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
+        analysis = "".join(output)
+    except Exception as e:
+        logger.error(f"Ошибка глобальной ИИ-аналитики: {e}")
+        analysis = "⚠️ Не удалось сгенерировать аналитику в данный момент, но мы бережно сохранили твою статистику!"
+
+    return {
+        "balance": current_balance,
+        "total_solved": len(user_records),
+        "analysis": analysis
+    }
+
 # --- АДМИНКА (НАЧИСЛЕНИЕ ВК КРЕДИТОВ И РАССЫЛКА ЧЕРЕЗ БРАУЗЕР) ---
 @app.get("/admin/give")
 async def admin_give_credits(target_id: str, amount: int, key: str = Query(None)):
