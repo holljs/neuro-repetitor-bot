@@ -233,31 +233,65 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
+// 6. ФИНАЛ И АНАЛИТИКА (С УМНЫМ ИИ-АНАЛИЗОМ)
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
-    let topicAnalysis = {};
-    mistakes.forEach(m => {
-        let t = m.task.topic || "unknown";
-        topicAnalysis[t] = (topicAnalysis[t] || 0) + 1;
-    });
-    let statsHTML = "";
-    if (mistakes.length > 0) {
-        statsHTML = `<div id="topic-stats" style="margin-top:15px; text-align:left;"><b>🚩 Темы для повторения:</b><ul style="padding-left:20px;">`;
-        for (let topic in topicAnalysis) { 
-            const prettyName = TOPIC_TRANSLATIONS[topic] || topic;
-            statsHTML += `<li>${prettyName}</li>`; 
-        }
-        statsHTML += `</ul></div>`;
-    }
+    
+    const reviewBtnBlock = document.getElementById('review-buttons');
     const oldStats = document.getElementById('topic-stats');
     if (oldStats) oldStats.remove();
-    const reviewBtnBlock = document.getElementById('review-buttons');
+
     if (mistakes.length > 0) {
         reviewBtnBlock.style.display = 'block';
-        reviewBtnBlock.insertAdjacentHTML('beforebegin', statsHTML);
-    } else { reviewBtnBlock.style.display = 'none'; }
+        
+        // Создаем блок для ИИ-анализа
+        const aiAnalysisBlock = `
+            <div id="topic-stats" style="margin-top:20px; text-align:left; background:#f0f8ff; padding:15px; border-radius:10px; border: 1px solid #bcdcff;">
+                <h3 style="margin-top:0; color:#0056b3;">🧠 Умный анализ пробелов</h3>
+                <p id="ai-analysis-text" style="font-size:14px; color:#333;">Хочешь узнать, какие конкретно темы и правила тебе нужно подтянуть на основе твоих ошибок?</p>
+                <button id="ai-analysis-btn" class="button" style="background-color:#007bff; padding:10px; font-size:14px;" onclick="getAIAnalysis()">
+                    ✨ Сгенерировать ИИ-анализ
+                </button>
+            </div>
+        `;
+        reviewBtnBlock.insertAdjacentHTML('beforebegin', aiAnalysisBlock);
+    } else { 
+        reviewBtnBlock.style.display = 'none'; 
+    }
+    
     showScreen(testFinishScreen);
+}
+
+// Запрос к нейросети для анализа ошибок
+window.getAIAnalysis = async function() {
+    const btn = document.getElementById('ai-analysis-btn');
+    const textBox = document.getElementById('ai-analysis-text');
+    
+    btn.style.display = 'none';
+    textBox.innerHTML = "<i>⏳ Нейросеть анализирует твои ошибки... Это займет пару секунд.</i>";
+
+    // Подготавливаем данные для отправки (ОБЕРНУЛИ ВСЁ В STRING, ЧТОБЫ СЕРВЕР НЕ РУГАЛСЯ)
+    const mistakesData = mistakes.map(m => ({
+        task_text: String(m.task.task_text || m.task.text || "Текст не найден"),
+        user_answer: String(m.user_answer || ""),
+        correct_answer: String(m.task.answer || "")
+    }));
+
+    try {
+        const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mistakes: mistakesData })
+        });
+        const result = await response.json();
+        
+        // Выводим результат
+        textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
+    } catch (error) {
+        textBox.innerHTML = `⚠️ Ошибка соединения с сервером. Попробуй позже.`;
+        btn.style.display = 'block';
+    }
 }
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); }
