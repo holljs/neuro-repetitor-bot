@@ -327,6 +327,36 @@ async def explain_mistake(request: ReviewRequest):
     except Exception:
         return {"explanation": "Ошибка при генерации разбора."}
 
+class MistakeItem(BaseModel):
+    task_text: str
+    user_answer: str
+    correct_answer: str
+
+class AnalyzeGapsRequest(BaseModel):
+    mistakes: list[MistakeItem]
+
+@app.post("/analyze_gaps/")
+async def analyze_gaps(request: AnalyzeGapsRequest):
+    if not request.mistakes:
+        return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
+
+    # Формируем текст для ИИ
+    prompt = "Ты опытный репетитор. Проанализируй ошибки ученика в тесте и выяви его пробелы в знаниях.\nВот задачи, с которыми он не справился:\n\n"
+    
+    for i, m in enumerate(request.mistakes):
+        # Берем первые 300 символов задачи, чтобы не перегружать контекст
+        short_text = m.task_text[:300] + "..." if len(m.task_text) > 300 else m.task_text
+        prompt += f"{i+1}. Задача: {short_text}\n"
+
+    prompt += "\nНа основе этих задач напиши краткий, дружелюбный и мотивирующий анализ (3-4 абзаца). Укажи конкретные темы, формулы или правила, которые ученику стоит повторить. Не решай эти задачи, просто дай диагноз по темам. Используй эмодзи."
+
+    try:
+        output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
+        return {"analysis": "".join(output).replace("\n", "<br>")}
+    except Exception as e:
+        logger.error(f"Ошибка анализа пробелов: {e}")
+        return {"analysis": "Не удалось сгенерировать анализ пробелов. Попробуй позже."}
+
 # --- АДМИНКА (НАЧИСЛЕНИЕ ВК КРЕДИТОВ И РАССЫЛКА ЧЕРЕЗ БРАУЗЕР) ---
 @app.get("/admin/give")
 async def admin_give_credits(target_id: str, amount: int, key: str = Query(None)):
