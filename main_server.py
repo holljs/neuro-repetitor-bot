@@ -39,7 +39,8 @@ TOPIC_NAMES = {
     "history_part1": "📜 История",
     "social_part1": "📊 Обществознание",
     "informatics_ege": "💻 Информатика ЕГЭ",
-    "geography_ege": "🌍 География ЕГЭ"
+    "geography_ege": "🌍 География ЕГЭ",
+    "physics_ege": "⚡ Физика ЕГЭ"
 }
 
 if Path("questions").exists():
@@ -90,7 +91,7 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": []
+    "inf_ege": [], "geo_ege": [], "phys_ege": []
 }
 
 def load_database(filename, db_key):
@@ -116,6 +117,7 @@ load_database("math_ege.json", "math_ege")
 load_database("russian_ege.json", "russian_ege")
 load_database("inf_ege.json", "inf_ege")
 load_database("geo_ege.json", "geo_ege")
+load_database("phys_ege.json", "phys_ege")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
@@ -278,6 +280,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
             # --- ДОБАВЛЯЕМ ЭТИ ДВЕ СТРОЧКИ ---
             elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
             elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
+            elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
             # ---------------------------------
             else: 
                 topic = task.get("topic", "topic_01")
