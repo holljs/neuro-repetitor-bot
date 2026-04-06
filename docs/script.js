@@ -346,10 +346,65 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
+// 👤 ЭКРАН ПРОФИЛЯ (С ГЛОБАЛЬНОЙ ИИ-АНАЛИТИКОЙ И БАЛАНСОМ)
 window.showProfile = async function() {
     showScreen(loadingScreen);
-    subjectScreen.innerHTML = `<h2>👤 Профиль</h2><p>Баланс: 5 кр.</p><button class="button secondary" onclick="showScreen(mainMenuScreen)">🔙 Назад</button>`;
-    showScreen(subjectScreen);
+    
+    try {
+        // Запрашиваем данные с сервера
+        const response = await fetch(`${TEST_API_URL}/profile_analytics/?student_id=${USER_ID || 'guest'}`);
+        const data = await response.json();
+        
+        let topUpBlock = "";
+        
+        if (isMobileVK) {
+            topUpBlock = `
+                <div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">
+                    ℹ️ Пополнение баланса доступно только в полной веб-версии ВКонтакте (с компьютера).
+                </div>
+            `;
+        } else {
+            topUpBlock = `
+                <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+                    <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
+                    <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">
+                        Пакет "Минимум" (15 кр.) — 150 руб.
+                    </button>
+                    <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">
+                        Пакет "Максимум" (100 кр.) — 700 руб.
+                    </button>
+                </div>
+            `;
+        }
+
+        // Блок ИИ-Аналитики
+        let analysisBlock = `
+            <div style="margin-top:20px; padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
+                <h3 style="margin-top:0; color:#0056b3;">📈 Динамика твоего обучения</h3>
+                <div style="font-size:14px; line-height:1.6; color:#333;">
+                    ${data.analysis}
+                </div>
+            </div>
+        `;
+
+        subjectScreen.innerHTML = `
+            <h2>👤 Мой профиль</h2>
+            <div style="font-size:18px; margin-bottom:10px;">
+                💰 Твой баланс: <b>${data.balance || 0} кр.</b><br>
+                📝 Решено задач всего: <b>${data.total_solved || 0}</b>
+            </div>
+            
+            ${analysisBlock}
+            ${topUpBlock}
+            
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+        `;
+        
+        showScreen(subjectScreen);
+    } catch (e) {
+        alert("Не удалось загрузить профиль. Проверьте интернет.");
+        showScreen(mainMenuScreen);
+    }
 }
 
 startApp();
