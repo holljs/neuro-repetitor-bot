@@ -429,3 +429,13 @@ window.showProfile = async function() {
 }
 
 startApp();
+
+// Функция для открытия/закрытия шпаргалки по математике
+    window.toggleMathHint = function() {
+        const hintBox = document.getElementById('math-hint-box');
+        if (hintBox.style.display === 'block') {
+            hintBox.style.display = 'none';
+        } else {
+            hintBox.style.display = 'block';
+        }
+    }
