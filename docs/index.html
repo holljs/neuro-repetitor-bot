@@ -40,11 +40,22 @@
             <div id="task-image-container"></div>
             <div id="task-text" style="margin: 10px 0; font-weight: 500;"></div>
 
-            <button onclick="reportTask()" class="report-link">🚩 Задание обрезано / С ошибкой</button>
-
             <div class="answer-block">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                    <p class="hint" style="margin: 0;">* Можно писать формулы и слова</p>
+                    <button class="hint-toggle-btn" onclick="toggleMathHint()">💡 Как вводить формулы?</button>
+                </div>
+                
+                <div id="math-hint-box" class="math-hint-box">
+                    <b>Умножение:</b> <code>*</code> (5 * 2)<br>
+                    <b>Деление/Дробь:</b> <code>/</code> (3/4)<br>
+                    <b>Степень:</b> <code>^</code> (x^2)<br>
+                    <b>Корень:</b> <code>sqrt(x)</code> или словом "корень"<br>
+                    <b>Модуль:</b> <code>|x|</code><br>
+                    <b>Символы:</b> пи, альфа, градусы — пишите просто словами!
+                </div>
+
                 <input type="text" id="user-answer" placeholder="Введите ответ...">
-                <p class="hint">* Число или десятичная дробь (через запятую)</p>
             </div>
             
             <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
@@ -90,18 +101,5 @@
 
     <script src="script.js?v=3.2"></script>
 
-    <script>
-        // Небольшая доп. функция для кнопки жалобы, так как SERVER_URL в script.js
-        function reportTask() {
-            if (!currentTask || !currentTask.id) return;
-            if (confirm('Задача будет удалена из базы. Вы уверены?')) {
-                fetch(`https://neuro-master.online/repetitor-api/report_task/`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ task_id: currentTask.id })
-                }).then(() => getRandomTask());
-            }
-        }
-    </script>
 </body>
 </html>
