@@ -1,0 +1,2405 @@
+[
+    {
+        "id": "eng_ege_p10_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Many of them are engaged in taking care of ____ animals in Moscow. (HOME)",
+        "answer": "HOMELESS",
+        "solution": "Для образования прилагательного со значением отсутствия чего-либо (в данном случае — дома) к существительному 'home' добавляется отрицательный суффикс -less. Получается 'homeless' (бездомный)."
+    },
+    {
+        "id": "eng_ege_p10_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Volunteers help animals in ____ ways. (VARY)",
+        "answer": "VARIOUS",
+        "solution": "Для образования прилагательного от глагола 'vary' (различаться) используется суффикс -ous. Слово 'various' переводится как 'разнообразные, различные'."
+    },
+    {
+        "id": "eng_ege_p10_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Anyone can join Nika foundation which is supported by the Moscow ____. (GOVERN)",
+        "answer": "GOVERNMENT",
+        "solution": "В данном контексте после прилагательного 'Moscow' требуется существительное. От глагола 'govern' (управлять) существительное 'government' (правительство) образуется при помощи суффикса -ment."
+    },
+    {
+        "id": "eng_ege_p10_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The foundation has two shelters with about a thousand dogs and a hundred cats waiting for their ____. (OWN)",
+        "answer": "OWNERS",
+        "solution": "После притяжательного местоимения 'their' должно стоять существительное. От глагола 'own' (владеть) существительное образуется с помощью суффикса -er. Так как животных много, существительное 'owner' нужно поставить в форму множественного числа — 'owners' (владельцы)."
+    },
+    {
+        "id": "eng_ege_p10_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "No one wanted to take it, since such a giant will feel ____ in an ordinary apartment. (COMFORT)",
+        "answer": "UNCOMFORTABLE",
+        "solution": "После глагола состояния 'feel' требуется прилагательное. По смыслу предложения (огромной собаке тесно в обычной квартире) необходимо слово с отрицательным значением. Сначала образуем прилагательное 'comfortable' с помощью суффикса -able, а затем добавляем отрицательную приставку un-."
+    },
+    {
+        "id": "eng_ege_p108_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "I realize that my dog, Spot, ____ me a few important things already. (TEACH)",
+        "answer": "hastaught",
+        "solution": "Маркер 'already' указывает на действие, которое завершилось к настоящему моменту и имеет результат. Используется время Present Perfect. Глагол teach является неправильным (teach — taught — taught)."
+    },
+    {
+        "id": "eng_ege_p108_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "No matter how many times I ____ to take Spot for a walk, he's never held a grudge. (FORGET)",
+        "answer": "forget",
+        "solution": "В данном контексте описывается общая, регулярно повторяющаяся ситуация. Используется время Present Simple."
+    },
+    {
+        "id": "eng_ege_p108_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "Just like Spot sees the good in me, I see the good in friends and treat ____ with love and respect. (THEY)",
+        "answer": "them",
+        "solution": "После глагола 'treat' (относиться к кому-то) необходимо использовать личное местоимение в объектном падеже. Для местоимения 'they' формой объектного падежа является 'them'."
+    },
+    {
+        "id": "eng_ege_p108_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "They teach us to be selfless, loyal, and true to ____. (ONESELF)",
+        "answer": "ourselves",
+        "solution": "Возвратное местоимение должно согласовываться с дополнением 'us' (нас), к которому оно относится. Для первого лица множественного числа (we/us) используется возвратное местоимение 'ourselves'."
+    },
+    {
+        "id": "eng_ege_p108_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Take care of the ones you love, including your pets, and they will reciprocate with even ____ care. (MUCH)",
+        "answer": "more",
+        "solution": "Слово 'even' перед прилагательным или наречием часто усиливает сравнительную степень. Сравнительная степень от 'much' — 'more'."
+    },
+    {
+        "id": "eng_ege_p108_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Remember, just like dogs, we can learn to offer fulfilling relationships to our partners, with ____ complaints and more love. (FEW)",
+        "answer": "fewer",
+        "solution": "В предложении используется противопоставление с помощью союза 'and' и сравнительной степени 'more' (больше любви). Соответственно, слово 'complaints' (жалобы) также требует сравнительной степени. Для исчисляемых существительных 'few' переходит в 'fewer'."
+    },
+    {
+        "id": "eng_ege_p109_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "It’s not easy to form a close friendship. ____ communication is the key to understanding each other’s needs and feelings. (EFFECT)",
+        "answer": "EFFECTIVE",
+        "solution": "В данном предложении пропущено определение к существительному communication. От существительного effect необходимо образовать прилагательное с помощью суффикса -ive."
+    },
+    {
+        "id": "eng_ege_p109_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Make sure to express your thoughts and emotions ____. (OPEN)",
+        "answer": "OPENLY",
+        "solution": "Слово характеризует глагол express (выражать как?), поэтому требуется наречие. Наречия в английском языке образуются от прилагательных при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p109_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Be honest and ____. Create a safe space for your friend to share their thoughts as well. (RESPECT)",
+        "answer": "RESPECTFUL",
+        "solution": "После глагола-связки be и союза and (в ряду с прилагательным honest) требуется еще одно прилагательное. От существительного respect оно образуется с помощью суффикса -ful (проявляющий уважение)."
+    },
+    {
+        "id": "eng_ege_p109_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Spending quality time together is crucial for maintaining a strong bond. This doesn't ____ mean much time together; it's about the quality of the time you spend. (NECESSARY)",
+        "answer": "NECESSARILY",
+        "solution": "Слово стоит перед глаголом mean и характеризует его, следовательно, нужно наречие. Оно образуется от прилагательного necessary путем прибавления суффикса -ly (при этом конечная 'y' меняется на 'i')."
+    },
+    {
+        "id": "eng_ege_p109_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Celebrate each other’s successes, and provide comfort and ____ during tough times. (ENCOURAGE)",
+        "answer": "ENCOURAGEMENT",
+        "solution": "В сочетании 'provide comfort and...' пропущенное слово является дополнением и должно быть существительным, однородным слову comfort. От глагола encourage существительное образуется при помощи суффикса -ment."
+    },
+    {
+        "id": "eng_ege_p119_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "A project ____ by the newspaper Izvestia, Radio Mayak and the television channel Russia set out to establish the seven most amazing natural and man-made wonders of our vast and awe-inspiring country. (ORGANISE)",
+        "answer": "organised",
+        "solution": "Требуется форма причастия II (Passive Participle), так как проект был кем-то организован. В данном предложении оно выступает в роли определения к существительному 'project'."
+    },
+    {
+        "id": "eng_ege_p119_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "The top one is Lake Baikal. It ____ in southern Siberia. (LOCATE)",
+        "answer": "is located",
+        "solution": "Глагол используется для описания местоположения объекта в настоящем времени. Необходимо использовать страдательный залог (Passive Voice) в Present Simple — am/is/are + V3."
+    },
+    {
+        "id": "eng_ege_p119_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "It is the largest freshwater lake by both depth and volume in the world, ____ nearly a quarter of the world’s fresh surface water — that’s more than North America’s Great Lakes combined. (CONTAIN)",
+        "answer": "containing",
+        "solution": "Используется причастие I (Present Participle) в функции обстоятельства или определения, указывающее на дополнительную характеристику объекта (озеро, содержащее воду)."
+    },
+    {
+        "id": "eng_ege_p119_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "The Peterhof Palace is also on the list of the Seven Wonders of Russia. It is in fact a series of palaces and gardens located in Peterhof, St Petersburg, ____ out on the orders of Peter the Great. (LAY)",
+        "answer": "laid",
+        "solution": "Требуется причастие II для образования причастного оборота со значением пассивности (сады были разбиты/спланированы по приказу). LAY OUT — фразовый глагол, его третья форма — LAID."
+    },
+    {
+        "id": "eng_ege_p119_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "____ palaces and gardens are sometimes referred to as the “Russian Versailles”. (THIS)",
+        "answer": "these",
+        "solution": "Указательное местоимение 'this' должно быть согласовано в числе с существительными 'palaces and gardens', стоящими во множественном числе. Множественное число от 'this' — 'these'."
+    },
+    {
+        "id": "eng_ege_p119_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "The ____ fountain is called the Samson Fountain and it commemorates Russia’s victory over Sweden in the Great Northern War. (LARGE)",
+        "answer": "largest",
+        "solution": "Наличие определенного артикля 'the' перед прилагательным и контекст предложения (выделение одного самого значимого фонтана) указывают на необходимость использования превосходной степени сравнения (Superlative degree)."
+    },
+    {
+        "id": "eng_ege_p120_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Stonehenge is perhaps the world’s most famous prehistoric monument. It is a masterpiece of ____, built using only simple tools and technologies, before the arrival of metals and the invention of the wheel. (ENGINEER)",
+        "answer": "engineering",
+        "solution": "В данном предложении после предлога 'of' должно стоять существительное. От глагола 'engineer' (проектировать) при помощи суффикса -ing образуется отглагольное существительное 'engineering' (инженерное дело, проектирование), которое подходит по смыслу."
+    },
+    {
+        "id": "eng_ege_p120_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Building the stone circle would have needed hundreds of people to transport, shape and erect the stones. These builders would have required others to provide them with food, to look after their children and to supply ____ including hammerstones, ropes, antler picks and timber. (EQUIP)",
+        "answer": "equipment",
+        "solution": "Пропуск находится в позиции прямого дополнения (снабжать чем?). Требуется существительное. От глагола 'equip' (снаряжать) при помощи суффикса -ment образуется существительное 'equipment' (оборудование, снаряжение). Оно является неисчисляемым."
+    },
+    {
+        "id": "eng_ege_p120_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "The whole project would have needed ____ planning and organisation. (CARE)",
+        "answer": "careful",
+        "solution": "Пропуск стоит перед существительными 'planning and organisation'. Для их описания требуется прилагательное. Прилагательное 'careful' (тщательный, осторожный) образуется от существительного 'care' с помощью суффикса -ful."
+    },
+    {
+        "id": "eng_ege_p120_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "You may take an ____ tour of Stonehenge with 360-degree view from inside the stones, which shows the monument’s key features and its history. (ACTIVE)",
+        "answer": "interactive",
+        "solution": "Перед существительным 'tour' необходимо прилагательное. Исходя из контекста (обзор 360 градусов), речь идет об интерактивном туре. Прилагательное 'interactive' образуется путем добавления приставки inter- (взаимо-) к основе 'active'."
+    },
+    {
+        "id": "eng_ege_p120_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "You may also explore detailed images which ____ the erection and changes of Stonehenge and nearby monuments from the early Neolithic period to the Bronze Age. (CONSRUCT)",
+        "answer": "reconstruct",
+        "solution": "В данном предложении пропуск стоит после относительного местоимения 'which' (относящегося к 'images') и должен быть глаголом в форме Present Simple. По смыслу изображения 'воссоздают' облик прошлого. Приставка re- придает значение повторного действия. (В скобках в исходном тексте допущена опечатка в слове CONSTRUCT)."
+    },
+    {
+        "id": "eng_ege_p130_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "This geyser field on the Kamchatka Peninsula is on the list of the Seven Wonders of Russia. It has the ____ largest concentration of geysers in the world (90 in total) and many hot springs. (TWO)",
+        "answer": "SECOND",
+        "solution": "Используется порядковое числительное. В конструкции 'the second largest' числительное two меняется на second (второй по величине)."
+    },
+    {
+        "id": "eng_ege_p130_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "It forms part of the Kronotsky Nature Reserve, which in turn ____ in the World Heritage Site known as the Volcanoes of Kamchatka. (INCLUDE)",
+        "answer": "IS INCLUDED",
+        "solution": "Требуется форма пассивного залога в настоящем времени (Present Simple Passive), так как заповедник сам себя не включает, а включен в список объектов наследия. Подлежащее 'which' (относящееся к reserve) — единственное число."
+    },
+    {
+        "id": "eng_ege_p130_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The valley is difficult to reach, with helicopters ____ the only possible means of transport. (PROVIDE)",
+        "answer": "PROVIDING",
+        "solution": "Здесь используется причастный оборот (Participle I) в функции обстоятельства. Вертолеты, обеспечивающие (предоставляющие) единственную возможность добраться."
+    },
+    {
+        "id": "eng_ege_p130_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "These are a set of seven gigantic, abnormally shaped stone pillars ____ west of the Ural Mountains in the Komi Republic. (LOCATE)",
+        "answer": "LOCATED",
+        "solution": "Используется причастие прошедшего времени (Participle II) в роли определения. Столбы, расположенные (которые расположены) к западу от Уральских гор."
+    },
+    {
+        "id": "eng_ege_p130_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "They are also known as the Seven Strong ____ Rock Formations or Poles of the Komi Republic. (MAN)",
+        "answer": "MEN",
+        "solution": "Требуется форма множественного числа существительного. Man — существительное-исключение, во множественном числе — men."
+    },
+    {
+        "id": "eng_ege_p130_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "However, upon seeing the holy Mansi mountains, the shaman of the giants dropped his drum and all of them ____ into the stone pillars. (FREEZE)",
+        "answer": "FROZE",
+        "solution": "Повествование идет о прошлых событиях (dropped), поэтому используем Past Simple. Глагол freeze — неправильный, его вторая форма — froze."
+    },
+    {
+        "id": "eng_ege_p131_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Apethorpe Palace is one of England’s greatest country houses. It holds a particularly important place in English history because of its ____ by Tudor and Stuart monarchs. (OWNER)",
+        "answer": "ownership",
+        "solution": "Для заполнения пропуска необходимо образовать существительное от слова 'OWNER' (владелец), так как пропуск стоит после притяжательного местоимения 'its'. С помощью суффикса '-ship' образуем абстрактное существительное 'ownership' (владение, собственность)."
+    },
+    {
+        "id": "eng_ege_p131_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Elizabeth I once owned the building, which she had inherited from Henry VIII. For a period, Apethorpe was a royal palace lived in ____ by James I and Charles I. (REGULAR)",
+        "answer": "regularly",
+        "solution": "В данном предложении пропуск характеризует глагол 'lived' (отвечает на вопрос 'как?'), следовательно, требуется наречие. От прилагательного 'REGULAR' (регулярный) при помощи суффикса '-ly' образуем наречие 'regularly' (регулярно)."
+    },
+    {
+        "id": "eng_ege_p131_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "James I so loved Apethorpe that he personally contributed to its extension to make it more ____ for hunting in the nearby royal forest of Rockingham. (SUIT)",
+        "answer": "suitable",
+        "solution": "Конструкция 'make it more...' требует использования прилагательного. От глагола 'SUIT' (подходить) при помощи суффикса '-able' образуем прилагательное 'suitable' (подходящий, годный)."
+    },
+    {
+        "id": "eng_ege_p131_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The resulting series of state rooms, including the King’s Bedchamber and the ____ Long Gallery, is one of the most complete to survive from this period. (IMPRESS)",
+        "answer": "impressive",
+        "solution": "Пропуск стоит перед существительным 'Long Gallery' и служит определением к нему, поэтому требуется прилагательное. От глагола 'IMPRESS' (впечатлять) при помощи суффикса '-ive' образуем прилагательное 'impressive' (впечатляющий)."
+    },
+    {
+        "id": "eng_ege_p131_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Apethorpe Palace is a private ____ but is open to the public by pre-booked guided tours during July and August. (RESIDE)",
+        "answer": "residence",
+        "solution": "После прилагательного 'private' и артикля 'a' должно стоять существительное. От глагола 'RESIDE' (проживать) при помощи суффикса '-ence' образуем существительное 'residence' (резиденция, место жительства)."
+    },
+    {
+        "id": "eng_ege_p131_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "The house that Sofia rented at Lake Bala was even better than she ____ from when she drove up to see it, along with several others.",
+        "answer": "3",
+        "solution": "В данном контексте по смыслу и сочетаемости подходит глагол 'remembered' (помнила). София сравнивает текущее впечатление от арендованного дома с тем, каким она его запомнила во время первого осмотра."
+    },
+    {
+        "id": "eng_ege_p131_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "Obviously, it was well looked ____.",
+        "answer": "2",
+        "solution": "Здесь используется фразовый глагол 'look after', который означает 'заботиться, присматривать'. Выражение 'well looked after' переводится как 'ухоженный, находящийся в хорошем состоянии'."
+    },
+    {
+        "id": "eng_ege_p131_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "It belonged to a family whose children had ____ up and now had children of their own, according to the realtor.",
+        "answer": "1",
+        "solution": "Используется устойчивый фразовый глагол 'grow up' (расти, взрослеть). В форме Past Participle для времени Past Perfect это 'grown up'. Речь идет о детях, которые выросли в этом доме."
+    },
+    {
+        "id": "eng_ege_p131_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "What Sofia liked very much was a big, old-fashioned kitchen where you could ____ prepare meals for an army.",
+        "answer": "3",
+        "solution": "Наречие 'easily' (легко) наилучшим образом дополняет смысл предложения: кухня была настолько большой, что в ней можно было без труда (легко) приготовить еду на целую 'армию'."
+    },
+    {
+        "id": "eng_ege_p131_34",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 34,
+        "task_text": "...at the edge of the lake, there was a boathouse with two speedboats in it, a sleek modern one and an old wooden one, and an old wooden dock that had been impeccably cared ____.",
+        "answer": "4",
+        "solution": "Требуется знание управления глагола. Глагол 'care' в значении 'заботиться о чем-то, содержать в исправности' используется с предлогом 'for'. Конструкция 'cared for' означает, что за пристанью безупречно ухаживали."
+    },
+    {
+        "id": "eng_ege_p141_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Stonehenge is perhaps the world’s most famous prehistoric monument. It ____ in several stages. (ERECT)",
+        "answer": "was erected",
+        "solution": "По контексту требуется форма прошедшего времени (Past Simple), так как речь идет о строительстве исторического памятника. Поскольку подлежащее 'it' (Стоунхендж) не совершало действие само, а подвергалось ему, используем пассивный залог: was/were + V3. Для единственного числа — 'was erected'."
+    },
+    {
+        "id": "eng_ege_p141_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "The ____ monument was an early henge monument, built about 5,000 years ago. (ONE)",
+        "answer": "first",
+        "solution": "Перед пропуском стоит определенный артикль 'the', а по смыслу предложения требуется порядковое числительное (первый монумент). От количественного числительного 'one' образуется порядковое 'first'."
+    },
+    {
+        "id": "eng_ege_p141_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "Later in the Neolithic period about 2500 BC, there ____ the unique stone circle. (APPEAR)",
+        "answer": "appeared",
+        "solution": "Указание на конкретное время в прошлом (2500 BC) требует использования времени Past Simple. Глагол 'appear' правильный, поэтому добавляем окончание -ed."
+    },
+    {
+        "id": "eng_ege_p141_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "The ____ structures known in the immediate area are four or five pits, three of which appear to have held large pine 'totem-pole like' posts erected in the Mesolithic period. (EARLY)",
+        "answer": "earliest",
+        "solution": "Артикль 'the' перед пропуском и контекст сравнения всех известных структур в этой области указывают на необходимость превосходной степени прилагательного. У прилагательного 'early' при добавлении суффикса -est буква 'y' меняется на 'i'."
+    },
+    {
+        "id": "eng_ege_p141_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "It ____ how these posts relate to the monument of Stonehenge. (NOT KNOW)",
+        "answer": "is not known",
+        "solution": "Предложение констатирует общеизвестный факт (или его отсутствие) в настоящее время. Требуется форма Present Simple Passive, так как 'it' является формальным подлежащим, а само действие 'знать' направлено на объект. Формула: am/is/are + not + V3. Для 'it' используем 'is not known'."
+    },
+    {
+        "id": "eng_ege_p141_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "It is possible that this is why it became the site of an early Neolithic monument complex ____ back to the period between 8500 and 7000 BC. (DATE)",
+        "answer": "dating",
+        "solution": "В данном случае пропущено причастие, которое определяет существительное 'complex' (комплекс какой? датирующийся...). Для описания активного признака предмета используется причастие I (Participle I), которое образуется при помощи окончания -ing."
+    },
+    {
+        "id": "eng_ege_p142_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "The pulsating geysers of Kamchatka were discovered by a local ____, Tatyana Ustinova, in 1941. (SCIENCE)",
+        "answer": "scientist",
+        "solution": "По контексту требуется существительное, обозначающее человека по роду его деятельности. От существительного science (наука) при помощи суффикса -ist образуется scientist (ученый). Артикль 'a' указывает на единственное число."
+    },
+    {
+        "id": "eng_ege_p142_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "The Kamchatka River and the surrounding central side valley are flanked by large volcanic belts containing around 160 volcanoes, 29 of them still ____. (ACT)",
+        "answer": "active",
+        "solution": "Требуется прилагательное для описания состояния вулканов. От глагола act (действовать) при помощи суффикса -ive образуется прилагательное active (активный/действующий)."
+    },
+    {
+        "id": "eng_ege_p142_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "This is ____ one of the most outstanding volcanic regions of the world. (DOUBT)",
+        "answer": "undoubtedly",
+        "solution": "В данном предложении пропуск должен быть заполнен вводным словом (наречием) со значением «несомненно». К основе doubt добавляется отрицательная приставка un- и суффикс наречия -edly."
+    },
+    {
+        "id": "eng_ege_p142_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Unlike other volcanoes in the world, the volcanoes in Russia have beautiful landscapes that have turned into tourist ____ centres. (ATTRACT)",
+        "answer": "attraction",
+        "solution": "Используется устойчивое словосочетание 'tourist attraction' (туристическая достопримечательность). В данном случае существительное attraction выступает в роли определения перед словом centres."
+    },
+    {
+        "id": "eng_ege_p142_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "The landscapes at the base of volcanoes are home to more than a thousand different types of trees making the place ____ beautiful. (NATURAL)",
+        "answer": "naturally",
+        "solution": "Требуется наречие для характеристики прилагательного beautiful. Наречие naturally (естественным образом) образуется от прилагательного natural при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p142_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "She wanted nothing to ____ with a life like her parents' and grandparents'.",
+        "answer": "do",
+        "solution": "Используется устойчивое выражение 'to have nothing to do with something', которое переводится как «не иметь ничего общего с чем-либо» или «не иметь отношения к чему-либо»."
+    },
+    {
+        "id": "eng_ege_p142_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "...and Joyce's youngest sister Leslie had finally ____ her mother's dream for her.",
+        "answer": "realized",
+        "solution": "В английском языке для выражения «осуществить мечту» используется устойчивое словосочетание 'to realize a dream' (или 'to fulfill a dream')."
+    },
+    {
+        "id": "eng_ege_p142_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "Julia, their mother, was ____ now that Joyce didn't have her talent.",
+        "answer": "happy",
+        "solution": "Исходя из контекста повествования, мать чувствовала себя счастливой или довольной (happy), так как она теперь могла сосредоточить все внимание на таланте младшей дочери."
+    },
+    {
+        "id": "eng_ege_p142_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "...let ____ what parts to take, without him.",
+        "answer": "alone",
+        "solution": "Используется устойчивое выражение 'let alone', которое переводится как «не говоря уже о...» или «тем более»."
+    },
+    {
+        "id": "eng_ege_p152_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "In the early morning of 14 October 1066, two great armies prepared to fight for the throne of England. On a hilltop 7 miles from Hastings were the forces of Harold, who ____ king nine months before. (CROWN)",
+        "answer": "hadbeencrowned",
+        "solution": "Используется форма Past Perfect Passive, так как действие (коронация) произошло раньше другого действия в прошлом (битвы) и совершено над подлежащим (Гарольдом)."
+    },
+    {
+        "id": "eng_ege_p152_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "____ them on the far side of the valley below were the troops of Duke William of Normandy, who believed he was the rightful king. (FACE)",
+        "answer": "facing",
+        "solution": "Причастие I (Present Participle) используется в качестве обстоятельства, описывающего положение войск (располагаясь/находясь лицом к ним)."
+    },
+    {
+        "id": "eng_ege_p152_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "By the end of the day, thousands ____ dead on the battlefield, and the victorious William was one step nearer to seizing the throne. (LIE)",
+        "answer": "lay",
+        "solution": "Используется форма Past Simple для описания завершенного действия в прошлом. Глагол lie — неправильный (lie-lay-lain)."
+    },
+    {
+        "id": "eng_ege_p152_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "There is a number sources giving us detailed information about the battle. We know that by the evening of 13 October, the English and Norman armies were encamped within sight of each other at the place now ____ simply as Battle. (KNOW)",
+        "answer": "known",
+        "solution": "Причастие II (Past Participle) используется в функции определения для передачи пассивного значения (место, «известное как»)."
+    },
+    {
+        "id": "eng_ege_p152_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Duke William of Normandy had had plenty of time to prepare his forces since landing at Pevensey over two weeks ____. (EARLY)",
+        "answer": "earlier",
+        "solution": "Используется сравнительная степень наречия (earlier) для обозначения времени, предшествующего моменту в прошлом."
+    },
+    {
+        "id": "eng_ege_p152_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Harold, by contrast, had just won a hard-fought battle at Stamford Bridge, near York, where he had defeated another claimant to the English throne, Harald Hardrada, King of Norway. When the news of William’s landing reached Harold, he rushed his battle-weary army back south, ____ only briefly in London to gather extra forces. (STOP)",
+        "answer": "stopping",
+        "solution": "Причастие I (Present Participle) используется для описания сопутствующего действия (останавливаясь лишь на короткое время)."
+    },
+    {
+        "id": "eng_ege_p152_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "The great battle on the Volga River became a turning point in the World War II. Due to its convenient ____ in the very centre of the city, Mamayev Kurgan held the key position in the defence of Stalingrad. (LOCATE)",
+        "answer": "location",
+        "solution": "Необходимо образовать существительное от глагола locate при помощи суффикса -ion, так как после прилагательного (convenient) должно стоять существительное."
+    },
+    {
+        "id": "eng_ege_p152_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "It is here where a ____ memorial complex was erected. (COLOSSUS)",
+        "answer": "colossal",
+        "solution": "Необходимо образовать прилагательное от существительного colossus при помощи суффикса -al для описания мемориального комплекса."
+    },
+    {
+        "id": "eng_ege_p153_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Mamayev Kurgan Memorial complex “To the heroes of the Battle of Stalingrad” in Volgograd is a symbol of ____ of the Soviet people and a tribute to the memory of those who perished in battle. (HERO)",
+        "answer": "heroism",
+        "solution": "В данном контексте требуется абстрактное существительное, обозначающее качество народа. От основы HERO (герой) образуется слово HEROISM (героизм)."
+    },
+    {
+        "id": "eng_ege_p153_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The key element of the ensemble is a world-famous sculpture “The Motherland Calls!”, one of the most ____ war monuments. (RECOGNISE)",
+        "answer": "recognisable",
+        "solution": "Перед существительным 'monuments' необходимо прилагательное. От глагола RECOGNISE (узнавать) с помощью суффикса -ABLE образуется прилагательное RECOGNISABLE (узнаваемый)."
+    },
+    {
+        "id": "eng_ege_p153_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "At the time of its ____ in 1967, the statue was the largest free-standing sculpture in the world. (INSTALL)",
+        "answer": "installation",
+        "solution": "После притяжательного местоимения 'its' должно стоять существительное. От глагола INSTALL (устанавливать) с помощью суффикса -ATION образуется существительное INSTALLATION (установка)."
+    },
+    {
+        "id": "eng_ege_p153_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "But there was something even more important that ____ him from leaving.",
+        "answer": "2",
+        "solution": "Используется глагол PREVENT (препятствовать, мешать) в устойчивой конструкции 'prevent someone from doing something' (помешать кому-то уехать)."
+    },
+    {
+        "id": "eng_ege_p153_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "An ____ he had no intention of missing, under any circumstances. His mother’s seventieth birthday party.",
+        "answer": "1",
+        "solution": "Для описания планируемого мероприятия (празднования дня рождения) лучше всего подходит слово EVENT (событие, мероприятие)."
+    },
+    {
+        "id": "eng_ege_p153_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "She ____ actively involved with several local charities,",
+        "answer": "1",
+        "solution": "Глагол REMAIN (оставаться) используется для описания сохранения определенного состояния (оставаться активно вовлеченной)."
+    },
+    {
+        "id": "eng_ege_p153_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "and ____ she shortened her jogging distance, she continued to jog every day.",
+        "answer": "2",
+        "solution": "В данном предложении требуется союз уступки ALTHOUGH (хотя), так как части предложения противопоставляются: она сократила дистанцию, но всё же бегала каждый день."
+    },
+    {
+        "id": "eng_ege_p153_34",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 34,
+        "task_text": "Gilbert would never forget the personal sacrifices his mother had made to ____ Gilbert won a scholarship to Hartford,",
+        "answer": "4",
+        "solution": "Глагол ENSURE означает «обеспечивать, гарантировать». По контексту мать приносила жертвы, чтобы гарантировать сыну получение стипендии."
+    },
+    {
+        "id": "eng_ege_p162_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "From the invasion in AD 43 until rule from Rome ended in the 5th century, the province of Britannia was part of a political union that covered ____ of Europe. (MUCH)",
+        "answer": "MOST",
+        "solution": "Используется превосходная степень местоимения 'much'. Выражение 'most of Europe' означает 'большая часть / большая половина Европы'."
+    },
+    {
+        "id": "eng_ege_p162_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "This period ____ by several key events, both military and civilian. (MARK)",
+        "answer": "WASMARKED",
+        "solution": "Используется страдательный залог (Passive Voice) в прошедшем простом времени (Past Simple), так как подлежащее 'period' подвергалось действию в прошлом. Формула: was/were + V3."
+    },
+    {
+        "id": "eng_ege_p162_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "By the early 5th century, the Roman Empire could no longer defend ____ against either internal rebellion or the external threat posed by Germanic tribes... (IT)",
+        "answer": "ITSELF",
+        "solution": "Используется возвратное местоимение (Reflexive Pronoun). Империя не могла больше защищать 'саму себя'. Для 'it' возвратная форма — 'itself'."
+    },
+    {
+        "id": "eng_ege_p162_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "It was built by the Roman army on the orders of the emperor Hadrian ____ his visit to Britain in AD 122. (FOLLOW)",
+        "answer": "FOLLOWING",
+        "solution": "Используется причастие I (Present Participle). В данном контексте 'following' выступает в роли предлога/причастия со значением 'после/вслед за'."
+    },
+    {
+        "id": "eng_ege_p162_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "The forts here ____ by a road, now known as the Stanegate, between Corbridge and Carlisle. (LINK)",
+        "answer": "WERELINKED",
+        "solution": "Используется страдательный залог (Passive Voice) в прошедшем времени (Past Simple), так как речь идет об исторических фактах. Подлежащее 'forts' стоит во множественном числе, поэтому используем were + V3."
+    },
+    {
+        "id": "eng_ege_p162_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Hadrian came to Britain in AD 122 and, according to a biography ____ 200 years later, 'put many things to right...'. (WRITE)",
+        "answer": "WRITTEN",
+        "solution": "Используется причастие II (Past Participle) в функции определения к существительному 'biography'. Биография, (какая?) написанная 200 лет спустя."
+    },
+    {
+        "id": "eng_ege_p163_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Have you been to Zaryadye Park? It's an ____ new park right in the heart of Moscow. (AMAZE)",
+        "answer": "amazing",
+        "solution": "Для описания существительного (park) требуется прилагательное. Суффикс -ing используется для обозначения признака предмета, вызывающего эмоцию (удивительный)."
+    },
+    {
+        "id": "eng_ege_p163_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "It covers 13 hectares between Red Square and the Moscow River and attracts both Muscovites and tourists. ____, its buildings are buried underground. (USUAL)",
+        "answer": "Unusually",
+        "solution": "В начале предложения перед запятой необходимо наречие, характеризующее всё высказывание. По смыслу (здания под землей — это необычно) требуется отрицательная приставка un- и суффикс наречия -ly."
+    },
+    {
+        "id": "eng_ege_p163_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Much of the ____ natural landscape has been constructed over the roofs of these new buildings. (APPARENT)",
+        "answer": "apparently",
+        "solution": "Здесь требуется наречие 'apparently' (по-видимому), которое модифицирует прилагательное 'natural'. Наречие образуется с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p163_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "There's also a walkway over the Moscow River which provides a high ____ platform. (OBSERVE)",
+        "answer": "observation",
+        "solution": "Необходимо существительное для создания устойчивого словосочетания 'observation platform' (смотровая площадка). От глагола observe оно образуется с помощью суффикса -ation."
+    },
+    {
+        "id": "eng_ege_p163_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "It allows visitors a wonderful ____ view of the embankment. (PANORAMA)",
+        "answer": "panoramic",
+        "solution": "Для описания вида (view) требуется прилагательное. Прилагательное от существительного panorama образуется при помощи суффикса -ic."
+    },
+    {
+        "id": "eng_ege_p163_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "She knew they wouldn't ____.",
+        "answer": "approve",
+        "solution": "По контексту подходит глагол 'approve' (одобрять). Джули знала, что родители не одобрят её поездки автостопом."
+    },
+    {
+        "id": "eng_ege_p163_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "Her father would drive her to the station on the first day of term, when she would hang ____ on the platform until she was certain he was on his way back home.",
+        "answer": "about",
+        "solution": "Фразовый глагол 'hang about' (или 'hang around') означает 'слоняться, поджидать, проводить время в ожидании чего-либо'."
+    },
+    {
+        "id": "eng_ege_p163_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "There were two good reasons why Julie ____ to thumb a ride back to Hartford rather than take a bus or train.",
+        "answer": "preferred",
+        "solution": "Глагол 'prefer' (предпочитать) используется для выражения выбора в пользу одного из вариантов (автостоп вместо автобуса)."
+    },
+    {
+        "id": "eng_ege_p163_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "Her parents could ____ afford any extra expenses.",
+        "answer": "hardly",
+        "solution": "Устойчивое выражение 'hardly afford' означает 'едва ли быть в состоянии позволить себе что-либо финансово'."
+    },
+    {
+        "id": "eng_ege_p163_34",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 34,
+        "task_text": "In any case Dad and Ma had already made quite enough sacrifices to ensure she could ____ college, without causing them any further expense.",
+        "answer": "attend",
+        "solution": "Для обозначения регулярного посещения учебного заведения (колледжа) используется глагол 'attend'."
+    },
+    {
+        "id": "eng_ege_p173_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "War and Peace, a novel by Leo Tolstoy, is a picture of Russian life set against a background of Napoleon's invasion. It is one of the ____ novels of world literature. (GREAT)",
+        "answer": "greatest",
+        "solution": "Требуется превосходная степень сравнения прилагательного 'great', так как перед пропуском стоит определенный артикль 'the' и конструкция 'one of the' (один из самых...)."
+    },
+    {
+        "id": "eng_ege_p173_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "Considerable parts of the book ____ to Tolstoy's theory of history. (DEVOTE)",
+        "answer": "aredevoted",
+        "solution": "Используется пассивный залог (Passive Voice) в Present Simple, так как части книги ('parts' — мн. число) являются объектом действия, а не субъектом. Описывается постоянный факт о книге."
+    },
+    {
+        "id": "eng_ege_p173_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "However, the greatness of War and Peace ____ in its philosophy or in any contribution to the facts or theory of history. (NOT LIE)",
+        "answer": "doesnotlie",
+        "solution": "Необходимо построить отрицание в Present Simple для констатации факта. Подлежащее 'greatness' (величие) — неисчисляемое существительное (ед. ч.), поэтому используется вспомогательный глагол 'does'."
+    },
+    {
+        "id": "eng_ege_p173_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "What do you know about Moscow? It ____ the capital of Russia for a long time. (BE)",
+        "answer": "hasbeen",
+        "solution": "Используется время Present Perfect, так как действие (состояние) началось в прошлом и продолжается в настоящем. На это указывает маркер 'for a long time'."
+    },
+    {
+        "id": "eng_ege_p173_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Muscovites today consider Prince Yuri Dolgorukiy their city's founding father, but it was only recorded that he dined with friends in the town of 'Moskov', ____ after the local Moscow River. (NAME)",
+        "answer": "named",
+        "solution": "Используется причастие II (Past Participle) в роли определения к существительному 'town' (город, названный в честь...)."
+    },
+    {
+        "id": "eng_ege_p173_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Moscow remained a small town while the nearby city of Vladimir ____ in prominence and overtook Kiev, the old capital, in importance. (RISE)",
+        "answer": "rose",
+        "solution": "Требуется форма Past Simple для описания исторического события в прошлом. Глагол 'rise' — неправильный (rise - rose - risen). Однородное сказуемое — 'overtook'."
+    },
+    {
+        "id": "eng_ege_p174_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "There are more than 9,000 different types, or species, of birds. These have been organized by ____ into groups called orders which contain many different species. (SCIENCE)",
+        "answer": "scientists",
+        "solution": "По смыслу предложения требуется существительное, обозначающее людей (деятелей), которые занимаются классификацией видов. От слова science (наука) образуем scientist (ученый). Так как речь идет о группе людей в целом, необходимо использовать множественное число — scientists."
+    },
+    {
+        "id": "eng_ege_p174_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Birds are ____ creatures — the only living beings that have feathers. (AMAZE)",
+        "answer": "amazing",
+        "solution": "Перед существительным creatures (существа) должно стоять прилагательное, описывающее их признак. От глагола amaze (удивлять) образуем прилагательное-причастие amazing (удивительные) с помощью суффикса -ing."
+    },
+    {
+        "id": "eng_ege_p174_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "This helps them to attract mates or blend in with their ____. This is called camouflage. (SURROUND)",
+        "answer": "surroundings",
+        "solution": "После притяжательного местоимения their необходимо существительное. От глагола surround (окружать) образуем существительное surroundings, которое в значении 'окружающая среда, окружение' всегда используется во множественном числе."
+    },
+    {
+        "id": "eng_ege_p174_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "It would be ____ for birds to carry their developing young inside their bodies like mammals do — they would become too heavy to fly. (MANAGE)",
+        "answer": "unmanageable",
+        "solution": "В контексте говорится, что птицам было бы крайне тяжело или невозможно летать, если бы они вынашивали потомство внутри. Сначала от глагола manage образуем прилагательное manageable (выполнимый, поддающийся управлению), а затем добавляем отрицательную приставку un-, чтобы получить значение 'непосильный, невыполнимый'."
+    },
+    {
+        "id": "eng_ege_p174_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Hunting birds, such as hawks and eagles, have ____ hooked beaks. (POWER)",
+        "answer": "powerful",
+        "solution": "Для описания существительного beaks (клювы) требуется прилагательное. От существительного power (сила, мощь) с помощью суффикса -ful образуем прилагательное powerful (мощные, сильные)."
+    },
+    {
+        "id": "eng_ege_p184_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "During the reign of the grand prince of Moscow Ivan III, the Kremlin ____ and it got brick walls more than a mile in length and in some places up to 60 feet (18 metres) high. (ENLARGE)",
+        "answer": "was enlarged",
+        "solution": "Используется форма Past Simple Passive (was + глагол с окончанием -ed), так как действие совершалось над подлежащим (Кремль расширяли) в определенный период в прошлом."
+    },
+    {
+        "id": "eng_ege_p184_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "In 1534-38 the Kitay-gorod, previously ____ only by earth banks and palisades, was also surrounded by a brick wall, with 12 towers. (PROTECT)",
+        "answer": "protected",
+        "solution": "Используется Participle II (причастие прошедшего времени) для образования причастного оборота в пассивном значении (Китай-город, ранее защищенный...)."
+    },
+    {
+        "id": "eng_ege_p184_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The town ____ and spread outside the walls to form what became known as the Bely Gorod (“White City”) in a semicircle around the Kremlin and Kitay-gorod. (GROW)",
+        "answer": "grew",
+        "solution": "Глагол стоит в Past Simple, так как описываются последовательные исторические события в прошлом (в паре с глаголом spread). Grow — неправильный глагол (grow-grew-grown)."
+    },
+    {
+        "id": "eng_ege_p184_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "His name ____ part of many languages when we want to say someone is a genius, as in the phrase, “She’s a real Einstein”. (BECOME)",
+        "answer": "has become",
+        "solution": "Используется Present Perfect, так как действие произошло в прошлом, но результат (имя стало частью языка) важен и актуален для настоящего момента."
+    },
+    {
+        "id": "eng_ege_p184_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "No one could have guessed this ____ when he was at school. (HAPPEN)",
+        "answer": "would happen",
+        "solution": "Используется форма Future-in-the-Past (would + начальная форма глагола), так как мы говорим о будущем событии относительно момента в прошлом."
+    },
+    {
+        "id": "eng_ege_p184_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Twelve years later he was a university professor and in 1921, he ____ the Nobel Prize for Physics. (WIN)",
+        "answer": "won",
+        "solution": "Используется Past Simple, так как указано конкретное время совершения действия в прошлом (1921). Win — неправильный глагол (win-won-won)."
+    },
+    {
+        "id": "eng_ege_p185_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "It seems we all understand what is meant by 'seabirds'. However, there exists no single ____ of seabirds. (DEFINE)",
+        "answer": "definition",
+        "solution": "В данном предложении после прилагательного 'single' требуется имя существительное. От глагола 'define' (определять) с помощью суффикса -ition образуется существительное 'definition' (определение)."
+    },
+    {
+        "id": "eng_ege_p185_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Two seabird specialists put it this way: 'The one common characteristic that all seabirds share is that they feed in saltwater; but, as seems to be true with any ____ in biology, some do not.' (STATE)",
+        "answer": "statement",
+        "solution": "После определителя 'any' необходимо поставить существительное. От глагола 'state' (заявлять, утверждать) с помощью суффикса -ment образуется существительное 'statement' (утверждение)."
+    },
+    {
+        "id": "eng_ege_p185_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Do you know that penguins are considered to be birds though they cannot fly? That’s why they are often referred to as 'flightless birds'. Penguins are the best ____ in the bird world. (SWIM)",
+        "answer": "swimmers",
+        "solution": "После конструкции 'the best' требуется существительное. Так как подлежащее 'Penguins' стоит во множественном числе, то и существительное 'swimmer' (пловец) должно стоять во множественном числе — 'swimmers'."
+    },
+    {
+        "id": "eng_ege_p185_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "King penguins and emperor penguins ____ dive deeper than 250 metres. (REGULAR)",
+        "answer": "regularly",
+        "solution": "Пропуск стоит перед смысловым глаголом 'dive' (нырять), значит, требуется наречие, характеризующее действие. Наречие образуется от прилагательного 'regular' при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p185_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Another seabird, called the gannet, makes a ____ dive from a height of 30 metres above the sea to catch fish in the sea. (FANTASY)",
+        "answer": "fantastic",
+        "solution": "Перед существительным 'dive' (нырок/погружение) должно стоять прилагательное. От существительного 'fantasy' образуется прилагательное 'fantastic' (фантастический, потрясающий)."
+    },
+    {
+        "id": "eng_ege_p185_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "The castle brought back many happy memories — they ____ how they’d spent a holiday there just before Ronald went up to Cambridge.",
+        "answer": "recalled",
+        "solution": "Для контекста 'вспоминать события прошлого' лучше всего подходит глагол 'recall' (вспоминать, воскрешать в памяти)."
+    },
+    {
+        "id": "eng_ege_p185_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "...rarely returning to the castle before the sun had ____ behind the highest mountain.",
+        "answer": "set",
+        "solution": "Используется устойчивое выражение 'the sun sets', что означает 'солнце заходит/садится'."
+    },
+    {
+        "id": "eng_ege_p185_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "They ____ delicious food and after supper they sat by a roaring log fire reading novels and short stories.",
+        "answer": "enjoyed",
+        "solution": "Глагол 'enjoy' в значении 'наслаждаться' (едой) наиболее уместен в данном художественном описании приятного времяпрепровождения."
+    },
+    {
+        "id": "eng_ege_p185_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "They ____ at the Russell House looking forward to a life of domestic tranquility.",
+        "answer": "arrived",
+        "solution": "Глагол 'arrive' требует после себя предлог 'at', если речь идет о конкретном здании или месте."
+    },
+    {
+        "id": "eng_ege_p185_34",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 34,
+        "task_text": "____, it was not to be.",
+        "answer": "However",
+        "solution": "Вводное слово 'However' (однако) используется для выражения противопоставления ожиданиям героев (они ждали спокойствия, но случилось иначе)."
+    },
+    {
+        "id": "eng_ege_p195_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Alexander Pushkin was a 19th-century Russian poet, novelist, dramatist, and short-story writer. He ____ as the founder of modern Russian literature, and his works have been adapted into operas by several Russian composers. (REMEMBER)",
+        "answer": "is remembered",
+        "solution": "Используется пассивный залог (Passive Voice) в Present Simple для выражения общеизвестного факта, актуального в настоящем времени. Подлежащее 'he' не само совершает действие, а является его объектом."
+    },
+    {
+        "id": "eng_ege_p195_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "Raised in a neglected environment, Pushkin began his literary pursuits at an early age. However, he eventually became rebellious in his compositions. His works began infuriating the ____ government. (RULE)",
+        "answer": "ruling",
+        "solution": "В данном случае используется причастие I (Present Participle) в функции определения. Глагол 'rule' преобразуется в 'ruling' (правящий), характеризуя правительство."
+    },
+    {
+        "id": "eng_ege_p195_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "What do you know about the history of Moscow? The first documentary reference to Moscow ____ many years ago in the early monastic chronicles under the year 1147, when on April 4 Yuri Vladimirovich Dolgorukiy, prince of Suzdal, was host at a “great banquet” for his ally the prince of Novgorod-Seversky “in Moscow”. (FIND)",
+        "answer": "was found",
+        "solution": "Необходимо использовать пассивный залог (Passive Voice) в Past Simple, так как указано время действия в прошлом ('many years ago', '1147'). Ссылка на Москву была найдена кем-то."
+    },
+    {
+        "id": "eng_ege_p195_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "This is the traditional date of Moscow’s founding, although archaeological evidence showed that a settlement ____ on the site since Neolithic times. (EXIST)",
+        "answer": "had existed",
+        "solution": "Используется время Past Perfect, так как действие (существование поселения) началось раньше другого действия в прошлом ('showed') и продолжалось до него. На это указывает предлог 'since'."
+    },
+    {
+        "id": "eng_ege_p195_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Archaeological work has also revealed the remains of roads and evidence of iron and leather working ____ from the 11th century. (DATE)",
+        "answer": "dating",
+        "solution": "Используется причастие I (Present Participle) в функции определения к словосочетанию 'leather working'. Свидетельства (какие?), датируемые 11-м веком."
+    },
+    {
+        "id": "eng_ege_p195_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Defense was essential to protect the growing settlement, and in 1156 the first fortifications were built on the relatively high spit of land between the Moscow River and a small tributary, the Neglinnaya. The Neglinnaya now flows through an underground conduit, but part of its course ____ by a street of the same name. (TRACE)",
+        "answer": "is traced",
+        "solution": "Применяется пассивный залог (Passive Voice) в Present Simple. Речь идет о текущем положении дел ('now flows'): часть русла прослеживается (маркируется) улицей с тем же названием."
+    },
+    {
+        "id": "eng_ege_p196_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "What do you know about night birds? They are ____ creatures. (WONDER)",
+        "answer": "WONDERFUL",
+        "solution": "Для описания существительного (creatures) необходимо использовать прилагательное. Оно образуется от существительного 'wonder' с помощью суффикса -ful."
+    },
+    {
+        "id": "eng_ege_p196_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Some birds, such as the poorwill, hunt insects at night when there is less ____ for prey. (COMPETE)",
+        "answer": "COMPETITION",
+        "solution": "После слова 'less' (меньше) должно стоять существительное. От глагола 'compete' (соревноваться) существительное 'competition' (конкуренция) образуется с помощью суффикса -ition."
+    },
+    {
+        "id": "eng_ege_p196_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "The fluffy edges of the owl's feathers soften the sound wing beats so the owl can swoop ____ on its prey. (SILENT)",
+        "answer": "SILENTLY",
+        "solution": "В данном случае пропуск характеризует действие (глагол 'swoop'), поэтому требуется наречие. Оно образуется от прилагательного 'silent' при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p196_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The kakapo is the only parrot that is ____ at night. (ACT)",
+        "answer": "ACTIVE",
+        "solution": "В роли именной части сказуемого после глагола-связки 'is' необходимо прилагательное. От слова 'act' оно образуется с помощью суффикса -ive."
+    },
+    {
+        "id": "eng_ege_p196_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "____ most birds, the kiwi has a good sense of smell which helps it find food at night. (LIKE)",
+        "answer": "UNLIKE",
+        "solution": "По смыслу предложения требуется предлог со значением «в отличие от», так как киви обладает качествами, не свойственными большинству птиц. К основе 'like' добавляется отрицательная приставка un-."
+    },
+    {
+        "id": "eng_ege_p20_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Survey research is a quantitative research method used for collecting data from a set of respondents. It ____ perhaps one of the most used methodologies in the industry for several years due to the multiple benefits and advantages that it has when collecting and analyzing data. (BE)",
+        "answer": "hasbeen",
+        "solution": "Требуется форма Present Perfect (has been), так как указан период времени, в течение которого совершается действие (for several years), и оно продолжается в настоящем."
+    },
+    {
+        "id": "eng_ege_p20_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "Survey research ____ as the process of conducting research using surveys that researchers send to survey respondents. (DEFINE)",
+        "answer": "isdefined",
+        "solution": "В данном предложении дается определение понятия. Используется Present Simple Passive (is defined), так как подлежащее (survey research) испытывает на себе действие, и это общеизвестный факт."
+    },
+    {
+        "id": "eng_ege_p20_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The data ____ from surveys is then statistically analyzed to draw meaningful research conclusions. (COLLECT)",
+        "answer": "collected",
+        "solution": "Используется причастие прошедшего времени (Participle II) в роли определения к существительному 'data' (данные, собранные из опросов)."
+    },
+    {
+        "id": "eng_ege_p20_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "In the 21st century, every organization is eager to understand what their customers think about their products or services and make ____ business decisions. (GOOD)",
+        "answer": "better",
+        "solution": "По контексту подразумевается принятие более качественных решений на основе полученных знаний. Используется сравнительная степень прилагательного 'good' — 'better'."
+    },
+    {
+        "id": "eng_ege_p20_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Researchers can conduct research in multiple ways, but surveys are proven to be one of the ____ research methods. (EFFECTIVE)",
+        "answer": "mosteffective",
+        "solution": "Конструкция 'one of the...' требует использования превосходной степени прилагательного. Для многосложного слова 'effective' это 'most effective'."
+    },
+    {
+        "id": "eng_ege_p20_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Creditable survey research can give ____ businesses access to a vast information bank. (THIS)",
+        "answer": "these",
+        "solution": "Указательное местоимение 'this' должно стоять в форме множественного числа 'these', так как оно относится к существительному во множественном числе 'businesses'."
+    },
+    {
+        "id": "eng_ege_p206_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Russia is one of the countries with the largest numbers of ethnic groups in Europe. 185 ethnic groups or nationalities have varied population from millions of people to just ten thousand ____ the smallest group. (FORM)",
+        "answer": "forming",
+        "solution": "В данном случае используется причастие I (Present Participle) в функции определения. Десять тысяч человек сами «формируют» (составляют) группу, поэтому форма активная."
+    },
+    {
+        "id": "eng_ege_p206_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "In Russia, there are more than 100 languages ____ with Russian being the official state language. (SPEAK)",
+        "answer": "spoken",
+        "solution": "Используется причастие II (Past Participle) для определения существительного 'languages'. Языки сами не говорят, на них говорят (пассивное значение)."
+    },
+    {
+        "id": "eng_ege_p206_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "J. K. Rowling is the pen name she uses as a writer. The J is for Joanne, her real first name, but she prefers ____ Jo. (CALL)",
+        "answer": "being called",
+        "solution": "После глагола 'prefer' может использоваться герундий. Так как действие направлено на подлежащее (её называют), требуется форма пассивного герундия (Passive Gerund) — 'being called'. Также допустим вариант 'to be called'."
+    },
+    {
+        "id": "eng_ege_p206_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "Apparently, people only call her Joanne when they're angry with her. The K is made up. Her publisher asked her to write using a name with two initials, but she ____ a middle name. (NOT HAVE)",
+        "answer": "did not have",
+        "solution": "Речь идет о событиях в прошлом (контекст 'asked', 'was'). Используется время Past Simple в отрицательной форме."
+    },
+    {
+        "id": "eng_ege_p206_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "The idea for the Harry Potter novels came from nowhere while she ____ on a train to London. (GO)",
+        "answer": "was going",
+        "solution": "Союз 'while' указывает на длительный процесс в прошлом, на фоне которого произошло другое действие (came). Используется Past Continuous."
+    },
+    {
+        "id": "eng_ege_p206_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "In fact, her last four books broke records for the ____ sellers in literary history. (FAST)",
+        "answer": "fastest",
+        "solution": "Наличие артикля 'the' и контекст сравнения всех книг в истории литературы указывают на необходимость использования превосходной степени прилагательного (Superlative Adjective)."
+    },
+    {
+        "id": "eng_ege_p207_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Many of them have sandy-brown feathers to blend with their ____. (SURROUND)",
+        "answer": "surroundings",
+        "solution": "После притяжательного местоимения 'their' требуется существительное. 'Surroundings' (окружение, среда) — подходящее по смыслу существительное во множественном числе."
+    },
+    {
+        "id": "eng_ege_p207_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "He flies off to find water and ____ soaks its feathers. (THOROUGH)",
+        "answer": "thoroughly",
+        "solution": "Для описания действия (глагол 'soaks') требуется наречие. Наречие 'thoroughly' (тщательно, основательно) образуется от прилагательного 'thorough' с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p207_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "He then returns home where his ____ chicks gulp the water that he's brought. (THIRST)",
+        "answer": "thirsty",
+        "solution": "Для характеристики существительного 'chicks' (птенцы) требуется прилагательное. 'Thirsty' (испытывающий жажду) — прилагательное, образованное от существительного 'thirst'."
+    },
+    {
+        "id": "eng_ege_p207_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The elf owl got its name because of its ____ – this small bird is only 14 centimetres long. (APPEAR)",
+        "answer": "appearance",
+        "solution": "После притяжательного местоимения 'its' требуется существительное. 'Appearance' (внешний вид) — существительное, образованное от глагола 'appear'."
+    },
+    {
+        "id": "eng_ege_p207_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "This prickly, ____ home helps to keep the owl’s eggs safe from enemies who do not want to struggle through the cactus spines. (COMFORT)",
+        "answer": "uncomfortable",
+        "solution": "По контексту (кактус — колючий, prickly) требуется прилагательное с отрицательным значением. С помощью приставки un- образуется слово 'uncomfortable' (неудобный)."
+    },
+    {
+        "id": "eng_ege_p207_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "But then I ____ that there had been an extremely bright, rather plump pupil by that name... (REMIND / REMEMBER / MENTION / REPEAT)",
+        "answer": "2",
+        "solution": "Глагол 'remembered' (вспомнил) подходит по смыслу: автор противопоставляет это состоянию в первом предложении ('didn't immediately recall')."
+    },
+    {
+        "id": "eng_ege_p207_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "In ____ , by the time I had reached the upper sixth, the precocious little blighter was already in the lower sixth... (ADDITION / FACT / PARTICULAR / SHORT)",
+        "answer": "2",
+        "solution": "Устойчивое вводное выражение 'In fact' (на самом деле, фактически) используется для сообщения уточняющих деталей."
+    },
+    {
+        "id": "eng_ege_p207_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "I ____ that the only way I was likely to find out was to invite her round to tea... (DECIDE / RESOLVE / SETTLE / DETERMINE)",
+        "answer": "1",
+        "solution": "Глагол 'decided' (решил) является наиболее подходящим по стилю и смыслу для выражения принятого решения в данной ситуации."
+    },
+    {
+        "id": "eng_ege_p207_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "When I first saw Helen again, I ____ recognized her. (NEARLY / BARELY / SLIGHTLY / HARDLY)",
+        "answer": "4",
+        "solution": "Устойчивое сочетание 'hardly recognized' (едва узнал) используется, когда человек сильно изменился внешне."
+    },
+    {
+        "id": "eng_ege_p21_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "New Year festivals include all of the many observances worldwide that celebrate the ____ of a new year. (BEGIN)",
+        "answer": "BEGINNING",
+        "solution": "Пропуск стоит после определенного артикля 'the' и перед предлогом 'of'. Требуется существительное. От глагола 'begin' образуется существительное 'beginning' (начало)."
+    },
+    {
+        "id": "eng_ege_p21_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "...and Jewish ____ calendar, all mark the new year on different dates. (RELIGION)",
+        "answer": "RELIGIOUS",
+        "solution": "Слово определяет существительное 'calendar', следовательно, требуется прилагательное. От существительного 'religion' (религия) образуется прилагательное 'religious' (религиозный)."
+    },
+    {
+        "id": "eng_ege_p21_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "It’s a perfect moment to inspire your friends, family, and ____ with a heartfelt message. (ACQUAINT)",
+        "answer": "ACQUAINTANCES",
+        "solution": "Пропуск находится в ряду однородных членов, обозначающих людей (friends, family). Требуется существительное во множественном числе. От глагола 'acquaint' образуется 'acquaintance' (знакомый), во множественном числе — 'acquaintances'."
+    },
+    {
+        "id": "eng_ege_p21_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Send them wishes for a ____ and prosperous year ahead with beautiful New Year cards. (JOY)",
+        "answer": "JOYFUL",
+        "solution": "Пропуск стоит перед существительным 'year' и соединен союзом 'and' с прилагательным 'prosperous'. Требуется прилагательное. От существительного 'joy' (радость) образуется прилагательное 'joyful' (радостный)."
+    },
+    {
+        "id": "eng_ege_p21_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "Your season’s greeting will help them start the year in a ____ special way. (TRUE)",
+        "answer": "TRULY",
+        "solution": "Пропуск стоит перед прилагательным 'special', определяя его степень. Требуется наречие. От прилагательного 'true' образуется наречие 'truly' (по-настоящему, поистине)."
+    },
+    {
+        "id": "eng_ege_p21_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "Adrian’s mother called and asked if he wanted to go to a black-tie ____ with her at the Museum of Science that evening. (1 event 2 performance 3 occurrence 4 reception)",
+        "answer": "1",
+        "solution": "Устойчивое выражение 'black-tie event' означает официальное мероприятие, предполагающее дресс-код 'черный галстук'."
+    },
+    {
+        "id": "eng_ege_p21_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "Her sister Gladys was ____ to go with her, but she cancelled at the last minute... (1 supposed 2 planned 3 intended 4 considered)",
+        "answer": "1",
+        "solution": "Используется грамматическая конструкция 'be supposed to do something', которая означает, что по плану или договоренности кто-то должен был что-то сделать."
+    },
+    {
+        "id": "eng_ege_p21_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "He thought about it for a minute and then ____. (1 agreed 2 accepted 3 approved 4 allowed)",
+        "answer": "1",
+        "solution": "Глагол 'agreed' (согласился) подходит по смыслу и может употребляться без прямого дополнения. 'Accepted' обычно требует дополнения (напр., 'accepted the invitation')."
+    },
+    {
+        "id": "eng_ege_p21_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "She ____ him she thought he’d enjoy it. (1 said 2 told 3 spoke 4 talked)",
+        "answer": "2",
+        "solution": "После пропуска стоит косвенное дополнение 'him' (кому?). В таком случае используется глагол 'tell' (в прошедшем времени — 'told'). Глагол 'say' требует после себя предлога 'to' (said to him)."
+    },
+    {
+        "id": "eng_ege_p217_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "The perfect smile has created a multi-billion-dollar industry, but not all is shiny in this business. Dentists say that illegal whitening is putting people at risk of health problems, including burnt gums, lips and lost ____. (TOOTH)",
+        "answer": "teeth",
+        "solution": "Существительное 'tooth' необходимо поставить во множественное число, так как оно перечисляется в ряду других существительных во множественном числе (gums, lips). Форма 'teeth' является исключением (irregular plural)."
+    },
+    {
+        "id": "eng_ege_p217_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "Statistics show a 26% increase in complaints ____ year from people with problems from whitening. (LATE)",
+        "answer": "last",
+        "solution": "Требуется форма прилагательного 'late' для обозначения времени. Выражение 'last year' является устойчивым и переводится как 'в прошлом году'."
+    },
+    {
+        "id": "eng_ege_p217_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "Now we know why a dog's nose is cold. Scientists ____ to solve this mystery for many years. (TRY)",
+        "answer": "have been trying",
+        "solution": "Используется время Present Perfect Continuous, так как действие началось в прошлом и продолжается в течение длительного периода времени ('for many years'), что подчеркивает длительность процесса до настоящего момента."
+    },
+    {
+        "id": "eng_ege_p217_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "They use their noses to detect temperature, when prey is nearby. Earlier it ____ that dogs' noses are cold to control their body temperature. (BELIEVE)",
+        "answer": "was believed",
+        "solution": "Используется пассивный залог (Passive Voice) в прошедшем времени (Past Simple), так как указано слово-маркер 'Earlier' (ранее), и действие совершалось над подлежащим ('считалось')."
+    },
+    {
+        "id": "eng_ege_p217_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Brain activity in the dogs showed that they ____ which objects were warmer than others. (KNOW)",
+        "answer": "knew",
+        "solution": "Правило согласования времен (Sequence of Tenses). Поскольку глагол в главном предложении стоит в Past Simple ('showed'), глагол в придаточном предложении также должен стоять в одной из форм прошедшего времени (в данном случае Past Simple)."
+    },
+    {
+        "id": "eng_ege_p217_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "A researcher said this ____ in the future scientists' ideas on how animals hunt. (CHANGE)",
+        "answer": "would change",
+        "solution": "Правило согласования времен. Глагол в главном предложении стоит в прошедшем времени ('said'), поэтому будущее время (Future Simple) в косвенной речи заменяется на будущее в прошедшем (Future-in-the-Past) — 'would change'."
+    },
+    {
+        "id": "eng_ege_p218_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Which came first, the chicken or the egg? Believe it or not, this question has its roots in ancient Greece, where ____ used it as an excuse to argue about cause and effect. (PHILOSOPHY)",
+        "answer": "philosophers",
+        "solution": "В данном контексте требуется существительное, обозначающее людей, занимающихся наукой. От существительного philosophy (философия) при помощи суффикса -er образуется слово philosopher (философ). Поскольку речь идет о группе людей в Древней Греции, необходимо добавить окончание множественного числа -s."
+    },
+    {
+        "id": "eng_ege_p218_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Some might say the chicken came first. Others may ____ that the egg came first since all chickens begin life inside of an egg. (AGREE)",
+        "answer": "disagree",
+        "solution": "Требуется глагол. По смыслу предложения вводится противопоставление первой точке зрения («некоторые говорят одно, другие не согласны»). От глагола agree при помощи отрицательной приставки dis- образуется антоним disagree (не соглашаться)."
+    },
+    {
+        "id": "eng_ege_p218_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "The animals they come from are known as jungle chicken and date back 21 million years. ____, right? (BELIEVE)",
+        "answer": "Unbelievable",
+        "solution": "В данном случае слово выступает в роли вводного восклицания, выражающего удивление. От глагола believe (верить) при помощи приставки un- и суффикса -able образуется прилагательное unbelievable (невероятный/невероятно)."
+    },
+    {
+        "id": "eng_ege_p218_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "The earliest eggs were soft, sort of like turtle or echidna eggs you might see on the beach. The harder ____ shell came later. (PROTECT)",
+        "answer": "protective",
+        "solution": "Перед существительным shell (скорлупа/оболочка) должно стоять прилагательное, описывающее его функцию. От глагола protect (защищать) при помощи суффикса -ive образуется прилагательное protective (защитный)."
+    },
+    {
+        "id": "eng_ege_p218_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "By the way, egg-laying is part of our evolutionary ____. (DEVELOP)",
+        "answer": "development",
+        "solution": "В предложении после прилагательного evolutionary (эволюционный) требуется существительное. Оно образуется от глагола develop (развиваться) при помощи суффикса -ment."
+    },
+    {
+        "id": "eng_ege_p218_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "He also brought me pencils and paper, for which I had little use but which I ____ he would have been lost without, and a great many books... (30)",
+        "answer": "2",
+        "solution": "В контексте предположения о причинах действий другого человека лучше всего подходит глагол guessed (догадался/предположил). В типовых вариантах ЕГЭ этому соответствует вариант 2."
+    },
+    {
+        "id": "eng_ege_p218_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "He ____ rather startled, and when he came back it was with a trade journal... (31)",
+        "answer": "4",
+        "solution": "Для описания внешнего вида человека («он выглядел довольно испуганным») используется глагол look в связке с прилагательным. Соответствует варианту 4 (looked)."
+    },
+    {
+        "id": "eng_ege_p218_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "We talked ____ at all. (32)",
+        "answer": "1",
+        "solution": "Hardly at all — это устойчивое наречное сочетание, означающее «почти совсем не» или «крайне мало». Соответствует варианту 1."
+    },
+    {
+        "id": "eng_ege_p218_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "He ____ me almost no attention. (33)",
+        "answer": "3",
+        "solution": "В английском языке используется устойчивое словосочетание pay attention (уделять внимание). В прошедшем времени — paid attention. Соответствует варианту 3."
+    },
+    {
+        "id": "eng_ege_p31_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Hogmanay is New Year’s festival in Scotland and parts of northern England. The name is also used for the cake, or sweets ____ to the children who go from house to house with traditional rhymes. (GIVE)",
+        "answer": "given",
+        "solution": "В данном случае используется причастие II (Participle II) в функции определения. Сладости (какие?), которые дают/были даны — given."
+    },
+    {
+        "id": "eng_ege_p31_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "On this evening it is also traditional for parties of masked children or young ____ to visit houses. (MAN)",
+        "answer": "men",
+        "solution": "Требуется форма множественного числа существительного. Слово man является исключением, его форма множественного числа — men."
+    },
+    {
+        "id": "eng_ege_p31_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The singing of 'Auld Lang Syne' on New Year’s, which originated during Hogmanay, ____ a worldwide custom ever since. (BECOME)",
+        "answer": "has become",
+        "solution": "Наличие маркера 'ever since' (с тех пор) указывает на использование времени Present Perfect. Подлежащее 'The singing' стоит в единственном числе, поэтому вспомогательный глагол — has."
+    },
+    {
+        "id": "eng_ege_p31_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "Other notable traditions include 'first footing.' This predicts good luck and prosperity if the first visitor to one’s house after midnight is a tall, dark-haired man ____ a ceremonial gift, such as coal or salt. (BRING)",
+        "answer": "bringing",
+        "solution": "Используется причастие I (Participle I) в функции определения: мужчина (какой?), приносящий подарок. Это активное действие."
+    },
+    {
+        "id": "eng_ege_p31_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Various local customs include the 'Burning of the Clavie', a fire festival, which ____ at Burghead in Moray, a picturesque village on Scotland’s Moray Firth coast. (HOLD)",
+        "answer": "is held",
+        "solution": "Речь идет о регулярном событии/традиции (Present Simple). Фестиваль сам себя не проводит, он проводится кем-то, поэтому необходим страдательный залог (Passive Voice): am/is/are + V3."
+    },
+    {
+        "id": "eng_ege_p31_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Hogmanay ____ as one of Scotland’s most important holidays, and it is not uncommon for festivities to last until January 2. (REGARD)",
+        "answer": "is regarded",
+        "solution": "Утверждение общего факта (Present Simple). Праздник рассматривается/считается (его так воспринимают люди), поэтому используем страдательный залог (Passive Voice): is + глагол в 3-й форме."
+    },
+    {
+        "id": "eng_ege_p32_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "They will often investigate new ____, seek out interesting objects, and explore every nook of their environment. (SURROUND)",
+        "answer": "surroundings",
+        "solution": "По смыслу предложения необходимо существительное в значении 'окружающая обстановка'. От глагола 'surround' (окружать) образуется существительное 'surroundings', которое в данном значении используется во множественном числе."
+    },
+    {
+        "id": "eng_ege_p32_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "This ____ can make them seem a little mischievous at times, as they may get into things they’re not supposed to, but it also means they love discovering new things. (CURIOUS)",
+        "answer": "curiosity",
+        "solution": "После указательного местоимения 'this' требуется существительное. От прилагательного 'curious' (любопытный) с помощью суффикса -ity образуется абстрактное существительное 'curiosity' (любопытство)."
+    },
+    {
+        "id": "eng_ege_p32_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Their outgoing nature means they typically adapt well to ____ living situations. (VARY)",
+        "answer": "various",
+        "solution": "Пропуск находится перед существительным 'living situations', значит, требуется прилагательное-определение. От глагола 'vary' (меняться, варьироваться) образуется прилагательное 'various' (разнообразные)."
+    },
+    {
+        "id": "eng_ege_p32_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Their ____ social nature often makes it easier for them to integrate into multi-pet households, and they may even form close bonds with other animals. (FRIEND)",
+        "answer": "friendly",
+        "solution": "В данном контексте необходимо прилагательное для описания характера ('nature'). От существительного 'friend' (друг) с помощью суффикса -ly образуется прилагательное 'friendly' (дружелюбный)."
+    },
+    {
+        "id": "eng_ege_p32_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "One of the standout traits of orange cats is their strong ____ to their owners. (ATTACH)",
+        "answer": "attachment",
+        "solution": "После прилагательного 'strong' (сильный) требуется существительное. От глагола 'attach' (прикреплять, привязывать) с помощью суффикса -ment образуется существительное 'attachment' (привязанность)."
+    },
+    {
+        "id": "eng_ege_p42_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "What do you know about Orkney? It is an archipelago of 70 or so islands ____ off the northeast tip of Scotland. (LIE)",
+        "answer": "lying",
+        "solution": "В данном случае используется причастие I (Participle I) для описания признака предмета (острова, «лежащие/расположенные» там). Глагол lie при образовании -ing формы меняет -ie на -y-."
+    },
+    {
+        "id": "eng_ege_p42_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "People ____ there from time immemorial. (LIVE)",
+        "answer": "havelived",
+        "solution": "Маркер «from time immemorial» (с незапамятных времен) указывает на действие, которое началось в прошлом и продолжается до настоящего момента. Используется время Present Perfect."
+    },
+    {
+        "id": "eng_ege_p42_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The largest island ____ to as the Mainland, though the Vikings knew it as Hrossey. (REFER)",
+        "answer": "isreferred",
+        "solution": "Здесь используется страдательный залог (Passive Voice), так как остров не сам называет себя, а его называют «Mainland». В контексте общеизвестного факта применяется Present Simple Passive."
+    },
+    {
+        "id": "eng_ege_p42_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "The Vikings, settling in the late eighth century, ____ the islands covered in prehistoric sites. (FIND)",
+        "answer": "found",
+        "solution": "Речь идет о конкретном историческом событии в прошлом (VIII век), поэтому используется время Past Simple. Вторая форма неправильного глагола find — found."
+    },
+    {
+        "id": "eng_ege_p42_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "The Orkneyinga Saga, an Icelandic text, tells the story of a raiding party, ____ out by a snowstorm. (CATCH)",
+        "answer": "caught",
+        "solution": "Для описания отряда (party), который «был застигнут» бурей, требуется причастие II (Participle II) с пассивным значением. Третья форма глагола catch — caught."
+    },
+    {
+        "id": "eng_ege_p42_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Orkahaugr is famous ____ days as a popular visitor attraction. (THIS)",
+        "answer": "these",
+        "solution": "Указательное местоимение «this» должно быть согласовано в числе с существительным «days», которое стоит во множественном числе. Множественное число от «this» — «these»."
+    },
+    {
+        "id": "eng_ege_p43_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "The tradition of first footing requires that the first visitor of the New Year should be a tall, dark and handsome ____, and come bearing a gift of coal, to bring good luck for the coming year. (STRANGE)",
+        "answer": "STRANGER",
+        "solution": "В данном контексте необходимо существительное, обозначающее человека (посетителя). От прилагательного 'strange' (странный) с помощью суффикса -er образуется существительное 'stranger' (незнакомец)."
+    },
+    {
+        "id": "eng_ege_p43_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "In the pagan winter festival, fire ____ the newly resurgent sun coming back to the land. (SYMBOL)",
+        "answer": "SYMBOLISED",
+        "solution": "В предложении пропущен глагол-сказуемое. Так как речь идет о древних языческих фестивалях (pagan winter festival), используется прошедшее время Past Simple. Глагол 'symbolise' (символизировать) образуется от существительного 'symbol' с помощью суффикса -ise."
+    },
+    {
+        "id": "eng_ege_p43_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "The sun was believed to ward off evil spirits dwelling in the ____. (DARK)",
+        "answer": "DARKNESS",
+        "solution": "После определенного артикля 'the' должно стоять существительное. От прилагательного 'dark' (темный) с помощью суффикса -ness образуется абстрактное существительное 'darkness' (темнота, тьма)."
+    },
+    {
+        "id": "eng_ege_p43_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Fires still play a major part in Hogmanay ____, with torchlight processions, bonfires and fireworks popular throughout Scotland. (CELEBRATE)",
+        "answer": "CELEBRATIONS",
+        "solution": "Требуется существительное, обозначающее праздничные мероприятия. Перечисление (processions, bonfires, fireworks) указывает на множественное число. От глагола 'celebrate' (праздновать) образуется существительное 'celebration', которое во множественном числе принимает форму 'celebrations'."
+    },
+    {
+        "id": "eng_ege_p43_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "A more recent tradition, and one that has spread from Scotland to the whole of the English-speaking world, is the ____ at the stroke of midnight of Robert Burns' poem Auld Lang Syne, set to a traditional Scottish folk melody. (SING)",
+        "answer": "SINGING",
+        "solution": "Артикль 'the' перед пропуском указывает на то, что необходимо существительное или герундий, обозначающий процесс. От глагола 'sing' (петь) образуется существительное 'singing' (пение)."
+    },
+    {
+        "id": "eng_ege_p53_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Lapland ____ as a sort of home base for Santa Claus in the European tradition ever since 1927, when a Finnish journalist proclaimed to know the secret of Santa’s hometown. (SERVE)",
+        "answer": "HASSERVED",
+        "solution": "Используется Present Perfect, так как указан период времени, начавшийся в прошлом и продолжающийся до настоящего момента (маркер 'ever since')."
+    },
+    {
+        "id": "eng_ege_p53_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "He said it ____ in Korvatunturi, which is a mountainous region in Lapland. (BE)",
+        "answer": "WAS",
+        "solution": "Правило согласования времен в косвенной речи. Так как в главной части глагол 'said' стоит в прошедшем времени, глагол в придаточной 'is' меняется на 'was' (Past Simple)."
+    },
+    {
+        "id": "eng_ege_p53_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "The mountain peaks there ____ like the ears of a rabbit. (SHAPE)",
+        "answer": "ARESHAPED",
+        "solution": "Используется пассивный залог в настоящем времени (Present Simple Passive), так как описывается постоянный признак географического объекта (горы имеют форму ушей)."
+    },
+    {
+        "id": "eng_ege_p53_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "Santa used the ear-like mountains, he explained, to eavesdrop on the ____ of the world and decide if they were being naughty or nice. (CHILD)",
+        "answer": "CHILDREN",
+        "solution": "Необходимо образовать форму множественного числа существительного. 'Children' — это исключение из общего правила прибавления окончания -s."
+    },
+    {
+        "id": "eng_ege_p53_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "During World War II, Germans burned Rovaniemi to the ground, ____ Lapland’s capital city in ruins. (LEAVE)",
+        "answer": "LEAVING",
+        "solution": "Используется причастие I (Participle I) для описания действия, сопутствующего основному или являющегося его результатом (сожгли, оставив город в руинах)."
+    },
+    {
+        "id": "eng_ege_p53_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "In 1950, former first lady Eleanor Roosevelt ____ Rovaniemi a visit, saying she wanted to see Santa Claus. (PAY)",
+        "answer": "PAID",
+        "solution": "Используется Past Simple, так как в предложении указано конкретное время в прошлом (In 1950). 'Pay' — неправильный глагол, его вторая форма — 'paid'."
+    },
+    {
+        "id": "eng_ege_p54_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "Have you ever seen an orange cat? Orange tabby cats are among the most ____ and beloved cats, known for their vibrant, orange-coloured coats and cheerful disposition. (RECOGNISE)",
+        "answer": "recognizable",
+        "solution": "Для образования прилагательного от глагола recognise (узнавать) используется суффикс -able. Слово recognizable (также допустимо recognisable) переводится как «узнаваемый»."
+    },
+    {
+        "id": "eng_ege_p54_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "The “tabby” label refers to a coat pattern, not a specific breed, orange tabbies are ____ by their warm, orange fur, which can come in various shades, from pale cream to deep, rich orange. (CHARACTER)",
+        "answer": "characterized",
+        "solution": "Сначала от существительного character образуется глагол characterize (характеризовать). В данном предложении используется пассивный залог (кошки характеризуются чем-то), поэтому необходима форма причастия II (V3) — characterized (или characterised)."
+    },
+    {
+        "id": "eng_ege_p54_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "These cats are ____ kind, social, and outgoing, often forming strong bonds with their human families. (TYPICAL)",
+        "answer": "typically",
+        "solution": "В данном контексте требуется наречие, которое описывает образ действия или степень проявления признака. Оно образуется от прилагательного typical с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p54_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "They are ____ and curious but also tend to be affectionate and easygoing. (PLAY)",
+        "answer": "playful",
+        "solution": "Для описания качества характера кошек необходимо образовать прилагательное от существительного/глагола play. Прилагательное playful (игривый) образуется при помощи суффикса -ful."
+    },
+    {
+        "id": "eng_ege_p54_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "One common myth is that all orange tabbies are the same. While they share the same colour, their ____ can vary widely depending on their breed, upbringing, and environment. (PERSON)",
+        "answer": "personality",
+        "solution": "Притяжательное местоимение their указывает на необходимость использования существительного. От слова person (человек) образуется абстрактное существительное personality (индивидуальность, личность, характер)."
+    },
+    {
+        "id": "eng_ege_p54_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "Max was offered a part in a new play that autumn, but he turned it ____.",
+        "answer": "3",
+        "solution": "Используется фразовый глагол turn down, который означает «отвергать предложение, отказывать»."
+    },
+    {
+        "id": "eng_ege_p54_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "And he surprised everyone by ____ to make a movie.",
+        "answer": "2",
+        "solution": "Глагол decide (принимать решение) — единственный из предложенных вариантов, который грамматически сочетается с последующим инфинитивом с частицей to (deciding to make)."
+    },
+    {
+        "id": "eng_ege_p54_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "Lucy thought the movie was very good, but Max wasn’t ____.",
+        "answer": "1",
+        "solution": "По смыслу предложения Макс не был доволен/удовлетворен своей работой. Прилагательное satisfied (удовлетворенный) наиболее точно передает это значение в данном контексте."
+    },
+    {
+        "id": "eng_ege_p54_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "He ____ well his first classes as a student, and how Lucy had insisted that he had to get serious about his career.",
+        "answer": "1",
+        "solution": "Для описания процесса воспоминаний используется глагол remember (помнить, вспоминать). Он подходит по смыслу для описания того, что герой хранит в памяти события прошлого."
+    },
+    {
+        "id": "eng_ege_p64_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "A French swimmer will try to become the ____ person to swim across the Pacific Ocean. (ONE)",
+        "answer": "first",
+        "solution": "Порядковое числительное. От количественного числительного 'one' образуется исключение 'first'. На наличие порядкового числительного также указывает определенный артикль 'the' перед пропуском."
+    },
+    {
+        "id": "eng_ege_p64_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "In 1998, Lecomte made the solo trans-Atlantic swim. It ____ him 73 days to cover the 6,400 km. (TAKE)",
+        "answer": "took",
+        "solution": "Past Simple. В предложении указано конкретное время в прошлом (In 1998), поэтому используется вторая форма глагола 'take' — 'took'."
+    },
+    {
+        "id": "eng_ege_p64_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "When he reached dry land, he ____ to do such experiments again but obviously he changed his mind. (NOT WANT)",
+        "answer": "did not want",
+        "solution": "Past Simple. Действие относится к прошлому (согласуется с 'reached'). Отрицательная форма в Past Simple образуется при помощи вспомогательного глагола 'did' и частицы 'not' (did not want)."
+    },
+    {
+        "id": "eng_ege_p64_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "The ____ occupation to feel threatened by the march of technology is carpentry. (LATE)",
+        "answer": "latest",
+        "solution": "Превосходная степень прилагательного. Артикль 'the' указывает на необходимость превосходной степени. 'The latest' в данном контексте означает 'самая последняя/новая' (из тех, что столкнулись с проблемой)."
+    },
+    {
+        "id": "eng_ege_p64_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Researchers ____ a robot recently that can create customized wooden furniture. (INVENT)",
+        "answer": "have invented",
+        "solution": "Present Perfect. Слово 'recently' (недавно) часто служит маркером времени Present Perfect, когда речь идет о событии, результат которого важен в настоящем, без указания точного времени совершения."
+    },
+    {
+        "id": "eng_ege_p64_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "They said the robots ____ humans. (NOT REPLACE)",
+        "answer": "would not replace",
+        "solution": "Future-in-the-Past. В главном предложении стоит глагол 'said' в прошедшем времени, значит, в придаточном работает правило согласования времен. Глагол 'will' меняется на 'would', сохраняя отрицание."
+    },
+    {
+        "id": "eng_ege_p65_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "March 8, International Women’s Day, is a very special day. It is meant to appreciate and acknowledge the ____ of all special women in our life. (INVOLVE)",
+        "answer": "involvement",
+        "solution": "Для дополнения предложения необходимо существительное. От глагола 'involve' (вовлекать) с помощью суффикса -ment образуется существительное 'involvement' (участие, вовлеченность)."
+    },
+    {
+        "id": "eng_ege_p65_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "She can be a mom who balances work and home ____ or grandma who stuns us with her spirit and courage or might be a sister, daughter, wife or a special friend who brings love and cheer in our lives. (BEAUTIFUL)",
+        "answer": "beautifully",
+        "solution": "Слово характеризует действие 'balances' (балансирует), поэтому требуется наречие. Наречие 'beautifully' (прекрасно) образуется от прилагательного 'beautiful' при помощи суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p65_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "International Women’s Day has been observed since the early 1900’s. Great unrest and critical debate was occurring amongst women. Women’s oppression and ____ was spurring women to become active in campaigning for change. (EQUALITY)",
+        "answer": "inequality",
+        "solution": "По контексту предложения требуется существительное с отрицательным значением, так как оно стоит в ряду с 'oppression' (угнетение). От существительного 'equality' (равенство) при помощи приставки in- образуется антоним 'inequality' (неравенство)."
+    },
+    {
+        "id": "eng_ege_p65_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Since then International Women’s Day has become a ____ day celebrating the social, cultural and political achievements of women. (GLOBE)",
+        "answer": "global",
+        "solution": "Пропуск стоит перед существительным 'day' и должен быть определением к нему. От существительного 'globe' (земной шар) образуется прилагательное 'global' (всемирный, глобальный) с помощью суффикса -al."
+    },
+    {
+        "id": "eng_ege_p65_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "It is a perfect time to express your ____ and send warm wishes to all those women close to your heart. (FEEL)",
+        "answer": "feelings",
+        "solution": "После притяжательного местоимения 'your' должно стоять существительное. Глагол 'feel' (чувствовать) переходит в существительное 'feeling'. Контекст («выразить чувства») предполагает множественное число — 'feelings'."
+    },
+    {
+        "id": "eng_ege_p75_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "People first ____ Nessie in 1933. (SEE)",
+        "answer": "saw",
+        "solution": "Используется время Past Simple, так как в предложении указано конкретное время совершения действия в прошлом (in 1933). Глагол see — неправильный, его вторая форма — saw."
+    },
+    {
+        "id": "eng_ege_p75_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "Since then, there ____ many sightings and a few photographs. (BE)",
+        "answer": "havebeen",
+        "solution": "Маркер 'Since then' (с тех пор) указывает на необходимость использования времени Present Perfect. Так как подлежащее 'sightings and photographs' стоит во множественном числе, используется вспомогательный глагол have + третья форма глагола be (been)."
+    },
+    {
+        "id": "eng_ege_p75_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "Professor Gemmell said this ____ if the monster really existed or not. (SHOW)",
+        "answer": "wouldshow",
+        "solution": "Здесь применяется правило согласования времен (Sequence of Tenses). Так как вводное предложение стоит в прошедшем времени (said), форма будущего времени Future Simple (will show) меняется на Future in the Past (would show)."
+    },
+    {
+        "id": "eng_ege_p75_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "Insect dairy could be the next big thing on supermarket ____ and in our diets. (SHELF)",
+        "answer": "shelves",
+        "solution": "Требуется форма множественного числа существительного. Существительное shelf оканчивается на -f, при образовании множественного числа -f меняется на -v и добавляется окончание -es (shelves)."
+    },
+    {
+        "id": "eng_ege_p75_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "____ research discovered that the milk was much richer in nutrients than dairy milk. (FAR)",
+        "answer": "further",
+        "solution": "Прилагательное far имеет две формы сравнительной степени: farther (для физического расстояния) и further (для обозначения «дальнейший», «дополнительный»). В контексте научных исследований используется further."
+    },
+    {
+        "id": "eng_ege_p75_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Some valuable amino acids and proteins ____ in the crystals of cockroach milk last year. (FIND)",
+        "answer": "werefound",
+        "solution": "Используется страдательный залог (Passive Voice) во времени Past Simple, так как аминокислоты были обнаружены (действие совершено над ними) в прошлом году (last year). Формула: were (мн. ч.) + found (V3)."
+    },
+    {
+        "id": "eng_ege_p76_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "You’ll discover that your bread or your tea then got a beautiful colour, not quite green but kind of ____ flourishing with small ‘flowers’. (GREEN)",
+        "answer": "greenish",
+        "solution": "Суффикс -ish используется для образования прилагательных от названий цветов для обозначения неполноты качества или оттенка (зеленоватый)."
+    },
+    {
+        "id": "eng_ege_p76_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "If you don’t believe in it, then you need to know that antibiotics, chemicals that ____ cure many diseases, are made of fungi. (EFFECT)",
+        "answer": "effectively",
+        "solution": "В данном предложении пропуск относится к глаголу 'cure' (лечить). Для описания действия требуется наречие. Наречие 'effectively' (эффективно) образуется от существительного 'effect' через прилагательное 'effective' с помощью суффикса -ly."
+    },
+    {
+        "id": "eng_ege_p76_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "In 1929, Alexander Fleming, a doctor and a ____, published a paper on a chemical he called “penicillin”... (RESEARCH)",
+        "answer": "researcher",
+        "solution": "Требуется существительное, обозначающее человека по роду деятельности (исследователь), так как пропуск стоит в ряду названий профессий после артикля 'a'. Образуется от слова 'research' с помощью суффикса -er."
+    },
+    {
+        "id": "eng_ege_p76_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "In 1938 ____ scientists from Oxford University were able to grow, extract and purify enough penicillin... (SUCCESS)",
+        "answer": "successful",
+        "solution": "Перед существительным 'scientists' (ученые) необходимо прилагательное-определение. Прилагательное 'successful' (успешный) образуется от существительного 'success' с помощью суффикса -ful."
+    },
+    {
+        "id": "eng_ege_p76_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "It was first used as a ____ to cure wounded soldiers during the World War II. (TREAT)",
+        "answer": "treatment",
+        "solution": "Конструкция 'used as a...' требует существительного. Существительное 'treatment' (лечение, средство лечения) образуется от глагола 'treat' с помощью суффикса -ment."
+    },
+    {
+        "id": "eng_ege_p86_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "A newsboy was standing on the corner, yelling, “Read all about it. Fifty people swindled!” Curious, a man ____ a paper, and checked the front page. (BUY)",
+        "answer": "bought",
+        "solution": "Используется время Past Simple, так как описывается последовательность завершенных действий в прошлом (man bought... and checked). Глагол buy — неправильный."
+    },
+    {
+        "id": "eng_ege_p86_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "The man said, “Hey, look here, this is an old paper, there ____ a story about the big swindle in it”. (NOT BE)",
+        "answer": "isnot",
+        "solution": "В прямой речи констатируется факт в настоящем времени. С конструкцией 'there is' для единственного числа и отрицанием получается 'is not' (или 'isn't'). В бланках ЕГЭ обычно записывается 'isnot'."
+    },
+    {
+        "id": "eng_ege_p86_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "Sherlock Holmes and Dr Watson went on a camping trip. After a good meal they ____ down for the night, and went to sleep. (LIE)",
+        "answer": "lay",
+        "solution": "Используется Past Simple для описания прошедших событий. Форма прошедшего времени от глагола lie (ложиться) — lay."
+    },
+    {
+        "id": "eng_ege_p86_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "Some hours later, Holmes ____ up. “Watson, look up at the sky and tell me what you see.” (WAKE)",
+        "answer": "woke",
+        "solution": "Используется Past Simple для описания единичного действия в прошлом в контексте повествования. Глагол wake — неправильный, вторая форма — woke."
+    },
+    {
+        "id": "eng_ege_p86_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "Watson pondered for a minute. “Astronomically, it tells me that there are millions of galaxies. Astrologically, Saturn ____ in Leo. What does it tell you?” (SEE)",
+        "answer": "isseen",
+        "solution": "Здесь требуется пассивный залог в настоящем времени (Present Simple Passive), так как Сатурн «виден» (его видят) в созвездии Льва. Формула: am/is/are + V3."
+    },
+    {
+        "id": "eng_ege_p86_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Holmes was silent for a minute, then he spoke. “It tells me that somebody ____ our tent!” (STEAL)",
+        "answer": "hasstolen",
+        "solution": "Используется Present Perfect, так как действие произошло в прошлом, но имеет прямую связь с настоящим — результат налицо (палатки нет сейчас)."
+    },
+    {
+        "id": "eng_ege_p86_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "There are not many people in the world who have two multi-coloured eyes. It is pretty ____; just 11 out of every 1,000 people have eyes of different colours. (COMMON)",
+        "answer": "uncommon",
+        "solution": "По контексту (всего 11 человек из 1000) необходимо образовать прилагательное с противоположным значением 'редкий, необычный'. Для этого к слову common добавляется отрицательная приставка un-."
+    },
+    {
+        "id": "eng_ege_p87_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "The second one is ____, when both eyes are similar but they are coloured in two different colours. (CENTRE)",
+        "answer": "central",
+        "solution": "Для описания типа гетерохромии (определения) необходимо образовать имя прилагательное от существительного 'centre'. С помощью суффикса -al образуется слово 'central' (центральный)."
+    },
+    {
+        "id": "eng_ege_p87_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "Usually the colour of an iris develops during the first few months after birth and it is ____ inherited from parents. (GENERAL)",
+        "answer": "generally",
+        "solution": "В данном предложении пропуск характеризует глагол-причастие 'inherited' (отвечает на вопрос «как?»). Для этой функции необходимо образовать наречие от прилагательного 'general' при помощи суффикса -ly. Получаем 'generally' (обычно)."
+    },
+    {
+        "id": "eng_ege_p87_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "But sometimes, the colour of person’s eyes may change because of an injury or an ____ that affects only one eye. (INFECT)",
+        "answer": "infection",
+        "solution": "Использование неопределенного артикля 'an' перед пропуском и последующее относительное предложение указывают на то, что требуется существительное. От глагола 'infect' с помощью суффикса -ion образуется существительное 'infection' (инфекция)."
+    },
+    {
+        "id": "eng_ege_p87_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "____ people with different colour of their eyes were seen as magicians, wizards or witches. (TRADITION)",
+        "answer": "traditionally",
+        "solution": "Пропуск находится в начале предложения и выполняет роль обстоятельства (вводного слова). Для этого необходимо образовать наречие от существительного 'tradition' с помощью суффиксов -al и -ly. Получаем 'traditionally' (традиционно)."
+    },
+    {
+        "id": "eng_ege_p9_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "Do you know what Hogmanay is? Every year as the long winter nights creep by, Scotland looks forward to the ____ party of the calendar when the Scottish people defy the darkness to see out the old year, and welcome in the new. (BIG)",
+        "answer": "biggest",
+        "solution": "Перед пропуском стоит определенный артикль 'the', а контекст подразумевает сравнение одного праздника со всеми остальными в году, что требует превосходной степени прилагательного (superlative degree). У односложного прилагательного 'big' при этом удваивается конечная согласная."
+    },
+    {
+        "id": "eng_ege_p9_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "For centuries, the time of year around the shortest day ____ a period of merrymaking for people in temperate climes around the world. (BE)",
+        "answer": "has been",
+        "solution": "Указатель времени 'for centuries' (в течение веков) указывает на действие или состояние, которое началось в прошлом и продолжается до настоящего момента. В данном случае необходимо использовать Present Perfect. Подлежащее 'the time of year' — единственное число, поэтому используем форму 'has been'."
+    },
+    {
+        "id": "eng_ege_p9_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "In societies where the day-to-day lives of most people ____ by the rhythm of the changing seasons, the passing of the longest night heralded the coming of new life to the world. (DICTATE)",
+        "answer": "were dictated",
+        "solution": "Подлежащее 'lives' (жизни) не само совершает действие, а подвергается ему (жизни диктовались ритмом), значит, нужен страдательный залог (Passive Voice). Так как в главном предложении глагол 'heralded' стоит в прошедшем времени, в придаточном используем Past Simple Passive. 'Lives' во множественном числе, поэтому форма 'were dictated'."
+    },
+    {
+        "id": "eng_ege_p9_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "For the ancient Romans, the winter solstice ____ by the festival of Saturnalia, from the 17th to the 23rd of December. (MARK)",
+        "answer": "was marked",
+        "solution": "Речь идет об исторических событиях (древние римляне), поэтому используем прошедшее время. Солнцестояние само себя не отмечало, оно 'отмечалось' фестивалем — это пассивный залог. Для подлежащего в единственном числе (solstice) используем Past Simple Passive: 'was marked'."
+    },
+    {
+        "id": "eng_ege_p9_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "____ Saturnalia, the Roman New Year began on the 1st of January, giving us our traditional date today which Scotland has used since 1600. (FOLLOW)",
+        "answer": "following",
+        "solution": "В начале предложения используется причастие I (Present Participle) для образования причастного оборота со значением 'следуя за...' или 'после...'. Слово 'following' выступает в роли предлога или причастия, указывающего на последовательность событий."
+    },
+    {
+        "id": "eng_ege_p9_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "The origin of the word “Hogmanay” ____ is uncertain. Whatever its origin, Hogmanay was common practice by 1604, when it was first mentioned in written records. (IT)",
+        "answer": "itself",
+        "solution": "Требуется возвратное или усилительное местоимение, чтобы подчеркнуть, что «само» происхождение слова неизвестно. Для неодушевленного существительного (origin) местоимение 'it' преобразуется в 'itself'."
+    },
+    {
+        "id": "eng_ege_p97_19",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 19,
+        "task_text": "However, you ____ to be an expert on these subjects in order to pass the test. (NOT NEED)",
+        "answer": "donotneed",
+        "solution": "Для выражения отрицания в настоящем простом времени (Present Simple) с глаголом 'need' (как смысловым) используется вспомогательный глагол do/does + not + начальная форма глагола. Так как подлежащее 'you', используем 'do not need'."
+    },
+    {
+        "id": "eng_ege_p97_20",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 20,
+        "task_text": "That means when you ____ about history, you do not have to be a historian in order to answer it. (ASK)",
+        "answer": "areasked",
+        "solution": "В данном контексте требуется пассивный залог в Present Simple, так как действие совершается над подлежащим (вас спрашивают). Формула пассивного залога: am/is/are + V3 (третья форма глагола). Для местоимения 'you' используется 'are asked'."
+    },
+    {
+        "id": "eng_ege_p97_21",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 21,
+        "task_text": "I enjoy ____ books on history. (READ)",
+        "answer": "reading",
+        "solution": "После глагола 'enjoy' (наслаждаться) следующий за ним глагол всегда используется в форме герундия (с окончанием -ing)."
+    },
+    {
+        "id": "eng_ege_p97_22",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 22,
+        "task_text": "For years, I ____ learning about the past. (ENJOY)",
+        "answer": "haveenjoyed",
+        "solution": "Указатель времени 'for years' (в течение многих лет) говорит о том, что действие началось в прошлом и продолжается до настоящего момента или имеет связь с настоящим. В таких случаях используется Present Perfect (have/has + V3)."
+    },
+    {
+        "id": "eng_ege_p97_23",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 23,
+        "task_text": "All of this is really interesting to me, and so I ____ no problem if I were asked about my favourite historical period. (HAVE)",
+        "answer": "wouldhave",
+        "solution": "Это условное предложение второго типа (Second Conditional), которое описывает воображаемую ситуацию в настоящем или будущем. На это указывает форма 'if I were asked' в придаточном предложении. В главной части предложения используется would + начальная форма глагола."
+    },
+    {
+        "id": "eng_ege_p97_24",
+        "subject": "ege_english",
+        "topic": "grammar",
+        "number": 24,
+        "task_text": "Most people ____ down with a friend and say, 'You know what period of history I really like... Dmitriy Donskoy's times.' (NOT SIT)",
+        "answer": "donotsit",
+        "solution": "Описывается обычная, повторяющаяся ситуация (или её отсутствие) в настоящем времени. Используем Present Simple в отрицательной форме. Для подлежащего во множественном числе ('most people') вспомогательный глагол — 'do not'."
+    },
+    {
+        "id": "eng_ege_p98_25",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 25,
+        "task_text": "That, in turn, keeps a ____ balance and improves our mental well-being. (HEALTH)",
+        "answer": "healthy",
+        "solution": "Для описания существительного balance необходимо прилагательное. Образуем прилагательное 'healthy' от существительного 'health' с помощью суффикса -y."
+    },
+    {
+        "id": "eng_ege_p98_26",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 26,
+        "task_text": "Smiling gives us an air of confidence and that reflects in our ____. (PERSONAL)",
+        "answer": "personality",
+        "solution": "После притяжательного местоимения 'our' требуется существительное. Образуем 'personality' (личность, индивидуальность) от прилагательного 'personal' с помощью суффикса -ity."
+    },
+    {
+        "id": "eng_ege_p98_27",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 27,
+        "task_text": "We stay in ____ with our desires and make the right choices and attract the right people or opportunities for us. (AGREE)",
+        "answer": "agreement",
+        "solution": "В данном контексте используется устойчивое выражение 'in agreement with' (в согласии с). Существительное 'agreement' образуется от глагола 'agree' при помощи суффикса -ment."
+    },
+    {
+        "id": "eng_ege_p98_28",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 28,
+        "task_text": "Smiling is a ____ language that keeps us all united. (UNIVERSE)",
+        "answer": "universal",
+        "solution": "Перед существительным 'language' необходимо прилагательное. Образуем 'universal' (всеобщий) от существительного 'universe' с помощью суффикса -al."
+    },
+    {
+        "id": "eng_ege_p98_29",
+        "subject": "ege_english",
+        "topic": "vocabulary",
+        "number": 29,
+        "task_text": "It ____ the day and fills everyone around with hope and optimism. (BRIGHT)",
+        "answer": "brightens",
+        "solution": "В предложении пропущен глагол-сказуемое. От прилагательного 'bright' образуем глагол 'brighten' (скрашивать) с помощью суффикса -en. Так как подлежащее 'It' (3-е лицо ед. ч.), а действие происходит в настоящем времени, добавляем окончание -s."
+    },
+    {
+        "id": "eng_ege_p98_30",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 30,
+        "task_text": "Then she ____ about her sister's present — the DVDs.",
+        "answer": "thought",
+        "solution": "Глагол 'thought' (форма past simple от think) — единственный из типичных вариантов (remembered, reminded, recalled), который сочетается с предлогом 'about' в значении 'подумала о чем-то'."
+    },
+    {
+        "id": "eng_ege_p98_31",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 31,
+        "task_text": "She could ____ wait for the film to start.",
+        "answer": "hardly",
+        "solution": "Используется устойчивое наречное выражение 'could hardly wait', что означает 'не могла дождаться' (очень сильно желала начала действия)."
+    },
+    {
+        "id": "eng_ege_p98_32",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 32,
+        "task_text": "She hopped into bed, pulled up the covers, and turned ____ the light as the first episode began.",
+        "answer": "off",
+        "solution": "Фразовый глагол 'turn off' означает 'выключать' (свет). По контексту героиня ложится спать и выключает освещение."
+    },
+    {
+        "id": "eng_ege_p98_33",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 33,
+        "task_text": "She was ____ by the beautiful costumes — all historically accurate.",
+        "answer": "impressed",
+        "solution": "Причастие 'impressed' в пассивной конструкции сочетается с предлогом 'by' ('быть впечатленным чем-либо')."
+    },
+    {
+        "id": "eng_ege_p98_34",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 34,
+        "task_text": "...and a family ____ of all the important actors on the show.",
+        "answer": "cast",
+        "solution": "Слово 'cast' используется специально для обозначения актерского состава фильма или телешоу."
+    },
+    {
+        "id": "eng_ege_p98_35",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 35,
+        "task_text": "It was everything that ____ to her in French books and movies.",
+        "answer": "appealed",
+        "solution": "Глагол 'appeal' используется с предлогом 'to' ('appeal to someone') в значении 'нравиться, быть привлекательным для кого-то'."
+    },
+    {
+        "id": "eng_ege_p98_36",
+        "subject": "ege_english",
+        "topic": "lexis",
+        "number": 36,
+        "task_text": "She was in love with the characters, and ____ by the castle and the staff.",
+        "answer": "fascinated",
+        "solution": "Устойчивое выражение 'to be fascinated by something' означает 'быть очарованным / завороженным чем-либо'. В предложении вспомогательный глагол 'was' относится и к этому пропуску."
+    }
+]
