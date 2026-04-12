@@ -40,7 +40,8 @@ TOPIC_NAMES = {
     "social_part1": "📊 Обществознание",
     "informatics_ege": "💻 Информатика ЕГЭ",
     "geography_ege": "🌍 География ЕГЭ",
-    "physics_ege": "⚡ Физика ЕГЭ"
+    "physics_ege": "⚡ Физика ЕГЭ",
+    "ege_english": "🇬🇧 Английский ЕГЭ" # <--- ПРОСТО ДОБАВЬ В КОНЕЦ
 }
 
 if Path("questions").exists():
@@ -91,7 +92,7 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": []
+    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [] # <--- добавили сюда
 }
 
 def load_database(filename, db_key):
@@ -118,6 +119,7 @@ load_database("russian_ege.json", "russian_ege")
 load_database("inf_ege.json", "inf_ege")
 load_database("geo_ege.json", "geo_ege")
 load_database("phys_ege.json", "phys_ege")
+load_database("ege_english.json", "ege_english")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
