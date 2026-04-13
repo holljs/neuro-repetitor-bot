@@ -92,7 +92,7 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [] # <--- добавили сюда
+    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [] # <--- ДОБАВИЛИ ХИМИЮ
 }
 
 def load_database(filename, db_key):
@@ -120,6 +120,7 @@ load_database("inf_ege.json", "inf_ege")
 load_database("geo_ege.json", "geo_ege")
 load_database("phys_ege.json", "phys_ege")
 load_database("ege_english.json", "ege_english")
+load_database("chem_ege.json", "chem_ege")
 # --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
