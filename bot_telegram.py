@@ -194,6 +194,7 @@ async def choose_subject_menu(message: types.Message, state: FSMContext):
     builder.button(text="💻 Информатика ЕГЭ", callback_data="subj_inf_ege")
     builder.button(text="🌍 География ЕГЭ", callback_data="subj_geo_ege")
     builder.button(text="🇬🇧 Англ. ЕГЭ", callback_data="subj_ege_english")
+    builder.button(text="🧪 Химия ЕГЭ", callback_data="subj_chem_ege")
     
     builder.adjust(2) # Кнопки будут по 2 в ряд
     
