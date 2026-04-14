@@ -57,7 +57,7 @@ const EGE_SUBJECTS = {
     "geo_ege": "🌍 География ЕГЭ",
     "phys_ege": "⚡ Физика ЕГЭ",
     "ege_english": "🇬🇧 Английский ЕГЭ",
-    "chem_ege": "🧪 Химия ЕГЭ" // <--- ДОБАВИЛИ СЮДА
+    "chem_ege": "🧪 Химия ЕГЭ"
 };
 
 // Перевод тем для статистики
@@ -163,7 +163,11 @@ window.startTest = async function(subjectCode, mode) {
         const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ student_id: String(USER_ID || 'guest'), test_mode: currentTestMode })
+            body: JSON.stringify({ 
+                student_id: String(USER_ID || 'guest'), 
+                test_mode: currentTestMode,
+                vk_params: window.location.search // <--- ЗАЩИТА ВК
+            })
         });
         const payResult = await payResponse.json();
         if (payResult.success) {
@@ -176,7 +180,8 @@ window.startTest = async function(subjectCode, mode) {
 
 async function getRandomTask() {
     try {
-        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}`);
+        // <--- ЗАЩИТА ВК (Добавлен параметр vk_params)
+        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(window.location.search)}`);
         currentTask = await response.json();
         if (currentTask.done) { alert(currentTask.text); showScreen(mainMenuScreen); return; }
         showTask();
@@ -229,7 +234,12 @@ window.submitAnswer = async function() {
         const response = await fetch(`${TEST_API_URL}/check/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user_answer: userAnswer, task_id: currentTask.id, student_id: String(USER_ID || 'guest') })
+            body: JSON.stringify({ 
+                user_answer: userAnswer, 
+                task_id: currentTask.id, 
+                student_id: String(USER_ID || 'guest'),
+                vk_params: window.location.search // <--- ЗАЩИТА ВК
+            })
         });
         const result = await response.json();
         handleQuickResult(result.is_correct, rawInput); 
@@ -306,7 +316,11 @@ window.getAIAnalysis = async function() {
         const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ mistakes: mistakesData })
+            body: JSON.stringify({ 
+                mistakes: mistakesData,
+                student_id: String(USER_ID || 'guest'), // <--- ЗАЩИТА ВК
+                vk_params: window.location.search       // <--- ЗАЩИТА ВК
+            })
         });
         const result = await response.json();
         
@@ -344,7 +358,14 @@ window.runAIExplanation = async function(simplify = false) {
         const response = await fetch(`${TEST_API_URL}/review/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: taskText, simplify: simplify })
+            body: JSON.stringify({ 
+                user_answer: String(mistake.user_answer), 
+                image_url: imageUrl, 
+                task_text: taskText, 
+                simplify: simplify,
+                student_id: String(USER_ID || 'guest'), // <--- ЗАЩИТА ВК
+                vk_params: window.location.search       // <--- ЗАЩИТА ВК
+            })
         });
         const result = await response.json();
         explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
@@ -374,8 +395,8 @@ window.showProfile = async function() {
     showScreen(loadingScreen);
     
     try {
-        // Запрашиваем данные с сервера
-        const response = await fetch(`${TEST_API_URL}/profile_analytics/?student_id=${USER_ID || 'guest'}`);
+        // <--- ЗАЩИТА ВК (Добавлен параметр vk_params)
+        const response = await fetch(`${TEST_API_URL}/profile_analytics/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(window.location.search)}`);
         const data = await response.json();
         
         let topUpBlock = "";
@@ -433,11 +454,11 @@ window.showProfile = async function() {
 startApp();
 
 // Функция для открытия/закрытия шпаргалки по математике
-    window.toggleMathHint = function() {
-        const hintBox = document.getElementById('math-hint-box');
-        if (hintBox.style.display === 'block') {
-            hintBox.style.display = 'none';
-        } else {
-            hintBox.style.display = 'block';
-        }
+window.toggleMathHint = function() {
+    const hintBox = document.getElementById('math-hint-box');
+    if (hintBox.style.display === 'block') {
+        hintBox.style.display = 'none';
+    } else {
+        hintBox.style.display = 'block';
     }
+}
