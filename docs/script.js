@@ -1,3 +1,6 @@
+// ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПАРАМЕТРОВ ВК (Решает баг с телефонами)
+const VK_SEARCH_PARAMS = window.location.search; 
+
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
@@ -10,16 +13,14 @@ const quickResultScreen = document.getElementById('quick-result-screen');
 const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 
-// Усиленный детектор мобильных устройств (ВК + UserAgent)
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const isMobileVK = vkPlatform !== 'desktop_web' || isMobileDevice;
 
 let USER_ID = null;
-let currentExamType = null; // Запоминаем, ОГЭ или ЕГЭ выбрал юзер
+let currentExamType = null; 
 
-// Отрисовка формул KaTeX
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
     if (el && window.renderMathInElement) {
@@ -35,53 +36,22 @@ function renderMath(elementId) {
     }
 }
 
-// Список предметов ОГЭ
 const OGE_SUBJECTS = { 
-    "oge_math": "🧮 Математика ОГЭ",
-    "oge_russian": "📚 Русский язык ОГЭ", 
-    "oge_english": "☕ Английский ОГЭ",
-    "oge_chemistry": "🧪 Химия ОГЭ",
-    "oge_physics": "⚡ Физика ОГЭ",
-    "oge_geography": "🌍 География ОГЭ",
-    "oge_biology": "🧬 Биология ОГЭ",
-    "oge_informatics": "💻 Информатика ОГЭ",
-    "oge_history": "📜 История ОГЭ",
-    "oge_social": "📊 Обществознание ОГЭ"
+    "oge_math": "🧮 Математика ОГЭ", "oge_russian": "📚 Русский язык ОГЭ", 
+    "oge_english": "☕ Английский ОГЭ", "oge_chemistry": "🧪 Химия ОГЭ",
+    "oge_physics": "⚡ Физика ОГЭ", "oge_geography": "🌍 География ОГЭ",
+    "oge_biology": "🧬 Биология ОГЭ", "oge_informatics": "💻 Информатика ОГЭ",
+    "oge_history": "📜 История ОГЭ", "oge_social": "📊 Обществознание ОГЭ"
 };
 
-// Список предметов ЕГЭ
 const EGE_SUBJECTS = { 
-    "math_ege": "📐 Математика (профиль)",
-    "russian_ege": "🖋️ Русский язык ЕГЭ",
-    "inf_ege": "💻 Информатика ЕГЭ",
-    "geo_ege": "🌍 География ЕГЭ",
-    "phys_ege": "⚡ Физика ЕГЭ",
-    "ege_english": "🇬🇧 Английский ЕГЭ",
+    "math_ege": "📐 Математика (профиль)", "russian_ege": "🖋️ Русский язык ЕГЭ",
+    "inf_ege": "💻 Информатика ЕГЭ", "geo_ege": "🌍 География ЕГЭ",
+    "phys_ege": "⚡ Физика ЕГЭ", "ege_english": "🇬🇧 Английский ЕГЭ",
     "chem_ege": "🧪 Химия ЕГЭ"
 };
 
-// Перевод тем для статистики
-const TOPIC_TRANSLATIONS = {
-    "topic_01": "🏠 Практические задачи",
-    "topic_02": "🔢 Вычисления и дроби",
-    "topic_03": "📏 Единицы измерения",
-    "topic_04": "⚖️ Уравнения",
-    "topic_04_eq": "⚖️ Уравнения",
-    "topic_05": "📍 Координатная прямая",
-    "topic_06": "📊 Графики и диаграммы",
-    "topic_07": "📈 Графики функций",
-    "topic_08": "🧩 Выражения",
-    "topic_09": "🧪 Формулы",
-    "topic_10": "🔢 Последовательности",
-    "grammar": "📚 Грамматика (Англ)",
-    "vocabulary": "📝 Лексика (Англ)",
-    "syntax": "🏗️ Синтаксис (Зад. 2-3)",
-    "punctuation": "✍️ Пунктуация (Зад. 4-5)",
-    "orthography": "📝 Орфография (Зад. 6-7)",
-    "lexis": "📖 Лексика и грамматика (Зад. 8-9)",
-    "chemistry_part1": "🧪 Химия (Часть 1)",
-    "physics_part1": "⚡ Физика (Часть 1)"
-};
+const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 
 const TEST_LENGTH = 15;
 let currentTask = null;
@@ -103,13 +73,11 @@ function startApp() {
     vkBridge.send('VKWebAppGetUserInfo')
         .then(userData => {
             USER_ID = userData.id;
-            console.log("ID пользователя получен:", USER_ID);
             vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452});
         })
         .catch(error => console.log("ВК не отдал профиль", error));
 }
 
-// 📌 НАВИГАЦИЯ: Открытие списка предметов
 window.openSubjects = function(examType) {
     currentExamType = examType;
     const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
@@ -123,35 +91,27 @@ window.openSubjects = function(examType) {
         subjectScreen.appendChild(btn);
     }
     
-    // КНОПКА ВОЗВРАТА В ГЛАВНОЕ МЕНЮ
     const backBtn = document.createElement('button');
     backBtn.className = 'button secondary';
     backBtn.style.marginTop = '20px';
     backBtn.innerText = '🔙 В главное меню';
     backBtn.onclick = () => showScreen(mainMenuScreen);
     subjectScreen.appendChild(backBtn);
-
     showScreen(subjectScreen);
 }
 
-// Обработчик кнопок ОГЭ / ЕГЭ в главном меню
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => {
-        const examType = button.dataset.examType;
-        if (examType) {
-            openSubjects(examType);
-        }
+        if (button.dataset.examType) openSubjects(button.dataset.examType);
     });
 });
 
-// 📌 НАВИГАЦИЯ: Открытие тарифов с кнопкой "Назад к предметам"
 window.selectTariff = function(subjectCode, subjectName) {
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <p style="text-align:center; color:#555; margin-bottom:20px;">Выберите формат тренировки:</p>
         <button class="button" style="margin-bottom:10px;" onclick="startTest('${subjectCode}', 'standard')">🟢 Стандарт (3 кредита)</button>
         <button class="button" style="background-color:#ff9800; margin-bottom:20px;" onclick="startTest('${subjectCode}', 'pro')">🔥 Профи (4 кредита)</button>
-        
         <button class="button secondary" onclick="openSubjects(currentExamType)">🔙 Назад к предметам</button>
     `;
 }
@@ -166,22 +126,26 @@ window.startTest = async function(subjectCode, mode) {
             body: JSON.stringify({ 
                 student_id: String(USER_ID || 'guest'), 
                 test_mode: currentTestMode,
-                vk_params: window.location.search // <--- ЗАЩИТА ВК
+                vk_params: VK_SEARCH_PARAMS
             })
         });
         const payResult = await payResponse.json();
+        
         if (payResult.success) {
             currentSubjectCode = subjectCode;
             questionNumber = 1; score = 0; mistakes = [];
             getRandomTask();
-        } else { alert("Недостаточно кредитов"); showScreen(mainMenuScreen); }
+        } else { 
+            // ТЕПЕРЬ ПОКАЗЫВАЕМ РЕАЛЬНУЮ ПРИЧИНУ
+            alert(payResult.error || "Недостаточно кредитов"); 
+            showScreen(mainMenuScreen); 
+        }
     } catch (e) { showScreen(mainMenuScreen); }
 }
 
 async function getRandomTask() {
     try {
-        // <--- ЗАЩИТА ВК (Добавлен параметр vk_params)
-        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(window.location.search)}`);
+        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await response.json();
         if (currentTask.done) { alert(currentTask.text); showScreen(mainMenuScreen); return; }
         showTask();
@@ -238,7 +202,7 @@ window.submitAnswer = async function() {
                 user_answer: userAnswer, 
                 task_id: currentTask.id, 
                 student_id: String(USER_ID || 'guest'),
-                vk_params: window.location.search // <--- ЗАЩИТА ВК
+                vk_params: VK_SEARCH_PARAMS
             })
         });
         const result = await response.json();
@@ -268,7 +232,6 @@ window.nextTask = function() {
     else showFinishScreen();
 }
 
-// ФИНАЛ И АНАЛИТИКА (С УМНЫМ ИИ-АНАЛИЗОМ)
 function showFinishScreen() {
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
@@ -279,8 +242,6 @@ function showFinishScreen() {
 
     if (mistakes.length > 0) {
         reviewBtnBlock.style.display = 'block';
-        
-        // Создаем блок для ИИ-анализа
         const aiAnalysisBlock = `
             <div id="topic-stats" style="margin-top:20px; text-align:left; background:#f0f8ff; padding:15px; border-radius:10px; border: 1px solid #bcdcff;">
                 <h3 style="margin-top:0; color:#0056b3;">🧠 Умный анализ пробелов</h3>
@@ -294,15 +255,12 @@ function showFinishScreen() {
     } else { 
         reviewBtnBlock.style.display = 'none'; 
     }
-    
     showScreen(testFinishScreen);
 }
 
-// Запрос к нейросети для анализа ошибок
 window.getAIAnalysis = async function() {
     const btn = document.getElementById('ai-analysis-btn');
     const textBox = document.getElementById('ai-analysis-text');
-    
     btn.style.display = 'none';
     textBox.innerHTML = "<i>⏳ Нейросеть анализирует твои ошибки... Это займет пару секунд.</i>";
 
@@ -318,12 +276,11 @@ window.getAIAnalysis = async function() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 mistakes: mistakesData,
-                student_id: String(USER_ID || 'guest'), // <--- ЗАЩИТА ВК
-                vk_params: window.location.search       // <--- ЗАЩИТА ВК
+                student_id: String(USER_ID || 'guest'),
+                vk_params: VK_SEARCH_PARAMS
             })
         });
         const result = await response.json();
-        
         textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
     } catch (error) {
         textBox.innerHTML = `⚠️ Ошибка соединения с сервером. Попробуй позже.`;
@@ -352,7 +309,6 @@ window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex];
     const explanationBox = document.getElementById('review-explanation');
     explanationBox.innerHTML = "<i>⏳ Генерирую...</i>";
-    const taskText = mistake.task.task_text || mistake.task.text || "Текст";
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, {
@@ -361,10 +317,10 @@ window.runAIExplanation = async function(simplify = false) {
             body: JSON.stringify({ 
                 user_answer: String(mistake.user_answer), 
                 image_url: imageUrl, 
-                task_text: taskText, 
+                task_text: mistake.task.task_text || mistake.task.text || "Текст", 
                 simplify: simplify,
-                student_id: String(USER_ID || 'guest'), // <--- ЗАЩИТА ВК
-                vk_params: window.location.search       // <--- ЗАЩИТА ВК
+                student_id: String(USER_ID || 'guest'),
+                vk_params: VK_SEARCH_PARAMS
             })
         });
         const result = await response.json();
@@ -390,60 +346,55 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
-// 👤 ЭКРАН ПРОФИЛЯ (ЖЕСТКОЕ СКРЫТИЕ ОПЛАТЫ НА ТЕЛЕФОНАХ + ИИ)
+// --- ОБНОВЛЕННЫЙ ПРОФИЛЬ ---
 window.showProfile = async function() {
     showScreen(loadingScreen);
-    
     try {
-        // <--- ЗАЩИТА ВК (Добавлен параметр vk_params)
-        const response = await fetch(`${TEST_API_URL}/profile_analytics/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(window.location.search)}`);
+        // Грузим только базовую инфу, чтобы не делать "портянку"
+        const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await response.json();
         
-        let topUpBlock = "";
-        
-        if (isMobileVK) {
-            topUpBlock = `
-                <div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">
-                    ℹ️ Правила ВКонтакте запрещают прием платежей с мобильных устройств. <b>Для пополнения баланса, пожалуйста, зайди в приложение с компьютера.</b>
-                </div>
-            `;
-        } else {
-            topUpBlock = `
-                <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
-                    <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
-                    <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">
-                        Пакет "Минимум" (15 кр.) — 150 руб.
-                    </button>
-                    <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">
-                        Пакет "Максимум" (100 кр.) — 700 руб.
-                    </button>
-                </div>
-            `;
-        }
+        let topUpBlock = isMobileVK 
+            ? `<div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">ℹ️ Правила ВКонтакте запрещают прием платежей с мобильных устройств. <b>Для пополнения баланса, пожалуйста, зайди в приложение с компьютера.</b></div>`
+            : `<div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+                <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
+                <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
+                <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
+               </div>`;
 
-        // Блок ИИ-Аналитики
-        let analysisBlock = `
-            <div style="margin-top:20px; padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
-                <h3 style="margin-top:0; color:#0056b3;">📈 Динамика твоего обучения</h3>
-                <div style="font-size:14px; line-height:1.6; color:#333;">
-                    ${data.analysis}
-                </div>
-            </div>
-        `;
+        // Создаем красивые кнопки для каждого предмета
+        let subjectsHtml = '';
+        if (data.active_subjects && data.active_subjects.length > 0) {
+            data.active_subjects.forEach(subjCode => {
+                const subjName = ALL_SUBJECTS[subjCode] || subjCode;
+                subjectsHtml += `
+                    <button class="exam-btn" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
+                        <div class="exam-icon">📊</div>
+                        <div class="exam-info">
+                            <h3>${subjName}</h3>
+                            <p>Посмотреть анализ пробелов</p>
+                        </div>
+                    </button>`;
+            });
+        } else {
+            subjectsHtml = `<p style="color:#777;">Здесь появится статистика, как только ты решишь первый вариант!</p>`;
+        }
 
         subjectScreen.innerHTML = `
             <h2>👤 Мой профиль</h2>
-            <div style="font-size:18px; margin-bottom:10px;">
+            <div style="font-size:18px; margin-bottom:10px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6;">
                 💰 Твой баланс: <b>${data.balance || 0} кр.</b><br>
-                📝 Решено задач всего: <b>${data.total_solved || 0}</b>
+                📝 Решено задач: <b>${data.total_solved || 0}</b>
             </div>
             
-            ${analysisBlock}
-            ${topUpBlock}
+            <h3 style="margin-top:20px; text-align:left;">📈 Моя статистика:</h3>
+            <div id="analytics-container">
+                ${subjectsHtml}
+            </div>
             
+            ${topUpBlock}
             <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
         `;
-        
         showScreen(subjectScreen);
     } catch (e) {
         alert("Не удалось загрузить профиль. Проверьте интернет.");
@@ -451,14 +402,35 @@ window.showProfile = async function() {
     }
 }
 
+// Загрузка детальной аналитики по одному предмету
+window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
+    const container = document.getElementById('analytics-container');
+    container.innerHTML = `
+        <div style="text-align:center; padding: 20px;">
+            <div class="spinner"></div>
+            <i>ИИ пишет отчет по предмету "${subjectName}"...</i>
+        </div>
+    `;
+    
+    try {
+        const response = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const data = await response.json();
+        
+        container.innerHTML = `
+            <div style="padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
+                <h3 style="margin-top:0; color:#0056b3;">🧠 Отчет ИИ: ${subjectName}</h3>
+                <div style="font-size:14px; line-height:1.6; color:#333;">${data.analysis}</div>
+                <button class="button secondary" style="margin-top:15px;" onclick="showProfile()">🔙 Назад к предметам</button>
+            </div>
+        `;
+    } catch(e) {
+        container.innerHTML = `⚠️ Ошибка загрузки. <button class="button secondary" onclick="showProfile()">🔙 Назад</button>`;
+    }
+}
+
 startApp();
 
-// Функция для открытия/закрытия шпаргалки по математике
 window.toggleMathHint = function() {
     const hintBox = document.getElementById('math-hint-box');
-    if (hintBox.style.display === 'block') {
-        hintBox.style.display = 'none';
-    } else {
-        hintBox.style.display = 'block';
-    }
+    hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
 }
