@@ -219,12 +219,47 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Адаптив */
+/* Адаптив (увеличенные шрифты для мобильных телефонов) */
 @media (max-width: 500px) {
-    #app { padding: 10px; }
-    .exam-btn { flex-direction: column; text-align: center; }
-    .exam-icon { margin-right: 0; margin-bottom: 10px; }
-    .exam-info { width: 100%; }
+    body { 
+        font-size: 16px; 
+    }
+    #app { 
+        padding: 10px; 
+    }
+    .exam-btn { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .exam-icon { 
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+    .exam-info { 
+        width: 100%; 
+    }
+    /* Делаем текст задачи крупным и читабельным */
+    #task-text {
+        font-size: 1.15em !important;
+        padding: 15px;
+    }
+    /* Увеличиваем все химические и математические формулы KaTeX */
+    .katex {
+        font-size: 1.15em !important;
+    }
+    /* Увеличиваем блок с разбором от ИИ */
+    .explanation-box {
+        font-size: 16px;
+    }
+    /* Увеличиваем поле ввода */
+    #user-answer {
+        font-size: 18px;
+        padding: 12px;
+    }
+    .button, .submit-btn {
+        font-size: 18px;
+        padding: 16px;
+    }
 }
 
 /* --- Стили для шпаргалки по формулам --- */
