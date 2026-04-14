@@ -6,6 +6,10 @@ import re
 import sqlite3
 import aiohttp  
 import asyncio
+import hmac
+import hashlib
+import base64
+from urllib.parse import urlencode, parse_qsl
 from pathlib import Path
 from datetime import datetime
 from typing import Optional
@@ -20,7 +24,11 @@ from fastapi.responses import HTMLResponse
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="2.1.0")
+app = FastAPI(title="Neuro Repetitor API", version="2.2.0")
+
+# --- СЕКРЕТНЫЕ КЛЮЧИ ДЛЯ БЕЗОПАСНОСТИ ---
+VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
+INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "super-secret-tg-token")
 
 # --- СЛОВАРЬ ТЕМ ---
 TOPIC_NAMES = {
@@ -41,7 +49,7 @@ TOPIC_NAMES = {
     "informatics_ege": "💻 Информатика ЕГЭ",
     "geography_ege": "🌍 География ЕГЭ",
     "physics_ege": "⚡ Физика ЕГЭ",
-    "ege_english": "🇬🇧 Английский ЕГЭ" # <--- ПРОСТО ДОБАВЬ В КОНЕЦ
+    "ege_english": "🇬🇧 Английский ЕГЭ"
 }
 
 if Path("questions").exists():
@@ -55,34 +63,60 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
-# --- ФУНКЦИЯ ДЛЯ РАССЫЛКИ ВК ---
-async def send_vk_message(user_id: str, message: str):
-    """Отправляет сообщение пользователю ВК от имени группы"""
-    vk_token = os.getenv("VK_TOKEN")
-    if not vk_token:
-        logger.error("❌ VK_TOKEN не найден в .env")
+def verify_vk_auth(student_id: str, vk_params: str) -> bool:
+    """Жесткая проверка подписи ВК (Защита от SSRF и подмены ID)"""
+    # 1. Админам и гостям можно всё
+    if student_id in ["54451631", "12345678", "guest", "None", None]:
+        return True
+        
+    # 2. Если запрос от нашего собственного Telegram-бота (через токен)
+    if vk_params == INTERNAL_BOT_TOKEN:
+        return True
+        
+    # 3. Жесткая проверка подписи ВК (для фронтенда)
+    if not vk_params or "sign=" not in vk_params:
+        logger.warning(f"⚠️ Попытка взлома (нет подписи ВК)! ID: {student_id}")
         return False
         
-    url = "https://api.vk.com/method/messages.send"
-    params = {
-        "user_id": user_id,
-        "message": message,
-        "random_id": random.randint(1, 2147483647),
-        "v": "5.131",
-        "access_token": vk_token
-    }
+    query_params = dict(parse_qsl(vk_params.lstrip('?'), keep_blank_values=True))
     
+    # ГЛАВНАЯ ЗАЩИТА: проверяем, что ID в параметрах совпадает с ID в теле запроса!
+    if 'vk_user_id' not in query_params or str(query_params['vk_user_id']) != str(student_id):
+        logger.warning(f"🚨 ПОДМЕНА ID! Пытался выдать себя за {student_id}")
+        return False
+
+    vk_params_dict = {k: v for k, v in query_params.items() if k.startswith('vk_')}
+    sorted_vk_params = dict(sorted(vk_params_dict.items()))
+    encoded_params = urlencode(sorted_vk_params)
+
+    hash_code = hmac.new(
+        VK_APP_SECRET.encode('utf-8'),
+        encoded_params.encode('utf-8'),
+        hashlib.sha256
+    ).digest()
+
+    expected_sign = base64.urlsafe_b64encode(hash_code).decode('utf-8').rstrip('=')
+    
+    if query_params.get('sign') != expected_sign:
+        logger.warning(f"🚨 НЕВЕРНАЯ ПОДПИСЬ ВК для ID {student_id}")
+        return False
+        
+    return True
+
+# --- ФУНКЦИЯ ДЛЯ РАССЫЛКИ ВК ---
+async def send_vk_message(user_id: str, message: str):
+    vk_token = os.getenv("VK_TOKEN")
+    if not vk_token:
+        return False
+    url = "https://api.vk.com/method/messages.send"
+    params = {"user_id": user_id, "message": message, "random_id": random.randint(1, 2147483647), "v": "5.131", "access_token": vk_token}
     try:
         async with aiohttp.ClientSession() as session:
             async with session.post(url, data=params) as resp:
                 result = await resp.json()
-                if "error" in result:
-                    logger.error(f"❌ Ошибка отправки ВК: {result['error']['error_msg']}")
-                    return False
+                if "error" in result: return False
                 return True
-    except Exception as e:
-        logger.error(f"❌ Ошибка соединения с ВК: {e}")
-        return False
+    except Exception: return False
 
 # --- БАЗЫ ДАННЫХ ВОПРОСОВ ---
 QUESTIONS_DIR = Path("questions")
@@ -92,7 +126,7 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [] # <--- ДОБАВИЛИ ХИМИЮ
+    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": []
 }
 
 def load_database(filename, db_key):
@@ -109,7 +143,6 @@ load_database("oge_russian.json", "oge_russian")
 load_database("oge_chemistry.json", "oge_chemistry")
 load_database("oge_physics.json", "oge_physics")
 load_database("oge_geography.json", "oge_geography")
-# --- НОВЫЕ ПРЕДМЕТЫ ---
 load_database("oge_biology.json", "oge_biology")
 load_database("oge_informatics.json", "oge_informatics")
 load_database("oge_history.json", "oge_history")
@@ -121,29 +154,21 @@ load_database("geo_ege.json", "geo_ege")
 load_database("phys_ege.json", "phys_ege")
 load_database("ege_english.json", "ege_english")
 load_database("chem_ege.json", "chem_ege")
-# --- БАЗА ДАННЫХ ПОЛЬЗОВАТЕЛЕЙ (ВК ЭКОНОМИКА) ---
+
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS users (
-        user_id TEXT PRIMARY KEY,
-        credits INTEGER DEFAULT 0,
-        last_activity TIMESTAMP
-    )
-    """)
+    cursor.execute("CREATE TABLE IF NOT EXISTS users (user_id TEXT PRIMARY KEY, credits INTEGER DEFAULT 0, last_activity TIMESTAMP)")
     conn.commit()
     conn.close()
 
 init_vk_db()
 
 def init_vk_user(user_id: str) -> int:
-    """Проверяет юзера. Если новый - дает 5 кредитов. Возвращает текущий баланс."""
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("SELECT credits FROM users WHERE user_id=?", (user_id,))
     user = cursor.fetchone()
-    
     if not user:
         cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (user_id, 5))
         conn.commit()
@@ -156,7 +181,6 @@ def init_vk_user(user_id: str) -> int:
     return balance
 
 def change_vk_credits(user_id: str, amount: int) -> int:
-    """Изменяет баланс (списание или начисление)"""
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id=?", (amount, user_id))
@@ -166,11 +190,9 @@ def change_vk_credits(user_id: str, amount: int) -> int:
     conn.close()
     return new_balance
 
-# --- ЛОГИКА АНТИ-ПОВТОРА ---
 def get_user_progress(user_id: str):
     if PROGRESS_FILE.exists():
-        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
-            return json.load(f).get(str(user_id), [])
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f: return json.load(f).get(str(user_id), [])
     return []
 
 def save_user_progress(user_id: str, task_id: str):
@@ -184,38 +206,22 @@ def save_user_progress(user_id: str, task_id: str):
         with open(PROGRESS_FILE, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=2)
 
 def check_student_answer(student_ans, correct_ans):
-    """Умная проверка ответа для всех предметов (Математика, История, Общество и т.д.)"""
     if not student_ans or not correct_ans: return False
-    
-    # 1. Приводим всё к верхнему регистру
     student_ans = str(student_ans).upper()
     correct_ans = str(correct_ans).upper()
-
-    # 2. ОГЭ История/Биология: Правильный ответ состоит ТОЛЬКО из цифр ("531", "12")
     if correct_ans.isdigit():
-        # Ученик написал "А-5, Б-3". Вытаскиваем только цифры:
-        clean_student = re.sub(r'\D', '', student_ans)
-        return clean_student == correct_ans
-    
-    # 3. ОГЭ Математика/Физика: Ответ с минусом или дроби ("-3.5", "0,2")
+        return re.sub(r'\D', '', student_ans) == correct_ans
     elif correct_ans.replace('.', '').replace(',', '').replace('-', '').isdigit():
-        # Оставляем минусы и точки, просто убираем пробелы
-        s_ans = student_ans.replace(" ", "").replace(",", ".")
-        c_ans = correct_ans.replace(" ", "").replace(",", ".")
-        return s_ans == c_ans
-        
-    # 4. Общество/Биология: Текстовый ответ (буквы "АБГЕ", слова "МОНАРХИЯ")
+        return student_ans.replace(" ", "").replace(",", ".") == correct_ans.replace(" ", "").replace(",", ".")
     else:
-        # Выкидываем все пробелы, точки, запятые, дефисы
-        clean_student = re.sub(r'[\s\-\.,;:]', '', student_ans)
-        clean_correct = re.sub(r'[\s\-\.,;:]', '', correct_ans)
-        return clean_student == clean_correct
+        return re.sub(r'[\s\-\.,;:]', '', student_ans) == re.sub(r'[\s\-\.,;:]', '', correct_ans)
 
-# --- МОДЕЛИ ДАННЫХ ---
+# --- МОДЕЛИ ДАННЫХ СО ЩИТОМ БЕЗОПАСНОСТИ ---
 class CheckRequest(BaseModel):
     user_answer: str
     task_id: str  
     student_id: Optional[str] = None
+    vk_params: Optional[str] = None # <-- ЗАЩИТА
 
 class ReviewRequest(BaseModel):
     user_answer: str
@@ -223,68 +229,59 @@ class ReviewRequest(BaseModel):
     task_text: Optional[str] = None
     student_id: Optional[str] = None
     simplify: bool = False
+    vk_params: Optional[str] = None # <-- ЗАЩИТА
 
 class PaymentRequest(BaseModel):
     student_id: Optional[str] = None
     task_id: Optional[str] = None
     test_mode: str = "standard"
+    vk_params: Optional[str] = None # <-- ЗАЩИТА
 
 # --- МАРШРУТЫ ---
-
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = str(request.student_id)
-    test_mode = request.test_mode
-    ADMIN_IDS = ["54451631", "12345678"] 
     
-    cost = 4 if test_mode == "pro" else 3
-    
-    # Админам всё бесплатно
-    if student_id in ADMIN_IDS:
+    # 🔒 ПРОВЕРКА ПОДПИСИ
+    if not verify_vk_auth(student_id, request.vk_params):
+        return {"success": False, "error": "Ошибка безопасности: Подпись ВК недействительна."}
+        
+    cost = 4 if request.test_mode == "pro" else 3
+    if student_id in ["54451631", "12345678"]:
         return {"success": True, "new_balance": "unlimited", "cost": 0}
     
-    # 1. Проверяем юзера и выдаем 5 приветственных кредитов, если он новый
     current_balance = init_vk_user(student_id)
-    
-    # 2. Проверяем, хватает ли баланса
     if current_balance < cost:
         return {"success": False, "new_balance": current_balance, "cost": cost, "error": "Недостаточно кредитов"}
         
-    # 3. Списываем кредиты
     new_balance = change_vk_credits(student_id, -cost)
-    
     return {"success": True, "new_balance": new_balance, "cost": cost}
 
 @app.get("/random_task/")
-async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"):
+async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest", vk_params: str = None):
+    # 🔒 ПРОВЕРКА ПОДПИСИ
+    if not verify_vk_auth(student_id, vk_params):
+        raise HTTPException(status_code=403, detail="Ошибка авторизации")
+        
     db = DATABASES.get(exam_type, [])
     if not db: raise HTTPException(status_code=500, detail="База пуста")
-    
     solved_ids = get_user_progress(student_id)
     available_tasks = [t for t in db if str(t.get("id")) not in solved_ids]
-    
     if not available_tasks:
         return {"id": "done", "topic": "done", "text": "🎉 Все задачи решены!", "image": "", "answer": "---", "done": True}
     
     task = random.choice(available_tasks)
     img_path = task.get("image", "")
-    
     if img_path and not img_path.startswith("http"):
-        # Если в JSON путь уже начинается с questions/, отдаем его как есть
-        if img_path.startswith("questions/"):
-            pass 
-        else:
-            # Старая логика для других предметов
+        if not img_path.startswith("questions/"):
             clean_name = img_path.split('/')[-1]
             if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
             elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
             elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
             elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}"
-            # --- ДОБАВЛЯЕМ ЭТИ ДВЕ СТРОЧКИ ---
             elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
             elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
             elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
-            # ---------------------------------
             else: 
                 topic = task.get("topic", "topic_01")
                 img_path = f"questions/images_oge_math/{topic}/{clean_name}"
@@ -293,6 +290,10 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
+    # 🔒 ПРОВЕРКА ПОДПИСИ
+    if not verify_vk_auth(str(request.student_id), request.vk_params):
+        return {"is_correct": False, "error": "Ошибка безопасности"}
+        
     task = next((t for db in DATABASES.values() for t in db if str(t.get("id")) == str(request.task_id)), None)
     if not task: return {"is_correct": False, "error": "Задача не найдена"}
 
@@ -316,6 +317,10 @@ async def check_answer_smart(request: CheckRequest):
 
 @app.post("/review/")
 async def explain_mistake(request: ReviewRequest):
+    # 🔒 ПРОВЕРКА ПОДПИСИ
+    if not verify_vk_auth(str(request.student_id), request.vk_params):
+        return {"explanation": "⚠️ Действие заблокировано системой безопасности."}
+        
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
     prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах'. Текст: {content}. Ответ ученика: {request.user_answer}. Объясни почему неверно." 
               if request.simplify else 
@@ -327,8 +332,7 @@ async def explain_mistake(request: ReviewRequest):
     try:
         output = replicate.run("google/gemini-3-flash", input=input_data)
         return {"explanation": "".join(output).replace("\n", "<br>")}
-    except Exception:
-        return {"explanation": "Ошибка при генерации разбора."}
+    except Exception: return {"explanation": "Ошибка при генерации разбора."}
 
 class MistakeItem(BaseModel):
     task_text: str
@@ -337,126 +341,85 @@ class MistakeItem(BaseModel):
 
 class AnalyzeGapsRequest(BaseModel):
     mistakes: list[MistakeItem]
+    student_id: Optional[str] = None # <-- ЗАЩИТА
+    vk_params: Optional[str] = None  # <-- ЗАЩИТА
 
 @app.post("/analyze_gaps/")
 async def analyze_gaps(request: AnalyzeGapsRequest):
-    if not request.mistakes:
-        return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
+    if request.student_id and not verify_vk_auth(request.student_id, request.vk_params):
+        return {"analysis": "Ошибка безопасности"}
+        
+    if not request.mistakes: return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
 
-    # Формируем текст для ИИ
-    prompt = "Ты опытный репетитор. Проанализируй ошибки ученика в тесте и выяви его пробелы в знаниях.\nВот задачи, с которыми он не справился:\n\n"
-    
+    prompt = "Ты опытный репетитор. Проанализируй ошибки ученика в тесте и выяви его пробелы в знаниях.\nВот задачи:\n\n"
     for i, m in enumerate(request.mistakes):
-        # Берем первые 300 символов задачи, чтобы не перегружать контекст
         short_text = m.task_text[:300] + "..." if len(m.task_text) > 300 else m.task_text
         prompt += f"{i+1}. Задача: {short_text}\n"
 
-    prompt += "\nНа основе этих задач напиши краткий, дружелюбный и мотивирующий анализ (3-4 абзаца). Укажи конкретные темы, формулы или правила, которые ученику стоит повторить. Не решай эти задачи, просто дай диагноз по темам. Используй эмодзи."
-
+    prompt += "\nНа основе этих задач напиши краткий, дружелюбный и мотивирующий анализ. Не решай эти задачи, просто дай диагноз по темам. Используй эмодзи."
     try:
         output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
         return {"analysis": "".join(output).replace("\n", "<br>")}
-    except Exception as e:
-        logger.error(f"Ошибка анализа пробелов: {e}")
-        return {"analysis": "Не удалось сгенерировать анализ пробелов. Попробуй позже."}
+    except Exception: return {"analysis": "Не удалось сгенерировать анализ пробелов."}
 
 @app.get("/profile_analytics/")
-async def get_profile_analytics(student_id: str):
-    # 1. Получаем реальный баланс ученика из базы
+async def get_profile_analytics(student_id: str, vk_params: str = None):
+    # 🔒 ПРОВЕРКА ПОДПИСИ
+    if not verify_vk_auth(student_id, vk_params):
+        return {"balance": 0, "total_solved": 0, "analysis": "⚠️ Ошибка авторизации: Подделка данных!"}
+        
     current_balance = init_vk_user(student_id)
-
     user_records = []
-    # 2. Читаем историю ответов из файла логов
     if Path("user_stats.log").exists():
         with open("user_stats.log", "r", encoding="utf-8") as f:
             for line in f:
                 parts = line.strip().split(",")
-                # Проверяем, что лог принадлежит именно этому ученику
                 if len(parts) >= 4 and parts[1] == student_id:
-                    user_records.append({
-                        "topic": parts[2],
-                        "is_correct": parts[3].lower() == "true"
-                    })
+                    user_records.append({"topic": parts[2], "is_correct": parts[3].lower() == "true"})
 
-    if not user_records:
-        return {
-            "balance": current_balance,
-            "total_solved": 0,
-            "analysis": "📊 У тебя пока нет истории решений. Пройди пару тестов, и здесь появится подробная аналитика твоего прогресса!"
-        }
+    if not user_records: return {"balance": current_balance, "total_solved": 0, "analysis": "📊 Пройди пару тестов, и здесь появится аналитика!"}
 
-    # 3. Группируем ответы хронологически по темам
     topic_history = {}
     for r in user_records:
         t = r["topic"]
-        if t not in topic_history:
-            topic_history[t] = []
+        if t not in topic_history: topic_history[t] = []
         topic_history[t].append("✅" if r["is_correct"] else "❌")
 
-    # 4. Формируем хитрый промпт для ИИ
-    prompt = "Ты умный ИИ-наставник. Вот хронологическая история ответов ученика по темам (от самых первых попыток к последним):\n\n"
-    
+    prompt = "Ты умный ИИ-наставник. Вот история ответов ученика по темам:\n\n"
     for t, history in topic_history.items():
-        t_name = TOPIC_NAMES.get(t, t)
-        # Берем только последние 25 попыток по каждой теме
         recent_history = history[-25:]
-        prompt += f"- {t_name}: {' '.join(recent_history)}\n"
-
-    prompt += "\nПроанализируй эти данные. Определи, в каких темах есть явный прогресс (сначала ❌, потом пошли ✅), где ситуация ухудшается, а где всё стабильно хорошо или стабильно плохо. Напиши подробный мотивирующий отчет по всем предметам, которые решал ученик (на 3-4 абзаца). Обращайся на 'ты'. Используй HTML-теги <b> для выделения тем и <br> для переноса строк."
+        prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(recent_history)}\n"
+    prompt += "\nОпредели, в каких темах есть прогресс. Напиши мотивирующий отчет."
 
     try:
         output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
         analysis = "".join(output)
-    except Exception as e:
-        logger.error(f"Ошибка глобальной ИИ-аналитики: {e}")
-        analysis = "⚠️ Не удалось сгенерировать аналитику в данный момент, но мы бережно сохранили твою статистику!"
+    except Exception: analysis = "⚠️ Статистика сохранена, но ИИ сейчас недоступен."
 
-    return {
-        "balance": current_balance,
-        "total_solved": len(user_records),
-        "analysis": analysis
-    }
+    return {"balance": current_balance, "total_solved": len(user_records), "analysis": analysis}
 
-# --- АДМИНКА (НАЧИСЛЕНИЕ ВК КРЕДИТОВ И РАССЫЛКА ЧЕРЕЗ БРАУЗЕР) ---
 @app.get("/admin/give")
 async def admin_give_credits(target_id: str, amount: int, key: str = Query(None)):
-    if key != "super-repetitor-2026":
-        return {"error": "Доступ закрыт"}
-    
-    init_vk_user(target_id) # Убеждаемся, что юзер есть в базе
+    if key != "super-repetitor-2026": return {"error": "Доступ закрыт"}
+    init_vk_user(target_id)
     new_balance = change_vk_credits(target_id, amount)
-    
-    # Отправляем уведомление в личку ВК
     await send_vk_message(target_id, f"🎁 Подарок от администратора!\nНа ваш баланс зачислено: {amount} кр.\nТекущий баланс: {new_balance} кр.")
-    
-    return {
-        "success": True, 
-        "message": f"Пользователю ВК ({target_id}) начислено {amount} кр.",
-        "new_balance": new_balance
-    }
+    return {"success": True, "message": f"Начислено {amount} кр.", "new_balance": new_balance}
 
 @app.get("/admin/sendall_vk")
 async def admin_sendall_vk(text: str, key: str = Query(None)):
-    if key != "super-repetitor-2026":
-        return {"error": "Доступ закрыт"}
-        
+    if key != "super-repetitor-2026": return {"error": "Доступ закрыт"}
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("SELECT user_id FROM users")
     users = cursor.fetchall()
     conn.close()
-    
     count = 0
     for user in users:
         vk_id = user[0]
-        # Рассылаем всем новость
-        success = await send_vk_message(vk_id, f"📢 Новость Нейро-Репетитора:\n\n{text}")
-        if success:
-            count += 1
-        
-        await asyncio.sleep(0.1)  # <--- ВОТ ЭТА ПАУЗА (100 миллисекунд)
-            
-    return {"success": True, "message": f"Рассылка завершена. Доставлено: {count} пользователям."}
+        if await send_vk_message(vk_id, f"📢 Новость Нейро-Репетитора:\n\n{text}"): count += 1
+        await asyncio.sleep(0.1)
+    return {"success": True, "message": f"Доставлено: {count} пользователям."}
 
 if __name__ == "__main__":
     import uvicorn
