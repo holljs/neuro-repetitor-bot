@@ -137,7 +137,7 @@ def init_vk_user(user_id: str) -> int:
     cursor.execute("SELECT credits FROM users WHERE user_id=?", (user_id,))
     user = cursor.fetchone()
     if not user:
-        cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (user_id, 5))
+        cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (user_id, 16))
         conn.commit()
         balance = 16
     else:
