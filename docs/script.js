@@ -1,5 +1,5 @@
 // ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПАРАМЕТРОВ ВК (Решает баг с телефонами)
-const VK_SEARCH_PARAMS = window.location.search; 
+const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?'); 
 
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
