@@ -355,8 +355,9 @@ window.showProfile = async function() {
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await response.json();
         
+        // 🛑 ЖЕСТКОЕ СКРЫТИЕ ДЛЯ МОДЕРАТОРОВ ВК (ПУСТАЯ СТРОКА НА МОБИЛЬНОМ)
         let topUpBlock = isMobileVK 
-            ? `<div style="margin-top:20px; padding:15px; background:#f0f4f8; border-radius:10px; font-size:13px; color:#555;">ℹ️ Правила ВКонтакте запрещают прием платежей с мобильных устройств. <b>Для пополнения баланса, пожалуйста, зайди в приложение с компьютера.</b></div>`
+            ? `` 
             : `<div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
                 <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
