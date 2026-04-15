@@ -439,5 +439,10 @@ window.toggleMathHint = function() {
 
 // Открытие экрана помощи
 window.showHelp = function() {
+    const helpPaymentBlock = document.getElementById('help-payment-block');
+    // Скрываем блок оплаты в помощи, если юзер сидит с телефона
+    if (helpPaymentBlock) {
+        helpPaymentBlock.style.display = isMobileVK ? 'none' : 'block';
+    }
     showScreen(helpScreen);
 }
