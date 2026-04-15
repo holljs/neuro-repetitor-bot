@@ -12,6 +12,7 @@ const taskScreen = document.getElementById('task-screen');
 const quickResultScreen = document.getElementById('quick-result-screen');
 const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
+const helpScreen = document.getElementById('screen-help');
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
@@ -433,4 +434,9 @@ startApp();
 window.toggleMathHint = function() {
     const hintBox = document.getElementById('math-hint-box');
     hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
+}
+
+// Открытие экрана помощи
+window.showHelp = function() {
+    showScreen(helpScreen);
 }
