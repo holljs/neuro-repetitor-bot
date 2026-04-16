@@ -1,4 +1,4 @@
-// ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПАРАМЕТРОВ ВК (Решает баг с телефонами)
+// ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПАРАМЕТРОВ ВК
 const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?'); 
 
 const API_SERVER_URL = "https://neuro-master.online";
@@ -14,13 +14,26 @@ const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 const helpScreen = document.getElementById('screen-help');
 
+// --- ИСПРАВЛЕНИЕ 4: ТОЧНОЕ ОПРЕДЕЛЕНИЕ МОБИЛОК ВК ---
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-const isMobileVK = vkPlatform !== 'desktop_web' || isMobileDevice;
+// Теперь компьютерам 100% будут показываться кнопки оплаты
+const mobilePlatforms = ['mobile_android', 'mobile_iphone', 'mobile_web', 'mobile_ipad', 'mobile_android_messenger', 'mobile_iphone_messenger'];
+const isMobileVK = mobilePlatforms.includes(vkPlatform);
 
-let USER_ID = null;
+let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
+
+// --- ИСПРАВЛЕНИЕ 2: СОБСТВЕННАЯ СИСТЕМА УВЕДОМЛЕНИЙ (БЕЗ ALERT) ---
+window.showCustomAlert = function(message, title = "Внимание") {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-message').textContent = message;
+    document.getElementById('custom-modal').style.display = 'flex';
+}
+
+window.closeModal = function() {
+    document.getElementById('custom-modal').style.display = 'none';
+}
 
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
@@ -73,8 +86,8 @@ function startApp() {
     vkBridge.send('VKWebAppInit');
     vkBridge.send('VKWebAppGetUserInfo')
         .then(userData => {
-            USER_ID = userData.id;
-            vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452});
+            if (!USER_ID) USER_ID = userData.id;
+            // ИСПРАВЛЕНИЕ 1: Убрали вызов окна сообщений при старте!
         })
         .catch(error => console.log("ВК не отдал профиль", error));
 }
@@ -137,20 +150,29 @@ window.startTest = async function(subjectCode, mode) {
             questionNumber = 1; score = 0; mistakes = [];
             getRandomTask();
         } else { 
-            // ТЕПЕРЬ ПОКАЗЫВАЕМ РЕАЛЬНУЮ ПРИЧИНУ
-            alert(payResult.error || "Недостаточно кредитов"); 
+            showCustomAlert(payResult.error || "Недостаточно кредитов", "Ошибка"); 
             showScreen(mainMenuScreen); 
         }
-    } catch (e) { showScreen(mainMenuScreen); }
+    } catch (e) { 
+        showCustomAlert("Ошибка соединения с сервером.", "Ошибка");
+        showScreen(mainMenuScreen); 
+    }
 }
 
 async function getRandomTask() {
     try {
         const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await response.json();
-        if (currentTask.done) { alert(currentTask.text); showScreen(mainMenuScreen); return; }
+        if (currentTask.done) { 
+            showCustomAlert(currentTask.text, "Ура!"); 
+            showScreen(mainMenuScreen); 
+            return; 
+        }
         showTask();
-    } catch (e) { showScreen(mainMenuScreen); }
+    } catch (e) { 
+        showCustomAlert("Ошибка при загрузке задачи.", "Ошибка");
+        showScreen(mainMenuScreen); 
+    }
 }
 
 function showTask() {
@@ -193,7 +215,10 @@ function normalizeText(str) {
 window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
     let userAnswer = normalizeText(rawInput);
-    if (!userAnswer) return;
+    if (!userAnswer) {
+        showCustomAlert("Пожалуйста, введите ответ!", "Внимание");
+        return;
+    }
     showScreen(loadingScreen);
     try {
         const response = await fetch(`${TEST_API_URL}/check/`, {
@@ -208,7 +233,10 @@ window.submitAnswer = async function() {
         });
         const result = await response.json();
         handleQuickResult(result.is_correct, rawInput); 
-    } catch (error) { showScreen(taskScreen); }
+    } catch (error) { 
+        showCustomAlert("Ошибка при проверке ответа.", "Ошибка");
+        showScreen(taskScreen); 
+    }
 }
 
 function handleQuickResult(isCorrect, userAnswer) {
@@ -347,24 +375,32 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
+// --- НОВАЯ КНОПКА ДЛЯ ЗАПРОСА РАЗРЕШЕНИЯ НА СООБЩЕНИЯ ---
+window.allowVkMessages = function() {
+    vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
+        .then(() => showCustomAlert("Отлично! Теперь мы сможем присылать тебе уведомления.", "Успешно"))
+        .catch(() => showCustomAlert("Вы отменили подписку на сообщения.", "Отмена"));
+}
+
+window.buyPackage = function(amount) {
+    showCustomAlert("В данный момент оплата доступна только через сообщения нашего сообщества. Напишите нам!", "Пополнение баланса");
+}
+
 // --- ОБНОВЛЕННЫЙ ПРОФИЛЬ ---
 window.showProfile = async function() {
     showScreen(loadingScreen);
     try {
-        // Грузим только базовую инфу, чтобы не делать "портянку"
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await response.json();
         
-        // 🛑 ЖЕСТКОЕ СКРЫТИЕ ДЛЯ МОДЕРАТОРОВ ВК (ПУСТАЯ СТРОКА НА МОБИЛЬНОМ)
         let topUpBlock = isMobileVK 
-            ? `` 
+            ? `` // Пустота на мобилке по правилам ВК
             : `<div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
                 <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
                 <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
                </div>`;
 
-        // Создаем красивые кнопки для каждого предмета
         let subjectsHtml = '';
         if (data.active_subjects && data.active_subjects.length > 0) {
             data.active_subjects.forEach(subjCode => {
@@ -384,6 +420,11 @@ window.showProfile = async function() {
 
         subjectScreen.innerHTML = `
             <h2>👤 Мой профиль</h2>
+            
+            <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()">
+                🔔 Включить уведомления
+            </button>
+
             <div style="font-size:18px; margin-bottom:10px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6;">
                 💰 Твой баланс: <b>${data.balance || 0} кр.</b><br>
                 📝 Решено задач: <b>${data.total_solved || 0}</b>
@@ -399,12 +440,11 @@ window.showProfile = async function() {
         `;
         showScreen(subjectScreen);
     } catch (e) {
-        alert("Не удалось загрузить профиль. Проверьте интернет.");
+        showCustomAlert("Не удалось загрузить профиль. Попробуйте позже.", "Ошибка сервера");
         showScreen(mainMenuScreen);
     }
 }
 
-// Загрузка детальной аналитики по одному предмету
 window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
     const container = document.getElementById('analytics-container');
     container.innerHTML = `
@@ -436,11 +476,9 @@ window.toggleMathHint = function() {
     const hintBox = document.getElementById('math-hint-box');
     hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
 }
-
-// Открытие экрана помощи
+                
 window.showHelp = function() {
     const helpPaymentBlock = document.getElementById('help-payment-block');
-    // Скрываем блок оплаты в помощи, если юзер сидит с телефона
     if (helpPaymentBlock) {
         helpPaymentBlock.style.display = isMobileVK ? 'none' : 'block';
     }
