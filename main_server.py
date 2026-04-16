@@ -30,8 +30,8 @@ from yookassa import Configuration, Payment
 load_dotenv()
 app = FastAPI(title="Neuro Repetitor API", version="2.4.0")
 
-# Настраиваем ключи ЮКассы из .env
-Configuration.configure(os.getenv("YOOKASSA_SHOP_ID", "TEST_ID"), os.getenv("YOOKASSA_SECRET_KEY", "TEST_KEY"))
+# Настраиваем ключи ЮКассы из .env (через U)
+Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKASSA_SECRET_KEY", "TEST_KEY"))
 
 # --- СЕКРЕТНЫЕ КЛЮЧИ ДЛЯ БЕЗОПАСНОСТИ ---
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
