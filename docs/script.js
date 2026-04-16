@@ -14,17 +14,16 @@ const testFinishScreen = document.getElementById('test-finish-screen');
 const reviewScreen = document.getElementById('review-screen');
 const helpScreen = document.getElementById('screen-help');
 
-// --- ИСПРАВЛЕНИЕ 4: ТОЧНОЕ ОПРЕДЕЛЕНИЕ МОБИЛОК ВК ---
+// --- ТОЧНОЕ ОПРЕДЕЛЕНИЕ МОБИЛОК ВК ---
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-// Теперь компьютерам 100% будут показываться кнопки оплаты
 const mobilePlatforms = ['mobile_android', 'mobile_iphone', 'mobile_web', 'mobile_ipad', 'mobile_android_messenger', 'mobile_iphone_messenger'];
 const isMobileVK = mobilePlatforms.includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
 
-// --- ИСПРАВЛЕНИЕ 2: СОБСТВЕННАЯ СИСТЕМА УВЕДОМЛЕНИЙ (БЕЗ ALERT) ---
+// --- СОБСТВЕННАЯ СИСТЕМА УВЕДОМЛЕНИЙ (БЕЗ ALERT) ---
 window.showCustomAlert = function(message, title = "Внимание") {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').textContent = message;
@@ -87,7 +86,6 @@ function startApp() {
     vkBridge.send('VKWebAppGetUserInfo')
         .then(userData => {
             if (!USER_ID) USER_ID = userData.id;
-            // ИСПРАВЛЕНИЕ 1: Убрали вызов окна сообщений при старте!
         })
         .catch(error => console.log("ВК не отдал профиль", error));
 }
@@ -375,15 +373,44 @@ window.nextReview = function() {
 
 window.finishSession = () => showScreen(mainMenuScreen);
 
-// --- НОВАЯ КНОПКА ДЛЯ ЗАПРОСА РАЗРЕШЕНИЯ НА СООБЩЕНИЯ ---
+// --- КНОПКА ДЛЯ ЗАПРОСА РАЗРЕШЕНИЯ НА СООБЩЕНИЯ ---
 window.allowVkMessages = function() {
     vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
         .then(() => showCustomAlert("Отлично! Теперь мы сможем присылать тебе уведомления.", "Успешно"))
         .catch(() => showCustomAlert("Вы отменили подписку на сообщения.", "Отмена"));
 }
 
-window.buyPackage = function(amount) {
-    showCustomAlert("В данный момент оплата доступна только через сообщения нашего сообщества. Напишите нам!", "Пополнение баланса");
+// --- ИНТЕГРАЦИЯ ЮKASSA (ФРОНТЕНД) ---
+window.buyPackage = async function(creditsAmount) {
+    const priceMap = { 15: 150, 100: 700 }; 
+    const price = priceMap[creditsAmount];
+
+    showScreen(loadingScreen);
+
+    try {
+        const response = await fetch(`${TEST_API_URL}/create_payment/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                student_id: String(USER_ID || 'guest'), 
+                amount: creditsAmount,
+                price: price,
+                vk_params: VK_SEARCH_PARAMS
+            })
+        });
+        const result = await response.json();
+
+        if (result.success && result.confirmation_url) {
+            // Перенаправляем пользователя на ЮКассу
+            window.location.href = result.confirmation_url;
+        } else {
+            showCustomAlert("Не удалось создать платеж. Попробуйте позже.", "Ошибка");
+            showProfile();
+        }
+    } catch (e) {
+        showCustomAlert("Ошибка соединения с платежным шлюзом.", "Ошибка");
+        showProfile();
+    }
 }
 
 // --- ОБНОВЛЕННЫЙ ПРОФИЛЬ ---
@@ -394,7 +421,7 @@ window.showProfile = async function() {
         const data = await response.json();
         
         let topUpBlock = isMobileVK 
-            ? `` // Пустота на мобилке по правилам ВК
+            ? `` 
             : `<div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
                 <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
