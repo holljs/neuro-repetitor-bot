@@ -6,6 +6,7 @@ import sqlite3
 import datetime
 import aiohttp
 import base64
+import uuid
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -20,27 +21,28 @@ from aiogram.types import (
 )
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-# Загрузка переменных окружения
+# --- ИМПОРТ ЮKASSA ---
+from yookassa import Configuration, Payment
+
 load_dotenv()
 
-# Критичные переменные
-REQUIRED_ENV_VARS = ["BOT_TOKEN", "SERVER_URL", "SERVER_PORT"]
+REQUIRED_ENV_VARS = ["BOT_TOKEN", "SERVER_URL", "SERVER_PORT", "YOOKASSA_SHOP_ID", "YOOKASSA_SECRET_KEY"]
 missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
 if missing_vars:
-    raise RuntimeError(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
+    raise RuntimeError(f"❌ Не хватает переменных в .env: {', '.join(missing_vars)}")
     
-# Настройка логирования
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("TelegramBot")
 
-# Инициализация
 API_TOKEN = os.getenv("BOT_TOKEN")
 SERVER_URL = os.getenv("SERVER_URL", "http://127.0.0.1")
 SERVER_PORT = os.getenv("SERVER_PORT", "8080")
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
-
-# --- СЕКРЕТНЫЙ КЛЮЧ ДЛЯ СЕРВЕРА ---
 INTERNAL_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
+
+# Настройка ЮКассы напрямую в боте
+Configuration.account_id = os.getenv("YOOKASSA_SHOP_ID")
+Configuration.secret_key = os.getenv("YOOKASSA_SECRET_KEY")
 
 bot = Bot(token=API_TOKEN, default=DefaultBotProperties(parse_mode="HTML"))
 dp = Dispatcher()
@@ -49,6 +51,10 @@ class TaskStates(StatesGroup):
     choosing_subject = State()
     waiting_for_answer = State()
 
+class PaymentProcess(StatesGroup):
+    waiting_for_check = State()
+
+# --- НЕЗАВИСИМАЯ БАЗА ТЕЛЕГРАМА ---
 def init_db():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
@@ -78,7 +84,7 @@ async def save_user(user_id: int, name: str):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE user_id=?", (user_id,))
     if not cursor.fetchone():
-        cursor.execute("INSERT INTO users (user_id, name, credits, last_activity) VALUES (?, ?, ?, datetime('now'))", (user_id, name, 5))
+        cursor.execute("INSERT INTO users (user_id, name, credits, last_activity) VALUES (?, ?, ?, datetime('now'))", (user_id, name, 16))
     else:
         cursor.execute("UPDATE users SET name=?, last_activity=datetime('now') WHERE user_id=?", (name, user_id))
     conn.commit()
@@ -98,18 +104,23 @@ async def deduct_credits(user_id: int, amount: int):
     conn.close()
     return True
 
-# --- ВЗАИМОДЕЙСТВИЕ С СЕРВЕРОМ (С ПАРОЛЕМ INTERNAL_TOKEN) ---
+async def add_credits(user_id: int, amount: int):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id = ?", (amount, user_id))
+    conn.commit()
+    conn.close()
+
+# --- ВЗАИМОДЕЙСТВИЕ С СЕРВЕРОМ ---
 async def fetch_random_task(exam_type: str, student_id: int):
     async with aiohttp.ClientSession() as session:
         try:
-            # ДОБАВИЛИ &vk_params=INTERNAL_TOKEN
             url = f"{SERVER_URL}:{SERVER_PORT}/random_task/?exam_type={exam_type}&student_id={student_id}&vk_params={INTERNAL_TOKEN}"
             async with session.get(url, timeout=10) as response:
                 if response.status == 200:
                     return await response.json()
                 return None
         except Exception as e:
-            logger.error(f"Ошибка получения задачи: {e}")
             return None
 
 async def send_check_to_server(user_answer: str, task_id: str, student_id: int):
@@ -117,7 +128,6 @@ async def send_check_to_server(user_answer: str, task_id: str, student_id: int):
         try:
             async with session.post(
                 f"{SERVER_URL}:{SERVER_PORT}/check/",
-                # ДОБАВИЛИ "vk_params": INTERNAL_TOKEN
                 json={"user_answer": user_answer, "task_id": task_id, "student_id": str(student_id), "vk_params": INTERNAL_TOKEN},
                 timeout=60
             ) as response:
@@ -130,7 +140,6 @@ async def send_to_server_review(user_answer: str, image_url: str, task_text: str
         try:
             async with session.post(
                 f"{SERVER_URL}:{SERVER_PORT}/review/",
-                # ДОБАВИЛИ "vk_params": INTERNAL_TOKEN
                 json={"user_answer": user_answer, "image_url": image_url, "task_text": task_text, "student_id": str(student_id), "simplify": simplify, "vk_params": INTERNAL_TOKEN},
                 timeout=120
             ) as response:
@@ -145,7 +154,7 @@ async def cmd_start(message: types.Message, state: FSMContext):
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="📝 Решить задачу")],
-            [KeyboardButton(text="📊 Моя статистика")],
+            [KeyboardButton(text="📊 Моя статистика"), KeyboardButton(text="💳 Пополнить баланс")],
             [KeyboardButton(text="🛠 Помощь")],
         ], resize_keyboard=True
     )
@@ -334,6 +343,69 @@ async def user_stats(message: types.Message):
         return
     await message.answer(f"📊 <b>Ваша статистика</b>:\n- Баланс кредитов: <b>{user[2]}</b> кр.\n- Последняя активность: {user[3]}")
 
+# --- ОПЛАТА ССЫЛКАМИ (ПРИВЫЧНАЯ ДЛЯ ТЕБЯ ЛОГИКА) ---
+@dp.message(F.text == "💳 Пополнить баланс")
+async def cmd_buy_menu(message: types.Message):
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Пакет 'Минимум' (15 кр.) — 150 руб.", callback_data="buy_15_150")
+    builder.button(text="Пакет 'Максимум' (100 кр.) — 700 руб.", callback_data="buy_100_700")
+    builder.adjust(1)
+    await message.answer("Выберите пакет для пополнения:", reply_markup=builder.as_markup())
+
+@dp.callback_query(F.data.startswith("buy_"))
+async def create_payment_link(callback: types.CallbackQuery, state: FSMContext):
+    parts = callback.data.split("_")
+    credits_to_add = int(parts[1])
+    price = float(parts[2])
+    
+    try:
+        # Генерируем ссылку в ЮКассе
+        payment = Payment.create({
+            "amount": {"value": "%.2f" % price, "currency": "RUB"}, 
+            "confirmation": {"type": "redirect", "return_url": f"https://t.me/{(await bot.get_me()).username}"}, 
+            "capture": True, 
+            "description": f"Покупка {credits_to_add} кредитов (Нейро-Репетитор)"
+        }, uuid.uuid4())
+        
+        await state.update_data(payment_id=payment.id, credits_to_add=credits_to_add)
+        
+        builder = InlineKeyboardBuilder()
+        builder.button(text="➡️ Перейти к оплате", url=payment.confirmation.confirmation_url)
+        builder.button(text="✅ Я оплатил(а)", callback_data="check_payment")
+        
+        await callback.message.edit_text(f"Счет на *{int(price)} руб.* создан.\n\nНажмите кнопку ниже для оплаты, а затем возвращайтесь сюда и нажмите «Я оплатил(а)».", reply_markup=builder.as_markup())
+        await state.set_state(PaymentProcess.waiting_for_check)
+    except Exception as e:
+        logger.error(f"Ошибка ЮКассы: {e}")
+        await callback.answer("Ошибка создания платежа.", show_alert=True)
+    await callback.answer()
+
+@dp.callback_query(F.data == "check_payment", PaymentProcess.waiting_for_check)
+async def check_payment_status(callback: types.CallbackQuery, state: FSMContext):
+    user_data = await state.get_data()
+    payment_id = user_data.get("payment_id")
+    credits_to_add = user_data.get("credits_to_add")
+    
+    if not payment_id: return
+    try:
+        payment_info = Payment.find_one(payment_id)
+        if payment_info.status == "succeeded":
+            await add_credits(callback.from_user.id, credits_to_add)
+            user = await get_user(callback.from_user.id)
+            new_balance = user[2] if user else credits_to_add
+            
+            await callback.message.edit_text(f"✅ Оплата прошла успешно!\nНачислено: *{credits_to_add}* кредитов.\nВаш новый баланс: *{new_balance}* кр.")
+            await state.clear()
+        elif payment_info.status == "pending": 
+            await callback.answer("Платёж ещё обрабатывается. Проверьте чуть позже.", show_alert=True)
+        else: 
+            await callback.message.edit_text("❌ Платёж отменен или истек срок действия.", reply_markup=None)
+            await state.clear()
+    except Exception as e:
+        logger.error(f"Ошибка проверки: {e}")
+        await callback.answer("Ошибка проверки. Попробуйте позже.", show_alert=True)
+
+# --- АДМИНКА ---
 @dp.message(Command("reset"))
 async def cmd_reset(message: types.Message, state: FSMContext):
     if message.from_user.id != ADMIN_ID: return
@@ -346,42 +418,16 @@ async def cmd_give(message: types.Message):
     try:
         args = message.text.split()
         target_id, amount = int(args[1]), int(args[2])
-        conn = sqlite3.connect("users.db")
-        cursor = conn.cursor()
-        cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id = ?", (amount, target_id))
-        conn.commit()
-        conn.close()
+        await add_credits(target_id, amount)
         await message.answer(f"✅ Успешно! Начислено {amount} кр. пользователю {target_id}")
         await bot.send_message(target_id, f"🎁 <b>Подарок от администратора!</b>\nНа ваш баланс зачислено: {amount} кр.")
     except Exception: await message.answer("❌ Ошибка. Правильный формат:\n`/give 123456789 50`")
-
-@dp.message(Command("sendall"))
-async def cmd_sendall(message: types.Message):
-    if message.from_user.id != ADMIN_ID: return
-    text_to_send = message.text.replace("/sendall", "").strip()
-    if not text_to_send:
-        await message.answer("❌ Напишите текст для рассылки. Пример:\n`/sendall Всем привет, мы добавили географию!`")
-        return
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT user_id FROM users")
-    users = cursor.fetchall()
-    conn.close()
-    count = 0
-    await message.answer("⏳ Начинаю рассылку...")
-    for user in users:
-        try:
-            await bot.send_message(user[0], f"📢 <b>Новость:</b>\n\n{text_to_send}")
-            count += 1
-            await asyncio.sleep(0.1)
-        except Exception: pass
-    await message.answer(f"✅ Рассылка завершена! Доставлено: {count} пользователям.")
 
 async def main():
     await dp.start_polling(bot, reset_webhook=True, skip_updates=True)
 
 if __name__ == "__main__":
-    logger.info(f"🌐 Запускаем Telegram бота. API: {SERVER_URL}:{SERVER_PORT}")
+    logger.info(f"🌐 Запускаем Telegram бота. Оплата через ссылки ЮКассы.")
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
