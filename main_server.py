@@ -9,6 +9,7 @@ import asyncio
 import hmac
 import hashlib
 import base64
+import uuid
 from urllib.parse import urlencode, parse_qsl
 from pathlib import Path
 from datetime import datetime
@@ -22,9 +23,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
+# --- ИМПОРТ И ИНИЦИАЛИЗАЦИЯ ЮKASSA ---
+from yookassa import Configuration, Payment
+
 # --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="2.3.0")
+app = FastAPI(title="Neuro Repetitor API", version="2.4.0")
+
+# Настраиваем ключи ЮКассы из .env
+Configuration.configure(os.getenv("YOOKASSA_SHOP_ID", "TEST_ID"), os.getenv("YOOKASSA_SECRET_KEY", "TEST_KEY"))
 
 # --- СЕКРЕТНЫЕ КЛЮЧИ ДЛЯ БЕЗОПАСНОСТИ ---
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
@@ -203,6 +210,61 @@ class PaymentRequest(BaseModel):
     test_mode: str = "standard"
     vk_params: Optional[str] = None
 
+class BuyRequest(BaseModel):
+    student_id: str
+    amount: int
+    price: float
+    vk_params: str
+
+# --- НОВЫЙ ЭНДПОИНТ: СОЗДАНИЕ ПЛАТЕЖА ЮKASSA ---
+@app.post("/create_payment/")
+async def create_payment(request: BuyRequest):
+    if not verify_vk_auth(request.student_id, request.vk_params):
+        return {"success": False, "error": "Ошибка безопасности ВК."}
+
+    try:
+        idempotency_key = str(uuid.uuid4())
+        payment = Payment.create({
+            "amount": {
+                "value": f"{request.price:.2f}",
+                "currency": "RUB"
+            },
+            "confirmation": {
+                "type": "redirect",
+                "return_url": "https://vk.com/app51800000" # Замени на реальную ссылку твоего аппа ВК, если нужно
+            },
+            "capture": True,
+            "description": f"Пополнение баланса Нейро-Репетитор ({request.amount} кр.)",
+            "metadata": {
+                "student_id": request.student_id,
+                "amount": request.amount
+            }
+        }, idempotency_key)
+
+        return {"success": True, "confirmation_url": payment.confirmation.confirmation_url}
+    except Exception as e:
+        logger.error(f"Ошибка создания платежа ЮКасса: {e}")
+        return {"success": False, "error": "Не удалось создать платеж."}
+
+# --- НОВЫЙ ЭНДПОИНТ: ВЕБХУК ОТ ЮKASSA ---
+@app.post("/yookassa_webhook/")
+async def yookassa_webhook(request: dict):
+    try:
+        if request.get('event') == 'payment.succeeded':
+            obj = request['object']
+            student_id = obj['metadata'].get('student_id')
+            amount = int(obj['metadata'].get('amount'))
+            
+            if student_id and amount:
+                new_balance = change_vk_credits(student_id, amount)
+                logger.info(f"💰 ОПЛАТА: Юзер {student_id} купил {amount} кр. Баланс: {new_balance}")
+                await send_vk_message(student_id, f"✅ Оплата прошла успешно!\nНа ваш баланс зачислено: {amount} кр.\nПриятного обучения!")
+                
+        return {"status": "ok"}
+    except Exception as e:
+        logger.error(f"Ошибка вебхука ЮКассы: {e}")
+        return {"status": "error"}
+
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = str(request.student_id)
@@ -280,7 +342,6 @@ async def check_answer_smart(request: CheckRequest):
         save_user_progress(request.student_id, request.task_id)
 
     with open("user_stats.log", "a", encoding="utf-8") as f:
-        # Теперь мы сохраняем и db_name (предмет), чтобы профиль не был портянкой!
         f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct},{db_name}\n")
 
     return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
@@ -330,7 +391,6 @@ async def analyze_gaps(request: AnalyzeGapsRequest):
         return {"analysis": "".join(output).replace("\n", "<br>")}
     except Exception: return {"analysis": "Не удалось сгенерировать анализ пробелов."}
 
-# НОВЫЙ БЫСТРЫЙ ЭНДПОИНТ (ТОЛЬКО КНОПКИ)
 @app.get("/profile_base/")
 async def get_profile_base(student_id: str, vk_params: str = None):
     if not verify_vk_auth(student_id, vk_params):
@@ -346,7 +406,6 @@ async def get_profile_base(student_id: str, vk_params: str = None):
                 parts = line.strip().split(",")
                 if len(parts) >= 4 and parts[1] == student_id:
                     total_solved += 1
-                    # Если есть 5-й параметр (db_name), добавляем предмет
                     if len(parts) >= 5 and parts[4] != "unknown":
                         active_subjects.add(parts[4])
                         
@@ -356,7 +415,6 @@ async def get_profile_base(student_id: str, vk_params: str = None):
         "active_subjects": list(active_subjects)
     }
 
-# НОВЫЙ ЭНДПОИНТ ДЛЯ АНАЛИТИКИ КОНКРЕТНОГО ПРЕДМЕТА
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
     if not verify_vk_auth(student_id, vk_params):
@@ -381,7 +439,7 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
 
     prompt = f"Ты умный ИИ-наставник. Вот история ответов ученика по предмету. Темы:\n\n"
     for t, history in topic_history.items():
-        recent_history = history[-20:] # Берем 20 последних ответов по теме
+        recent_history = history[-20:]
         prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(recent_history)}\n"
     prompt += "\nНапиши короткий мотивирующий отчет (2-3 абзаца). Укажи сильные и слабые темы. Обращайся на 'ты'."
 
