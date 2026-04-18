@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 # Загружаем переменные
 load_dotenv()
-VK_TOKEN = os.getenv("VK_TOKEN")
+VK_TOKEN = os.getenv("VK_REPETITOR_TOKEN")
 ADMIN_VK_ID = 233876992  # Твой ID
 GROUP_ID = 235924452     # ⚠️ ВАЖНО: ЗАМЕНИ НА ID ТВОЕЙ ГРУППЫ РЕПЕТИТОРА!
 
