@@ -1,7 +1,7 @@
 import os
 import sqlite3
 import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType # <--- ИСПРАВЛЕНИЕ ЗДЕСЬ
+from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 import random
 import time
@@ -15,7 +15,7 @@ GROUP_ID = 235924452     # ⚠️ ВАЖНО: ЗАМЕНИ НА ID ТВОЕЙ Г
 
 # Подключаемся к ВК как ГРУППА
 vk_session = vk_api.VkApi(token=VK_TOKEN)
-longpoll = VkBotLongPoll(vk_session, GROUP_ID) # <--- ИСПРАВЛЕНИЕ ЗДЕСЬ
+longpoll = VkBotLongPoll(vk_session, GROUP_ID)
 vk = vk_session.get_api()
 
 print("🎓 VK-бот (Швейцар + Админка Репетитора) запущен...")
@@ -104,7 +104,6 @@ def get_app_keyboard():
 
 # --- ГЛАВНЫЙ ЦИКЛ БОТА ---
 for event in longpoll.listen():
-    # <--- ИСПРАВЛЕНИЕ: Ловим события от группы
     if event.type == VkBotEventType.MESSAGE_NEW:
         user_id = event.message.from_id
         original_text = event.message.text.strip()
