@@ -1,20 +1,21 @@
 import os
 import sqlite3
 import vk_api
-from vk_api.longpoll import VkLongPoll, VkEventType
+from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType # <--- ИСПРАВЛЕНИЕ ЗДЕСЬ
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 import random
 import time
 from dotenv import load_dotenv
 
-# Загружаем переменные (Убедись, что VK_TOKEN есть в .env)
+# Загружаем переменные
 load_dotenv()
 VK_TOKEN = os.getenv("VK_TOKEN")
-ADMIN_VK_ID = 233876992  # Твой ID для админских команд
+ADMIN_VK_ID = 233876992  # Твой ID
+GROUP_ID = 235924452     # ⚠️ ВАЖНО: ЗАМЕНИ НА ID ТВОЕЙ ГРУППЫ РЕПЕТИТОРА!
 
-# Подключаемся к ВК
+# Подключаемся к ВК как ГРУППА
 vk_session = vk_api.VkApi(token=VK_TOKEN)
-longpoll = VkLongPoll(vk_session)
+longpoll = VkBotLongPoll(vk_session, GROUP_ID) # <--- ИСПРАВЛЕНИЕ ЗДЕСЬ
 vk = vk_session.get_api()
 
 print("🎓 VK-бот (Швейцар + Админка Репетитора) запущен...")
@@ -37,7 +38,6 @@ def add_credits(user_id, amount):
     if cursor.fetchone():
         cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id=?", (amount, str(user_id)))
     else:
-        # Если юзер еще ни разу не открывал апп, но уже написал боту
         cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (str(user_id), amount))
     conn.commit()
     conn.close()
@@ -63,7 +63,6 @@ BONUS_FILE = "claimed_bonuses.txt"
 BONUS_AMOUNT = 6
 
 def check_and_give_bonus(user_id):
-    """Проверяет, получал ли юзер бонус за подписку. Если нет - дает 6 кредитов."""
     if not os.path.exists(BONUS_FILE):
         open(BONUS_FILE, 'w').close()
     
@@ -99,21 +98,21 @@ def get_app_keyboard():
     keyboard = VkKeyboard(inline=True)
     keyboard.add_openlink_button(
         label="🧠 Открыть Нейро-Репетитор",
-        link="https://vk.com/app54451631"
+        link="https://vk.com/app51800000" # ⚠️ ЗАМЕНИ НА ID ТВОЕГО ПРИЛОЖЕНИЯ
     )
     return keyboard
 
 # --- ГЛАВНЫЙ ЦИКЛ БОТА ---
 for event in longpoll.listen():
-    if event.type == VkEventType.MESSAGE_NEW and event.to_me:
-        user_id = event.user_id
-        original_text = event.text.strip()
+    # <--- ИСПРАВЛЕНИЕ: Ловим события от группы
+    if event.type == VkBotEventType.MESSAGE_NEW:
+        user_id = event.message.from_id
+        original_text = event.message.text.strip()
         text = original_text.lower()
 
         # ---------------- СЕКРЕТНАЯ АДМИНКА ----------------
         if user_id == ADMIN_VK_ID:
             
-            # 1. Выдать кредиты
             if text.startswith("выдать"):
                 try:
                     parts = text.split()
@@ -127,7 +126,6 @@ for event in longpoll.listen():
                     send_message(user_id, "❌ Формат: выдать 12345678 50")
                 continue
                 
-            # 2. Проверить баланс
             elif text.startswith("проверить") or text.startswith("баланс"):
                 try:
                     target_id = int(text.split()[1])
@@ -141,7 +139,6 @@ for event in longpoll.listen():
                     send_message(user_id, "❌ Формат: проверить 12345678")
                 continue
                 
-            # 3. Статистика
             elif text == "стата" or text == "статистика":
                 try:
                     total_users = count_users()
@@ -152,18 +149,16 @@ for event in longpoll.listen():
                     send_message(user_id, f"❌ Ошибка: {e}")
                 continue
                 
-            # 4. Умная рассылка по ВСЕЙ БАЗЕ
             elif text.startswith("рассылка"):
                 try:
                     broadcast_text = original_text[9:].strip() 
                     
-                    # Получаем вложения из сообщения админа
                     attachments = []
-                    if hasattr(event, 'attachments'):
-                        for key, value in event.attachments.items():
-                            if key.startswith('attach') and key.endswith('_type') and value == 'photo':
-                                photo_id = event.attachments[key.replace('_type', '')]
-                                attachments.append(f"photo{photo_id}")
+                    if hasattr(event.message, 'attachments'):
+                        for att in event.message.attachments:
+                            if att['type'] == 'photo':
+                                photo = att['photo']
+                                attachments.append(f"photo{photo['owner_id']}_{photo['id']}")
                     att_string = ",".join(attachments) if attachments else None
 
                     users = get_all_users()
@@ -185,19 +180,18 @@ for event in longpoll.listen():
                                 random_id=random.randint(0, 2**31)
                             )
                             success_count += 1
-                            time.sleep(0.1) # Пауза, чтобы ВК не забанил за спам
+                            time.sleep(0.1) 
                         except Exception:
                             error_count += 1
                             continue 
                     
-                    send_message(user_id, f"✅ Рассылка завершена!\n\n📈 Статистика:\n— Успешно: {success_count}\n— Ошибок (закрыли ЛС): {error_count}\n— Всего: {len(users)}")
+                    send_message(user_id, f"✅ Рассылка завершена!\n\n📈 Статистика:\n— Успешно: {success_count}\n— Ошибки: {error_count}\n— Всего: {len(users)}")
                 except Exception as e:
                     send_message(user_id, f"❌ Критическая ошибка рассылки: {e}")
                 continue
 
         # ---------------- КОНЕЦ АДМИНКИ ----------------
 
-        # --- ЕДИНЫЙ ОТВЕТ БОТА ДЛЯ УЧЕНИКОВ ---
         is_new_subscriber = check_and_give_bonus(user_id)
         
         if is_new_subscriber:
