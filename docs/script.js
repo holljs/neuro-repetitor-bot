@@ -61,7 +61,7 @@ const EGE_SUBJECTS = {
     "math_ege": "📐 Математика (профиль)", "russian_ege": "🖋️ Русский язык ЕГЭ",
     "inf_ege": "💻 Информатика ЕГЭ", "geo_ege": "🌍 География ЕГЭ",
     "phys_ege": "⚡ Физика ЕГЭ", "ege_english": "🇬🇧 Английский ЕГЭ",
-    "chem_ege": "🧪 Химия ЕГЭ"
+    "chem_ege": "🧪 Химия ЕГЭ", "ege_literature": "📚 Литература ЕГЭ" // <--- ДОБАВИТЬ ЭТУ СТРОКУ
 };
 
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
