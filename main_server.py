@@ -56,7 +56,8 @@ TOPIC_NAMES = {
     "informatics_ege": "💻 Информатика ЕГЭ",
     "geography_ege": "🌍 География ЕГЭ",
     "physics_ege": "⚡ Физика ЕГЭ",
-    "ege_english": "🇬🇧 Английский ЕГЭ"
+    "ege_english": "🇬🇧 Английский ЕГЭ",
+    "ege_literature": "📚 Литература ЕГЭ" # <--- ДОБАВИТЬ ЭТУ СТРОКУ
 }
 
 if Path("questions").exists():
@@ -114,7 +115,8 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": []
+    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [],
+    "ege_literature": [] # <--- ДОБАВИТЬ ЭТУ СТРОКУ
 }
 
 def load_database(filename, db_key):
