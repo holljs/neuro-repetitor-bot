@@ -17,8 +17,8 @@ const helpScreen = document.getElementById('screen-help');
 // --- ТОЧНОЕ ОПРЕДЕЛЕНИЕ МОБИЛОК ВК ---
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-const mobilePlatforms = ['mobile_android', 'mobile_iphone', 'mobile_web', 'mobile_ipad', 'mobile_android_messenger', 'mobile_iphone_messenger'];
-const isMobileVK = mobilePlatforms.includes(vkPlatform);
+const allowedPaymentPlatforms = ['desktop_web', 'mobile_web'];
+const canPay = allowedPaymentPlatforms.includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
@@ -401,8 +401,8 @@ window.buyPackage = async function(creditsAmount) {
         const result = await response.json();
 
         if (result.success && result.confirmation_url) {
-            // Перенаправляем пользователя на ЮКассу
-            window.location.href = result.confirmation_url;
+            // Безопасное открытие через мост ВК
+            vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url});
         } else {
             showCustomAlert("Не удалось создать платеж. Попробуйте позже.", "Ошибка");
             showProfile();
@@ -420,13 +420,15 @@ window.showProfile = async function() {
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await response.json();
         
-        let topUpBlock = isMobileVK 
-            ? `` 
-            : `<div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+        let topUpBlock = '';
+        if (canPay) {
+            topUpBlock = `
+            <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
                 <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
                 <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
-               </div>`;
+            </div>`;
+        }
 
         let subjectsHtml = '';
         if (data.active_subjects && data.active_subjects.length > 0) {
@@ -464,6 +466,13 @@ window.showProfile = async function() {
             
             ${topUpBlock}
             <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+            
+            <div style="margin-top: 30px; font-size: 11px; color: #999; text-align: center; line-height: 1.4;">
+                Продавец: Самозанятая Селяхова Наталья Викторовна<br>
+                ИНН: 502209781184<br>
+                Email: holljs@mail.ru<br>
+                <a href="https://vk.com/neuro_repetitor" target="_blank" style="color: #999; text-decoration: underline;">Пользовательское соглашение и возврат</a>
+            </div>
         `;
         showScreen(subjectScreen);
     } catch (e) {
@@ -507,7 +516,8 @@ window.toggleMathHint = function() {
 window.showHelp = function() {
     const helpPaymentBlock = document.getElementById('help-payment-block');
     if (helpPaymentBlock) {
-        helpPaymentBlock.style.display = isMobileVK ? 'none' : 'block';
+        // Если платить можно (ПК/веб) - показываем блок, иначе - прячем
+        helpPaymentBlock.style.display = canPay ? 'block' : 'none'; 
     }
     showScreen(helpScreen);
 }
