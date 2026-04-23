@@ -401,8 +401,17 @@ window.buyPackage = async function(creditsAmount) {
         const result = await response.json();
 
         if (result.success && result.confirmation_url) {
-            // Безопасное открытие через мост ВК
-            vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url});
+            // Пытаемся открыть ссылку через мост ВК
+            try {
+                await vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url});
+            } catch (bridgeError) {
+                // Запасной план: если мост ВК дал сбой, открываем обычной ссылкой браузера
+                console.log("VK Bridge не смог открыть ссылку, используем window.open:", bridgeError);
+                window.open(result.confirmation_url, '_blank');
+            }
+            
+            // ВАЖНО: Возвращаем пользователя в профиль, чтобы не висела вечная загрузка
+            showProfile();
         } else {
             showCustomAlert("Не удалось создать платеж. Попробуйте позже.", "Ошибка");
             showProfile();
