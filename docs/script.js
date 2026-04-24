@@ -492,8 +492,8 @@ window.showProfile = async function() {
             topUpBlock = `
             <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
                 <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
-                <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
-                <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
+                <button class="button" style="margin-bottom:10px; background-color:#4a76a8;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
+                <button class="button" style="background-color:#2a5885;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
             </div>`;
         }
 
