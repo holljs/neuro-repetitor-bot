@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
 /* Основные стили */
 body {
     margin: 0;
@@ -42,6 +43,13 @@ body {
     margin-top: 30px;
 }
 
+/* Выравнивание элементов внутри кнопок (чтобы иконки не прыгали) */
+.menu-btn, .button, .submit-btn, .exam-btn, .hint-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .menu-btn, .button {
     background-color: #4a76a8;
     color: white;
@@ -54,6 +62,7 @@ body {
     transition: background-color 0.2s;
     text-align: center;
     width: 100%;
+    margin-bottom: 10px; /* Чтобы кнопки не слипались */
 }
 
 .menu-btn:hover, .button:hover {
@@ -68,6 +77,7 @@ body {
 .exam-btn {
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Для карточек предметов выравниваем по левому краю */
     background-color: white;
     border: 1px solid #e1e3e6;
     border-radius: 12px;
@@ -87,6 +97,7 @@ body {
 .exam-icon {
     font-size: 32px;
     margin-right: 15px;
+    color: #4a76a8; /* Цвет иконки графика */
 }
 
 .exam-info h3 { margin: 0 0 5px 0; text-align: left; }
@@ -220,6 +231,58 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* --- Стили для шпаргалки по формулам --- */
+.hint-toggle-btn {
+    background: none;
+    border: none;
+    color: #4a76a8;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.hint-toggle-btn:hover {
+    color: #3a6590;
+}
+
+.math-hint-box {
+    display: none; /* Скрыта по умолчанию */
+    background-color: #f0f4f8;
+    border: 1px solid #dce1e6;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-align: left;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.math-hint-box code {
+    background: #e1e3e6;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* --- Стили для премиум-иконок Feather --- */
+.feather {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+    stroke-width: 2px; 
+}
+.icon-sm {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
 /* Адаптив (увеличенные шрифты для мобильных телефонов) */
 @media (max-width: 500px) {
     body { 
@@ -261,42 +324,4 @@ body {
         font-size: 18px;
         padding: 16px;
     }
-}
-
-/* --- Стили для шпаргалки по формулам --- */
-.hint-toggle-btn {
-    background: none;
-    border: none;
-    color: #4a76a8;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 0;
-    text-decoration: underline;
-    opacity: 0.9;
-}
-
-.hint-toggle-btn:hover {
-    color: #3a6590;
-}
-
-.math-hint-box {
-    display: none; /* Скрыта по умолчанию */
-    background-color: #f0f4f8;
-    border: 1px solid #dce1e6;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 13px;
-    color: #444;
-    margin-bottom: 10px;
-    line-height: 1.6;
-    text-align: left;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
-}
-
-.math-hint-box code {
-    background: #e1e3e6;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-weight: bold;
-    color: #222;
 }
