@@ -50,18 +50,18 @@ function renderMath(elementId) {
 }
 
 const OGE_SUBJECTS = { 
-    "oge_math": "🧮 Математика ОГЭ", "oge_russian": "📚 Русский язык ОГЭ", 
-    "oge_english": "☕ Английский ОГЭ", "oge_chemistry": "🧪 Химия ОГЭ",
-    "oge_physics": "⚡ Физика ОГЭ", "oge_geography": "🌍 География ОГЭ",
-    "oge_biology": "🧬 Биология ОГЭ", "oge_informatics": "💻 Информатика ОГЭ",
-    "oge_history": "📜 История ОГЭ", "oge_social": "📊 Обществознание ОГЭ"
+    "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", 
+    "oge_english": "Английский ОГЭ", "oge_chemistry": "Химия ОГЭ",
+    "oge_physics": "Физика ОГЭ", "oge_geography": "География ОГЭ",
+    "oge_biology": "Биология ОГЭ", "oge_informatics": "Информатика ОГЭ",
+    "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ"
 };
 
 const EGE_SUBJECTS = { 
-    "math_ege": "📐 Математика (профиль)", "russian_ege": "🖋️ Русский язык ЕГЭ",
-    "inf_ege": "💻 Информатика ЕГЭ", "geo_ege": "🌍 География ЕГЭ",
-    "phys_ege": "⚡ Физика ЕГЭ", "ege_english": "🇬🇧 Английский ЕГЭ",
-    "chem_ege": "🧪 Химия ЕГЭ", "ege_literature": "📚 Литература ЕГЭ" // <--- ДОБАВИТЬ ЭТУ СТРОКУ
+    "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ",
+    "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ",
+    "phys_ege": "Физика ЕГЭ", "ege_english": "Английский ЕГЭ",
+    "chem_ege": "Химия ЕГЭ", "ege_literature": "Литература ЕГЭ"
 };
 
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
