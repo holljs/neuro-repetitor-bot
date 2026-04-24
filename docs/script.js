@@ -77,7 +77,10 @@ let currentTestMode = "standard";
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
-    if(screenElement) screenElement.style.display = 'block';
+    if(screenElement) {
+        screenElement.style.display = 'block';
+        if (window.feather) feather.replace(); // Отрисовываем иконки на новом экране
+    }
 }
 
 function startApp() {
@@ -242,14 +245,15 @@ function handleQuickResult(isCorrect, userAnswer) {
     const normUser = normalizeText(userAnswer);
     const normCorrect = normalizeText(currentTask.answer);
     const finalCorrect = isCorrect || (normUser === normCorrect);
+    
     if (finalCorrect) {
-        titleEl.innerHTML = '<span style="color:green">🎉 Верно!</span>';
+        titleEl.innerHTML = '<div style="color:#4CAF50; display:flex; justify-content:center; align-items:center;"><i data-feather="check-circle" style="margin-right:8px;"></i> Верно!</div>';
         score++;
     } else {
-        titleEl.innerHTML = `<span style="color:red; display:block; margin-bottom:10px;">❌ Неверно!</span><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
+        titleEl.innerHTML = `<div style="color:#ff5252; display:flex; justify-content:center; align-items:center;"><i data-feather="x-circle" style="margin-right:8px;"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    setTimeout(() => { renderMath('quick-result-screen'); }, 100);
+    setTimeout(() => { feather.replace(); renderMath('quick-result-screen'); }, 100);
     showScreen(quickResultScreen);
 }
 
@@ -320,7 +324,13 @@ window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMi
 function loadReviewForCurrentMistake() {
     const mistake = mistakes[currentReviewIndex];
     document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
-    document.getElementById('review-answers-block').innerHTML = `<p>❌ Твой: ${mistake.user_answer}</p><p>✅ Правильный: ${mistake.task.answer}</p>`;
+    
+    // Заменили эмодзи на иконки
+    document.getElementById('review-answers-block').innerHTML = `
+        <p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p>
+        <p style="display:flex; align-items:center; color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>
+    `;
+    
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
@@ -328,7 +338,7 @@ function loadReviewForCurrentMistake() {
     } else { 
         reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; 
     }
-    document.getElementById('review-explanation').innerHTML = `<button class="button" onclick="runAIExplanation()">🧠 Разбор с ИИ</button>`;
+    document.getElementById('review-explanation').innerHTML = `<button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button>`;
     showScreen(reviewScreen);
 }
 
@@ -445,7 +455,7 @@ window.showProfile = async function() {
                 const subjName = ALL_SUBJECTS[subjCode] || subjCode;
                 subjectsHtml += `
                     <button class="exam-btn" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
-                        <div class="exam-icon">📊</div>
+                        <div class="exam-icon"><i data-feather="bar-chart-2"></i></div>
                         <div class="exam-info">
                             <h3>${subjName}</h3>
                             <p>Посмотреть анализ пробелов</p>
