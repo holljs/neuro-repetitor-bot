@@ -125,10 +125,50 @@ window.selectTariff = function(subjectCode, subjectName) {
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <p style="text-align:center; color:#555; margin-bottom:20px;">Выберите формат тренировки:</p>
-        <button class="button" style="margin-bottom:10px;" onclick="startTest('${subjectCode}', 'standard')">🟢 Стандарт (3 кредита)</button>
-        <button class="button" style="background-color:#ff9800; margin-bottom:20px;" onclick="startTest('${subjectCode}', 'pro')">🔥 Профи (4 кредита)</button>
-        <button class="button secondary" onclick="openSubjects(currentExamType)">🔙 Назад к предметам</button>
+
+        <div style="margin-bottom: 10px;">
+            <button class="button" style="background-color: #4a76a8; justify-content: space-between; padding-right: 15px;" onclick="startTest('${subjectCode}', 'standard')">
+                <div style="display: flex; align-items: center;">
+                    <i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кредита)
+                </div>
+                <div onclick="event.stopPropagation(); toggleHint('hint-standard')" style="padding: 5px; margin: -5px; cursor: pointer;">
+                    <i data-feather="help-circle" class="icon-sm" style="margin: 0; opacity: 0.8;"></i>
+                </div>
+            </button>
+            
+            <div id="hint-standard" class="math-hint-box" style="margin-top: 8px;">
+                <b>Стандарт:</b> Нейросеть даёт одно чёткое и понятное объяснение вашей ошибки. Идеально для быстрой тренировки.
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <button class="button" style="background-color: #2a5885; justify-content: space-between; padding-right: 15px;" onclick="startTest('${subjectCode}', 'pro')">
+                <div style="display: flex; align-items: center;">
+                    <i data-feather="zap" class="icon-sm"></i> Профи (4 кредита)
+                </div>
+                <div onclick="event.stopPropagation(); toggleHint('hint-pro')" style="padding: 5px; margin: -5px; cursor: pointer;">
+                    <i data-feather="help-circle" class="icon-sm" style="margin: 0; opacity: 0.8;"></i>
+                </div>
+            </button>
+            
+            <div id="hint-pro" class="math-hint-box" style="margin-top: 8px;">
+                <b>Профи:</b> Глубокий разбор. Если вы не поняли с первого раза, ИИ разжуёт ошибку повторно — ещё проще и детальнее.
+            </div>
+        </div>
+
+        <button class="button secondary" onclick="openSubjects(currentExamType)">
+            <i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам
+        </button>
     `;
+    if (window.feather) feather.replace(); // Отрисовываем иконки
+}
+
+// Новая функция для открытия/закрытия подсказок тарифов
+window.toggleHint = function(id) {
+    const hint = document.getElementById(id);
+    if (hint) {
+        hint.style.display = hint.style.display === 'block' ? 'none' : 'block';
+    }
 }
 
 window.startTest = async function(subjectCode, mode) {
@@ -275,10 +315,10 @@ function showFinishScreen() {
         reviewBtnBlock.style.display = 'block';
         const aiAnalysisBlock = `
             <div id="topic-stats" style="margin-top:20px; text-align:left; background:#f0f8ff; padding:15px; border-radius:10px; border: 1px solid #bcdcff;">
-                <h3 style="margin-top:0; color:#0056b3;">🧠 Умный анализ пробелов</h3>
+                <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="activity" class="icon-sm"></i> Умный анализ пробелов</h3>
                 <p id="ai-analysis-text" style="font-size:14px; color:#333;">Хочешь узнать, какие конкретно темы и правила тебе нужно подтянуть на основе твоих ошибок?</p>
                 <button id="ai-analysis-btn" class="button" style="background-color:#007bff; padding:10px; font-size:14px;" onclick="getAIAnalysis()">
-                    ✨ Сгенерировать ИИ-анализ
+                    <i data-feather="cpu" class="icon-sm"></i> Сгенерировать ИИ-анализ
                 </button>
             </div>
         `;
@@ -293,7 +333,9 @@ window.getAIAnalysis = async function() {
     const btn = document.getElementById('ai-analysis-btn');
     const textBox = document.getElementById('ai-analysis-text');
     btn.style.display = 'none';
-    textBox.innerHTML = "<i>⏳ Нейросеть анализирует твои ошибки... Это займет пару секунд.</i>";
+    
+    // Вместо ⏳ используем встроенный красивый спиннер
+    textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует ошибки...</i></div>`;
 
     const mistakesData = mistakes.map(m => ({
         task_text: String(m.task.task_text || m.task.text || "Текст не найден"),
@@ -314,7 +356,8 @@ window.getAIAnalysis = async function() {
         const result = await response.json();
         textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
     } catch (error) {
-        textBox.innerHTML = `⚠️ Ошибка соединения с сервером. Попробуй позже.`;
+        textBox.innerHTML = `<div style="color:#d32f2f; display:flex; align-items:center;"><i data-feather="alert-triangle" class="icon-sm"></i> Ошибка соединения с сервером.</div>`;
+        if (window.feather) feather.replace();
         btn.style.display = 'block';
     }
 }
@@ -345,7 +388,9 @@ function loadReviewForCurrentMistake() {
 window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex];
     const explanationBox = document.getElementById('review-explanation');
-    explanationBox.innerHTML = "<i>⏳ Генерирую...</i>";
+    
+    explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
+    
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, {
@@ -362,7 +407,10 @@ window.runAIExplanation = async function(simplify = false) {
         });
         const result = await response.json();
         explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
-    } catch (error) { explanationBox.innerHTML = `⚠️ Ошибка.`; }
+    } catch (error) { 
+        explanationBox.innerHTML = `<div style="color:#d32f2f; display:flex; align-items:center;"><i data-feather="alert-triangle" class="icon-sm"></i> Ошибка при генерации разбора.</div>`;
+        if (window.feather) feather.replace();
+    }
 }
 
 document.addEventListener('click', function (e) {
@@ -443,7 +491,7 @@ window.showProfile = async function() {
         if (canPay) {
             topUpBlock = `
             <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
-                <h3 style="margin-top:0;">💳 Пополнить баланс</h3>
+                <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
                 <button class="button" style="margin-bottom:10px; background-color:#4CAF50;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
                 <button class="button" style="background-color:#ff9800;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
             </div>`;
@@ -467,24 +515,28 @@ window.showProfile = async function() {
         }
 
         subjectScreen.innerHTML = `
-            <h2>👤 Мой профиль</h2>
+            <h2 style="display:flex; align-items:center; justify-content:center;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
             
             <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()">
-                🔔 Включить уведомления
+                <i data-feather="bell" class="icon-sm"></i> Включить уведомления
             </button>
 
-            <div style="font-size:18px; margin-bottom:10px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6;">
-                💰 Твой баланс: <b>${data.balance || 0} кр.</b><br>
-                📝 Решено задач: <b>${data.total_solved || 0}</b>
+            <div style="font-size:16px; margin-bottom:15px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6; text-align: left;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <i data-feather="database" class="icon-sm" style="color:#ff9800;"></i> Твой баланс: <b style="margin-left:6px;">${data.balance || 0} кр.</b>
+                </div>
+                <div style="display:flex; align-items:center;">
+                    <i data-feather="check-square" class="icon-sm" style="color:#4CAF50;"></i> Решено задач: <b style="margin-left:6px;">${data.total_solved || 0}</b>
+                </div>
             </div>
             
-            <h3 style="margin-top:20px; text-align:left;">📈 Моя статистика:</h3>
+            <h3 style="margin-top:20px; text-align:left; display:flex; align-items:center;"><i data-feather="trending-up" class="icon-sm"></i> Моя статистика:</h3>
             <div id="analytics-container">
                 ${subjectsHtml}
             </div>
             
             ${topUpBlock}
-            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">🔙 В главное меню</button>
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)"><i data-feather="arrow-left" class="icon-sm"></i> В главное меню</button>
             
             <div style="margin-top: 30px; font-size: 11px; color: #999; text-align: center; line-height: 1.4;">
                 Продавец: Самозанятая Селяхова Наталья Викторовна<br>
@@ -515,13 +567,20 @@ window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
         
         container.innerHTML = `
             <div style="padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
-                <h3 style="margin-top:0; color:#0056b3;">🧠 Отчет ИИ: ${subjectName}</h3>
+                <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="cpu" class="icon-sm"></i> Отчет ИИ: ${subjectName}</h3>
                 <div style="font-size:14px; line-height:1.6; color:#333;">${data.analysis}</div>
-                <button class="button secondary" style="margin-top:15px;" onclick="showProfile()">🔙 Назад к предметам</button>
+                <button class="button secondary" style="margin-top:15px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам</button>
             </div>
         `;
+        if (window.feather) feather.replace(); // Обязательно отрисовываем иконки после добавления HTML
     } catch(e) {
-        container.innerHTML = `⚠️ Ошибка загрузки. <button class="button secondary" onclick="showProfile()">🔙 Назад</button>`;
+        container.innerHTML = `
+            <div style="color:#d32f2f; display:flex; align-items:center; justify-content:center; padding:15px;">
+                <i data-feather="alert-triangle" style="margin-right:8px;"></i> Ошибка загрузки.
+            </div>
+            <button class="button secondary" style="margin-top:10px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад</button>
+        `;
+        if (window.feather) feather.replace();
     }
 }
 
