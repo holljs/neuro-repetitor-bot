@@ -1,0 +1,59 @@
+[
+    {
+        "number": "5",
+        "task_text": "Рассмотрите фотографию. Какой вид экономической деятельности на ней представлен?",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            450,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_social/variant_10/task_5_page_151.jpg"
+    },
+    {
+        "number": "6",
+        "task_text": "Ученику 9 класса Ивану пришло СМС-сообщение от неизвестного абонента о том, что его банковская карта заблокирована.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "12",
+        "task_text": "В ходе социологического опроса совершеннолетним гражданам страны Z и страны Y задавали вопрос: «Что, по Вашему мнению, способствует росту благосостояния граждан?»",
+        "has_visual": true,
+        "box_2d": [
+            550,
+            80,
+            880,
+            920
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_social/variant_10/task_12_page_151.jpg"
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+        "number": "1",
+        "task_text": "Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками.",
+        "has_visual": true,
+        "box_2d": [
+            250,
+            100,
+            550,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_1/task_8_page_2.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Назовите военачальника, под чьим руководством совершались походы, обозначенные на схеме.",
+        "has_visual": true,
+        "box_2d": [
+            250,
+            100,
+            550,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_1/task_9_page_2.jpg"
+    },
+    {
+        "number": "15",
+        "task_text": "Какой из представленных памятников архитектуры был создан в том же веке, когда произошло событие, изображённое на марке?",
+        "has_visual": true,
+        "box_2d": [
+            650,
+            50,
+            950,
+            950
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_1/task_15_page_2.jpg"
+    }
+]

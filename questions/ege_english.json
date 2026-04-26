@@ -230,7 +230,7 @@
         "topic": "vocabulary",
         "number": 28,
         "task_text": "You may take an ____ tour of Stonehenge with 360-degree view from inside the stones, which shows the monument’s key features and its history. (ACTIVE)",
-        "answer": "interactive",
+        "answer": "",
         "solution": "Перед существительным 'tour' необходимо прилагательное. Исходя из контекста (обзор 360 градусов), речь идет об интерактивном туре. Прилагательное 'interactive' образуется путем добавления приставки inter- (взаимо-) к основе 'active'."
     },
     {

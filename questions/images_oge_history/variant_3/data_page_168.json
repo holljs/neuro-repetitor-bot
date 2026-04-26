@@ -1,0 +1,59 @@
+[
+    {
+        "number": "1",
+        "task_text": "Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками. Ответ запишите словом.",
+        "has_visual": true,
+        "box_2d": [
+            250,
+            150,
+            580,
+            850
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_8_page_168.jpg"
+    },
+    {
+        "number": "13",
+        "task_text": "Рассмотрите изображение и выполните задание. Укажите десятилетие, когда была выпущена данная монета.",
+        "has_visual": true,
+        "box_2d": [
+            650,
+            200,
+            850,
+            450
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_13_page_168.jpg"
+    }
+]

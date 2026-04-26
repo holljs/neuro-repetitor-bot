@@ -1,0 +1,59 @@
+[
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            500,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_15/task_8_page_157.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Укажите имя полководца, с чьим именем связаны события, обозначенные на схеме.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            500,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_15/task_9_page_157.jpg"
+    },
+    {
+        "number": "10",
+        "task_text": "Прочтите отрывок из сочинения историка и укажите цифру, обозначающую на схеме город, о котором идёт речь.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            500,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_15/task_10_page_157.jpg"
+    }
+]

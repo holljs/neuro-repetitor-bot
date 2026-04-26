@@ -1,0 +1,21 @@
+[
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками...",
+        "has_visual": true,
+        "box_2d": [
+            200,
+            100,
+            500,
+            800
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_8_page_192.jpg"
+    }
+]

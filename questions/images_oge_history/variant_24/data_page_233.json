@@ -1,0 +1,97 @@
+[
+    {
+        "number": "1",
+        "task_text": "Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            80,
+            450,
+            920
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_24/task_8_page_233.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Назовите военачальника, под руководством которого были совершены походы, обозначенные на схеме.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            80,
+            450,
+            920
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_24/task_9_page_233.jpg"
+    },
+    {
+        "number": "10",
+        "task_text": "Прочитайте отрывок из сочинения историка и укажите цифру, обозначающую на схеме город, о котором идёт речь в данном отрывке.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            80,
+            450,
+            920
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_24/task_10_page_233.jpg"
+    },
+    {
+        "number": "13",
+        "task_text": "Какие из представленных памятников архитектуры были созданы в том же веке, когда произошло событие, изображённое на марке?",
+        "has_visual": true,
+        "box_2d": [
+            650,
+            100,
+            950,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_24/task_13_page_233.jpg"
+    }
+]

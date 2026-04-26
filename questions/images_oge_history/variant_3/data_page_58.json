@@ -1,0 +1,78 @@
+[
+    {
+        "number": "1",
+        "task_text": "Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца.\n\nСОБЫТИЯ:\nА) Ледовое побоище\nБ) Медный бунт\nВ) Учреждение министерств в России\n\nГОДЫ:\n1) 1242 г.\n2) 1662 г.\n3) 1700 г.\n4) 1802 г.\n5) 1905 г.",
+        "has_visual": false,
+        "box_2d": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": ""
+    },
+    {
+        "number": "8",
+        "task_text": "Рассмотрите схему и выполните задание. Укажите век, когда произошли события, обозначенные на схеме стрелками.",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            450,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_8_page_58.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Укажите имя полководца, поход которого обозначен на схеме цифрой «1».",
+        "has_visual": true,
+        "box_2d": [
+            150,
+            100,
+            450,
+            900
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_9_page_58.jpg"
+    },
+    {
+        "number": "13",
+        "task_text": "Какие из представленных памятников архитектуры были созданы в XVI в.? В ответе запишите две цифры, под которыми они указаны.",
+        "has_visual": true,
+        "box_2d": [
+            600,
+            50,
+            850,
+            950
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_13_page_58.jpg"
+    }
+]

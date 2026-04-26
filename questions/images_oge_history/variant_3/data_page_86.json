@@ -1,0 +1,59 @@
+[
+    {
+        "number": "8",
+        "task_text": "Укажите век, когда произошли события, обозначенные на схеме стрелками. Ответ запишите словом.",
+        "has_visual": true,
+        "box_2d": [
+            200,
+            150,
+            500,
+            850
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_8_page_86.jpg"
+    },
+    {
+        "number": "9",
+        "task_text": "Укажите имя киевского князя, походы которого обозначены в легенде схемы цифрой «1».",
+        "has_visual": true,
+        "box_2d": [
+            200,
+            150,
+            500,
+            850
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_9_page_86.jpg"
+    },
+    {
+        "number": "10",
+        "task_text": "Прочтите отрывок из сочинения историка и укажите цифру, обозначающую на схеме город, название которого пропущено в данном отрывке.\n«Князь взял штурмом Итиль, столицу хазарского каганата, и разрушил её...»",
+        "has_visual": true,
+        "box_2d": [
+            200,
+            150,
+            500,
+            850
+        ],
+        "needs_stitch": false,
+        "stitch_box": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "image": "questions/images_oge_history/variant_3/task_10_page_86.jpg"
+    }
+]
