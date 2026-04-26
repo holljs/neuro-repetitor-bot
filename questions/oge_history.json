@@ -379,7 +379,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8-10.",
-        "answer": "Русско-японская\nМукден\n2",
+        "answer": "Русско-японская",
         "has_visual": true,
         "box_2d": [
             428,
@@ -387,7 +387,10 @@
             864,
             823
         ],
-        "image": "questions/images_oge_hist/task_p13_8.jpg"
+        "image": "questions/images_oge_hist/task_p13_8.jpg",
+        "answer_8": "Русско-японская",
+        "answer_9": "Мукден",
+        "answer_10": "2"
     },
     {
         "id": "hist_oge_p14_8",
@@ -889,7 +892,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8–10.",
-        "answer": "семнадцатый\nРечьПосполитая\n4",
+        "answer": "семнадцатый",
         "has_visual": true,
         "box_2d": [
             378,
@@ -897,7 +900,10 @@
             884,
             895
         ],
-        "image": "questions/images_oge_hist/task_p29_8.jpg"
+        "image": "questions/images_oge_hist/task_p29_8.jpg",
+        "answer_8": "семнадцатый",
+        "answer_9": "РечьПосполитая",
+        "answer_10": "4"
     },
     {
         "id": "hist_oge_p30_8",
@@ -2164,7 +2170,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8–10.",
-        "answer": "двенадцатый\nНовгород\n1",
+        "answer": "двенадцатый",
         "has_visual": true,
         "box_2d": [
             286,
@@ -2172,7 +2178,10 @@
             816,
             897
         ],
-        "image": "questions/images_oge_hist/task_p69_8.jpg"
+        "image": "questions/images_oge_hist/task_p69_8.jpg",
+        "answer_8": "двенадцатый",
+        "answer_9": "Новгород",
+        "answer_10": "1"
     },
     {
         "id": "hist_oge_p70_8",
@@ -3229,7 +3238,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8–10.",
-        "answer": "Четырнадцатый\nВолга\n4",
+        "answer": "Четырнадцатый",
         "has_visual": true,
         "box_2d": [
             361,
@@ -3237,7 +3246,10 @@
             878,
             879
         ],
-        "image": "questions/images_oge_hist/task_p99_8.jpg"
+        "image": "questions/images_oge_hist/task_p99_8.jpg",
+        "answer_8": "Четырнадцатый",
+        "answer_9": "Волга",
+        "answer_10": "4"
     },
     {
         "id": "hist_oge_p100_8",
@@ -6784,7 +6796,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8-10.",
-        "answer": "восемнадцатый\nЕкатеринаВторая\n3",
+        "answer": "восемнадцатый",
         "has_visual": true,
         "box_2d": [
             334,
@@ -6792,7 +6804,10 @@
             888,
             806
         ],
-        "image": "questions/images_oge_hist/task_p209_8.jpg"
+        "image": "questions/images_oge_hist/task_p209_8.jpg",
+        "answer_8": "восемнадцатый",
+        "answer_9": "ЕкатеринаВторая",
+        "answer_10": "3"
     },
     {
         "id": "hist_oge_p210_8",
@@ -7069,7 +7084,7 @@
         "topic": "history_part1",
         "number": 8,
         "task_text": "Рассмотрите схему и выполните задания 8–10.",
-        "answer": "восемнадцатый\nПетрПервый\n1",
+        "answer": "восемнадцатый",
         "has_visual": true,
         "box_2d": [
             352,
@@ -7077,7 +7092,10 @@
             894,
             825
         ],
-        "image": "questions/images_oge_hist/task_p217_8.jpg"
+        "image": "questions/images_oge_hist/task_p217_8.jpg",
+        "answer_8": "восемнадцатый",
+        "answer_9": "ПетрПервый",
+        "answer_10": "1"
     },
     {
         "id": "hist_oge_p218_8",
