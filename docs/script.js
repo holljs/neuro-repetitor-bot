@@ -381,4 +381,240 @@ function loadReviewForCurrentMistake() {
     document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
     
     document.getElementById('review-answers-block').innerHTML = `
-        <p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-
+        <p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p>
+        <p style="display:flex; align-items:center; color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>
+    `;
+    
+    const reviewImgContainer = document.getElementById('review-image-container');
+    if (mistake.task.image && mistake.task.image.length > 5) {
+        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
+        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
+    } else { 
+        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; 
+    }
+    document.getElementById('review-explanation').innerHTML = `<button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button>`;
+    showScreen(reviewScreen);
+}
+
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex];
+    const explanationBox = document.getElementById('review-explanation');
+    
+    explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
+    
+    let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
+    try {
+        const response = await fetch(`${TEST_API_URL}/review/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                user_answer: String(mistake.user_answer), 
+                image_url: imageUrl, 
+                task_text: mistake.task.task_text || mistake.task.text || "Текст", 
+                simplify: simplify,
+                student_id: String(USER_ID || 'guest'),
+                vk_params: VK_SEARCH_PARAMS
+            })
+        });
+        const result = await response.json();
+        explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
+    } catch (error) { 
+        explanationBox.innerHTML = `<div style="color:#d32f2f; display:flex; align-items:center;"><i data-feather="alert-triangle" class="icon-sm"></i> Ошибка при генерации разбора.</div>`;
+        if (window.feather) feather.replace();
+    }
+}
+
+document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('question-image')) {
+        const fullScreen = document.createElement('div');
+        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center;";
+        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%;">`;
+        fullScreen.onclick = () => fullScreen.remove();
+        document.body.appendChild(fullScreen);
+    }
+});
+
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake();
+    else showScreen(mainMenuScreen);
+}
+
+window.finishSession = () => showScreen(mainMenuScreen);
+
+window.allowVkMessages = function() {
+    vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
+        .then(() => showCustomAlert("Отлично! Теперь мы сможем присылать тебе уведомления.", "Успешно"))
+        .catch(() => showCustomAlert("Вы отменили подписку на сообщения.", "Отмена"));
+}
+
+window.buyPackage = async function(creditsAmount) {
+    const priceMap = { 15: 150, 100: 700 }; 
+    const price = priceMap[creditsAmount];
+
+    showScreen(loadingScreen);
+
+    try {
+        const response = await fetch(`${TEST_API_URL}/create_payment/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                student_id: String(USER_ID || 'guest'), 
+                amount: creditsAmount,
+                price: price,
+                vk_params: VK_SEARCH_PARAMS
+            })
+        });
+        const result = await response.json();
+
+        if (result.success && result.confirmation_url) {
+            try {
+                await vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url});
+            } catch (bridgeError) {
+                console.log("VK Bridge не смог открыть ссылку, используем window.open:", bridgeError);
+                window.open(result.confirmation_url, '_blank');
+            }
+            showProfile();
+        } else {
+            showCustomAlert("Не удалось создать платеж. Попробуйте позже.", "Ошибка");
+            showProfile();
+        }
+    } catch (e) {
+        showCustomAlert("Ошибка соединения с платежным шлюзом.", "Ошибка");
+        showProfile();
+    }
+}
+
+// --- ФУНКЦИЯ ДЛЯ ЗАЩИТЫ ОТ НАЖАТИЙ НА IOS / ANDROID ---
+window.handleTopUpClick = function(amount) {
+    const platform = urlParams.get('vk_platform') || 'desktop_web';
+    if (platform.includes('iphone') || platform.includes('ipad') || platform.includes('android')) {
+        showCustomAlert("По правилам Apple и Google пополнение баланса временно доступно только с компьютера. Откройте это приложение ВКонтакте на ПК!", "Ограничение платформы");
+    } else {
+        buyPackage(amount);
+    }
+}
+
+window.showProfile = async function() {
+    showScreen(loadingScreen);
+    try {
+        const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        
+        // Перехватываем ошибку безопасности
+        if (!response.ok) {
+            showCustomAlert("Ошибка безопасности VK. Перезапустите приложение.", "Доступ закрыт");
+            showScreen(mainMenuScreen);
+            return;
+        }
+        
+        const data = await response.json();
+        
+        // Убрали проверку if(canPay), теперь кнопки есть всегда, но защищены функцией handleTopUpClick
+        let topUpBlock = `
+        <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+            <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
+            <button class="button" style="margin-bottom:10px; background-color:#4a76a8;" onclick="handleTopUpClick(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
+            <button class="button" style="background-color:#2a5885;" onclick="handleTopUpClick(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
+        </div>`;
+
+        let subjectsHtml = '';
+        if (data.active_subjects && data.active_subjects.length > 0) {
+            data.active_subjects.forEach(subjCode => {
+                const subjName = ALL_SUBJECTS[subjCode] || subjCode;
+                subjectsHtml += `
+                    <button class="exam-btn" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
+                        <div class="exam-icon"><i data-feather="bar-chart-2"></i></div>
+                        <div class="exam-info">
+                            <h3>${subjName}</h3>
+                            <p>Посмотреть анализ пробелов</p>
+                        </div>
+                    </button>`;
+            });
+        } else {
+            subjectsHtml = `<p style="color:#777;">Здесь появится статистика, как только ты решишь первый вариант!</p>`;
+        }
+
+        subjectScreen.innerHTML = `
+            <h2 style="display:flex; align-items:center; justify-content:center;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
+            
+            <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()">
+                <i data-feather="bell" class="icon-sm"></i> Включить уведомления
+            </button>
+
+            <div style="font-size:16px; margin-bottom:15px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6; text-align: left;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <i data-feather="database" class="icon-sm" style="color:#ff9800;"></i> Твой баланс: <b style="margin-left:6px;">${data.balance || 0} кр.</b>
+                </div>
+                <div style="display:flex; align-items:center;">
+                    <i data-feather="check-square" class="icon-sm" style="color:#4CAF50;"></i> Решено задач: <b style="margin-left:6px;">${data.total_solved || 0}</b>
+                </div>
+            </div>
+            
+            <h3 style="margin-top:20px; text-align:left; display:flex; align-items:center;"><i data-feather="trending-up" class="icon-sm"></i> Моя статистика:</h3>
+            <div id="analytics-container">
+                ${subjectsHtml}
+            </div>
+            
+            ${topUpBlock}
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)"><i data-feather="arrow-left" class="icon-sm"></i> В главное меню</button>
+            
+            <div style="margin-top: 30px; font-size: 11px; color: #999; text-align: center; line-height: 1.4;">
+                Продавец: Самозанятая Селяхова Наталья Викторовна<br>
+                ИНН: 502209781184<br>
+                Email: holljs@mail.ru<br>
+                <a href="https://vk.com/neuro_repetitor" target="_blank" style="color: #999; text-decoration: underline;">Пользовательское соглашение и возврат</a>
+            </div>
+        `;
+        showScreen(subjectScreen);
+    } catch (e) {
+        showCustomAlert("Не удалось загрузить профиль. Попробуйте позже.", "Ошибка сервера");
+        showScreen(mainMenuScreen);
+    }
+}
+
+window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
+    const container = document.getElementById('analytics-container');
+    container.innerHTML = `
+        <div style="text-align:center; padding: 20px;">
+            <div class="spinner"></div>
+            <i>ИИ пишет отчет по предмету "${subjectName}"...</i>
+        </div>
+    `;
+    
+    try {
+        const response = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const data = await response.json();
+        
+        container.innerHTML = `
+            <div style="padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
+                <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="cpu" class="icon-sm"></i> Отчет ИИ: ${subjectName}</h3>
+                <div style="font-size:14px; line-height:1.6; color:#333;">${data.analysis}</div>
+                <button class="button secondary" style="margin-top:15px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам</button>
+            </div>
+        `;
+        if (window.feather) feather.replace(); 
+    } catch(e) {
+        container.innerHTML = `
+            <div style="color:#d32f2f; display:flex; align-items:center; justify-content:center; padding:15px;">
+                <i data-feather="alert-triangle" style="margin-right:8px;"></i> Ошибка загрузки.
+            </div>
+            <button class="button secondary" style="margin-top:10px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад</button>
+        `;
+        if (window.feather) feather.replace();
+    }
+}
+
+startApp();
+
+window.toggleMathHint = function() {
+    const hintBox = document.getElementById('math-hint-box');
+    hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
+}
+                
+window.showHelp = function() {
+    const helpPaymentBlock = document.getElementById('help-payment-block');
+    if (helpPaymentBlock) {
+        helpPaymentBlock.style.display = canPay ? 'block' : 'none'; 
+    }
+    showScreen(helpScreen);
+}
