@@ -273,6 +273,12 @@ window.submitAnswer = async function() {
             })
         });
         const result = await response.json();
+        
+        // НОВОЕ: Запоминаем правильный ответ, который сервер прислал ТОЛЬКО после проверки
+        if (result.correct_was) {
+            currentTask.answer = result.correct_was; 
+        }
+
         handleQuickResult(result.is_correct, rawInput); 
     } catch (error) { 
         showCustomAlert("Ошибка при проверке ответа.", "Ошибка");
@@ -489,12 +495,12 @@ window.showProfile = async function() {
         
         let topUpBlock = '';
         if (canPay) {
-            topUpBlock = `
-            <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
-                <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
-                <button class="button" style="margin-bottom:10px; background-color:#4a76a8;" onclick="buyPackage(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
-                <button class="button" style="background-color:#2a5885;" onclick="buyPackage(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
-            </div>`;
+            let topUpBlock = `
+        <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
+            <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
+            <button class="button" style="margin-bottom:10px; background-color:#4a76a8;" onclick="handleTopUpClick(15)">Пакет "Минимум" (15 кр.) — 150 руб.</button>
+            <button class="button" style="background-color:#2a5885;" onclick="handleTopUpClick(100)">Пакет "Максимум" (100 кр.) — 700 руб.</button>
+        </div>`;
         }
 
         let subjectsHtml = '';
