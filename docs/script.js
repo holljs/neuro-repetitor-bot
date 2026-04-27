@@ -83,16 +83,15 @@ function showScreen(screenElement) {
     }
 }
 
-// === ИНИЦИАЛИЗАЦИЯ VK BRIDGE ===
+// === ИНИЦИАЛИЗАЦИЯ VK BRIDGE (БЕЗ БЕЛОГО ЭКРАНА) ===
 let isAppInitialized = false;
 
 function finalizeInit() {
     if (isAppInitialized) return;
     isAppInitialized = true;
     
-    showScreen(mainMenuScreen);
+    showScreen(mainMenuScreen); // Показываем меню
 
-    // Безопасно получаем данные
     try {
         vkBridge.send('VKWebAppGetUserInfo')
             .then(userData => {
@@ -107,25 +106,22 @@ function finalizeInit() {
 }
 
 function startApp() {
-    showScreen(mainMenuScreen); // Сразу показываем меню
+    showScreen(mainMenuScreen); // Сразу показываем меню на всякий случай
 
     vkBridge.send('VKWebAppInit')
         .then(() => {
-            console.log("VK Bridge инициализирован через Promise");
             finalizeInit();
         })
         .catch(() => console.log("VK Bridge Promise не сработал"));
 
     vkBridge.subscribe((e) => {
         if (e.detail.type === 'VKWebAppUpdateConfig') {
-            console.log("VK Bridge инициализирован через UpdateConfig");
             finalizeInit();
         }
     });
 
     setTimeout(() => {
         if (!isAppInitialized) {
-            console.log("VK Bridge инициализирован по таймауту");
             finalizeInit();
         }
     }, 1500);
@@ -636,5 +632,22 @@ window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
     }
 };
 
-// Запускаем приложение!
+// В самом конце - функция вызова справки, чтобы она точно нигде не потерялась
+window.showHelp = function() {
+    try {
+        const helpPaymentBlock = document.getElementById('help-payment-block');
+        if (helpPaymentBlock) {
+            helpPaymentBlock.style.display = canPay ? 'block' : 'none'; 
+        }
+        
+        const screenHelpElement = document.getElementById('screen-help');
+        if (screenHelpElement) {
+            showScreen(screenHelpElement);
+        }
+    } catch (e) {
+        console.error("Ошибка при открытии Помощи:", e);
+    }
+};
+
+// Запускаем приложение
 startApp();
