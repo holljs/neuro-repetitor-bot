@@ -252,7 +252,6 @@ function normalizeText(str) {
     return str.toString().replace(/[\u2012\u2013\u2014\u2212]/g, '-').replace(',', '.').replace(/\s+/g, '').trim().toLowerCase();
 }
 
-// --- ИЗМЕНЕНИЕ ДЛЯ ЗАЩИТЫ ОТ СЛИВА ОТВЕТОВ ---
 window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
     let userAnswer = normalizeText(rawInput);
@@ -274,7 +273,6 @@ window.submitAnswer = async function() {
         });
         const result = await response.json();
         
-        // Сервер вернул правильный ответ после проверки
         if (result.correct_was) {
             currentTask.answer = result.correct_was; 
         }
@@ -303,7 +301,6 @@ function handleQuickResult(isCorrect, userAnswer) {
     showScreen(quickResultScreen);
 }
 
-// --- НОВАЯ ФУНКЦИЯ ПРЕРЫВАНИЯ ТЕСТА ---
 window.abortTest = function() {
     if (confirm("Вы уверены, что хотите прервать тренировку? Прогресс этого теста не сохранится.")) {
         showScreen(mainMenuScreen);
@@ -485,7 +482,6 @@ window.buyPackage = async function(creditsAmount) {
     }
 }
 
-// --- ФУНКЦИЯ ДЛЯ ЗАЩИТЫ ОТ НАЖАТИЙ НА IOS / ANDROID ---
 window.handleTopUpClick = function(amount) {
     const platform = urlParams.get('vk_platform') || 'desktop_web';
     if (platform.includes('iphone') || platform.includes('ipad') || platform.includes('android')) {
@@ -500,7 +496,6 @@ window.showProfile = async function() {
     try {
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         
-        // Перехватываем ошибку безопасности
         if (!response.ok) {
             showCustomAlert("Ошибка безопасности VK. Перезапустите приложение.", "Доступ закрыт");
             showScreen(mainMenuScreen);
@@ -509,7 +504,6 @@ window.showProfile = async function() {
         
         const data = await response.json();
         
-        // Убрали проверку if(canPay), теперь кнопки есть всегда, но защищены функцией handleTopUpClick
         let topUpBlock = `
         <div style="margin-top:20px; padding:15px; background:#fff; border-radius:10px; border: 1px solid #e1e3e6;">
             <h3 style="margin-top:0; display:flex; align-items:center; justify-content:center;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс</h3>
