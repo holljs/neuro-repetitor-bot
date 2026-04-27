@@ -600,36 +600,54 @@ window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
 
 let isAppInitialized = false;
 
+function finalizeInit() {
+    if (isAppInitialized) return;
+    isAppInitialized = true;
+    
+    showScreen(mainMenuScreen); // Показываем меню
+
+    // Пробуем получить профиль (без крашей, если не получится)
+    vkBridge.send('VKWebAppGetUserInfo')
+        .then(userData => {
+            if (userData && userData.id) {
+                USER_ID = userData.id;
+            }
+        })
+        .catch(error => {
+            console.log("ВК не отдал профиль", error);
+        });
+}
+
 function startApp() {
-    // 1. Подписываемся на события от VK Bridge
+    // 1. Сразу убираем экран загрузки и показываем меню для страховки
+    showScreen(mainMenuScreen);
+
+    // 2. Инициализируем мост с помощью Promise (работает почти всегда)
+    vkBridge.send('VKWebAppInit')
+        .then(() => {
+            console.log("VK Bridge инициализирован через Promise");
+            finalizeInit();
+        })
+        .catch(() => {
+            console.log("VK Bridge Promise не сработал");
+        });
+
+    // 3. Подписываемся на события (запасной вариант для мобилок)
     vkBridge.subscribe((e) => {
         if (e.detail.type === 'VKWebAppUpdateConfig') {
-            // Как только ВК готов, запускаем приложение
+            console.log("VK Bridge инициализирован через UpdateConfig");
             finalizeInit();
         }
     });
 
-    // 2. Отправляем команду инициализации (без .then()!)
-    vkBridge.send('VKWebAppInit');
-
-    // 3. Железобетонный Fallback: если ВК тупит и не прислал событие,
-    // принудительно стартуем через 2 секунды, чтобы не было вечной загрузки
+    // 4. Жесткий таймаут (если вообще ничего не сработало)
     setTimeout(() => {
-        finalizeInit();
-    }, 2000);
+        if (!isAppInitialized) {
+            console.log("VK Bridge инициализирован по таймауту");
+            finalizeInit();
+        }
+    }, 1500);
 }
 
-// Функция, которая гарантированно выполнится только один раз
-function finalizeInit() {
-    if (isAppInitialized) return;
-    isAppInitialized = true;
-
-    showScreen(mainMenuScreen); // Убираем экран загрузки, показываем меню
-
-    // Теперь безопасно запрашиваем профиль
-    vkBridge.send('VKWebAppGetUserInfo')
-        .then(userData => {
-            if (!USER_ID) USER_ID = userData.id;
-        })
-        .catch(error => console.log("ВК не отдал профиль", error));
-}
+// Запускаем приложение!
+startApp();
