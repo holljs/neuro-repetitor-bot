@@ -1,4 +1,5 @@
 import os
+import time
 import logging
 import random
 import json
@@ -37,6 +38,19 @@ Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKA
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 
+# --- ПРОСТОЙ RATE LIMITER ДЛЯ ЗАЩИТЫ ОТ DOS ---
+request_times = {}
+
+def check_rate_limit(user_id: str, limit: int = 3, window: int = 5) -> bool:
+    now = time.time()
+    times = request_times.get(user_id, [])
+    times = [t for t in times if now - t < window]
+    if len(times) >= limit:
+        return False
+    times.append(now)
+    request_times[user_id] = times
+    return True
+
 # --- СЛОВАРЬ ТЕМ ---
 TOPIC_NAMES = {
     "topic_01": "🏠 Практические задачи", "topic_02": "🔢 Вычисления и дроби",
@@ -57,7 +71,7 @@ TOPIC_NAMES = {
     "geography_ege": "🌍 География ЕГЭ",
     "physics_ege": "⚡ Физика ЕГЭ",
     "ege_english": "🇬🇧 Английский ЕГЭ",
-    "ege_literature": "📚 Литература ЕГЭ" # <--- ДОБАВИТЬ ЭТУ СТРОКУ
+    "ege_literature": "📚 Литература ЕГЭ"
 }
 
 if Path("questions").exists():
@@ -71,9 +85,8 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
+# --- ЖЕСТКАЯ ПРОВЕРКА ПОДПИСИ И ID ---
 def verify_vk_auth(student_id: str, vk_params: str) -> bool:
-    if student_id in ["54451631", "12345678", "guest", "None", None]:
-        return True
     if vk_params == INTERNAL_BOT_TOKEN:
         return True
     if not vk_params or "sign=" not in vk_params:
@@ -81,7 +94,10 @@ def verify_vk_auth(student_id: str, vk_params: str) -> bool:
         return False
         
     query_params = dict(parse_qsl(vk_params.lstrip('?'), keep_blank_values=True))
+    
+    # Защита от подмены ID
     if 'vk_user_id' not in query_params or str(query_params['vk_user_id']) != str(student_id):
+        logger.warning(f"⚠️ Попытка подмены ID! Запрошен {student_id}, а в подписи {query_params.get('vk_user_id')}")
         return False
 
     vk_params_dict = {k: v for k, v in query_params.items() if k.startswith('vk_')}
@@ -116,7 +132,7 @@ DATABASES = {
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
     "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [],
-    "ege_literature": [] # <--- ДОБАВИТЬ ЭТУ СТРОКУ
+    "ege_literature": []
 }
 
 def load_database(filename, db_key):
@@ -311,7 +327,13 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
             topic = task.get("topic", "topic_01")
             img_path = f"questions/images_oge_math/{topic}/{clean_name}"
 
-    return {"id": task.get("id", "unknown"), "topic": task.get("topic", "Общая тема"), "text": task.get("task_text", task.get("text", "")), "image": img_path, "answer": task.get("answer", "")}
+    # ОТВЕТ ВЫРЕЗАН для защиты от списывания
+    return {
+        "id": task.get("id", "unknown"), 
+        "topic": task.get("topic", "Общая тема"), 
+        "text": task.get("task_text", task.get("text", "")), 
+        "image": img_path
+    }
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
@@ -395,8 +417,9 @@ async def analyze_gaps(request: AnalyzeGapsRequest):
 
 @app.get("/profile_base/")
 async def get_profile_base(student_id: str, vk_params: str = None):
+    # Теперь возвращаем 403 ошибку при неверной подписи
     if not verify_vk_auth(student_id, vk_params):
-        return {"balance": 0, "total_solved": 0, "active_subjects": []}
+        raise HTTPException(status_code=403, detail="Signature invalid or ID spoofed")
         
     current_balance = init_vk_user(student_id)
     total_solved = 0
@@ -419,8 +442,12 @@ async def get_profile_base(student_id: str, vk_params: str = None):
 
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
+    # ЗАЩИТА ОТ DOS (Rate Limiting)
+    if not check_rate_limit(student_id):
+        raise HTTPException(status_code=429, detail="Too Many Requests. Подождите пару секунд.")
+
     if not verify_vk_auth(student_id, vk_params):
-        return {"analysis": "⚠️ Ошибка авторизации"}
+        raise HTTPException(status_code=403, detail="Ошибка авторизации")
         
     user_records = []
     if Path("user_stats.log").exists():
