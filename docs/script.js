@@ -598,17 +598,38 @@ window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
     }
 }
 
-startApp();
+let isAppInitialized = false;
 
-window.toggleMathHint = function() {
-    const hintBox = document.getElementById('math-hint-box');
-    hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
+function startApp() {
+    // 1. Подписываемся на события от VK Bridge
+    vkBridge.subscribe((e) => {
+        if (e.detail.type === 'VKWebAppUpdateConfig') {
+            // Как только ВК готов, запускаем приложение
+            finalizeInit();
+        }
+    });
+
+    // 2. Отправляем команду инициализации (без .then()!)
+    vkBridge.send('VKWebAppInit');
+
+    // 3. Железобетонный Fallback: если ВК тупит и не прислал событие,
+    // принудительно стартуем через 2 секунды, чтобы не было вечной загрузки
+    setTimeout(() => {
+        finalizeInit();
+    }, 2000);
 }
-                
-window.showHelp = function() {
-    const helpPaymentBlock = document.getElementById('help-payment-block');
-    if (helpPaymentBlock) {
-        helpPaymentBlock.style.display = canPay ? 'block' : 'none'; 
-    }
-    showScreen(helpScreen);
+
+// Функция, которая гарантированно выполнится только один раз
+function finalizeInit() {
+    if (isAppInitialized) return;
+    isAppInitialized = true;
+
+    showScreen(mainMenuScreen); // Убираем экран загрузки, показываем меню
+
+    // Теперь безопасно запрашиваем профиль
+    vkBridge.send('VKWebAppGetUserInfo')
+        .then(userData => {
+            if (!USER_ID) USER_ID = userData.id;
+        })
+        .catch(error => console.log("ВК не отдал профиль", error));
 }
