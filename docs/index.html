@@ -70,7 +70,11 @@
             <h1>Выберите предмет</h1>
         </div>
 
-        <div id="task-screen" class="screen">
+<div id="task-screen" class="screen">
+            <button class="button secondary" style="margin-bottom: 15px; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center;" onclick="abortTest()">
+                <i data-feather="x-circle" class="icon-sm" style="margin-right: 5px;"></i> Прервать тест и выйти
+            </button>
+        
             <div class="progress-bar" id="test-progress">Вопрос 1 из 15</div>
             
             <div id="task-image-container"></div>
