@@ -377,7 +377,8 @@ async def get_profile_base(student_id: str, vk_params: str = None):
     if not verify_vk_auth(student_id, vk_params): raise HTTPException(status_code=403, detail="Signature invalid")
         
     current_balance = init_vk_user(student_id)
-    total_solved = 0; active_subjects = set()
+    total_solved = 0
+    subject_counts = {} # <--- НОВОЕ: Словарь для подсчета по предметам
     
     if Path("user_stats.log").exists():
         with open("user_stats.log", "r", encoding="utf-8") as f:
@@ -385,9 +386,16 @@ async def get_profile_base(student_id: str, vk_params: str = None):
                 parts = line.strip().split(",")
                 if len(parts) >= 4 and parts[1] == student_id:
                     total_solved += 1
-                    if len(parts) >= 5 and parts[4] != "unknown": active_subjects.add(parts[4])
+                    if len(parts) >= 5 and parts[4] != "unknown": 
+                        subj = parts[4]
+                        # Считаем, сколько раз встречается каждый предмет
+                        subject_counts[subj] = subject_counts.get(subj, 0) + 1
                         
-    return {"balance": current_balance, "total_solved": total_solved, "active_subjects": list(active_subjects)}
+    return {
+        "balance": current_balance, 
+        "total_solved": total_solved, 
+        "subject_counts": subject_counts # Отдаем фронтенду статистику
+    }
 
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
