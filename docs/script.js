@@ -57,11 +57,11 @@ let questionNumber = 1; let score = 0; let mistakes = [];
 let currentReviewIndex = 0; let currentTestMode = "standard";
 
 function saveSession() {
-    if (currentTask) sessionStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
+    if (currentTask) localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
 }
 
 function restoreSession() {
-    const saved = sessionStorage.getItem('active_test');
+    const saved = localStorage.getItem('active_test');
     if (saved) {
         const data = JSON.parse(saved);
         currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
@@ -136,7 +136,7 @@ async function getRandomTask() {
     try {
         const res = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await res.json();
-        if (currentTask.done) { sessionStorage.removeItem('active_test'); showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; }
+        if (currentTask.done) { localStorage.removeItem('active_test'); showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; }
         showTask();
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(mainMenuScreen); }
 }
@@ -208,14 +208,14 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { sessionStorage.removeItem('active_test'); document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); };
+    document.getElementById('btn-yes').onclick = () => { localStorage.removeItem('active_test'); document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { sessionStorage.removeItem('active_test'); showFinishScreen(); }
+    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { localStorage.removeItem('active_test'); showFinishScreen(); }
 };
 
 function showFinishScreen() {
