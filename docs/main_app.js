@@ -87,17 +87,42 @@ function showScreen(screenElement) {
 }
 
 let isAppInitialized = false;
+
 function finalizeInit() {
     if (isAppInitialized) return;
     isAppInitialized = true;
-    if (!restoreSession()) showScreen(mainMenuScreen);
-    try { vkBridge.send('VKWebAppGetUserInfo').then(userData => { if (userData && userData.id) USER_ID = userData.id; }).catch(() => {}); } catch(e) {}
+    
+    // Броня: ловим любые ошибки при попытке восстановить сессию
+    try {
+        if (!restoreSession()) {
+            showScreen(mainMenuScreen);
+        }
+    } catch (e) {
+        showScreen(mainMenuScreen);
+    }
+
+    try { 
+        vkBridge.send('VKWebAppGetUserInfo')
+            .then(userData => { if (userData && userData.id) USER_ID = userData.id; })
+            .catch(() => {}); 
+    } catch(e) {}
 }
 
 function startApp() {
-    vkBridge.send('VKWebAppInit').then(() => finalizeInit()).catch(() => {});
-    vkBridge.subscribe((e) => { if (e.detail.type === 'VKWebAppUpdateConfig') finalizeInit(); });
-    setTimeout(() => { if (!isAppInitialized) finalizeInit(); }, 1500);
+    // 1. Броня: Принудительно показываем меню ДО любых опасных вызовов!
+    try { showScreen(mainMenuScreen); } catch(e) {}
+
+    // 2. Броня: Заводим таймер в самую первую очередь
+    setTimeout(() => { finalizeInit(); }, 1000);
+
+    // 3. Пытаемся достучаться до моста ВК (если упадет - таймер спасет)
+    try {
+        vkBridge.send('VKWebAppInit').then(() => finalizeInit()).catch(() => {});
+    } catch (e) {}
+
+    try {
+        vkBridge.subscribe((e) => { if (e.detail.type === 'VKWebAppUpdateConfig') finalizeInit(); });
+    } catch (e) {}
 }
 
 window.openSubjects = function(examType) {
