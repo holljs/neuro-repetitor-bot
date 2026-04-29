@@ -33,9 +33,23 @@ function renderMath(elementId) {
     }
 }
 
-const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ" };
-const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
+const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
+const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
+
+window.toggleAccordion = function(element) {
+    const body = element.nextElementSibling;
+    const icon = element.querySelector('.feather-chevron-down') || element.querySelector('.feather-chevron-up');
+    
+    if (body.style.display === 'none' || body.style.display === '') {
+        body.style.display = 'block';
+        if(icon) icon.setAttribute('data-feather', 'chevron-up');
+    } else {
+        body.style.display = 'none';
+        if(icon) icon.setAttribute('data-feather', 'chevron-down');
+    }
+    feather.replace();
+};
 
 const TEST_LENGTH = 15;
 let currentTask = null; let currentSubjectCode = null;
@@ -144,11 +158,10 @@ function showTask() {
         imgCont.style.display = 'block';
     } else { imgCont.style.display = 'none'; }
     
-    // БАГ 14: Меняем подсказку в UI
     const answerBlock = document.querySelector('.answer-block');
     answerBlock.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-            <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры (варианты) пишите по возрастанию.</p>
+            <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры пишите по возрастанию.</p>
         </div>
         <input type="text" id="user-answer" placeholder="Введите ответ...">
     `;
@@ -293,13 +306,53 @@ window.showProfile = async function() {
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         if (!response.ok) { showCustomAlert("Доступ закрыт", "Ошибка"); showScreen(mainMenuScreen); return; }
         const data = await response.json();
-        let subjectsHtml = data.active_subjects.length > 0 ? data.active_subjects.map(c => `<button class="button" style="margin-bottom:10px" onclick="loadSubjectAnalytics('${c}', '${ALL_SUBJECTS[c]}')">Анализ: ${ALL_SUBJECTS[c]}</button>`).join('') : `<p>Нет истории</p>`;
+        
+        let subjectsHtml = '';
+        if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
+            for (const [subjCode, count] of Object.entries(data.subject_counts)) {
+                const subjName = ALL_SUBJECTS[subjCode] || subjCode; 
+                
+                subjectsHtml += `
+                <div style="margin-bottom:10px; border: 1px solid #e1e3e6; border-radius:8px; background: #fff; overflow:hidden;">
+                    <div onclick="toggleAccordion(this)" style="padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#f9f9f9; font-weight:600; color:#333;">
+                        <div style="display:flex; align-items:center;">
+                            <i data-feather="book" class="icon-sm" style="margin-right:8px; color:#4a76a8;"></i> ${subjName}
+                        </div>
+                        <div style="display:flex; align-items:center; font-size:14px; color:#666;">
+                            Решено: ${count} <i data-feather="chevron-down" class="icon-sm" style="margin-left:5px;"></i>
+                        </div>
+                    </div>
+                    <div style="display:none; padding:15px; border-top:1px solid #e1e3e6;">
+                        <button class="button" style="width:100%; background:#007bff; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
+                            <i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ пробелов
+                        </button>
+                    </div>
+                </div>`;
+            }
+        } else {
+            subjectsHtml = `<p style="color:#777; text-align:center;">Здесь появится статистика, как только ты решишь первые задания!</p>`;
+        }
+
         subjectScreen.innerHTML = `
-            <h2><i data-feather="user"></i> Мой профиль</h2>
-            <div style="background:white; padding:15px; border-radius:10px; margin-bottom:15px;">Баланс: <b>${data.balance || 0} кр.</b><br>Решено: <b>${data.total_solved || 0}</b></div>
+            <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
+            
+            <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
+                <div>
+                    <div style="font-size:24px; font-weight:bold; color:#ff9800;">${data.balance || 0}</div>
+                    <div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div>
+                </div>
+                <div style="width:1px; background:#e1e3e6;"></div>
+                <div>
+                    <div style="font-size:24px; font-weight:bold; color:#4CAF50;">${data.total_solved || 0}</div>
+                    <div style="font-size:12px; color:#777; text-transform:uppercase;">задач решено</div>
+                </div>
+            </div>
+            
+            <h3 style="text-align:left; margin-bottom:10px; font-size: 16px;">Твои предметы:</h3>
             ${subjectsHtml}
-            <div style="background:#fff; padding:15px; border-radius:10px; margin-top:20px;">
-                <h3>Пополнить баланс</h3>
+            
+            <div style="background:#fff; padding:15px; border-radius:10px; margin-top:20px; border: 1px solid #e1e3e6;">
+                <h3 style="margin-top:0; text-align:center;">Пополнить баланс</h3>
                 <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="handleTopUpClick(15)">15 кр. — 150 руб.</button>
                 <button class="button" style="background:#2a5885;" onclick="handleTopUpClick(100)">100 кр. — 700 руб.</button>
             </div>
