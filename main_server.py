@@ -429,7 +429,7 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
 # ==========================================
 # АДМИНКА ДЛЯ НАЧИСЛЕНИЯ КРЕДИТОВ (Callback API)
 # ==========================================
-ADMIN_VK_IDS = [233876992] # Твой ID уже здесь!
+ADMIN_VK_IDS = [233876992] # Твой ID
 
 class VKCallback(BaseModel):
     type: str
@@ -439,35 +439,37 @@ class VKCallback(BaseModel):
 
 @app.post("/vk_bot_webhook/")
 async def vk_bot_webhook(data: VKCallback):
-    # 1. Подтверждение сервера для настроек ВК
     if data.type == "confirmation":
-        # ВАЖНО: Замени на реальный код из настроек Callback API твоей группы!
         return HTMLResponse(content="11b52449", status_code=200)
 
-    # 2. Обработка входящего сообщения
     if data.type == "message_new":
-        msg = data.object.get("message", {})
-        text = msg.get("text", "").strip()
-        sender_id = msg.get("from_id")
+        obj = data.object or {}
+        # Поддержка и старых, и новых версий API ВК
+        msg = obj.get("message", obj)
+        text = msg.get("text", msg.get("body", "")).strip()
+        sender_id = msg.get("from_id", msg.get("user_id"))
+
+        print(f"📩 НОВОЕ СООБЩЕНИЕ ОТ {sender_id}: {text}")
 
         # Если пишет админ
         if sender_id in ADMIN_VK_IDS:
             parts = text.split()
             
-            # Проверяем формат команды "ID сумма"
             if len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())):
                 target_id = parts[0]
                 amount = int(parts[1])
                 
-                # Начисляем кредиты
                 init_vk_user(target_id)
                 new_bal = change_vk_credits(target_id, amount)
                 
-                # Отвечаем админу в личку
-                await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
+                # Отправляем ответ
+                success = await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
+                
+                if not success:
+                    print("❌ ОШИБКА: Не удалось отправить сообщение ВК! Проверь VK_TOKEN в .env!")
+                
                 return HTMLResponse(content="ok", status_code=200)
 
-    # ВК требует всегда отвечать "ok"
     return HTMLResponse(content="ok", status_code=200)
 # ==========================================
 
