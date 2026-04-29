@@ -2,21 +2,16 @@ const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace(
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
-const loadingScreen = document.getElementById('screen-loading');
-const mainMenuScreen = document.getElementById('screen-main-menu');
-const subjectScreen = document.getElementById('screen-subjects');
-const taskScreen = document.getElementById('task-screen');
-const quickResultScreen = document.getElementById('quick-result-screen');
-const testFinishScreen = document.getElementById('test-finish-screen');
-const reviewScreen = document.getElementById('review-screen');
-const helpScreen = document.getElementById('screen-help');
-
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
+
+// Объявляем переменные, но НЕ ищем их в HTML пока страница не загрузится!
+let loadingScreen, mainMenuScreen, subjectScreen, taskScreen;
+let quickResultScreen, testFinishScreen, reviewScreen, helpScreen;
 
 window.showCustomAlert = function(message, title = "Внимание") {
     document.getElementById('modal-title').textContent = title;
@@ -63,52 +58,25 @@ function saveSession() {
     } catch(e) {}
 }
 
+function restoreSession() {
+    try {
+        const saved = localStorage.getItem('active_test');
+        if (saved) {
+            const data = JSON.parse(saved);
+            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+            showTask(); return true;
+        }
+    } catch(e) { 
+        try { localStorage.removeItem('active_test'); } catch(err){}
+    }
+    return false;
+}
+
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { screenElement.style.display = 'block'; if (window.feather) feather.replace(); }
 }
-
-// ==============================================
-// ПРЯМОЙ И ЖЕСТКИЙ ЗАПУСК ИНТЕРФЕЙСА
-// ==============================================
-function superSafeStart() {
-    // 1. Принудительно показываем интерфейс, игнорируя всё
-    try {
-        let sessionRestored = false;
-        try {
-            const saved = localStorage.getItem('active_test');
-            if (saved) {
-                const data = JSON.parse(saved);
-                currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
-                questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-                showTask(); 
-                sessionRestored = true;
-            }
-        } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
-
-        if (!sessionRestored) {
-            showScreen(mainMenuScreen);
-        }
-    } catch(e) {
-        // Если даже showScreen сломался, жестко меняем стили
-        if (loadingScreen) loadingScreen.style.display = 'none';
-        if (mainMenuScreen) mainMenuScreen.style.display = 'block';
-    }
-
-    // 2. Тихо в фоне общаемся с ВК
-    try {
-        if (window.vkBridge) {
-            vkBridge.send('VKWebAppInit');
-            vkBridge.send('VKWebAppGetUserInfo').then(data => {
-                if (data && data.id) USER_ID = data.id;
-            }).catch(() => {});
-        }
-    } catch(e) {}
-}
-
-// Запускаем немедленно!
-superSafeStart();
-// ==============================================
 
 window.openSubjects = function(examType) {
     currentExamType = examType;
@@ -123,8 +91,10 @@ window.openSubjects = function(examType) {
     subjectScreen.appendChild(backBtn); showScreen(subjectScreen);
 };
 
-document.querySelectorAll('#screen-main-menu .button').forEach(btn => {
-    btn.addEventListener('click', () => { if (btn.dataset.examType) openSubjects(btn.dataset.examType); });
+// События кнопок повесим через document, чтобы они не зависели от загрузки
+document.addEventListener('click', (e) => { 
+    const btn = e.target.closest('#screen-main-menu .button');
+    if (btn && btn.dataset.examType) openSubjects(btn.dataset.examType); 
 });
 
 window.selectTariff = function(code, name) {
@@ -412,3 +382,40 @@ document.addEventListener('click', function(e) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
 });
+
+// ==============================================
+// ФИНАЛЬНЫЙ СТАРТ (Ждем загрузки страницы)
+// ==============================================
+function launchApp() {
+    // 1. Привязываем переменные к экранам только сейчас!
+    loadingScreen = document.getElementById('screen-loading');
+    mainMenuScreen = document.getElementById('screen-main-menu');
+    subjectScreen = document.getElementById('screen-subjects');
+    taskScreen = document.getElementById('task-screen');
+    quickResultScreen = document.getElementById('quick-result-screen');
+    testFinishScreen = document.getElementById('test-finish-screen');
+    reviewScreen = document.getElementById('review-screen');
+    helpScreen = document.getElementById('screen-help');
+
+    // 2. Показываем меню
+    try {
+        if (!restoreSession()) { showScreen(mainMenuScreen); }
+    } catch(e) { showScreen(mainMenuScreen); }
+
+    // 3. Дергаем ВК
+    try {
+        if (window.vkBridge) {
+            vkBridge.send('VKWebAppInit');
+            vkBridge.send('VKWebAppGetUserInfo').then(data => {
+                if (data && data.id) USER_ID = data.id;
+            }).catch(() => {});
+        }
+    } catch(e) {}
+}
+
+// Запускаем только когда браузер нарисовал все элементы HTML
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', launchApp);
+} else {
+    launchApp();
+}
