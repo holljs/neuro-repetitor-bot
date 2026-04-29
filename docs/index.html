@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>var vConsole = new window.VConsole();</script>
+    
+    <script>
+    // РАДАР ОШИБОК: Выведет любую скрытую проблему прямо на экран
+    window.onerror = function(msg, url, line) {
+        document.body.innerHTML += '<div style="position:fixed; top:0; left:0; width:100%; background:red; color:white; z-index:99999; padding:20px; font-size:18px; font-weight:bold; word-wrap:break-word; text-align:left;">🔥 КРИТИЧЕСКАЯ ОШИБКА:<br>' + msg + '<br>Файл: ' + url + '<br>Строка: ' + line + '</div>';
+        return false;
+    };
+    window.addEventListener('unhandledrejection', function(event) {
+        document.body.innerHTML += '<div style="position:fixed; top:80px; left:0; width:100%; background:darkorange; color:white; z-index:99999; padding:20px; font-size:16px; font-weight:bold; word-wrap:break-word; text-align:left;">⚡ ОШИБКА ПРОМИСА:<br>' + (event.reason ? event.reason.toString() : 'Неизвестно') + '</div>';
+    });
+    </script>
 </head>
 <body>
 
@@ -70,7 +80,7 @@
             <h1>Выберите предмет</h1>
         </div>
 
-<div id="task-screen" class="screen">
+        <div id="task-screen" class="screen">
             <button class="button secondary" style="margin-bottom: 15px; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center;" onclick="abortTest()">
                 <i data-feather="x-circle" class="icon-sm" style="margin-right: 5px;"></i> Прервать тест и выйти
             </button>
@@ -139,7 +149,8 @@
 
     </div>
 
-    <script src="script.js?v=1080"></script>
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script src="main_app.js?v=9999"></script>
     
     <script>
         feather.replace();
