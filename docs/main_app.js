@@ -1,9 +1,7 @@
+// === ФИКСАЦИЯ ПАРАМЕТРОВ ===
 const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?'); 
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
-
-// Переменные объявляем, но пока НЕ ИЩЕМ в HTML
-let loadingScreen, mainMenuScreen, subjectScreen, taskScreen, quickResultScreen, testFinishScreen, reviewScreen, helpScreen;
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
@@ -12,24 +10,42 @@ const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
 
+// ОБЪЯВЛЯЕМ переменные, но НЕ ищем их пока в HTML!
+let loadingScreen, mainMenuScreen, subjectScreen, taskScreen;
+let quickResultScreen, testFinishScreen, reviewScreen, helpScreen;
+
+// === СЛОВАРИ И ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
+const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
+const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
+
+const TEST_LENGTH = 15;
+let currentTask = null; let currentSubjectCode = null;
+let questionNumber = 1; let score = 0; let mistakes = []; 
+let currentReviewIndex = 0; let currentTestMode = "standard";
+
 window.showCustomAlert = function(message, title = "Внимание") {
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-message').innerHTML = message;
-    document.getElementById('custom-modal').style.display = 'flex';
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+    const customModal = document.getElementById('custom-modal');
+    if(modalTitle) modalTitle.textContent = title;
+    if(modalMessage) modalMessage.innerHTML = message;
+    if(customModal) customModal.style.display = 'flex';
 };
 
-window.closeModal = function() { document.getElementById('custom-modal').style.display = 'none'; };
+window.closeModal = function() { 
+    const customModal = document.getElementById('custom-modal');
+    if(customModal) customModal.style.display = 'none'; 
+};
 
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
     if (el && window.renderMathInElement) {
-        renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });
+        try {
+            renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
+        } catch(e){}
     }
 }
-
-const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
-const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
-const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 
 window.toggleAccordion = function(element) {
     const body = element.nextElementSibling;
@@ -42,19 +58,12 @@ window.toggleAccordion = function(element) {
         body.style.display = 'none';
         if(icon) icon.setAttribute('data-feather', 'chevron-down');
     }
-    if(window.feather) feather.replace();
+    if (window.feather) feather.replace();
 };
-
-const TEST_LENGTH = 15;
-let currentTask = null; let currentSubjectCode = null;
-let questionNumber = 1; let score = 0; let mistakes = []; 
-let currentReviewIndex = 0; let currentTestMode = "standard";
 
 function saveSession() {
     if (!currentTask) return;
-    try { 
-        localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
-    } catch(e) {}
+    try { localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode })); } catch(e) {}
 }
 
 function restoreSession() {
@@ -66,37 +75,23 @@ function restoreSession() {
             questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
             showTask(); return true;
         }
-    } catch(e) { 
-        try { localStorage.removeItem('active_test'); } catch(err){}
-    }
+    } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
     return false;
 }
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
-    if(screenElement) { screenElement.style.display = 'block'; if(window.feather) feather.replace(); }
+    if(screenElement) { 
+        screenElement.style.display = 'block'; 
+        if (window.feather) feather.replace(); 
+    }
 }
 
-let isAppInitialized = false;
+// === БРОНЕБОЙНЫЙ ЗАПУСК (Вызывается ТОЛЬКО после загрузки HTML) ===
+function HARD_START() {
+    console.log("Попытка запуска приложения...");
 
-function finalizeInit() {
-    if (isAppInitialized) return;
-    isAppInitialized = true;
-    
-    try {
-        if (!restoreSession()) { showScreen(mainMenuScreen); }
-    } catch(e) { showScreen(mainMenuScreen); }
-
-    try {
-        vkBridge.send('VKWebAppGetUserInfo')
-            .then(userData => { if (userData && userData.id) USER_ID = userData.id; })
-            .catch(error => console.log("ВК не отдал профиль", error));
-    } catch(e) {}
-}
-
-// ЭТУ ФУНКЦИЮ МЫ ВЫЗОВЕМ ТОЛЬКО КОГДА HTML ГОТОВ
-function startApp() {
-    // 1. Ищем экраны ТОЛЬКО сейчас, чтобы не было ошибки null
+    // 1. Ищем экраны только сейчас!
     loadingScreen = document.getElementById('screen-loading');
     mainMenuScreen = document.getElementById('screen-main-menu');
     subjectScreen = document.getElementById('screen-subjects');
@@ -106,39 +101,43 @@ function startApp() {
     reviewScreen = document.getElementById('review-screen');
     helpScreen = document.getElementById('screen-help');
 
-    // 2. Показываем меню
-    showScreen(mainMenuScreen);
+    // 2. Спасатель: ЖЕСТКО прячем лоадер и показываем меню (напрямую через стили)
+    if (loadingScreen) loadingScreen.style.display = 'none';
+    if (mainMenuScreen) mainMenuScreen.style.display = 'block';
 
-    // 3. Дергаем ВК
-    vkBridge.send('VKWebAppInit')
-        .then(() => finalizeInit())
-        .catch(() => console.log("VK Bridge Promise не сработал"));
+    // 3. Пытаемся восстановить сессию (если она была)
+    try { restoreSession(); } catch(e) {}
 
-    vkBridge.subscribe((e) => {
-        if (e.detail.type === 'VKWebAppUpdateConfig') finalizeInit();
-    });
-
-    setTimeout(() => { if (!isAppInitialized) finalizeInit(); }, 1500);
+    // 4. Тихонько стучимся в ВК
+    try {
+        if (window.vkBridge) {
+            vkBridge.send('VKWebAppInit');
+            vkBridge.send('VKWebAppGetUserInfo')
+                .then(data => { if (data && data.id) USER_ID = data.id; })
+                .catch(() => {});
+        }
+    } catch(e) {}
 }
 
+// === ЛОГИКА ЭКРАНОВ ===
 window.openSubjects = function(examType) {
     currentExamType = examType;
     const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
+    if(!subjectScreen) return;
     subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
+    
     for (const code in subjects) {
         const btn = document.createElement('button'); btn.className = 'button'; btn.innerText = subjects[code];
         btn.onclick = () => selectTariff(code, subjects[code]); subjectScreen.appendChild(btn);
     }
-    const backBtn = document.createElement('button'); backBtn.className = 'button secondary'; backBtn.style.marginTop = '20px';
-    backBtn.innerText = '🔙 В главное меню'; backBtn.onclick = () => showScreen(mainMenuScreen);
-    subjectScreen.appendChild(backBtn); showScreen(subjectScreen);
+    
+    const backBtn = document.createElement('button'); backBtn.className = 'button secondary'; backBtn.style.marginTop = '20px'; backBtn.innerText = '🔙 В главное меню';
+    backBtn.onclick = () => showScreen(mainMenuScreen); subjectScreen.appendChild(backBtn);
+    showScreen(subjectScreen);
 };
 
-document.querySelectorAll('#screen-main-menu .button').forEach(button => {
-    button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
-});
-
 window.selectTariff = function(subjectCode, subjectName) {
+    if(!subjectScreen) return;
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <div style="margin-bottom: 10px;"><button class="button" style="background-color: #4a76a8;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кредита)</button></div>
@@ -194,12 +193,14 @@ function showTask() {
     } else { imageContainer.style.display = 'none'; }
     
     const answerBlock = document.querySelector('.answer-block');
-    answerBlock.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-            <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры пишите по возрастанию.</p>
-        </div>
-        <input type="text" id="user-answer" placeholder="Введите ответ...">
-    `;
+    if(answerBlock) {
+        answerBlock.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры пишите по возрастанию.</p>
+            </div>
+            <input type="text" id="user-answer" placeholder="Введите ответ...">
+        `;
+    }
 
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(taskScreen);
 }
@@ -220,7 +221,7 @@ window.submitAnswer = async function() {
             body: JSON.stringify({ user_answer: userAnswer, task_id: currentTask.id, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS })
         });
         const result = await response.json();
-        if (result.correct_was) currentTask.answer = result.correct_was; 
+        if (result.correct_was) { currentTask.answer = result.correct_was; }
         handleQuickResult(result.is_correct, rawInput); 
     } catch (error) { showCustomAlert("Ошибка при проверке ответа.", "Ошибка"); showScreen(taskScreen); }
 };
@@ -233,7 +234,7 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
+    saveSession(); setTimeout(() => { if (window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
 }
 
 window.abortTest = function() {
@@ -246,14 +247,18 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { try { localStorage.removeItem('active_test'); } catch(e){} document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); };
+    document.getElementById('btn-yes').onclick = () => { 
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); 
+    };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { try { localStorage.removeItem('active_test'); } catch(e){} showFinishScreen(); }
+    if (questionNumber <= TEST_LENGTH) getRandomTask();
+    else { try { localStorage.removeItem('active_test'); } catch(e){} showFinishScreen(); }
 };
 
 function showFinishScreen() {
@@ -267,7 +272,7 @@ function showFinishScreen() {
         reviewBtnBlock.insertAdjacentHTML('beforebegin', `
             <div id="topic-stats" style="margin-top:20px; text-align:left; background:#f0f8ff; padding:15px; border-radius:10px; border: 1px solid #bcdcff;">
                 <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="activity" class="icon-sm"></i> Умный анализ пробелов</h3>
-                <p id="ai-analysis-text" style="font-size:14px; color:#333;">Хочешь узнать, какие конкретно темы и правила тебе нужно подтянуть на основе твоих ошибок?</p>
+                <p id="ai-analysis-text" style="font-size:14px; color:#333;">ИИ проанализирует твои ошибки.</p>
                 <button id="ai-analysis-btn" class="button" style="background-color:#007bff; padding:10px; font-size:14px;" onclick="getAIAnalysis()"><i data-feather="cpu" class="icon-sm"></i> Сгенерировать ИИ-анализ</button>
             </div>
         `);
@@ -277,19 +282,19 @@ function showFinishScreen() {
 
 window.getAIAnalysis = async function() {
     const btn = document.getElementById('ai-analysis-btn'); const textBox = document.getElementById('ai-analysis-text');
-    btn.style.display = 'none'; textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует ошибки...</i></div>`;
+    btn.style.display = 'none'; textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует...</i></div>`;
     const mData = mistakes.map(m => ({ task_text: String(m.task.task_text || m.task.text || ""), user_answer: String(m.user_answer || ""), correct_answer: String(m.task.answer || "") }));
     try {
-        const res = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
-    } catch (e) { textBox.innerHTML = `<div style="color:#d32f2f;">Ошибка соединения с сервером.</div>`; btn.style.display = 'block'; }
+        const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
+    } catch (error) { textBox.innerHTML = `<div style="color:#d32f2f;">Ошибка соединения с сервером.</div>`; btn.style.display = 'block'; }
 };
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
 
 function loadReviewForCurrentMistake() {
     const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
-    document.getElementById('review-answers-block').innerHTML = `<p style="color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p><p style="color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>`;
+    document.getElementById('review-answers-block').innerHTML = `<p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p><p style="display:flex; align-items:center; color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>`;
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
@@ -302,21 +307,31 @@ function loadReviewForCurrentMistake() {
 window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
+    let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
-        const res = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null, task_text: mistake.task.task_text || mistake.task.text, simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
-    } catch (e) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
+        const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
+    } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
 };
+
+document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('question-image')) {
+        const fullScreen = document.createElement('div');
+        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center;";
+        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%;">`;
+        fullScreen.onclick = () => fullScreen.remove(); document.body.appendChild(fullScreen);
+    }
+});
 
 window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else showScreen(mainMenuScreen); };
 window.finishSession = () => showScreen(mainMenuScreen);
-window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Успешно!", "Отлично")).catch(() => showCustomAlert("Отменено", "Отмена")); };
+window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Отлично!", "Успешно")).catch(() => showCustomAlert("Отменено.", "Отмена")); };
 
 window.buyPackage = async function(creditsAmount) {
     const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(loadingScreen);
     try {
-        const res = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json();
+        const response = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json();
         if (result.success && result.confirmation_url) {
             try { await vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url}); } catch (e) { window.open(result.confirmation_url, '_blank'); }
             showProfile();
@@ -325,16 +340,16 @@ window.buyPackage = async function(creditsAmount) {
 };
 
 window.handleTopUpClick = function(amount) {
-    if (vkPlatform.includes('iphone') || vkPlatform.includes('ipad') || vkPlatform.includes('android')) showCustomAlert("Пополнение временно доступно только с ПК!", "Ограничение");
+    if (vkPlatform.includes('iphone') || vkPlatform.includes('ipad') || vkPlatform.includes('android')) showCustomAlert("Пополнение доступно только с ПК!", "Ограничение");
     else buyPackage(amount);
 };
 
 window.showProfile = async function() {
     showScreen(loadingScreen);
     try {
-        const res = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
-        if (!res.ok) { showCustomAlert("Ошибка безопасности VK.", "Доступ закрыт"); showScreen(mainMenuScreen); return; }
-        const data = await res.json();
+        const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        if (!response.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(mainMenuScreen); return; }
+        const data = await response.json();
         
         let subjectsHtml = '';
         if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
@@ -355,6 +370,7 @@ window.showProfile = async function() {
 
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
+            <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()"><i data-feather="bell" class="icon-sm"></i> Включить уведомления</button>
             <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
                 <div><div style="font-size:24px; font-weight:bold; color:#ff9800;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
                 <div style="width:1px; background:#e1e3e6;"></div>
@@ -367,17 +383,18 @@ window.showProfile = async function() {
                 <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="handleTopUpClick(15)">15 кр. — 150 руб.</button>
                 <button class="button" style="background:#2a5885;" onclick="handleTopUpClick(100)">100 кр. — 700 руб.</button>
             </div>
-            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">В меню</button>
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)"><i data-feather="arrow-left" class="icon-sm"></i> В главное меню</button>
         `;
         showScreen(subjectScreen);
-    } catch (e) { showCustomAlert("Не удалось загрузить профиль.", "Ошибка"); showScreen(mainMenuScreen); }
+    } catch (e) { showCustomAlert("Не удалось загрузить профиль.", "Ошибка сервера"); showScreen(mainMenuScreen); }
 };
 
-window.loadSubjectAnalytics = async function(c, n) {
-    subjectScreen.innerHTML = `<h2>Анализ: ${n}</h2><div id="an-cont"><div class="spinner"></div></div>`;
+window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
+    subjectScreen.innerHTML = `<h2>Анализ: ${subjectName}</h2><div id="an-cont"><div class="spinner"></div></div>`;
     try {
-        const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await res.json(); document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
+        if (window.feather) feather.replace();
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
@@ -388,15 +405,18 @@ window.showHelp = function() {
     } catch (e) {}
 };
 
+// Привязка кликов для делегирования событий (надежнее)
 document.addEventListener('click', function(e) {
     if (e.target.tagName === 'A' && e.target.href) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
+    const menuBtn = e.target.closest('#screen-main-menu .button');
+    if (menuBtn && menuBtn.dataset.examType) openSubjects(menuBtn.dataset.examType);
 });
 
-// Запуск ТОЛЬКО когда браузер отрисовал HTML
+// === ЗАПУСК ===
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startApp);
+    document.addEventListener('DOMContentLoaded', HARD_START);
 } else {
-    startApp();
+    HARD_START();
 }
