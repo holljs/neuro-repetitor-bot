@@ -61,7 +61,7 @@ function saveSession() {
     if (!currentTask) return;
     try { 
         localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
-    } catch(e) { console.warn("Доступ к памяти закрыт браузером"); }
+    } catch(e) { console.warn("Доступ к памяти закрыт"); }
 }
 
 function restoreSession() {
@@ -74,56 +74,50 @@ function restoreSession() {
             showTask(); return true;
         }
     } catch(e) { 
-        console.warn("Не удалось восстановить сессию", e); 
         try { localStorage.removeItem('active_test'); } catch(err){}
     }
     return false;
 }
-// ------------------------------------
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { screenElement.style.display = 'block'; if (window.feather) feather.replace(); }
 }
 
-let isAppInitialized = false;
+// ==========================================
+// ИНИЦИАЛИЗАЦИЯ ИЗ ПРОЕКТА "ХУДОЖНИК"
+// ==========================================
 
-function finalizeInit() {
-    if (isAppInitialized) return;
-    isAppInitialized = true;
-    
-    // Броня: ловим любые ошибки при попытке восстановить сессию
-    try {
-        if (!restoreSession()) {
-            showScreen(mainMenuScreen);
-        }
-    } catch (e) {
-        showScreen(mainMenuScreen);
-    }
+// 1. Сразу отправляем сигнал в ВК
+try { vkBridge.send('VKWebAppInit'); } catch(e) {}
 
+// 2. Функция для запроса профиля (работает фоном)
+async function initUser() {
     try { 
-        vkBridge.send('VKWebAppGetUserInfo')
-            .then(userData => { if (userData && userData.id) USER_ID = userData.id; })
-            .catch(() => {}); 
+        const data = await vkBridge.send('VKWebAppGetUserInfo');
+        if (data && data.id) { USER_ID = data.id; }
+    } catch(e) { console.log("ВК не отдал профиль", e); }
+}
+
+// 3. Ждем, пока браузер загрузит HTML, и СРАЗУ показываем интерфейс
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        if (!restoreSession()) { showScreen(mainMenuScreen); }
+    } catch(e) { showScreen(mainMenuScreen); }
+    initUser(); // Запрашиваем данные юзера
+});
+
+// 4. Запасной план: если DOMContentLoaded не сработал (бывает в старых iframe ВК)
+window.addEventListener('load', () => {
+    try {
+        if (loadingScreen.style.display !== 'none') {
+            if (!restoreSession()) { showScreen(mainMenuScreen); }
+            initUser();
+        }
     } catch(e) {}
-}
+});
 
-function startApp() {
-    // 1. Броня: Принудительно показываем меню ДО любых опасных вызовов!
-    try { showScreen(mainMenuScreen); } catch(e) {}
-
-    // 2. Броня: Заводим таймер в самую первую очередь
-    setTimeout(() => { finalizeInit(); }, 1000);
-
-    // 3. Пытаемся достучаться до моста ВК (если упадет - таймер спасет)
-    try {
-        vkBridge.send('VKWebAppInit').then(() => finalizeInit()).catch(() => {});
-    } catch (e) {}
-
-    try {
-        vkBridge.subscribe((e) => { if (e.detail.type === 'VKWebAppUpdateConfig') finalizeInit(); });
-    } catch (e) {}
-}
+// ==========================================
 
 window.openSubjects = function(examType) {
     currentExamType = examType;
@@ -427,5 +421,3 @@ document.addEventListener('click', function(e) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
 });
-
-startApp();
