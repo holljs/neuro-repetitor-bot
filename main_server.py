@@ -444,34 +444,35 @@ async def vk_bot_webhook(data: VKCallback):
 
     if data.type == "message_new":
         obj = data.object or {}
-        # Поддержка и старых, и новых версий API ВК
         msg = obj.get("message", obj)
-        text = msg.get("text", msg.get("body", "")).strip()
-        sender_id = msg.get("from_id", msg.get("user_id"))
+        text = msg.get("text", "").strip()
+        sender_id = msg.get("from_id")
 
-        print(f"📩 НОВОЕ СООБЩЕНИЕ ОТ {sender_id}: {text}")
+        # Проверяем, является ли это командой начисления (ID сумма)
+        parts = text.split()
+        is_admin_command = (
+            sender_id in ADMIN_VK_IDS and 
+            len(parts) == 2 and 
+            parts[0].isdigit() and 
+            (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit()))
+        )
 
-        # Если пишет админ
-        if sender_id in ADMIN_VK_IDS:
-            parts = text.split()
+        if is_admin_command:
+            target_id = parts[0]
+            amount = int(parts[1])
             
-            if len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())):
-                target_id = parts[0]
-                amount = int(parts[1])
-                
-                init_vk_user(target_id)
-                new_bal = change_vk_credits(target_id, amount)
-                
-                # Отправляем ответ
-                success = await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
-                
-                if not success:
-                    print("❌ ОШИБКА: Не удалось отправить сообщение ВК! Проверь VK_TOKEN в .env!")
-                
-                return HTMLResponse(content="ok", status_code=200)
+            init_vk_user(target_id)
+            new_bal = change_vk_credits(target_id, amount)
+            
+            # Отвечаем ТОЛЬКО на админ-команду
+            await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
+            return HTMLResponse(content="ok", status_code=200)
+        
+        # Если это просто сообщение от пользователя или что-то другое — МОЛЧИМ
+        else:
+            return HTMLResponse(content="ok", status_code=200)
 
     return HTMLResponse(content="ok", status_code=200)
-# ==========================================
 
 if __name__ == "__main__":
     import uvicorn
