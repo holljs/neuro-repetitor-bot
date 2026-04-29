@@ -56,20 +56,30 @@ let currentTask = null; let currentSubjectCode = null;
 let questionNumber = 1; let score = 0; let mistakes = []; 
 let currentReviewIndex = 0; let currentTestMode = "standard";
 
+// --- БРОНЕБОЙНОЕ СОХРАНЕНИЕ СЕССИИ ---
 function saveSession() {
-    if (currentTask) localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
+    if (!currentTask) return;
+    try { 
+        localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
+    } catch(e) { console.warn("Доступ к памяти закрыт браузером"); }
 }
 
 function restoreSession() {
-    const saved = localStorage.getItem('active_test');
-    if (saved) {
-        const data = JSON.parse(saved);
-        currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
-        questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-        showTask(); return true;
+    try {
+        const saved = localStorage.getItem('active_test');
+        if (saved) {
+            const data = JSON.parse(saved);
+            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+            showTask(); return true;
+        }
+    } catch(e) { 
+        console.warn("Не удалось восстановить сессию", e); 
+        try { localStorage.removeItem('active_test'); } catch(err){}
     }
     return false;
 }
+// ------------------------------------
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
@@ -136,7 +146,10 @@ async function getRandomTask() {
     try {
         const res = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await res.json();
-        if (currentTask.done) { localStorage.removeItem('active_test'); showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; }
+        if (currentTask.done) { 
+            try { localStorage.removeItem('active_test'); } catch(e){} 
+            showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; 
+        }
         showTask();
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(mainMenuScreen); }
 }
@@ -208,14 +221,20 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { localStorage.removeItem('active_test'); document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); };
+    document.getElementById('btn-yes').onclick = () => { 
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); 
+    };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { localStorage.removeItem('active_test'); showFinishScreen(); }
+    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { 
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        showFinishScreen(); 
+    }
 };
 
 function showFinishScreen() {
