@@ -24,8 +24,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
+# --- ИМПОРТ И ИНИЦИАЛИЗАЦИЯ ЮKASSA ---
 from yookassa import Configuration, Payment
 
+# --- ИНИЦИАЛИЗАЦИЯ ---
 load_dotenv()
 app = FastAPI(title="Neuro Repetitor API", version="2.4.0")
 
@@ -34,6 +36,7 @@ Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKA
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 
+# --- RATE LIMITER (Защита от DOS) ---
 request_times = {}
 
 def check_rate_limit(user_id: str, limit: int = 4, window: int = 5) -> bool:
@@ -46,6 +49,7 @@ def check_rate_limit(user_id: str, limit: int = 4, window: int = 5) -> bool:
     request_times[user_id] = times
     return True
 
+# --- СЛОВАРЬ ТЕМ ---
 TOPIC_NAMES = {
     "topic_01": "🏠 Практические задачи", "topic_02": "🔢 Вычисления и дроби",
     "topic_03": "📏 Единицы измерения", "topic_04": "⚖️ Уравнения",
@@ -76,6 +80,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=False,
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
+# --- ЖЕСТКАЯ ПРОВЕРКА ПОДПИСИ И ID ---
 def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     if vk_params == INTERNAL_BOT_TOKEN: return True
     if not vk_params or "sign=" not in vk_params: return False
@@ -175,11 +180,13 @@ def save_user_progress(user_id: str, task_id: str):
         data[uid].append(task_id)
         with open(PROGRESS_FILE, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=2)
 
+# --- ИСПРАВЛЕНИЕ БАГА 10 (Читерство с текстом) ---
 def check_student_answer(student_ans, correct_ans):
     if not student_ans or not correct_ans: return False
     student_ans = str(student_ans).upper().strip()
     correct_ans = str(correct_ans).upper().strip()
     
+    # Защита от копипасты: если ответ длиннее правильного на 15+ символов - это текст задания
     if len(student_ans) > len(correct_ans) + 15:
         return False
 
@@ -216,11 +223,13 @@ class BuyRequest(BaseModel):
     price: float
     vk_params: str
 
+# --- ИСПРАВЛЕНИЕ БАГА 5 (Подмена цены оплаты) ---
 @app.post("/create_payment/")
 async def create_payment(request: BuyRequest):
     if not verify_vk_auth(request.student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
 
+    # Сервер жестко задает цены. Игнорируем то, что прислал фронтенд.
     price_map = {15: 150.0, 100: 700.0}
     if request.amount not in price_map:
         return {"success": False, "error": "Неверный пакет кредитов."}
@@ -277,6 +286,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     if not db: raise HTTPException(status_code=500, detail="База пуста")
     solved_ids = get_user_progress(student_id)
     
+    # БАГ 11: Фильтруем пустые и сломанные задачи из выдачи
     available_tasks = [t for t in db if str(t.get("id")) not in solved_ids and str(t.get("answer", "")).lower() not in ["", "undefined", "none"]]
     
     if not available_tasks:
@@ -299,6 +309,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
+    # БАГ 7: Защита от спама на проверке ответов (DOS)
     if not check_rate_limit(str(request.student_id), limit=5, window=5):
         return {"is_correct": False, "error": "Слишком частые запросы."}
 
@@ -320,10 +331,9 @@ async def check_answer_smart(request: CheckRequest):
     correct_answer = str(task.get("answer", ""))
     is_correct = check_student_answer(request.user_answer, correct_answer)
     
-    # БАГ 14: Более умный промпт для проверки перестановок
     if not is_correct and correct_answer != "---":
         try:
-            prompt = f"Студент ответил '{request.user_answer}', а по ключу ответ '{correct_answer}'. Засчитать ли ответ студента как полностью верный? (Учитывай, что если это выбор нескольких вариантов, порядок цифр не важен, например 25 = 52). Верни строго JSON: {{\"is_correct\": true/false}}"
+            prompt = f"Равны ли ответы: '{correct_answer}' и '{request.user_answer}'? Верни строго JSON: {{\"is_correct\": true/false}}"
             output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
             is_correct = "true" in "".join(output).lower()
         except Exception: is_correct = False
@@ -402,9 +412,7 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
                 if len(parts) >= 5 and parts[1] == student_id and parts[4] == subject_key:
                     user_records.append({"topic": parts[2], "is_correct": parts[3].lower() == "true"})
                         
-    # БАГ 15: Блокировка отчета, если решено мало задач
-    if len(user_records) < 10: 
-        return {"analysis": f"⏳ <b>Недостаточно данных.</b> Ты решил(а) всего {len(user_records)} задач из этого предмета. Пройди хотя бы один полный тест (15 вопросов), чтобы ИИ смог составить точный аналитический отчет!"}
+    if not user_records: return {"analysis": "У тебя пока нет истории по этому предмету."}
         
     topic_history = {}
     for r in user_records:
