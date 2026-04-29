@@ -48,7 +48,7 @@ window.toggleAccordion = function(element) {
         body.style.display = 'none';
         if(icon) icon.setAttribute('data-feather', 'chevron-down');
     }
-    feather.replace();
+    if (window.feather) feather.replace();
 };
 
 const TEST_LENGTH = 15;
@@ -56,12 +56,11 @@ let currentTask = null; let currentSubjectCode = null;
 let questionNumber = 1; let score = 0; let mistakes = []; 
 let currentReviewIndex = 0; let currentTestMode = "standard";
 
-// --- БРОНЕБОЙНОЕ СОХРАНЕНИЕ СЕССИИ ---
 function saveSession() {
     if (!currentTask) return;
     try { 
         localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
-    } catch(e) { console.warn("Доступ к памяти закрыт"); }
+    } catch(e) { console.warn("Доступ к памяти закрыт браузером"); }
 }
 
 function restoreSession() {
@@ -74,6 +73,7 @@ function restoreSession() {
             showTask(); return true;
         }
     } catch(e) { 
+        console.warn("Не удалось восстановить сессию", e); 
         try { localStorage.removeItem('active_test'); } catch(err){}
     }
     return false;
@@ -83,41 +83,6 @@ function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { screenElement.style.display = 'block'; if (window.feather) feather.replace(); }
 }
-
-// ==========================================
-// ИНИЦИАЛИЗАЦИЯ ИЗ ПРОЕКТА "ХУДОЖНИК"
-// ==========================================
-
-// 1. Сразу отправляем сигнал в ВК
-try { vkBridge.send('VKWebAppInit'); } catch(e) {}
-
-// 2. Функция для запроса профиля (работает фоном)
-async function initUser() {
-    try { 
-        const data = await vkBridge.send('VKWebAppGetUserInfo');
-        if (data && data.id) { USER_ID = data.id; }
-    } catch(e) { console.log("ВК не отдал профиль", e); }
-}
-
-// 3. Ждем, пока браузер загрузит HTML, и СРАЗУ показываем интерфейс
-document.addEventListener('DOMContentLoaded', () => {
-    try {
-        if (!restoreSession()) { showScreen(mainMenuScreen); }
-    } catch(e) { showScreen(mainMenuScreen); }
-    initUser(); // Запрашиваем данные юзера
-});
-
-// 4. Запасной план: если DOMContentLoaded не сработал (бывает в старых iframe ВК)
-window.addEventListener('load', () => {
-    try {
-        if (loadingScreen.style.display !== 'none') {
-            if (!restoreSession()) { showScreen(mainMenuScreen); }
-            initUser();
-        }
-    } catch(e) {}
-});
-
-// ==========================================
 
 window.openSubjects = function(examType) {
     currentExamType = examType;
@@ -422,4 +387,23 @@ document.addEventListener('click', function(e) {
     }
 });
 
-startApp();
+// ==========================================
+// СТАРТ ПРИЛОЖЕНИЯ
+// ==========================================
+async function launchApp() {
+    // 1. Показываем меню сразу (защита от iframe-ошибок)
+    try {
+        if (!restoreSession()) { showScreen(mainMenuScreen); }
+    } catch(e) { showScreen(mainMenuScreen); }
+
+    // 2. Инициализируем мост ВК
+    try { vkBridge.send('VKWebAppInit'); } catch(e) {}
+
+    // 3. Запрашиваем ID пользователя без блокировки интерфейса
+    try {
+        const data = await vkBridge.send('VKWebAppGetUserInfo');
+        if (data && data.id) USER_ID = data.id;
+    } catch(e) { console.log("VK API не ответил", e); }
+}
+
+launchApp();
