@@ -26,7 +26,7 @@ let currentExamType = null;
 // --- СОБСТВЕННАЯ СИСТЕМА УВЕДОМЛЕНИЙ (БЕЗ ALERT) ---
 window.showCustomAlert = function(message, title = "Внимание") {
     document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-message').textContent = message;
+    document.getElementById('modal-message').innerHTML = message;
     document.getElementById('custom-modal').style.display = 'flex';
 };
 
@@ -49,22 +49,24 @@ function renderMath(elementId) {
     }
 }
 
-const OGE_SUBJECTS = { 
-    "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", 
-    "oge_english": "Английский ОГЭ", "oge_chemistry": "Химия ОГЭ",
-    "oge_physics": "Физика ОГЭ", "oge_geography": "География ОГЭ",
-    "oge_biology": "Биология ОГЭ", "oge_informatics": "Информатика ОГЭ",
-    "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ"
-};
-
-const EGE_SUBJECTS = { 
-    "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ",
-    "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ",
-    "phys_ege": "Физика ЕГЭ", "ege_english": "Английский ЕГЭ",
-    "chem_ege": "Химия ЕГЭ", "ege_literature": "Литература ЕГЭ"
-};
-
+// ДОБАВЛЕНЫ ВСЕ ПРЕДМЕТЫ
+const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
+const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
+
+window.toggleAccordion = function(element) {
+    const body = element.nextElementSibling;
+    const icon = element.querySelector('.feather-chevron-down') || element.querySelector('.feather-chevron-up');
+    
+    if (body.style.display === 'none' || body.style.display === '') {
+        body.style.display = 'block';
+        if(icon) icon.setAttribute('data-feather', 'chevron-up');
+    } else {
+        body.style.display = 'none';
+        if(icon) icon.setAttribute('data-feather', 'chevron-down');
+    }
+    if (window.feather) feather.replace();
+};
 
 const TEST_LENGTH = 15;
 let currentTask = null;
@@ -83,14 +85,40 @@ function showScreen(screenElement) {
     }
 }
 
-// === ИНИЦИАЛИЗАЦИЯ VK BRIDGE ===
+// === БАГ 3: LOCALSTORAGE ДЛЯ IPHONE ===
+function saveSession() {
+    if (!currentTask) return;
+    try { 
+        localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
+    } catch(e) {}
+}
+
+function restoreSession() {
+    try {
+        const saved = localStorage.getItem('active_test');
+        if (saved) {
+            const data = JSON.parse(saved);
+            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+            showTask(); return true;
+        }
+    } catch(e) { 
+        try { localStorage.removeItem('active_test'); } catch(err){}
+    }
+    return false;
+}
+
+// === ИНИЦИАЛИЗАЦИЯ VK BRIDGE (ТВОЙ РОДНОЙ КОД) ===
 let isAppInitialized = false;
 
 function finalizeInit() {
     if (isAppInitialized) return;
     isAppInitialized = true;
     
-    showScreen(mainMenuScreen);
+    // Восстанавливаем сессию, если есть, иначе меню
+    try {
+        if (!restoreSession()) { showScreen(mainMenuScreen); }
+    } catch (e) { showScreen(mainMenuScreen); }
 
     // Безопасно получаем данные
     try {
@@ -242,6 +270,7 @@ async function getRandomTask() {
         const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await response.json();
         if (currentTask.done) { 
+            try { localStorage.removeItem('active_test'); } catch(e){} 
             showCustomAlert(currentTask.text, "Ура!"); 
             showScreen(mainMenuScreen); 
             return; 
@@ -254,6 +283,7 @@ async function getRandomTask() {
 }
 
 function showTask() {
+    saveSession();
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
@@ -280,7 +310,15 @@ function showTask() {
         imageContainer.style.display = 'none';
     }
     
-    document.getElementById('user-answer').value = '';
+    // БАГ 14: Подсказка
+    const answerBlock = document.querySelector('.answer-block');
+    answerBlock.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+            <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры пишите по возрастанию.</p>
+        </div>
+        <input type="text" id="user-answer" placeholder="Введите ответ...">
+    `;
+
     setTimeout(() => { renderMath('task-text'); }, 100);
     showScreen(taskScreen);
 }
@@ -335,20 +373,36 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = `<div style="color:#ff5252; display:flex; justify-content:center; align-items:center;"><i data-feather="x-circle" style="margin-right:8px;"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    setTimeout(() => { feather.replace(); renderMath('quick-result-screen'); }, 100);
+    saveSession();
+    setTimeout(() => { if (window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100);
     showScreen(quickResultScreen);
 }
 
 window.abortTest = function() {
-    if (confirm("Вы уверены, что хотите прервать тренировку? Прогресс этого теста не сохранится.")) {
-        showScreen(mainMenuScreen);
-    }
+    document.getElementById('modal-title').textContent = "Прервать тест?";
+    document.getElementById('modal-message').innerHTML = "Вы уверены? <br><b style='color:#ff5252;'>Прогресс будет утерян, кредиты не возвращаются.</b>";
+    const modal = document.getElementById('custom-modal');
+    const originalBtn = modal.querySelector('button'); originalBtn.style.display = 'none';
+
+    const btnGroup = document.createElement('div'); btnGroup.id = 'temp-confirm-btns';
+    btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
+    modal.querySelector('div').appendChild(btnGroup);
+
+    document.getElementById('btn-yes').onclick = () => { 
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); 
+    };
+    document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
+    modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
     if (questionNumber <= TEST_LENGTH) getRandomTask();
-    else showFinishScreen();
+    else {
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        showFinishScreen();
+    }
 };
 
 function showFinishScreen() {
@@ -529,6 +583,7 @@ window.handleTopUpClick = function(amount) {
     }
 };
 
+// === ПРОФИЛЬ С АККОРДЕОНАМИ ===
 window.showProfile = async function() {
     showScreen(loadingScreen);
     try {
@@ -550,42 +605,52 @@ window.showProfile = async function() {
         </div>`;
 
         let subjectsHtml = '';
-        if (data.active_subjects && data.active_subjects.length > 0) {
-            data.active_subjects.forEach(subjCode => {
+        if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
+            for (const [subjCode, count] of Object.entries(data.subject_counts)) {
                 const subjName = ALL_SUBJECTS[subjCode] || subjCode;
+                
                 subjectsHtml += `
-                    <button class="exam-btn" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
-                        <div class="exam-icon"><i data-feather="bar-chart-2"></i></div>
-                        <div class="exam-info">
-                            <h3>${subjName}</h3>
-                            <p>Посмотреть анализ пробелов</p>
+                <div style="margin-bottom:10px; border: 1px solid #e1e3e6; border-radius:8px; background: #fff; overflow:hidden;">
+                    <div onclick="toggleAccordion(this)" style="padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#f9f9f9; font-weight:600; color:#333;">
+                        <div style="display:flex; align-items:center;">
+                            <i data-feather="book" class="icon-sm" style="margin-right:8px; color:#4a76a8;"></i> ${subjName}
                         </div>
-                    </button>`;
-            });
+                        <div style="display:flex; align-items:center; font-size:14px; color:#666;">
+                            Решено: ${count} <i data-feather="chevron-down" class="icon-sm" style="margin-left:5px;"></i>
+                        </div>
+                    </div>
+                    <div style="display:none; padding:15px; border-top:1px solid #e1e3e6;">
+                        <button class="button" style="width:100%; background:#007bff; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')">
+                            <i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ пробелов
+                        </button>
+                    </div>
+                </div>`;
+            }
         } else {
-            subjectsHtml = `<p style="color:#777;">Здесь появится статистика, как только ты решишь первый вариант!</p>`;
+            subjectsHtml = `<p style="color:#777; text-align:center;">Здесь появится статистика, как только ты решишь первые задания!</p>`;
         }
 
         subjectScreen.innerHTML = `
-            <h2 style="display:flex; align-items:center; justify-content:center;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
+            <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
             
             <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()">
                 <i data-feather="bell" class="icon-sm"></i> Включить уведомления
             </button>
 
-            <div style="font-size:16px; margin-bottom:15px; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6; text-align: left;">
-                <div style="display:flex; align-items:center; margin-bottom:10px;">
-                    <i data-feather="database" class="icon-sm" style="color:#ff9800;"></i> Твой баланс: <b style="margin-left:6px;">${data.balance || 0} кр.</b>
+            <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
+                <div>
+                    <div style="font-size:24px; font-weight:bold; color:#ff9800;">${data.balance || 0}</div>
+                    <div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div>
                 </div>
-                <div style="display:flex; align-items:center;">
-                    <i data-feather="check-square" class="icon-sm" style="color:#4CAF50;"></i> Решено задач: <b style="margin-left:6px;">${data.total_solved || 0}</b>
+                <div style="width:1px; background:#e1e3e6;"></div>
+                <div>
+                    <div style="font-size:24px; font-weight:bold; color:#4CAF50;">${data.total_solved || 0}</div>
+                    <div style="font-size:12px; color:#777; text-transform:uppercase;">задач решено</div>
                 </div>
             </div>
             
-            <h3 style="margin-top:20px; text-align:left; display:flex; align-items:center;"><i data-feather="trending-up" class="icon-sm"></i> Моя статистика:</h3>
-            <div id="analytics-container">
-                ${subjectsHtml}
-            </div>
+            <h3 style="text-align:left; margin-bottom:10px; font-size: 16px;">Твои предметы:</h3>
+            ${subjectsHtml}
             
             ${topUpBlock}
             <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)"><i data-feather="arrow-left" class="icon-sm"></i> В главное меню</button>
@@ -605,36 +670,33 @@ window.showProfile = async function() {
 };
 
 window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
-    const container = document.getElementById('analytics-container');
-    container.innerHTML = `
-        <div style="text-align:center; padding: 20px;">
-            <div class="spinner"></div>
-            <i>ИИ пишет отчет по предмету "${subjectName}"...</i>
-        </div>
-    `;
-    
+    const container = document.getElementById('analytics-container'); // Need to ensure it exists or open new view.
+    subjectScreen.innerHTML = `<h2>Анализ: ${subjectName}</h2><div id="an-cont"><div class="spinner"></div></div>`;
     try {
-        const response = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
-        const data = await response.json();
-        
-        container.innerHTML = `
-            <div style="padding:15px; background:#f0f8ff; border-radius:10px; border: 1px solid #bcdcff; text-align:left;">
-                <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="cpu" class="icon-sm"></i> Отчет ИИ: ${subjectName}</h3>
-                <div style="font-size:14px; line-height:1.6; color:#333;">${data.analysis}</div>
-                <button class="button secondary" style="margin-top:15px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам</button>
-            </div>
-        `;
-        if (window.feather) feather.replace(); 
-    } catch(e) {
-        container.innerHTML = `
-            <div style="color:#d32f2f; display:flex; align-items:center; justify-content:center; padding:15px;">
-                <i data-feather="alert-triangle" style="margin-right:8px;"></i> Ошибка загрузки.
-            </div>
-            <button class="button secondary" style="margin-top:10px;" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад</button>
-        `;
+        const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const data = await res.json(); 
+        document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()"><i data-feather="arrow-left" class="icon-sm"></i> Назад к профилю</button>`;
         if (window.feather) feather.replace();
+    } catch(e) { 
+        document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; 
     }
 };
 
-// Запускаем приложение!
+window.showHelp = function() {
+    try {
+        const helpPaymentBlock = document.getElementById('help-payment-block');
+        if (helpPaymentBlock) {
+            helpPaymentBlock.style.display = canPay ? 'block' : 'none'; 
+        }
+        
+        const screenHelpElement = document.getElementById('screen-help');
+        if (screenHelpElement) {
+            showScreen(screenHelpElement);
+        }
+    } catch (e) {
+        console.error("Ошибка при открытии Помощи:", e);
+    }
+};
+
+// Запускаем приложение
 startApp();
