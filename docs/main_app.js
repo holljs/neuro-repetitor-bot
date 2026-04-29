@@ -1,4 +1,5 @@
-// === ФИКСАЦИЯ ПАРАМЕТРОВ ===
+console.log("🚀 [APP] Скрипт main_app.js начал загрузку!");
+
 const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?'); 
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
@@ -8,49 +9,118 @@ const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
+console.log("🚀 [APP] USER_ID получен:", USER_ID);
+
 let currentExamType = null; 
+let currentTask = null; 
+let currentSubjectCode = null;
+let questionNumber = 1; 
+let score = 0; 
+let mistakes = []; 
+let currentReviewIndex = 0; 
+let currentTestMode = "standard";
 
-// ОБЪЯВЛЯЕМ переменные, но НЕ ищем их пока в HTML!
-let loadingScreen, mainMenuScreen, subjectScreen, taskScreen;
-let quickResultScreen, testFinishScreen, reviewScreen, helpScreen;
-
-// === СЛОВАРИ И ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
-
 const TEST_LENGTH = 15;
-let currentTask = null; let currentSubjectCode = null;
-let questionNumber = 1; let score = 0; let mistakes = []; 
-let currentReviewIndex = 0; let currentTestMode = "standard";
+
+// ==========================================
+// ЖЕСТКИЙ ПОКАЗ ЭКРАНА (БЕЗ УСЛОВИЙ)
+// ==========================================
+function forceShowMenu() {
+    console.log("🚀 [APP] Попытка принудительно показать меню...");
+    try {
+        const loader = document.getElementById('screen-loading');
+        const menu = document.getElementById('screen-main-menu');
+        
+        if (loader) {
+            loader.style.display = 'none';
+            console.log("🚀 [APP] Лоадер успешно скрыт!");
+        } else {
+            console.error("❌ [APP] ОШИБКА: Элемент screen-loading не найден в HTML!");
+        }
+
+        if (menu) {
+            // Скрываем все остальные экраны для надежности
+            document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+            menu.style.display = 'block';
+            console.log("🚀 [APP] Главное меню успешно показано!");
+        } else {
+            console.error("❌ [APP] ОШИБКА: Элемент screen-main-menu не найден в HTML!");
+        }
+        
+        if (window.feather) feather.replace();
+    } catch(e) {
+        console.error("❌ [APP] Критическая ошибка при показе меню:", e);
+    }
+}
+
+// Запускаем показ меню МГНОВЕННО, как только HTML готов
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceShowMenu);
+} else {
+    forceShowMenu();
+}
+// Таймер-спасатель (на случай если DOMContentLoaded не сработал)
+setTimeout(forceShowMenu, 500);
+setTimeout(forceShowMenu, 1500);
+
+// ==========================================
+// ФОНОВАЯ ИНИЦИАЛИЗАЦИЯ ВК (Не блокирует меню)
+// ==========================================
+setTimeout(() => {
+    console.log("🚀 [APP] Начинаем фоновую инициализацию VK Bridge...");
+    try {
+        if (typeof vkBridge !== 'undefined') {
+            vkBridge.send('VKWebAppInit')
+                .then(() => console.log("🚀 [APP] VK Bridge: VKWebAppInit Успех"))
+                .catch(e => console.error("❌ [APP] VK Bridge: VKWebAppInit Ошибка", e));
+                
+            vkBridge.send('VKWebAppGetUserInfo')
+                .then(data => { 
+                    if (data && data.id) {
+                        USER_ID = data.id; 
+                        console.log("🚀 [APP] VK Bridge: Профиль получен", USER_ID);
+                    }
+                })
+                .catch(e => console.error("❌ [APP] VK Bridge: Ошибка профиля", e));
+        } else {
+            console.warn("⚠️ [APP] vkBridge не определен в глобальной области!");
+        }
+    } catch(e) { console.error("❌ [APP] Ошибка при вызове ВК", e); }
+}, 1000);
+
+
+// ==========================================
+// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И ПАМЯТЬ
+// ==========================================
+function showScreen(screenElement) {
+    document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
+    if(screenElement) { 
+        screenElement.style.display = 'block'; 
+        if (window.feather) feather.replace(); 
+    }
+}
 
 window.showCustomAlert = function(message, title = "Внимание") {
-    const modalTitle = document.getElementById('modal-title');
-    const modalMessage = document.getElementById('modal-message');
-    const customModal = document.getElementById('custom-modal');
-    if(modalTitle) modalTitle.textContent = title;
-    if(modalMessage) modalMessage.innerHTML = message;
-    if(customModal) customModal.style.display = 'flex';
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-message').innerHTML = message;
+    document.getElementById('custom-modal').style.display = 'flex';
 };
 
-window.closeModal = function() { 
-    const customModal = document.getElementById('custom-modal');
-    if(customModal) customModal.style.display = 'none'; 
-};
+window.closeModal = function() { document.getElementById('custom-modal').style.display = 'none'; };
 
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
     if (el && window.renderMathInElement) {
-        try {
-            renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
-        } catch(e){}
+        try { renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false }); } catch(e){}
     }
 }
 
 window.toggleAccordion = function(element) {
     const body = element.nextElementSibling;
     const icon = element.querySelector('.feather-chevron-down') || element.querySelector('.feather-chevron-up');
-    
     if (body.style.display === 'none' || body.style.display === '') {
         body.style.display = 'block';
         if(icon) icon.setAttribute('data-feather', 'chevron-up');
@@ -79,65 +149,33 @@ function restoreSession() {
     return false;
 }
 
-function showScreen(screenElement) {
-    document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
-    if(screenElement) { 
-        screenElement.style.display = 'block'; 
-        if (window.feather) feather.replace(); 
-    }
-}
+// Пытаемся восстановить сессию чуть позже
+setTimeout(() => { try { restoreSession(); } catch(e){} }, 800);
 
-// === БРОНЕБОЙНЫЙ ЗАПУСК (Вызывается ТОЛЬКО после загрузки HTML) ===
-function HARD_START() {
-    console.log("Попытка запуска приложения...");
 
-    // 1. Ищем экраны только сейчас!
-    loadingScreen = document.getElementById('screen-loading');
-    mainMenuScreen = document.getElementById('screen-main-menu');
-    subjectScreen = document.getElementById('screen-subjects');
-    taskScreen = document.getElementById('task-screen');
-    quickResultScreen = document.getElementById('quick-result-screen');
-    testFinishScreen = document.getElementById('test-finish-screen');
-    reviewScreen = document.getElementById('review-screen');
-    helpScreen = document.getElementById('screen-help');
-
-    // 2. Спасатель: ЖЕСТКО прячем лоадер и показываем меню (напрямую через стили)
-    if (loadingScreen) loadingScreen.style.display = 'none';
-    if (mainMenuScreen) mainMenuScreen.style.display = 'block';
-
-    // 3. Пытаемся восстановить сессию (если она была)
-    try { restoreSession(); } catch(e) {}
-
-    // 4. Тихонько стучимся в ВК
-    try {
-        if (window.vkBridge) {
-            vkBridge.send('VKWebAppInit');
-            vkBridge.send('VKWebAppGetUserInfo')
-                .then(data => { if (data && data.id) USER_ID = data.id; })
-                .catch(() => {});
-        }
-    } catch(e) {}
-}
-
-// === ЛОГИКА ЭКРАНОВ ===
+// ==========================================
+// ЛОГИКА ЭКРАНОВ И ТЕСТОВ
+// ==========================================
 window.openSubjects = function(examType) {
     currentExamType = examType;
     const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
-    if(!subjectScreen) return;
+    const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
-    
     for (const code in subjects) {
         const btn = document.createElement('button'); btn.className = 'button'; btn.innerText = subjects[code];
         btn.onclick = () => selectTariff(code, subjects[code]); subjectScreen.appendChild(btn);
     }
-    
     const backBtn = document.createElement('button'); backBtn.className = 'button secondary'; backBtn.style.marginTop = '20px'; backBtn.innerText = '🔙 В главное меню';
-    backBtn.onclick = () => showScreen(mainMenuScreen); subjectScreen.appendChild(backBtn);
+    backBtn.onclick = () => showScreen(document.getElementById('screen-main-menu')); subjectScreen.appendChild(backBtn);
     showScreen(subjectScreen);
 };
 
+document.querySelectorAll('#screen-main-menu .button').forEach(button => {
+    button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
+});
+
 window.selectTariff = function(subjectCode, subjectName) {
-    if(!subjectScreen) return;
+    const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <div style="margin-bottom: 10px;"><button class="button" style="background-color: #4a76a8;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кредита)</button></div>
@@ -148,7 +186,7 @@ window.selectTariff = function(subjectCode, subjectName) {
 };
 
 window.startTest = async function(subjectCode, mode) {
-    currentTestMode = mode; showScreen(loadingScreen);
+    currentTestMode = mode; showScreen(document.getElementById('screen-loading'));
     try {
         const payResponse = await fetch(`${TEST_API_URL}/start_test_payment/`, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -157,8 +195,8 @@ window.startTest = async function(subjectCode, mode) {
         const payResult = await payResponse.json();
         if (payResult.success) {
             currentSubjectCode = subjectCode; questionNumber = 1; score = 0; mistakes = []; getRandomTask();
-        } else { showCustomAlert(payResult.error || "Недостаточно кредитов", "Ошибка"); showScreen(mainMenuScreen); }
-    } catch (e) { showCustomAlert("Ошибка соединения с сервером.", "Ошибка"); showScreen(mainMenuScreen); }
+        } else { showCustomAlert(payResult.error || "Недостаточно кредитов", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
+    } catch (e) { showCustomAlert("Ошибка соединения с сервером.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 };
 
 async function getRandomTask() {
@@ -167,10 +205,10 @@ async function getRandomTask() {
         currentTask = await response.json();
         if (currentTask.done) { 
             try { localStorage.removeItem('active_test'); } catch(e){}
-            showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; 
+            showCustomAlert(currentTask.text, "Ура!"); showScreen(document.getElementById('screen-main-menu')); return; 
         }
         showTask();
-    } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(mainMenuScreen); }
+    } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 }
 
 function showTask() {
@@ -202,7 +240,7 @@ function showTask() {
         `;
     }
 
-    setTimeout(() => { renderMath('task-text'); }, 100); showScreen(taskScreen);
+    setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
 }
 
 function normalizeText(str) {
@@ -214,16 +252,16 @@ window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
     let userAnswer = normalizeText(rawInput);
     if (!userAnswer) { showCustomAlert("Пожалуйста, введите ответ!", "Внимание"); return; }
-    showScreen(loadingScreen);
+    showScreen(document.getElementById('screen-loading'));
     try {
         const response = await fetch(`${TEST_API_URL}/check/`, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_answer: userAnswer, task_id: currentTask.id, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS })
         });
         const result = await response.json();
-        if (result.correct_was) { currentTask.answer = result.correct_was; }
+        if (result.correct_was) currentTask.answer = result.correct_was; 
         handleQuickResult(result.is_correct, rawInput); 
-    } catch (error) { showCustomAlert("Ошибка при проверке ответа.", "Ошибка"); showScreen(taskScreen); }
+    } catch (error) { showCustomAlert("Ошибка при проверке ответа.", "Ошибка"); showScreen(document.getElementById('task-screen')); }
 };
 
 function handleQuickResult(isCorrect, userAnswer) {
@@ -234,7 +272,7 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    saveSession(); setTimeout(() => { if (window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
+    saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(document.getElementById('quick-result-screen'));
 }
 
 window.abortTest = function() {
@@ -247,18 +285,14 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { 
-        try { localStorage.removeItem('active_test'); } catch(e){} 
-        document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); 
-    };
+    document.getElementById('btn-yes').onclick = () => { try { localStorage.removeItem('active_test'); } catch(e){} document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(document.getElementById('screen-main-menu')); };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask();
-    else { try { localStorage.removeItem('active_test'); } catch(e){} showFinishScreen(); }
+    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { try { localStorage.removeItem('active_test'); } catch(e){} showFinishScreen(); }
 };
 
 function showFinishScreen() {
@@ -277,7 +311,7 @@ function showFinishScreen() {
             </div>
         `);
     } else { reviewBtnBlock.style.display = 'none'; }
-    showScreen(testFinishScreen);
+    showScreen(document.getElementById('test-finish-screen'));
 }
 
 window.getAIAnalysis = async function() {
@@ -285,8 +319,8 @@ window.getAIAnalysis = async function() {
     btn.style.display = 'none'; textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует...</i></div>`;
     const mData = mistakes.map(m => ({ task_text: String(m.task.task_text || m.task.text || ""), user_answer: String(m.user_answer || ""), correct_answer: String(m.task.answer || "") }));
     try {
-        const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
+        const res = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await res.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
     } catch (error) { textBox.innerHTML = `<div style="color:#d32f2f;">Ошибка соединения с сервером.</div>`; btn.style.display = 'block'; }
 };
 
@@ -301,7 +335,7 @@ function loadReviewForCurrentMistake() {
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     document.getElementById('review-explanation').innerHTML = `<button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button>`;
-    showScreen(reviewScreen);
+    showScreen(document.getElementById('review-screen'));
 }
 
 window.runAIExplanation = async function(simplify = false) {
@@ -309,29 +343,20 @@ window.runAIExplanation = async function(simplify = false) {
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
-        const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
+        const res = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await res.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
 };
 
-document.addEventListener('click', function (e) {
-    if (e.target.tagName === 'IMG' && e.target.classList.contains('question-image')) {
-        const fullScreen = document.createElement('div');
-        fullScreen.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; display:flex; align-items:center; justify-content:center;";
-        fullScreen.innerHTML = `<img src="${e.target.src}" style="max-width:95%; max-height:95%;">`;
-        fullScreen.onclick = () => fullScreen.remove(); document.body.appendChild(fullScreen);
-    }
-});
-
-window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else showScreen(mainMenuScreen); };
-window.finishSession = () => showScreen(mainMenuScreen);
-window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Отлично!", "Успешно")).catch(() => showCustomAlert("Отменено.", "Отмена")); };
+window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else showScreen(document.getElementById('screen-main-menu')); };
+window.finishSession = () => showScreen(document.getElementById('screen-main-menu'));
+window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Успешно!", "Отлично")).catch(() => showCustomAlert("Отменено", "Отмена")); };
 
 window.buyPackage = async function(creditsAmount) {
-    const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(loadingScreen);
+    const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(document.getElementById('screen-loading'));
     try {
-        const response = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json();
+        const res = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
+        const result = await res.json();
         if (result.success && result.confirmation_url) {
             try { await vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url}); } catch (e) { window.open(result.confirmation_url, '_blank'); }
             showProfile();
@@ -345,11 +370,11 @@ window.handleTopUpClick = function(amount) {
 };
 
 window.showProfile = async function() {
-    showScreen(loadingScreen);
+    showScreen(document.getElementById('screen-loading'));
     try {
-        const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
-        if (!response.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(mainMenuScreen); return; }
-        const data = await response.json();
+        const res = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        if (!res.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(document.getElementById('screen-main-menu')); return; }
+        const data = await res.json();
         
         let subjectsHtml = '';
         if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
@@ -368,6 +393,7 @@ window.showProfile = async function() {
             }
         } else { subjectsHtml = `<p style="color:#777; text-align:center;">Статистика появится после решения заданий!</p>`; }
 
+        const subjectScreen = document.getElementById('screen-subjects');
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
             <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()"><i data-feather="bell" class="icon-sm"></i> Включить уведомления</button>
@@ -383,18 +409,18 @@ window.showProfile = async function() {
                 <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="handleTopUpClick(15)">15 кр. — 150 руб.</button>
                 <button class="button" style="background:#2a5885;" onclick="handleTopUpClick(100)">100 кр. — 700 руб.</button>
             </div>
-            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)"><i data-feather="arrow-left" class="icon-sm"></i> В главное меню</button>
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(document.getElementById('screen-main-menu'))">В меню</button>
         `;
         showScreen(subjectScreen);
-    } catch (e) { showCustomAlert("Не удалось загрузить профиль.", "Ошибка сервера"); showScreen(mainMenuScreen); }
+    } catch (e) { showCustomAlert("Не удалось загрузить профиль.", "Ошибка сервера"); showScreen(document.getElementById('screen-main-menu')); }
 };
 
-window.loadSubjectAnalytics = async function(subjectCode, subjectName) {
-    subjectScreen.innerHTML = `<h2>Анализ: ${subjectName}</h2><div id="an-cont"><div class="spinner"></div></div>`;
+window.loadSubjectAnalytics = async function(c, n) {
+    const subjectScreen = document.getElementById('screen-subjects');
+    subjectScreen.innerHTML = `<h2>Анализ: ${n}</h2><div id="an-cont"><div class="spinner"></div></div>`;
     try {
-        const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${subjectCode}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await res.json(); document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
-        if (window.feather) feather.replace();
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
@@ -405,18 +431,8 @@ window.showHelp = function() {
     } catch (e) {}
 };
 
-// Привязка кликов для делегирования событий (надежнее)
 document.addEventListener('click', function(e) {
     if (e.target.tagName === 'A' && e.target.href) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
-    const menuBtn = e.target.closest('#screen-main-menu .button');
-    if (menuBtn && menuBtn.dataset.examType) openSubjects(menuBtn.dataset.examType);
 });
-
-// === ЗАПУСК ===
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', HARD_START);
-} else {
-    HARD_START();
-}
