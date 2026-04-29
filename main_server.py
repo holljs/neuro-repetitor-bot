@@ -94,7 +94,7 @@ def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     return True
 
 async def send_vk_message(user_id: str, message: str):
-    vk_token = os.getenv("VK_TOKEN")
+    vk_token = os.getenv("VK_REPETITOR_TOKEN")
     if not vk_token: return False
     url = "https://api.vk.com/method/messages.send"
     params = {"user_id": user_id, "message": message, "random_id": random.randint(1, 2147483647), "v": "5.131", "access_token": vk_token}
