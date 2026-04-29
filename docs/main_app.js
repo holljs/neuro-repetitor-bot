@@ -2,16 +2,21 @@ const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace(
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
+const loadingScreen = document.getElementById('screen-loading');
+const mainMenuScreen = document.getElementById('screen-main-menu');
+const subjectScreen = document.getElementById('screen-subjects');
+const taskScreen = document.getElementById('task-screen');
+const quickResultScreen = document.getElementById('quick-result-screen');
+const testFinishScreen = document.getElementById('test-finish-screen');
+const reviewScreen = document.getElementById('review-screen');
+const helpScreen = document.getElementById('screen-help');
+
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 let currentExamType = null; 
-
-// Объявляем переменные, но НЕ ищем их в HTML пока страница не загрузится!
-let loadingScreen, mainMenuScreen, subjectScreen, taskScreen;
-let quickResultScreen, testFinishScreen, reviewScreen, helpScreen;
 
 window.showCustomAlert = function(message, title = "Внимание") {
     document.getElementById('modal-title').textContent = title;
@@ -43,7 +48,7 @@ window.toggleAccordion = function(element) {
         body.style.display = 'none';
         if(icon) icon.setAttribute('data-feather', 'chevron-down');
     }
-    if (window.feather) feather.replace();
+    feather.replace();
 };
 
 const TEST_LENGTH = 15;
@@ -52,23 +57,16 @@ let questionNumber = 1; let score = 0; let mistakes = [];
 let currentReviewIndex = 0; let currentTestMode = "standard";
 
 function saveSession() {
-    if (!currentTask) return;
-    try { 
-        localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
-    } catch(e) {}
+    if (currentTask) sessionStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
 }
 
 function restoreSession() {
-    try {
-        const saved = localStorage.getItem('active_test');
-        if (saved) {
-            const data = JSON.parse(saved);
-            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
-            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-            showTask(); return true;
-        }
-    } catch(e) { 
-        try { localStorage.removeItem('active_test'); } catch(err){}
+    const saved = sessionStorage.getItem('active_test');
+    if (saved) {
+        const data = JSON.parse(saved);
+        currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+        questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+        showTask(); return true;
     }
     return false;
 }
@@ -76,6 +74,20 @@ function restoreSession() {
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { screenElement.style.display = 'block'; if (window.feather) feather.replace(); }
+}
+
+let isAppInitialized = false;
+function finalizeInit() {
+    if (isAppInitialized) return;
+    isAppInitialized = true;
+    if (!restoreSession()) showScreen(mainMenuScreen);
+    try { vkBridge.send('VKWebAppGetUserInfo').then(userData => { if (userData && userData.id) USER_ID = userData.id; }).catch(() => {}); } catch(e) {}
+}
+
+function startApp() {
+    vkBridge.send('VKWebAppInit').then(() => finalizeInit()).catch(() => {});
+    vkBridge.subscribe((e) => { if (e.detail.type === 'VKWebAppUpdateConfig') finalizeInit(); });
+    setTimeout(() => { if (!isAppInitialized) finalizeInit(); }, 1500);
 }
 
 window.openSubjects = function(examType) {
@@ -91,10 +103,8 @@ window.openSubjects = function(examType) {
     subjectScreen.appendChild(backBtn); showScreen(subjectScreen);
 };
 
-// События кнопок повесим через document, чтобы они не зависели от загрузки
-document.addEventListener('click', (e) => { 
-    const btn = e.target.closest('#screen-main-menu .button');
-    if (btn && btn.dataset.examType) openSubjects(btn.dataset.examType); 
+document.querySelectorAll('#screen-main-menu .button').forEach(btn => {
+    btn.addEventListener('click', () => { if (btn.dataset.examType) openSubjects(btn.dataset.examType); });
 });
 
 window.selectTariff = function(code, name) {
@@ -126,10 +136,7 @@ async function getRandomTask() {
     try {
         const res = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         currentTask = await res.json();
-        if (currentTask.done) { 
-            try { localStorage.removeItem('active_test'); } catch(e){} 
-            showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; 
-        }
+        if (currentTask.done) { sessionStorage.removeItem('active_test'); showCustomAlert(currentTask.text, "Ура!"); showScreen(mainMenuScreen); return; }
         showTask();
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(mainMenuScreen); }
 }
@@ -188,7 +195,7 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
+    saveSession(); setTimeout(() => { feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
 }
 
 window.abortTest = function() {
@@ -201,20 +208,14 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { 
-        try { localStorage.removeItem('active_test'); } catch(e){} 
-        document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); 
-    };
+    document.getElementById('btn-yes').onclick = () => { sessionStorage.removeItem('active_test'); document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(mainMenuScreen); };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { 
-        try { localStorage.removeItem('active_test'); } catch(e){} 
-        showFinishScreen(); 
-    }
+    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { sessionStorage.removeItem('active_test'); showFinishScreen(); }
 };
 
 function showFinishScreen() {
@@ -383,39 +384,4 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// ==============================================
-// ФИНАЛЬНЫЙ СТАРТ (Ждем загрузки страницы)
-// ==============================================
-function launchApp() {
-    // 1. Привязываем переменные к экранам только сейчас!
-    loadingScreen = document.getElementById('screen-loading');
-    mainMenuScreen = document.getElementById('screen-main-menu');
-    subjectScreen = document.getElementById('screen-subjects');
-    taskScreen = document.getElementById('task-screen');
-    quickResultScreen = document.getElementById('quick-result-screen');
-    testFinishScreen = document.getElementById('test-finish-screen');
-    reviewScreen = document.getElementById('review-screen');
-    helpScreen = document.getElementById('screen-help');
-
-    // 2. Показываем меню
-    try {
-        if (!restoreSession()) { showScreen(mainMenuScreen); }
-    } catch(e) { showScreen(mainMenuScreen); }
-
-    // 3. Дергаем ВК
-    try {
-        if (window.vkBridge) {
-            vkBridge.send('VKWebAppInit');
-            vkBridge.send('VKWebAppGetUserInfo').then(data => {
-                if (data && data.id) USER_ID = data.id;
-            }).catch(() => {});
-        }
-    } catch(e) {}
-}
-
-// Запускаем только когда браузер нарисовал все элементы HTML
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', launchApp);
-} else {
-    launchApp();
-}
+startApp();
