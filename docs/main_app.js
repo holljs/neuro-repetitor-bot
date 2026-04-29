@@ -60,29 +60,55 @@ function saveSession() {
     if (!currentTask) return;
     try { 
         localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode }));
-    } catch(e) { console.warn("Доступ к памяти закрыт браузером"); }
-}
-
-function restoreSession() {
-    try {
-        const saved = localStorage.getItem('active_test');
-        if (saved) {
-            const data = JSON.parse(saved);
-            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
-            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-            showTask(); return true;
-        }
-    } catch(e) { 
-        console.warn("Не удалось восстановить сессию", e); 
-        try { localStorage.removeItem('active_test'); } catch(err){}
-    }
-    return false;
+    } catch(e) {}
 }
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { screenElement.style.display = 'block'; if (window.feather) feather.replace(); }
 }
+
+// ==============================================
+// ПРЯМОЙ И ЖЕСТКИЙ ЗАПУСК ИНТЕРФЕЙСА
+// ==============================================
+function superSafeStart() {
+    // 1. Принудительно показываем интерфейс, игнорируя всё
+    try {
+        let sessionRestored = false;
+        try {
+            const saved = localStorage.getItem('active_test');
+            if (saved) {
+                const data = JSON.parse(saved);
+                currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+                questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+                showTask(); 
+                sessionRestored = true;
+            }
+        } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
+
+        if (!sessionRestored) {
+            showScreen(mainMenuScreen);
+        }
+    } catch(e) {
+        // Если даже showScreen сломался, жестко меняем стили
+        if (loadingScreen) loadingScreen.style.display = 'none';
+        if (mainMenuScreen) mainMenuScreen.style.display = 'block';
+    }
+
+    // 2. Тихо в фоне общаемся с ВК
+    try {
+        if (window.vkBridge) {
+            vkBridge.send('VKWebAppInit');
+            vkBridge.send('VKWebAppGetUserInfo').then(data => {
+                if (data && data.id) USER_ID = data.id;
+            }).catch(() => {});
+        }
+    } catch(e) {}
+}
+
+// Запускаем немедленно!
+superSafeStart();
+// ==============================================
 
 window.openSubjects = function(examType) {
     currentExamType = examType;
@@ -192,7 +218,7 @@ function handleQuickResult(isCorrect, userAnswer) {
         titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    saveSession(); setTimeout(() => { feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
+    saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(quickResultScreen);
 }
 
 window.abortTest = function() {
@@ -386,24 +412,3 @@ document.addEventListener('click', function(e) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
 });
-
-// ==========================================
-// СТАРТ ПРИЛОЖЕНИЯ
-// ==========================================
-async function launchApp() {
-    // 1. Показываем меню сразу (защита от iframe-ошибок)
-    try {
-        if (!restoreSession()) { showScreen(mainMenuScreen); }
-    } catch(e) { showScreen(mainMenuScreen); }
-
-    // 2. Инициализируем мост ВК
-    try { vkBridge.send('VKWebAppInit'); } catch(e) {}
-
-    // 3. Запрашиваем ID пользователя без блокировки интерфейса
-    try {
-        const data = await vkBridge.send('VKWebAppGetUserInfo');
-        if (data && data.id) USER_ID = data.id;
-    } catch(e) { console.log("VK API не ответил", e); }
-}
-
-launchApp();
