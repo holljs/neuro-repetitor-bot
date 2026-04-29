@@ -1,5 +1,14 @@
 console.log("🚀 [APP] Скрипт main_app.js начал загрузку!");
 
+// 1. СРАЗУ ЖЕ, на первой миллисекунде, стучимся в ВК, чтобы он убрал свою ширму с логотипом!
+try {
+    if (typeof vkBridge !== 'undefined') {
+        vkBridge.send('VKWebAppInit')
+            .then(() => console.log("🚀 [APP] VK Bridge: VKWebAppInit Успех! Ширма должна исчезнуть."))
+            .catch(e => console.error("❌ [APP] Ошибка Init", e));
+    }
+} catch(e) {}
+
 const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?'); 
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
@@ -9,7 +18,7 @@ const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
-console.log("🚀 [APP] USER_ID получен:", USER_ID);
+console.log("🚀 [APP] USER_ID получен из ссылки:", USER_ID);
 
 let currentExamType = null; 
 let currentTask = null; 
@@ -26,70 +35,46 @@ const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 const TEST_LENGTH = 15;
 
 // ==========================================
-// ЖЕСТКИЙ ПОКАЗ ЭКРАНА (БЕЗ УСЛОВИЙ)
+// ЖЕСТКИЙ ПОКАЗ ЭКРАНА НАШЕГО ИНТЕРФЕЙСА
 // ==========================================
 function forceShowMenu() {
-    console.log("🚀 [APP] Попытка принудительно показать меню...");
+    console.log("🚀 [APP] Показываем главное меню...");
     try {
         const loader = document.getElementById('screen-loading');
         const menu = document.getElementById('screen-main-menu');
         
-        if (loader) {
-            loader.style.display = 'none';
-            console.log("🚀 [APP] Лоадер успешно скрыт!");
-        } else {
-            console.error("❌ [APP] ОШИБКА: Элемент screen-loading не найден в HTML!");
-        }
-
+        if (loader) loader.style.display = 'none';
         if (menu) {
-            // Скрываем все остальные экраны для надежности
             document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
             menu.style.display = 'block';
-            console.log("🚀 [APP] Главное меню успешно показано!");
-        } else {
-            console.error("❌ [APP] ОШИБКА: Элемент screen-main-menu не найден в HTML!");
         }
-        
         if (window.feather) feather.replace();
-    } catch(e) {
-        console.error("❌ [APP] Критическая ошибка при показе меню:", e);
-    }
+    } catch(e) {}
 }
 
-// Запускаем показ меню МГНОВЕННО, как только HTML готов
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', forceShowMenu);
 } else {
     forceShowMenu();
 }
-// Таймер-спасатель (на случай если DOMContentLoaded не сработал)
 setTimeout(forceShowMenu, 500);
-setTimeout(forceShowMenu, 1500);
 
 // ==========================================
-// ФОНОВАЯ ИНИЦИАЛИЗАЦИЯ ВК (Не блокирует меню)
+// ФОНОВЫЙ ЗАПРОС ПРОФИЛЯ
 // ==========================================
 setTimeout(() => {
-    console.log("🚀 [APP] Начинаем фоновую инициализацию VK Bridge...");
     try {
         if (typeof vkBridge !== 'undefined') {
-            vkBridge.send('VKWebAppInit')
-                .then(() => console.log("🚀 [APP] VK Bridge: VKWebAppInit Успех"))
-                .catch(e => console.error("❌ [APP] VK Bridge: VKWebAppInit Ошибка", e));
-                
             vkBridge.send('VKWebAppGetUserInfo')
                 .then(data => { 
                     if (data && data.id) {
                         USER_ID = data.id; 
-                        console.log("🚀 [APP] VK Bridge: Профиль получен", USER_ID);
+                        console.log("🚀 [APP] Профиль загружен", USER_ID);
                     }
-                })
-                .catch(e => console.error("❌ [APP] VK Bridge: Ошибка профиля", e));
-        } else {
-            console.warn("⚠️ [APP] vkBridge не определен в глобальной области!");
+                }).catch(() => {});
         }
-    } catch(e) { console.error("❌ [APP] Ошибка при вызове ВК", e); }
-}, 1000);
+    } catch(e) {}
+}, 500);
 
 
 // ==========================================
@@ -149,7 +134,6 @@ function restoreSession() {
     return false;
 }
 
-// Пытаемся восстановить сессию чуть позже
 setTimeout(() => { try { restoreSession(); } catch(e){} }, 800);
 
 
@@ -319,8 +303,8 @@ window.getAIAnalysis = async function() {
     btn.style.display = 'none'; textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует...</i></div>`;
     const mData = mistakes.map(m => ({ task_text: String(m.task.task_text || m.task.text || ""), user_answer: String(m.user_answer || ""), correct_answer: String(m.task.answer || "") }));
     try {
-        const res = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
+        const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
     } catch (error) { textBox.innerHTML = `<div style="color:#d32f2f;">Ошибка соединения с сервером.</div>`; btn.style.display = 'block'; }
 };
 
@@ -343,8 +327,8 @@ window.runAIExplanation = async function(simplify = false) {
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
-        const res = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
+        const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
 };
 
@@ -355,8 +339,8 @@ window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGr
 window.buyPackage = async function(creditsAmount) {
     const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(document.getElementById('screen-loading'));
     try {
-        const res = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
-        const result = await res.json();
+        const response = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json();
         if (result.success && result.confirmation_url) {
             try { await vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url}); } catch (e) { window.open(result.confirmation_url, '_blank'); }
             showProfile();
@@ -372,9 +356,9 @@ window.handleTopUpClick = function(amount) {
 window.showProfile = async function() {
     showScreen(document.getElementById('screen-loading'));
     try {
-        const res = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
-        if (!res.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(document.getElementById('screen-main-menu')); return; }
-        const data = await res.json();
+        const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        if (!response.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(document.getElementById('screen-main-menu')); return; }
+        const data = await response.json();
         
         let subjectsHtml = '';
         if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
@@ -421,6 +405,7 @@ window.loadSubjectAnalytics = async function(c, n) {
     try {
         const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await res.json(); document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
+        if (window.feather) feather.replace();
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
