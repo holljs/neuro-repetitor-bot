@@ -421,3 +421,5 @@ document.addEventListener('click', function(e) {
         e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
     }
 });
+
+startApp();
