@@ -442,7 +442,7 @@ async def vk_bot_webhook(data: VKCallback):
     # 1. Подтверждение сервера для настроек ВК
     if data.type == "confirmation":
         # ВАЖНО: Замени на реальный код из настроек Callback API твоей группы!
-        return HTMLResponse(content="ТВОЙ_КОД_ПОДТВЕРЖДЕНИЯ", status_code=200)
+        return HTMLResponse(content="11b52449", status_code=200)
 
     # 2. Обработка входящего сообщения
     if data.type == "message_new":
