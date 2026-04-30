@@ -34,17 +34,23 @@ Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKA
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 
+# ==========================================
+# ЗАЩИТА ОТ DOS (Rate Limiting) - ИСПРАВЛЕНИЕ БАГА 8
+# ==========================================
 request_times = {}
+rate_lock = asyncio.Lock()
 
-def check_rate_limit(user_id: str, limit: int = 4, window: int = 5) -> bool:
-    now = time.time()
-    times = request_times.get(user_id, [])
-    times = [t for t in times if now - t < window]
-    if len(times) >= limit:
-        return False
-    times.append(now)
-    request_times[user_id] = times
-    return True
+async def check_rate_limit(user_id: str, limit: int = 3, window: int = 5) -> bool:
+    async with rate_lock:
+        now = time.time()
+        times = request_times.get(user_id, [])
+        times = [t for t in times if now - t < window]
+        if len(times) >= limit:
+            return False
+        times.append(now)
+        request_times[user_id] = times
+        return True
+# ==========================================
 
 TOPIC_NAMES = {
     "topic_01": "🏠 Практические задачи", "topic_02": "🔢 Вычисления и дроби",
@@ -178,11 +184,9 @@ def save_user_progress(user_id: str, task_id: str):
 def check_student_answer(student_ans, correct_ans):
     if not student_ans or not correct_ans: return False
     
-    # ИСПРАВЛЕНИЕ БАГА 1 (Приводим все тире к одному минусу)
     student_ans = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', str(student_ans)).upper().strip()
     correct_ans = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', str(correct_ans)).upper().strip()
     
-    # ИСПРАВЛЕНИЕ БАГА 10 (Читерство с текстом)
     if len(student_ans) > len(correct_ans) + 15:
         return False
 
@@ -302,7 +306,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
 
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
-    if not check_rate_limit(str(request.student_id), limit=5, window=5):
+    if not await check_rate_limit(str(request.student_id), limit=5, window=5):
         return {"is_correct": False, "error": "Слишком частые запросы."}
 
     if not verify_vk_auth(str(request.student_id), request.vk_params):
@@ -340,12 +344,20 @@ async def check_answer_smart(request: CheckRequest):
 
 @app.post("/review/")
 async def explain_mistake(request: ReviewRequest):
-    if not verify_vk_auth(str(request.student_id), request.vk_params): return {"explanation": "⚠️ Действие заблокировано."}
+    if not await check_rate_limit(str(request.student_id), limit=3, window=5):
+        return {"explanation": "⚠️ Слишком много запросов. Подождите пару секунд."}
+        
+    if not verify_vk_auth(str(request.student_id), request.vk_params): 
+        return {"explanation": "⚠️ Действие заблокировано."}
         
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
-    prompt = (f"Объясни задачу максимально просто и понятно, 'на пальцах'. Текст: {content}. Ответ ученика: {request.user_answer}. Объясни почему неверно." 
+    
+    # ИСПРАВЛЕНИЕ БАГА 1 И 10: Просим писать просто, кратко и без LaTeX
+    base_prompt = "Отвечай ПРОСТЫМ текстом. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), сложный Markdown и формулы. Пиши так, чтобы текст легко читался в обычном мессенджере. Будь кратким (не более 3-4 предложений)."
+    
+    prompt = (f"{base_prompt} Объясни задачу 'на пальцах'. Текст: {content}. Ответ ученика: {request.user_answer}. Почему неверно?" 
               if request.simplify else 
-              f"Напиши подробное пошаговое объяснение. Текст: {content}. Ответ ученика: {request.user_answer}.")
+              f"{base_prompt} Напиши короткое пошаговое объяснение. Текст: {content}. Ответ ученика: {request.user_answer}.")
     
     input_data = {"prompt": prompt}
     if request.image_url: input_data["image"] = request.image_url
@@ -366,7 +378,7 @@ async def analyze_gaps(request: AnalyzeGapsRequest):
     if request.student_id and not verify_vk_auth(request.student_id, request.vk_params): return {"analysis": "Ошибка безопасности"}
     if not request.mistakes: return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
 
-    prompt = "Проанализируй ошибки ученика и выяви пробелы.\nВот задачи:\n\n"
+    prompt = "Проанализируй ошибки ученика и выяви пробелы. Отвечай кратко, ПРОСТЫМ ТЕКСТОМ без использования LaTeX и математических спецсимволов.\nВот задачи:\n\n"
     for i, m in enumerate(request.mistakes): prompt += f"{i+1}. Задача: {m.task_text[:300]}\n"
 
     try:
@@ -397,8 +409,10 @@ async def get_profile_base(student_id: str, vk_params: str = None):
 
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
-    if not check_rate_limit(student_id): raise HTTPException(status_code=429, detail="Too Many Requests.")
-    if not verify_vk_auth(student_id, vk_params): raise HTTPException(status_code=403, detail="Ошибка авторизации")
+    if not await check_rate_limit(student_id, limit=2, window=5): 
+        raise HTTPException(status_code=429, detail="Too Many Requests.")
+    if not verify_vk_auth(student_id, vk_params): 
+        raise HTTPException(status_code=403, detail="Ошибка авторизации")
         
     user_records = []
     if Path("user_stats.log").exists():
@@ -419,7 +433,7 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
 
     prompt = f"Вот история ответов ученика по предмету. Темы:\n\n"
     for t, history in topic_history.items(): prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(history[-20:])}\n"
-    prompt += "\nНапиши короткий мотивирующий отчет (2-3 абзаца). Укажи сильные и слабые темы."
+    prompt += "\nНапиши короткий мотивирующий отчет (2-3 абзаца). Укажи сильные и слабые темы. ОТВЕЧАЙ ПРОСТЫМ ТЕКСТОМ, БЕЗ LATEX И ЗНАКОВ ДОЛЛАРА."
 
     try:
         output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
@@ -448,7 +462,6 @@ async def vk_bot_webhook(data: VKCallback):
         text = msg.get("text", "").strip()
         sender_id = msg.get("from_id")
 
-        # Проверяем, является ли это командой начисления (ID сумма)
         parts = text.split()
         is_admin_command = (
             sender_id in ADMIN_VK_IDS and 
@@ -464,11 +477,8 @@ async def vk_bot_webhook(data: VKCallback):
             init_vk_user(target_id)
             new_bal = change_vk_credits(target_id, amount)
             
-            # Отвечаем ТОЛЬКО на админ-команду
             await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
             return HTMLResponse(content="ok", status_code=200)
-        
-        # Если это просто сообщение от пользователя или что-то другое — МОЛЧИМ
         else:
             return HTMLResponse(content="ok", status_code=200)
 
