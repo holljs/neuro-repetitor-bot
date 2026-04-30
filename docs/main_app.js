@@ -1,10 +1,9 @@
 console.log("🚀 [APP] Скрипт main_app.js начал загрузку!");
 
-// 1. СРАЗУ ЖЕ, на первой миллисекунде, стучимся в ВК, чтобы он убрал свою ширму с логотипом!
 try {
     if (typeof vkBridge !== 'undefined') {
         vkBridge.send('VKWebAppInit')
-            .then(() => console.log("🚀 [APP] VK Bridge: VKWebAppInit Успех! Ширма должна исчезнуть."))
+            .then(() => console.log("🚀 [APP] VK Bridge: VKWebAppInit Успех!"))
             .catch(e => console.error("❌ [APP] Ошибка Init", e));
     }
 } catch(e) {}
@@ -18,7 +17,7 @@ const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
-console.log("🚀 [APP] USER_ID получен из ссылки:", USER_ID);
+console.log("🚀 [APP] USER_ID получен:", USER_ID);
 
 let currentExamType = null; 
 let currentTask = null; 
@@ -33,49 +32,6 @@ const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian":
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 const TEST_LENGTH = 15;
-
-// ==========================================
-// ЖЕСТКИЙ ПОКАЗ ЭКРАНА НАШЕГО ИНТЕРФЕЙСА
-// ==========================================
-function forceShowMenu() {
-    console.log("🚀 [APP] Показываем главное меню...");
-    try {
-        const loader = document.getElementById('screen-loading');
-        const menu = document.getElementById('screen-main-menu');
-        
-        if (loader) loader.style.display = 'none';
-        if (menu) {
-            document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
-            menu.style.display = 'block';
-        }
-        if (window.feather) feather.replace();
-    } catch(e) {}
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', forceShowMenu);
-} else {
-    forceShowMenu();
-}
-setTimeout(forceShowMenu, 500);
-
-// ==========================================
-// ФОНОВЫЙ ЗАПРОС ПРОФИЛЯ
-// ==========================================
-setTimeout(() => {
-    try {
-        if (typeof vkBridge !== 'undefined') {
-            vkBridge.send('VKWebAppGetUserInfo')
-                .then(data => { 
-                    if (data && data.id) {
-                        USER_ID = data.id; 
-                        console.log("🚀 [APP] Профиль загружен", USER_ID);
-                    }
-                }).catch(() => {});
-        }
-    } catch(e) {}
-}, 500);
-
 
 // ==========================================
 // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И ПАМЯТЬ
@@ -121,20 +77,52 @@ function saveSession() {
     try { localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode })); } catch(e) {}
 }
 
-function restoreSession() {
+// ==========================================
+// ИДЕАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ (БАГИ 5 и 6)
+// ==========================================
+function initApp() {
+    console.log("🚀 [APP] Инициализация интерфейса...");
+    
+    // Фоновый запрос профиля
+    try {
+        if (typeof vkBridge !== 'undefined') {
+            vkBridge.send('VKWebAppGetUserInfo').then(data => { 
+                if (data && data.id) { USER_ID = data.id; }
+            }).catch(() => {});
+        }
+    } catch(e) {}
+
+    // Пытаемся восстановить сессию
     try {
         const saved = localStorage.getItem('active_test');
         if (saved) {
             const data = JSON.parse(saved);
-            currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
-            questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-            showTask(); return true;
+            if (data && data.currentTask && data.currentTask.id) {
+                currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
+                questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
+                showTask(); 
+                console.log("🚀 [APP] Прогресс восстановлен!");
+                return;
+            }
         }
     } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
-    return false;
+    
+    // Если сессии нет - показываем меню
+    showScreen(document.getElementById('screen-main-menu'));
 }
 
-setTimeout(() => { try { restoreSession(); } catch(e){} }, 800);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
+
+// СПАСИТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ АЙФОНОВ: сохраняем перед сворачиванием
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+        saveSession();
+    }
+});
 
 
 // ==========================================
@@ -348,9 +336,15 @@ window.buyPackage = async function(creditsAmount) {
     } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
 };
 
+// ==========================================
+// ЖЕСТКАЯ БЛОКИРОВКА ПЛАТЕЖЕЙ НА МОБИЛКАХ (БАГ 9)
+// ==========================================
 window.handleTopUpClick = function(amount) {
-    if (vkPlatform.includes('iphone') || vkPlatform.includes('ipad') || vkPlatform.includes('android')) showCustomAlert("Пополнение доступно только с ПК!", "Ограничение");
-    else buyPackage(amount);
+    if (vkPlatform !== 'desktop_web' && vkPlatform !== 'mobile_web') {
+        showCustomAlert("По правилам Apple и Google оплата внутри мобильного приложения запрещена.<br><br>Пожалуйста, <b>откройте ВК с компьютера</b> (или через браузер телефона), чтобы пополнить баланс!", "Ограничение");
+    } else {
+        buyPackage(amount);
+    }
 };
 
 window.showProfile = async function() {
