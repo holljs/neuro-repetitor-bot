@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script>var vConsole = new window.VConsole();</script>
     
     <script>
     // РАДАР ОШИБОК: Выведет любую скрытую проблему прямо на экран
@@ -73,7 +71,7 @@
                 </ul>
             </div>
 
-            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(mainMenuScreen)">В главное меню</button>
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(document.getElementById('screen-main-menu'))">В главное меню</button>
         </div>
         
         <div id="screen-subjects" class="screen">
