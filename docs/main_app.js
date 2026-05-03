@@ -316,7 +316,17 @@ window.runAIExplanation = async function(simplify = false) {
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json(); explanationBox.innerHTML = `<div style="text-align:left;">${result.explanation}</div>`;
+        const result = await response.json(); 
+        
+        // Превращаем Markdown (звездочки) в красивый HTML текст
+        let finalHtml = result.explanation;
+        if (window.marked) { finalHtml = marked.parse(finalHtml); }
+        
+        explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>`;
+        
+        // На всякий случай рендерим формулы, если ИИ их все-таки прислал
+        setTimeout(() => { renderMath('review-explanation'); }, 100);
+        
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
 };
 
