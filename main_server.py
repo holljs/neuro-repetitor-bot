@@ -284,7 +284,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     if not db: raise HTTPException(status_code=500, detail="База пуста")
     solved_ids = get_user_progress(student_id)
     
-    available_tasks = [t for t in db if str(t.get("id")) not in solved_ids and str(t.get("answer", "")).lower() not in ["", "undefined", "none"]]
+    available_tasks = [t for t in db if str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "-", "--", "---", "null"]]
     
     if not available_tasks:
         return {"id": "done", "topic": "done", "text": "🎉 Все задачи решены!", "image": "", "done": True}
