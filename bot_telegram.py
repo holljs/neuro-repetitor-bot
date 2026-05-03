@@ -44,7 +44,18 @@ INTERNAL_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-
 Configuration.account_id = os.getenv("YOOKASSA_SHOP_ID")
 Configuration.secret_key = os.getenv("YOOKASSA_SECRET_KEY")
 
-bot = Bot(token=API_TOKEN, default=DefaultBotProperties(parse_mode="HTML"))
+# 1. Сначала создаем "туннель" (сессию) через Германию
+from aiogram.client.session.aiohttp import AiohttpSession
+
+proxy_url = "http://T0khVpu1Dy53:PX1@196.19.11.81:8000"
+session = AiohttpSession(proxy=proxy_url)
+
+# 2. Теперь создаем бота, который будет ходить через этот туннель
+bot = Bot(
+    token=API_TOKEN, 
+    session=session, 
+    default=DefaultBotProperties(parse_mode="HTML")
+)
 dp = Dispatcher()
 
 class TaskStates(StatesGroup):
