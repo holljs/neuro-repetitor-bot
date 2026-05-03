@@ -44,13 +44,13 @@ INTERNAL_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-
 Configuration.account_id = os.getenv("YOOKASSA_SHOP_ID")
 Configuration.secret_key = os.getenv("YOOKASSA_SECRET_KEY")
 
-# 1. Сначала создаем "туннель" (сессию) через Германию
+# --- НАСТРОЙКА ПРОКСИ (Туннель через Германию) ---
 from aiogram.client.session.aiohttp import AiohttpSession
 
 proxy_url = "http://T0khVpu1Dy53:PX1@196.19.11.81:8000"
 session = AiohttpSession(proxy=proxy_url)
 
-# 2. Теперь создаем бота, который будет ходить через этот туннель
+# Инициализация бота через прокси
 bot = Bot(
     token=API_TOKEN, 
     session=session, 
@@ -113,7 +113,6 @@ async def deduct_credits(user_id: int, amount: int):
     cursor.execute("UPDATE users SET credits = credits - ? WHERE user_id = ?", (amount, user_id))
     conn.commit()
     conn.close()
-    return True
 
 async def add_credits(user_id: int, amount: int):
     conn = sqlite3.connect("users.db")
@@ -354,7 +353,7 @@ async def user_stats(message: types.Message):
         return
     await message.answer(f"📊 <b>Ваша статистика</b>:\n- Баланс кредитов: <b>{user[2]}</b> кр.\n- Последняя активность: {user[3]}")
 
-# --- ОПЛАТА ССЫЛКАМИ (ПРИВЫЧНАЯ ДЛЯ ТЕБЯ ЛОГИКА) ---
+# --- ОПЛАТА ССЫЛКАМИ ---
 @dp.message(F.text == "💳 Пополнить баланс")
 async def cmd_buy_menu(message: types.Message):
     builder = InlineKeyboardBuilder()
