@@ -26,7 +26,8 @@ from yookassa import Configuration, Payment
 
 load_dotenv()
 
-REQUIRED_ENV_VARS = ["BOT_TOKEN", "SERVER_URL", "SERVER_PORT", "YOOKASSA_SHOP_ID", "YOOKASSA_SECRET_KEY"]
+# ИСПРАВЛЕНО: Теперь ищем YUKASSA, как в твоем .env файле
+REQUIRED_ENV_VARS = ["BOT_TOKEN", "SERVER_URL", "SERVER_PORT", "YUKASSA_SHOP_ID", "YUKASSA_SECRET_KEY"]
 missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
 if missing_vars:
     raise RuntimeError(f"❌ Не хватает переменных в .env: {', '.join(missing_vars)}")
@@ -40,9 +41,9 @@ SERVER_PORT = os.getenv("SERVER_PORT", "8080")
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
 INTERNAL_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 
-# Настройка ЮКассы напрямую в боте
-Configuration.account_id = os.getenv("YOOKASSA_SHOP_ID")
-Configuration.secret_key = os.getenv("YOOKASSA_SECRET_KEY")
+# Настройка ЮКассы напрямую в боте (ИСПРАВЛЕНО)
+Configuration.account_id = os.getenv("YUKASSA_SHOP_ID")
+Configuration.secret_key = os.getenv("YUKASSA_SECRET_KEY")
 
 # --- НАСТРОЙКА ПРОКСИ (Туннель через Германию) ---
 from aiogram.client.session.aiohttp import AiohttpSession
@@ -206,7 +207,7 @@ async def choose_tariff_menu(callback: CallbackQuery, state: FSMContext):
 async def start_test(callback: CallbackQuery, state: FSMContext):
     test_mode = callback.data.replace("tariff_", "")
     cost = 4 if test_mode == "pro" else 3
-    success = await deduct_credits(callback.fromuser.id, cost)
+    success = await deduct_credits(callback.from_user.id, cost)
     if not success:
         await callback.answer("❌ На балансе недостаточно кредитов! Пополните баланс.", show_alert=True)
         return
