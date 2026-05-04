@@ -206,7 +206,7 @@ async def choose_tariff_menu(callback: CallbackQuery, state: FSMContext):
 async def start_test(callback: CallbackQuery, state: FSMContext):
     test_mode = callback.data.replace("tariff_", "")
     cost = 4 if test_mode == "pro" else 3
-    success = await deduct_credits(callback.from_user.id, cost)
+    success = await deduct_credits(callback.fromuser.id, cost)
     if not success:
         await callback.answer("❌ На балансе недостаточно кредитов! Пополните баланс.", show_alert=True)
         return
