@@ -14,7 +14,6 @@ const TEST_API_URL = "https://neuro-master.online/repetitor-api";
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-// Строго определяем, можно ли показывать платежи (только веб-версии)
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
@@ -110,7 +109,6 @@ function initApp() {
         }
     } catch(e) {}
 
-    // Жестко скрываем все кнопки пополнения в HTML-меню для мобилок, если они там есть
     if (!canPay) {
         document.querySelectorAll('button').forEach(btn => {
             if (btn.innerText.toLowerCase().includes('пополнить')) {
@@ -508,7 +506,6 @@ window.showProfile = async function() {
             }
         } else { subjectsHtml = `<p style="color:#777; text-align:center;">Статистика появится после решения заданий!</p>`; }
 
-        // Блок пополнения отрисовывается ТОЛЬКО если это веб-версия (canPay === true)
         let topUpBlock = '';
         if (canPay) {
             topUpBlock = `
@@ -566,22 +563,25 @@ window.showHelp = function() {
             const hp = document.getElementById('help-payment-block'); 
             if (hp) hp.style.display = canPay ? 'block' : 'none'; 
             
-            if (!canPay) {
-               const mobileContact = document.getElementById('mobile-contact-block');
-               if (!mobileContact) {
-                   const newBlock = document.createElement('div');
-                   newBlock.id = 'mobile-contact-block';
-                   newBlock.innerHTML = `<br><p>Если возникли вопросы, обращайтесь в нашу группу ВК: <a href="https://vk.com/neiro_repetitor" target="_blank">https://vk.com/neiro_repetitor</a></p>`;
-                   helpScreen.appendChild(newBlock);
-               }
+            const mobileContact = document.getElementById('mobile-contact-block');
+            if (mobileContact) {
+                // Если телефон - показываем кнопку связи с группой. Если ПК - прячем (там оплата).
+                mobileContact.style.display = canPay ? 'none' : 'block';
             }
             
             showScreen(helpScreen);
         } catch (e) {}
     } else {
+        // Красивая кнопка во всплывающем окне, если верстка вдруг не прогрузилась
         let paymentText = canPay 
             ? "<i>Пополнить баланс кредитов можно в разделе «Мой профиль».</i>" 
-            : "<i>Если возникли вопросы, обращайтесь в нашу группу ВК:<br><a href='https://vk.com/neiro_repetitor' target='_blank'>https://vk.com/neiro_repetitor</a></i>";
+            : `<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e1e3e6;">
+                <h3 style="margin-top:0; color:#4a76a8; display:flex; align-items:center;"><i data-feather="message-circle" class="icon-sm"></i> Остались вопросы?</h3>
+                <p style="margin-top:5px; margin-bottom: 12px; color: #555;">Смело обращайтесь в нашу официальную группу ВК, мы всегда рады помочь!</p>
+                <a href="https://vk.com/neiro_repetitor" target="_blank" style="display: flex; justify-content: center; align-items: center; background: #0077FF; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 15px; box-shadow: 0 2px 6px rgba(0, 119, 255, 0.3);">
+                    Написать в группу ВК
+                </a>
+               </div>`;
 
         showCustomAlert(`
             <div style="text-align:left; font-size: 14px; line-height: 1.5;">
@@ -593,11 +593,15 @@ window.showHelp = function() {
                 ${paymentText}
             </div>
         `, "Помощь");
+        setTimeout(() => { if(window.feather) feather.replace(); }, 50);
     }
 };
 
+// ФИКС: Улучшенная функция перехвата кликов (ищет ссылку, даже если кликнули по иконке внутри)
 document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' && e.target.href) {
-        e.preventDefault(); vkBridge.send("VKWebAppOpenUrl", {"url": e.target.href}).catch(() => { window.open(e.target.href, '_blank'); });
+    let link = e.target.closest('a');
+    if (link && link.href) {
+        e.preventDefault(); 
+        vkBridge.send("VKWebAppOpenUrl", {"url": link.href}).catch(() => { window.open(link.href, '_blank'); });
     }
 });
