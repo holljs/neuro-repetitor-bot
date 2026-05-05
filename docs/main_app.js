@@ -27,8 +27,6 @@ let score = 0;
 let mistakes = []; 
 let currentReviewIndex = 0; 
 let currentTestMode = "standard";
-
-// ФИКС БАГА 1: Защита от многократного клика
 let isProcessing = false; 
 
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
@@ -75,9 +73,14 @@ window.toggleAccordion = function(element) {
     if (window.feather) feather.replace();
 };
 
-function saveSession() {
+// ФИКС БАГА 5 И 7: Сохраняем имя активного экрана и доп. данные
+function saveSession(screenName = 'task-screen', extra = {}) {
     if (!currentTask) return;
-    try { localStorage.setItem('active_test', JSON.stringify({ currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode })); } catch(e) {}
+    try { 
+        localStorage.setItem('active_test', JSON.stringify({ 
+            currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode, screenName, extra, currentReviewIndex 
+        })); 
+    } catch(e) {}
 }
 
 // ==========================================
@@ -94,6 +97,7 @@ function initApp() {
         }
     } catch(e) {}
 
+    // ФИКС БАГА 5 И 7: Восстанавливаем именно тот экран, где был пользователь
     try {
         const saved = localStorage.getItem('active_test');
         if (saved) {
@@ -101,7 +105,17 @@ function initApp() {
             if (data && data.currentTask && data.currentTask.id) {
                 currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
                 questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
-                showTask(); 
+                if (data.currentReviewIndex !== undefined) currentReviewIndex = data.currentReviewIndex;
+                
+                if (data.screenName === 'quick-result-screen') {
+                    handleQuickResult(data.extra.isCorrect, data.extra.userAnswer, true);
+                } else if (data.screenName === 'test-finish-screen') {
+                    showFinishScreen(true);
+                } else if (data.screenName === 'review-screen') {
+                    loadReviewForCurrentMistake(true);
+                } else {
+                    showTask(); 
+                }
                 console.log("🚀 [APP] Прогресс восстановлен!");
                 return;
             }
@@ -118,8 +132,9 @@ if (document.readyState === 'loading') {
 }
 
 document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") {
-        saveSession();
+    // В iOS сохраняем только если экран не сохранен жестко через функции
+    if (document.visibilityState === "hidden" && document.getElementById('task-screen').style.display === 'block') {
+        saveSession('task-screen');
     }
 });
 
@@ -141,16 +156,19 @@ window.openSubjects = function(examType) {
     showScreen(subjectScreen);
 };
 
-document.querySelectorAll('#screen-main-menu .button').forEach(button => {
-    button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
-});
-
 window.selectTariff = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
+    // ФИКС БАГА 6: Убрали вопросик, написали тексты прямо под кнопками
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
-        <div style="margin-bottom: 10px;"><button class="button" style="background-color: #4a76a8;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кредита)</button></div>
-        <div style="margin-bottom: 20px;"><button class="button" style="background-color: #2a5885;" onclick="startTest('${subjectCode}', 'pro')"><i data-feather="zap" class="icon-sm"></i> Профи (4 кредита)</button></div>
+        <div style="margin-bottom: 15px;">
+            <button class="button" style="background-color: #4a76a8; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кр.)</button>
+            <div style="font-size: 12px; color: #666; line-height: 1.2;">Обычные разборы ошибок от ИИ.</div>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <button class="button" style="background-color: #2a5885; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'pro')"><i data-feather="zap" class="icon-sm"></i> Профи (4 кр.)</button>
+            <div style="font-size: 12px; color: #666; line-height: 1.2;">Максимально подробные разборы ошибок «на пальцах».</div>
+        </div>
         <button class="button secondary" onclick="openSubjects(currentExamType)"><i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам</button>
     `;
     if (window.feather) feather.replace(); 
@@ -183,7 +201,7 @@ async function getRandomTask() {
 }
 
 function showTask() {
-    saveSession();
+    saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
@@ -235,20 +253,32 @@ window.submitAnswer = async function() {
     } catch (error) { showCustomAlert("Ошибка при проверке ответа.", "Ошибка"); showScreen(document.getElementById('task-screen')); }
 };
 
-function handleQuickResult(isCorrect, userAnswer) {
+// ФИКС БАГА 5: Передаем isRestored, чтобы не начислять баллы повторно при F5
+function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
     const titleEl = document.getElementById('quick-result-title');
-    if (isCorrect || normalizeText(userAnswer) === normalizeText(currentTask.answer)) {
-        titleEl.innerHTML = '<div style="color:#4CAF50;"><i data-feather="check-circle"></i> Верно!</div>'; score++;
+    let actuallyCorrect = isCorrect || normalizeText(userAnswer) === normalizeText(currentTask.answer);
+
+    if (!isRestored) {
+        if (actuallyCorrect) {
+            score++;
+        } else {
+            mistakes.push({ task: currentTask, user_answer: userAnswer });
+        }
+    }
+
+    if (actuallyCorrect) {
+        titleEl.innerHTML = '<div style="color:#4CAF50;"><i data-feather="check-circle"></i> Верно!</div>';
     } else {
         let expectedAns = currentTask.answer || "---";
-        // ФИКС БАГА 7: Вывод формул LaTeX в красивом виде, если там есть слеши, но нет долларов
         if (expectedAns.includes('\\') && !expectedAns.includes('$')) {
             expectedAns = `$${expectedAns}$`;
         }
         titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${expectedAns}</b></small>`;
-        mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
-    saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(document.getElementById('quick-result-screen'));
+    
+    if (!isRestored) saveSession('quick-result-screen', { isCorrect: actuallyCorrect, userAnswer }); 
+    setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); 
+    showScreen(document.getElementById('quick-result-screen'));
 }
 
 window.abortTest = function() {
@@ -262,7 +292,7 @@ window.abortTest = function() {
     modal.querySelector('div').appendChild(btnGroup);
 
     document.getElementById('btn-yes').onclick = () => { 
-        currentTask = null; // ФИКС БАГА 2: Обнуляем текущую задачу, чтобы она не восстанавливалась после F5
+        currentTask = null; 
         try { localStorage.removeItem('active_test'); } catch(e){} 
         document.getElementById('temp-confirm-btns').remove(); 
         originalBtn.style.display = 'inline-block'; 
@@ -274,7 +304,6 @@ window.abortTest = function() {
 };
 
 window.nextTask = function() {
-    // ФИКС БАГА 1: Защита от спама кнопкой "Следующий вопрос"
     if (isProcessing) return; 
     isProcessing = true;
     
@@ -282,13 +311,12 @@ window.nextTask = function() {
     if (questionNumber <= TEST_LENGTH) {
         getRandomTask().finally(() => { isProcessing = false; });
     } else { 
-        try { localStorage.removeItem('active_test'); } catch(e){} 
         showFinishScreen(); 
         isProcessing = false;
     }
 };
 
-function showFinishScreen() {
+function showFinishScreen(isRestored = false) {
     document.getElementById('final-score').textContent = score; document.getElementById('final-mistakes').textContent = mistakes.length;
     const reviewBtnBlock = document.getElementById('review-buttons');
     const oldStats = document.getElementById('topic-stats');
@@ -304,6 +332,8 @@ function showFinishScreen() {
             </div>
         `);
     } else { reviewBtnBlock.style.display = 'none'; }
+    
+    if (!isRestored) saveSession('test-finish-screen');
     showScreen(document.getElementById('test-finish-screen'));
 }
 
@@ -319,7 +349,7 @@ window.getAIAnalysis = async function() {
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
 
-function loadReviewForCurrentMistake() {
+function loadReviewForCurrentMistake(isRestored = false) {
     const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
     document.getElementById('review-answers-block').innerHTML = `<p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p><p style="display:flex; align-items:center; color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>`;
     const reviewImgContainer = document.getElementById('review-image-container');
@@ -328,6 +358,8 @@ function loadReviewForCurrentMistake() {
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     document.getElementById('review-explanation').innerHTML = `<button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button>`;
+    
+    if (!isRestored) saveSession('review-screen');
     showScreen(document.getElementById('review-screen'));
 }
 
@@ -348,8 +380,15 @@ window.runAIExplanation = async function(simplify = false) {
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
 };
 
-window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else showScreen(document.getElementById('screen-main-menu')); };
-window.finishSession = () => showScreen(document.getElementById('screen-main-menu'));
+window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else { window.finishSession(); } };
+
+// ФИКС БАГА 7: Очистка сессии происходит ТОЛЬКО при нажатии на возврат в меню
+window.finishSession = () => { 
+    currentTask = null;
+    try { localStorage.removeItem('active_test'); } catch(e){}
+    showScreen(document.getElementById('screen-main-menu')); 
+};
+
 window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Успешно!", "Отлично")).catch(() => showCustomAlert("Отменено", "Отмена")); };
 
 window.buyPackage = async function(creditsAmount) {
