@@ -6,6 +6,15 @@
     <title>Нейро-репетитор</title>
     <link rel="stylesheet" href="style.css?v=780">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- ФИКС ДЛЯ WINDOWS: Загружаем VK Bridge с быстрого сервера и отправляем Init МОМЕНТАЛЬНО -->
+    <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.14.1/dist/browser.min.js"></script>
+    <script>
+        try {
+            vkBridge.send('VKWebAppInit');
+        } catch(e) {}
+    </script>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -57,7 +66,17 @@
                     <p style="margin-top:5px;">Чтобы пополнить баланс кредитов, открой это приложение с компьютера!</p>
                 </div>
 
-                <h3 style="color:#4a76a8; display:flex; align-items:center;"><i data-feather="cpu" class="icon-sm"></i> Наши супер-фишки</h3>
+                <!-- НАЧАЛО: КРАСИВЫЙ БЛОК КОНТАКТОВ ВК -->
+                <div id="mobile-contact-block" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e1e3e6;">
+                    <h3 style="margin-top:0; color:#4a76a8; display:flex; align-items:center;"><i data-feather="message-circle" class="icon-sm"></i> Остались вопросы?</h3>
+                    <p style="margin-top:5px; margin-bottom: 12px; color: #555;">Смело обращайтесь в нашу официальную группу ВК, мы всегда рады помочь!</p>
+                    <a href="https://vk.com/neiro_repetitor" target="_blank" style="display: flex; justify-content: center; align-items: center; background: #0077FF; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 15px; box-shadow: 0 2px 6px rgba(0, 119, 255, 0.3);">
+                        <i data-feather="users" style="margin-right: 8px; width: 18px; height: 18px;"></i> Написать в группу ВК
+                    </a>
+                </div>
+                <!-- КОНЕЦ: КРАСИВЫЙ БЛОК КОНТАКТОВ ВК -->
+
+                <h3 style="color:#4a76a8; display:flex; align-items:center; margin-top:20px;"><i data-feather="cpu" class="icon-sm"></i> Наши супер-фишки</h3>
                 <ul style="padding-left: 20px; margin-top:5px;">
                     <li><b>Подробный разбор ошибок:</b> Нейросеть не просто выдаёт правильный ответ, а объясняет правило максимально просто, «на пальцах».</li>
                     <li><b>ИИ-Аналитика:</b> Система запоминает каждый твой шаг и в личном кабинете строит точный отчёт о твоих пробелах по темам.</li>
@@ -147,8 +166,8 @@
 
     </div>
 
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-    <script src="main_app.js?v=7777"></script>
+    <!-- Библиотека ВК теперь грузится в <head>, здесь оставляем только наш скрипт -->
+    <script src="main_app.js?v=7778"></script>
     
     <script>
         feather.replace();
