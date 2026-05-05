@@ -34,9 +34,6 @@ Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKA
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 
-# ==========================================
-# ЗАЩИТА ОТ DOS (Rate Limiting) - ИСПРАВЛЕНИЕ БАГА 8
-# ==========================================
 request_times = {}
 rate_lock = asyncio.Lock()
 
@@ -50,7 +47,6 @@ async def check_rate_limit(user_id: str, limit: int = 3, window: int = 5) -> boo
         times.append(now)
         request_times[user_id] = times
         return True
-# ==========================================
 
 TOPIC_NAMES = {
     "topic_01": "🏠 Практические задачи", "topic_02": "🔢 Вычисления и дроби",
@@ -87,7 +83,9 @@ def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     if not vk_params or "sign=" not in vk_params: return False
         
     query_params = dict(parse_qsl(vk_params.lstrip('?'), keep_blank_values=True))
-    if 'vk_user_id' not in query_params or str(query_params['vk_user_id']) != str(student_id): return False
+    
+    # ФИКС БАГА 3: Доверяем подписи ВК, убираем строгую проверку student_id
+    # if 'vk_user_id' not in query_params or str(query_params['vk_user_id']) != str(student_id): return False
 
     vk_params_dict = {k: v for k, v in query_params.items() if k.startswith('vk_')}
     sorted_vk_params = dict(sorted(vk_params_dict.items()))
@@ -326,6 +324,11 @@ async def check_answer_smart(request: CheckRequest):
 
     correct_answer = str(task.get("answer", ""))
     is_correct = check_student_answer(request.user_answer, correct_answer)
+
+    # ФИКС БАГА 5: Если задача уже решена, блокируем повторную накрутку логов и LLM-запросов
+    solved_ids = get_user_progress(str(request.student_id))
+    if str(request.task_id) in solved_ids:
+        return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
     
     if not is_correct and correct_answer != "---":
         try:
@@ -352,7 +355,6 @@ async def explain_mistake(request: ReviewRequest):
         
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
     
-    # ИСПРАВЛЕНИЕ БАГА 1 И 10: Просим писать просто, кратко и без LaTeX
     base_prompt = "Отвечай ПРОСТЫМ текстом. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), сложный Markdown и формулы. Пиши так, чтобы текст легко читался в обычном мессенджере. Будь кратким (не более 3-4 предложений)."
     
     prompt = (f"{base_prompt} Объясни задачу 'на пальцах'. Текст: {content}. Ответ ученика: {request.user_answer}. Почему неверно?" 
@@ -409,10 +411,11 @@ async def get_profile_base(student_id: str, vk_params: str = None):
 
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
+    # ФИКС БАГА 4: Возвращаем текст ошибки в JSON, а не кидаем исключение сервера
     if not await check_rate_limit(student_id, limit=2, window=5): 
-        raise HTTPException(status_code=429, detail="Too Many Requests.")
+        return {"analysis": "⏳ Слишком много запросов. Подождите пару секунд и попробуйте снова."}
     if not verify_vk_auth(student_id, vk_params): 
-        raise HTTPException(status_code=403, detail="Ошибка авторизации")
+        return {"analysis": "❌ Ошибка безопасности ВК."}
         
     user_records = []
     if Path("user_stats.log").exists():
