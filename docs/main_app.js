@@ -14,7 +14,6 @@ const TEST_API_URL = "https://neuro-master.online/repetitor-api";
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
-const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 console.log("🚀 [APP] USER_ID получен:", USER_ID);
@@ -36,17 +35,25 @@ const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "rus
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 const TEST_LENGTH = 15;
 
+// ФИКС БАГА 3: Изменен текст лоадера на универсальный
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { 
+        if (screenElement.id === 'screen-loading') {
+            const loadText = screenElement.querySelector('p');
+            if (loadText) loadText.innerText = "Подождите...";
+        }
         screenElement.style.display = 'block'; 
         if (window.feather) feather.replace(); 
     }
 }
 
+// ФИКС БАГА 10: Блокировка скролла при открытой модалке
 window.showCustomAlert = function(message, title = "Внимание") {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
+    document.body.style.overflow = 'hidden'; 
+    
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').innerHTML = message;
     
@@ -58,7 +65,10 @@ window.showCustomAlert = function(message, title = "Внимание") {
     modal.style.display = 'flex';
 };
 
-window.closeModal = function() { document.getElementById('custom-modal').style.display = 'none'; };
+window.closeModal = function() { 
+    document.getElementById('custom-modal').style.display = 'none'; 
+    document.body.style.overflow = ''; 
+};
 
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
@@ -118,7 +128,6 @@ function initApp() {
                 } else {
                     showTask(); 
                 }
-                console.log("🚀 [APP] Прогресс восстановлен!");
                 return;
             }
         }
@@ -153,7 +162,6 @@ window.openSubjects = function(examType) {
     showScreen(subjectScreen);
 };
 
-// ВОТ ОНИ! СТРОЧКИ, КОТОРЫЕ Я СЛУЧАЙНО УДАЛИЛА :)
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
 });
@@ -220,13 +228,14 @@ function showTask() {
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
     
+    // ФИКС БАГА 4: Замена input на textarea для длинных ответов
     const answerBlock = document.querySelector('.answer-block');
     if(answerBlock) {
         answerBlock.innerHTML = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                 <p class="hint" style="margin: 0; font-size:12px; color:#888;">* Формулы, слова. Цифры пишите по возрастанию.</p>
             </div>
-            <input type="text" id="user-answer" placeholder="Введите ответ...">
+            <textarea id="user-answer" rows="2" style="width:100%; resize:vertical; font-family:inherit; padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px;" placeholder="Введите ответ..."></textarea>
         `;
     }
 
@@ -291,6 +300,7 @@ window.abortTest = function() {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
     
+    document.body.style.overflow = 'hidden'; 
     document.getElementById('modal-title').textContent = "Прервать тест?";
     document.getElementById('modal-message').innerHTML = "Вы уверены? <br><b style='color:#ff5252;'>Прогресс будет утерян, кредиты не возвращаются.</b>";
     
@@ -369,6 +379,14 @@ window.getAIAnalysis = async function() {
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
 
+// ФИКС БАГА 5: Навигация назад по ошибкам
+window.prevReview = function() {
+    if (currentReviewIndex > 0) {
+        currentReviewIndex--;
+        loadReviewForCurrentMistake();
+    }
+};
+
 function loadReviewForCurrentMistake(isRestored = false) {
     const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
     
@@ -385,7 +403,25 @@ function loadReviewForCurrentMistake(isRestored = false) {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
-    document.getElementById('review-explanation').innerHTML = `<button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button>`;
+    
+    // ФИКС БАГА 5: Рендерим кнопки "Назад" и "Вперед"
+    let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
+    
+    navButtons += `<div style="display:flex; justify-content:space-between; gap:10px;">`;
+    if (currentReviewIndex > 0) {
+        navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
+    } else {
+        navButtons += `<div style="flex:1;"></div>`;
+    }
+    
+    if (currentReviewIndex < mistakes.length - 1) {
+        navButtons += `<button class="button" style="flex:1;" onclick="nextReview()">Далее ➡️</button>`;
+    } else {
+        navButtons += `<button class="button" style="flex:1;" onclick="finishSession()">Завершить 🎉</button>`;
+    }
+    navButtons += `</div>`;
+    
+    document.getElementById('review-explanation').innerHTML = navButtons;
     
     if (!isRestored) saveSession('review-screen');
     showScreen(document.getElementById('review-screen'));
@@ -393,7 +429,17 @@ function loadReviewForCurrentMistake(isRestored = false) {
 
 window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
-    explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>`;
+    
+    // Оставляем кнопки навигации видимыми
+    let navButtons = `<div style="display:flex; justify-content:space-between; gap:10px; margin-top:15px;">`;
+    if (currentReviewIndex > 0) navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
+    else navButtons += `<div style="flex:1;"></div>`;
+    if (currentReviewIndex < mistakes.length - 1) navButtons += `<button class="button" style="flex:1;" onclick="nextReview()">Далее ➡️</button>`;
+    else navButtons += `<button class="button" style="flex:1;" onclick="finishSession()">Завершить 🎉</button>`;
+    navButtons += `</div>`;
+
+    explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
+    
     let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
@@ -402,10 +448,9 @@ window.runAIExplanation = async function(simplify = false) {
         let finalHtml = result.explanation;
         if (window.marked) { finalHtml = marked.parse(finalHtml); }
         
-        explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>`;
+        explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>` + navButtons;
         setTimeout(() => { renderMath('review-explanation'); }, 100);
-        
-    } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
+    } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>` + navButtons; }
 };
 
 window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else { window.finishSession(); } };
@@ -416,7 +461,12 @@ window.finishSession = () => {
     showScreen(document.getElementById('screen-main-menu')); 
 };
 
-window.allowVkMessages = function() { vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452}).then(() => showCustomAlert("Успешно!", "Отлично")).catch(() => showCustomAlert("Отменено", "Отмена")); };
+// ФИКС БАГА 8: Убран catch, чтобы не было спама "Отмена" при закрытии шторки
+window.allowVkMessages = function() { 
+    vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
+        .then(() => showCustomAlert("Успешно!", "Отлично"))
+        .catch(() => {}); 
+};
 
 window.buyPackage = async function(creditsAmount) {
     const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(document.getElementById('screen-loading'));
@@ -430,8 +480,11 @@ window.buyPackage = async function(creditsAmount) {
     } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
 };
 
+// ФИКС БАГА 9: Надежная блокировка мобилок через Regex UserAgent и VK Bridge
 window.handleTopUpClick = function(amount) {
-    if (vkPlatform !== 'desktop_web' && vkPlatform !== 'mobile_web') {
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || vkPlatform.includes('mobile');
+    
+    if (isMobileDevice) {
         showCustomAlert("По правилам Apple и Google оплата внутри мобильного приложения запрещена.<br><br>Пожалуйста, <b>откройте ВК с компьютера</b> (или через браузер телефона), чтобы пополнить баланс!", "Ограничение");
     } else {
         buyPackage(amount);
