@@ -28,6 +28,9 @@ let mistakes = [];
 let currentReviewIndex = 0; 
 let currentTestMode = "standard";
 
+// ФИКС БАГА 1: Защита от многократного клика
+let isProcessing = false; 
+
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
@@ -78,12 +81,11 @@ function saveSession() {
 }
 
 // ==========================================
-// ИДЕАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ (БАГИ 5 и 6)
+// ИДЕАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ
 // ==========================================
 function initApp() {
     console.log("🚀 [APP] Инициализация интерфейса...");
     
-    // Фоновый запрос профиля
     try {
         if (typeof vkBridge !== 'undefined') {
             vkBridge.send('VKWebAppGetUserInfo').then(data => { 
@@ -92,7 +94,6 @@ function initApp() {
         }
     } catch(e) {}
 
-    // Пытаемся восстановить сессию
     try {
         const saved = localStorage.getItem('active_test');
         if (saved) {
@@ -107,7 +108,6 @@ function initApp() {
         }
     } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
     
-    // Если сессии нет - показываем меню
     showScreen(document.getElementById('screen-main-menu'));
 }
 
@@ -117,7 +117,6 @@ if (document.readyState === 'loading') {
     initApp();
 }
 
-// СПАСИТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ АЙФОНОВ: сохраняем перед сворачиванием
 document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
         saveSession();
@@ -241,7 +240,12 @@ function handleQuickResult(isCorrect, userAnswer) {
     if (isCorrect || normalizeText(userAnswer) === normalizeText(currentTask.answer)) {
         titleEl.innerHTML = '<div style="color:#4CAF50;"><i data-feather="check-circle"></i> Верно!</div>'; score++;
     } else {
-        titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${currentTask.answer || "---"}</b></small>`;
+        let expectedAns = currentTask.answer || "---";
+        // ФИКС БАГА 7: Вывод формул LaTeX в красивом виде, если там есть слеши, но нет долларов
+        if (expectedAns.includes('\\') && !expectedAns.includes('$')) {
+            expectedAns = `$${expectedAns}$`;
+        }
+        titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${expectedAns}</b></small>`;
         mistakes.push({ task: currentTask, user_answer: userAnswer });
     }
     saveSession(); setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100); showScreen(document.getElementById('quick-result-screen'));
@@ -257,14 +261,31 @@ window.abortTest = function() {
     btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
     modal.querySelector('div').appendChild(btnGroup);
 
-    document.getElementById('btn-yes').onclick = () => { try { localStorage.removeItem('active_test'); } catch(e){} document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); showScreen(document.getElementById('screen-main-menu')); };
+    document.getElementById('btn-yes').onclick = () => { 
+        currentTask = null; // ФИКС БАГА 2: Обнуляем текущую задачу, чтобы она не восстанавливалась после F5
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        document.getElementById('temp-confirm-btns').remove(); 
+        originalBtn.style.display = 'inline-block'; 
+        closeModal(); 
+        showScreen(document.getElementById('screen-main-menu')); 
+    };
     document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
+    // ФИКС БАГА 1: Защита от спама кнопкой "Следующий вопрос"
+    if (isProcessing) return; 
+    isProcessing = true;
+    
     questionNumber++;
-    if (questionNumber <= TEST_LENGTH) getRandomTask(); else { try { localStorage.removeItem('active_test'); } catch(e){} showFinishScreen(); }
+    if (questionNumber <= TEST_LENGTH) {
+        getRandomTask().finally(() => { isProcessing = false; });
+    } else { 
+        try { localStorage.removeItem('active_test'); } catch(e){} 
+        showFinishScreen(); 
+        isProcessing = false;
+    }
 };
 
 function showFinishScreen() {
@@ -318,13 +339,10 @@ window.runAIExplanation = async function(simplify = false) {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
         const result = await response.json(); 
         
-        // Превращаем Markdown (звездочки) в красивый HTML текст
         let finalHtml = result.explanation;
         if (window.marked) { finalHtml = marked.parse(finalHtml); }
         
         explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>`;
-        
-        // На всякий случай рендерим формулы, если ИИ их все-таки прислал
         setTimeout(() => { renderMath('review-explanation'); }, 100);
         
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>`; }
@@ -346,9 +364,6 @@ window.buyPackage = async function(creditsAmount) {
     } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
 };
 
-// ==========================================
-// ЖЕСТКАЯ БЛОКИРОВКА ПЛАТЕЖЕЙ НА МОБИЛКАХ (БАГ 9)
-// ==========================================
 window.handleTopUpClick = function(amount) {
     if (vkPlatform !== 'desktop_web' && vkPlatform !== 'mobile_web') {
         showCustomAlert("По правилам Apple и Google оплата внутри мобильного приложения запрещена.<br><br>Пожалуйста, <b>откройте ВК с компьютера</b> (или через браузер телефона), чтобы пополнить баланс!", "Ограничение");
