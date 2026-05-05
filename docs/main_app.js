@@ -29,14 +29,14 @@ let currentReviewIndex = 0;
 let currentTestMode = "standard";
 let isProcessing = false; 
 
+// ФИКС БАГА 3: Объект для кэширования отчетов ИИ
+let analysisCache = {};
+
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 const TEST_LENGTH = 15;
 
-// ==========================================
-// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И ПАМЯТЬ
-// ==========================================
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { 
@@ -46,9 +46,18 @@ function showScreen(screenElement) {
 }
 
 window.showCustomAlert = function(message, title = "Внимание") {
+    const modal = document.getElementById('custom-modal');
+    if (!modal) return;
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').innerHTML = message;
-    document.getElementById('custom-modal').style.display = 'flex';
+    
+    // Очищаем временные кнопки, если они остались от abortTest
+    const tempBtns = document.getElementById('temp-confirm-btns');
+    if (tempBtns) tempBtns.remove();
+    const originalBtn = modal.querySelector('button');
+    if (originalBtn) originalBtn.style.display = 'inline-block';
+
+    modal.style.display = 'flex';
 };
 
 window.closeModal = function() { document.getElementById('custom-modal').style.display = 'none'; };
@@ -73,7 +82,6 @@ window.toggleAccordion = function(element) {
     if (window.feather) feather.replace();
 };
 
-// ФИКС БАГА 5 И 7: Сохраняем имя активного экрана и доп. данные
 function saveSession(screenName = 'task-screen', extra = {}) {
     if (!currentTask) return;
     try { 
@@ -83,9 +91,6 @@ function saveSession(screenName = 'task-screen', extra = {}) {
     } catch(e) {}
 }
 
-// ==========================================
-// ИДЕАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ
-// ==========================================
 function initApp() {
     console.log("🚀 [APP] Инициализация интерфейса...");
     
@@ -97,7 +102,6 @@ function initApp() {
         }
     } catch(e) {}
 
-    // ФИКС БАГА 5 И 7: Восстанавливаем именно тот экран, где был пользователь
     try {
         const saved = localStorage.getItem('active_test');
         if (saved) {
@@ -132,16 +136,11 @@ if (document.readyState === 'loading') {
 }
 
 document.addEventListener("visibilitychange", () => {
-    // В iOS сохраняем только если экран не сохранен жестко через функции
     if (document.visibilityState === "hidden" && document.getElementById('task-screen').style.display === 'block') {
         saveSession('task-screen');
     }
 });
 
-
-// ==========================================
-// ЛОГИКА ЭКРАНОВ И ТЕСТОВ
-// ==========================================
 window.openSubjects = function(examType) {
     currentExamType = examType;
     const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
@@ -158,7 +157,6 @@ window.openSubjects = function(examType) {
 
 window.selectTariff = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
-    // ФИКС БАГА 6: Убрали вопросик, написали тексты прямо под кнопками
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <div style="margin-bottom: 15px;">
@@ -232,15 +230,22 @@ function showTask() {
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
 }
 
+// ФИКС БАГА 1: Очищаем ответ от мусора (эмодзи и лишних пробелов)
 function normalizeText(str) {
     if (!str) return "";
-    return str.toString().replace(/[\u2012\u2013\u2014\u2212]/g, '-').replace(',', '.').replace(/\s+/g, '').trim().toLowerCase();
+    let cleaned = str.toString()
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
+        .replace(',', '.')
+        .replace(/[^\w\sа-яА-ЯёЁ\.,\-]/gi, '') // удаляем эмодзи и спецсимволы, оставляем буквы, цифры, точки, минусы
+        .replace(/\s+/g, '')
+        .trim().toLowerCase();
+    return cleaned;
 }
 
 window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
     let userAnswer = normalizeText(rawInput);
-    if (!userAnswer) { showCustomAlert("Пожалуйста, введите ответ!", "Внимание"); return; }
+    if (!userAnswer) { showCustomAlert("Пожалуйста, введите корректный ответ (без эмодзи)!", "Внимание"); return; }
     showScreen(document.getElementById('screen-loading'));
     try {
         const response = await fetch(`${TEST_API_URL}/check/`, {
@@ -253,7 +258,6 @@ window.submitAnswer = async function() {
     } catch (error) { showCustomAlert("Ошибка при проверке ответа.", "Ошибка"); showScreen(document.getElementById('task-screen')); }
 };
 
-// ФИКС БАГА 5: Передаем isRestored, чтобы не начислять баллы повторно при F5
 function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
     const titleEl = document.getElementById('quick-result-title');
     let actuallyCorrect = isCorrect || normalizeText(userAnswer) === normalizeText(currentTask.answer);
@@ -281,25 +285,40 @@ function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
     showScreen(document.getElementById('quick-result-screen'));
 }
 
+// ФИКС БАГА 5: Переписан abortTest для максимальной надежности DOM
 window.abortTest = function() {
+    const modal = document.getElementById('custom-modal');
+    if (!modal) return;
+    
     document.getElementById('modal-title').textContent = "Прервать тест?";
     document.getElementById('modal-message').innerHTML = "Вы уверены? <br><b style='color:#ff5252;'>Прогресс будет утерян, кредиты не возвращаются.</b>";
-    const modal = document.getElementById('custom-modal');
-    const originalBtn = modal.querySelector('button'); originalBtn.style.display = 'none';
+    
+    const originalBtn = modal.querySelector('button');
+    if (originalBtn) originalBtn.style.display = 'none';
 
-    const btnGroup = document.createElement('div'); btnGroup.id = 'temp-confirm-btns';
-    btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
-    modal.querySelector('div').appendChild(btnGroup);
+    let btnGroup = document.getElementById('temp-confirm-btns');
+    if (!btnGroup) {
+        btnGroup = document.createElement('div'); 
+        btnGroup.id = 'temp-confirm-btns';
+        btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
+        modal.querySelector('div').appendChild(btnGroup);
+    }
 
     document.getElementById('btn-yes').onclick = () => { 
         currentTask = null; 
         try { localStorage.removeItem('active_test'); } catch(e){} 
-        document.getElementById('temp-confirm-btns').remove(); 
-        originalBtn.style.display = 'inline-block'; 
+        btnGroup.remove(); 
+        if (originalBtn) originalBtn.style.display = 'inline-block'; 
         closeModal(); 
         showScreen(document.getElementById('screen-main-menu')); 
     };
-    document.getElementById('btn-no').onclick = () => { document.getElementById('temp-confirm-btns').remove(); originalBtn.style.display = 'inline-block'; closeModal(); };
+    
+    document.getElementById('btn-no').onclick = () => { 
+        btnGroup.remove(); 
+        if (originalBtn) originalBtn.style.display = 'inline-block'; 
+        closeModal(); 
+    };
+    
     modal.style.display = 'flex';
 };
 
@@ -351,7 +370,16 @@ window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMi
 
 function loadReviewForCurrentMistake(isRestored = false) {
     const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
-    document.getElementById('review-answers-block').innerHTML = `<p style="display:flex; align-items:center; color:#d32f2f; font-weight:500;"><i data-feather="x-circle" class="icon-sm"></i> Твой: ${mistake.user_answer}</p><p style="display:flex; align-items:center; color:#388e3c; font-weight:500;"><i data-feather="check-circle" class="icon-sm"></i> Правильный: ${mistake.task.answer}</p>`;
+    
+    // ФИКС БАГА 8: word-break для длинных ответов без пробелов
+    document.getElementById('review-answers-block').innerHTML = `
+        <div style="display:flex; align-items:flex-start; color:#d32f2f; font-weight:500; word-break: break-word; margin-bottom: 5px;">
+            <i data-feather="x-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Твой: ${mistake.user_answer}</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; color:#388e3c; font-weight:500; word-break: break-word;">
+            <i data-feather="check-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Правильный: ${mistake.task.answer}</span>
+        </div>`;
+        
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
@@ -382,7 +410,6 @@ window.runAIExplanation = async function(simplify = false) {
 
 window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else { window.finishSession(); } };
 
-// ФИКС БАГА 7: Очистка сессии происходит ТОЛЬКО при нажатии на возврат в меню
 window.finishSession = () => { 
     currentTask = null;
     try { localStorage.removeItem('active_test'); } catch(e){}
@@ -460,18 +487,37 @@ window.showProfile = async function() {
 window.loadSubjectAnalytics = async function(c, n) {
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `<h2>Анализ: ${n}</h2><div id="an-cont"><div class="spinner"></div></div>`;
+    
+    // ФИКС БАГА 3: Кэширование запросов ИИ
+    if (analysisCache[c]) {
+        document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${analysisCache[c]}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
+        if (window.feather) feather.replace();
+        return;
+    }
+    
     try {
         const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
-        const data = await res.json(); document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
+        const data = await res.json(); 
+        
+        analysisCache[c] = data.analysis; // сохраняем в кэш
+        
+        document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
         if (window.feather) feather.replace();
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
+// ФИКС БАГА 4: Работающая кнопка помощи
 window.showHelp = function() {
-    try {
-        const hp = document.getElementById('help-payment-block'); if (hp) hp.style.display = canPay ? 'block' : 'none'; 
-        const hS = document.getElementById('screen-help'); if (hS) showScreen(hS);
-    } catch (e) {}
+    showCustomAlert(`
+        <div style="text-align:left; font-size: 14px; line-height: 1.5;">
+            <b>Как пользоваться Нейро-Репетитором?</b><br><br>
+            1️⃣ Выберите нужный предмет из списка.<br>
+            2️⃣ Определитесь с тарифом («Стандарт» или подробный «Профи»).<br>
+            3️⃣ Решайте задачи. За каждый верный ответ вы получаете баллы в профиль.<br>
+            4️⃣ В конце теста ИИ составит отчет о ваших слабых местах и разберет ошибки.<br><br>
+            <i>Пополнить баланс кредитов всегда можно в разделе «Мой профиль».</i>
+        </div>
+    `, "Помощь");
 };
 
 document.addEventListener('click', function(e) {
