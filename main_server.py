@@ -186,7 +186,13 @@ def check_student_answer(student_ans, correct_ans):
         return False
 
     if correct_ans.isdigit():
-        return re.sub(r'\D', '', student_ans) == correct_ans
+        num_student = re.sub(r'\D', '', student_ans)
+        if num_student == correct_ans: 
+            return True
+        # ФИКС БАГА 6: Позволяем писать цифры в любом порядке (например 53 вместо 35)
+        if len(num_student) == len(correct_ans) and sorted(num_student) == sorted(correct_ans):
+            return True
+        return False
     elif correct_ans.replace('.', '').replace(',', '').replace('-', '').isdigit():
         return student_ans.replace(" ", "").replace(",", ".") == correct_ans.replace(" ", "").replace(",", ".")
     else:
@@ -223,7 +229,6 @@ async def create_payment(request: BuyRequest):
     if not verify_vk_auth(request.student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
 
-    # ФИКС БАГА 1: Читаем реальный id приложения ВК, чтобы формировать ссылку возврата
     vk_app_id = "51800000"
     if request.vk_params:
         query_params = dict(parse_qsl(request.vk_params.lstrip('?'), keep_blank_values=True))
@@ -329,7 +334,6 @@ async def check_answer_smart(request: CheckRequest):
     correct_answer = str(task.get("answer", ""))
     is_correct = check_student_answer(request.user_answer, correct_answer)
 
-    # ФИКС БАГА 5: Пресекаем накрутку логов и LLM-запросов через DevTools
     solved_ids = get_user_progress(str(request.student_id))
     if str(request.task_id) in solved_ids:
         return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
