@@ -29,7 +29,6 @@ let currentReviewIndex = 0;
 let currentTestMode = "standard";
 let isProcessing = false; 
 
-// ФИКС БАГА 3: Объект для кэширования отчетов ИИ
 let analysisCache = {};
 
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
@@ -51,7 +50,6 @@ window.showCustomAlert = function(message, title = "Внимание") {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').innerHTML = message;
     
-    // Очищаем временные кнопки, если они остались от abortTest
     const tempBtns = document.getElementById('temp-confirm-btns');
     if (tempBtns) tempBtns.remove();
     const originalBtn = modal.querySelector('button');
@@ -155,6 +153,11 @@ window.openSubjects = function(examType) {
     showScreen(subjectScreen);
 };
 
+// ВОТ ОНИ! СТРОЧКИ, КОТОРЫЕ Я СЛУЧАЙНО УДАЛИЛА :)
+document.querySelectorAll('#screen-main-menu .button').forEach(button => {
+    button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
+});
+
 window.selectTariff = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `
@@ -230,13 +233,12 @@ function showTask() {
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
 }
 
-// ФИКС БАГА 1: Очищаем ответ от мусора (эмодзи и лишних пробелов)
 function normalizeText(str) {
     if (!str) return "";
     let cleaned = str.toString()
         .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
         .replace(',', '.')
-        .replace(/[^\w\sа-яА-ЯёЁ\.,\-]/gi, '') // удаляем эмодзи и спецсимволы, оставляем буквы, цифры, точки, минусы
+        .replace(/[^\w\sа-яА-ЯёЁ\.,\-]/gi, '') 
         .replace(/\s+/g, '')
         .trim().toLowerCase();
     return cleaned;
@@ -285,7 +287,6 @@ function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
     showScreen(document.getElementById('quick-result-screen'));
 }
 
-// ФИКС БАГА 5: Переписан abortTest для максимальной надежности DOM
 window.abortTest = function() {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
@@ -371,7 +372,6 @@ window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMi
 function loadReviewForCurrentMistake(isRestored = false) {
     const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
     
-    // ФИКС БАГА 8: word-break для длинных ответов без пробелов
     document.getElementById('review-answers-block').innerHTML = `
         <div style="display:flex; align-items:flex-start; color:#d32f2f; font-weight:500; word-break: break-word; margin-bottom: 5px;">
             <i data-feather="x-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Твой: ${mistake.user_answer}</span>
@@ -488,7 +488,6 @@ window.loadSubjectAnalytics = async function(c, n) {
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `<h2>Анализ: ${n}</h2><div id="an-cont"><div class="spinner"></div></div>`;
     
-    // ФИКС БАГА 3: Кэширование запросов ИИ
     if (analysisCache[c]) {
         document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${analysisCache[c]}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
         if (window.feather) feather.replace();
@@ -499,14 +498,13 @@ window.loadSubjectAnalytics = async function(c, n) {
         const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await res.json(); 
         
-        analysisCache[c] = data.analysis; // сохраняем в кэш
+        analysisCache[c] = data.analysis; 
         
         document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${data.analysis}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
         if (window.feather) feather.replace();
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
-// ФИКС БАГА 4: Работающая кнопка помощи
 window.showHelp = function() {
     showCustomAlert(`
         <div style="text-align:left; font-size: 14px; line-height: 1.5;">
