@@ -189,14 +189,14 @@ def check_student_answer(student_ans, correct_ans):
         num_student = re.sub(r'\D', '', student_ans)
         if num_student == correct_ans: 
             return True
-        # ФИКС БАГА 6: Позволяем писать цифры в любом порядке (например 53 вместо 35)
         if len(num_student) == len(correct_ans) and sorted(num_student) == sorted(correct_ans):
             return True
         return False
     elif correct_ans.replace('.', '').replace(',', '').replace('-', '').isdigit():
         return student_ans.replace(" ", "").replace(",", ".") == correct_ans.replace(" ", "").replace(",", ".")
     else:
-        return re.sub(r'[\s\-\.,;:]', '', student_ans) == re.sub(r'[\s\-\.,;:]', '', correct_ans)
+        # ФИКС БАГА 7: Вырезаем знак умножения `*`
+        return re.sub(r'[\s\-\.,;:*]', '', student_ans) == re.sub(r'[\s\-\.,;:*]', '', correct_ans)
 
 class CheckRequest(BaseModel):
     user_answer: str
