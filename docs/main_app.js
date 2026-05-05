@@ -559,16 +559,28 @@ window.loadSubjectAnalytics = async function(c, n) {
 };
 
 window.showHelp = function() {
-    showCustomAlert(`
-        <div style="text-align:left; font-size: 14px; line-height: 1.5;">
-            <b>Как пользоваться Нейро-Репетитором?</b><br><br>
-            1️⃣ Выберите нужный предмет из списка.<br>
-            2️⃣ Определитесь с тарифом («Стандарт» или подробный «Профи»).<br>
-            3️⃣ Решайте задачи. За каждый верный ответ вы получаете баллы в профиль.<br>
-            4️⃣ В конце теста ИИ составит отчет о ваших слабых местах и разберет ошибки.<br><br>
-            <i>Пополнить баланс кредитов всегда можно в разделе «Мой профиль».</i>
-        </div>
-    `, "Помощь");
+    const helpScreen = document.getElementById('screen-help');
+    
+    if (helpScreen) {
+        // Если большой экран помощи есть в твоем HTML — показываем его (твой старый вариант)
+        try {
+            const hp = document.getElementById('help-payment-block'); 
+            if (hp) hp.style.display = canPay ? 'block' : 'none'; 
+            showScreen(helpScreen);
+        } catch (e) {}
+    } else {
+        // Если экрана почему-то нет (защита от багов тестировщиков), показываем всплывающее окно
+        showCustomAlert(`
+            <div style="text-align:left; font-size: 14px; line-height: 1.5;">
+                <b>Как пользоваться Нейро-Репетитором?</b><br><br>
+                1️⃣ Выберите нужный предмет из списка.<br>
+                2️⃣ Определитесь с тарифом («Стандарт» или подробный «Профи»).<br>
+                3️⃣ Решайте задачи. За каждый верный ответ вы получаете баллы в профиль.<br>
+                4️⃣ В конце теста ИИ составит отчет о ваших слабых местах и разберет ошибки.<br><br>
+                <i>Пополнить баланс кредитов всегда можно в разделе «Мой профиль».</i>
+            </div>
+        `, "Помощь");
+    }
 };
 
 document.addEventListener('click', function(e) {
