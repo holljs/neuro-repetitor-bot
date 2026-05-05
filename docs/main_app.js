@@ -14,6 +14,8 @@ const TEST_API_URL = "https://neuro-master.online/repetitor-api";
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
+// Строго определяем, можно ли показывать платежи (только веб-версии)
+const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
 
 let USER_ID = urlParams.get('vk_user_id');
 console.log("🚀 [APP] USER_ID получен:", USER_ID);
@@ -35,7 +37,6 @@ const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "rus
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
 const TEST_LENGTH = 15;
 
-// ФИКС БАГА 3: Изменен текст лоадера на универсальный
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
     if(screenElement) { 
@@ -48,7 +49,6 @@ function showScreen(screenElement) {
     }
 }
 
-// ФИКС БАГА 10: Блокировка скролла при открытой модалке
 window.showCustomAlert = function(message, title = "Внимание") {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
@@ -109,6 +109,15 @@ function initApp() {
             }).catch(() => {});
         }
     } catch(e) {}
+
+    // Жестко скрываем все кнопки пополнения в HTML-меню для мобилок, если они там есть
+    if (!canPay) {
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.innerText.toLowerCase().includes('пополнить')) {
+                btn.style.display = 'none';
+            }
+        });
+    }
 
     try {
         const saved = localStorage.getItem('active_test');
@@ -228,7 +237,6 @@ function showTask() {
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
     
-    // ФИКС БАГА 4: Замена input на textarea для длинных ответов
     const answerBlock = document.querySelector('.answer-block');
     if(answerBlock) {
         answerBlock.innerHTML = `
@@ -379,7 +387,6 @@ window.getAIAnalysis = async function() {
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
 
-// ФИКС БАГА 5: Навигация назад по ошибкам
 window.prevReview = function() {
     if (currentReviewIndex > 0) {
         currentReviewIndex--;
@@ -404,7 +411,6 @@ function loadReviewForCurrentMistake(isRestored = false) {
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
-    // ФИКС БАГА 5: Рендерим кнопки "Назад" и "Вперед"
     let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
     
     navButtons += `<div style="display:flex; justify-content:space-between; gap:10px;">`;
@@ -430,7 +436,6 @@ function loadReviewForCurrentMistake(isRestored = false) {
 window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
     
-    // Оставляем кнопки навигации видимыми
     let navButtons = `<div style="display:flex; justify-content:space-between; gap:10px; margin-top:15px;">`;
     if (currentReviewIndex > 0) navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
     else navButtons += `<div style="flex:1;"></div>`;
@@ -461,7 +466,6 @@ window.finishSession = () => {
     showScreen(document.getElementById('screen-main-menu')); 
 };
 
-// ФИКС БАГА 8: Убран catch, чтобы не было спама "Отмена" при закрытии шторки
 window.allowVkMessages = function() { 
     vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
         .then(() => showCustomAlert("Успешно!", "Отлично"))
@@ -478,17 +482,6 @@ window.buyPackage = async function(creditsAmount) {
             showProfile();
         } else { showCustomAlert("Ошибка платежа", "Ошибка"); showProfile(); }
     } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
-};
-
-// ФИКС БАГА 9: Надежная блокировка мобилок через Regex UserAgent и VK Bridge
-window.handleTopUpClick = function(amount) {
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || vkPlatform.includes('mobile');
-    
-    if (isMobileDevice) {
-        showCustomAlert("По правилам Apple и Google оплата внутри мобильного приложения запрещена.<br><br>Пожалуйста, <b>откройте ВК с компьютера</b> (или через браузер телефона), чтобы пополнить баланс!", "Ограничение");
-    } else {
-        buyPackage(amount);
-    }
 };
 
 window.showProfile = async function() {
@@ -515,6 +508,17 @@ window.showProfile = async function() {
             }
         } else { subjectsHtml = `<p style="color:#777; text-align:center;">Статистика появится после решения заданий!</p>`; }
 
+        // Блок пополнения отрисовывается ТОЛЬКО если это веб-версия (canPay === true)
+        let topUpBlock = '';
+        if (canPay) {
+            topUpBlock = `
+            <div style="background:#fff; padding:15px; border-radius:10px; margin-top:20px; border: 1px solid #e1e3e6;">
+                <h3 style="margin-top:0; text-align:center;">Пополнить баланс</h3>
+                <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="buyPackage(15)">15 кр. — 150 руб.</button>
+                <button class="button" style="background:#2a5885;" onclick="buyPackage(100)">100 кр. — 700 руб.</button>
+            </div>`;
+        }
+
         const subjectScreen = document.getElementById('screen-subjects');
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
@@ -526,11 +530,7 @@ window.showProfile = async function() {
             </div>
             <h3 style="text-align:left; margin-bottom:10px; font-size: 16px;">Твои предметы:</h3>
             ${subjectsHtml}
-            <div style="background:#fff; padding:15px; border-radius:10px; margin-top:20px; border: 1px solid #e1e3e6;">
-                <h3 style="margin-top:0; text-align:center;">Пополнить баланс</h3>
-                <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="handleTopUpClick(15)">15 кр. — 150 руб.</button>
-                <button class="button" style="background:#2a5885;" onclick="handleTopUpClick(100)">100 кр. — 700 руб.</button>
-            </div>
+            ${topUpBlock}
             <button class="button secondary" style="margin-top:20px;" onclick="showScreen(document.getElementById('screen-main-menu'))">В меню</button>
         `;
         showScreen(subjectScreen);
@@ -562,14 +562,27 @@ window.showHelp = function() {
     const helpScreen = document.getElementById('screen-help');
     
     if (helpScreen) {
-        // Если большой экран помощи есть в твоем HTML — показываем его (твой старый вариант)
         try {
             const hp = document.getElementById('help-payment-block'); 
             if (hp) hp.style.display = canPay ? 'block' : 'none'; 
+            
+            if (!canPay) {
+               const mobileContact = document.getElementById('mobile-contact-block');
+               if (!mobileContact) {
+                   const newBlock = document.createElement('div');
+                   newBlock.id = 'mobile-contact-block';
+                   newBlock.innerHTML = `<br><p>Если возникли вопросы, обращайтесь в нашу группу ВК: <a href="https://vk.com/neiro_repetitor" target="_blank">https://vk.com/neiro_repetitor</a></p>`;
+                   helpScreen.appendChild(newBlock);
+               }
+            }
+            
             showScreen(helpScreen);
         } catch (e) {}
     } else {
-        // Если экрана почему-то нет (защита от багов тестировщиков), показываем всплывающее окно
+        let paymentText = canPay 
+            ? "<i>Пополнить баланс кредитов можно в разделе «Мой профиль».</i>" 
+            : "<i>Если возникли вопросы, обращайтесь в нашу группу ВК:<br><a href='https://vk.com/neiro_repetitor' target='_blank'>https://vk.com/neiro_repetitor</a></i>";
+
         showCustomAlert(`
             <div style="text-align:left; font-size: 14px; line-height: 1.5;">
                 <b>Как пользоваться Нейро-Репетитором?</b><br><br>
@@ -577,7 +590,7 @@ window.showHelp = function() {
                 2️⃣ Определитесь с тарифом («Стандарт» или подробный «Профи»).<br>
                 3️⃣ Решайте задачи. За каждый верный ответ вы получаете баллы в профиль.<br>
                 4️⃣ В конце теста ИИ составит отчет о ваших слабых местах и разберет ошибки.<br><br>
-                <i>Пополнить баланс кредитов всегда можно в разделе «Мой профиль».</i>
+                ${paymentText}
             </div>
         `, "Помощь");
     }
