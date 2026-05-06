@@ -13,8 +13,21 @@ const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api"; 
 
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
-const vkPlatform = urlParams.get('vk_platform') || 'desktop_web';
+
+// --- БРОНЕБОЙНАЯ ПРОВЕРКА ПЛАТФОРМЫ ---
+let vkPlatform = urlParams.get('vk_platform');
+const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+// Если ВК на iOS потерял параметры при свайпе/F5, жестко верим User-Agent
+if (!vkPlatform && isMobileDevice) {
+    vkPlatform = 'mobile_app_forced'; 
+} else if (!vkPlatform) {
+    vkPlatform = 'desktop_web';
+}
+
+// Платить можно ТОЛЬКО с компа или мобильного браузера
 const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
+// ---------------------------------------
 
 let USER_ID = urlParams.get('vk_user_id');
 console.log("🚀 [APP] USER_ID получен:", USER_ID);
