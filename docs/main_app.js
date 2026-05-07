@@ -563,10 +563,25 @@ window.showHelp = function() {
     showScreen(helpScreen);
 };
 
-// Запасной перехват ссылок
+// --- ФИНАЛЬНЫЙ ФИКС ДЛЯ ССЫЛОК (КАК В ХУДОЖНИКЕ) ---
+
+// Функция для принудительного открытия ссылок через VK Bridge
+window.openVKUrl = function(url, event) {
+    if (event) event.preventDefault();
+    try {
+        vkBridge.send("VKWebAppOpenUrl", {"url": url}).catch(() => {
+            window.open(url, '_blank');
+        });
+    } catch(e) { 
+        window.open(url, '_blank'); 
+    }
+};
+
+// Глобальный перехватчик кликов по всем ссылкам <a>
 document.addEventListener('click', function(e) {
     const link = e.target.closest('a');
-    if (link && link.href) {
-        openVKUrl(link.href, e);
+    if (link && link.href && link.href.includes('vk.com')) {
+        e.preventDefault(); 
+        window.openVKUrl(link.href);
     }
 });
