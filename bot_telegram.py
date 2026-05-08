@@ -96,7 +96,8 @@ async def save_user(user_id: int, name: str):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE user_id=?", (user_id,))
     if not cursor.fetchone():
-        cursor.execute("INSERT INTO users (user_id, name, credits, last_activity) VALUES (?, ?, ?, datetime('now'))", (user_id, name, 16))
+        # ВЫДАЕМ 6 КРЕДИТОВ В ТЕЛЕГРАМЕ 👇
+        cursor.execute("INSERT INTO users (user_id, name, credits, last_activity) VALUES (?, ?, ?, datetime('now'))", (user_id, name, 6))
     else:
         cursor.execute("UPDATE users SET name=?, last_activity=datetime('now') WHERE user_id=?", (name, user_id))
     conn.commit()
