@@ -7,14 +7,17 @@ const TEST_API_URL = "https://neuro-master.online/repetitor-api";
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 let vkPlatform = urlParams.get('vk_platform');
 const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isSmallScreen = window.innerWidth <= 800; // Контрольный выстрел по ширине экрана
 
-// Бронебойная защита мобилок для оплат
-if (!vkPlatform && isMobileDevice) {
+// Бронебойная защита мобилок для оплат (теперь с проверкой ширины!)
+if ((!vkPlatform && isMobileDevice) || isSmallScreen) {
     vkPlatform = 'mobile_app_forced';
 } else if (!vkPlatform) {
     vkPlatform = 'desktop_web';
 }
-const canPay = ['desktop_web', 'mobile_web'].includes(vkPlatform);
+
+// Оплата разрешена ТОЛЬКО если это десктоп и экран широкий
+const canPay = vkPlatform === 'desktop_web' && !isMobileDevice && !isSmallScreen;
 
 let USER_ID = urlParams.get('vk_user_id');
 console.log("🚀 [APP] USER_ID получен:", USER_ID);
