@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Нейро-репетитор</title>
-    <link rel="stylesheet" href="style.css?v=999">
+    <link rel="stylesheet" href="style.css?v=1005">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     
     <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.14.1/dist/browser.min.js"></script>
@@ -18,29 +18,33 @@
     
     <script>
     window.onerror = function(msg, url, line) {
-        console.error("Ошибка:", msg, "в", url, "строка:", line);
+        document.body.innerHTML += '<div style="position:fixed; top:0; left:0; width:100%; background:red; color:white; z-index:99999; padding:20px; font-size:18px; font-weight:bold; word-wrap:break-word; text-align:left;">🔥 КРИТИЧЕСКАЯ ОШИБКА:<br>' + msg + '<br>Файл: ' + url + '<br>Строка: ' + line + '</div>';
         return false;
     };
+    window.addEventListener('unhandledrejection', function(event) {
+        document.body.innerHTML += '<div style="position:fixed; top:80px; left:0; width:100%; background:darkorange; color:white; z-index:99999; padding:20px; font-size:16px; font-weight:bold; word-wrap:break-word; text-align:left;">⚡ ОШИБКА ПРОМИСА:<br>' + (event.reason ? event.reason.toString() : 'Неизвестно') + '</div>';
+    });
     </script>
 </head>
 <body>
 
     <div id="custom-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; align-items: center; justify-content: center;">
-        <div style="background: white; padding: 20px; border-radius: 12px; width: 85%; max-width: 320px; text-align: center;">
-            <h3 id="modal-title" style="margin-top: 0;">Внимание</h3>
-            <div id="modal-message" style="margin-bottom: 20px; line-height: 1.5;"></div>
-            <button class="button" onclick="closeModal()">Понятно</button>
+        <div style="background: white; padding: 20px; border-radius: 12px; width: 85%; max-width: 320px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            <h3 id="modal-title" style="margin-top: 0; color: #333;">Внимание</h3>
+            <p id="modal-message" style="color: #555; margin-bottom: 20px; line-height: 1.5; font-size: 15px;">Текст сообщения</p>
+            <button class="button" style="padding: 10px 20px; font-size: 15px;" onclick="closeModal()">Понятно</button>
         </div>
     </div>
     
     <div id="app">
+
         <div id="screen-loading" class="screen active">
             <div class="spinner"></div>
-            <p>Подождите...</p>
+            <p id="loading-text">Подождите...</p>
         </div>
 
         <div id="screen-main-menu" class="screen">
-            <h1 style="font-weight: 800;">Нейро-Репетитор</h1>
+            <h1 style="font-weight: 800; color: #333;">Нейро-Репетитор</h1>
             <button class="button" data-exam-type="oge">ОГЭ (9 класс)</button>
             <button class="button" data-exam-type="ege">ЕГЭ (11 класс)</button>
             <button class="button secondary" onclick="showHelp()"><i data-feather="help-circle" class="icon-sm"></i> Помощь</button>
@@ -48,22 +52,14 @@
         </div>
 
         <div id="screen-help" class="screen">
-            <h2><i data-feather="book-open"></i> Справка</h2>
-            <div style="text-align:left; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6; font-size:14px; max-height: 60vh; overflow-y: auto;">
+            <h2><i data-feather="book-open"></i> Справка и правила</h2>
+            
+            <div style="text-align:left; background:white; padding:15px; border-radius:10px; border: 1px solid #e1e3e6; font-size:15px; line-height:1.6; max-height: 60vh; overflow-y: auto;">
                 
-                <div id="help-payment-block" style="margin-bottom: 15px; display: none;">
-                    <h3 style="margin-top:0; color:#4a76a8; font-size:16px;"><i data-feather="credit-card" class="icon-sm"></i> Оплата</h3>
-                    <p>Пополнить баланс можно с компьютера или через мобильный браузер.</p>
+                <div id="help-payment-block" style="display: none;">
+                    <h3 style="margin-top:0; color:#4a76a8; display:flex; align-items:center;"><i data-feather="credit-card" class="icon-sm"></i> Как пополнить баланс?</h3>
+                    <p style="margin-top:5px;">Чтобы пополнить баланс кредитов, открой это приложение с компьютера!</p>
                 </div>
-
-                <h3 style="color:#4a76a8; font-size:16px;"><i data-feather="cpu" class="icon-sm"></i> Фишки</h3>
-                <p>ИИ разберет каждую ошибку и составит карту ваших знаний.</p>
-
-                <h3 style="color:#4a76a8; display:flex; align-items:center; margin-top:15px;"><i data-feather="edit-3" class="icon-sm"></i> Ввод ответов</h3>
-                <ul style="padding-left: 20px; margin-top:5px; margin-bottom: 0;">
-                    <li><b>Цифры:</b> Пиши без пробелов (<code>134</code>).</li>
-                    <li><b>Дроби:</b> Пиши через точку (<code>-3.5</code>).</li>
-                </ul>
 
                 <div id="mobile-contact-block" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e1e3e6;">
                     <h3 style="margin-top:0; color:#4a76a8; display:flex; align-items:center;"><i data-feather="message-circle" class="icon-sm"></i> Остались вопросы?</h3>
@@ -74,60 +70,108 @@
                     </a>
                 </div>
 
-                <div style="margin-top: 15px; font-size: 11px; color: #888; border-top: 1px dashed #ccc; padding-top: 10px;">
-                    <b>Самозанятая:</b> Селяхова Наталья Викторовна<br>
-                    <b>ИНН:</b> 502209781184 | <b>Email:</b> holljs@mail.ru
+                <h3 style="color:#4a76a8; display:flex; align-items:center; margin-top:20px;"><i data-feather="cpu" class="icon-sm"></i> Наши супер-фишки</h3>
+                <ul style="padding-left: 20px; margin-top:5px;">
+                    <li><b>Подробный разбор ошибок:</b> Нейросеть не просто выдаёт правильный ответ, а объясняет правило максимально просто, «на пальцах».</li>
+                    <li><b>ИИ-Аналитика:</b> Система запоминает каждый твой шаг и в личном кабинете строит точный отчёт о твоих пробелах по темам.</li>
+                </ul>
+
+                <h3 style="color:#4a76a8; display:flex; align-items:center;"><i data-feather="edit-3" class="icon-sm"></i> Как вводить ответы?</h3>
+                <ul style="padding-left: 20px; margin-top:5px;">
+                    <li><b>Задания на сопоставление (А-1, Б-3):</b> Пиши ТОЛЬКО цифры по порядку, без пробелов. Формат: <code>134</code>.</li>
+                    <li><b>Математика и Химия:</b> Десятичные дроби можно писать через точку или запятую. Минусы пиши без пробелов: <code>-3.5</code>.</li>
+                    <li><b>Развернутые ответы:</b> Пиши текст полностью. Наш ИИ проверит смысл, укажет на ошибки и оценит работу!</li>
+                </ul>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; font-size: 12px; color: #777; line-height: 1.4;">
+                    <b>Продавец:</b> Самозанятая Селяхова Наталья Викторовна<br>
+                    <b>ИНН:</b> 502209781184<br>
+                    <b>Email:</b> holljs@mail.ru
                 </div>
             </div>
-            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(document.getElementById('screen-main-menu'))">В меню</button>
+
+            <button class="button secondary" style="margin-top:20px;" onclick="showScreen(document.getElementById('screen-main-menu'))">В главное меню</button>
         </div>
         
-        <div id="screen-subjects" class="screen"></div>
-
-        <div id="screen-profile" class="screen"></div>
+        <div id="screen-subjects" class="screen">
+            <h1>Выберите предмет</h1>
+        </div>
 
         <div id="task-screen" class="screen">
-            <button class="button secondary" style="margin-bottom:15px;" onclick="abortTest()"><i data-feather="x-circle" class="icon-sm"></i> Прервать</button>
-            <div class="progress-bar" id="test-progress"></div>
-            <div id="task-image-container"></div>
-            <div id="task-text" style="margin:15px 0;"></div>
+            <button class="button secondary" style="margin-bottom: 15px; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center;" onclick="abortTest()">
+                <i data-feather="x-circle" class="icon-sm" style="margin-right: 5px;"></i> Прервать тест и выйти
+            </button>
+        
+            <div class="progress-bar" id="test-progress">Вопрос 1 из 15</div>
             
+            <div id="task-image-container"></div>
+            <div id="task-text" style="margin: 10px 0; font-weight: 500;"></div>
+
             <div class="answer-block">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                     <p class="hint" style="margin: 0;">* Можно писать формулы и слова</p>
-                    <button class="hint-toggle-btn" onclick="toggleMathHint()"><i data-feather="info" class="icon-sm"></i> Формулы?</button>
+                    <button class="hint-toggle-btn" onclick="toggleMathHint()"><i data-feather="info" class="icon-sm"></i> Как вводить формулы?</button>
                 </div>
-                <div id="math-hint-box" class="math-hint-box" style="display:none; margin-bottom:10px; font-size:12px; background:#f9f9f9; padding:10px; border-radius:8px;">
-                    Умножение: <code>*</code> | Деление: <code>/</code> | Степень: <code>^</code><br>
-                    Корень: <code>sqrt(x)</code> | Модуль: <code>|x|</code>
+                
+                <div id="math-hint-box" class="math-hint-box">
+                    <b>Умножение:</b> <code>*</code> (5 * 2)<br>
+                    <b>Деление/Дробь:</b> <code>/</code> (3/4)<br>
+                    <b>Степень:</b> <code>^</code> (x^2)<br>
+                    <b>Корень:</b> <code>sqrt(x)</code> или словом "корень"<br>
+                    <b>Модуль:</b> <code>|x|</code><br>
+                    <b>Символы:</b> пи, альфа, градусы — пишите просто словами!
                 </div>
-                <textarea id="user-answer" rows="2" style="width:100%;" placeholder="Ваш ответ..."></textarea>
-            </div>
 
-            <button class="submit-btn" style="margin-top:10px;" onclick="submitAnswer()">Ответить</button>
+                <textarea id="user-answer" rows="2" style="width:100%; resize:vertical; font-family:inherit; padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px;" placeholder="Введите ответ..."></textarea>
+            </div>
+            
+            <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
         </div>
 
         <div id="quick-result-screen" class="screen">
             <h2 id="quick-result-title"></h2>
-            <button class="button" onclick="nextTask()">Далее</button>
+            <button class="button" onclick="nextTask()">Следующий вопрос <i data-feather="arrow-right" class="icon-sm" style="margin-left:8px; margin-right:0;"></i></button>
         </div>
 
         <div id="test-finish-screen" class="screen">
-            <h2>Тест завершен!</h2>
-            <div class="final-card"><p>Результат: <b id="final-score">0</b> из 15</p></div>
-            <div id="review-buttons" style="display:none;"><button class="submit-btn" onclick="startReview()">Разобрать ошибки</button></div>
-            <button class="button secondary" style="margin-top:10px;" onclick="finishSession()">В меню</button>
+            <h2><i data-feather="flag"></i> Тест завершен!</h2>
+            <div class="final-card">
+                <p>Результат: <b id="final-score">0</b> из 15</p>
+                <p>Ошибок: <b id="final-mistakes" style="color: #ff5252;">0</b></p>
+            </div>
+            
+            <div id="review-buttons" style="display:none;">
+                <button class="submit-btn" onclick="startReview()"><i data-feather="activity" class="icon-sm"></i> Разобрать ошибки</button>
+            </div>
+            <button class="button secondary" style="margin-top:10px;" onclick="finishSession()">В главное меню</button>
         </div>
+
+        <div id="screen-profile" class="screen"></div>
 
         <div id="review-screen" class="screen">
-            <div class="progress-bar" id="review-progress"></div>
-            <div class="mistake-card" id="review-answers-block"></div>
+            <div class="progress-bar" id="review-progress">Разбор ошибки 1</div>
+            
+            <div class="mistake-card" id="review-answers-block">
+                </div>
+            
             <div id="review-image-container"></div>
-            <div class="explanation-box" id="review-explanation"></div>
+            
+            <div class="explanation-box" id="review-explanation">
+                <button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>
+            </div>
+            
+            <div class="btn-group">
+                <button class="button secondary" id="simplify-btn" onclick="runAIExplanation(true)" style="display:none;"><i data-feather="coffee" class="icon-sm"></i> Объяснить проще</button>
+                <button class="button" onclick="nextReview()">Дальше <i data-feather="arrow-right" class="icon-sm" style="margin-left:8px; margin-right:0;"></i></button>
+            </div>
         </div>
+
     </div>
 
-    <script src="main_app.js?v=999"></script>
-    <script>feather.replace();</script>
+    <script src="main_app.js?v=1005"></script>
+    
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
