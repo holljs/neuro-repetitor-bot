@@ -7,16 +7,14 @@ const TEST_API_URL = "https://neuro-master.online/repetitor-api";
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 let vkPlatform = urlParams.get('vk_platform');
 const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const isSmallScreen = window.innerWidth <= 800; // Контрольный выстрел по ширине экрана
+const isSmallScreen = window.innerWidth <= 800; 
 
-// Бронебойная защита мобилок для оплат (теперь с проверкой ширины!)
+// Бронебойная защита мобилок для оплат
 if ((!vkPlatform && isMobileDevice) || isSmallScreen) {
     vkPlatform = 'mobile_app_forced';
 } else if (!vkPlatform) {
     vkPlatform = 'desktop_web';
 }
-
-// Оплата разрешена ТОЛЬКО если это десктоп и экран широкий
 const canPay = vkPlatform === 'desktop_web' && !isMobileDevice && !isSmallScreen;
 
 let USER_ID = urlParams.get('vk_user_id');
@@ -28,6 +26,7 @@ let currentSubjectCode = null;
 let questionNumber = 1;
 let score = 0;
 let mistakes = [];
+let skipsLeft = 3; // <--- НОВАЯ ПЕРЕМЕННАЯ
 let currentReviewIndex = 0;
 let currentTestMode = "standard";
 let isProcessing = false;
@@ -101,8 +100,9 @@ window.toggleMathHint = function() {
 function saveSession(screenName = 'task-screen', extra = {}) {
     if (!currentTask) return;
     try {
+        // СОХРАНЯЕМ КОЛИЧЕСТВО ЗАМЕН
         localStorage.setItem('active_test', JSON.stringify({
-            currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode, screenName, extra, currentReviewIndex
+            currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode, screenName, extra, currentReviewIndex, skipsLeft
         }));
     } catch(e) {}
 }
@@ -126,6 +126,7 @@ function initApp() {
                 currentTask = data.currentTask; currentSubjectCode = data.currentSubjectCode;
                 questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
                 if (data.currentReviewIndex !== undefined) currentReviewIndex = data.currentReviewIndex;
+                if (data.skipsLeft !== undefined) skipsLeft = data.skipsLeft; else skipsLeft = 3;
                 
                 if (data.screenName === 'quick-result-screen') {
                     handleQuickResult(data.extra.isCorrect, data.extra.userAnswer, true);
@@ -200,7 +201,7 @@ window.startTest = async function(subjectCode, mode) {
         });
         const payResult = await payResponse.json();
         if (payResult.success) {
-            currentSubjectCode = subjectCode; questionNumber = 1; score = 0; mistakes = []; getRandomTask();
+            currentSubjectCode = subjectCode; questionNumber = 1; score = 0; mistakes = []; skipsLeft = 3; getRandomTask();
         } else { showCustomAlert(payResult.error || "Недостаточно кредитов", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
     } catch (e) { showCustomAlert("Ошибка соединения с сервером.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 };
@@ -220,6 +221,16 @@ async function getRandomTask() {
 function showTask() {
     saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
+    
+    // Обновляем кнопку замены вопроса
+    const skipCountEl = document.getElementById('skips-count');
+    if (skipCountEl) skipCountEl.textContent = skipsLeft;
+    const skipBtn = document.getElementById('skip-task-btn');
+    if (skipBtn) {
+        if (skipsLeft <= 0) skipBtn.style.opacity = '0.5';
+        else skipBtn.style.opacity = '1';
+    }
+
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
 
@@ -239,6 +250,69 @@ function showTask() {
     document.getElementById('user-answer').value = '';
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
 }
+
+// --- НОВЫЙ ФУНКЦИОНАЛ ЗАМЕНЫ ВОПРОСА ---
+
+window.confirmSkipTask = function() {
+    if (skipsLeft <= 0) {
+        showCustomAlert("У вас закончились замены в этом тесте.", "Лимит исчерпан");
+        return;
+    }
+    
+    const modal = document.getElementById('custom-modal');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('modal-title').textContent = "Заменить вопрос?";
+    document.getElementById('modal-message').innerHTML = `Вы можете пропустить этот вопрос, если в нём есть какая-то ошибка (например, отсутствует картинка).<br><br>Осталось замен на этот тест: <b style="color:#0077FF; font-size:18px;">${skipsLeft}</b>`;
+    
+    const originalBtn = modal.querySelector('button');
+    if (originalBtn) originalBtn.style.display = 'none';
+
+    let btnGroup = document.getElementById('temp-confirm-btns');
+    if (!btnGroup) {
+        btnGroup = document.createElement('div');
+        btnGroup.id = 'temp-confirm-btns';
+        btnGroup.innerHTML = `<button class="button" style="background:#0077FF; margin-bottom:10px; width:100%" id="btn-yes-skip">Да, заменить</button><button class="button secondary" style="width:100%" id="btn-no-skip">Отмена</button>`;
+        modal.querySelector('div').appendChild(btnGroup);
+    } else {
+        btnGroup.innerHTML = `<button class="button" style="background:#0077FF; margin-bottom:10px; width:100%" id="btn-yes-skip">Да, заменить</button><button class="button secondary" style="width:100%" id="btn-no-skip">Отмена</button>`;
+    }
+
+    document.getElementById('btn-yes-skip').onclick = () => {
+        btnGroup.remove();
+        if (originalBtn) originalBtn.style.display = 'inline-block';
+        closeModal();
+        executeSkipTask();
+    };
+    
+    document.getElementById('btn-no-skip').onclick = () => {
+        btnGroup.remove();
+        if (originalBtn) originalBtn.style.display = 'inline-block';
+        closeModal();
+    };
+    
+    modal.style.display = 'flex';
+};
+
+window.executeSkipTask = async function() {
+    skipsLeft--;
+    showScreen(document.getElementById('screen-loading'));
+    try {
+        const response = await fetch(`${TEST_API_URL}/random_task/?exam_type=${currentSubjectCode}&student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
+        const newTask = await response.json();
+        if (newTask.done) {
+            showCustomAlert("Задачи в базе закончились!", "Упс");
+            showScreen(document.getElementById('screen-main-menu'));
+            return;
+        }
+        currentTask = newTask;
+        showTask(); 
+    } catch (e) { 
+        showCustomAlert("Ошибка при загрузке новой задачи.", "Ошибка"); 
+        showTask(); 
+    }
+};
+
+// ----------------------------------------
 
 function normalizeText(str) {
     if (!str) return "";
@@ -468,12 +542,7 @@ window.buyPackage = async function(creditsAmount) {
         const response = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
         const result = await response.json();
         if (result.success && result.confirmation_url) {
-            // Пытаемся открыть через Bridge
-            try {
-                vkBridge.send("VKWebAppOpenUrl", {"url": result.confirmation_url}).catch(() => {
-                    window.open(result.confirmation_url, '_blank');
-                });
-            } catch(e) { window.open(result.confirmation_url, '_blank'); }
+            window.openVKUrl(result.confirmation_url);
             showProfile();
         } else { showCustomAlert("Ошибка платежа", "Ошибка"); showProfile(); }
     } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
@@ -559,4 +628,10 @@ window.showHelp = function() {
     const payBlock = document.getElementById('help-payment-block');
     if (payBlock) payBlock.style.display = canPay ? 'block' : 'none';
     showScreen(helpScreen);
+};
+
+window.openVKUrl = function(url) {
+    try {
+        vkBridge.send("VKWebAppOpenUrl", {"url": url}).catch(() => { window.open(url, '_blank'); });
+    } catch(e) { window.open(url, '_blank'); }
 };
