@@ -551,47 +551,9 @@ window.loadSubjectAnalytics = async function(c, n) {
     } catch(e) { document.getElementById('an-cont').innerHTML = `<div style="color:red">Ошибка</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`; }
 };
 
-// --- ФИНАЛЬНЫЙ БРОНЕБОЙНЫЙ ФИКС ССЫЛОК (КАК В ХУДОЖНИКЕ) ---
-
-function initSupportLink() {
-    const supportBtn = document.getElementById('support-link');
-    if (supportBtn) {
-        // Удаляем старые обработчики, если они есть, создавая клон кнопки
-        const newBtn = supportBtn.cloneNode(true);
-        supportBtn.parentNode.replaceChild(newBtn, supportBtn);
-        
-        newBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Останавливаем обычный переход
-            const url = "https://vk.com/neiro_repetitor";
-            
-            console.log("🚀 [APP] Пытаемся открыть группу ВК...");
-            
-            try {
-                // Пытаемся открыть через Bridge (для мобильных)
-                vkBridge.send("VKWebAppOpenUrl", {"url": url})
-                .catch(() => {
-                    window.open(url, '_blank');
-                });
-            } catch(err) {
-                window.open(url, '_blank');
-            }
-        });
-    }
-}
-
-// Запускаем принудительно после загрузки всей страницы
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSupportLink);
-} else {
-    initSupportLink();
-}
-
-// Показываем помощь и привязываем ссылку
 window.showHelp = function() {
     const helpScreen = document.getElementById('screen-help');
     const payBlock = document.getElementById('help-payment-block');
     if (payBlock) payBlock.style.display = canPay ? 'block' : 'none';
     showScreen(helpScreen);
-    
-    setTimeout(initSupportLink, 100); // Даем 100мс на отрисовку и привязываем клик
 };
