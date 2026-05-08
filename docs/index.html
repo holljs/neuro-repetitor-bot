@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Нейро-репетитор</title>
-    <link rel="stylesheet" href="style.css?v=1005">
+    <link rel="stylesheet" href="style.css?v=1006">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     
     <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.14.1/dist/browser.min.js"></script>
@@ -74,6 +74,7 @@
                 <ul style="padding-left: 20px; margin-top:5px;">
                     <li><b>Подробный разбор ошибок:</b> Нейросеть не просто выдаёт правильный ответ, а объясняет правило максимально просто, «на пальцах».</li>
                     <li><b>ИИ-Аналитика:</b> Система запоминает каждый твой шаг и в личном кабинете строит точный отчёт о твоих пробелах по темам.</li>
+                    <li><b>Замена вопроса:</b> У вас есть 3 спасательных круга на тест. Вы можете заменить сломанный вопрос на другой!</li>
                 </ul>
 
                 <h3 style="color:#4a76a8; display:flex; align-items:center;"><i data-feather="edit-3" class="icon-sm"></i> Как вводить ответы?</h3>
@@ -98,9 +99,15 @@
         </div>
 
         <div id="task-screen" class="screen">
-            <button class="button secondary" style="margin-bottom: 15px; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center;" onclick="abortTest()">
-                <i data-feather="x-circle" class="icon-sm" style="margin-right: 5px;"></i> Прервать тест и выйти
-            </button>
+            
+            <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px;">
+                <button class="button secondary" style="flex: 1; padding: 8px; font-size: 13px; display: flex; align-items: center; justify-content: center;" onclick="abortTest()">
+                    <i data-feather="x-circle" class="icon-sm" style="margin-right: 5px;"></i> Прервать
+                </button>
+                <button id="skip-task-btn" class="button secondary" style="flex: 1; padding: 8px; font-size: 13px; display: flex; align-items: center; justify-content: center; border-color: #cbd5e1; color: #334155;" onclick="confirmSkipTask()" title="Вы можете заменить до 3 вопросов за тест, если в задании есть ошибка">
+                    <i data-feather="refresh-cw" class="icon-sm" style="margin-right: 5px;"></i> Заменить (<span id="skips-count">3</span>)
+                </button>
+            </div>
         
             <div class="progress-bar" id="test-progress">Вопрос 1 из 15</div>
             
@@ -168,7 +175,7 @@
 
     </div>
 
-    <script src="main_app.js?v=1005"></script>
+    <script src="main_app.js?v=1006"></script>
     
     <script>
         feather.replace();
