@@ -243,7 +243,7 @@ function showTask() {
 
     if (currentTask.image && currentTask.image.length > 5) {
         const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
-        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px;">`;
+        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
     
@@ -472,7 +472,7 @@ function loadReviewForCurrentMistake(isRestored = false) {
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
         const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
-        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%;">`;
+        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
     let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
@@ -633,5 +633,13 @@ window.showHelp = function() {
 window.openVKUrl = function(url) {
     try {
         vkBridge.send("VKWebAppOpenUrl", {"url": url}).catch(() => { window.open(url, '_blank'); });
+    } catch(e) { window.open(url, '_blank'); }
+};
+
+// --- ФУНКЦИЯ ДЛЯ УВЕЛИЧЕНИЯ КАРТИНОК ---
+window.openImageViewer = function(url) {
+    try {
+        vkBridge.send("VKWebAppShowImages", { images: [url] })
+        .catch(() => { window.open(url, '_blank'); });
     } catch(e) { window.open(url, '_blank'); }
 };
