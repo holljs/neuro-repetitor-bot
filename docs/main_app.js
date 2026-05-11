@@ -419,7 +419,20 @@ window.nextTask = function() {
 };
 
 function showFinishScreen(isRestored = false) {
-    document.getElementById('final-score').textContent = score; document.getElementById('final-mistakes').textContent = mistakes.length;
+    document.getElementById('final-score').textContent = score; 
+    document.getElementById('final-mistakes').textContent = mistakes.length;
+    
+    // ОТПРАВЛЯЕМ ТЕБЕ УВЕДОМЛЕНИЕ О ЗАВЕРШЕНИИ (ТОЛЬКО ОДИН РАЗ)
+    if (!isRestored) {
+        fetch(`${TEST_API_URL}/notify_test_finish/`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({student_id: String(USER_ID || 'guest'), score: score, total: TEST_LENGTH, vk_params: VK_SEARCH_PARAMS})
+        }).catch(()=>{});
+        
+        saveSession('test-finish-screen');
+    }
+
     const reviewBtnBlock = document.getElementById('review-buttons');
     const oldStats = document.getElementById('topic-stats');
     if (oldStats) oldStats.remove();
@@ -532,7 +545,24 @@ window.finishSession = () => {
 
 window.allowVkMessages = function() {
     vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
-        .then(() => showCustomAlert("Успешно подписались!", "Отлично"))
+        .then(async () => {
+            try {
+                const res = await fetch(`${TEST_API_URL}/reward_subscription/`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS})
+                });
+                const data = await res.json();
+                if(data.success) {
+                    showCustomAlert("Вы подписались на уведомления и получили +3 кредита!", "Отлично");
+                    setTimeout(() => showProfile(), 1500); // Обновляем баланс
+                } else {
+                    showCustomAlert("Вы подписались на уведомления! Спасибо, что с нами.", "Отлично");
+                }
+            } catch(e) {
+                 showCustomAlert("Вы подписались на уведомления!", "Отлично");
+            }
+        })
         .catch(() => {});
 };
 
