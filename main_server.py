@@ -130,6 +130,10 @@ def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("CREATE TABLE IF NOT EXISTS users (user_id TEXT PRIMARY KEY, credits INTEGER DEFAULT 0, last_activity TIMESTAMP)")
+    try:
+        cursor.execute("ALTER TABLE users ADD COLUMN got_reward INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass # Если колонка уже есть, пропускаем
     conn.commit()
     conn.close()
 
@@ -141,10 +145,11 @@ def init_vk_user(user_id: str) -> int:
     cursor.execute("SELECT credits FROM users WHERE user_id=?", (user_id,))
     user = cursor.fetchone()
     if not user:
-        # ВЫДАЕМ 6 КРЕДИТОВ НОВИЧКУ 👇
-        cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (user_id, 6))
+        cursor.execute("INSERT INTO users (user_id, credits, last_activity, got_reward) VALUES (?, ?, datetime('now'), 0)", (user_id, 6))
         conn.commit()
-        balance = 6 # И ЗДЕСЬ ТОЖЕ 6 👇
+        balance = 6
+        # Уведомляем тебя в ВК о новом юзере
+        asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"👤 Новый ученик в приложении!\nСсылка: vk.com/id{user_id}"))
     else:
         cursor.execute("UPDATE users SET last_activity=datetime('now') WHERE user_id=?", (user_id,))
         conn.commit()
@@ -265,6 +270,8 @@ async def yookassa_webhook(request: dict):
             if student_id and amount:
                 change_vk_credits(student_id, amount)
                 await send_vk_message(student_id, f"✅ Оплата прошла успешно!\nНа ваш баланс зачислено: {amount} кр.")
+                # НОВАЯ СТРОЧКА: УВЕДОМЛЕНИЕ АДМИНУ
+                await send_vk_message(str(ADMIN_VK_IDS[0]), f"💰 ОПЛАТА!\nУченик vk.com/id{student_id} купил {amount} кр.")
         return {"status": "ok"}
     except Exception as e: return {"status": "error"}
 
@@ -451,6 +458,43 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
         return {"analysis": "".join(output).replace("\n", "<br>")}
     except Exception: return {"analysis": "⚠️ Ошибка генерации."}
 
+class RewardRequest(BaseModel):
+    student_id: str
+    vk_params: str
+
+@app.post("/reward_subscription/")
+async def reward_subscription(req: RewardRequest):
+    if not verify_vk_auth(req.student_id, req.vk_params): return {"success": False}
+    conn = sqlite3.connect("vk_users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT got_reward FROM users WHERE user_id=?", (req.student_id,))
+    row = cursor.fetchone()
+    
+    if row and row[0] == 1:
+        conn.close()
+        return {"success": False, "message": "Бонус уже был получен"}
+    
+    # Начисляем 3 кредита и ставим флаг
+    cursor.execute("UPDATE users SET credits = credits + 3, got_reward = 1 WHERE user_id=?", (req.student_id,))
+    conn.commit()
+    conn.close()
+    
+    # Сообщаем тебе в личку ВК
+    asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🔔 Подписка на рассылку!\nУченик vk.com/id{req.student_id} получил бонус +3 кр."))
+    return {"success": True}
+
+class FinishTestRequest(BaseModel):
+    student_id: str
+    score: int
+    total: int
+    vk_params: str
+    
+@app.post("/notify_test_finish/")
+async def notify_test_finish(req: FinishTestRequest):
+    if not verify_vk_auth(req.student_id, req.vk_params): return {"success": False}
+    asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🎓 Тест завершен!\nУченик: vk.com/id{req.student_id}\nРезультат: {req.score} из {req.total}"))
+    return {"success": True}
+
 # ==========================================
 # АДМИНКА ДЛЯ НАЧИСЛЕНИЯ КРЕДИТОВ (Callback API)
 # ==========================================
@@ -473,25 +517,40 @@ async def vk_bot_webhook(data: VKCallback):
         text = msg.get("text", "").strip()
         sender_id = msg.get("from_id")
 
-        parts = text.split()
-        is_admin_command = (
-            sender_id in ADMIN_VK_IDS and 
-            len(parts) == 2 and 
-            parts[0].isdigit() and 
-            (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit()))
-        )
+        if sender_id in ADMIN_VK_IDS:
+            # КОМАНДА ДЛЯ МАССОВОЙ РАССЫЛКИ
+            if text.lower().startswith("рассылка"):
+                broadcast_text = text[8:].strip()
+                if not broadcast_text:
+                    await send_vk_message(str(sender_id), "⚠️ Ошибка. Напиши: Рассылка [твой текст]")
+                    return HTMLResponse(content="ok", status_code=200)
+                
+                await send_vk_message(str(sender_id), "⏳ Начинаю массовую рассылку...")
+                conn = sqlite3.connect("vk_users.db")
+                cursor = conn.cursor()
+                cursor.execute("SELECT user_id FROM users")
+                users = cursor.fetchall()
+                conn.close()
+                
+                success = 0
+                for u in users:
+                    res = await send_vk_message(u[0], broadcast_text)
+                    if res: success += 1
+                    await asyncio.sleep(0.05) # Защита от спам-блока ВК
+                
+                await send_vk_message(str(sender_id), f"✅ Рассылка завершена!\nДоставлено: {success} из {len(users)}")
+                return HTMLResponse(content="ok", status_code=200)
 
-        if is_admin_command:
-            target_id = parts[0]
-            amount = int(parts[1])
-            
-            init_vk_user(target_id)
-            new_bal = change_vk_credits(target_id, amount)
-            
-            await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
-            return HTMLResponse(content="ok", status_code=200)
-        else:
-            return HTMLResponse(content="ok", status_code=200)
+            # КОМАНДА ДЛЯ ВЫДАЧИ КРЕДИТОВ
+            parts = text.split()
+            is_admin_command = (len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())))
+
+            if is_admin_command:
+                target_id = parts[0]
+                amount = int(parts[1])
+                init_vk_user(target_id)
+                new_bal = change_vk_credits(target_id, amount)
+                await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
 
     return HTMLResponse(content="ok", status_code=200)
 
