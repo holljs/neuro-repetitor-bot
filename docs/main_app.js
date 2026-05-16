@@ -543,7 +543,7 @@ window.finishSession = () => {
     showScreen(document.getElementById('screen-main-menu'));
 };
 
-window.allowVkMessages = function() {
+window.allowVkMessages = function(btnElement) {
     vkBridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 235924452})
         .then(async () => {
             try {
@@ -553,11 +553,23 @@ window.allowVkMessages = function() {
                     body: JSON.stringify({student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS})
                 });
                 const data = await res.json();
+                
+                // БРОНЕБОЙНОЕ СКРЫТИЕ КНОПКИ (даже если юзер нажал 2 раза)
+                if (btnElement) {
+                    btnElement.style.display = 'none';
+                } else {
+                    // Резервный вариант: ищем все кнопки с бонусом на экране и убиваем их
+                    document.querySelectorAll('button').forEach(b => { 
+                        if(b.innerText.includes('кредита') || b.innerText.includes('уведомления')) b.style.display = 'none'; 
+                    });
+                }
+
                 if(data.success) {
-                    showCustomAlert("Вы подписались на уведомления и получили +3 кредита!", "Отлично");
+                    showCustomAlert("Вы подписались на уведомления и получили +3 кредита! 🎉", "Отлично!");
                     setTimeout(() => showProfile(), 1500); // Обновляем баланс
                 } else {
-                    showCustomAlert("Вы подписались на уведомления! Спасибо, что с нами.", "Отлично");
+                    // Пишем честно, если он уже забирал бонус
+                    showCustomAlert(data.message || "Вы уже получали бонус за подписку!", "Внимание");
                 }
             } catch(e) {
                  showCustomAlert("Вы подписались на уведомления!", "Отлично");
@@ -596,7 +608,7 @@ window.showProfile = async function() {
                         <div style="display:flex; align-items:center; font-size:14px; color:#666;">Решено: ${count} <i data-feather="chevron-down" class="icon-sm" style="margin-left:5px;"></i></div>
                     </div>
                     <div style="display:none; padding:15px; border-top:1px solid #e1e3e6;">
-                        <button class="button" style="width:100%; background:#007bff; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')"><i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ</button>
+                        <button class="button" style="width:100%; background:#4a76a8; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')"><i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ</button>
                     </div>
                 </div>`;
             }
@@ -605,8 +617,8 @@ window.showProfile = async function() {
         let topUpBlock = '';
         if (canPay) {
             topUpBlock = `
-            <div style="background:#fff; padding:15px; border-radius:10px; margin-top:20px; border: 1px solid #e1e3e6;">
-                <h3 style="margin-top:0; text-align:center;">Пополнить баланс</h3>
+            <div style="background:#fff; padding:15px; border-radius:10px; margin-bottom:20px; border: 1px solid #e1e3e6; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                <h3 style="margin-top:0; text-align:center; color:#4a76a8; font-size:16px;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс кредитов</h3>
                 <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="buyPackage(15)">15 кр. — 150 руб.</button>
                 <button class="button" style="background:#2a5885;" onclick="buyPackage(100)">100 кр. — 700 руб.</button>
             </div>`;
@@ -615,16 +627,23 @@ window.showProfile = async function() {
         const subjectScreen = document.getElementById('screen-profile');
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
-            <button class="button" style="background-color:#4a76a8; margin-bottom:15px; font-size:14px; padding:10px;" onclick="allowVkMessages()"><i data-feather="bell" class="icon-sm"></i> Включить уведомления</button>
+            
+            <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shrink: 0; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
+                <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
+            </button>
+
             <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
-                <div><div style="font-size:24px; font-weight:bold; color:#ff9800;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
+                <div><div style="font-size:24px; font-weight:bold; color:#4a76a8;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
                 <div style="width:1px; background:#e1e3e6;"></div>
                 <div><div style="font-size:24px; font-weight:bold; color:#4CAF50;">${data.total_solved || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">задач решено</div></div>
             </div>
-            <h3 style="text-align:left; margin-bottom:10px; font-size: 16px;">Твои предметы:</h3>
-            ${subjectsHtml}
+
             ${topUpBlock}
-            <div style="margin-top: 20px; text-align:center; padding-top: 15px; border-top: 1px dashed #ccc; font-size: 11px; color: #888; line-height: 1.4;">
+
+            <h3 style="text-align:left; margin-bottom:10px; font-size: 16px; color:#333;">Твои предметы:</h3>
+            ${subjectsHtml}
+            
+            <div style="margin-top: 25px; text-align:center; padding-top: 15px; border-top: 1px dashed #ccc; font-size: 11px; color: #888; line-height: 1.4;">
                 Самозанятая Селяхова Наталья Викторовна<br>
                 ИНН: 502209781184 | Email: holljs@mail.ru
             </div>
