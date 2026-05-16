@@ -409,6 +409,16 @@ async def get_profile_base(student_id: str, vk_params: str = None):
     if not verify_vk_auth(student_id, vk_params): raise HTTPException(status_code=403, detail="Signature invalid")
         
     current_balance = init_vk_user(student_id)
+    
+    # --- УЗНАЕМ, БРАЛ ЛИ ЮЗЕР БОНУС ---
+    conn = sqlite3.connect("vk_users.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT got_reward FROM users WHERE user_id=?", (student_id,))
+    row = cursor.fetchone()
+    got_reward = row[0] if row else 0
+    conn.close()
+    # ----------------------------------
+
     total_solved = 0; active_subjects = set()
     subject_counts = {}
     
@@ -423,8 +433,9 @@ async def get_profile_base(student_id: str, vk_params: str = None):
                         subj = parts[4]
                         subject_counts[subj] = subject_counts.get(subj, 0) + 1
                         
-    return {"balance": current_balance, "total_solved": total_solved, "active_subjects": list(active_subjects), "subject_counts": subject_counts}
-
+    # Возвращаем флаг got_reward вместе с балансом
+    return {"balance": current_balance, "total_solved": total_solved, "active_subjects": list(active_subjects), "subject_counts": subject_counts, "got_reward": got_reward}
+    
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
     if not await check_rate_limit(student_id, limit=2, window=5): 
