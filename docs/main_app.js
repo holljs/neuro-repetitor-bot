@@ -624,13 +624,20 @@ window.showProfile = async function() {
             </div>`;
         }
 
+        // --- УМНАЯ КНОПКА ПОДПИСКИ ---
+        let rewardBtnHtml = '';
+        if (data.got_reward !== 1) { // Если еще не получал бонус, рисуем кнопку
+            rewardBtnHtml = `
+            <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shrink: 0; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
+                <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
+            </button>`;
+        }
+
         const subjectScreen = document.getElementById('screen-profile');
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
             
-            <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shrink: 0; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
-                <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
-            </button>
+            ${rewardBtnHtml}
 
             <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
                 <div><div style="font-size:24px; font-weight:bold; color:#4a76a8;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
