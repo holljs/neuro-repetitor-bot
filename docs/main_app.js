@@ -626,6 +626,10 @@ window.showProfile = async function() {
             
             ${rewardBtnHtml}
 
+            <div style="background: #e6f2ff; color: #0056b3; padding: 12px; border-radius: 10px; font-weight: bold; margin-bottom: 15px; font-size: 14px; border: 1px solid #cce5ff; text-align: center; letter-spacing: 0.5px;">
+                🔑 Твой цифровой ID: <span style="font-size: 16px; color: #007bff; font-weight: 800;">${USER_ID || 'не определен'}</span>
+            </div>
+
             <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
                 <div><div style="font-size:24px; font-weight:bold; color:#4a76a8;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
                 <div style="width:1px; background:#e1e3e6;"></div>
