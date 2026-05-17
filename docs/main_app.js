@@ -578,16 +578,16 @@ window.allowVkMessages = function(btnElement) {
         .catch(() => {});
 };
 
-window.buyPackage = async function(creditsAmount) {
-    const priceMap = { 15: 150, 100: 700 }; const price = priceMap[creditsAmount]; showScreen(document.getElementById('screen-loading'));
-    try {
-        const response = await fetch(`${TEST_API_URL}/create_payment/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ student_id: String(USER_ID || 'guest'), amount: creditsAmount, price: price, vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json();
-        if (result.success && result.confirmation_url) {
-            window.openVKUrl(result.confirmation_url);
-            showProfile();
-        } else { showCustomAlert("Ошибка платежа", "Ошибка"); showProfile(); }
-    } catch (e) { showCustomAlert("Ошибка сети", "Ошибка"); showProfile(); }
+window.buyPackage = function(creditsAmount) {
+    if (!USER_ID) { 
+        showCustomAlert("Не удалось определить ваш ID ВКонтакте.", "Ошибка"); 
+        return; 
+    }
+    
+    // Магия: отправляем пользователя на нашу новую безопасную страницу оплаты на GitHub Pages
+    const payUrl = `https://holljs.github.io/vk-image-bot-frontend/pay_repetitor.html?user_id=${USER_ID}`;
+    
+    window.openVKUrl(payUrl);
 };
 
 window.showProfile = async function() {
