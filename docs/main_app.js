@@ -26,7 +26,7 @@ let currentSubjectCode = null;
 let questionNumber = 1;
 let score = 0;
 let mistakes = [];
-let skipsLeft = 3; // <--- НОВАЯ ПЕРЕМЕННАЯ
+let skipsLeft = 3; 
 let currentReviewIndex = 0;
 let currentTestMode = "standard";
 let isProcessing = false;
@@ -100,7 +100,6 @@ window.toggleMathHint = function() {
 function saveSession(screenName = 'task-screen', extra = {}) {
     if (!currentTask) return;
     try {
-        // СОХРАНЯЕМ КОЛИЧЕСТВО ЗАМЕН
         localStorage.setItem('active_test', JSON.stringify({
             currentTask, currentSubjectCode, questionNumber, score, mistakes, currentTestMode, screenName, extra, currentReviewIndex, skipsLeft
         }));
@@ -222,7 +221,6 @@ function showTask() {
     saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
     
-    // Обновляем кнопку замены вопроса
     const skipCountEl = document.getElementById('skips-count');
     if (skipCountEl) skipCountEl.textContent = skipsLeft;
     const skipBtn = document.getElementById('skip-task-btn');
@@ -250,8 +248,6 @@ function showTask() {
     document.getElementById('user-answer').value = '';
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
 }
-
-// --- НОВЫЙ ФУНКЦИОНАЛ ЗАМЕНЫ ВОПРОСА ---
 
 window.confirmSkipTask = function() {
     if (skipsLeft <= 0) {
@@ -311,8 +307,6 @@ window.executeSkipTask = async function() {
         showTask(); 
     }
 };
-
-// ----------------------------------------
 
 function normalizeText(str) {
     if (!str) return "";
@@ -422,7 +416,6 @@ function showFinishScreen(isRestored = false) {
     document.getElementById('final-score').textContent = score; 
     document.getElementById('final-mistakes').textContent = mistakes.length;
     
-    // ОТПРАВЛЯЕМ ТЕБЕ УВЕДОМЛЕНИЕ О ЗАВЕРШЕНИИ (ТОЛЬКО ОДИН РАЗ)
     if (!isRestored) {
         fetch(`${TEST_API_URL}/notify_test_finish/`, {
             method: 'POST',
@@ -554,11 +547,9 @@ window.allowVkMessages = function(btnElement) {
                 });
                 const data = await res.json();
                 
-                // БРОНЕБОЙНОЕ СКРЫТИЕ КНОПКИ (даже если юзер нажал 2 раза)
                 if (btnElement) {
                     btnElement.style.display = 'none';
                 } else {
-                    // Резервный вариант: ищем все кнопки с бонусом на экране и убиваем их
                     document.querySelectorAll('button').forEach(b => { 
                         if(b.innerText.includes('кредита') || b.innerText.includes('уведомления')) b.style.display = 'none'; 
                     });
@@ -566,9 +557,8 @@ window.allowVkMessages = function(btnElement) {
 
                 if(data.success) {
                     showCustomAlert("Вы подписались на уведомления и получили +3 кредита! 🎉", "Отлично!");
-                    setTimeout(() => showProfile(), 1500); // Обновляем баланс
+                    setTimeout(() => showProfile(), 1500); 
                 } else {
-                    // Пишем честно, если он уже забирал бонус
                     showCustomAlert(data.message || "Вы уже получали бонус за подписку!", "Внимание");
                 }
             } catch(e) {
@@ -584,9 +574,7 @@ window.buyPackage = function(creditsAmount) {
         return; 
     }
     
-    // Магия: отправляем пользователя на нашу новую безопасную страницу оплаты на GitHub Pages
     const payUrl = `https://holljs.github.io/vk-image-bot-frontend/pay_repetitor.html?user_id=${USER_ID}`;
-    
     window.openVKUrl(payUrl);
 };
 
@@ -624,9 +612,8 @@ window.showProfile = async function() {
             </div>`;
         }
 
-        // --- УМНАЯ КНОПКА ПОДПИСКИ ---
         let rewardBtnHtml = '';
-        if (data.got_reward !== 1) { // Если еще не получал бонус, рисуем кнопку
+        if (data.got_reward !== 1) { 
             rewardBtnHtml = `
             <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shrink: 0; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
                 <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
@@ -682,7 +669,11 @@ window.loadSubjectAnalytics = async function(c, n) {
 window.showHelp = function() {
     const helpScreen = document.getElementById('screen-help');
     const payBlock = document.getElementById('help-payment-block');
-    if (payBlock) payBlock.style.display = canPay ? 'block' : 'none';
+    
+    if (payBlock) {
+        payBlock.innerHTML = `<div style="margin-top: 15px;"><button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); width: 100%; padding: 14px; font-weight: bold;" onclick="window.openVKUrl('https://vk.com/@neiro_repetitor-kak-popolnit-balans-v-neiro-repetitore')">ℹ️ Где брать кредиты?</button></div>`;
+        payBlock.style.display = 'block'; 
+    }
     showScreen(helpScreen);
 };
 
@@ -692,7 +683,6 @@ window.openVKUrl = function(url) {
     } catch(e) { window.open(url, '_blank'); }
 };
 
-// --- ФУНКЦИЯ ДЛЯ УВЕЛИЧЕНИЯ КАРТИНОК ---
 window.openImageViewer = function(url) {
     try {
         vkBridge.send("VKWebAppShowImages", { images: [url] })
