@@ -67,7 +67,7 @@ def smart_crop_history():
 
         print(f"  📦 Вес картинки для отправки: {len(img_data) / 1024:.1f} KB")
 
-        images = [f"data:image/jpeg;base64,{img_data}"]
+        image_uri = f"data:image/jpeg;base64,{img_data}"
 
         prompt = f"""Ты — строгий эксперт ЕГЭ по Истории. Страница {page_num}.
 ИЗВЛЕКИ все задания Части 1. Задания Части 2 строго игнорируй.
@@ -97,7 +97,7 @@ def smart_crop_history():
         for attempt in range(3):
             try:
                 print(f"  🚀 Отправляем запрос к ИИ (попытка {attempt+1}/3)...")
-                output = replicate.run("google-deepmind/gemini-1.5-flash", input={"images": images, "prompt": prompt})
+                output = replicate.run("google/gemini-3-flash", input={"image": image_uri, "prompt": prompt})
                 clean_text = "".join(output).replace("```json", "").replace("```", "").strip()
                 success = True
                 break # Успешно! Выходим из цикла попыток
