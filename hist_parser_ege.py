@@ -45,6 +45,13 @@ def smart_crop_history():
     print(f"🎯 Начинаем парсинг. Страниц: {len(target_pages)}")
 
     for page_num in target_pages:
+        json_file_path = raw_dir / f"data_page_{page_num}.json"
+        
+        # СУПЕР-ФИЧА 1: ПРОПУСКАЕМ ТО, ЧТО УЖЕ ГОТОВО
+        if json_file_path.exists():
+            print(f"⏩ Страница {page_num} уже готова, летим дальше...")
+            continue
+
         pdf_index = page_num - 1
         if pdf_index >= len(doc): continue
 
@@ -102,20 +109,24 @@ def smart_crop_history():
                 success = True
                 break # Успешно! Выходим из цикла попыток
             except Exception as e:
-                # ВЫВОДИМ РЕАЛЬНУЮ ОШИБКУ!
                 print(f"  ⚠️ ОШИБКА: {type(e).__name__} - {e}")
                 time.sleep(2)
         
         if not success:
-            print(f"❌ Страница {page_num} пропущена из-за постоянных ошибок.")
+            print(f"❌ Страница {page_num} пропущена из-за постоянных ошибок API.")
             continue
 
         start_idx = clean_text.find('[')
         end_idx = clean_text.rfind(']') + 1
+        
+        tasks = []
         if start_idx != -1:
-            tasks = json.loads(clean_text[start_idx:end_idx])
-        else:
-            tasks = []
+            # СУПЕР-ФИЧА 2: БРОНЯ ОТ КРИВОГО JSON
+            try:
+                tasks = json.loads(clean_text[start_idx:end_idx])
+            except json.JSONDecodeError as e:
+                print(f"  ❌ Нейросеть выдала кривой JSON на стр {page_num}. Ошибка: {e}. Пропускаем!")
+                continue
 
         if tasks:
             image_links = {}
@@ -155,7 +166,7 @@ def smart_crop_history():
                     else:
                         t['image'] = ""
 
-            with open(raw_dir / f"data_page_{page_num}.json", "w", encoding="utf-8") as f:
+            with open(json_file_path, "w", encoding="utf-8") as f:
                 json.dump(tasks, f, ensure_ascii=False, indent=4)
         
         print(f"✅ Страница {page_num} обработана успешно.")
