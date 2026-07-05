@@ -32,10 +32,14 @@ let currentTestMode = "standard";
 let isProcessing = false;
 let analysisCache = {};
 
+// --- СПИСКИ ПРЕДМЕТОВ И ОЛИМПИАД ---
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
-const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS };
-const TEST_LENGTH = 15;
+// 🔥 Добавили Всероссийские Олимпиады Школьников (ВсОШ)
+const OLYMP_SUBJECTS = { "olymp_math": "Олимпиада Математика", "olymp_russian": "Олимпиада Русский язык", "olymp_inf": "Олимпиада Информатика", "olymp_phys": "Олимпиада Физика", "olymp_chem": "Олимпиада Химия" };
+
+const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS, ...OLYMP_SUBJECTS };
+const TEST_LENGTH = 10; // 🔥 Сократили количество вопросов с 15 до 10!
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
@@ -158,7 +162,11 @@ document.addEventListener("visibilitychange", () => {
 
 window.openSubjects = function(examType) {
     currentExamType = examType;
-    const subjects = (examType === 'ege') ? EGE_SUBJECTS : OGE_SUBJECTS;
+    // 🔥 Распределяем выбор списков, включая новые олимпиады
+    let subjects = OGE_SUBJECTS;
+    if (examType === 'ege') subjects = EGE_SUBJECTS;
+    else if (examType === 'olymp') subjects = OLYMP_SUBJECTS;
+
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
     for (const code in subjects) {
@@ -170,20 +178,22 @@ window.openSubjects = function(examType) {
     showScreen(subjectScreen);
 };
 
+// Перебираем кнопки меню
 document.querySelectorAll('#screen-main-menu .button').forEach(button => {
     button.addEventListener('click', () => { if (button.dataset.examType) openSubjects(button.dataset.examType); });
 });
 
 window.selectTariff = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
+    // 🔥 Здесь ты можешь изменить текст цен, так как уменьшила тест с 15 до 10 вопросов!
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
         <div style="margin-bottom: 15px;">
-            <button class="button" style="background-color: #4a76a8; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (3 кр.)</button>
-            <div style="font-size: 12px; color: #666; line-height: 1.2;">Обычные разборы ошибок от ИИ.</div>
+            <button class="button" style="background-color: #4a76a8; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'standard')"><i data-feather="play-circle" class="icon-sm"></i> Стандарт (2 кр.)</button>
+            <div style="font-size: 12px; color: #666; line-height: 1.2;">Обычные разборы ошибок от ИИ. Новый формат 10 вопросов.</div>
         </div>
         <div style="margin-bottom: 20px;">
-            <button class="button" style="background-color: #2a5885; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'pro')"><i data-feather="zap" class="icon-sm"></i> Профи (4 кр.)</button>
+            <button class="button" style="background-color: #2a5885; margin-bottom: 5px;" onclick="startTest('${subjectCode}', 'pro')"><i data-feather="zap" class="icon-sm"></i> Профи (3 кр.)</button>
             <div style="font-size: 12px; color: #666; line-height: 1.2;">Максимально подробные разборы ошибок «на пальцах».</div>
         </div>
         <button class="button secondary" onclick="openSubjects(currentExamType)"><i data-feather="arrow-left" class="icon-sm"></i> Назад к предметам</button>
@@ -502,6 +512,31 @@ function loadReviewForCurrentMistake(isRestored = false) {
     if (!isRestored) saveSession('review-screen');
     showScreen(document.getElementById('review-screen'));
 }
+
+window.runAIExplanation = async function(simplify = false) {
+    const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
+    
+    let navButtons = `<div style="display:flex; justify-content:space-between; gap:10px; margin-top:15px;">`;
+    if (currentReviewIndex > 0) navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
+    else navButtons += `<div style="flex:1;"></div>`;
+    if (currentReviewIndex < mistakes.length - 1) navButtons += `<button class="button" style="flex:1;" onclick="nextReview()">Далее ➡️</button>`;
+    else navButtons += `<button class="button" style="flex:1;" onclick="finishSession()">Завершить 🎉</button>`;
+    navButtons += `</div>`;
+
+    explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
+    
+    let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
+    try {
+        const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
+        const result = await response.json();
+        
+        let finalHtml = result.explanation;
+        if (window.marked) { finalHtml = marked.parse(finalHtml); }
+        
+        explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>` + navButtons;
+        setTimeout(() => { renderMath('review-explanation'); }, 100);
+    } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>` + navButtons; }
+};
 
 window.runAIExplanation = async function(simplify = false) {
     const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
