@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Нейро-репетитор</title>
-    <link rel="stylesheet" href="style.css?v=1006">
+    <link rel="stylesheet" href="style.css?v=1007">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     
     <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.14.1/dist/browser.min.js"></script>
@@ -47,6 +47,7 @@
             <h1 style="font-weight: 800; color: #333;">Нейро-Репетитор</h1>
             <button class="button" data-exam-type="oge">ОГЭ (9 класс)</button>
             <button class="button" data-exam-type="ege">ЕГЭ (11 класс)</button>
+            <button class="button" data-exam-type="olymp" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white;"><i data-feather="award" class="icon-sm"></i> Олимпиады (ВсОШ)</button>
             <button class="button secondary" onclick="showHelp()"><i data-feather="help-circle" class="icon-sm"></i> Помощь</button>
             <button class="button secondary" onclick="showProfile()"><i data-feather="user" class="icon-sm"></i> Мой профиль</button>
         </div>
@@ -109,7 +110,7 @@
                 </button>
             </div>
         
-            <div class="progress-bar" id="test-progress">Вопрос 1 из 15</div>
+            <div class="progress-bar" id="test-progress">Вопрос 1 из 10</div>
             
             <div id="task-image-container"></div>
             <div id="task-text" style="margin: 10px 0; font-weight: 500;"></div>
@@ -143,7 +144,7 @@
         <div id="test-finish-screen" class="screen">
             <h2><i data-feather="flag"></i> Тест завершен!</h2>
             <div class="final-card">
-                <p>Результат: <b id="final-score">0</b> из 15</p>
+                <p>Результат: <b id="final-score">0</b> из 10</p>
                 <p>Ошибок: <b id="final-mistakes" style="color: #ff5252;">0</b></p>
             </div>
             
@@ -175,7 +176,7 @@
 
     </div>
 
-    <script src="main_app.js?v=1006"></script>
+    <script src="main_app.js?v=1007"></script>
     
     <script>
         feather.replace();
