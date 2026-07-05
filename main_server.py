@@ -5,6 +5,7 @@ import random
 import json
 import re
 import sqlite3
+import httpx  # 🔥 Перешли на чистый асинхронный httpx вместо replicate
 import aiohttp  
 import asyncio
 import hmac
@@ -16,7 +17,6 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
-import replicate
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
@@ -27,12 +27,13 @@ from fastapi.responses import HTMLResponse
 from yookassa import Configuration, Payment
 
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="2.4.0")
+app = FastAPI(title="Neuro Repetitor API", version="2.5.0")
 
 Configuration.configure(os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), os.getenv("YUKASSA_SECRET_KEY", "TEST_KEY"))
 
 VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ_ВК")
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
+SILICONFLOW_API_TOKEN = os.getenv("SILICONFLOW_API_TOKEN")
 
 request_times = {}
 rate_lock = asyncio.Lock()
@@ -58,16 +59,13 @@ TOPIC_NAMES = {
     "syntax": "🏗️ Синтаксис", "punctuation": "✍️ Пунктуация",
     "orthography": "📝 Орфография", "lexis": "📖 Лексика и грамматика",
     "chemistry_part1": "🧪 Химия (Часть 1)", "physics_part1": "⚡ Физика (Часть 1)",
-    "geography_part1": "🌍 География (Часть 1)",
-    "biology_part1": "🧬 Биология",
-    "informatics_part1": "💻 Информатика",
-    "history_part1": "📜 История",
-    "social_part1": "📊 Обществознание",
-    "informatics_ege": "💻 Информатика ЕГЭ",
-    "geography_ege": "🌍 География ЕГЭ",
-    "physics_ege": "⚡ Физика ЕГЭ",
-    "ege_english": "🇬🇧 Английский ЕГЭ",
-    "ege_literature": "📚 Литература ЕГЭ"
+    "geography_part1": "🌍 География (Часть 1)", "biology_part1": "🧬 Биология",
+    "informatics_part1": "💻 Информатика", "history_part1": "📜 История", "social_part1": "📊 Обществознание",
+    "informatics_ege": "💻 Информатика ЕГЭ", "geography_ege": "🌍 География ЕГЭ", "physics_ege": "⚡ Физика ЕГЭ",
+    "ege_english": "🇬🇧 Английский ЕГЭ", "ege_literature": "📚 Литература ЕГЭ",
+    # 🔥 Предметы олимпиад
+    "olymp_math": "🏆 Олимпиада Математика", "olymp_russian": "🏆 Олимпиада Русский язык",
+    "olymp_inf": "🏆 Олимпиада Информатика", "olymp_phys": "🏆 Олимпиада Физика", "olymp_chem": "🏆 Олимпиада Химия"
 }
 
 if Path("questions").exists():
@@ -77,6 +75,54 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=False,
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
+
+# --- 🔥 УНИВЕРСАЛЬНАЯ АСИНХРОННАЯ ОБЕРТКА ДЛЯ SILICONFLOW (С УЧЕТОМ VLM И КАРТИНОК) ---
+async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str, image_url: Optional[str] = None, max_tokens: int = 1000) -> str:
+    if not SILICONFLOW_API_TOKEN:
+        raise Exception("SILICONFLOW_API_TOKEN не настроен в .env")
+        
+    url = "https://api.siliconflow.com/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {SILICONFLOW_API_TOKEN}",
+        "Content-Type": "application/json"
+    }
+    
+    # Обрабатываем мультимодальный контент, если прислали картинку задания
+    if image_url and image_url.strip().lower() not in ["", "none", "null"]:
+        user_content = [
+            {"type": "text", "text": user_prompt},
+            {"type": "image_url", "image_url": {"url": image_url}}
+        ]
+    else:
+        user_content = user_prompt
+
+    payload = {
+        "model": model_name,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_content}
+        ],
+        "max_tokens": max_tokens,
+        "temperature": 0.5,
+        "stream": False
+    }
+    
+    max_attempts = 3
+    for attempt in range(max_attempts):
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(url, json=payload, headers=headers, timeout=60.0)
+            if response.status_code == 200:
+                res_json = response.json()
+                return res_json["choices"][0]["message"]["content"].strip()
+            else:
+                logger.warning(f"⚠️ SiliconFlow вернул ошибку {response.status_code}: {response.text}")
+        except (httpx.TimeoutException, httpx.RequestError) as exc:
+            logger.warning(f"⚠️ Ошибка сети SiliconFlow на попытке {attempt + 1}: {exc}")
+            if attempt == max_attempts - 1:
+                raise exc
+            await asyncio.sleep(1.5)
+    return "Ошибка при генерации ответа нейросетью."
 
 def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     if vk_params == INTERNAL_BOT_TOKEN: return True
@@ -114,7 +160,9 @@ DATABASES = {
     "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
     "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
     "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [], "ege_literature": []
+    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [], "ege_literature": [],
+    # 🔥 Базы данных для Олимпиад
+    "olymp_math": [], "olymp_russian": [], "olymp_inf": [], "olymp_phys": [], "olymp_chem": []
 }
 
 def load_database(filename, db_key):
@@ -133,7 +181,7 @@ def init_vk_db():
     try:
         cursor.execute("ALTER TABLE users ADD COLUMN got_reward INTEGER DEFAULT 0")
     except sqlite3.OperationalError:
-        pass # Если колонка уже есть, пропускаем
+        pass 
     conn.commit()
     conn.close()
 
@@ -148,7 +196,6 @@ def init_vk_user(user_id: str) -> int:
         cursor.execute("INSERT INTO users (user_id, credits, last_activity, got_reward) VALUES (?, ?, datetime('now'), 0)", (user_id, 6))
         conn.commit()
         balance = 6
-        # Уведомляем тебя в ВК о новом юзере
         asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"👤 Новый ученик в приложении!\nСсылка: vk.com/id{user_id}"))
     else:
         cursor.execute("UPDATE users SET last_activity=datetime('now') WHERE user_id=?", (user_id,))
@@ -182,27 +229,31 @@ def save_user_progress(user_id: str, task_id: str):
         data[uid].append(task_id)
         with open(PROGRESS_FILE, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=2)
 
-def check_student_answer(student_ans, correct_ans):
+# --- 🔥 ЖЕСТКАЯ БРОНЕБОЙНАЯ НОРМАЛИЗАЦИЯ ДЛЯ СРАВНЕНИЯ ОТВЕТОВ ---
+def clean_and_normalize(text: str) -> str:
+    if not text: return ""
+    cleaned = str(text).toString() if hasattr(text, 'toString') else str(text)
+    cleaned = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', cleaned)  # Меняем тире на минус
+    cleaned = cleaned.replace(',', '.')  # Дроби в точку
+    cleaned = re.sub(r'[^\w\-.]', '', cleaned)  # Вырезаем абсолютно всё, кроме букв, цифр, точек и минусов
+    return cleaned.strip().lower()
+
+def check_student_answer(student_ans, correct_ans) -> bool:
     if not student_ans or not correct_ans: return False
     
-    student_ans = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', str(student_ans)).upper().strip()
-    correct_ans = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', str(correct_ans)).upper().strip()
+    # Прямая чистая нормализация строк
+    norm_student = clean_and_normalize(student_ans)
+    norm_correct = clean_and_normalize(correct_ans)
     
-    if len(student_ans) > len(correct_ans) + 15:
-        return False
-
-    if correct_ans.isdigit():
-        num_student = re.sub(r'\D', '', student_ans)
-        if num_student == correct_ans: 
+    if not norm_student or not norm_correct: return False
+    if norm_student == norm_correct: return True
+    
+    # Проверка на последовательность цифр (если порядок не важен: ОГЭ/ЕГЭ сопоставления)
+    if norm_correct.isdigit() and norm_student.isdigit():
+        if len(norm_student) == len(norm_correct) and sorted(norm_student) == sorted(norm_correct):
             return True
-        if len(num_student) == len(correct_ans) and sorted(num_student) == sorted(correct_ans):
-            return True
-        return False
-    elif correct_ans.replace('.', '').replace(',', '').replace('-', '').isdigit():
-        return student_ans.replace(" ", "").replace(",", ".") == correct_ans.replace(" ", "").replace(",", ".")
-    else:
-        # ФИКС БАГА 7: Вырезаем знак умножения `*`
-        return re.sub(r'[\s\-\.,;:*]', '', student_ans) == re.sub(r'[\s\-\.,;:*]', '', correct_ans)
+            
+    return False
 
 class CheckRequest(BaseModel):
     user_answer: str
@@ -270,7 +321,6 @@ async def yookassa_webhook(request: dict):
             if student_id and amount:
                 change_vk_credits(student_id, amount)
                 await send_vk_message(student_id, f"✅ Оплата прошла успешно!\nНа ваш баланс зачислено: {amount} кр.")
-                # НОВАЯ СТРОЧКА: УВЕДОМЛЕНИЕ АДМИНУ
                 await send_vk_message(str(ADMIN_VK_IDS[0]), f"💰 ОПЛАТА!\nУченик vk.com/id{student_id} купил {amount} кр.")
         return {"status": "ok"}
     except Exception as e: return {"status": "error"}
@@ -281,7 +331,7 @@ async def pay_for_test(request: PaymentRequest):
     if not verify_vk_auth(student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
         
-    cost = 4 if request.test_mode == "pro" else 3
+    cost = 3 if request.test_mode == "pro" else 2 # 🔥 Снизили цены: Профи = 3 кр, Стандарт = 2 кр!
     if student_id in ["54451631", "12345678"]: return {"success": True, "new_balance": "unlimited", "cost": 0}
     
     current_balance = init_vk_user(student_id)
@@ -315,6 +365,12 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
         elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
         elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
         elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
+        # 🔥 Папки изображений для олимпиад
+        elif exam_type == "olymp_math": img_path = f"questions/images_olymp_math/{clean_name}"
+        elif exam_type == "olymp_russian": img_path = f"questions/images_olymp_russian/{clean_name}"
+        elif exam_type == "olymp_inf": img_path = f"questions/images_olymp_inf/{clean_name}"
+        elif exam_type == "olymp_phys": img_path = f"questions/images_olymp_phys/{clean_name}"
+        elif exam_type == "olymp_chem": img_path = f"questions/images_olymp_chem/{clean_name}"
         else: img_path = f"questions/images_oge_math/{task.get('topic', 'topic_01')}/{clean_name}"
 
     return { "id": task.get("id", "unknown"), "topic": task.get("topic", "Общая тема"), "text": task.get("task_text", task.get("text", "")), "image": img_path }
@@ -346,11 +402,13 @@ async def check_answer_smart(request: CheckRequest):
     if str(request.task_id) in solved_ids:
         return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
     
+    # 🔥 Если наш жесткий скрипт не совпал, делаем быструю ИИ-перепроверку смысла через дешёвый DeepSeek-V3
     if not is_correct and correct_answer != "---":
         try:
-            prompt = f"Студент ответил '{request.user_answer}', а по ключу ответ '{correct_answer}'. Засчитать ли ответ студента как полностью верный? (Учитывай, что если это выбор нескольких вариантов, порядок цифр не важен, например 25 = 52). Верни строго JSON: {{\"is_correct\": true/false}}"
-            output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
-            is_correct = "true" in "".join(output).lower()
+            sys_prompt = "Ты робот-проверяльщик ответов. Верни строго JSON: {\"is_correct\": true/false}"
+            user_prompt = f"Студент ответил '{request.user_answer}', правильный ключ '{correct_answer}'. Засчитать ли ответ студента как эквивалентный и верный? (Учитывай, что порядок цифр в сопоставлениях не важен)."
+            res_ai = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=sys_prompt, user_prompt=user_prompt, max_tokens=20)
+            is_correct = "true" in res_ai.lower()
         except Exception: is_correct = False
 
     if is_correct and request.student_id and str(request.student_id) != "guest":
@@ -371,19 +429,24 @@ async def explain_mistake(request: ReviewRequest):
         
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
     
-    base_prompt = "Отвечай ПРОСТЫМ текстом. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), сложный Markdown и формулы. Пиши так, чтобы текст легко читался в обычном мессенджере. Будь кратким (не более 3-4 предложений)."
+    base_prompt = "Отвечай ПРОСТЫМ понятным текстом для школьника. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), формулы в косых чертах. Пиши разбор красиво, структурированно, с Markdown."
     
-    prompt = (f"{base_prompt} Объясни задачу 'на пальцах'. Текст: {content}. Ответ ученика: {request.user_answer}. Почему неверно?" 
-              if request.simplify else 
-              f"{base_prompt} Напиши короткое пошаговое объяснение. Текст: {content}. Ответ ученика: {request.user_answer}.")
+    user_prompt = (f"Объясни задачу 'на пальцах'. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}. Укажи на ошибку простым языком." 
+                  if request.simplify else 
+                  f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}.")
     
-    input_data = {"prompt": prompt}
-    if request.image_url: input_data["image"] = request.image_url
-
     try:
-        output = replicate.run("google/gemini-3-flash", input=input_data)
-        return {"explanation": "".join(output).replace("\n", "<br>")}
-    except Exception: return {"explanation": "Ошибка при генерации разбора."}
+        # 🔥 Если есть картинка задания — шлём в зрячую модель Qwen3.5, если только текст — в экономный DeepSeek-V3
+        if request.image_url:
+            logging.info(f"📸 Генерируем VLM разбор с картинкой через Qwen3.5-35B")
+            explanation = await ask_siliconflow(model_name="Qwen/Qwen3.5-35B-A3B", system_prompt=base_prompt, user_prompt=user_prompt, image_url=request.image_url, max_tokens=1200)
+        else:
+            logging.info(f"📝 Генерируем текстовый разбор через DeepSeek-V3")
+            explanation = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=base_prompt, user_prompt=user_prompt, max_tokens=1000)
+            
+        return {"explanation": explanation.replace("\n", "<br>")}
+    except Exception: 
+        return {"explanation": "Ошибка при генерации разбора."}
 
 class MistakeItem(BaseModel):
     task_text: str; user_answer: str; correct_answer: str
@@ -396,12 +459,13 @@ async def analyze_gaps(request: AnalyzeGapsRequest):
     if request.student_id and not verify_vk_auth(request.student_id, request.vk_params): return {"analysis": "Ошибка безопасности"}
     if not request.mistakes: return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
 
-    prompt = "Проанализируй ошибки ученика и выяви пробелы. Отвечай кратко, ПРОСТЫМ ТЕКСТОМ без использования LaTeX и математических спецсимволов.\nВот задачи:\n\n"
-    for i, m in enumerate(request.mistakes): prompt += f"{i+1}. Задача: {m.task_text[:300]}\n"
+    sys_prompt = "Ты эксперт-аналитик пробелов знаний. Отвечай кратко, понятным языком, БЕЗ LATEX И ЗНАКОВ ДОЛЛАРА. Выдели темы, которые нужно повторить."
+    user_prompt = "Проанализируй ошибки ученика в тесте и выяви пробелы:\n\n"
+    for i, m in enumerate(request.mistakes): user_prompt += f"{i+1}. Задача: {m.task_text[:250]}\n"
 
     try:
-        output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
-        return {"analysis": "".join(output).replace("\n", "<br>")}
+        analysis = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=sys_prompt, user_prompt=user_prompt, max_tokens=800)
+        return {"analysis": analysis.replace("\n", "<br>")}
     except Exception: return {"analysis": "Не удалось сгенерировать анализ."}
 
 @app.get("/profile_base/")
@@ -410,14 +474,12 @@ async def get_profile_base(student_id: str, vk_params: str = None):
         
     current_balance = init_vk_user(student_id)
     
-    # --- УЗНАЕМ, БРАЛ ЛИ ЮЗЕР БОНУС ---
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("SELECT got_reward FROM users WHERE user_id=?", (student_id,))
     row = cursor.fetchone()
     got_reward = row[0] if row else 0
     conn.close()
-    # ----------------------------------
 
     total_solved = 0; active_subjects = set()
     subject_counts = {}
@@ -433,7 +495,6 @@ async def get_profile_base(student_id: str, vk_params: str = None):
                         subj = parts[4]
                         subject_counts[subj] = subject_counts.get(subj, 0) + 1
                         
-    # Возвращаем флаг got_reward вместе с балансом
     return {"balance": current_balance, "total_solved": total_solved, "active_subjects": list(active_subjects), "subject_counts": subject_counts, "got_reward": got_reward}
     
 @app.get("/analyze_subject/")
@@ -451,8 +512,8 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
                 if len(parts) >= 5 and parts[1] == student_id and parts[4] == subject_key:
                     user_records.append({"topic": parts[2], "is_correct": parts[3].lower() == "true"})
                         
-    if len(user_records) < 10: 
-        return {"analysis": f"⏳ <b>Недостаточно данных.</b> Ты решил(а) всего {len(user_records)} задач из этого предмета. Пройди хотя бы один полный тест (15 вопросов), чтобы ИИ смог составить точный аналитический отчет!"}
+    if len(user_records) < 8: # 🔥 Уменьшили планку с 10 до 8 для быстрой отдачи аналитики
+        return {"analysis": f"⏳ <b>Недостаточно данных.</b> Ты решил(а) всего {len(user_records)} задач из этого предмета. Пройди хотя бы один полный тест (10 вопросов), чтобы ИИ смог составить точный аналитический отчет!"}
         
     topic_history = {}
     for r in user_records:
@@ -460,13 +521,14 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
         if t not in topic_history: topic_history[t] = []
         topic_history[t].append("✅" if r["is_correct"] else "❌")
 
-    prompt = f"Вот история ответов ученика по предмету. Темы:\n\n"
-    for t, history in topic_history.items(): prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(history[-20:])}\n"
-    prompt += "\nНапиши короткий мотивирующий отчет (2-3 абзаца). Укажи сильные и слабые темы. ОТВЕЧАЙ ПРОСТЫМ ТЕКСТОМ, БЕЗ LATEX И ЗНАКОВ ДОЛЛАРА."
+    sys_prompt = "Ты ИИ-куратор учебной платформы. Напиши короткий мотивирующий отчет (2-3 абзаца). ОТВЕЧАЙ СТРОГО БЕЗ LATEX И БЕЗ МАТЕМАТИЧЕСКИХ СПЕЦСИМВОЛОВ."
+    user_prompt = f"Вот история ответов ученика по предмету. Темы:\n\n"
+    for t, history in topic_history.items(): user_prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(history[-20:])}\n"
+    user_prompt += "\nУкажи сильные и слабые темы, дай конкретные советы по подготовке."
 
     try:
-        output = replicate.run("google/gemini-3-flash", input={"prompt": prompt})
-        return {"analysis": "".join(output).replace("\n", "<br>")}
+        analysis = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=sys_prompt, user_prompt=user_prompt, max_tokens=800)
+        return {"analysis": analysis.replace("\n", "<br>")}
     except Exception: return {"analysis": "⚠️ Ошибка генерации."}
 
 class RewardRequest(BaseModel):
@@ -485,12 +547,10 @@ async def reward_subscription(req: RewardRequest):
         conn.close()
         return {"success": False, "message": "Бонус уже был получен"}
     
-    # Начисляем 3 кредита и ставим флаг
     cursor.execute("UPDATE users SET credits = credits + 3, got_reward = 1 WHERE user_id=?", (req.student_id,))
     conn.commit()
     conn.close()
     
-    # Сообщаем тебе в личку ВК
     asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🔔 Подписка на рассылку!\nУченик vk.com/id{req.student_id} получил бонус +3 кр."))
     return {"success": True}
 
@@ -509,7 +569,7 @@ async def notify_test_finish(req: FinishTestRequest):
 # ==========================================
 # АДМИНКА ДЛЯ НАЧИСЛЕНИЯ КРЕДИТОВ (Callback API)
 # ==========================================
-ADMIN_VK_IDS = [233876992] # Твой ID
+ADMIN_VK_IDS = [233876992] 
 
 class VKCallback(BaseModel):
     type: str
@@ -529,7 +589,6 @@ async def vk_bot_webhook(data: VKCallback):
         sender_id = msg.get("from_id")
 
         if sender_id in ADMIN_VK_IDS:
-            # КОМАНДА ДЛЯ МАССОВОЙ РАССЫЛКИ
             if text.lower().startswith("рассылка"):
                 broadcast_text = text[8:].strip()
                 if not broadcast_text:
@@ -547,12 +606,11 @@ async def vk_bot_webhook(data: VKCallback):
                 for u in users:
                     res = await send_vk_message(u[0], broadcast_text)
                     if res: success += 1
-                    await asyncio.sleep(0.05) # Защита от спам-блока ВК
+                    await asyncio.sleep(0.05) 
                 
                 await send_vk_message(str(sender_id), f"✅ Рассылка завершена!\nДоставлено: {success} из {len(users)}")
                 return HTMLResponse(content="ok", status_code=200)
 
-            # КОМАНДА ДЛЯ ВЫДАЧИ КРЕДИТОВ
             parts = text.split()
             is_admin_command = (len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())))
 
