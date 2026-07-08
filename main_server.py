@@ -5,7 +5,7 @@ import random
 import json
 import re
 import sqlite3
-import httpx  # 🔥 Перешли на чистый асинхронный httpx вместо replicate
+import httpx  
 import aiohttp  
 import asyncio
 import hmac
@@ -63,9 +63,11 @@ TOPIC_NAMES = {
     "informatics_part1": "💻 Информатика", "history_part1": "📜 История", "social_part1": "📊 Обществознание",
     "informatics_ege": "💻 Информатика ЕГЭ", "geography_ege": "🌍 География ЕГЭ", "physics_ege": "⚡ Физика ЕГЭ",
     "ege_english": "🇬🇧 Английский ЕГЭ", "ege_literature": "📚 Литература ЕГЭ",
-    # 🔥 Предметы олимпиад
+    # 🔥 Олимпиады
     "olymp_math": "🏆 Олимпиада Математика", "olymp_russian": "🏆 Олимпиада Русский язык",
-    "olymp_inf": "🏆 Олимпиада Информатика", "olymp_phys": "🏆 Олимпиада Физика", "olymp_chem": "🏆 Олимпиада Химия"
+    "olymp_inf": "🏆 Олимпиада Информатика", "olymp_phys": "🏆 Олимпиада Физика", "olymp_chem": "🏆 Олимпиада Химия",
+    # 🔥 ВПР (Разные классы подтягиваются динамически, это базовые имена)
+    "vpr_math": "📝 ВПР Математика", "vpr_russian": "📝 ВПР Русский язык", "vpr_history": "📝 ВПР История"
 }
 
 if Path("questions").exists():
@@ -73,11 +75,11 @@ if Path("questions").exists():
 
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=False, allow_methods=["*"], allow_headers=["*"])
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO, format="%" "(asctime)s - %" "(levelname)s - %" "(message)s")
 logger = logging.getLogger("NeuroRepetitor")
 
-# --- 🔥 УНИВЕРСАЛЬНАЯ АСИНХРОННАЯ ОБЕРТКА ДЛЯ SILICONFLOW (С УЧЕТОМ VLM И КАРТИНОК) ---
-async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str, image_url: Optional[str] = None, max_tokens: int = 1000) -> str:
+# --- УНИВЕРСАЛЬНАЯ АСИНХРОННАЯ ОБЕРТКА ДЛЯ SILICONFLOW ---
+async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str, image_url: Optional[str] = None, max_tokens: int = 1000, response_json: bool = False) -> str:
     if not SILICONFLOW_API_TOKEN:
         raise Exception("SILICONFLOW_API_TOKEN не настроен в .env")
         
@@ -87,7 +89,6 @@ async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str,
         "Content-Type": "application/json"
     }
     
-    # Обрабатываем мультимодальный контент, если прислали картинку задания
     if image_url and image_url.strip().lower() not in ["", "none", "null"]:
         user_content = [
             {"type": "text", "text": user_prompt},
@@ -103,10 +104,13 @@ async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str,
             {"role": "user", "content": user_content}
         ],
         "max_tokens": max_tokens,
-        "temperature": 0.5,
+        "temperature": 0.3 if response_json else 0.5, # Для JSON делаем ответы более предсказуемыми
         "stream": False
     }
     
+    if response_json:
+        payload["response_format"] = {"type": "json_object"}
+
     max_attempts = 3
     for attempt in range(max_attempts):
         try:
@@ -122,14 +126,13 @@ async def ask_siliconflow(model_name: str, system_prompt: str, user_prompt: str,
             if attempt == max_attempts - 1:
                 raise exc
             await asyncio.sleep(1.5)
-    return "Ошибка при генерации ответа нейросетью."
+    return "{}" if response_json else "Ошибка при генерации ответа нейросетью."
 
 def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     if vk_params == INTERNAL_BOT_TOKEN: return True
     if not vk_params or "sign=" not in vk_params: return False
         
     query_params = dict(parse_qsl(vk_params.lstrip('?'), keep_blank_values=True))
-    
     vk_params_dict = {k: v for k, v in query_params.items() if k.startswith('vk_')}
     sorted_vk_params = dict(sorted(vk_params_dict.items()))
     encoded_params = urlencode(sorted_vk_params)
@@ -149,30 +152,24 @@ async def send_vk_message(user_id: str, message: str):
         async with aiohttp.ClientSession() as session:
             async with session.post(url, data=params) as resp:
                 result = await resp.json()
-                if "error" in result: return False
-                return True
+                return "error" not in result
     except Exception: return False
 
 QUESTIONS_DIR = Path("questions")
 PROGRESS_FILE = Path("user_progress.json")
-DATABASES = {
-    "oge_math": [], "oge_english": [], "oge_russian": [], 
-    "oge_chemistry": [], "oge_physics": [], "oge_geography": [],
-    "oge_biology": [], "oge_informatics": [], "oge_history": [], "oge_social": [],
-    "math_ege": [], "russian_ege": [],
-    "inf_ege": [], "geo_ege": [], "phys_ege": [], "ege_english": [], "chem_ege": [], "ege_literature": [],
-    # 🔥 Базы данных для Олимпиад
-    "olymp_math": [], "olymp_russian": [], "olymp_inf": [], "olymp_phys": [], "olymp_chem": []
-}
 
-def load_database(filename, db_key):
-    filepath = QUESTIONS_DIR / filename
-    if filepath.exists():
+# Динамическая автозагрузка ВСЕХ баз данных в корне вопросов (включая любые ВПР и Олимпиады)
+DATABASES = {}
+if QUESTIONS_DIR.exists():
+    for json_file in QUESTIONS_DIR.glob("*.json"):
+        if json_file.name in ["user_progress.json"]: continue
+        db_key = json_file.stem
         try:
-            with open(filepath, 'r', encoding='utf-8') as f: DATABASES[db_key] = json.load(f)
-        except Exception as e: logger.error(f"❌ Ошибка: {e}")
-
-for db_key in DATABASES.keys(): load_database(f"{db_key}.json", db_key)
+            with open(json_file, 'r', encoding='utf-8') as f:
+                DATABASES[db_key] = json.load(f)
+            logger.info(f"📦 Успешно загружена база: {db_key} ({len(DATABASES[db_key])} задач)")
+        except Exception as e:
+            logger.error(f"❌ Ошибка загрузки {json_file.name}: {e}")
 
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
@@ -229,26 +226,23 @@ def save_user_progress(user_id: str, task_id: str):
         data[uid].append(task_id)
         with open(PROGRESS_FILE, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=2)
 
-# --- 🔥 ЖЕСТКАЯ БРОНЕБОЙНАЯ НОРМАЛИЗАЦИЯ ДЛЯ СРАВНЕНИЯ ОТВЕТОВ ---
+# --- ЖЕСТКАЯ БРОНЕБОЙНАЯ НОРМАЛИЗАЦИЯ ---
 def clean_and_normalize(text: str) -> str:
     if not text: return ""
-    cleaned = str(text).toString() if hasattr(text, 'toString') else str(text)
-    cleaned = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', cleaned)  # Меняем тире на минус
-    cleaned = cleaned.replace(',', '.')  # Дроби в точку
-    cleaned = re.sub(r'[^\w\-.]', '', cleaned)  # Вырезаем абсолютно всё, кроме букв, цифр, точек и минусов
+    cleaned = str(text)
+    cleaned = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', cleaned)  
+    cleaned = cleaned.replace(',', '.')  
+    cleaned = re.sub(r'[^\w\-.]', '', cleaned)  
     return cleaned.strip().lower()
 
 def check_student_answer(student_ans, correct_ans) -> bool:
     if not student_ans or not correct_ans: return False
-    
-    # Прямая чистая нормализация строк
     norm_student = clean_and_normalize(student_ans)
     norm_correct = clean_and_normalize(correct_ans)
     
     if not norm_student or not norm_correct: return False
     if norm_student == norm_correct: return True
     
-    # Проверка на последовательность цифр (если порядок не важен: ОГЭ/ЕГЭ сопоставления)
     if norm_correct.isdigit() and norm_student.isdigit():
         if len(norm_student) == len(norm_correct) and sorted(norm_student) == sorted(norm_correct):
             return True
@@ -331,7 +325,7 @@ async def pay_for_test(request: PaymentRequest):
     if not verify_vk_auth(student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
         
-    cost = 3 if request.test_mode == "pro" else 2 # 🔥 Снизили цены: Профи = 3 кр, Стандарт = 2 кр!
+    cost = 3 if request.test_mode == "pro" else 2 
     if student_id in ["54451631", "12345678"]: return {"success": True, "new_balance": "unlimited", "cost": 0}
     
     current_balance = init_vk_user(student_id)
@@ -346,7 +340,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     if not verify_vk_auth(student_id, vk_params): raise HTTPException(status_code=403, detail="Ошибка авторизации")
         
     db = DATABASES.get(exam_type, [])
-    if not db: raise HTTPException(status_code=500, detail="База пуста")
+    if not db: raise HTTPException(status_code=500, detail=f"База {exam_type} пуста или не загружена")
     solved_ids = get_user_progress(student_id)
     
     available_tasks = [t for t in db if str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "-", "--", "---", "null"]]
@@ -356,22 +350,24 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
     
     task = random.choice(available_tasks)
     img_path = task.get("image", "")
+    
+    # Автоматическое определение путей картинок для олимпиад, ВПР и ОГЕ/ЕГЭ
     if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
         clean_name = img_path.split('/')[-1]
-        if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
-        elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
-        elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
-        elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}"
-        elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
-        elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
-        elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
-        # 🔥 Папки изображений для олимпиад
-        elif exam_type == "olymp_math": img_path = f"questions/images_olymp_math/{clean_name}"
-        elif exam_type == "olymp_russian": img_path = f"questions/images_olymp_russian/{clean_name}"
-        elif exam_type == "olymp_inf": img_path = f"questions/images_olymp_inf/{clean_name}"
-        elif exam_type == "olymp_phys": img_path = f"questions/images_olymp_phys/{clean_name}"
-        elif exam_type == "olymp_chem": img_path = f"questions/images_olymp_chem/{clean_name}"
-        else: img_path = f"questions/images_oge_math/{task.get('topic', 'topic_01')}/{clean_name}"
+        base_prefix = exam_type.split('_')[0] # 'vpr', 'olymp', 'oge', 'ege'
+        
+        if base_prefix in ["olymp", "vpr"]:
+            img_path = f"questions/images_{exam_type}/{clean_name}"
+        else:
+            # Старые префиксы для совместимости
+            if exam_type == "oge_physics": img_path = f"questions/images_oge_physics/{clean_name}"
+            elif exam_type == "oge_chemistry": img_path = f"questions/images_oge_chemistry/{clean_name}"
+            elif exam_type == "oge_geography": img_path = f"questions/images_oge_geography/{clean_name}"
+            elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}"
+            elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
+            elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
+            elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
+            else: img_path = f"questions/images_oge_math/{task.get('topic', 'topic_01')}/{clean_name}"
 
     return { "id": task.get("id", "unknown"), "topic": task.get("topic", "Общая тема"), "text": task.get("task_text", task.get("text", "")), "image": img_path }
 
@@ -402,14 +398,20 @@ async def check_answer_smart(request: CheckRequest):
     if str(request.task_id) in solved_ids:
         return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
     
-    # 🔥 Если наш жесткий скрипт не совпал, делаем быструю ИИ-перепроверку смысла через дешёвый DeepSeek-V3
+    # 🔥 НАДЕЖНЫЙ ИИ-АРБИТР ЧЕРЕЗ СТРОГИЙ JSON И DEEPSEEK-V3
     if not is_correct and correct_answer != "---":
         try:
-            sys_prompt = "Ты робот-проверяльщик ответов. Верни строго JSON: {\"is_correct\": true/false}"
-            user_prompt = f"Студент ответил '{request.user_answer}', правильный ключ '{correct_answer}'. Засчитать ли ответ студента как эквивалентный и верный? (Учитывай, что порядок цифр в сопоставлениях не важен)."
-            res_ai = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=sys_prompt, user_prompt=user_prompt, max_tokens=20)
-            is_correct = "true" in res_ai.lower()
-        except Exception: is_correct = False
+            sys_prompt = "Ты — беспристрастный бот-проверяльщик школьных ответов. Твоя задача — определить, совпадает ли ответ ученика с эталоном по смыслу (например, дроби, округления, синонимы или перестановка цифр). Верни ответ строго в формате JSON: {\"is_correct\": true} или {\"is_correct\": false}"
+            user_prompt = f"Эталонный ответ: '{correct_answer}'. Ответ ученика: '{request.user_answer}'. Они эквивалентны?"
+            
+            res_ai = await ask_siliconflow(model_name="deepseek-ai/DeepSeek-V3", system_prompt=sys_prompt, user_prompt=user_prompt, max_tokens=20, response_json=True)
+            
+            # Парсим честный JSON
+            ai_data = json.loads(res_ai)
+            is_correct = ai_data.get("is_correct", False)
+        except Exception as e: 
+            logger.error(f"⚠️ Ошибка ИИ-Арбитра: {e}")
+            is_correct = False
 
     if is_correct and request.student_id and str(request.student_id) != "guest":
         save_user_progress(request.student_id, request.task_id)
@@ -428,15 +430,13 @@ async def explain_mistake(request: ReviewRequest):
         return {"explanation": "⚠️ Действие заблокировано."}
         
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
-    
     base_prompt = "Отвечай ПРОСТЫМ понятным текстом для школьника. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), формулы в косых чертах. Пиши разбор красиво, структурированно, с Markdown."
     
-    user_prompt = (f"Объясни задачу 'на пальцах'. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}. Укажи на ошибку простым языком." 
-                  if request.simplify else 
+    user_prompt = (f"Объясни задачу 'на пальцах'. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}. Укажи на ошибку простым языком."  
+                  if request.simplify else  
                   f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}.")
     
     try:
-        # 🔥 Если есть картинка задания — шлём в зрячую модель Qwen3.5, если только текст — в экономный DeepSeek-V3
         if request.image_url:
             logging.info(f"📸 Генерируем VLM разбор с картинкой через Qwen3.5-35B")
             explanation = await ask_siliconflow(model_name="Qwen/Qwen3.5-35B-A3B", system_prompt=base_prompt, user_prompt=user_prompt, image_url=request.image_url, max_tokens=1200)
@@ -512,7 +512,7 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
                 if len(parts) >= 5 and parts[1] == student_id and parts[4] == subject_key:
                     user_records.append({"topic": parts[2], "is_correct": parts[3].lower() == "true"})
                         
-    if len(user_records) < 8: # 🔥 Уменьшили планку с 10 до 8 для быстрой отдачи аналитики
+    if len(user_records) < 8: 
         return {"analysis": f"⏳ <b>Недостаточно данных.</b> Ты решил(а) всего {len(user_records)} задач из этого предмета. Пройди хотя бы один полный тест (10 вопросов), чтобы ИИ смог составить точный аналитический отчет!"}
         
     topic_history = {}
@@ -545,7 +545,7 @@ async def reward_subscription(req: RewardRequest):
     
     if row and row[0] == 1:
         conn.close()
-        return {"success": False, "message": "Бонус уже был получен"}
+        return {"success": False, "message": "Bonus already received"}
     
     cursor.execute("UPDATE users SET credits = credits + 3, got_reward = 1 WHERE user_id=?", (req.student_id,))
     conn.commit()
@@ -567,7 +567,7 @@ async def notify_test_finish(req: FinishTestRequest):
     return {"success": True}
 
 # ==========================================
-# АДМИНКА ДЛЯ НАЧИСЛЕНИЯ КРЕДИТОВ (Callback API)
+# АДМИНКА ДЛЯ НАЧИСЛЕНИЯ КРЕДИТОВ
 # ==========================================
 ADMIN_VK_IDS = [233876992] 
 
