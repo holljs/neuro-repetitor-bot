@@ -465,11 +465,14 @@ async def check_answer_smart(request: CheckRequest):
     if not verify_vk_auth(str(request.student_id), request.vk_params):
         return {"is_correct": False, "error": "Ошибка безопасности"}
         
-    db_name = "unknown"
+   db_name = "unknown"
     task = None
     for key, db in DATABASES.items():
+        if not isinstance(db, list): 
+            continue
         for t in db:
-            if str(t.get("id")) == str(request.task_id):
+            # Проверяем, что элемент является словарем, а не строкой/мусором
+            if isinstance(t, dict) and str(t.get("id")) == str(request.task_id):
                 task = t
                 db_name = key
                 break
