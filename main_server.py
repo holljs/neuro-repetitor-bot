@@ -426,7 +426,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
         raise HTTPException(status_code=500, detail=f"База {exam_type} пуста или не загружена")
     
     solved_ids = get_user_progress(student_id)
-    available_tasks = [t for t in db if str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "-", "--", "---", "null"]]
+    available_tasks = [t for t in db if isinstance(t, dict) and str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "-", "--", "---", "null"]]
     
     if not available_tasks:
         return {"id": "done", "topic": "done", "text": "🎉 Все задачи решены!", "image": "", "done": True}
@@ -465,13 +465,12 @@ async def check_answer_smart(request: CheckRequest):
     if not verify_vk_auth(str(request.student_id), request.vk_params):
         return {"is_correct": False, "error": "Ошибка безопасности"}
         
-   db_name = "unknown"
+    db_name = "unknown"
     task = None
     for key, db in DATABASES.items():
-        if not isinstance(db, list): 
+        if not isinstance(db, list):
             continue
         for t in db:
-            # Проверяем, что элемент является словарем, а не строкой/мусором
             if isinstance(t, dict) and str(t.get("id")) == str(request.task_id):
                 task = t
                 db_name = key
@@ -536,7 +535,6 @@ async def explain_mistake(request: ReviewRequest):
     )
     
     try:
-        # Автоматически запустит Gemini Flash (если есть картинка) или GPT Nano (если только текст)
         explanation = await ask_replicate(
             system_prompt=base_prompt, 
             user_prompt=user_prompt, 
