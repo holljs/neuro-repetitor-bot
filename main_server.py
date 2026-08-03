@@ -27,7 +27,7 @@ from fastapi.responses import HTMLResponse
 from yookassa import Configuration, Payment
 
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="3.2.0")
+app = FastAPI(title="Neuro Repetitor API", version="3.3.0")
 
 # Настройка ЮKassa
 Configuration.configure(
@@ -224,19 +224,32 @@ async def ask_replicate(
 
     return '{"is_correct": false}' if response_json else "Ошибка генерации ответа ИИ."
 
-async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None) -> tuple[bool, str]:
+async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None, is_english: bool = False) -> tuple[bool, str]:
     """
-    Каскадный вызов ИИ-Арбитра для проверки ответов без эталона в базе (answer == '---').
-    Текст: DeepSeek (TokenRouter) -> GPT-4.1-Nano (Replicate)
-    Мультимедиа: Qwen (TokenRouter) -> Gemini Flash (Replicate)
+    Каскадный вызов ИИ-Арбитра для проверки ответов без эталона в базе или для сложных заданий.
+    Поддерживает спец-промпт для Английского языка.
     """
-    system_prompt = (
-        "Ты — строгий, профессиональный и объективный арбитр школьных экзаменов (ОГЭ/ЕГЭ).\n"
-        "Твоя задача — проверить, верен ли ответ ученика на данное задание.\n"
-        "Учитывай синонимы, порядок цифр (если применимо), мелкие опечатки и смысл ответа.\n"
-        "Верни СТРОГО JSON без markdown-тегов:\n"
-        '{"is_correct": true, "correct_was": "краткий верный ответ"}'
-    )
+    if is_english:
+        system_prompt = (
+            "Ты — опытный, гибкий и объективный эксперт ОГЭ/ЕГЭ по английскому языку.\n"
+            "Твоя задача — проверить ответ ученика на задание.\n"
+            "ПРАВИЛА ДЛЯ АНГЛИЙСКОГО:\n"
+            "1. Числительные прописью и цифрами ЭКВИВАЛЕНТНЫ (например, 'five' = '5', 'ten' = '10').\n"
+            "2. Названия городов/имен на английском или русском засчитывай (например, 'Moscow' = 'Московский' = 'Москва').\n"
+            "3. Если это задание Устной части (чтение вслух, телефонный опрос) или Эссе (письмо другу): если ученик предоставил связный осмысленный ответ по теме — ставь is_correct: true!\n"
+            "4. Мелкие опечатки не влияющие на смысл — зачитывай.\n"
+            "Верни СТРОГО JSON без markdown-тегов:\n"
+            '{"is_correct": true, "correct_was": "краткий верный ответ"}'
+        )
+    else:
+        system_prompt = (
+            "Ты — строгий, профессиональный и объективный арбитр школьных экзаменов (ОГЭ/ЕГЭ).\n"
+            "Твоя задача — проверить, верен ли ответ ученика на данное задание.\n"
+            "Учитывай синонимы, порядок цифр (если применимо), мелкие опечатки и смысл ответа.\n"
+            "Верни СТРОГО JSON без markdown-тегов:\n"
+            '{"is_correct": true, "correct_was": "краткий верный ответ"}'
+        )
+
     user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
     has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
 
@@ -558,7 +571,10 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
         "id": task.get("id", "unknown"), 
         "topic": task.get("topic", "Общая тема"), 
         "text": task.get("task_text", task.get("text", "")), 
-        "image": img_path 
+        "image": img_path,
+        "all_images": task.get("all_images", []),
+        "audio": task.get("audio", ""),
+        "all_audios": task.get("all_audios", [])
     }
 
 @app.post("/check/")
@@ -586,22 +602,32 @@ async def check_answer_smart(request: CheckRequest):
         return {"is_correct": False, "error": "Задача не найдена"}
 
     correct_answer = str(task.get("answer", "")).strip()
+    task_text = str(task.get("task_text") or task.get("text", ""))
+    is_english = db_name in ["oge_english", "ege_english"] or "english" in db_name.lower()
+
+    # 🎯 Детектор устной/развернутой части (чтобы не сравнивать со словами "Московский" из базы ФИПИ)
+    is_open_or_oral_task = any(kw in task_text.lower() for kw in [
+        "read the text aloud", "telephone survey", "write a message", "задание 35", 
+        "бланк ответов № 2", "услышите запись дважды", "бланк ответов №2"
+    ]) or correct_answer.lower() in ["московский", "---", "", "none", "null", "-"]
+
     is_correct = False
 
-    # 🔥 Если ответ в базе равен "---", "", "none", "null", "-" — передаем каскаду ИИ-Арбитра!
-    if correct_answer in ["---", "", "none", "null", "-"]:
+    # 🔥 Передаем каскаду ИИ-Арбитра для сложных/открытых или английских заданий
+    if is_open_or_oral_task or is_english:
         is_correct, real_ai_answer = await ask_ai_arbiter_cascade(
-            task_text=task.get("task_text") or task.get("text", ""),
+            task_text=task_text,
             user_answer=request.user_answer,
-            image_url=task.get("image")
+            image_url=task.get("image"),
+            is_english=is_english
         )
         if real_ai_answer and real_ai_answer != "---":
             correct_answer = real_ai_answer
     else:
-        # Прямая математическая/текстовая проверка
+        # Прямая проверка для точных предметов (математика, физика и т.д.)
         is_correct = check_student_answer(request.user_answer, correct_answer)
 
-        # Если прямое сравнение подвело, а ответ не пустой — дополнительно проверяем ИИ
+        # Если прямое сравнение подвело, а ответ не пустой — дополнительно проверяем через ИИ
         if not is_correct:
             try:
                 sys_prompt = "Ты — беспристрастный арбитр школьных ответов. Определи, совпадает ли ответ ученика с эталоном по смыслу."
@@ -644,12 +670,18 @@ async def explain_mistake(request: ReviewRequest):
         return {"explanation": "⚠️ Действие заблокировано."}
 
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
-    base_prompt = "Отвечай ПРОСТЫМ понятным текстом для школьника. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), формулы в косых чертах. Пиши разбор красиво, структурированно, с Markdown."
+    base_prompt = (
+        "Ты профессиональный, дружелюбный репетитор ОГЭ/ЕГЭ.\n"
+        "Отвечай ПРОСТЫМ понятным текстом для школьника. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО использовать LaTeX (знаки $ или $$), "
+        "формулы в косых чертах.\n"
+        "ВАЖНО: Если задание про чтение текста вслух, опрос или письмо на английском — давай рекомендации по чтению, "
+        "грамматике и теме текста. НЕ связывай ответ с техническими заполнителями вроде названий городов, если их нет в тексте задания!"
+    )
 
     user_prompt = (
-        f"Объясни задачу 'на пальцах'. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}. Укажи на ошибку простым языком."  
+        f"Объясни задачу 'на пальцах'. Текст задания: {content}. Ответ ученика: {request.user_answer}. Укажи на ошибку простым языком."  
         if request.simplify else  
-        f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Неправильный ответ ученика: {request.user_answer}."
+        f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Ответ ученика: {request.user_answer}."
     )
 
     try:
