@@ -275,13 +275,22 @@ function showTask() {
         taskTextElement.style.display = 'block';
     } else { taskTextElement.textContent = "Текст не найден"; }
 
-   // 🖼 УМНАЯ ОБРАБОТКА КАРТИНОК (Исправлена ссылка ФИПИ)
-    if (currentTask.image && currentTask.image.length > 5) {
-        let fullImgUrl = currentTask.image;
-        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
-            fullImgUrl = `https://neuro-master.online/${fullImgUrl.replace(/^\//, '')}`;
-        }
-        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer; margin-top:10px;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
+   // 🖼 УМНАЯ ОБРАБОТКА КАРТИНОК И МНОЖЕСТВЕННЫХ СХЕМ (с гарантированным /docs/)
+    let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0 
+        ? currentTask.all_images 
+        : (currentTask.image ? [currentTask.image] : []);
+
+    if (imagesToDisplay.length > 0) {
+        let imgsHtml = '';
+        imagesToDisplay.forEach(imgUrl => {
+            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            if (!cleanPath.startsWith('docs/')) {
+                cleanPath = 'docs/' + cleanPath;
+            }
+            let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+            imgsHtml += `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer; margin-top:10px;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
+        });
+        imageContainer.innerHTML = imgsHtml;
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
 
@@ -538,14 +547,13 @@ function loadReviewForCurrentMistake(isRestored = false) {
         
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        let fullImgUrl = mistake.task.image;
-        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
-            fullImgUrl = `https://neuro-master.online/${fullImgUrl.replace(/^\//, '')}`;
+        let cleanPath = mistake.task.image.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+        if (!cleanPath.startsWith('docs/')) {
+            cleanPath = 'docs/' + cleanPath;
         }
+        let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
-    
-    let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
     
     navButtons += `<div style="display:flex; justify-content:space-between; gap:10px;">`;
     if (currentReviewIndex > 0) {
