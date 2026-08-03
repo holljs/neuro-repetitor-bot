@@ -53,11 +53,8 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
 
             soup = BeautifulSoup(html_text, 'html.parser')
 
-            # 🎯 Ищем формы заданий (как на твоих скринах: checkformF6224C)
             forms = soup.find_all('form', id=re.compile(r'^checkform', re.I))
-            
             if not forms:
-                # Фолбэк на таблицы и qblock
                 forms = soup.find_all('div', class_=re.compile(r'qblock', re.I))
             if not forms:
                 forms = soup.find_all('td', class_='cell_0')
@@ -67,7 +64,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                 break
 
             for idx, block in enumerate(forms):
-                # Находим номер задачи (например, F6224C или 9F1047)
                 block_id = block.get('id', '') or ''
                 task_num = re.sub(r'checkform', '', block_id, flags=re.I)
                 
@@ -75,13 +71,37 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     num_match = re.search(r'Номер:\s*([A-Z0-9]+)', block.get_text(), re.IGNORECASE)
                     task_num = num_match.group(1) if num_match else f"p{page}_{idx+1}"
 
-                # Удаляем интерактивные формы/дропдауны select, чтобы не засорять текст
-                for s in block.find_all(['select', 'input', 'button']):
+                raw_html = str(block)
+
+                # 🎵 1. ПОИСК АУДИО (включая скрипты ShowPictureQ2WH)
+                audios = []
+                mp3_in_script = re.findall(r"ShowPictureQ2WH\s*\(\s*['\"]([^'\"]+\.mp3)['\"]", raw_html, re.IGNORECASE)
+                mp3_in_html = re.findall(r'(?:https?://oge\.fipi\.ru)?(/[^\s\'"<>]+\.(?:mp3|wav|ogg|m4a))', raw_html, re.IGNORECASE)
+
+                for path in mp3_in_script + mp3_in_html:
+                    full_url = path if path.startswith('http') else f"https://oge.fipi.ru/{path.lstrip('/')}"
+                    if full_url not in audios:
+                        audios.append(full_url)
+
+                # 🖼 2. ПОИСК КАРТИНОК И СХЕМ
+                imgs = []
+                found_srcs = re.findall(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif))["\']', raw_html, re.IGNORECASE)
+                found_docs = re.findall(r'(?:https?://oge\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
+
+                for path in found_srcs + found_docs:
+                    if any(icon in path.lower() for icon in ['icon', 'button', 'arrow', 'btn', 'system', 'check.png', 'cross.png', 'simg1_']):
+                        continue
+                    
+                    full_url = path if path.startswith('http') else f"https://oge.fipi.ru/{path.lstrip('/')}"
+                    if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
+                        imgs.append(full_url)
+
+                # 🧹 3. ОЧИСТКА ТЕКСТА
+                clean_block = BeautifulSoup(raw_html, 'html.parser')
+                for s in clean_block.find_all(['select', 'input', 'button', 'script']):
                     s.decompose()
 
-                block_text = block.get_text(separator="\n")
-
-                # Формируем чистый текст задания
+                block_text = clean_block.get_text(separator="\n")
                 lines = [line.strip() for line in block_text.split("\n") if line.strip()]
                 clean_lines = []
                 for line in lines:
@@ -92,24 +112,13 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                 if len(full_text) < 15:
                     continue
 
-                # Поиск картинок и аудио в HTML карточки
-                raw_html = str(block)
-                imgs = []
-                found_urls = re.findall(r'(?:https?://oge\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
-                found_docs = re.findall(r'(/docs/[^\s\'"<>]+\.[a-zA-Z0-9]+)', raw_html, re.IGNORECASE)
-
-                for path in found_urls + found_docs:
-                    if any(icon in path.lower() for icon in ['icon', 'button', 'arrow', 'btn', 'system', 'check.png', 'cross.png']):
-                        continue
-                    full_url = path if path.startswith('http') else f"https://oge.fipi.ru{path}"
-                    if full_url not in imgs:
-                        imgs.append(full_url)
-
                 task_obj = {
                     "id": f"fipi_{task_num}",
                     "task_text": full_text,
                     "image": imgs[0] if imgs else "",
                     "all_images": imgs,
+                    "audio": audios[0] if audios else "",
+                    "all_audios": audios,
                     "answer": "---",
                     "topic": subject_code
                 }
@@ -117,7 +126,7 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                 if not any(t['id'] == task_obj['id'] for t in parsed_tasks):
                     parsed_tasks.append(task_obj)
 
-            print(f"✅ Страница {page} готова! Собрано всего: {len(parsed_tasks)} задач.")
+            print(f"✅ Страница {page} готова! Всего собрано: {len(parsed_tasks)} задач.")
             time.sleep(0.3)
 
         except Exception as e:
@@ -130,8 +139,8 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
     print(f"\n🎉 СБОР ЗАВЕРШЕН! Сохранено {len(parsed_tasks)} задач в файл: {output_path}")
 
 if __name__ == "__main__":
-    proj = sys.argv[1] if len(sys.argv) > 1 else "8BBD5C99F37898B6402964AB11955663"
-    code = sys.argv[2] if len(sys.argv) > 2 else "oge_english"
+    proj = sys.argv[1] if len(sys.argv) > 1 else "74676951F093A0754D74F2D6E7955F06"
+    code = sys.argv[2] if len(sys.argv) > 2 else "oge_informatics"
     pages = int(sys.argv[3]) if len(sys.argv) > 3 else 175
 
     parse_fipi(proj, code, pages)
