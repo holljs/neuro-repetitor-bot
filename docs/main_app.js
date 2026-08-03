@@ -374,13 +374,10 @@ window.executeSkipTask = async function() {
 
 function normalizeText(str) {
     if (!str) return "";
-    let cleaned = str.toString()
-        .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
-        .replace(',', '.')
-        .replace(/[^\w\sа-яА-ЯёЁ\.,\-]/gi, '')
-        .replace(/\s+/g, '')
-        .trim().toLowerCase();
-    return cleaned;
+    return str.toString()
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-') // Приводим тире к минусу
+        .trim()                                      // Убираем случайные пробелы по краям
+        .toLowerCase();                              // Приводим к нижнему регистру
 }
 
 window.submitAnswer = async function() {
