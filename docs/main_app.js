@@ -514,8 +514,18 @@ window.prevReview = function() {
     }
 };
 
+window.nextReview = function() {
+    currentReviewIndex++;
+    if (currentReviewIndex < mistakes.length) {
+        loadReviewForCurrentMistake();
+    } else {
+        confirmFinishReview();
+    }
+};
+
 function loadReviewForCurrentMistake(isRestored = false) {
-    const mistake = mistakes[currentReviewIndex]; document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1}`;
+    const mistake = mistakes[currentReviewIndex]; 
+    document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
     
     document.getElementById('review-answers-block').innerHTML = `
         <div style="display:flex; align-items:flex-start; color:#d32f2f; font-weight:500; word-break: break-word; margin-bottom: 5px;">
@@ -535,37 +545,40 @@ function loadReviewForCurrentMistake(isRestored = false) {
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
-    let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
+    // 🎯 ПОНЯТНЫЙ И ЕДИНЫЙ БЛОК КНОПАК НАВИГАЦИИ
+    let navButtons = `<button class="submit-btn" style="margin-bottom:12px; width:100%; background:#4a76a8;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>`;
     
-    navButtons += `<div style="display:flex; justify-content:space-between; gap:10px;">`;
+    navButtons += `<div style="display:flex; gap:8px; margin-bottom:10px;">`;
     if (currentReviewIndex > 0) {
         navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
-    } else {
-        navButtons += `<div style="flex:1;"></div>`;
     }
     
     if (currentReviewIndex < mistakes.length - 1) {
-        navButtons += `<button class="button" style="flex:1;" onclick="nextReview()">Далее ➡️</button>`;
+        navButtons += `<button class="button" style="flex:1; background:#4a76a8;" onclick="nextReview()">Далее ➡️</button>`;
     } else {
-        navButtons += `<button class="button" style="flex:1;" onclick="finishSession()">Завершить 🎉</button>`;
+        navButtons += `<button class="button" style="flex:1; background:#4CAF50;" onclick="confirmFinishReview()">Завершить 🎉</button>`;
     }
     navButtons += `</div>`;
+
+    navButtons += `<button class="button secondary" style="width:100%; color:#777; font-size:13px; padding:8px;" onclick="confirmFinishReview()">Закончить разбор</button>`;
     
     document.getElementById('review-explanation').innerHTML = navButtons;
+    if (window.feather) feather.replace();
     
     if (!isRestored) saveSession('review-screen');
     showScreen(document.getElementById('review-screen'));
 }
 
 window.runAIExplanation = async function(simplify = false) {
-    const mistake = mistakes[currentReviewIndex]; const explanationBox = document.getElementById('review-explanation');
+    const mistake = mistakes[currentReviewIndex]; 
+    const explanationBox = document.getElementById('review-explanation');
     
-    let navButtons = `<div style="display:flex; justify-content:space-between; gap:10px; margin-top:15px;">`;
+    let navButtons = `<div style="display:flex; gap:8px; margin-top:15px; margin-bottom:10px;">`;
     if (currentReviewIndex > 0) navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
-    else navButtons += `<div style="flex:1;"></div>`;
-    if (currentReviewIndex < mistakes.length - 1) navButtons += `<button class="button" style="flex:1;" onclick="nextReview()">Далее ➡️</button>`;
-    else navButtons += `<button class="button" style="flex:1;" onclick="finishSession()">Завершить 🎉</button>`;
+    if (currentReviewIndex < mistakes.length - 1) navButtons += `<button class="button" style="flex:1; background:#4a76a8;" onclick="nextReview()">Далее ➡️</button>`;
+    else navButtons += `<button class="button" style="flex:1; background:#4CAF50;" onclick="confirmFinishReview()">Завершить 🎉</button>`;
     navButtons += `</div>`;
+    navButtons += `<button class="button secondary" style="width:100%; color:#777; font-size:13px; padding:8px;" onclick="confirmFinishReview()">Закончить разбор</button>`;
 
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
     
@@ -577,12 +590,52 @@ window.runAIExplanation = async function(simplify = false) {
         let finalHtml = result.explanation;
         if (window.marked) { finalHtml = marked.parse(finalHtml); }
         
-        explanationBox.innerHTML = `<div style="text-align:left;">${finalHtml}</div>` + navButtons;
+        explanationBox.innerHTML = `<div style="text-align:left; line-height:1.5;">${finalHtml}</div>` + navButtons;
         setTimeout(() => { renderMath('review-explanation'); }, 100);
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>` + navButtons; }
 };
 
-window.nextReview = function() { currentReviewIndex++; if (currentReviewIndex < mistakes.length) loadReviewForCurrentMistake(); else { window.finishSession(); } };
+window.confirmFinishReview = function() {
+    const modal = document.getElementById('custom-modal');
+    if (!modal) {
+        finishSession();
+        return;
+    }
+    
+    document.body.style.overflow = 'hidden';
+    document.getElementById('modal-title').textContent = "Закончить разбор?";
+    document.getElementById('modal-message').innerHTML = "Вы уверены, что хотите завершить просмотр ошибок и вернуться в главное меню?";
+    
+    const originalBtn = modal.querySelector('button');
+    if (originalBtn) originalBtn.style.display = 'none';
+
+    let btnGroup = document.getElementById('temp-confirm-btns');
+    if (!btnGroup) {
+        btnGroup = document.createElement('div');
+        btnGroup.id = 'temp-confirm-btns';
+        modal.querySelector('div').appendChild(btnGroup);
+    }
+    
+    btnGroup.innerHTML = `
+        <button class="button" style="background:#ff5252; margin-bottom:8px; width:100%" id="btn-finish-review-yes">Да, закончить</button>
+        <button class="button secondary" style="width:100%" id="btn-finish-review-no">Продолжить разбор</button>
+    `;
+
+    document.getElementById('btn-finish-review-yes').onclick = () => {
+        btnGroup.remove();
+        if (originalBtn) originalBtn.style.display = 'inline-block';
+        closeModal();
+        finishSession();
+    };
+    
+    document.getElementById('btn-finish-review-no').onclick = () => {
+        btnGroup.remove();
+        if (originalBtn) originalBtn.style.display = 'inline-block';
+        closeModal();
+    };
+    
+    modal.style.display = 'flex';
+};
 
 window.finishSession = () => {
     currentTask = null;
