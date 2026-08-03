@@ -38,7 +38,7 @@ const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "rus
 const OLYMP_SUBJECTS = { "olymp_math": "Олимпиада Математика", "olymp_russian": "Олимпиада Русский язык", "olymp_inf": "Олимпиада Информатика", "olymp_phys": "Олимпиада Физика", "olymp_chem": "Олимпиада Химия" };
 
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS, ...OLYMP_SUBJECTS };
-const TEST_LENGTH = 10; // 🔥 Сократили количество вопросов до 10!
+const TEST_LENGTH = 10;
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
@@ -181,7 +181,6 @@ document.querySelectorAll('#screen-main-menu .button').forEach(button => {
 });
 
 window.selectTariff = function(subjectCode, subjectName) {
-    // 🔥 ПЕРЕХВАТ: Если это олимпиада, сразу уводим на выбор класса и не показываем тарифы!
     if (subjectCode.startsWith('olymp_')) {
         selectOlympClass(subjectCode, subjectName);
         return;
@@ -203,7 +202,6 @@ window.selectTariff = function(subjectCode, subjectName) {
     if (window.feather) feather.replace();
 };
 
-// 🔥 Выбор класса для Олимпиад
 window.selectOlympClass = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
     let classButtons = `<h2>${subjectName}</h2><h3>Выберите класс:</h3><div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">`;
@@ -383,15 +381,15 @@ window.executeSkipTask = async function() {
 function normalizeText(str) {
     if (!str) return "";
     return str.toString()
-        .replace(/[\u2012\u2013\u2014\u2212]/g, '-') // Приводим тире к минусу
-        .trim()                                      // Убираем случайные пробелы по краям
-        .toLowerCase();                              // Приводим к нижнему регистру
+        .replace(/[\u2012\u2013\u2014\u2212]/g, '-')
+        .trim()
+        .toLowerCase();
 }
 
 window.submitAnswer = async function() {
     let rawInput = document.getElementById('user-answer').value;
     let userAnswer = normalizeText(rawInput);
-    if (!userAnswer) { showCustomAlert("Пожалуйста, введите корректный ответ (без эмодзи)!", "Внимание"); return; }
+    if (!userAnswer) { showCustomAlert("Пожалуйста, введите корректный ответ!", "Внимание"); return; }
     showScreen(document.getElementById('screen-loading'));
     try {
         const response = await fetch(`${TEST_API_URL}/check/`, {
@@ -501,28 +499,11 @@ function showFinishScreen(isRestored = false) {
 
     if (mistakes.length > 0) {
         reviewBtnBlock.style.display = 'block';
-        reviewBtnBlock.insertAdjacentHTML('beforebegin', `
-            <div id="topic-stats" style="margin-top:20px; text-align:left; background:#f0f8ff; padding:15px; border-radius:10px; border: 1px solid #bcdcff;">
-                <h3 style="margin-top:0; color:#0056b3; display:flex; align-items:center;"><i data-feather="activity" class="icon-sm"></i> Умный анализ пробелов</h3>
-                <p id="ai-analysis-text" style="font-size:14px; color:#333;">ИИ проанализирует твои ошибки.</p>
-                <button id="ai-analysis-btn" class="button" style="background-color:#007bff; padding:10px; font-size:14px;" onclick="getAIAnalysis()"><i data-feather="cpu" class="icon-sm"></i> Сгенерировать ИИ-анализ</button>
-            </div>
-        `);
     } else { reviewBtnBlock.style.display = 'none'; }
     
     if (!isRestored) saveSession('test-finish-screen');
     showScreen(document.getElementById('test-finish-screen'));
 }
-
-window.getAIAnalysis = async function() {
-    const btn = document.getElementById('ai-analysis-btn'); const textBox = document.getElementById('ai-analysis-text');
-    btn.style.display = 'none'; textBox.innerHTML = `<div style="display:flex; align-items:center; color:#555;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>ИИ анализирует...</i></div>`;
-    const mData = mistakes.map(m => ({ task_text: String(m.task.task_text || m.task.text || ""), user_answer: String(m.user_answer || ""), correct_answer: String(m.task.answer || "") }));
-    try {
-        const response = await fetch(`${TEST_API_URL}/analyze_gaps/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mistakes: mData, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
-        const result = await response.json(); textBox.innerHTML = `<div style="line-height: 1.5;">${result.analysis}</div>`;
-    } catch (error) { textBox.innerHTML = `<div style="color:#d32f2f;">Ошибка соединения с сервером.</div>`; btn.style.display = 'block'; }
-};
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
 
@@ -760,9 +741,16 @@ window.openVKUrl = function(url) {
     } catch(e) { window.open(url, '_blank'); }
 };
 
+// 🎯 ИСПРАВЛЕННЫЙ ПРОСМОТРЩИК КАРТИНОК С ГАРАНТИРОВАННЫМ docs/
 window.openImageViewer = function(url) {
     try {
-        vkBridge.send("VKWebAppShowImages", { images: [url] })
-        .catch(() => { window.open(url, '_blank'); });
+        let cleanPath = url.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+        if (!cleanPath.startsWith('docs/')) {
+            cleanPath = 'docs/' + cleanPath;
+        }
+        let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+
+        vkBridge.send("VKWebAppShowImages", { images: [fullImgUrl] })
+        .catch(() => { window.open(fullImgUrl, '_blank'); });
     } catch(e) { window.open(url, '_blank'); }
 };
