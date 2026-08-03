@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Нейро-репетитор</title>
-    <link rel="stylesheet" href="style.css?v=1007">
+    <link rel="stylesheet" href="style.css?v=1008">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     
     <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.14.1/dist/browser.min.js"></script>
@@ -159,24 +159,16 @@
         <div id="review-screen" class="screen">
             <div class="progress-bar" id="review-progress">Разбор ошибки 1</div>
             
-            <div class="mistake-card" id="review-answers-block">
-                </div>
+            <div class="mistake-card" id="review-answers-block"></div>
             
             <div id="review-image-container"></div>
             
-            <div class="explanation-box" id="review-explanation">
-                <button class="submit-btn" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>
-            </div>
-            
-            <div class="btn-group">
-                <button class="button secondary" id="simplify-btn" onclick="runAIExplanation(true)" style="display:none;"><i data-feather="coffee" class="icon-sm"></i> Объяснить проще</button>
-                <button class="button" onclick="nextReview()">Дальше <i data-feather="arrow-right" class="icon-sm" style="margin-left:8px; margin-right:0;"></i></button>
-            </div>
+            <div class="explanation-box" id="review-explanation"></div>
         </div>
 
     </div>
 
-    <script src="main_app.js?v=1007"></script>
+    <script src="main_app.js?v=1008"></script>
     
     <script>
         feather.replace();
