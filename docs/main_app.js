@@ -275,11 +275,39 @@ function showTask() {
         taskTextElement.style.display = 'block';
     } else { taskTextElement.textContent = "Текст не найден"; }
 
+   // 🖼 УМНАЯ ОБРАБОТКА КАРТИНОК (Исправлена ссылка ФИПИ)
     if (currentTask.image && currentTask.image.length > 5) {
-        const fullImgUrl = currentTask.image.startsWith('http') ? currentTask.image : `https://neuro-master.online/${currentTask.image}`;
-        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
+        let fullImgUrl = currentTask.image;
+        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+            fullImgUrl = `https://neuro-master.online/${fullImgUrl.replace(/^\//, '')}`;
+        }
+        imageContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer; margin-top:10px;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
+
+    // 🎧 УМНАЯ ОБРАБОТКА АУДИОПЛЕЕРА (Аудирование ОГЭ)
+    let audioContainer = document.getElementById('task-audio-container');
+    if (!audioContainer) {
+        audioContainer = document.createElement('div');
+        audioContainer.id = 'task-audio-container';
+        imageContainer.parentNode.insertBefore(audioContainer, imageContainer.nextSibling);
+    }
+
+    if (currentTask.audio && currentTask.audio.length > 5) {
+        let fullAudioUrl = currentTask.audio;
+        if (!fullAudioUrl.startsWith('http://') && !fullAudioUrl.startsWith('https://')) {
+            fullAudioUrl = `https://oge.fipi.ru/${fullAudioUrl.replace(/^\//, '')}`;
+        }
+        audioContainer.innerHTML = `
+            <div style="background:#f0f7ff; border:1px solid #bcdcff; padding:12px; border-radius:10px; margin:15px 0; text-align:center;">
+                <div style="font-weight:600; color:#0056b3; margin-bottom:8px;">🎧 Прослушайте аудиозапись:</div>
+                <audio controls style="width:100%; height:40px;" src="${encodeURI(fullAudioUrl)}"></audio>
+            </div>
+        `;
+        audioContainer.style.display = 'block';
+    } else {
+        audioContainer.style.display = 'none';
+    }
     
     document.getElementById('user-answer').value = '';
     setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
@@ -513,7 +541,10 @@ function loadReviewForCurrentMistake(isRestored = false) {
         
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        const fullImgUrl = mistake.task.image.startsWith('http') ? mistake.task.image : `https://neuro-master.online/${mistake.task.image}`;
+        let fullImgUrl = mistake.task.image;
+        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+            fullImgUrl = `https://neuro-master.online/${fullImgUrl.replace(/^\//, '')}`;
+        }
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
