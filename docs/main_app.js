@@ -203,7 +203,7 @@ window.selectTariff = function(subjectCode, subjectName) {
     if (window.feather) feather.replace();
 };
 
-// 🔥 Новая функция: Выбор класса для Олимпиад
+// 🔥 Выбор класса для Олимпиад
 window.selectOlympClass = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
     let classButtons = `<h2>${subjectName}</h2><h3>Выберите класс:</h3><div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">`;
@@ -218,7 +218,6 @@ window.selectOlympClass = function(subjectCode, subjectName) {
     if (window.feather) feather.replace();
 };
 
-// 🔥 Новая функция: Заглушка безопасности (не пускает в пустую базу и спасает кредиты)
 window.startOlympTest = function(subjectCode, subjectName, studentClass) {
     showCustomAlert(
         `Олимпиадные задания по предмету <b>${subjectName}</b> для <b>${studentClass} класса</b> сейчас находятся на стадии наполнения и проверки методистами.<br><br>🚀 Доступ откроется совсем скоро, следите за обновлениями в группе!<br><br><span style="color:#4CAF50;">⚡️ Кредиты за этот тест не были списаны.</span>`, 
@@ -275,7 +274,7 @@ function showTask() {
         taskTextElement.style.display = 'block';
     } else { taskTextElement.textContent = "Текст не найден"; }
 
-   // 🖼 УМНАЯ ОБРАБОТКА КАРТИНОК И МНОЖЕСТВЕННЫХ СХЕМ (с гарантированным /docs/)
+    // 🖼 УМНАЯ ОБРАБОТКА МНОЖЕСТВЕННЫХ КАРТИНОК И СХЕМ (с гарантированной папкой /docs/)
     let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0 
         ? currentTask.all_images 
         : (currentTask.image ? [currentTask.image] : []);
@@ -554,6 +553,8 @@ function loadReviewForCurrentMistake(isRestored = false) {
         let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
         reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
+    
+    let navButtons = `<button class="submit-btn" style="margin-bottom:10px;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор с ИИ</button><br>`;
     
     navButtons += `<div style="display:flex; justify-content:space-between; gap:10px;">`;
     if (currentReviewIndex > 0) {
