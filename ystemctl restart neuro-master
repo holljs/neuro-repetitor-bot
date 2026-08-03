@@ -1,0 +1,6 @@
+● repetitor_bot.service - Telegram Repetitor Bot
+     Loaded: loaded (/etc/systemd/system/repetitor_bot.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Wed 2026-07-29 14:03:41 UTC; 760ms ago
+    Process: 4074094 ExecStart=/root/neuro-repetitor-bot/venv/bin/python3 bot_telegram.py [0;1;31m(code=exited, status=1/FAILURE)[0m
+   Main PID: 4074094 (code=exited, status=1/FAILURE)
+        CPU: 4.812s
