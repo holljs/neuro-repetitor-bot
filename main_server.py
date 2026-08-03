@@ -27,7 +27,7 @@ from fastapi.responses import HTMLResponse
 from yookassa import Configuration, Payment
 
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="3.1.0")
+app = FastAPI(title="Neuro Repetitor API", version="3.2.0")
 
 # Настройка ЮKassa
 Configuration.configure(
@@ -90,7 +90,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger("NeuroRepetitor")
 
 # =========================================================================
-# 🔥 УНИВЕРСАЛЬНЫЙ ИИ-ДВИЖОК
+# 🔥 УНИВЕРСАЛЬНЫЙ ИИ-ДВИЖОК С КАСКАДНОЙ ПОДСТРАХОВКОЙ
 # =========================================================================
 async def ask_tokenrouter(
     model_name: str,
@@ -150,20 +150,6 @@ async def ask_replicate(
     response_json: bool = False
 ) -> str:
     has_image = image_url and image_url.strip().lower() not in ["", "none", "null"]
-    
-    if TOKENROUTER_API_TOKEN:
-        try:
-            model_name = "qwen/qwen3.7-plus" if has_image else "deepseek/deepseek-v4-flash"
-            return await ask_tokenrouter(
-                model_name=model_name,
-                system_prompt=system_prompt,
-                user_prompt=user_prompt,
-                max_tokens=max_tokens,
-                response_json=response_json,
-                image_url=image_url
-            )
-        except Exception as tr_err:
-            logger.warning(f"⚠️ TokenRouter не ответил: {tr_err}. Переключаемся на Replicate!")
 
     if not REPLICATE_API_TOKEN:
         logger.error("❌ Ошибка: REPLICATE_API_TOKEN не найден в .env!")
@@ -237,6 +223,68 @@ async def ask_replicate(
             await asyncio.sleep(1.0)
 
     return '{"is_correct": false}' if response_json else "Ошибка генерации ответа ИИ."
+
+async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None) -> tuple[bool, str]:
+    """
+    Каскадный вызов ИИ-Арбитра для проверки ответов без эталона в базе (answer == '---').
+    Текст: DeepSeek (TokenRouter) -> GPT-4.1-Nano (Replicate)
+    Мультимедиа: Qwen (TokenRouter) -> Gemini Flash (Replicate)
+    """
+    system_prompt = (
+        "Ты — строгий, профессиональный и объективный арбитр школьных экзаменов (ОГЭ/ЕГЭ).\n"
+        "Твоя задача — проверить, верен ли ответ ученика на данное задание.\n"
+        "Учитывай синонимы, порядок цифр (если применимо), мелкие опечатки и смысл ответа.\n"
+        "Верни СТРОГО JSON без markdown-тегов:\n"
+        '{"is_correct": true, "correct_was": "краткий верный ответ"}'
+    )
+    user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
+    has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
+
+    if has_image and not image_url.startswith("http"):
+        image_url = f"https://neuro-master.online/{image_url.lstrip('/')}"
+
+    res_raw = ""
+    # 1. Запрос к первичному провайдеру (TokenRouter)
+    if TOKENROUTER_API_TOKEN:
+        try:
+            model_name = "qwen/qwen3.7-plus" if has_image else "deepseek/deepseek-v4-flash"
+            res_raw = await ask_tokenrouter(
+                model_name=model_name,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                max_tokens=300,
+                response_json=True,
+                image_url=image_url if has_image else None
+            )
+        except Exception as tr_err:
+            logger.warning(f"⚠️ TokenRouter ({'Qwen' if has_image else 'DeepSeek'}) подвел: {tr_err}. Переключаемся на Replicate!")
+
+    # 2. Фолбэк на Replicate при сбое
+    if not res_raw:
+        try:
+            res_raw = await ask_replicate(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                image_url=image_url if has_image else None,
+                max_tokens=300,
+                response_json=True
+            )
+        except Exception as rep_err:
+            logger.error(f"❌ Ошибка фолбэка Replicate: {rep_err}")
+            return False, "Ошибка проверки ИИ"
+
+    # Разбор JSON ответа ИИ
+    try:
+        match = re.search(r'\{.*\}', res_raw, re.DOTALL)
+        if match:
+            ai_data = json.loads(match.group(0))
+            is_correct = bool(ai_data.get("is_correct", False))
+            correct_was = str(ai_data.get("correct_was", "---"))
+            return is_correct, correct_was
+    except Exception as parse_err:
+        logger.error(f"⚠️ Ошибка парсинга JSON от ИИ-Арбитра: {parse_err}, Ответ был: {res_raw}")
+
+    return False, "---"
 
 # =========================================================================
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И АВТОРИЗАЦИЯ
@@ -537,40 +585,55 @@ async def check_answer_smart(request: CheckRequest):
     if not task: 
         return {"is_correct": False, "error": "Задача не найдена"}
 
-    correct_answer = str(task.get("answer", ""))
-    is_correct = check_student_answer(request.user_answer, correct_answer)
+    correct_answer = str(task.get("answer", "")).strip()
+    is_correct = False
+
+    # 🔥 Если ответ в базе равен "---", "", "none", "null", "-" — передаем каскаду ИИ-Арбитра!
+    if correct_answer in ["---", "", "none", "null", "-"]:
+        is_correct, real_ai_answer = await ask_ai_arbiter_cascade(
+            task_text=task.get("task_text") or task.get("text", ""),
+            user_answer=request.user_answer,
+            image_url=task.get("image")
+        )
+        if real_ai_answer and real_ai_answer != "---":
+            correct_answer = real_ai_answer
+    else:
+        # Прямая математическая/текстовая проверка
+        is_correct = check_student_answer(request.user_answer, correct_answer)
+
+        # Если прямое сравнение подвело, а ответ не пустой — дополнительно проверяем ИИ
+        if not is_correct:
+            try:
+                sys_prompt = "Ты — беспристрастный арбитр школьных ответов. Определи, совпадает ли ответ ученика с эталоном по смыслу."
+                user_prompt = f"Эталон: '{correct_answer}'. Ответ ученика: '{request.user_answer}'. Они эквивалентны? Напиши строго JSON: {{\"is_correct\": true}} или {{\"is_correct\": false}}"
+
+                res_ai = await ask_replicate(
+                    system_prompt=sys_prompt, 
+                    user_prompt=user_prompt, 
+                    max_tokens=100, 
+                    response_json=True
+                )
+
+                match = re.search(r'\{.*\}', res_ai, re.DOTALL)
+                if match:
+                    ai_data = json.loads(match.group(0))
+                    is_correct = bool(ai_data.get("is_correct", False))
+            except Exception as e: 
+                logger.error(f"⚠️ Ошибка ИИ-Арбитра при допроверке: {e}")
+                is_correct = False
 
     solved_ids = get_user_progress(str(request.student_id))
-    if str(request.task_id) in solved_ids:
-        return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
-
-    if not is_correct and correct_answer != "---":
-        try:
-            sys_prompt = "Ты — беспристрастный арбитр школьных ответов. Определи, совпадает ли ответ ученика с эталоном по смыслу."
-            user_prompt = f"Эталон: '{correct_answer}'. Ответ ученика: '{request.user_answer}'. Они эквивалентны? Напиши строго JSON: {{\"is_correct\": true}} или {{\"is_correct\": false}}"
-
-            res_ai = await ask_replicate(
-                system_prompt=sys_prompt, 
-                user_prompt=user_prompt, 
-                max_tokens=100, 
-                response_json=True
-            )
-
-            match = re.search(r'\{.*\}', res_ai, re.DOTALL)
-            if match:
-                ai_data = json.loads(match.group(0))
-                is_correct = ai_data.get("is_correct", False)
-        except Exception as e: 
-            logger.error(f"⚠️ Ошибка ИИ-Арбитра: {e}")
-            is_correct = False
-
     if is_correct and request.student_id and str(request.student_id) != "guest":
         save_user_progress(request.student_id, request.task_id)
 
     with open("user_stats.log", "a", encoding="utf-8") as f:
         f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct},{db_name}\n")
 
-    return {"is_correct": is_correct, "topic": task.get("topic"), "correct_was": correct_answer if not is_correct else None}
+    return {
+        "is_correct": is_correct, 
+        "topic": task.get("topic"), 
+        "correct_was": correct_answer if not is_correct else None
+    }
 
 @app.post("/review/")
 async def explain_mistake(request: ReviewRequest):
