@@ -482,7 +482,7 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
         raise HTTPException(status_code=500, detail=f"База {exam_type} пуста или не загружена")
 
     solved_ids = get_user_progress(student_id)
-    available_tasks = [t for t in db if isinstance(t, dict) and str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "-", "--", "---", "null"]]
+    available_tasks = [t for t in db if isinstance(t, dict) and str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "null"]]
 
     if not available_tasks:
         return {"id": "done", "topic": "done", "text": "🎉 Все задачи решены!", "image": "", "done": True}
