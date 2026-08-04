@@ -133,7 +133,13 @@
                     <b>Символы:</b> пи, альфа, градусы — пишите просто словами!
                 </div>
 
-                <textarea id="user-answer" rows="2" style="width:100%; resize:vertical; font-family:inherit; padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px;" placeholder="Введите ответ..."></textarea>
+                <!-- 🎙 ПОЛЕ ВВОДА С КНОПКОЙ МИКРОФОНА В СТИЛЕ TELEGRAM -->
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+                    <textarea id="user-answer" rows="2" style="flex: 1; resize: vertical; font-family: inherit; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; margin-bottom: 0;" placeholder="Введите или надиктуйте ответ..."></textarea>
+                    <button type="button" id="mic-btn" onclick="toggleVoiceInput()" style="width: 48px; height: 48px; border-radius: 12px; background: #4a76a8; color: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: all 0.3s ease;" title="Голосовой ввод">
+                        <i data-feather="mic" style="width: 20px; height: 20px;"></i>
+                    </button>
+                </div>
             </div>
             
             <button class="submit-btn" onclick="submitAnswer()">Ответить</button>
