@@ -846,3 +846,74 @@ window.openImageViewer = function(url) {
         .catch(() => { window.open(fullImgUrl, '_blank'); });
     } catch(e) { window.open(url, '_blank'); }
 };
+
+// =========================================================================
+// 🎙 ГОЛОСОВОЙ ВВОД (СТИЛЬ TELEGRAM)
+// =========================================================================
+let recognition = null;
+let isRecording = false;
+
+window.toggleVoiceInput = function() {
+    const micBtn = document.getElementById('mic-btn');
+    const inputEl = document.getElementById('user-answer');
+    
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        showCustomAlert("Ваш браузер или устройство не поддерживает голосовой ввод.", "Упс");
+        return;
+    }
+
+    if (isRecording) {
+        if (recognition) recognition.stop();
+        return;
+    }
+
+    recognition = new SpeechRecognition();
+    const isEnglishSubj = currentSubjectCode && currentSubjectCode.includes('english');
+    recognition.lang = isEnglishSubj ? 'en-US' : 'ru-RU';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = function() {
+        isRecording = true;
+        if (micBtn) {
+            micBtn.style.background = '#ff5252';
+            micBtn.style.boxShadow = '0 0 12px rgba(255, 82, 82, 0.6)';
+            micBtn.innerHTML = `<i data-feather="square" style="width: 18px; height: 18px;"></i>`;
+            if (window.feather) feather.replace();
+        }
+    };
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        if (inputEl) {
+            inputEl.value = inputEl.value ? `${inputEl.value} ${transcript}` : transcript;
+        }
+    };
+
+    recognition.onerror = function(event) {
+        console.log("⚠️ Ошибка распознавания речи:", event.error);
+        stopMicAnimation();
+    };
+
+    recognition.onend = function() {
+        stopMicAnimation();
+    };
+
+    try {
+        recognition.start();
+    } catch(e) {
+        stopMicAnimation();
+    }
+};
+
+function stopMicAnimation() {
+    isRecording = false;
+    const micBtn = document.getElementById('mic-btn');
+    if (micBtn) {
+        micBtn.style.background = '#4a76a8';
+        micBtn.style.boxShadow = 'none';
+        micBtn.innerHTML = `<i data-feather="mic" style="width: 20px; height: 20px;"></i>`;
+        if (window.feather) feather.replace();
+    }
+}
