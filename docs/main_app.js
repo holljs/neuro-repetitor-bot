@@ -814,11 +814,10 @@ window.openVKUrl = function(url) {
     } catch(e) { window.open(url, '_blank'); }
 };
 
-// 🎯 ИСПРАВЛЕННЫЙ ПРОСМОТРЩИК КАРТИНОК С ГАРАНТИРОВАННЫМ docs/
+// 🎯 ПРОСМОТРЩИК КАРТИНОК (Работает как с локальными файлами, так и с внешними URL)
 window.openImageViewer = function(url) {
     try {
         let fullImgUrl = url;
-        // Если это относительный путь или ведет на вопросы, делаем красивую прямую ссылку
         if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
