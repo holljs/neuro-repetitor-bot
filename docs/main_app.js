@@ -817,12 +817,11 @@ window.openVKUrl = function(url) {
 // 🎯 ИСПРАВЛЕННЫЙ ПРОСМОТРЩИК КАРТИНОК С ГАРАНТИРОВАННЫМ docs/
 window.openImageViewer = function(url) {
     try {
-        let cleanPath = url.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
-        if (!cleanPath.startsWith('docs/')) {
-            cleanPath = 'docs/' + cleanPath;
+        let fullImgUrl = url;
+        // Если это относительный путь или ведет на вопросы, делаем красивую прямую ссылку
+        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+            fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
-        let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
-
         vkBridge.send("VKWebAppShowImages", { images: [fullImgUrl] })
         .catch(() => { window.open(fullImgUrl, '_blank'); });
     } catch(e) { window.open(url, '_blank'); }
