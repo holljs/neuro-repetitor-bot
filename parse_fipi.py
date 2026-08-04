@@ -99,33 +99,68 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
                         imgs.append(full_url)
 
-                # 🧹 ОЧИСТКА ТЕКСТА ЗАДАНИЯ И ПРЕВРАЩЕНИЕ СТЕПЕНЕЙ В LATEX
+                # 🧹 ГЛУБОКАЯ ОЧИСТКА И ПРЕВРАЩЕНИЕ ФОРМУЛ (МАТЕМАТИКА / ФИЗИКА / ХИМИЯ) В LATEX
                 clean_block = BeautifulSoup(raw_html, 'html.parser')
 
-                # 1. Обработка математических тегов MathJax / MathML
+                # 1. Извлечение оригинального LaTeX из MathJax / MathML / Alt-атрибутов
                 for math_tag in clean_block.find_all(['mjx-container', 'math']):
-                    latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt')
+                    latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt') or math_tag.get('aria-label')
                     if latex_attr:
                         math_tag.replace_with(f" ${latex_attr}$ ")
 
-                # 2. 🔥 Превращаем <sup>19</sup> в ^{19} для красивых степеней LaTeX
-                for sup in clean_block.find_all('sup'):
+                # 2. 🔥 ВЕКТОРЫ И ИОНЫ (mover, mmsubsup)
+                for mover in clean_block.find_all(['mover']):
+                    vec_base = mover.get_text().strip()
+                    mover.replace_with(f" \\vec{{{vec_base}}} ")
+
+                for msubsup in clean_block.find_all(['msubsup', 'msubsup']):
+                    parts = msubsup.find_all(['mn', 'mi', 'mo', 'span'])
+                    if len(parts) >= 3:
+                        subsup_base = parts[0].get_text().strip()
+                        sub_part = parts[1].get_text().strip()
+                        sup_part = parts[2].get_text().strip()
+                        msubsup.replace_with(f" {subsup_base}_{{{sub_part}}}^{{{sup_part}}} ")
+
+                # 3. 🔥 ДРОБИ (mfrac, mjx-frac)
+                for frac in clean_block.find_all(['mfrac', 'mjx-frac']):
+                    num = frac.find(['mn', 'mi', 'mjx-num', 'span'])
+                    den_tags = frac.find_all(['mn', 'mi', 'mjx-den', 'span'])
+                    den = den_tags[-1] if den_tags else None
+                    if num and den:
+                        frac.replace_with(f" \\frac{{{num.get_text().strip()}}}{{{den.get_text().strip()}}} ")
+
+                # 4. 🔥 КОРНИ (msqrt, mroot)
+                for sqrt in clean_block.find_all(['msqrt']):
+                    sqrt_text = sqrt.get_text().strip()
+                    sqrt.replace_with(f" \\sqrt{{{sqrt_text}}} ")
+
+                for mroot in clean_block.find_all(['mroot']):
+                    deg_and_base = mroot.find_all(['mn', 'mi', 'span'])
+                    if len(deg_and_base) >= 2:
+                        base_val = deg_and_base[0].get_text().strip()
+                        deg_val = deg_and_base[1].get_text().strip()
+                        mroot.replace_with(f" \\sqrt[{deg_val}]{{{base_val}}} ")
+                    else:
+                        mroot.replace_with(f" \\sqrt{{{mroot.get_text().strip()}}} ")
+
+                # 5. 🔥 СТЕПЕНИ И ИНДЕКСЫ (sup, sub, msup, msub)
+                for sup in clean_block.find_all(['sup', 'msup']):
                     sup_text = sup.get_text().strip()
                     sup.replace_with(f"^{{{sup_text}}}")
 
-                # 3. Превращаем <sub>2</sub> в _{2} (нижние индексы)
-                for sub in clean_block.find_all('sub'):
+                for sub in clean_block.find_all(['sub', 'msub']):
                     sub_text = sub.get_text().strip()
                     sub.replace_with(f"_{{{sub_text}}}")
 
-                # 4. Удаляем мусорные теги управления
+                # 6. Удаляем технический мусор управления
                 for s in clean_block.find_all(['select', 'input', 'button', 'script']):
                     s.decompose()
 
                 block_text = clean_block.get_text(separator="\n")
 
-                # 5. Чиним пробелы перед знаками степеней (например, a ^{19} -> a^{19})
+                # 7. 🔥 Нормализация синтаксиса LaTeX и пробелов
                 block_text = re.sub(r'([a-zA-Zа-яА-Я0-9])\s*\^', r'\1^', block_text)
+                block_text = re.sub(r'([a-zA-Zа-яА-Я0-9])\s*\_', r'\1_', block_text)
 
                 lines = [line.strip() for line in block_text.split("\n") if line.strip()]
                 clean_lines = []
