@@ -20,7 +20,7 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
         "Referer": f"{base_domain}/bank/index.php?proj={proj_id}"
     })
 
-    print(f"🚀 Запуск обновленного парсинга ФИПИ [{subject_code}] | Домен: {base_domain} | Проект: {proj_id}")
+    print(f"🚀 Запуск умного парсинга ФИПИ [{subject_code}] | Домен: {base_domain} | Проект: {proj_id}")
 
     try:
         session.get(f"{base_domain}/bank/index.php?proj={proj_id}", verify=False, timeout=15)
@@ -55,52 +55,52 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
 
             soup = BeautifulSoup(html_text, 'html.parser')
 
-            forms = soup.find_all('form', id=re.compile(r'^checkform', re.I))
-            if not forms:
-                forms = soup.find_all('div', class_=re.compile(r'qblock', re.I))
-            if not forms:
-                forms = soup.find_all('td', class_='cell_0')
+            # Ищем главный контейнер со всеми элементами страницы
+            main_container = soup.find('div', id='questions_container') or soup
 
-            if not forms:
-                print(f"📭 На странице {page} больше нет задач.")
-                break
+            current_passage_text = ""
+            elements = main_container.find_all(['div', 'form', 'p', 'td'])
 
-            for idx, block in enumerate(forms):
+            for el in elements:
+                # 1. Если встречаем блок с текстом произведения ("Прочитайте текст..."):
+                el_text = el.get_text().strip()
+                if any(start_kw in el_text for start_kw in ["Прочитайте текст", "Прочитайте приведенный фрагмент", "Прочитайте стихотворение"]):
+                    if len(el_text) > 50:
+                        current_passage_text = el_text
+
+                # 2. Если элемент является карточкой задания (qblock или checkform)
+                is_qblock = ('qblock' in el.get('class', [])) or el.name == 'form' or ('checkform' in el.get('id', ''))
+                if not is_qblock or not el.get('id'):
+                    continue
+
+                block = el
                 block_id = block.get('id', '') or ''
                 task_num = re.sub(r'checkform', '', block_id, flags=re.I)
 
-                if not task_num:
-                    num_match = re.search(r'Номер:\s*([A-Z0-9]+)', block.get_text(), re.IGNORECASE)
-                    task_num = num_match.group(1) if num_match else f"p{page}_{idx+1}"
-
                 raw_html = str(block)
 
-                # 🎵 1. ПОИСК АУДИО
+                # 🎵 АУДИО
                 audios = []
                 mp3_in_script = re.findall(r"ShowPictureQ2WH\s*\(\s*['\"]([^'\"]+\.mp3)['\"]", raw_html, re.IGNORECASE)
                 mp3_in_html = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:mp3|wav|ogg|m4a))', raw_html, re.IGNORECASE)
-
                 for path in mp3_in_script + mp3_in_html:
                     full_url = path if path.startswith('http') else f"{base_domain}/{path.lstrip('/')}"
                     if full_url not in audios:
                         audios.append(full_url)
 
-                # 🖼 2. ПОИСК КАРТИНОК И ФОРМУЛ (Разрешаем simg!)
+                # 🖼 КАРТИНКИ
                 imgs = []
                 found_srcs = re.findall(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif))["\']', raw_html, re.IGNORECASE)
                 found_docs = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
-
                 for path in found_srcs + found_docs:
                     if any(icon in path.lower() for icon in ['icon_', 'button', 'arrow', 'btn_', 'system_', 'check.png', 'cross.png']):
                         continue
-
                     full_url = path if path.startswith('http') else f"{base_domain}/{path.lstrip('/')}"
                     if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
                         imgs.append(full_url)
 
-                # 🧹 3. УМНАЯ ОЧИСТКА ТЕКСТА И СОХРАНЕНИЕ ФОРМУЛ
+                # 🧹 ОЧИСТКА ТЕКСТА ЗАДАНИЯ
                 clean_block = BeautifulSoup(raw_html, 'html.parser')
-
                 for math_tag in clean_block.find_all(['mjx-container', 'math']):
                     latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt')
                     if latex_attr:
@@ -116,7 +116,14 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if not any(x in line for x in ['Номер:', 'ОТВЕТИТЬ', 'НЕ РЕШЕНО', 'ПОДБОР ЗАДАНИЙ', 'Кол-во заданий', 'Статус задания', 'ИЗМЕНИТЬ СТАТУС']):
                         clean_lines.append(line)
 
-                full_text = "\n".join(clean_lines).strip()
+                task_text_only = "\n".join(clean_lines).strip()
+
+                # Склеиваем текст произведения с заданием, если он есть!
+                if current_passage_text and current_passage_text not in task_text_only:
+                    full_text = f"📖 **Фрагмент/Текст:**\n{current_passage_text}\n\n❓ **Задание:**\n{task_text_only}"
+                else:
+                    full_text = task_text_only
+
                 if len(full_text) < 10 and not imgs:
                     continue
 
