@@ -1,22 +1,18 @@
 console.log("🚀 [APP] Скрипт main_app.js начал загрузку!");
-
 const VK_SEARCH_PARAMS = window.location.search || window.location.hash.replace('#', '?');
 const API_SERVER_URL = "https://neuro-master.online";
 const TEST_API_URL = "https://neuro-master.online/repetitor-api";
-
 const urlParams = new URLSearchParams(VK_SEARCH_PARAMS);
 let vkPlatform = urlParams.get('vk_platform');
 const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const isSmallScreen = window.innerWidth <= 800; 
+const isSmallScreen = window.innerWidth <= 800;
 
-// Бронебойная защита мобилок для оплат
 if ((!vkPlatform && isMobileDevice) || isSmallScreen) {
     vkPlatform = 'mobile_app_forced';
 } else if (!vkPlatform) {
     vkPlatform = 'desktop_web';
 }
 const canPay = vkPlatform === 'desktop_web' && !isMobileDevice && !isSmallScreen;
-
 let USER_ID = urlParams.get('vk_user_id');
 console.log("🚀 [APP] USER_ID получен:", USER_ID);
 
@@ -26,19 +22,50 @@ let currentSubjectCode = null;
 let questionNumber = 1;
 let score = 0;
 let mistakes = [];
-let skipsLeft = 3; 
+let skipsLeft = 3;
 let currentReviewIndex = 0;
 let currentTestMode = "standard";
 let isProcessing = false;
 let analysisCache = {};
 
-// --- СПИСКИ ПРЕДМЕТОВ И ОЛИМПИАД ---
 const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
 const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const OLYMP_SUBJECTS = { "olymp_math": "Олимпиада Математика", "olymp_russian": "Олимпиада Русский язык", "olymp_inf": "Олимпиада Информатика", "olymp_phys": "Олимпиада Физика", "olymp_chem": "Олимпиада Химия" };
-
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS, ...OLYMP_SUBJECTS };
 const TEST_LENGTH = 10;
+
+// 🔥 НОВОЕ: защита от спецсимволов
+function escapeHtml(s) {
+    if (!s) return "";
+    return s.toString().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// 🔥 НОВОЕ: умная склейка "рваных" строк из старых JSON (формулы-столбики)
+function compactLines(text) {
+    const lines = text.split('\n');
+    const out = [];
+    for (let raw of lines) {
+        const line = raw.trim();
+        if (!line) continue;
+        if (out.length === 0) { out.push(line); continue; }
+        let prev = out[out.length - 1];
+        // склеиваем цифры БЕЗ пробела: "4" + "7" = "47"
+        if (/^\d+$/.test(line) && /\d$/.test(prev)) {
+            out[out.length - 1] = prev + line;
+            continue;
+        }
+        const isOption = /^\d+[\.\)]/.test(line);
+        const isMarker = /^(📖||🎧)/.test(line);
+        const bothLong = line.length > 20 && prev.length > 20;
+        const prevEnds = /[.!?]$/.test(prev);
+        if (!isOption && !isMarker && !(bothLong && prevEnds)) {
+            out[out.length - 1] = prev + ' ' + line;
+        } else {
+            out.push(line);
+        }
+    }
+    return out.join('\n');
+}
 
 function showScreen(screenElement) {
     document.querySelectorAll('.screen').forEach(s => { if(s) s.style.display = 'none'; });
@@ -56,15 +83,12 @@ window.showCustomAlert = function(message, title = "Внимание") {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
     document.body.style.overflow = 'hidden';
-    
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').innerHTML = message;
-    
     const tempBtns = document.getElementById('temp-confirm-btns');
     if (tempBtns) tempBtns.remove();
     const originalBtn = modal.querySelector('button');
     if (originalBtn) originalBtn.style.display = 'inline-block';
-
     modal.style.display = 'flex';
 };
 
@@ -76,7 +100,6 @@ window.closeModal = function() {
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
     if (!el) return;
-
     if (window.renderMathInElement) {
         try {
             renderMathInElement(el, {
@@ -125,7 +148,6 @@ function saveSession(screenName = 'task-screen', extra = {}) {
 
 function initApp() {
     console.log("🚀 [APP] Инициализация интерфейса...");
-    
     if (!canPay) {
         document.querySelectorAll('button').forEach(btn => {
             if (btn.innerText.toLowerCase().includes('пополнить')) {
@@ -133,7 +155,6 @@ function initApp() {
             }
         });
     }
-
     try {
         const saved = localStorage.getItem('active_test');
         if (saved) {
@@ -143,7 +164,6 @@ function initApp() {
                 questionNumber = data.questionNumber; score = data.score; mistakes = data.mistakes; currentTestMode = data.currentTestMode;
                 if (data.currentReviewIndex !== undefined) currentReviewIndex = data.currentReviewIndex;
                 if (data.skipsLeft !== undefined) skipsLeft = data.skipsLeft; else skipsLeft = 3;
-                
                 if (data.screenName === 'quick-result-screen') {
                     handleQuickResult(data.extra.isCorrect, data.extra.userAnswer, true);
                 } else if (data.screenName === 'test-finish-screen') {
@@ -157,7 +177,6 @@ function initApp() {
             }
         }
     } catch(e) { try { localStorage.removeItem('active_test'); } catch(err){} }
-    
     showScreen(document.getElementById('screen-main-menu'));
 }
 
@@ -178,7 +197,6 @@ window.openSubjects = function(examType) {
     let subjects = OGE_SUBJECTS;
     if (examType === 'ege') subjects = EGE_SUBJECTS;
     else if (examType === 'olymp') subjects = OLYMP_SUBJECTS;
-
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `<h1>Выберите предмет</h1>`;
     for (const code in subjects) {
@@ -199,7 +217,6 @@ window.selectTariff = function(subjectCode, subjectName) {
         selectOlympClass(subjectCode, subjectName);
         return;
     }
-
     const subjectScreen = document.getElementById('screen-subjects');
     subjectScreen.innerHTML = `
         <h2>${subjectName}</h2>
@@ -219,20 +236,18 @@ window.selectTariff = function(subjectCode, subjectName) {
 window.selectOlympClass = function(subjectCode, subjectName) {
     const subjectScreen = document.getElementById('screen-subjects');
     let classButtons = `<h2>${subjectName}</h2><h3>Выберите класс:</h3><div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">`;
-    
     for (let c = 5; c <= 11; c++) {
         classButtons += `<button class="button" style="padding:10px; font-size:14px;" onclick="startOlympTest('${subjectCode}', '${subjectName}', ${c})">${c} класс</button>`;
     }
     classButtons += `</div>`;
     classButtons += `<button class="button secondary" onclick="openSubjects('olymp')"><i data-feather="arrow-left" class="icon-sm"></i> Назад к олимпиадам</button>`;
-    
     subjectScreen.innerHTML = classButtons;
     if (window.feather) feather.replace();
 };
 
 window.startOlympTest = function(subjectCode, subjectName, studentClass) {
     showCustomAlert(
-        `Олимпиадные задания по предмету <b>${subjectName}</b> для <b>${studentClass} класса</b> сейчас находятся на стадии наполнения и проверки методистами.<br><br>🚀 Доступ откроется совсем скоро, следите за обновлениями в группе!<br><br><span style="color:#4CAF50;">⚡️ Кредиты за этот тест не были списаны.</span>`, 
+        `Олимпиадные задания по предмету <b>${subjectName}</b> для <b>${studentClass} класса</b> сейчас находятся на стадии наполнения и проверки методистами.<br><br>🚀 Доступ откроется совсем скоро, следите за обновлениями в группе!<br><br><span style="color:#4CAF50;">⚡️ Кредиты за этот тест не были списаны.</span>`,
         "Раздел в разработке"
     );
     showScreen(document.getElementById('screen-main-menu'));
@@ -264,15 +279,7 @@ async function getRandomTask() {
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 }
 
-// 🔥 НОВАЯ ФУНКЦИЯ escapeHtml для защиты от ломающихся спецсимволов
-function escapeHtml(s) {
-    if (!s) return "";
-    return s.toString()
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-}
-
+// 🔥 ИСПРАВЛЕНА: текст склеивается, картинки идут НАПРЯМУЮ с ФИПИ (как работало)
 function showTask() {
     saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
@@ -290,14 +297,14 @@ function showTask() {
             .replace(/Решите уравнения/gi, '')
             .replace(/^\d+[\.\)]\s*/, '')
             .trim();
-        // 🔥 Защита от спецсимволов <, >, & перед вставкой в HTML
+        cleanText = compactLines(cleanText);
         taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${escapeHtml(cleanText).replace(/\n/g, '<br>')}</div>`;
         taskTextElement.style.display = 'block';
     } else {
         taskTextElement.textContent = "Текст не найден";
     }
 
-    // 🖼 НАДЕЖНАЯ СБОРКА ССЫЛОК НА КАРТИНКИ (через imgproxy)
+    // 🖼 КАРТИНКИ: возвращена РАБОЧАЯ схема напрямую с ФИПИ
     let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0
         ? currentTask.all_images
         : (currentTask.image ? [currentTask.image] : []);
@@ -306,13 +313,10 @@ function showTask() {
         let imgsHtml = '';
         imagesToDisplay.forEach(imgUrl => {
             let fullImgUrl = imgUrl;
-            // 🔥 ФИПИ картинки теперь идут через прокси (для стабильного отображения)
-            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || imgUrl.includes('fipi.ru') || !imgUrl.startsWith('questions/')) {
-                let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/, '').replace(/^\//, '');
+            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
+                let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
                 if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-                let origUrl = `https://oge.fipi.ru/${cleanPath}`;
-                // Для ОТОБРАЖЕНИЯ ученику можно оставить оригинал, но если не грузится — прокси:
-                fullImgUrl = `${API_SERVER_URL}/imgproxy/?url=${encodeURIComponent(origUrl)}`;
+                fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
             } else if (!fullImgUrl.startsWith('http')) {
                 fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
             }
@@ -361,15 +365,12 @@ window.confirmSkipTask = function() {
         showCustomAlert("У вас закончились замены в этом тесте.", "Лимит исчерпан");
         return;
     }
-    
     const modal = document.getElementById('custom-modal');
     document.body.style.overflow = 'hidden';
     document.getElementById('modal-title').textContent = "Заменить вопрос?";
     document.getElementById('modal-message').innerHTML = `Вы можете пропустить этот вопрос, если в нём есть какая-то ошибка (например, отсутствует картинка).<br><br>Осталось замен на этот тест: <b style="color:#0077FF; font-size:18px;">${skipsLeft}</b>`;
-    
     const originalBtn = modal.querySelector('button');
     if (originalBtn) originalBtn.style.display = 'none';
-
     let btnGroup = document.getElementById('temp-confirm-btns');
     if (!btnGroup) {
         btnGroup = document.createElement('div');
@@ -379,20 +380,17 @@ window.confirmSkipTask = function() {
     } else {
         btnGroup.innerHTML = `<button class="button" style="background:#0077FF; margin-bottom:10px; width:100%" id="btn-yes-skip">Да, заменить</button><button class="button secondary" style="width:100%" id="btn-no-skip">Отмена</button>`;
     }
-
     document.getElementById('btn-yes-skip').onclick = () => {
         btnGroup.remove();
         if (originalBtn) originalBtn.style.display = 'inline-block';
         closeModal();
         executeSkipTask();
     };
-    
     document.getElementById('btn-no-skip').onclick = () => {
         btnGroup.remove();
         if (originalBtn) originalBtn.style.display = 'inline-block';
         closeModal();
     };
-    
     modal.style.display = 'flex';
 };
 
@@ -408,10 +406,10 @@ window.executeSkipTask = async function() {
             return;
         }
         currentTask = newTask;
-        showTask(); 
-    } catch (e) { 
-        showCustomAlert("Ошибка при загрузке новой задачи.", "Ошибка"); 
-        showTask(); 
+        showTask();
+    } catch (e) {
+        showCustomAlert("Ошибка при загрузке новой задачи.", "Ошибка");
+        showTask();
     }
 };
 
@@ -442,7 +440,6 @@ window.submitAnswer = async function() {
 function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
     const titleEl = document.getElementById('quick-result-title');
     let actuallyCorrect = isCorrect || normalizeText(userAnswer) === normalizeText(currentTask.answer);
-
     if (!isRestored) {
         if (actuallyCorrect) {
             score++;
@@ -450,7 +447,6 @@ function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
             mistakes.push({ task: currentTask, user_answer: userAnswer });
         }
     }
-
     if (actuallyCorrect) {
         titleEl.innerHTML = '<div style="color:#4CAF50;"><i data-feather="check-circle"></i> Верно!</div>';
     } else {
@@ -458,9 +454,8 @@ function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
         if (expectedAns.includes('\\') && !expectedAns.includes('$')) {
             expectedAns = `$${expectedAns}$`;
         }
-        titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${expectedAns}</b></small>`;
+        titleEl.innerHTML = `<div style="color:#ff5252;"><i data-feather="x-circle"></i> Неверно!</div><br><small style="color:#555;">Ожидалось: <b>${escapeHtml(expectedAns)}</b></small>`;
     }
-    
     if (!isRestored) saveSession('quick-result-screen', { isCorrect: actuallyCorrect, userAnswer });
     setTimeout(() => { if(window.feather) feather.replace(); renderMath('quick-result-screen'); }, 100);
     showScreen(document.getElementById('quick-result-screen'));
@@ -469,14 +464,11 @@ function handleQuickResult(isCorrect, userAnswer, isRestored = false) {
 window.abortTest = function() {
     const modal = document.getElementById('custom-modal');
     if (!modal) return;
-    
     document.body.style.overflow = 'hidden';
     document.getElementById('modal-title').textContent = "Прервать тест?";
     document.getElementById('modal-message').innerHTML = "Вы уверены? <br><b style='color:#ff5252;'>Прогресс будет утерян, кредиты не возвращаются.</b>";
-    
     const originalBtn = modal.querySelector('button');
     if (originalBtn) originalBtn.style.display = 'none';
-
     let btnGroup = document.getElementById('temp-confirm-btns');
     if (!btnGroup) {
         btnGroup = document.createElement('div');
@@ -484,7 +476,6 @@ window.abortTest = function() {
         btnGroup.innerHTML = `<button class="button" style="background:#ff5252; margin-bottom:10px; width:100%" id="btn-yes">Да, прервать</button><button class="button secondary" style="width:100%" id="btn-no">Отмена</button>`;
         modal.querySelector('div').appendChild(btnGroup);
     }
-
     document.getElementById('btn-yes').onclick = () => {
         currentTask = null;
         try { localStorage.removeItem('active_test'); } catch(e){}
@@ -493,20 +484,17 @@ window.abortTest = function() {
         closeModal();
         showScreen(document.getElementById('screen-main-menu'));
     };
-    
     document.getElementById('btn-no').onclick = () => {
         btnGroup.remove();
         if (originalBtn) originalBtn.style.display = 'inline-block';
         closeModal();
     };
-    
     modal.style.display = 'flex';
 };
 
 window.nextTask = function() {
     if (isProcessing) return;
     isProcessing = true;
-    
     questionNumber++;
     if (questionNumber <= TEST_LENGTH) {
         getRandomTask().finally(() => { isProcessing = false; });
@@ -517,40 +505,33 @@ window.nextTask = function() {
 };
 
 function showFinishScreen(isRestored = false) {
-    document.getElementById('final-score').textContent = score; 
+    document.getElementById('final-score').textContent = score;
     document.getElementById('final-mistakes').textContent = mistakes.length;
-    
     if (!isRestored) {
         fetch(`${TEST_API_URL}/notify_test_finish/`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({student_id: String(USER_ID || 'guest'), score: score, total: TEST_LENGTH, vk_params: VK_SEARCH_PARAMS})
         }).catch(()=>{});
-        
         saveSession('test-finish-screen');
     }
-
     const reviewBtnBlock = document.getElementById('review-buttons');
     const oldStats = document.getElementById('topic-stats');
     if (oldStats) oldStats.remove();
-
     if (mistakes.length > 0) {
         reviewBtnBlock.style.display = 'block';
     } else { reviewBtnBlock.style.display = 'none'; }
-    
     if (!isRestored) saveSession('test-finish-screen');
     showScreen(document.getElementById('test-finish-screen'));
 }
 
 window.startReview = function() { currentReviewIndex = 0; loadReviewForCurrentMistake(); };
-
 window.prevReview = function() {
     if (currentReviewIndex > 0) {
         currentReviewIndex--;
         loadReviewForCurrentMistake();
     }
 };
-
 window.nextReview = function() {
     currentReviewIndex++;
     if (currentReviewIndex < mistakes.length - 1) {
@@ -561,62 +542,54 @@ window.nextReview = function() {
 };
 
 function loadReviewForCurrentMistake(isRestored = false) {
-    const mistake = mistakes[currentReviewIndex]; 
+    const mistake = mistakes[currentReviewIndex];
     document.getElementById('review-progress').textContent = `Разбор ошибки ${currentReviewIndex + 1} из ${mistakes.length}`;
-    
     document.getElementById('review-answers-block').innerHTML = `
         <div style="display:flex; align-items:flex-start; color:#d32f2f; font-weight:500; word-break: break-word; margin-bottom: 5px;">
-            <i data-feather="x-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Твой: ${mistake.user_answer}</span>
+            <i data-feather="x-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Твой: ${escapeHtml(mistake.user_answer)}</span>
         </div>
         <div style="display:flex; align-items:flex-start; color:#388e3c; font-weight:500; word-break: break-word;">
-            <i data-feather="check-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Правильный: ${mistake.task.answer}</span>
+            <i data-feather="check-circle" class="icon-sm" style="margin-right:5px; flex-shrink:0;"></i> <span>Правильный: ${escapeHtml(mistake.task.answer)}</span>
         </div>`;
-        
+
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
         let imgUrl = mistake.task.image;
         let fullImgUrl = imgUrl;
-        
-        // Авто-определение источника картинки (ФИПИ или локальный сервер)
         if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
-            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
             if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
             fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
         } else if (!fullImgUrl.startsWith('http')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
-
         reviewImgContainer.innerHTML = `<div style="text-align:center;"><img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')"></div>`;
-    } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
-    
-    // 🎯 ПОНЯТНЫЙ И ЕДИНЫЙ БЛОК КНОПАК НАВИГАЦИИ
-    let navButtons = `<button class="submit-btn" style="margin-bottom:12px; width:100%; background:#4a76a8;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>`;
-    
+    } else {
+        const fbText = mistake.task.task_text || mistake.task.text || '';
+        reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${escapeHtml(compactLines(fbText)).replace(/\n/g, '<br>')}</div>`;
+    }
+
+    let navButtons = `<button class="submit-btn" style="margin-bottom:12px; width: 100%; background:#4a76a8;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>`;
     navButtons += `<div style="display:flex; gap:8px; margin-bottom:10px;">`;
     if (currentReviewIndex > 0) {
         navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
     }
-    
     if (currentReviewIndex < mistakes.length - 1) {
         navButtons += `<button class="button" style="flex:1; background:#4a76a8;" onclick="nextReview()">Далее ➡️</button>`;
     } else {
         navButtons += `<button class="button" style="flex:1; background:#4CAF50;" onclick="confirmFinishReview()">Завершить 🎉</button>`;
     }
     navButtons += `</div>`;
-
     navButtons += `<button class="button secondary" style="width:100%; color:#777; font-size:13px; padding:8px;" onclick="confirmFinishReview()">Закончить разбор</button>`;
-    
     document.getElementById('review-explanation').innerHTML = navButtons;
     if (window.feather) feather.replace();
-    
     if (!isRestored) saveSession('review-screen');
     showScreen(document.getElementById('review-screen'));
 }
 
 window.runAIExplanation = async function(simplify = false) {
-    const mistake = mistakes[currentReviewIndex]; 
+    const mistake = mistakes[currentReviewIndex];
     const explanationBox = document.getElementById('review-explanation');
-    
     let navButtons = `<div style="display:flex; gap:8px; margin-top:15px; margin-bottom:10px;">`;
     if (currentReviewIndex > 0) navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
     if (currentReviewIndex < mistakes.length - 1) navButtons += `<button class="button" style="flex:1; background:#4a76a8;" onclick="nextReview()">Далее ➡️</button>`;
@@ -625,25 +598,17 @@ window.runAIExplanation = async function(simplify = false) {
     navButtons += `<button class="button secondary" style="width:100%; color:#777; font-size:13px; padding:8px;" onclick="confirmFinishReview()">Закончить разбор</button>`;
 
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
-    
+
+    // 🔥 Картинку для ИИ НЕ трогаем здесь — сервер сам обернёт её в imgproxy
     let imageUrl = null;
     if (mistake.task.image && mistake.task.image.length > 5) {
-        let imgUrl = mistake.task.image;
-        if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
-            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
-            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-            imageUrl = `https://oge.fipi.ru/${cleanPath}`;
-        } else {
-            imageUrl = `${API_SERVER_URL}/${imgUrl.replace(/^\//, '')}`;
-        }
+        imageUrl = mistake.task.image;
     }
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
         const result = await response.json();
-        
         let finalHtml = result.explanation;
         if (window.marked) { finalHtml = marked.parse(finalHtml); }
-        
         explanationBox.innerHTML = `<div style="text-align:left; line-height:1.5;">${finalHtml}</div>` + navButtons;
         setTimeout(() => { renderMath('review-explanation'); }, 100);
     } catch (error) { explanationBox.innerHTML = `<div style="color:#d32f2f;">Ошибка при генерации разбора.</div>` + navButtons; }
@@ -655,39 +620,32 @@ window.confirmFinishReview = function() {
         finishSession();
         return;
     }
-    
     document.body.style.overflow = 'hidden';
     document.getElementById('modal-title').textContent = "Закончить разбор?";
     document.getElementById('modal-message').innerHTML = "Вы уверены, что хотите завершить просмотр ошибок и вернуться в главное меню?";
-    
     const originalBtn = modal.querySelector('button');
     if (originalBtn) originalBtn.style.display = 'none';
-
     let btnGroup = document.getElementById('temp-confirm-btns');
     if (!btnGroup) {
         btnGroup = document.createElement('div');
         btnGroup.id = 'temp-confirm-btns';
         modal.querySelector('div').appendChild(btnGroup);
     }
-    
     btnGroup.innerHTML = `
         <button class="button" style="background:#ff5252; margin-bottom:8px; width:100%" id="btn-finish-review-yes">Да, закончить</button>
         <button class="button secondary" style="width:100%" id="btn-finish-review-no">Продолжить разбор</button>
     `;
-
     document.getElementById('btn-finish-review-yes').onclick = () => {
         btnGroup.remove();
         if (originalBtn) originalBtn.style.display = 'inline-block';
         closeModal();
         finishSession();
     };
-    
     document.getElementById('btn-finish-review-no').onclick = () => {
         btnGroup.remove();
         if (originalBtn) originalBtn.style.display = 'inline-block';
         closeModal();
     };
-    
     modal.style.display = 'flex';
 };
 
@@ -707,34 +665,31 @@ window.allowVkMessages = function(btnElement) {
                     body: JSON.stringify({student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS})
                 });
                 const data = await res.json();
-                
                 if (btnElement) {
                     btnElement.style.display = 'none';
                 } else {
-                    document.querySelectorAll('button').forEach(b => { 
-                        if(b.innerText.includes('кредита') || b.innerText.includes('уведомления')) b.style.display = 'none'; 
+                    document.querySelectorAll('button').forEach(b => {
+                        if(b.innerText.includes('кредита') || b.innerText.includes('уведомления')) b.style.display = 'none';
                     });
                 }
-
                 if(data.success) {
                     showCustomAlert("Вы подписались на уведомления и получили +3 кредита! 🎉", "Отлично!");
-                    setTimeout(() => showProfile(), 1500); 
+                    setTimeout(() => showProfile(), 1500);
                 } else {
                     showCustomAlert(data.message || "Вы уже получали бонус за подписку!", "Внимание");
                 }
             } catch(e) {
-                 showCustomAlert("Вы подписались на уведомления!", "Отлично");
+                showCustomAlert("Вы подписались на уведомления!", "Отлично");
             }
         })
         .catch(() => {});
 };
 
 window.buyPackage = function(creditsAmount) {
-    if (!USER_ID) { 
-        showCustomAlert("Не удалось определить ваш ID ВКонтакте.", "Ошибка"); 
-        return; 
+    if (!USER_ID) {
+        showCustomAlert("Не удалось определить ваш ID ВКонтакте.", "Ошибка");
+        return;
     }
-    
     const payUrl = `https://holljs.github.io/vk-image-bot-frontend/pay_repetitor.html?user_id=${USER_ID}`;
     window.openVKUrl(payUrl);
 };
@@ -745,63 +700,54 @@ window.showProfile = async function() {
         const response = await fetch(`${TEST_API_URL}/profile_base/?student_id=${USER_ID || 'guest'}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         if (!response.ok) { showCustomAlert("Ошибка VK.", "Доступ закрыт"); showScreen(document.getElementById('screen-main-menu')); return; }
         const data = await response.json();
-        
         let subjectsHtml = '';
         if (data.subject_counts && Object.keys(data.subject_counts).length > 0) {
             for (const [subjCode, count] of Object.entries(data.subject_counts)) {
                 const subjName = ALL_SUBJECTS[subjCode] || subjCode;
                 subjectsHtml += `
-                <div style="margin-bottom:10px; border: 1px solid #e1e3e6; border-radius:8px; background: #fff; overflow:hidden;">
-                    <div onclick="toggleAccordion(this)" style="padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#f9f9f9; font-weight:600; color:#333;">
-                        <div style="display:flex; align-items:center;"><i data-feather="book" class="icon-sm" style="margin-right:8px; color:#4a76a8;"></i> ${subjName}</div>
-                        <div style="display:flex; align-items:center; font-size:14px; color:#666;">Решено: ${count} <i data-feather="chevron-down" class="icon-sm" style="margin-left:5px;"></i></div>
-                    </div>
-                    <div style="display:none; padding:15px; border-top:1px solid #e1e3e6;">
-                        <button class="button" style="width:100%; background:#4a76a8; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')"><i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ</button>
-                    </div>
-                </div>`;
+                    <div style="margin-bottom:10px; border: 1px solid #e1e3e6; border-radius:8px; background: #fff; overflow:hidden;">
+                        <div onclick="toggleAccordion(this)" style="padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#f9f9f9; font-weight:600; color:#333;">
+                            <div style="display:flex; align-items:center;"><i data-feather="book" class="icon-sm" style="margin-right:8px; color:#4a76a8;"></i> ${subjName}</div>
+                            <div style="display:flex; align-items:center; font-size:14px; color:#666;">Решено: ${count} <i data-feather="chevron-down" class="icon-sm" style="margin-left:5px;"></i></div>
+                        </div>
+                        <div style="display:none; padding:15px; border-top:1px solid #e1e3e6;">
+                            <button class="button" style="width:100%; background:#4a76a8; font-size:14px;" onclick="loadSubjectAnalytics('${subjCode}', '${subjName}')"><i data-feather="cpu" class="icon-sm"></i> Получить ИИ-анализ</button>
+                        </div>
+                    </div>`;
             }
         } else { subjectsHtml = `<p style="color:#777; text-align:center;">Статистика появится после решения заданий!</p>`; }
 
         let topUpBlock = '';
         if (canPay) {
             topUpBlock = `
-            <div style="background:#fff; padding:15px; border-radius:10px; margin-bottom:20px; border: 1px solid #e1e3e6; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-                <h3 style="margin-top:0; text-align:center; color:#4a76a8; font-size:16px;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс кредитов</h3>
-                <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="buyPackage(15)">15 кр. — 150 руб.</button>
-                <button class="button" style="background:#2a5885;" onclick="buyPackage(100)">100 кр. — 700 руб.</button>
-            </div>`;
+                <div style="background:#fff; padding:15px; border-radius:10px; margin-bottom:20px; border: 1px solid #e1e3e6; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <h3 style="margin-top:0; text-align:center; color:#4a76a8; font-size:16px;"><i data-feather="credit-card" class="icon-sm"></i> Пополнить баланс кредитов</h3>
+                    <button class="button" style="background:#4a76a8; margin-bottom:10px;" onclick="buyPackage(15)">15 кр. — 150 руб.</button>
+                    <button class="button" style="background:#2a5885;" onclick="buyPackage(100)">100 кр. — 700 руб.</button>
+                </div>`;
         }
-
         let rewardBtnHtml = '';
-        if (data.got_reward !== 1) { 
+        if (data.got_reward !== 1) {
             rewardBtnHtml = `
-            <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shrink: 0; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
-                <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
-            </button>`;
+                <button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); margin-bottom:20px; font-size:14px; padding:12px; border: none; box-shadow: 0 4px 10px rgba(74, 118, 168, 0.15);" onclick="allowVkMessages(this)">
+                    <i data-feather="gift" class="icon-sm" style="margin-right:8px;"></i> Получить +3 кредита за подписку
+                </button>`;
         }
-
         const subjectScreen = document.getElementById('screen-profile');
         subjectScreen.innerHTML = `
             <h2 style="display:flex; align-items:center; justify-content:center; margin-bottom: 20px;"><i data-feather="user" style="margin-right:10px;"></i> Мой профиль</h2>
-            
             ${rewardBtnHtml}
-
             <div style="background: #e6f2ff; color: #0056b3; padding: 12px; border-radius: 10px; font-weight: bold; margin-bottom: 15px; font-size: 14px; border: 1px solid #cce5ff; text-align: center; letter-spacing: 0.5px;">
                 🔑 Твой цифровой ID: <span style="font-size: 16px; color: #007bff; font-weight: 800;">${USER_ID || 'не определен'}</span>
             </div>
-
             <div style="background:white; padding:15px; border-radius:10px; margin-bottom:20px; display:flex; justify-content:space-around; text-align:center; border: 1px solid #e1e3e6;">
                 <div><div style="font-size:24px; font-weight:bold; color:#4a76a8;">${data.balance || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">кредитов</div></div>
                 <div style="width:1px; background:#e1e3e6;"></div>
                 <div><div style="font-size:24px; font-weight:bold; color:#4CAF50;">${data.total_solved || 0}</div><div style="font-size:12px; color:#777; text-transform:uppercase;">задач решено</div></div>
             </div>
-
             ${topUpBlock}
-
             <h3 style="text-align:left; margin-bottom:10px; font-size: 16px; color:#333;">Твои предметы:</h3>
             ${subjectsHtml}
-            
             <div style="margin-top: 25px; text-align:center; padding-top: 15px; border-top: 1px dashed #ccc; font-size: 11px; color: #888; line-height: 1.4;">
                 Самозанятая Селяхова Наталья Викторовна<br>
                 ИНН: 502209781184 | Email: holljs@mail.ru
@@ -815,13 +761,11 @@ window.showProfile = async function() {
 window.loadSubjectAnalytics = async function(c, n) {
     const subjectScreen = document.getElementById('screen-profile');
     subjectScreen.innerHTML = `<h2>Анализ: ${n}</h2><div id="an-cont"><div class="spinner"></div></div>`;
-    
     if (analysisCache[c]) {
         document.getElementById('an-cont').innerHTML = `<div style="text-align:left; line-height:1.6;">${analysisCache[c]}</div><br><button class="button secondary" onclick="showProfile()">Назад</button>`;
         if (window.feather) feather.replace();
         return;
     }
-    
     try {
         const res = await fetch(`${TEST_API_URL}/analyze_subject/?student_id=${USER_ID || 'guest'}&subject_key=${c}&vk_params=${encodeURIComponent(VK_SEARCH_PARAMS)}`);
         const data = await res.json();
@@ -834,10 +778,9 @@ window.loadSubjectAnalytics = async function(c, n) {
 window.showHelp = function() {
     const helpScreen = document.getElementById('screen-help');
     const payBlock = document.getElementById('help-payment-block');
-    
     if (payBlock) {
         payBlock.innerHTML = `<div style="margin-top: 15px;"><button class="button" style="background: linear-gradient(135deg, #4a76a8 0%, #2a5885 100%); width: 100%; padding: 14px; font-weight: bold;" onclick="window.openVKUrl('https://vk.com/@neiro_repetitor-kak-popolnit-balans-v-neiro-repetitore')">ℹ️ Где брать кредиты?</button></div>`;
-        payBlock.style.display = 'block'; 
+        payBlock.style.display = 'block';
     }
     showScreen(helpScreen);
 };
@@ -848,49 +791,43 @@ window.openVKUrl = function(url) {
     } catch(e) { window.open(url, '_blank'); }
 };
 
-// 🎯 УМНЫЙ ПРОСМОТРЩИК КАРТИНОК (Работает с ФИПИ и локальными путями)
 window.openImageViewer = function(url) {
     try {
         let fullImgUrl = url;
         if (url.includes('simg') || url.includes('docs/') || !url.startsWith('questions/')) {
-            let cleanPath = url.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            let cleanPath = url.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
             if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
             fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
         } else if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
         vkBridge.send("VKWebAppShowImages", { images: [fullImgUrl] })
-        .catch(() => { window.open(fullImgUrl, '_blank'); });
+            .catch(() => { window.open(fullImgUrl, '_blank'); });
     } catch(e) { window.open(url, '_blank'); }
 };
 
 // =========================================================================
-// 🎙 ГОЛОСОВОЙ ВВОД В СТИЛЕ НЕЙРО-МАСТЕРА
+// 🎙 ГОЛОСОВОЙ ВВОД
 // =========================================================================
 let recognition = null;
 let isRecording = false;
-
 window.toggleVoiceInput = function() {
     const micBtn = document.getElementById('mic-btn');
     const inputEl = document.getElementById('user-answer');
-    
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
         showCustomAlert("Ваш браузер или устройство не поддерживает голосовой ввод.", "Упс");
         return;
     }
-
     if (isRecording) {
         if (recognition) recognition.stop();
         return;
     }
-
     recognition = new SpeechRecognition();
     const isEnglishSubj = currentSubjectCode && currentSubjectCode.includes('english');
     recognition.lang = isEnglishSubj ? 'en-US' : 'ru-RU';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-
     recognition.onstart = function() {
         isRecording = true;
         if (micBtn) {
@@ -900,23 +837,19 @@ window.toggleVoiceInput = function() {
             if (window.feather) feather.replace();
         }
     };
-
     recognition.onresult = function(event) {
         const transcript = event.results[0][0].transcript;
         if (inputEl) {
             inputEl.value = inputEl.value ? `${inputEl.value} ${transcript}` : transcript;
         }
     };
-
     recognition.onerror = function(event) {
         console.log("⚠️ Ошибка распознавания речи:", event.error);
         stopMicAnimation();
     };
-
     recognition.onend = function() {
         stopMicAnimation();
     };
-
     try {
         recognition.start();
     } catch(e) {
