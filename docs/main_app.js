@@ -264,10 +264,18 @@ async function getRandomTask() {
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 }
 
+// 🔥 НОВАЯ ФУНКЦИЯ escapeHtml для защиты от ломающихся спецсимволов
+function escapeHtml(s) {
+    if (!s) return "";
+    return s.toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 function showTask() {
     saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
-    
     const skipCountEl = document.getElementById('skips-count');
     if (skipCountEl) skipCountEl.textContent = skipsLeft;
     const skipBtn = document.getElementById('skip-task-btn');
@@ -275,42 +283,50 @@ function showTask() {
 
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
-
     let rawText = currentTask.task_text || currentTask.text || "";
-    if (rawText) {
-        let cleanText = rawText.replace(/Решите уравнения/gi, '').replace(/^\d+[\.\)]\s*/, '').trim();
-        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${cleanText}</div>`;
-        taskTextElement.style.display = 'block';
-    } else { taskTextElement.textContent = "Текст не найден"; }
 
-    // 🖼 НАДЕЖНАЯ СБОРКА ССЫЛОК НА КАРТИНКИ
-    let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0 
-        ? currentTask.all_images 
+    if (rawText) {
+        let cleanText = rawText
+            .replace(/Решите уравнения/gi, '')
+            .replace(/^\d+[\.\)]\s*/, '')
+            .trim();
+        // 🔥 Защита от спецсимволов <, >, & перед вставкой в HTML
+        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${escapeHtml(cleanText).replace(/\n/g, '<br>')}</div>`;
+        taskTextElement.style.display = 'block';
+    } else {
+        taskTextElement.textContent = "Текст не найден";
+    }
+
+    // 🖼 НАДЕЖНАЯ СБОРКА ССЫЛОК НА КАРТИНКИ (через imgproxy)
+    let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0
+        ? currentTask.all_images
         : (currentTask.image ? [currentTask.image] : []);
 
     if (imagesToDisplay.length > 0) {
         let imgsHtml = '';
         imagesToDisplay.forEach(imgUrl => {
             let fullImgUrl = imgUrl;
-            
-            // Авто-определение источника картинки (ФИПИ или локальный сервер)
-            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
-                let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            // 🔥 ФИПИ картинки теперь идут через прокси (для стабильного отображения)
+            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || imgUrl.includes('fipi.ru') || !imgUrl.startsWith('questions/')) {
+                let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/, '').replace(/^\//, '');
                 if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-                fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+                let origUrl = `https://oge.fipi.ru/${cleanPath}`;
+                // Для ОТОБРАЖЕНИЯ ученику можно оставить оригинал, но если не грузится — прокси:
+                fullImgUrl = `${API_SERVER_URL}/imgproxy/?url=${encodeURIComponent(origUrl)}`;
             } else if (!fullImgUrl.startsWith('http')) {
                 fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
             }
-            
             imgsHtml += `<div style="text-align:center; margin-top:10px;">
-                <img src="${encodeURI(fullImgUrl)}" class="question-image" 
-                     style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" 
-                     onclick="openImageViewer('${encodeURI(fullImgUrl)}')">
+                <img src="${encodeURI(fullImgUrl)}" class="question-image"
+                    style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;"
+                    onclick="openImageViewer('${encodeURI(fullImgUrl)}')">
             </div>`;
         });
         imageContainer.innerHTML = imgsHtml;
         imageContainer.style.display = 'block';
-    } else { imageContainer.style.display = 'none'; }
+    } else {
+        imageContainer.style.display = 'none';
+    }
 
     // 🎧 АУДИОПЛЕЕР
     let audioContainer = document.getElementById('task-audio-container');
@@ -319,7 +335,6 @@ function showTask() {
         audioContainer.id = 'task-audio-container';
         imageContainer.parentNode.insertBefore(audioContainer, imageContainer.nextSibling);
     }
-
     if (currentTask.audio && currentTask.audio.length > 5) {
         let fullAudioUrl = currentTask.audio;
         if (!fullAudioUrl.startsWith('http://') && !fullAudioUrl.startsWith('https://')) {
@@ -332,10 +347,12 @@ function showTask() {
             </div>
         `;
         audioContainer.style.display = 'block';
-    } else { audioContainer.style.display = 'none'; }
-    
+    } else {
+        audioContainer.style.display = 'none';
+    }
+
     document.getElementById('user-answer').value = '';
-    setTimeout(() => { renderMath('task-text'); }, 100); 
+    setTimeout(() => { renderMath('task-text'); }, 100);
     showScreen(document.getElementById('task-screen'));
 }
 
