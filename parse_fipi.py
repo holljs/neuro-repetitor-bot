@@ -9,26 +9,28 @@ from bs4 import BeautifulSoup
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def parse_fipi(proj_id, subject_code, max_pages=175):
+    base_domain = "https://oge.fipi.ru" if subject_code.startswith("oge_") or "oge" in subject_code.lower() else "https://ege.fipi.ru"
+
     session = requests.Session()
     session.headers.update({
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Content-Type": "application/x-www-form-urlencoded",
-        "Origin": "https://oge.fipi.ru",
-        "Referer": f"https://oge.fipi.ru/bank/index.php?proj={proj_id}"
+        "Origin": base_domain,
+        "Referer": f"{base_domain}/bank/index.php?proj={proj_id}"
     })
 
-    print(f"🚀 Запуск парсинга ФИПИ [{subject_code}] | Проект: {proj_id}")
+    print(f"🚀 Запуск обновленного парсинга ФИПИ [{subject_code}] | Домен: {base_domain} | Проект: {proj_id}")
 
     try:
-        session.get(f"https://oge.fipi.ru/bank/index.php?proj={proj_id}", verify=False, timeout=15)
+        session.get(f"{base_domain}/bank/index.php?proj={proj_id}", verify=False, timeout=15)
         print("✅ Сессия ФИПИ успешно получена!")
     except Exception as e:
         print(f"❌ Ошибка подключения: {e}")
         return
 
     parsed_tasks = []
-    questions_url = "https://oge.fipi.ru/bank/questions.php"
+    questions_url = f"{base_domain}/bank/questions.php"
 
     for page in range(1, max_pages + 1):
         print(f"⏳ Скачиваем страницу {page} из {max_pages}...")
@@ -66,38 +68,44 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
             for idx, block in enumerate(forms):
                 block_id = block.get('id', '') or ''
                 task_num = re.sub(r'checkform', '', block_id, flags=re.I)
-                
+
                 if not task_num:
                     num_match = re.search(r'Номер:\s*([A-Z0-9]+)', block.get_text(), re.IGNORECASE)
                     task_num = num_match.group(1) if num_match else f"p{page}_{idx+1}"
 
                 raw_html = str(block)
 
-                # 🎵 1. ПОИСК АУДИО (включая скрипты ShowPictureQ2WH)
+                # 🎵 1. ПОИСК АУДИО
                 audios = []
                 mp3_in_script = re.findall(r"ShowPictureQ2WH\s*\(\s*['\"]([^'\"]+\.mp3)['\"]", raw_html, re.IGNORECASE)
-                mp3_in_html = re.findall(r'(?:https?://oge\.fipi\.ru)?(/[^\s\'"<>]+\.(?:mp3|wav|ogg|m4a))', raw_html, re.IGNORECASE)
+                mp3_in_html = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:mp3|wav|ogg|m4a))', raw_html, re.IGNORECASE)
 
                 for path in mp3_in_script + mp3_in_html:
-                    full_url = path if path.startswith('http') else f"https://oge.fipi.ru/{path.lstrip('/')}"
+                    full_url = path if path.startswith('http') else f"{base_domain}/{path.lstrip('/')}"
                     if full_url not in audios:
                         audios.append(full_url)
 
-                # 🖼 2. ПОИСК КАРТИНОК И СХЕМ
+                # 🖼 2. ПОИСК КАРТИНОК И ФОРМУЛ (Разрешаем simg!)
                 imgs = []
                 found_srcs = re.findall(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif))["\']', raw_html, re.IGNORECASE)
-                found_docs = re.findall(r'(?:https?://oge\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
+                found_docs = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
 
                 for path in found_srcs + found_docs:
-                    if any(icon in path.lower() for icon in ['icon', 'button', 'arrow', 'btn', 'system', 'check.png', 'cross.png', 'simg1_']):
+                    if any(icon in path.lower() for icon in ['icon_', 'button', 'arrow', 'btn_', 'system_', 'check.png', 'cross.png']):
                         continue
-                    
-                    full_url = path if path.startswith('http') else f"https://oge.fipi.ru/{path.lstrip('/')}"
+
+                    full_url = path if path.startswith('http') else f"{base_domain}/{path.lstrip('/')}"
                     if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
                         imgs.append(full_url)
 
-                # 🧹 3. ОЧИСТКА ТЕКСТА
+                # 🧹 3. УМНАЯ ОЧИСТКА ТЕКСТА И СОХРАНЕНИЕ ФОРМУЛ
                 clean_block = BeautifulSoup(raw_html, 'html.parser')
+
+                for math_tag in clean_block.find_all(['mjx-container', 'math']):
+                    latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt')
+                    if latex_attr:
+                        math_tag.replace_with(f" ${latex_attr}$ ")
+
                 for s in clean_block.find_all(['select', 'input', 'button', 'script']):
                     s.decompose()
 
@@ -109,7 +117,7 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                         clean_lines.append(line)
 
                 full_text = "\n".join(clean_lines).strip()
-                if len(full_text) < 15:
+                if len(full_text) < 10 and not imgs:
                     continue
 
                 task_obj = {
@@ -127,7 +135,7 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     parsed_tasks.append(task_obj)
 
             print(f"✅ Страница {page} готова! Всего собрано: {len(parsed_tasks)} задач.")
-            time.sleep(0.3)
+            time.sleep(0.2)
 
         except Exception as e:
             print(f"💥 Ошибка на странице {page}: {e}")
@@ -139,8 +147,8 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
     print(f"\n🎉 СБОР ЗАВЕРШЕН! Сохранено {len(parsed_tasks)} задач в файл: {output_path}")
 
 if __name__ == "__main__":
-    proj = sys.argv[1] if len(sys.argv) > 1 else "74676951F093A0754D74F2D6E7955F06"
-    code = sys.argv[2] if len(sys.argv) > 2 else "oge_informatics"
+    proj = sys.argv[1] if len(sys.argv) > 1 else "DE0E276E497AB3784C3FC4CC20248DC0"
+    code = sys.argv[2] if len(sys.argv) > 2 else "oge_math"
     pages = int(sys.argv[3]) if len(sys.argv) > 3 else 175
 
     parse_fipi(proj, code, pages)

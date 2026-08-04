@@ -19828,5 +19828,2842 @@
     "all_audios": [],
     "answer": "---",
     "topic": "oge_math"
+  },
+  {
+    "id": "fipi_0DB1E0",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C22475D9938597EB4DFCA5010CDD614F/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C22475D9938597EB4DFCA5010CDD614F/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_0835E0",
+    "task_text": "Одно из чисел\n37\n,\n47\n,\n50\n,\n62\nотмечено на прямой точкой\nA\n.\nКакое это число?\n1)\n37\n2)\n47\n3)\n50\n4)\n62",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C22EF8E0D5D0AE4243177636672FD334/xs3qstsrcC22EF8E0D5D0AE4243177636672FD334_1_1398087505.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C22EF8E0D5D0AE4243177636672FD334/xs3qstsrcC22EF8E0D5D0AE4243177636672FD334_1_1398087505.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_0673E1",
+    "task_text": "Найдите значение выражения\n(\n125\n+\n5\n)\n⋅\n5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7C5CEF",
+    "task_text": "Радиус окружности, вписанной в трапецию, равен 48. Найдите высоту этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C318AA2EE935B8674BFB623B71F00C6A/xs3qstsrcC318AA2EE935B8674BFB623B71F00C6A_1_1487085438.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C318AA2EE935B8674BFB623B71F00C6A/xs3qstsrcC318AA2EE935B8674BFB623B71F00C6A_1_1487085438.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7840E0",
+    "task_text": "Чтобы перевести значение температуры по шкале Цельсия в шкалу Фаренгейта, пользуются формулой\nt\nF\n=\n1,8\nt\nC\n+\n32\n, где\nt\nC\n— температура\nв градусах Цельсия,\nt\nF\n— температура в градусах Фаренгейта. Скольким\nградусам по шкале Фаренгейта соответствует\n−\n25\nградусов по шкале Цельсия?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7C57E0",
+    "task_text": "Диагональ\nA\nC\nпараллелограмма\nA\nB\nC\nD\nобразует с его сторонами углы, равные\n30\n°\nи\n45\n°\n.\nНайдите больший угол этого параллелограмма. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C328A3FDDFAF9D4641573B22D1F43661/xs3qstsrcC328A3FDDFAF9D4641573B22D1F43661_1_1456417326.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C328A3FDDFAF9D4641573B22D1F43661/xs3qstsrcC328A3FDDFAF9D4641573B22D1F43661_1_1456417326.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7CF9EB",
+    "task_text": "Радиус окружности, вписанной в прямоугольную трапецию, равен 32. Найдите высоту этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C341ABC0576CBD5946E455BDE9B10D5A/xs3qstsrcC341ABC0576CBD5946E455BDE9B10D5A_1_1487085480.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C341ABC0576CBD5946E455BDE9B10D5A/xs3qstsrcC341ABC0576CBD5946E455BDE9B10D5A_1_1487085480.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_72FCEC",
+    "task_text": "Сторона квадрата равна\n8\n2\n. Найдите диагональ этого квадрата.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3A16ADBFADD81E4425DC325335939C6/xs3qstsrcC3A16ADBFADD81E4425DC325335939C6_1_1485780086.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3A16ADBFADD81E4425DC325335939C6/xs3qstsrcC3A16ADBFADD81E4425DC325335939C6_1_1485780086.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7B5DEC",
+    "task_text": "В лыжных гонках участвуют 13 спортсменов из России, 2 спортсмена\nиз Норвегии и 5 спортсменов из Швеции. Порядок, в котором спортсмены стартуют, определяется жребием. Найдите вероятность того, что первым будет стартовать спортсмен из России.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_78DAE9",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C3B7F9E0D4508AE94D94A10710F3FDC6/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7545EE",
+    "task_text": "Найдите значение выражения\n4,8\n0,4\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7D78E6",
+    "task_text": "Постройте график функции\ny\n=\nx\n2\n+\n13\nx\n−\n3\n|\nx\n+\n7\n|\n+\n42\nи определите, при каких значениях\nm\nпрямая\ny\n=\nm\nимеет с графиком ровно три общие точки.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_BC46E4",
+    "task_text": "Радиус окружности, вписанной в трапецию, равен 18. Найдите высоту этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C400ADBEFF8C8C374D6089530C3AB4F0/xs3qstsrcC400ADBEFF8C8C374D6089530C3AB4F0_1_1487085433.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C400ADBEFF8C8C374D6089530C3AB4F0/xs3qstsrcC400ADBEFF8C8C374D6089530C3AB4F0_1_1487085433.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B072E0",
+    "task_text": "Один из углов параллелограмма равен\n41\n°\n. Найдите больший угол этого параллелограмма. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C42326033B898F184EC011AFCA56324C/xs3qstsrcC42326033B898F184EC011AFCA56324C_1_1485782202.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C42326033B898F184EC011AFCA56324C/xs3qstsrcC42326033B898F184EC011AFCA56324C_1_1485782202.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_BD19E5",
+    "task_text": "Найдите корень уравнения\n9\n+\n8\nx\n=\n6\nx\n−\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_BEC0E9",
+    "task_text": "Одно из чисел\n28\n,\n32\n,\n39\n,\n47\nотмечено на прямой точкой\nA\n.\nКакое это число?\n1)\n28\n2)\n32\n3)\n39\n4)\n47",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C4BAC225EFDCBC1E4226CD43AFBD1B10/xs3qstsrcC4BAC225EFDCBC1E4226CD43AFBD1B10_1_1398087528.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C4BAC225EFDCBC1E4226CD43AFBD1B10/xs3qstsrcC4BAC225EFDCBC1E4226CD43AFBD1B10_1_1398087528.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B8D3EE",
+    "task_text": "Перевести значение температуры по шкале Фаренгейта в шкалу Цельсия позволяет формула\nt\nC\n=\n5\n9\n(\nt\nF\n−\n32\n)\n, где\nt\nC\n—\nтемпература в градусах Цельсия,\nt\nF\n—\nтемпература в градусах Фаренгейта. Скольким градусам\nпо шкале Цельсия соответствует 50 градусов по шкале Фаренгейта?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B40EE6",
+    "task_text": "Найдите значение выражения\n(\na\n3\n)\n4\na\n9\nпри\na\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1C1FEB",
+    "task_text": "На координатной прямой отмечены точки\nA\n,\nB\n,\nC\n,\nD\n. Одна из них соответствует числу\n77\n. Какая это точка?\n1)\nточка\nA\n2)\nточка\nB\n3)\nточка\nC\n4)\nточка\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C545A1224921B8B44451977DF9BE8A28/xs3qstsrcC545A1224921B8B44451977DF9BE8A28_1_1455523494.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C545A1224921B8B44451977DF9BE8A28/xs3qstsrcC545A1224921B8B44451977DF9BE8A28_1_1455523494.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1BF2E1",
+    "task_text": "Найдите корень уравнения\n8\n+\n7\nx\n=\n9\nx\n+\n4\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_10A0E2",
+    "task_text": "В окружности с центром в точке\nO\nотрезки\nA\nC\nи\nB\nD\n—\nдиаметры. Угол\nA\nO\nD\nравен\n88\n°\n. Найдите угол\nA\nC\nB\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C56922E8D665B6574699AE9AA544117B/xs3qstsrcC56922E8D665B6574699AE9AA544117B_1_1456296998.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C56922E8D665B6574699AE9AA544117B/xs3qstsrcC56922E8D665B6574699AE9AA544117B_1_1456296998.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1862E5",
+    "task_text": "В ходе распада радиоактивного изотопа его масса уменьшается вдвое каждые 9 минут. В начальный момент масса изотопа составляла 640 мг. Найдите массу изотопа через 45 минут. Ответ дайте в миллиграммах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_124EEE",
+    "task_text": "Найдите значение выражения\n28\n6\n4\n4\n⋅\n7\n5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_160CE6",
+    "task_text": "Два катета прямоугольного треугольника равны 12 и 5. Найдите площадь этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C5D2DA27B2F0B84B4D6164C0D43CE204/xs3qstsrcC5D2DA27B2F0B84B4D6164C0D43CE204_1_1455891593.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C5D2DA27B2F0B84B4D6164C0D43CE204/xs3qstsrcC5D2DA27B2F0B84B4D6164C0D43CE204_1_1455891593.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1962E6",
+    "task_text": "Сторона равностороннего треугольника равна\n10\n3\n. Найдите радиус окружности, описанной около этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C5DDB69156D987DF42C10B421DD0DBF1/xs3qstsrcC5DDB69156D987DF42C10B421DD0DBF1_1_1485520271.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C5DDB69156D987DF42C10B421DD0DBF1/xs3qstsrcC5DDB69156D987DF42C10B421DD0DBF1_1_1485520271.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1BEFE3",
+    "task_text": "Найдите значение выражения\n(\na\n8\n)\n2\n⋅\na\n5\na\n19\nпри\na\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_283DE4",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображена трапеция. Найдите её площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C60EF7CEB1E0B9AD440FED38EFC20C0A/xs3qstsrcC60EF7CEB1E0B9AD440FED38EFC20C0A_1_1458037299.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C60EF7CEB1E0B9AD440FED38EFC20C0A/xs3qstsrcC60EF7CEB1E0B9AD440FED38EFC20C0A_1_1458037299.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2A8DE7",
+    "task_text": "Укажите решение системы неравенств\n1)\nнет решений\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C63F97D6503BB6F54FD6BB167095CD9D/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C63F97D6503BB6F54FD6BB167095CD9D/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C63F97D6503BB6F54FD6BB167095CD9D/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C63F97D6503BB6F54FD6BB167095CD9D/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C63F97D6503BB6F54FD6BB167095CD9D/innerimg3.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2137EB",
+    "task_text": "Трапеция\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\nописана около окружности,\nA\nB\n=\n12\n,\nB\nC\n=\n4\n,\nC\nD\n=\n8\n.\nНайдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C64E53EB6499B2004F2F2231D9733115/xs3qstsrcC64E53EB6499B2004F2F2231D9733115_1_1485790078.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C64E53EB6499B2004F2F2231D9733115/xs3qstsrcC64E53EB6499B2004F2F2231D9733115_1_1485790078.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2933EB",
+    "task_text": "Отрезки\nA\nC\nи\nB\nD\n—\nдиаметры окружности с центром в точке\nO\n. Угол\nA\nC\nB\nравен\n62\n°\n. Найдите угол\nA\nO\nD\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C64EBEF972738CDC4581A7C87C6F45DE/xs3qstsrcC64EBEF972738CDC4581A7C87C6F45DE_1_1456298691.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C64EBEF972738CDC4581A7C87C6F45DE/xs3qstsrcC64EBEF972738CDC4581A7C87C6F45DE_1_1456298691.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_29EFE2",
+    "task_text": "В среднем из 150 карманных фонариков, поступивших в продажу,\nтри неисправных. Найдите вероятность того, что выбранный наудачу\nв магазине фонарик окажется исправен.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2FCAE5",
+    "task_text": "Диагональ прямоугольника образует угол\n63\n°\nс одной\nиз его сторон. Найдите острый угол между диагоналями этого прямоугольника. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C68A1943404687CA4CF5571783003FE8/xs3qstsrcC68A1943404687CA4CF5571783003FE8_1_1456307972.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C68A1943404687CA4CF5571783003FE8/xs3qstsrcC68A1943404687CA4CF5571783003FE8_1_1456307972.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2189EA",
+    "task_text": "Установите соответствие между графиками функций и формулами, которые их задают.\nГРАФИКИ\nА)\nБ)\nВ)\nФОРМУЛЫ\n1)\ny\n=\n−\n2\nx\n2)\ny\n=\n2\nx\n3)\ny\n=\nx\n2\n−\n2\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C69F5BA02C5FBF1A419D0121CE55E746/xs3qvrsrc2C1D1392D549A0DC40731B4755343A10_1_1457676367.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C69F5BA02C5FBF1A419D0121CE55E746/xs3qvrsrc2C1D1392D549A0DC40731B4755343A10_1_1457676367.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C69F5BA02C5FBF1A419D0121CE55E746/xs3qvrsrcD25DD5FF826AB563411338BC19E75C87_1_1457676369.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C69F5BA02C5FBF1A419D0121CE55E746/xs3qvrsrcCB363E0A7228AE5A435293005E46C01E_1_1457676372.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_24CEEC",
+    "task_text": "В равнобедренной трапеции основания равны 2\nи 6, а один из углов между боковой стороной и основанием равен\n45\n°\n. Найдите площадь этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6AA0C15D39EBA664908E394364ED524/xs3qstsrcC6AA0C15D39EBA664908E394364ED524_1_1456395255.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6AA0C15D39EBA664908E394364ED524/xs3qstsrcC6AA0C15D39EBA664908E394364ED524_1_1456395255.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_20E8E9",
+    "task_text": "Основания трапеции равны 3 и 9, а высота равна 5. Найдите среднюю линию этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6BC2F03C166933844658C1ADA61D326/xs3qstsrcC6BC2F03C166933844658C1ADA61D326_1_1485779970.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6BC2F03C166933844658C1ADA61D326/xs3qstsrcC6BC2F03C166933844658C1ADA61D326_1_1485779970.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_29E2E9",
+    "task_text": "Диагональ прямоугольника образует угол\n47\n°\nс одной\nиз его сторон. Найдите острый угол между диагоналями этого прямоугольника. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6BCB62846798C294D8D7C69A22F6B7F/xs3qstsrcC6BCB62846798C294D8D7C69A22F6B7F_1_1456307962.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C6BCB62846798C294D8D7C69A22F6B7F/xs3qstsrcC6BCB62846798C294D8D7C69A22F6B7F_1_1456307962.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_22B4EE",
+    "task_text": "Найдите значение выражения\n(\n17\n−\n3\n)\n(\n17\n+\n3\n)\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_28E6E3",
+    "task_text": "В амфитеатре 23 ряда, причём в каждом следующем ряду на одно и то же число мест больше, чем в предыдущем. В пятом ряду 27 мест, а в седьмом ряду 31 место. Сколько мест в последнем ряду амфитеатра?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_26A8E8",
+    "task_text": "Найдите значение выражения\n1\n8\n−\n7\n⋅\n1\n8\n6\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D33BE4",
+    "task_text": "Биссектриса равностороннего треугольника равна\n9\n3\n. Найдите сторону этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C70EE4280DADBE054489405FDF735703/xs3qstsrcC70EE4280DADBE054489405FDF735703_1_1456214120.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C70EE4280DADBE054489405FDF735703/xs3qstsrcC70EE4280DADBE054489405FDF735703_1_1456214120.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D136EB",
+    "task_text": "Трапеция\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\nописана около окружности,\nA\nB\n=\n14\n,\nB\nC\n=\n8\n,\nC\nD\n=\n12\n.\nНайдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C74E5DA94CAF848C45ED54EFC3C7F7BD/xs3qstsrcC74E5DA94CAF848C45ED54EFC3C7F7BD_1_1485790628.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C74E5DA94CAF848C45ED54EFC3C7F7BD/xs3qstsrcC74E5DA94CAF848C45ED54EFC3C7F7BD_1_1485790628.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D05DE1",
+    "task_text": "На координатной прямой точки\nA\n,\nB\n,\nC\nи\nD\nсоответствуют числам\n−\n0,\n2\n0\n1\n;\n−\n0,0\n12\n;\n−\n0,\n3\n0\n4\n;\n0,0\n21\n.\nКакой точке соответствует число\n−\n0,\n3\n0\n4\n?\n1)\nA\n2)\nB\n3)\nC\n4)\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C75827F696818A3D402176B69D30C3A0/xs3qstsrcC75827F696818A3D402176B69D30C3A0_1_1458118840.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C75827F696818A3D402176B69D30C3A0/xs3qstsrcC75827F696818A3D402176B69D30C3A0_1_1458118840.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D852E5",
+    "task_text": "Трапеция\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\nописана около окружности,\nA\nB\n=\n14\n,\nB\nC\n=\n13\n,\nC\nD\n=\n22\n. Найдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C788F6BE01259CE14C61E00F6F570583/xs3qstsrcC788F6BE01259CE14C61E00F6F570583_1_1485790917.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C788F6BE01259CE14C61E00F6F570583/xs3qstsrcC788F6BE01259CE14C61E00F6F570583_1_1485790917.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DFB4EA",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён треугольник. Найдите его площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7941007EABFB7FC4CFA8DDC11BF097B/xs3qstsrcC7941007EABFB7FC4CFA8DDC11BF097B_1_1458034064.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7941007EABFB7FC4CFA8DDC11BF097B/xs3qstsrcC7941007EABFB7FC4CFA8DDC11BF097B_1_1458034064.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DF5EEA",
+    "task_text": "Первый рабочий за час делает на 6 деталей больше, чем второй, и выполняет заказ, состоящий из 140 деталей, на 3 часа быстрее, чем второй рабочий, выполняющий такой же заказ. Сколько деталей в час делает первый рабочий?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DE5CEA",
+    "task_text": "Площадь параллелограмма равна 28, а две его стороны равны 14 и 7. Найдите его высоты. В ответе укажите\nбо\n�\nьшую высоту.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C798CACD6DFC860445DA7B1CB35E9E9B/xs3qstsrcC798CACD6DFC860445DA7B1CB35E9E9B_1_1485783476.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C798CACD6DFC860445DA7B1CB35E9E9B/xs3qstsrcC798CACD6DFC860445DA7B1CB35E9E9B_1_1485783476.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DF20EC",
+    "task_text": "Поезд, двигаясь равномерно со скоростью 63 км/ч, проезжает мимо пешехода,\nидущего в том же направлении параллельно путям по платформе\nсо скоростью 3 км/ч, за 18 секунд. Найдите длину поезда в метрах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D774E6",
+    "task_text": "Один из углов параллелограмма равен\n61\n°\n. Найдите больший угол этого параллелограмма. Ответ дайте\nв градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7D3309A05C3992C4307C4A326CABE73/xs3qstsrcC7D3309A05C3992C4307C4A326CABE73_1_1485782207.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7D3309A05C3992C4307C4A326CABE73/xs3qstsrcC7D3309A05C3992C4307C4A326CABE73_1_1485782207.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D4E3E6",
+    "task_text": "Один из углов ромба равен\n104\n°\n. Найдите меньший угол этого ромба. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7DC0E0AE372A8DA473F255383F3F6D2/xs3qstsrcC7DC0E0AE372A8DA473F255383F3F6D2_1_1485782273.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7DC0E0AE372A8DA473F255383F3F6D2/xs3qstsrcC7DC0E0AE372A8DA473F255383F3F6D2_1_1485782273.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D82EE3",
+    "task_text": "Сторона квадрата равна 16. Найдите радиус окружности, вписанной в этот квадрат.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7E6FC262C9B93994C5480535FC559B5/xs3qstsrcC7E6FC262C9B93994C5480535FC559B5_1_1485516268.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C7E6FC262C9B93994C5480535FC559B5/xs3qstsrcC7E6FC262C9B93994C5480535FC559B5_1_1485516268.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_50C4EF",
+    "task_text": "Укажите решение системы неравенств\n{\nх\n+\n1,8\n≤\n0,\nх\n+\n0,5\n≤\n−\n0,5.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C81A205FF7B5AFE6465A659CA251FE4D/xs3qvrsrc41CD8651C98F9E5D425F06C7C0035A20_1_1455812941.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C81A205FF7B5AFE6465A659CA251FE4D/xs3qvrsrc41CD8651C98F9E5D425F06C7C0035A20_1_1455812941.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C81A205FF7B5AFE6465A659CA251FE4D/xs3qvrsrcC97EB407A7F595F64D5753C2EB964AA0_1_1455812946.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C81A205FF7B5AFE6465A659CA251FE4D/xs3qvrsrcE0BF37B0BCBA83364CAB4C14E6845FA0_1_1455812944.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C81A205FF7B5AFE6465A659CA251FE4D/xs3qvrsrc639AAD1DF3D3974A4C46B269B4BA5228_1_1455812949.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5D11ED",
+    "task_text": "Найдите значение выражения\n3\n6\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5C94E5",
+    "task_text": "Укажите решение неравенства\n81\nx\n2\n≥\n16\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C88BA0E98250BB694988C895AD9CD9ED/xs3qvrsrc9BEF3530D5BFB1D0427C2A706B9BC69D_1_1455866244.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C88BA0E98250BB694988C895AD9CD9ED/xs3qvrsrc9BEF3530D5BFB1D0427C2A706B9BC69D_1_1455866244.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C88BA0E98250BB694988C895AD9CD9ED/xs3qvrsrcB42BAC0F1932B1534493B6978C4783A4_1_1455866250.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C88BA0E98250BB694988C895AD9CD9ED/xs3qvrsrc335CB5315ED8B2B64641DDABB45EC429_1_1455866247.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C88BA0E98250BB694988C895AD9CD9ED/xs3qvrsrc53F79027A98E8EE84B825A0ACD31E992_1_1455866252.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_534EEA",
+    "task_text": "Вероятность того, что новая шариковая ручка пишет плохо (или не пишет), равна 0,09. Покупатель в магазине выбирает одну шариковую ручку. Найдите вероятность того, что эта ручка пишет хорошо.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5719EA",
+    "task_text": "Найдите значение выражения\n8,8\n+\n5,9\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5435EA",
+    "task_text": "Угол\nA\nтрапеции\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\n, вписанной в окружность, равен\n36\n°\n. Найдите угол\nC\nэтой трапеции. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C89E0898FE12A96E4E2201BCAED16183/xs3qstsrcC89E0898FE12A96E4E2201BCAED16183_1_1485519637.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C89E0898FE12A96E4E2201BCAED16183/xs3qstsrcC89E0898FE12A96E4E2201BCAED16183_1_1485519637.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5030EA",
+    "task_text": "Найдите значение выражения\n9\nx\n2\ny\n4\nпри\nx\n=\n6\nи\ny\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5FF3E9",
+    "task_text": "В треугольнике два угла равны\n27\n°\nи\n79\n°\n. Найдите его третий угол. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C8B11E8668BF97EE48C20BE5D3B84010/xs3qstsrcC8B11E8668BF97EE48C20BE5D3B84010_1_1455881257.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C8B11E8668BF97EE48C20BE5D3B84010/xs3qstsrcC8B11E8668BF97EE48C20BE5D3B84010_1_1455881257.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_56CFE9",
+    "task_text": "Укажите решение неравенства\nx\n2\n−\n36\n≤\n0\n.\n1)\n(\n−\n∞\n;\n+\n∞\n)\n2)\n(\n−\n∞\n;\n−\n6\n]\n∪\n[\n6\n;\n+\n∞\n)\n3)\n[\n−\n6\n;\n6\n]\n4)\nнет решений",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_518EE9",
+    "task_text": "Мощность постоянного тока (в ваттах) вычисляется по формуле\nP\n=\nI\n2\nR\n,\nгде\nI\n—\nсила тока (в амперах),\nR\n—\nсопротивление (в омах). Пользуясь\nэтой формулой, найдите сопротивление\nR\n, если мощность составляет 150 Вт, а сила тока равна 5 А.\nОтвет дайте в омах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5CACE6",
+    "task_text": "Найдите значение выражения\n(\n50\n+\n2\n)\n⋅\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5D89E6",
+    "task_text": "Угол\nA\nтрапеции\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\n, вписанной в окружность, равен\n111\n°\n. Найдите угол\nC\nэтой трапеции. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C8DF7B917F09A8034C1F3C38AECF85EB/xs3qstsrcC8DF7B917F09A8034C1F3C38AECF85EB_1_1485519624.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C8DF7B917F09A8034C1F3C38AECF85EB/xs3qstsrcC8DF7B917F09A8034C1F3C38AECF85EB_1_1485519624.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A51BE4",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\na\nx\n2\n+\nb\nx\n+\nc\n. Установите соответствие между графиками функций и знаками коэффициентов\na\nи\nc\n.\nГРАФИКИ\nА)\nБ)\nВ)\nКОЭФФИЦИЕНТЫ\n1)\na\n>\n0\n,\nc\n>\n0\n2)\na\n<\n0\n,\nc\n>\n0\n3)\na\n>\n0\n,\nc\n<\n0\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C905842632DAAD414C8DDF5B8EE61331/xs3qvrsrc3945D5A9BD91BF1D46F7A3C9C09C03BD_1_1457680076.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C905842632DAAD414C8DDF5B8EE61331/xs3qvrsrc3945D5A9BD91BF1D46F7A3C9C09C03BD_1_1457680076.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C905842632DAAD414C8DDF5B8EE61331/xs3qvrsrcAF5795EDF433B0484EF9E10CD60DD06A_1_1457680078.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C905842632DAAD414C8DDF5B8EE61331/xs3qvrsrcE6F77DFC7983B175425D2280DDB67517_1_1457680080.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A625E2",
+    "task_text": "Четырёхугольник\nA\nB\nC\nD\nвписан в окружность. Угол\nA\nB\nC\nравен\n138\n°\n, угол\nC\nA\nD\nравен\n83\n°\n. Найдите угол\nA\nB\nD\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C966D842EA9188A44EA37A9C9DF6B824/xs3qstsrcC966D842EA9188A44EA37A9C9DF6B824_1_1456237414.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C966D842EA9188A44EA37A9C9DF6B824/xs3qstsrcC966D842EA9188A44EA37A9C9DF6B824_1_1456237414.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A0EBE9",
+    "task_text": "Катеты прямоугольного треугольника равны 18 и 24. Найдите гипотенузу этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9BC249D07D38DA54BD8B005E624A9CE/xs3qstsrcC9BC249D07D38DA54BD8B005E624A9CE_1_1455888322.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9BC249D07D38DA54BD8B005E624A9CE/xs3qstsrcC9BC249D07D38DA54BD8B005E624A9CE_1_1455888322.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_AD29E3",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9E67B7074B39FB640C96C5BCD32C8CB/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9E67B7074B39FB640C96C5BCD32C8CB/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A482E3",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C9EF065F7581A5084CFBBDC8122B41EF/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C5D1E4",
+    "task_text": "Найдите значение выражения\n6\n−\n5\n⋅\n6\n13\n6\n7\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_CE0EEF",
+    "task_text": "Свежие фрукты содержат 81 % воды, а высушенные — 16 %. Сколько сухих фруктов получится из 420 кг свежих фруктов?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C2E4EF",
+    "task_text": "На экзамене 20 билетов, Саша\nне выучил\n2 из них. Найдите вероятность того, что ему попадётся выученный билет.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C764EF",
+    "task_text": "Один из углов ромба равен\n99\n°\n. Найдите меньший угол этого ромба. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA1D30462BCD97BE41FA45CF05BFEC2E/xs3qstsrcCA1D30462BCD97BE41FA45CF05BFEC2E_1_1485782268.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA1D30462BCD97BE41FA45CF05BFEC2E/xs3qstsrcCA1D30462BCD97BE41FA45CF05BFEC2E_1_1485782268.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_CBD4E1",
+    "task_text": "Укажите решение системы неравенств\n{\nх\n−\n4,3\n≥\n0,\nх\n+\n5\n≤\n10.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA5740F93116A63B4C7DB83553CD046A/xs3qvrsrcCC711D8ECBBEBF104C0D47542F6AE996_1_1455812913.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA5740F93116A63B4C7DB83553CD046A/xs3qvrsrcCC711D8ECBBEBF104C0D47542F6AE996_1_1455812913.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA5740F93116A63B4C7DB83553CD046A/xs3qvrsrc3CB6DE7515C0BBF044EA12AB717B4E69_1_1455812918.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA5740F93116A63B4C7DB83553CD046A/xs3qvrsrcA1C62F5C65F6BEAA4F7151DCD1BE00E9_1_1455812915.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA5740F93116A63B4C7DB83553CD046A/xs3qvrsrc5F4C76426AB48A324A5D08D9743E7FC9_1_1455812920.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_CE37E1",
+    "task_text": "В среднем из 100 карманных фонариков, поступивших в продажу,\nпять неисправных. Найдите вероятность того, что выбранный наудачу\nв магазине фонарик окажется исправен.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C702ED",
+    "task_text": "Найдите значение выражения\n6,7\n⋅\n5,5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C8A9ED",
+    "task_text": "Центр окружности, описанной около треугольника\nA\nB\nC\n, лежит на стороне\nA\nB\n. Радиус окружности равен 10. Найдите\nB\nC\n, если\nA\nC\n=\n16\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA79FBDD80FE81CA4925538FA770C3D4/xs3qstsrcCA79FBDD80FE81CA4925538FA770C3D4_1_1457537187.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA79FBDD80FE81CA4925538FA770C3D4/xs3qstsrcCA79FBDD80FE81CA4925538FA770C3D4_1_1457537187.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C432E5",
+    "task_text": "Основания трапеции равны 3 и 11. Найдите больший из отрезков, на которые делит среднюю линию этой трапеции одна из её диагоналей.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA8E060E69C28E47464FA696E859F1AE/xs3qstsrcCA8E060E69C28E47464FA696E859F1AE_1_1456478327.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA8E060E69C28E47464FA696E859F1AE/xs3qstsrcCA8E060E69C28E47464FA696E859F1AE_1_1456478327.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_CA2EEA",
+    "task_text": "Диагонали\nA\nC\nи\nB\nD\nпрямоугольника\nA\nB\nC\nD\nпересекаются в точке\nO\n,\nB\nO\n=\n15\n,\nA\nB\n=\n14\n. Найдите\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA969C6EA1A58FEA44C68A749720DB0A/xs3qstsrcCA969C6EA1A58FEA44C68A749720DB0A_1_1485782493.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CA969C6EA1A58FEA44C68A749720DB0A/xs3qstsrcCA969C6EA1A58FEA44C68A749720DB0A_1_1485782493.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C540E6",
+    "task_text": "Найдите значение выражения\n(\n2\n⋅\n3\n)\n5\n2\n4\n⋅\n3\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_CE33E8",
+    "task_text": "Диагональ\nBD\nпараллелограмма\nABCD\nобразует с его сторонами углы, равные\n60\n°\nи\n55\n°\n. Найдите меньший угол этого параллелограмма. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CAFECE66A1E1A3014D0BBABD817D07B3/xs3qstsrcCAFECE66A1E1A3014D0BBABD817D07B3_1_1456417356.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CAFECE66A1E1A3014D0BBABD817D07B3/xs3qstsrcCAFECE66A1E1A3014D0BBABD817D07B3_1_1456417356.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_98EEE4",
+    "task_text": "Основания трапеции равны 1 и 11. Найдите больший из отрезков, на которые делит среднюю линию этой трапеции одна из её диагоналей.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB0CFC128BF496DF4FDD79DC076453BE/xs3qstsrcCB0CFC128BF496DF4FDD79DC076453BE_1_1456478314.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB0CFC128BF496DF4FDD79DC076453BE/xs3qstsrcCB0CFC128BF496DF4FDD79DC076453BE_1_1456478314.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9B37E4",
+    "task_text": "Найдите значение выражения\n21\n5\n:\n6\n7\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9B4AE0",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён параллелограмм. Найдите его площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB2049630AB180454011AA59518F90EB/xs3qstsrcCB2049630AB180454011AA59518F90EB_1_1458040541.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB2049630AB180454011AA59518F90EB/xs3qstsrcCB2049630AB180454011AA59518F90EB_1_1458040541.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9860EB",
+    "task_text": "Вероятность того, что новая шариковая ручка пишет плохо (или не пишет), равна 0,29. Покупатель в магазине выбирает одну шариковую ручку. Найдите вероятность того, что эта ручка пишет хорошо.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9C5CE2",
+    "task_text": "Два катета прямоугольного треугольника равны 6 и 13. Найдите площадь этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB68AAB38C0B905A497652413A878A19/xs3qstsrcCB68AAB38C0B905A497652413A878A19_1_1455891567.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CB68AAB38C0B905A497652413A878A19/xs3qstsrcCB68AAB38C0B905A497652413A878A19_1_1455891567.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9883EC",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\na\nx\n2\n+\nb\nx\n+\nc\n. Установите соответствие между графиками функций и знаками коэффициентов\na\nи\nc\n.\nГРАФИКИ\nА)\nБ)\nВ)\nКОЭФФИЦИЕНТЫ\n1)\na\n<\n0\n,\nc\n>\n0\n2)\na\n>\n0\n,\nc\n<\n0\n3)\na\n>\n0\n,\nc\n>\n0\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBAFFE7534FCA57444A21AB83B5C5ED4/xs3qvrsrc343F08BF8EDA8600484EB1FE5AFA0C90_1_1457680145.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBAFFE7534FCA57444A21AB83B5C5ED4/xs3qvrsrc343F08BF8EDA8600484EB1FE5AFA0C90_1_1457680145.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBAFFE7534FCA57444A21AB83B5C5ED4/xs3qvrsrc1262F39CF81293B94EB207522CC334A5_1_1457680147.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBAFFE7534FCA57444A21AB83B5C5ED4/xs3qvrsrc87B6E460D766AAED423F0B91E2114836_1_1457680149.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9329E9",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBB6EB29F4798C2F44E1823F21035D13/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CBB6EB29F4798C2F44E1823F21035D13/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9843EE",
+    "task_text": "В фирме такси в данный момент свободно 12 машин: 3 чёрных, 6 жёлтых\nи 3 зелёных. По вызову выехала одна из машин, случайно оказавшаяся\nближе всего к заказчику. Найдите вероятность того, что к нему приедет жёлтое такси.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9570E3",
+    "task_text": "Найдите значение выражения\n7,9\n+\n2,2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_ED59E0",
+    "task_text": "Найдите\nзначение\nвыражения\n1\n25\n⋅\nx\n4\ny\n8\nпри\nx\n=\n5\nи\ny\n=\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EC80EC",
+    "task_text": "На координатной прямой точки\nA\n,\nB\n,\nC\nи\nD\nсоответствуют числам\n−\n0,0\n32\n;\n0,0\n23\n;\n0,\n3\n0\n2\n;\n−\n0,\n2\n0\n3\n.\nКакой точке соответствует число\n−\n0,\n2\n0\n3\n?\n1)\nA\n2)\nB\n3)\nC\n4)\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CCAFA2489BCD88304756C9AE4027F822/xs3qstsrcCCAFA2489BCD88304756C9AE4027F822_1_1458118830.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CCAFA2489BCD88304756C9AE4027F822/xs3qstsrcCCAFA2489BCD88304756C9AE4027F822_1_1458118830.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E5C8E9",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CCBA8FACE18682B5485A992AD583CD15/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CCBA8FACE18682B5485A992AD583CD15/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EDC1E8",
+    "task_text": "Найдите значение выражения\n96\n(\n4\n2\n)\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6DD5E4",
+    "task_text": "Найдите значение выражения\n22\n⋅\n33\n6\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6D03EB",
+    "task_text": "Центр окружности, описанной около треугольника\nA\nB\nC\n, лежит на стороне\nA\nB\n. Радиус окружности равен 14,5. Найдите\nA\nC\n, если\nB\nC\n=\n21\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CD427E63EFA9B5E446B351244AF02B3B/xs3qstsrcCD427E63EFA9B5E446B351244AF02B3B_1_1457537192.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CD427E63EFA9B5E446B351244AF02B3B/xs3qstsrcCD427E63EFA9B5E446B351244AF02B3B_1_1457537192.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6BA8ED",
+    "task_text": "Решите уравнение\n6\nx\n2\n=\n36\nx\n.\nЕсли уравнение имеет более одного корня, в ответ запишите меньший\nиз корней.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_60D7EA",
+    "task_text": "В амфитеатре 18 рядов, причём в каждом следующем ряду на одно и то же число мест больше, чем в предыдущем. В третьем ряду 24 места, а в шестом ряду 33 места. Сколько мест в последнем ряду амфитеатра?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_64F1EC",
+    "task_text": "Найдите\nзначение\nвыражения\n1\n4\n⋅\nx\n8\ny\n4\nпри\nx\n=\n2\nи\ny\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3B61EF",
+    "task_text": "Четырёхугольник\nA\nB\nC\nD\nвписан в окружность. Угол\nA\nB\nD\nравен\n77\n°\n, угол\nC\nA\nD\nравен\n43\n°\n. Найдите угол\nA\nB\nC\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE1D45B6487C87B146AE00FC29CB8D86/xs3qstsrcCE1D45B6487C87B146AE00FC29CB8D86_1_1456238052.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE1D45B6487C87B146AE00FC29CB8D86/xs3qstsrcCE1D45B6487C87B146AE00FC29CB8D86_1_1456238052.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3816E1",
+    "task_text": "Четырёхугольник\nA\nB\nC\nD\nописан около окружности,\nA\nB\n=\n5\n,\nB\nC\n=\n9\n,\nC\nD\n=\n16\n. Найдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE55FD1DAECA810740F87073A66FF233/xs3qstsrcCE55FD1DAECA810740F87073A66FF233_1_1485523215.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE55FD1DAECA810740F87073A66FF233/xs3qstsrcCE55FD1DAECA810740F87073A66FF233_1_1485523215.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_310DE2",
+    "task_text": "Установите соответствие между функциями и их графиками.\nФУНКЦИИ\nА)\ny\n=\n1\n2\nx\n−\n6\nБ)\ny\n=\nx\n2\n−\n8\nx\n+\n11\nВ)\ny\n=\n−\n9\nx\nГРАФИКИ\n1)\n2)\n3)\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE6257487C7F8304487CE104C745F9CA/xs3qvrsrcA58615E21CBDA7C84C31E86679ABD6D3_1_1457681956.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE6257487C7F8304487CE104C745F9CA/xs3qvrsrcA58615E21CBDA7C84C31E86679ABD6D3_1_1457681956.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE6257487C7F8304487CE104C745F9CA/xs3qvrsrc8879348952E9A6564AD5692097181E9E_1_1457681958.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CE6257487C7F8304487CE104C745F9CA/xs3qvrsrc8CF96DD1DAA7BDCC4214B64DBCA9E052_1_1457681960.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3687E2",
+    "task_text": "Найдите значение выражения\n(\na\n5\n)\n−\n3\n:\na\n−\n19\nпри\na\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_38B3E5",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nТочка пересечения двух окружностей равноудалена от центров этих окружностей.\n2)\nВ параллелограмме есть два равных угла.\n3)\nПлощадь прямоугольного треугольника равна произведению длин его катетов.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_395CE9",
+    "task_text": "В магазине канцтоваров продаётся 255 ручек: 46 красных, 31 зелёная,\n36 фиолетовых, остальные синие и чёрные, их поровну. Найдите вероятность того, что случайно выбранная в этом магазине ручка будет зелёной\nили синей.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3739E9",
+    "task_text": "Четырёхугольник\nA\nB\nC\nD\nвписан в окружность. Угол\nA\nB\nC\nравен\n56\n°\n, угол\nC\nA\nD\nравен\n42\n°\n. Найдите угол\nA\nB\nD\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEBE3BB2F678A62C4C669E07C90A84C8/xs3qstsrcCEBE3BB2F678A62C4C669E07C90A84C8_1_1456237425.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEBE3BB2F678A62C4C669E07C90A84C8/xs3qstsrcCEBE3BB2F678A62C4C669E07C90A84C8_1_1456237425.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3294EE",
+    "task_text": "Найдите значение выражения\n(\n11\n−\n7\n)\n2\n+\n14\n11\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3978E6",
+    "task_text": "Найдите площадь квадрата, описанного около окружности радиуса 16.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CED3BFDCC8E3B20C4308450823FA9514/xs3qstsrcCED3BFDCC8E3B20C4308450823FA9514_1_1456232036.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CED3BFDCC8E3B20C4308450823FA9514/xs3qstsrcCED3BFDCC8E3B20C4308450823FA9514_1_1456232036.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3D6EE6",
+    "task_text": "Найдите значение выражения\n9\n5\n⋅\n2\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_3310E3",
+    "task_text": "В ромбе\nA\nB\nC\nD\nугол\nA\nB\nC\nравен\n102\n°\n. Найдите угол\nA\nC\nD\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEE5E2BD7AD5BC234E18EE5C8EF7EB2E/xs3qstsrcCEE5E2BD7AD5BC234E18EE5C8EF7EB2E_1_1487092107.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEE5E2BD7AD5BC234E18EE5C8EF7EB2E/xs3qstsrcCEE5E2BD7AD5BC234E18EE5C8EF7EB2E_1_1487092107.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_305AE8",
+    "task_text": "Между какими числами заключено число\n98\n?\n1)\n4 и 5\n2)\n9 и 10\n3)\n31 и 33\n4)\n97 и 99",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_315EE8",
+    "task_text": "Одно из чисел\n,\n,\nи\nотмечено на числовой прямой точкой\nA\n.\nКакое это число?\n1)\n2\n13\n2)\n7\n13\n3)\n9\n13\n4)\n11\n13",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_6_1734421283.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_6_1734421283.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_7_1734421283.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_8_1734421283.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_9_1734421283.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CEF85C204E49B20742D5924332DEF8F4/xs3qstsrcCEF85C204E49B20742D5924332DEF8F4_10_1734421283.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_393BE8",
+    "task_text": "Площадь четырёхугольника можно вычислить по формуле\nS\n=\nd\n1\nd\n2\nsin\nα\n2\n,\nгде\nd\n1\nи\nd\n2\n—\nдлины диагоналей четырёхугольника,\nα\n—\nугол между диагоналями. Пользуясь этой формулой, найдите длину диагонали\nd\n2\n,\nесли\nd\n1\n=\n13\n,\nsin\nα\n=\n3\n13\n, a\nS\n=\n25,5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8FDFE4",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nВ треугольнике против бо\n�\nьшего угла лежит бо\n�\nьшая сторона.\n2)\nДиагонали ромба равны.\n3)\nПлощадь параллелограмма равна половине произведения его диагоналей.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8372E0",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён ромб. Найдите площадь этого ромба.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF23E6673663BBFA4AE1A145C32DCE29/xs3qstsrcCF23E6673663BBFA4AE1A145C32DCE29_1_1473942242.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF23E6673663BBFA4AE1A145C32DCE29/xs3qstsrcCF23E6673663BBFA4AE1A145C32DCE29_1_1473942242.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_85B5E0",
+    "task_text": "Найдите значение выражения\n15\n4\n⋅\n6\n5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8B61EB",
+    "task_text": "Точки\nM\nи\nN\nявляются серединами сторон\nA\nB\nи\nB\nC\nтреугольника\nA\nB\nC\n, сторона\nA\nB\nравна 95, сторона\nB\nC\nравна 80, сторона\nA\nC\nравна 128. Найдите\nM\nN\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF4D45521B9FB9DB415DF2A87540542C/xs3qstsrcCF4D45521B9FB9DB415DF2A87540542C_1_1457080358.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF4D45521B9FB9DB415DF2A87540542C/xs3qstsrcCF4D45521B9FB9DB415DF2A87540542C_1_1457080358.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8EC8E1",
+    "task_text": "Укажите решение системы неравенств\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF5ACFF82DBA845C4CE0405CD8FED0ED/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8582E2",
+    "task_text": "Сторона треугольника равна 14, а высота, проведённая к этой стороне, равна 31. Найдите площадь этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF6F86A1F90E8A204B5D99E660706409/xs3qstsrcCF6F86A1F90E8A204B5D99E660706409_1_1456214890.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF6F86A1F90E8A204B5D99E660706409/xs3qstsrcCF6F86A1F90E8A204B5D99E660706409_1_1456214890.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8F7CEA",
+    "task_text": "Основания трапеции равны 10 и 11. Найдите больший из отрезков, на которые делит среднюю линию этой трапеции одна из её диагоналей.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF931A73664CBB504D9C8440DF12294E/xs3qstsrcCF931A73664CBB504D9C8440DF12294E_1_1456478320.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CF931A73664CBB504D9C8440DF12294E/xs3qstsrcCF931A73664CBB504D9C8440DF12294E_1_1456478320.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_8B9AE8",
+    "task_text": "Одно из чисел\n,\n,\nи\nотмечено на числовой прямой точкой\nA\n.\nКакое это число?\n1)\n6\n11\n2)\n9\n11\n3)\n13\n11\n4)\n14\n11",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_6_1734421329.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_6_1734421329.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_7_1734421329.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_8_1734421329.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_9_1734421329.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/CFFB499388D7A5EF47EEE4843AF87C4F/xs3qstsrcCFFB499388D7A5EF47EEE4843AF87C4F_10_1734421329.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4E7064",
+    "task_text": "Диагонали\nA\nC\nи\nB\nD\nпрямоугольника\nA\nB\nC\nD\nпересекаются\nв точке\nO\n,\nB\nO\n=\n37\n,\nA\nB\n=\n56\n. Найдите\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D003C2D687C2876B4EE25A1892E8025F/xs3qstsrcD003C2D687C2876B4EE25A1892E8025F_1_1485782517.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D003C2D687C2876B4EE25A1892E8025F/xs3qstsrcD003C2D687C2876B4EE25A1892E8025F_1_1485782517.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4B2B64",
+    "task_text": "Радиус окружности, вписанной в трапецию, равен 38. Найдите высоту этой трапеции.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D00644CA0874A67844CC826FAAB9A776/xs3qstsrcD00644CA0874A67844CC826FAAB9A776_1_1487085443.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D00644CA0874A67844CC826FAAB9A776/xs3qstsrcD00644CA0874A67844CC826FAAB9A776_1_1487085443.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_44D064",
+    "task_text": "Найдите значение выражения\n(\n2\n⋅\n10\n)\n5\n2\n2\n⋅\n10\n4\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4BCB6B",
+    "task_text": "В амфитеатре 15 рядов, причём в каждом следующем ряду на одно и то же число мест больше, чем в предыдущем. В седьмом ряду 36 мест, а в девятом ряду 42 места. Сколько мест в последнем ряду амфитеатра?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4D2F62",
+    "task_text": "Найдите значение выражения\n(\na\n3\n)\n6\n⋅\na\n3\na\n17\nпри\na\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_48CB65",
+    "task_text": "В треугольнике\nA\nB\nC\nугол\nC\nравен\n90\n°\n,\ntg\nB\n=\n7\n12\n,\nB\nC\n=\n48\n. Найдите\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D08AF4FDF755B42E44C2CB36497C41F9/xs3qstsrcD08AF4FDF755B42E44C2CB36497C41F9_1_1485432407.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D08AF4FDF755B42E44C2CB36497C41F9/xs3qstsrcD08AF4FDF755B42E44C2CB36497C41F9_1_1485432407.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4D8D6A",
+    "task_text": "Укажите решение неравенства\n−\n3\n−\n5\nx\n≤\nx\n+\n3\n.\n1)\n(\n−\n∞\n;\n0\n]\n2)\n[\n−\n1\n;\n+\n∞\n)\n3)\n[\n0\n;\n+\n∞\n)\n4)\n(\n−\n∞\n;\n−\n1\n]",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_460869",
+    "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1)\nОдин из углов треугольника всегда не превышает 60 градусов.\n2)\nУгол, вписанный в окружность, равен соответствующему центральному углу, опирающемуся на ту же дугу.\n3)\nДиагонали прямоугольника точкой пересечения делятся пополам.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_438963",
+    "task_text": "Установите соответствие между графиками функций и формулами, которые их задают.\nГРАФИКИ\nА)\nБ)\nВ)\nФОРМУЛЫ\n1)\ny\n=\n2\nx\n2)\ny\n=\nx\n+\n2\n3)\ny\n=\n2\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0EFEBD97AB3982B44C60F7430F5ACF1/xs3qvrsrcC9D149E1A4FAA04C4A818732D0FB4577_1_1457680435.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0EFEBD97AB3982B44C60F7430F5ACF1/xs3qvrsrcC9D149E1A4FAA04C4A818732D0FB4577_1_1457680435.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0EFEBD97AB3982B44C60F7430F5ACF1/xs3qvrsrcB46986364374B0924A93ED5DE05EEB2C_1_1457680437.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0EFEBD97AB3982B44C60F7430F5ACF1/xs3qvrsrc04B321AA89A4B3F6475CD3EA08F01012_1_1457680439.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_4EF368",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D0F1CECEA1C090134629E897A3944960/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F63764",
+    "task_text": "У бабушки 10 чашек: 4 с красными цветами, остальные с синими. Бабушка наливает чай в случайно выбранную чашку. Найдите вероятность того,\nчто это будет чашка с синими цветами.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FA4567",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nВсе прямоугольные треугольники подобны.\n2)\nЧерез заданную точку плоскости можно провести только одну прямую.\n3)\nДиагонали ромба точкой пересечения делятся пополам.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FCCC67",
+    "task_text": "В треугольнике два угла равны\n47\n°\nи\n64\n°\n. Найдите его третий угол. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D13AAA4DAD0EAD81498DB14F89E18DA1/xs3qstsrcD13AAA4DAD0EAD81498DB14F89E18DA1_1_1455881271.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D13AAA4DAD0EAD81498DB14F89E18DA1/xs3qstsrcD13AAA4DAD0EAD81498DB14F89E18DA1_1_1455881271.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F83E67",
+    "task_text": "Сторона равностороннего треугольника равна\n4\n3\n. Найдите радиус окружности, вписанной в этот треугольник.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D13EFC84D3368A564238BA1622E5E874/xs3qstsrcD13EFC84D3368A564238BA1622E5E874_1_1485520883.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D13EFC84D3368A564238BA1622E5E874/xs3qstsrcD13EFC84D3368A564238BA1622E5E874_1_1485520883.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F45E6B",
+    "task_text": "Один из углов ромба равен\n114\n°\n. Найдите меньший угол этого ромба. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1480C8A4A41A17643FFF522245AB9F5/xs3qstsrcD1480C8A4A41A17643FFF522245AB9F5_1_1485783605.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1480C8A4A41A17643FFF522245AB9F5/xs3qstsrcD1480C8A4A41A17643FFF522245AB9F5_1_1485783605.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F7FF65",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён прямоугольный треугольник. Найдите длину его большего катета.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D18131A07AA2B3064BA7AC32248CFA94/xs3qstsrcD18131A07AA2B3064BA7AC32248CFA94_1_1458011896.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D18131A07AA2B3064BA7AC32248CFA94/xs3qstsrcD18131A07AA2B3064BA7AC32248CFA94_1_1458011896.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F0F16C",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1A125606E19B29B401810FE62CD9C47/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F27069",
+    "task_text": "Родительский комитет закупил 10 пазлов для подарков детям в связи\nс окончанием учебного года, из них 2 с машинами и 8 с видами городов. Подарки распределяются случайным образом между 10 детьми, среди которых есть Андрюша. Найдите вероятность того, что Андрюше достанется пазл с машиной.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FC5569",
+    "task_text": "Вероятность того, что новая шариковая ручка пишет плохо (или не пишет), равна 0,11. Покупатель в магазине выбирает одну шариковую ручку. Найдите вероятность того, что эта ручка пишет хорошо.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_F97266",
+    "task_text": "Найдите\nзначение\nвыражения\n1\n9\n⋅\nx\n2\ny\n6\nпри\nx\n=\n7\nи\ny\n=\n3\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FBAC66",
+    "task_text": "На координатной прямой отмечены точки\nA\n,\nB\n,\nC\n,\nD\n. Одна из них соответствует числу\n46\n. Какая это точка?\n1)\nточка\nA\n2)\nточка\nB\n3)\nточка\nC\n4)\nточка\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1D94A805F0CAE0C4AAFF9DACAE629C5/xs3qstsrcD1D94A805F0CAE0C4AAFF9DACAE629C5_1_1455524068.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D1D94A805F0CAE0C4AAFF9DACAE629C5/xs3qstsrcD1D94A805F0CAE0C4AAFF9DACAE629C5_1_1455524068.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FA4263",
+    "task_text": "Между какими числами заключено число\n60\n?\n1)\n20 и 22\n2)\n7 и 8\n3)\n59 и 61\n4)\n3 и 4",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_FFB268",
+    "task_text": "Найдите значение выражения\n2\n9\n⋅\n12\n11\n24\n9\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_088A64",
+    "task_text": "На координатной прямой отмечены точки\nA\n,\nB\n,\nC\n,\nD\n. Одна из них соответствует числу\n76\n. Какая это точка?\n1)\nточка\nA\n2)\nточка\nB\n3)\nточка\nC\n4)\nточка\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D20FF942E6B483094B9D4ED3AC3C7770/xs3qstsrcD20FF942E6B483094B9D4ED3AC3C7770_1_1455523355.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D20FF942E6B483094B9D4ED3AC3C7770/xs3qstsrcD20FF942E6B483094B9D4ED3AC3C7770_1_1455523355.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_0D236F",
+    "task_text": "Площадь параллелограмма равна 36, а две его стороны равны 6 и 12. Найдите его высоты. В ответе укажите\nбо\n�\nьшую высоту.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2167E3EEEA0B3084900C7614D6FFEB6/xs3qstsrcD2167E3EEEA0B3084900C7614D6FFEB6_1_1485783460.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2167E3EEEA0B3084900C7614D6FFEB6/xs3qstsrcD2167E3EEEA0B3084900C7614D6FFEB6_1_1485783460.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_06106A",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D295D2AA01FFB43245D9E98B2417DE56/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D295D2AA01FFB43245D9E98B2417DE56/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_071A69",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\nk\nx\n+\nb\n. Установите соответствие между графиками функций и знаками коэффициентов\nk\nи\nb\n.\nГРАФИКИ\nА)\nБ)\nВ)\nКОЭФФИЦИЕНТЫ\n1)\nk\n<\n0\n,\nb\n>\n0\n2)\nk\n<\n0\n,\nb\n<\n0\n3)\nk\n>\n0\n,\nb\n>\n0\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2B539C35A73962D49C19E82E8C5F264/xs3qvrsrc1D2EA953889685414CCF34F8EACF7D3E_1_1433248922.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2B539C35A73962D49C19E82E8C5F264/xs3qvrsrc1D2EA953889685414CCF34F8EACF7D3E_1_1433248922.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2B539C35A73962D49C19E82E8C5F264/xs3qvrsrcADD0A51C5DD488E34B2E0D6958322566_1_1433248925.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2B539C35A73962D49C19E82E8C5F264/xs3qvrsrc600F10301956B12E49A1030285A55379_1_1433248929.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_087E6E",
+    "task_text": "Мощность постоянного тока (в ваттах) вычисляется по формуле\nP\n=\nI\n2\nR\n,\nгде\nI\n—\nсила тока (в амперах),\nR\n—\nсопротивление (в омах). Пользуясь этой формулой, найдите сопротивление\nR\n, если мощность составляет 211,25 Вт,\nа сила тока равна 6,5 А. Ответ дайте в омах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_0AEB63",
+    "task_text": "Угол\nA\nтрапеции\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\n, вписанной в окружность, равен\n81\n°\n. Найдите угол\nC\nэтой трапеции. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2EC949AD695932F410B9AC2068CBD71/xs3qstsrcD2EC949AD695932F410B9AC2068CBD71_1_1485519599.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2EC949AD695932F410B9AC2068CBD71/xs3qstsrcD2EC949AD695932F410B9AC2068CBD71_1_1485519599.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_07C968",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён треугольник\nA\nB\nC\n. Найдите длину его средней линии, параллельной стороне\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2FA3B3631E5AD334AE4835A64F6A804/xs3qstsrcD2FA3B3631E5AD334AE4835A64F6A804_1_1458010484.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D2FA3B3631E5AD334AE4835A64F6A804/xs3qstsrcD2FA3B3631E5AD334AE4835A64F6A804_1_1458010484.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7B9160",
+    "task_text": "Постройте график функции\ny\n=\nx\n|\nx\n|\n−\n|\nx\n|\n−\n5\nx\n.\nОпределите, при каких значениях\nm\nпрямая\ny\n=\nm\nимеет с графиком ровно две общие точки.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_7EB067",
+    "task_text": "Укажите решение неравенства\n−\n3\n−\n3\nx\n<\n7\nx\n−\n9\n.\n1)\n(\n−\n∞\n;\n0,6\n)\n2)\n(\n−\n∞\n;\n1,2\n)\n3)\n(\n0,6\n;\n+\n∞\n)\n4)\n(\n1,2\n;\n+\n∞\n)",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_728662",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D36F6D5E9F399F5348A07F13171EABD7/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D36F6D5E9F399F5348A07F13171EABD7/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_72F565",
+    "task_text": "Найдите значение выражения\n(\n47\n−\n5\n)\n(\n47\n+\n5\n)\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_762769",
+    "task_text": "На координатной прямой отмечены числа\nи\n.\nКакое из следующих неравенств верно?\n1)\na\n+\nb\n<\n0\n2)\na\n−\nb\n>\n0\n3)\na\nb\n2\n>\n0\n4)\na\nb\n<\n0",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3B6D36361BE829A433A9D01DE745FE7/xs3qstsrcD3B6D36361BE829A433A9D01DE745FE7_6_1734423859.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3B6D36361BE829A433A9D01DE745FE7/xs3qstsrcD3B6D36361BE829A433A9D01DE745FE7_6_1734423859.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3B6D36361BE829A433A9D01DE745FE7/xs3qstsrcD3B6D36361BE829A433A9D01DE745FE7_7_1734423859.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3B6D36361BE829A433A9D01DE745FE7/xs3qstsrcD3B6D36361BE829A433A9D01DE745FE7_8_1734423859.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_74C966",
+    "task_text": "Сторона ромба равна 14, а один из углов этого ромба равен\n150\n°\n. Найдите высоту этого ромба.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3DA0B8BFDEDB3754F9D8B3A99289283/xs3qstsrcD3DA0B8BFDEDB3754F9D8B3A99289283_1_1485785204.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D3DA0B8BFDEDB3754F9D8B3A99289283/xs3qstsrcD3DA0B8BFDEDB3754F9D8B3A99289283_1_1485785204.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_BD0564",
+    "task_text": "Найдите значение выражения\n(\n23\n−\n2\n)\n(\n23\n+\n2\n)\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B1D764",
+    "task_text": "В среднем из 75 карманных фонариков, поступивших в продажу,\nдевять неисправных. Найдите вероятность того, что выбранный наудачу\nв магазине фонарик окажется исправен.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B95C64",
+    "task_text": "Найдите значение выражения\n2\n9\n16\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B3AB64",
+    "task_text": "Каучуковый мячик с силой бросили на асфальт. Отскочив, мячик подпрыгнул на 4,8 м, а при каждом следующем прыжке он поднимался на высоту\nв два раза меньше предыдущей. При каком по счёту прыжке мячик\nв первый раз не достигнет высоты 10 см?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B31B6F",
+    "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1)\nОдин из углов треугольника всегда не превышает 60 градусов.\n2)\nЕсли диагонали параллелограмма равны, то это прямоугольник.\n3)\nДве прямые, параллельные третьей прямой, перпендикулярны.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_BAD167",
+    "task_text": "Найдите значение выражения\n(\n2\n3\n)\n2\n120\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B44B61",
+    "task_text": "В треугольнике два угла равны\n72\n°\nи\n42\n°\n. Найдите его третий угол. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4500454F366874942B68C8910F9F433/xs3qstsrcD4500454F366874942B68C8910F9F433_1_1455881251.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4500454F366874942B68C8910F9F433/xs3qstsrcD4500454F366874942B68C8910F9F433_1_1455881251.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B8C065",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\nk\nx\n+\nb\n. Установите соответствие между графиками функций и знаками коэффициентов\nk\nи\nb\n.\nГРАФИКИ\nА)\nБ)\nВ)\nКОЭФФИЦИЕНТЫ\n1)\nk\n<\n0\n,\nb\n>\n0\n2)\nk\n<\n0\n,\nb\n<\n0\n3)\nk\n>\n0\n,\nb\n<\n0\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D48AF230EC058102498D44A5D9EF2C5B/xs3qvrsrc3F279636C7A69C614537CD7D9ECDA2EF_1_1433248749.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D48AF230EC058102498D44A5D9EF2C5B/xs3qvrsrc3F279636C7A69C614537CD7D9ECDA2EF_1_1433248749.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D48AF230EC058102498D44A5D9EF2C5B/xs3qvrsrcF65B81D11AD39FF04DB8D8419BC839F3_1_1433248752.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D48AF230EC058102498D44A5D9EF2C5B/xs3qvrsrc2BDAA86D0D07BFAE4F113E4D28E0EBDD_1_1433248756.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B5976E",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4CB831E8776912B4A364B10F9A2FEC9/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B99F66",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nВ параллелограмме есть два равных угла.\n2)\nКаждая из биссектрис равнобедренного треугольника является его медианой.\n3)\nПлощадь прямоугольного треугольника равна произведению длин его катетов.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B5FC63",
+    "task_text": "Сумма двух углов равнобедренной трапеции равна\n94\n°\n. Найдите больший угол этой трапеции. Ответ дайте\nв градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4E18A73ED18BC5C490DFF496865C1A6/xs3qstsrcD4E18A73ED18BC5C490DFF496865C1A6_1_1456316077.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4E18A73ED18BC5C490DFF496865C1A6/xs3qstsrcD4E18A73ED18BC5C490DFF496865C1A6_1_1456316077.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_B16663",
+    "task_text": "Найдите острый угол параллелограмма\nA\nB\nC\nD\n, если биссектриса угла\nA\nобразует со стороной\nB\nC\nугол, равный\n40\n°\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4ED5D8715E8828A4BDB2005D49CC421/xs3qstsrcD4ED5D8715E8828A4BDB2005D49CC421_1_1456317641.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D4ED5D8715E8828A4BDB2005D49CC421/xs3qstsrcD4ED5D8715E8828A4BDB2005D49CC421_1_1456317641.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1C5C6F",
+    "task_text": "Трапеция\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\nописана около окружности,\nA\nB\n=\n11\n,\nB\nC\n=\n5\n,\nC\nD\n=\n13\n.\nНайдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D518AA7915388F6849CF7383380FE68E/xs3qstsrcD518AA7915388F6849CF7383380FE68E_1_1485530172.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D518AA7915388F6849CF7383380FE68E/xs3qstsrcD518AA7915388F6849CF7383380FE68E_1_1485530172.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_18C060",
+    "task_text": "Найдите значение выражения\n64\n(\n2\n8\n)\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_12AD6B",
+    "task_text": "Найдите значение выражения\n8,1\n⋅\n7,2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1F8761",
+    "task_text": "На координатной прямой отмечены точки\nA\n,\nB\n,\nC\n,\nD\n. Одна из них соответствует числу\n95\n. Какая это точка?\n1)\nточка\nA\n2)\nточка\nB\n3)\nточка\nC\n4)\nточка\nD",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D55F13539D62B2BB4965FDBDF2435816/xs3qstsrcD55F13539D62B2BB4965FDBDF2435816_1_1455523764.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D55F13539D62B2BB4965FDBDF2435816/xs3qstsrcD55F13539D62B2BB4965FDBDF2435816_1_1455523764.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1C7C6C",
+    "task_text": "Найдите значение выражения\n7\n⋅\n45\n⋅\n35\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_16B266",
+    "task_text": "В треугольнике\nA\nB\nC\nугол\nC\nравен\n45\n°\n,\nA\nB\n=\n8\n2\n. Найдите радиус окружности, описанной около этого треугольника.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D5D4D6D74E20A1AA4EE8739C1F573F78/xs3qstsrcD5D4D6D74E20A1AA4EE8739C1F573F78_1_1487090994.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D5D4D6D74E20A1AA4EE8739C1F573F78/xs3qstsrcD5D4D6D74E20A1AA4EE8739C1F573F78_1_1487090994.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_1BA068",
+    "task_text": "В треугольнике\nA\nB\nC\nугол\nC\nравен\n142\n°\n. Найдите внешний угол при вершине\nC\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D5F94277DC70BCBC43610EA182886C31/xs3qstsrcD5F94277DC70BCBC43610EA182886C31_1_1485440174.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D5F94277DC70BCBC43610EA182886C31/xs3qstsrcD5F94277DC70BCBC43610EA182886C31_1_1485440174.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_257B6F",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён параллелограмм. Найдите его площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D61384C9B2AC92AA4CF303FE182BB430/xs3qstsrcD61384C9B2AC92AA4CF303FE182BB430_1_1458040521.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D61384C9B2AC92AA4CF303FE182BB430/xs3qstsrcD61384C9B2AC92AA4CF303FE182BB430_1_1458040521.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_272A6B",
+    "task_text": "Найдите значение выражения\na\n−\n12\n⋅\n(\na\n5\n)\n3\nпри\na\n=\n4\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_284762",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображена трапеция. Найдите её площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D660F325D2A6BB1B4B2DA8719FCDCF34/xs3qstsrcD660F325D2A6BB1B4B2DA8719FCDCF34_1_1458037264.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D660F325D2A6BB1B4B2DA8719FCDCF34/xs3qstsrcD660F325D2A6BB1B4B2DA8719FCDCF34_1_1458037264.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_20BB62",
+    "task_text": "В лыжных гонках участвуют 11 спортсменов из России, 6 спортсменов\nиз Норвегии и 3 спортсмена из Швеции. Порядок, в котором спортсмены стартуют, определяется жребием. Найдите вероятность того, что первым будет стартовать спортсмен\nне\nиз России.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_238B6C",
+    "task_text": "В остроугольном треугольнике\nA\nB\nC\nпроведена высота\nB\nH\n,\n∠\nB\nA\nC\n=\n73\n°\n. Найдите угол\nA\nB\nH\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6AFE4E0E52A988943010559391118DD/xs3qstsrcD6AFE4E0E52A988943010559391118DD_1_1485439689.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6AFE4E0E52A988943010559391118DD/xs3qstsrcD6AFE4E0E52A988943010559391118DD_1_1485439689.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_274769",
+    "task_text": "Перевести значение температуры по шкале Фаренгейта в шкалу Цельсия позволяет формула\nt\nC\n=\n5\n9\n(\nt\nF\n−\n32\n)\n, где\nt\nC\n—\nтемпература в градусах Цельсия,\nt\nF\n—\nтемпература в градусах Фаренгейта. Скольким градусам\nпо шкале Цельсия соответствует 113 градусов по шкале Фаренгейта?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_214369",
+    "task_text": "Площадь параллелограмма равна 45, а две его стороны равны 5 и 15. Найдите его высоты. В ответе укажите\nбо\n�\nьшую высоту.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6B05E79B6A784014857DD9B3BBE541C/xs3qstsrcD6B05E79B6A784014857DD9B3BBE541C_1_1485783468.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6B05E79B6A784014857DD9B3BBE541C/xs3qstsrcD6B05E79B6A784014857DD9B3BBE541C_1_1485783468.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_2E3469",
+    "task_text": "Диагонали\nA\nC\nи\nB\nD\nпараллелограмма\nA\nB\nC\nD\nпересекаются в точке\nO\n,\nA\nC\n=\n10\n,\nB\nD\n=\n22\n,\nA\nB\n=\n9\n. Найдите\nD\nO\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6BEC008E08BB1DC4ABB7676013DAB02/xs3qstsrcD6BEC008E08BB1DC4ABB7676013DAB02_1_1487091907.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D6BEC008E08BB1DC4ABB7676013DAB02/xs3qstsrcD6BEC008E08BB1DC4ABB7676013DAB02_1_1487091907.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D45061",
+    "task_text": "Мощность постоянного тока (в ваттах) вычисляется по формуле\nP\n=\nI\n2\nR\n,\nгде\nI\n—\nсила тока (в амперах),\nR\n—\nсопротивление (в омах). Пользуясь\nэтой формулой, найдите сопротивление\nR\n, если мощность составляет 144 Вт, а сила тока равна 4 А. Ответ дайте в омах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D32E6D",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nЧерез заданную точку плоскости можно провести только одну прямую.\n2)\nЛюбой прямоугольник можно вписать в окружность.\n3)\nКаждая из биссектрис равнобедренного треугольника является его высотой\n.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D1616D",
+    "task_text": "При проведении опыта вещество равномерно охлаждали в течение 10 минут. При этом каждую минуту его температура уменьшалась на\n. Найдите температуру вещества в градусах Цельсия через 6 минут после начала опыта, если начальная температура вещества составляла\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D77D55F0474EBCE042CF2A4C83068AF2/xs3qstsrcD77D55F0474EBCE042CF2A4C83068AF2_10_1737447479.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D77D55F0474EBCE042CF2A4C83068AF2/xs3qstsrcD77D55F0474EBCE042CF2A4C83068AF2_10_1737447479.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D77D55F0474EBCE042CF2A4C83068AF2/xs3qstsrcD77D55F0474EBCE042CF2A4C83068AF2_11_1737447479.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DE0166",
+    "task_text": "Найдите значение выражения\n(\n13\n−\n2\n)\n(\n13\n+\n2\n)\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_DA0268",
+    "task_text": "Укажите решение неравенства\n25\nx\n2\n≥\n4\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D7F2962E0853921C40EB0670F0FA7D79/xs3qvrsrc9D33D11D995D8D0943A74A539626518D_1_1455866231.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D7F2962E0853921C40EB0670F0FA7D79/xs3qvrsrc9D33D11D995D8D0943A74A539626518D_1_1455866231.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D7F2962E0853921C40EB0670F0FA7D79/xs3qvrsrc48E32CBC657BAA5748D73C8DA347994A_1_1455866235.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D7F2962E0853921C40EB0670F0FA7D79/xs3qvrsrcE459C9AF083184D94A33B89AF6CFFA05_1_1455866233.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D7F2962E0853921C40EB0670F0FA7D79/xs3qvrsrc53F97ABAE4618238467B4596446BA8D6_1_1455866238.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_D61E68",
+    "task_text": "Найдите корень уравнения\n4\n(\nx\n+\n10\n)\n=\n−\n1\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5E9E64",
+    "task_text": "Решите уравнение\n2\nx\n2\n=\n8\nx\n.\nЕсли уравнение имеет более одного корня, в ответ запишите меньший\nиз корней.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5A3164",
+    "task_text": "Какое из чисел\n5\n,\n6\n,\n27\nи\n37\nпринадлежит промежутку\n5\n;\n6\n?\n1)\n5\n2)\n6\n3)\n27\n4)\n37",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_51E76F",
+    "task_text": "Укажите решение неравенства\n.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg0.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg1.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg2.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg3.gif",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D81C53173968BAA34690839B1D189778/innerimg4.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_524060",
+    "task_text": "В треугольнике\nA\nB\nC\nизвестно, что\nA\nB\n=\nB\nC\n,\n∠\nA\nB\nC\n=\n122\n°\n. Найдите угол\nB\nC\nA\n. Ответ дайте\nв градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D820622379E8B4074AD17D91F1E3D8E3/xs3qstsrcD820622379E8B4074AD17D91F1E3D8E3_1_1456297800.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D820622379E8B4074AD17D91F1E3D8E3/xs3qstsrcD820622379E8B4074AD17D91F1E3D8E3_1_1456297800.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_56F660",
+    "task_text": "В треугольнике\nA\nB\nC\nугол\nC\nравен\n90\n°\n,\ncos\nB\n=\n9\n10\n,\nA\nB\n=\n60\n. Найдите\nB\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D821DDF8A3A7BE714C951D0CD31021FA/xs3qstsrcD821DDF8A3A7BE714C951D0CD31021FA_1_1485432348.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D821DDF8A3A7BE714C951D0CD31021FA/xs3qstsrcD821DDF8A3A7BE714C951D0CD31021FA_1_1485432348.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5C8260",
+    "task_text": "В ходе распада радиоактивного изотопа его масса уменьшается вдвое каждые 9 минут. В начальный момент масса изотопа составляла 320 мг. Найдите массу изотопа через 63 минуты. Ответ дайте в миллиграммах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_559F61",
+    "task_text": "Один из углов равнобедренной трапеции равен\n94\n°\n. Найдите меньший угол этой трапеции. Ответ дайте\nв градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D85B81355B0C8DF641171680D84C3E5C/xs3qstsrcD85B81355B0C8DF641171680D84C3E5C_1_1485782143.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D85B81355B0C8DF641171680D84C3E5C/xs3qstsrcD85B81355B0C8DF641171680D84C3E5C_1_1485782143.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_508D62",
+    "task_text": "В ромбе\nA\nB\nC\nD\nугол\nA\nB\nC\nравен\n56\n°\n. Найдите угол\nA\nC\nD\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D86F27C0D4C19D90414EB2F86841CBB7/xs3qstsrcD86F27C0D4C19D90414EB2F86841CBB7_1_1487092105.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D86F27C0D4C19D90414EB2F86841CBB7/xs3qstsrcD86F27C0D4C19D90414EB2F86841CBB7_1_1487092105.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_54576D",
+    "task_text": "Найдите значение выражения\n1\n5\n−\n47\n10\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_571265",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nДве прямые, параллельные третьей прямой, перпендикулярны.\n2)\nТреугольник со сторонами 1, 2, 4 существует.\n3)\nСумма острых углов прямоугольного треугольника равна 90 градусам.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5AA665",
+    "task_text": "Решите уравнение\nx\n2\n−\n7\nx\n+\n10\n=\n0\n.\nЕсли уравнение имеет более одного корня, в ответ запишите меньший\nиз корней.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5E2F6C",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nПлощадь трапеции равна произведению основания трапеции на высоту.\n2)\nЕсли в треугольнике есть один острый угол, то этот треугольник остроугольный.\n3)\nДиагонали прямоугольника точкой пересечения делятся пополам.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5FA26E",
+    "task_text": "Решите уравнение\n5\nx\n2\n=\n35\nx\n.\nЕсли уравнение имеет более одного корня, в ответ запишите меньший\nиз корней.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_5B8968",
+    "task_text": "Велосипедист выехал с постоянной скоростью из города А в город В, расстояние между которыми равно 60 км. На следующий день он отправился обратно в А, увеличив скорость на 10 км/ч. По пути он сделал остановку\nна 3 часа, в результате чего затратил на обратный путь столько же времени, сколько на путь из А в В. Найдите скорость велосипедиста на пути из В в А.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A5FC60",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nЛюбой прямоугольник можно вписать в окружность.\n2)\nВсе углы ромба равны.\n3)\nТреугольник со сторонами 1, 2, 4 существует.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A37D67",
+    "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1)\nСредняя линия трапеции равна сумме её оснований.\n2)\nДиагонали ромба перпендикулярны.\n3)\nПлощадь треугольника меньше произведения двух его сторон.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A8A167",
+    "task_text": "Постройте график функции\ny\n=\n(\nx\n2\n−\n3\nx\n)\n⋅\n|\nx\n|\nx\n−\n3\n.\nОпределите, при каких значениях\nm\nпрямая\ny\n=\nm\nне имеет с графиком\nни одной общей точки.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A4486B",
+    "task_text": "Четырёхугольник\nA\nB\nC\nD\nописан около окружности,\nA\nB\n=\n4\n,\nB\nC\n=\n12\n,\nC\nD\n=\n21\n. Найдите\nA\nD\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9400F4F307685764E4E5F2A0C28F4D8/xs3qstsrcD9400F4F307685764E4E5F2A0C28F4D8_1_1485523225.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9400F4F307685764E4E5F2A0C28F4D8/xs3qstsrcD9400F4F307685764E4E5F2A0C28F4D8_1_1485523225.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A1906B",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён треугольник\nA\nB\nC\n. Найдите длину его средней линии, параллельной стороне\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D94B526EE214AFF346FB6541085750A1/xs3qstsrcD94B526EE214AFF346FB6541085750A1_1_1458010490.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D94B526EE214AFF346FB6541085750A1/xs3qstsrcD94B526EE214AFF346FB6541085750A1_1_1458010490.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_AB056D",
+    "task_text": "В треугольнике\nA\nB\nC\nугол\nC\nравен\n115\n°\n. Найдите внешний угол при вершине\nC\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D97248588AA4B53C4E677110816E2365/xs3qstsrcD97248588AA4B53C4E677110816E2365_1_1485440203.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D97248588AA4B53C4E677110816E2365/xs3qstsrcD97248588AA4B53C4E677110816E2365_1_1485440203.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A12F6D",
+    "task_text": "Найдите значение выражения\n(\n−\na\n)\n8\n⋅\na\n2\nпри\na\n=\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_ABE46D",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nСредняя линия трапеции параллельна её основаниям.\n2)\nЕсли две стороны одного треугольника соответственно равны двум сторонам другого треугольника, то такие треугольники равны.\n3)\nЦентр описанной около треугольника окружности всегда лежит внутри этого треугольника.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_AEE26C",
+    "task_text": "Одно из чисел\n75\n23\n,\n85\n23\n,\n97\n23\nи\n110\n23\nотмечено на числовой прямой точкой\nA\n.\nКакое это число?\n1)\n75\n23\n2)\n85\n23\n3)\n97\n23\n4)\n110\n23",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9ACC64B11E0859B4B2B00520E78A0F1/xs3qstsrcD9ACC64B11E0859B4B2B00520E78A0F1_6_1734422102.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9ACC64B11E0859B4B2B00520E78A0F1/xs3qstsrcD9ACC64B11E0859B4B2B00520E78A0F1_6_1734422102.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A10E69",
+    "task_text": "Найдите значение выражения\n6,1\n−\n2,5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A8926E",
+    "task_text": "Найдите корень уравнения\n−\n8\nx\n−\n3\n=\n−\n6\nx\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_ABB466",
+    "task_text": "В магазине канцтоваров продаётся 112 ручек: 17 красных, 44 зелёных,\n29 фиолетовых, остальные синие и чёрные, их поровну. Найдите вероятность того, что случайно выбранная в этом магазине ручка будет красной\nили чёрной.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A56663",
+    "task_text": "Найдите значение выражения\n16\na\n2\n+\n8\na\nb\n+\nb\n2\nпри\na\n=\n3\n11\nи\nb\n=\n5\n10\n11\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_A32768",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\nk\nx\n+\nb\n. Установите соответствие между знаками коэффициентов\nk\nи\nb\nи графиками функций.\nКОЭФФИЦИЕНТЫ\nА)\nk\n<\n0\n,\nb\n<\n0\nБ)\nk\n>\n0\n,\nb\n>\n0\nВ)\nk\n<\n0\n,\nb\n>\n0\nГРАФИКИ\n1)\n2)\n3)\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9F6E30E336AAB9D4D6A54A3CDFDCC97/xs3qvrsrcB481446616CF8AF743DFD93D52D63449_1_1426875631.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9F6E30E336AAB9D4D6A54A3CDFDCC97/xs3qvrsrcB481446616CF8AF743DFD93D52D63449_1_1426875631.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9F6E30E336AAB9D4D6A54A3CDFDCC97/xs3qvrsrcB20BC8750F1F8CFF45ED2B45EA494FBE_1_1426875654.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/D9F6E30E336AAB9D4D6A54A3CDFDCC97/xs3qvrsrc390E2197CFDE87CA42EB4D8318A88743_1_1426875676.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_ADAB68",
+    "task_text": "Найдите значение выражения\n(\n19\n−\n7\n)\n2\n+\n14\n19\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C46561",
+    "task_text": "Центростремительное ускорение\nпри движении по окружности\n(\nв\nм\n/\n​\nс\n2\n)\nвычисляется по формуле\na\n=\nω\n2\nR\n, где\nω\n—\nугловая скорость\n(\nв\nс\n−\n1\n)\n,\nR\n—\nрадиус окружности\n(в метрах)\n. Пользуясь этой формулой, найдите\nрадиус\nR\n, если угловая скорость равна\n8\nс\n−\n1\n, а центростремительное ускорение равно\n128\nм\n/\n​\nс\n2\n. Ответ дайте в метрах.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C0C769",
+    "task_text": "Угол\nA\nтрапеции\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\n, вписанной в окружность, равен\n53\n°\n. Найдите угол\nC\nэтой трапеции. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DABA23D13120A3DA4AB3FE4ECD57BB31/xs3qstsrcDABA23D13120A3DA4AB3FE4ECD57BB31_1_1485519654.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DABA23D13120A3DA4AB3FE4ECD57BB31/xs3qstsrcDABA23D13120A3DA4AB3FE4ECD57BB31_1_1485519654.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_C05266",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображена трапеция. Найдите длину её средней линии.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DAD826BFAAB38C004D81078E09047F6B/xs3qstsrcDAD826BFAAB38C004D81078E09047F6B_1_1458021190.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DAD826BFAAB38C004D81078E09047F6B/xs3qstsrcDAD826BFAAB38C004D81078E09047F6B_1_1458021190.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_9B2464",
+    "task_text": "Укажите решение неравенства\n−\n3\n−\nx\n≥\nx\n−\n6\n.\n1)\n(\n−\n∞\n;\n1,5\n]\n2)\n[\n1,5\n;\n+\n∞\n)\n3)\n(\n−\n∞\n;\n4,5\n]\n4)\n[\n4,5\n;\n+\n∞\n)",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_901C60",
+    "task_text": "В амфитеатре 21 ряд, причём в каждом следующем ряду на одно и то же число мест больше, чем в предыдущем. В пятом ряду 25 мест, а в девятом ряду 33 места. Сколько мест в последнем ряду амфитеатра?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_902360",
+    "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1)\nТангенс любого острого угла меньше единицы.\n2)\nСредняя линия трапеции равна сумме её оснований.\n3)\nТочка, лежащая на серединном перпендикуляре к отрезку, равноудалена от концов этого отрезка.\nВ ответ запишите номер истинного высказывания.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_920267",
+    "task_text": "Велосипедист выехал с постоянной скоростью из города А в город В, расстояние между которыми равно 224 км. На следующий день он отправился обратно в А, увеличив скорость на 2 км/ч. По пути он сделал остановку на 2 часа, в результате чего затратил на обратный путь столько же времени, сколько на путь из А в В. Найдите скорость велосипедиста на пути из В в А.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_90A16B",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён ромб. Найдите длину его большей диагонали.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DB492522727DAB8F453824833C4369BD/xs3qstsrcDB492522727DAB8F453824833C4369BD_1_1458023686.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DB492522727DAB8F453824833C4369BD/xs3qstsrcDB492522727DAB8F453824833C4369BD_1_1458023686.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_940661",
+    "task_text": "В фирме «Чистая вода» стоимость (в рублях) колодца из железобетонных колец рассчитывается по формуле\nC\n=\n6500\n+\n4000\nn\n, где\nn\n—\nчисло колец, установленных в колодце. Пользуясь этой формулой, рассчитайте стоимость колодца из 12 колец. Ответ дайте в рублях.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_999165",
+    "task_text": "Решите\nнеравенство",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DB8BB552C5DB93F446C7558C2E42AD2A/innerimg0.gif",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DB8BB552C5DB93F446C7558C2E42AD2A/innerimg0.gif"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_98F369",
+    "task_text": "Родительский комитет закупил 25 пазлов для подарков детям в связи\nс окончанием учебного года, из них 22 с машинами и 3 с видами городов. Подарки распределяются случайным образом между 25 детьми, среди которых есть Коля. Найдите вероятность того, что Коле достанется пазл\nс машиной.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_97FE63",
+    "task_text": "Найдите значение выражения\n(\n125\n−\n5\n)\n⋅\n5\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_983363",
+    "task_text": "Найдите площадь квадрата, описанного около окружности радиуса 4.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DBEEFE8A636496EF4EC0AABBF1003A76/xs3qstsrcDBEEFE8A636496EF4EC0AABBF1003A76_1_1456232004.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DBEEFE8A636496EF4EC0AABBF1003A76/xs3qstsrcDBEEFE8A636496EF4EC0AABBF1003A76_1_1456232004.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E17B64",
+    "task_text": "На окружности по разные стороны от диаметра\nA\nB\nвзяты точки\nM\nи\nN\n. Известно, что\n∠\nN\nB\nA\n=\n43\n°\n. Найдите угол\nN\nM\nB\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC03544F1661A7C043BFCF252C282022/xs3qstsrcDC03544F1661A7C043BFCF252C282022_1_1456218027.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC03544F1661A7C043BFCF252C282022/xs3qstsrcDC03544F1661A7C043BFCF252C282022_1_1456218027.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E20B60",
+    "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1)\nЕсли диагонали параллелограмма равны, то этот параллелограмм является\nромбом.\n2)\nРасстояние от точки, лежащей на окружности, до центра окружности равно радиусу.\n3)\nВ любом тупоугольном треугольнике есть острый угол.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EF5960",
+    "task_text": "Центр окружности, описанной около треугольника\nA\nB\nC\n, лежит на стороне\nA\nB\n. Радиус окружности равен 15. Найдите\nB\nC\n, если\nA\nC\n=\n24\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC281B565326B14341F6B7C7D6AF07D6/xs3qstsrcDC281B565326B14341F6B7C7D6AF07D6_1_1457537189.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC281B565326B14341F6B7C7D6AF07D6/xs3qstsrcDC281B565326B14341F6B7C7D6AF07D6_1_1457537189.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EA5060",
+    "task_text": "Площадь параллелограмма равна 56, а две его стороны равны 7 и 28. Найдите его высоты. В ответе укажите меньшую высоту.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC2892DF5F3C96C54589A73D6C0AF7D8/xs3qstsrcDC2892DF5F3C96C54589A73D6C0AF7D8_1_1485782108.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC2892DF5F3C96C54589A73D6C0AF7D8/xs3qstsrcDC2892DF5F3C96C54589A73D6C0AF7D8_1_1485782108.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E4CE6B",
+    "task_text": "Решите уравнение\nx\n2\n−\n81\n=\n0\n.\nЕсли уравнение имеет более одного корня, в ответ запишите больший\nиз корней.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E3456A",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображён треугольник\nA\nB\nC\n. Найдите длину его средней линии, параллельной стороне\nA\nC\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC90E857400E907443EA41F6BC8F229D/xs3qstsrcDC90E857400E907443EA41F6BC8F229D_1_1458010486.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC90E857400E907443EA41F6BC8F229D/xs3qstsrcDC90E857400E907443EA41F6BC8F229D_1_1458010486.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E7626A",
+    "task_text": "Центр окружности, описанной около треугольника\nA\nB\nC\n, лежит на стороне\nA\nB\n. Радиус окружности равен 20,5. Найдите\nB\nC\n, если\nA\nC\n=\n9\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC9D36E7AF21BE234D0173FC544CBA9A/xs3qstsrcDC9D36E7AF21BE234D0173FC544CBA9A_1_1457537194.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DC9D36E7AF21BE234D0173FC544CBA9A/xs3qstsrcDC9D36E7AF21BE234D0173FC544CBA9A_1_1457537194.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EB6B6A",
+    "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1)\nДве прямые, перпендикулярные третьей прямой, перпендикулярны.\n2)\nВсякий равносторонний треугольник является остроугольным.\n3)\nЛюбой квадрат является прямоугольником.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_EC1F63",
+    "task_text": "Касательные в точках\nA\nи\nB\nк окружности\nс центром в точке\nO\nпересекаются под углом\n72\n°\n. Найдите угол\nA\nB\nO\n. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DCE5A1D70370825E43204564A5383F19/xs3qstsrcDCE5A1D70370825E43204564A5383F19_1_1456294202.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DCE5A1D70370825E43204564A5383F19/xs3qstsrcDCE5A1D70370825E43204564A5383F19_1_1456294202.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_E46263",
+    "task_text": "На клетчатой бумаге с размером клетки\n1\n×\n1\nизображена трапеция. Найдите её площадь.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DCED0643B715B4F7490A91277CE5FC32/xs3qstsrcDCED0643B715B4F7490A91277CE5FC32_1_1458037295.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DCED0643B715B4F7490A91277CE5FC32/xs3qstsrcDCED0643B715B4F7490A91277CE5FC32_1_1458037295.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_602564",
+    "task_text": "Найдите значение выражения\n(\n29\n−\n4\n)\n(\n29\n+\n4\n)\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_67E364",
+    "task_text": "В треугольнике\nA\nB\nC\nизвестно, что\nA\nC\n=\n14\n,\nB\nM\n—\nмедиана,\nB\nM\n=\n10\n. Найдите\nA\nM\n.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD0C3E16BF67B7244CC8A2134A671B38/xs3qstsrcDD0C3E16BF67B7244CC8A2134A671B38_1_1456206279.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD0C3E16BF67B7244CC8A2134A671B38/xs3qstsrcDD0C3E16BF67B7244CC8A2134A671B38_1_1456206279.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6E696F",
+    "task_text": "Угол\nA\nтрапеции\nA\nB\nC\nD\nс основаниями\nA\nD\nи\nB\nC\n, вписанной в окружность, равен\n69\n°\n. Найдите угол\nC\nэтой трапеции. Ответ дайте в градусах.",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD1DCB32CDB5A79F43527E02E0EEE61A/xs3qstsrcDD1DCB32CDB5A79F43527E02E0EEE61A_1_1485519612.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD1DCB32CDB5A79F43527E02E0EEE61A/xs3qstsrcDD1DCB32CDB5A79F43527E02E0EEE61A_1_1485519612.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6A5667",
+    "task_text": "Укажите решение системы неравенств\n{\n−\n9\n+\n3\nx\n<\n0,\n2\n−\n3\nx\n>\n−\n10.\n1)\n2)\n3)\n4)",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD389D6E52049309495866A0F147BB5F/xs3qvrsrc1FE985007C888F93478A3731C2EEFA97_1_1458120148.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD389D6E52049309495866A0F147BB5F/xs3qvrsrc1FE985007C888F93478A3731C2EEFA97_1_1458120148.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD389D6E52049309495866A0F147BB5F/xs3qvrsrc70D1968CB1EFBF6243E338E74F65F6C7_1_1458120152.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD389D6E52049309495866A0F147BB5F/xs3qvrsrc8E69612D2A26AE554B85FCD5966E61BF_1_1458120150.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD389D6E52049309495866A0F147BB5F/xs3qvrsrc043DE8A0EB4EB4314D03F50AE3CA1A45_1_1458120153.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_661D6B",
+    "task_text": "На рисунках изображены графики функций вида\ny\n=\nk\nx\n+\nb\n. Установите соответствие между графиками функций и знаками коэффициентов\nk\nи\nb\n.\nГРАФИКИ\nА)\nБ)\nВ)\nКОЭФФИЦИЕНТЫ\n1)\nk\n<\n0\n,\nb\n<\n0\n2)\nk\n>\n0\n,\nb\n>\n0\n3)\nk\n<\n0\n,\nb\n>\n0\nВ таблице под каждой буквой укажите соответствующий номер.\nА\nБ\nВ",
+    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD45D70235EF9CA642FD979D8A1E127D/xs3qvrsrc4BC55DDDE0A4894142501F2E746EF391_1_1433248948.png",
+    "all_images": [
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD45D70235EF9CA642FD979D8A1E127D/xs3qvrsrc4BC55DDDE0A4894142501F2E746EF391_1_1433248948.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD45D70235EF9CA642FD979D8A1E127D/xs3qvrsrcC618856F39739E844F7CE513FB598F87_1_1433248952.png",
+      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/DD45D70235EF9CA642FD979D8A1E127D/xs3qvrsrc76BBAEB297E08703413CB59FFA84BDFA_1_1433248956.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_68CD6B",
+    "task_text": "Перевести значение температуры по шкале Фаренгейта в шкалу Цельсия позволяет формула\nt\nC\n=\n5\n9\n(\nt\nF\n−\n32\n)\n, где\nt\nC\n—\nтемпература в градусах Цельсия,\nt\nF\n—\nтемпература в градусах Фаренгейта. Скольким градусам\nпо шкале Цельсия соответствует 23 градуса по шкале Фаренгейта?",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_636D61",
+    "task_text": "Найдите корень уравнения\n4\n(\nx\n+\n1\n)\n=\n9\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_65D36D",
+    "task_text": "Найдите значение выражения\n(\n32\n+\n2\n)\n⋅\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_6CFB6C",
+    "task_text": "Найдите значение выражения\n25\na\n2\n+\n10\na\nb\n+\nb\n2\nпри\na\n=\n4\n9\nи\nb\n=\n3\n7\n9\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
+  },
+  {
+    "id": "fipi_63126C",
+    "task_text": "Найдите значение выражения\n2\n−\n8\n⋅\n(\n2\n6\n)\n2\n.",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "answer": "---",
+    "topic": "oge_math"
   }
 ]
