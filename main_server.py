@@ -161,12 +161,12 @@ async def ask_replicate(
     }
 
     if has_image:
-        model_name = "google/gemini-1.5-flash"
+        model_name = "google/gemini-2.5-flash"
         payload = {
             "input": {
                 "prompt": f"{system_prompt}\n\n{user_prompt}",
-                "image": image_url,
-                "max_tokens": max_tokens,
+                "images": [image_url],
+                "max_output_tokens": max_tokens,
                 "temperature": 0.2 if response_json else 0.4
             }
         }
@@ -256,8 +256,12 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
             if not clean_path.startswith("docs/"):
                 clean_path = "docs/" + clean_path
             image_url = f"https://oge.fipi.ru/{clean_path}"
-        elif not image_url.startswith("http"):
-            image_url = f"https://neuro-master.online/{image_url.lstrip('/')}"
+        if has_image:
+        # Если картинка локальная или идет через oge.fipi.ru, ведем её через наш домен neuro-master.online
+        clean_img = image_url.replace("https://oge.fipi.ru/", "").replace("http://oge.fipi.ru/", "").lstrip('/')
+        if not clean_img.startswith("questions/") and not clean_img.startswith("docs/"):
+            clean_img = "questions/" + clean_img
+        image_url = f"https://neuro-master.online/{clean_img}"
 
     res_raw = ""
     # 1. Запрос к первичному провайдеру (TokenRouter)
