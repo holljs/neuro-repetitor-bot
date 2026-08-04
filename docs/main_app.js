@@ -536,7 +536,7 @@ window.prevReview = function() {
 
 window.nextReview = function() {
     currentReviewIndex++;
-    if (currentReviewIndex < mistakes.length) {
+    if (currentReviewIndex < mistakes.length - 1) {
         loadReviewForCurrentMistake();
     } else {
         confirmFinishReview();
