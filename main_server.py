@@ -253,7 +253,6 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
     user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
     has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
 
-    # 🛠 Нормализация ссылок на картинки для ИИ:
     if has_image:
         clean_img = re.sub(r'^https?://[^/]+/', '', image_url).lstrip('/')
         if not clean_img.startswith("questions/") and not clean_img.startswith("docs/"):
@@ -261,7 +260,6 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
         image_url = f"https://neuro-master.online/{clean_img}"
 
     res_raw = ""
-    # 1. Запрос к первичному провайдеру (TokenRouter)
     if TOKENROUTER_API_TOKEN:
         try:
             model_name = "qwen/qwen3.7-plus" if has_image else "deepseek/deepseek-v4-flash"
@@ -276,7 +274,6 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
         except Exception as tr_err:
             logger.warning(f"⚠️ TokenRouter ({'Qwen' if has_image else 'DeepSeek'}) подвел: {tr_err}. Переключаемся на Replicate!")
 
-    # 2. Фолбэк на Replicate при сбое
     if not res_raw:
         try:
             res_raw = await ask_replicate(
@@ -290,7 +287,6 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
             logger.error(f"❌ Ошибка фолбэка Replicate: {rep_err}")
             return False, "Ошибка проверки ИИ"
 
-    # Разбор JSON ответа ИИ
     try:
         match = re.search(r'\{.*\}', res_raw, re.DOTALL)
         if match:
@@ -609,7 +605,6 @@ async def check_answer_smart(request: CheckRequest):
     task_text = str(task.get("task_text") or task.get("text", ""))
     is_english = db_name in ["oge_english", "ege_english"] or "english" in db_name.lower()
 
-    # 🛠 Ловим любые задания с развернутым ответом или эталоном "---"
     is_open_task = correct_answer in ["---", "", "none", "null", "-", "undefined"] or any(kw in task_text.lower() for kw in [
         "решите неравенство", "найдите значение выражения", "решите уравнение", "укажите решение", "дайте развернутый ответ",
         "read the text aloud", "telephone survey", "write a message", "бланк ответов № 2"
@@ -617,7 +612,7 @@ async def check_answer_smart(request: CheckRequest):
 
     is_correct = False
 
-    if is_open_task or is_english:
+    if is_open_task or is_english or "literature" in db_name.lower() or "russian" in db_name.lower():
         is_correct, real_ai_answer = await ask_ai_arbiter_cascade(
             task_text=task_text,
             user_answer=request.user_answer,
@@ -627,10 +622,8 @@ async def check_answer_smart(request: CheckRequest):
         if real_ai_answer and real_ai_answer != "---":
             correct_answer = real_ai_answer
     else:
-        # Прямая проверка для точных предметов (математика, физика и т.д.)
         is_correct = check_student_answer(request.user_answer, correct_answer)
 
-        # Если прямое сравнение подвело, а ответ не пустой — дополнительно проверяем через ИИ
         if not is_correct:
             try:
                 sys_prompt = "Ты — беспристрастный арбитр школьных ответов. Определи, совпадает ли ответ ученика с эталоном по смыслу."
