@@ -271,10 +271,7 @@ function showTask() {
     const skipCountEl = document.getElementById('skips-count');
     if (skipCountEl) skipCountEl.textContent = skipsLeft;
     const skipBtn = document.getElementById('skip-task-btn');
-    if (skipBtn) {
-        if (skipsLeft <= 0) skipBtn.style.opacity = '0.5';
-        else skipBtn.style.opacity = '1';
-    }
+    if (skipBtn) skipBtn.style.opacity = skipsLeft <= 0 ? '0.5' : '1';
 
     const taskTextElement = document.getElementById('task-text');
     const imageContainer = document.getElementById('task-image-container');
@@ -286,7 +283,7 @@ function showTask() {
         taskTextElement.style.display = 'block';
     } else { taskTextElement.textContent = "Текст не найден"; }
 
-    // 🖼 УМНАЯ ОБРАБОТКА МНОЖЕСТВЕННЫХ КАРТИНОК И СХЕМ
+    // 🖼 НАДЕЖНАЯ СБОРКА ССЫЛОК НА КАРТИНКИ
     let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0 
         ? currentTask.all_images 
         : (currentTask.image ? [currentTask.image] : []);
@@ -295,7 +292,13 @@ function showTask() {
         let imgsHtml = '';
         imagesToDisplay.forEach(imgUrl => {
             let fullImgUrl = imgUrl;
-            if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+            
+            // Авто-определение источника картинки (ФИПИ или локальный сервер)
+            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
+                let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+                if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
+                fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+            } else if (!fullImgUrl.startsWith('http')) {
                 fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
             }
             
@@ -309,7 +312,7 @@ function showTask() {
         imageContainer.style.display = 'block';
     } else { imageContainer.style.display = 'none'; }
 
-    // 🎧 УМНАЯ ОБРАБОТКА АУДИОПЛЕЕРА (Аудирование ОГЭ)
+    // 🎧 АУДИОПЛЕЕР
     let audioContainer = document.getElementById('task-audio-container');
     if (!audioContainer) {
         audioContainer = document.createElement('div');
@@ -329,12 +332,11 @@ function showTask() {
             </div>
         `;
         audioContainer.style.display = 'block';
-    } else {
-        audioContainer.style.display = 'none';
-    }
+    } else { audioContainer.style.display = 'none'; }
     
     document.getElementById('user-answer').value = '';
-    setTimeout(() => { renderMath('task-text'); }, 100); showScreen(document.getElementById('task-screen'));
+    setTimeout(() => { renderMath('task-text'); }, 100); 
+    showScreen(document.getElementById('task-screen'));
 }
 
 window.confirmSkipTask = function() {
@@ -555,11 +557,19 @@ function loadReviewForCurrentMistake(isRestored = false) {
         
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        let fullImgUrl = mistake.task.image;
-        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+        let imgUrl = mistake.task.image;
+        let fullImgUrl = imgUrl;
+        
+        // Авто-определение источника картинки (ФИПИ или локальный сервер)
+        if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
+            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
+            fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+        } else if (!fullImgUrl.startsWith('http')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
-        reviewImgContainer.innerHTML = `<div style="text-align:center;"><img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; height:auto; border-radius:6px; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')"></div>`;
+
+        reviewImgContainer.innerHTML = `<div style="text-align:center;"><img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')"></div>`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
     // 🎯 ПОНЯТНЫЙ И ЕДИНЫЙ БЛОК КНОПАК НАВИГАЦИИ
@@ -599,7 +609,17 @@ window.runAIExplanation = async function(simplify = false) {
 
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
     
-    let imageUrl = mistake.task.image ? `${API_SERVER_URL}/${mistake.task.image.replace(/^\//, '')}` : null;
+    let imageUrl = null;
+    if (mistake.task.image && mistake.task.image.length > 5) {
+        let imgUrl = mistake.task.image;
+        if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
+            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
+            imageUrl = `https://oge.fipi.ru/${cleanPath}`;
+        } else {
+            imageUrl = `${API_SERVER_URL}/${imgUrl.replace(/^\//, '')}`;
+        }
+    }
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
         const result = await response.json();
@@ -811,11 +831,15 @@ window.openVKUrl = function(url) {
     } catch(e) { window.open(url, '_blank'); }
 };
 
-// 🎯 ПРОСМОТРЩИК КАРТИНОК (Работает как с локальными файлами, так и с внешними URL)
+// 🎯 УМНЫЙ ПРОСМОТРЩИК КАРТИНОК (Работает с ФИПИ и локальными путями)
 window.openImageViewer = function(url) {
     try {
         let fullImgUrl = url;
-        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+        if (url.includes('simg') || url.includes('docs/') || !url.startsWith('questions/')) {
+            let cleanPath = url.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
+            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
+            fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+        } else if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
         vkBridge.send("VKWebAppShowImages", { images: [fullImgUrl] })
