@@ -99,17 +99,34 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
                         imgs.append(full_url)
 
-                # 🧹 ОЧИСТКА ТЕКСТА ЗАДАНИЯ
+                # 🧹 ОЧИСТКА ТЕКСТА ЗАДАНИЯ И ПРЕВРАЩЕНИЕ СТЕПЕНЕЙ В LATEX
                 clean_block = BeautifulSoup(raw_html, 'html.parser')
+
+                # 1. Обработка математических тегов MathJax / MathML
                 for math_tag in clean_block.find_all(['mjx-container', 'math']):
                     latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt')
                     if latex_attr:
                         math_tag.replace_with(f" ${latex_attr}$ ")
 
+                # 2. 🔥 Превращаем <sup>19</sup> в ^{19} для красивых степеней LaTeX
+                for sup in clean_block.find_all('sup'):
+                    sup_text = sup.get_text().strip()
+                    sup.replace_with(f"^{{{sup_text}}}")
+
+                # 3. Превращаем <sub>2</sub> в _{2} (нижние индексы)
+                for sub in clean_block.find_all('sub'):
+                    sub_text = sub.get_text().strip()
+                    sub.replace_with(f"_{{{sub_text}}}")
+
+                # 4. Удаляем мусорные теги управления
                 for s in clean_block.find_all(['select', 'input', 'button', 'script']):
                     s.decompose()
 
                 block_text = clean_block.get_text(separator="\n")
+
+                # 5. Чиним пробелы перед знаками степеней (например, a ^{19} -> a^{19})
+                block_text = re.sub(r'([a-zA-Zа-яА-Я0-9])\s*\^', r'\1^', block_text)
+
                 lines = [line.strip() for line in block_text.split("\n") if line.strip()]
                 clean_lines = []
                 for line in lines:
