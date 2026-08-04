@@ -5,33 +5,32 @@ import random
 import json
 import re
 import sqlite3
-import httpx  
-import aiohttp  
+import httpx
+import aiohttp
 import asyncio
 import hmac
 import hashlib
 import base64
 import uuid
-from urllib.parse import urlencode, parse_qsl
+from urllib.parse import urlencode, parse_qsl, quote
 from pathlib import Path
 from datetime import datetime
 from typing import Optional
-
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
-
+from fastapi.responses import HTMLResponse, Response
 from yookassa import Configuration, Payment
 
 load_dotenv()
-app = FastAPI(title="Neuro Repetitor API", version="3.3.0")
+
+app = FastAPI(title="Neuro Repetitor API", version="3.4.0")
 
 # Настройка ЮKassa
 Configuration.configure(
-    os.getenv("YUKASSA_SHOP_ID", "TEST_ID"), 
+    os.getenv("YUKASSA_SHOP_ID", "TEST_ID"),
     os.getenv("YUKASSA_SECRET_KEY", "TEST_KEY")
 )
 
@@ -39,7 +38,6 @@ VK_APP_SECRET = os.getenv("VK_APP_SECRET", "ТВОЙ_СЕКРЕТНЫЙ_КЛЮЧ
 INTERNAL_BOT_TOKEN = os.getenv("INTERNAL_BOT_TOKEN", "tg-super-secret-password-2026-xyz")
 REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 TOKENROUTER_API_TOKEN = os.getenv("TOKENROUTER_API_TOKEN")
-
 ADMIN_VK_IDS = [233876992]
 
 request_times = {}
@@ -79,15 +77,62 @@ if Path("questions").exists():
     app.mount("/questions", StaticFiles(directory="questions"), name="questions")
 
 app.add_middleware(
-    CORSMiddleware, 
-    allow_origins=["*"], 
-    allow_credentials=False, 
-    allow_methods=["*"], 
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
     allow_headers=["*"]
 )
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("NeuroRepetitor")
+
+# =========================================================================
+# 🖼 ПРОКСИ КАРТИНОК ФИПИ (решает 404 и SSL-ошибки для ИИ)
+# =========================================================================
+IMG_CACHE_DIR = Path("questions/cache")
+try:
+    IMG_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+except Exception:
+    pass
+
+@app.get("/imgproxy/")
+async def imgproxy(url: str = Query(...)):
+    """Прокси картинок ФИПИ: ИИ-провайдеры (Qwen, Gemini) не могут качать их напрямую."""
+    safe = hashlib.md5(url.encode()).hexdigest()
+    ext = os.path.splitext(url.split('?')[0])[1].lower()
+    if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.webp']:
+        ext = '.png'
+    cache_file = IMG_CACHE_DIR / f"{safe}{ext}"
+    if cache_file.exists():
+        mime = "image/jpeg" if ext in ['.jpg', '.jpeg'] else "image/png"
+        return Response(content=cache_file.read_bytes(), media_type=mime)
+
+    # ФИПИ иногда отдаёт картинки то с /docs/, то без — пробуем оба варианта
+    candidates = [url]
+    if 'fipi.ru' in url:
+        m = re.match(r'(https?://[^/]+)/(.*)$', url)
+        if m:
+            if '/docs/' not in url:
+                candidates.append(f"{m.group(1)}/docs/{m.group(2)}")
+            else:
+                candidates.append(url.replace('/docs/', '/', 1))
+
+    async with httpx.AsyncClient(verify=False, follow_redirects=True, timeout=25) as client:
+        for cand in candidates:
+            try:
+                r = await client.get(cand, headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                    "Accept": "image/*,*/*"
+                })
+                if r.status_code == 200 and len(r.content) > 500 and not r.content.lstrip()[:1] == b'<':
+                    cache_file.write_bytes(r.content)
+                    content_type = r.headers.get("content-type", "image/png").split(";")[0]
+                    return Response(content=r.content, media_type=content_type)
+            except Exception as e:
+                logger.warning(f"⚠️ imgproxy: кандидат {cand} не скачался: {e}")
+    raise HTTPException(status_code=404, detail="Image not found")
+
 
 # =========================================================================
 # 🔥 УНИВЕРСАЛЬНЫЙ ИИ-ДВИЖОК С КАСКАДНОЙ ПОДСТРАХОВКОЙ
@@ -102,14 +147,11 @@ async def ask_tokenrouter(
 ) -> str:
     if not TOKENROUTER_API_TOKEN:
         raise Exception("TOKENROUTER_API_TOKEN не настроен в .env")
-    
     headers = {
         "Authorization": f"Bearer {TOKENROUTER_API_TOKEN}",
         "Content-Type": "application/json"
     }
-    
     messages = [{"role": "system", "content": system_prompt}]
-    
     if image_url and image_url.strip().lower() not in ["", "none", "null"]:
         user_content = [
             {"type": "text", "text": user_prompt},
@@ -118,23 +160,21 @@ async def ask_tokenrouter(
         messages.append({"role": "user", "content": user_content})
     else:
         messages.append({"role": "user", "content": user_prompt})
-    
     if response_json:
         messages.append({"role": "system", "content": "Отвечай СТРОГО в формате валидного JSON объекта без любого другого текста вокруг."})
-    
+
     payload = {
         "model": model_name,
         "messages": messages,
         "max_tokens": max_tokens,
         "temperature": 0.1 if response_json else 0.3
     }
-    
     async with httpx.AsyncClient() as client:
         response = await client.post(
             "https://api.tokenrouter.com/v1/chat/completions",
             json=payload,
             headers=headers,
-            timeout=30.0
+            timeout=45.0
         )
         if response.status_code == 200:
             data = response.json()
@@ -142,15 +182,15 @@ async def ask_tokenrouter(
         else:
             raise Exception(f"TokenRouter вернул код {response.status_code}: {response.text[:100]}")
 
+
 async def ask_replicate(
-    system_prompt: str, 
-    user_prompt: str, 
-    image_url: Optional[str] = None, 
-    max_tokens: int = 1000, 
+    system_prompt: str,
+    user_prompt: str,
+    image_url: Optional[str] = None,
+    max_tokens: int = 1000,
     response_json: bool = False
 ) -> str:
     has_image = image_url and image_url.strip().lower() not in ["", "none", "null"]
-
     if not REPLICATE_API_TOKEN:
         logger.error("❌ Ошибка: REPLICATE_API_TOKEN не найден в .env!")
         raise Exception("REPLICATE_API_TOKEN не настроен.")
@@ -175,7 +215,6 @@ async def ask_replicate(
         prompt_text = f"{system_prompt}\n\n{user_prompt}"
         if response_json:
             prompt_text += "\nОтвечай СТРОГО в формате валидного JSON объекта без любого другого текста вокруг."
-
         payload = {
             "input": {
                 "prompt": prompt_text,
@@ -185,109 +224,123 @@ async def ask_replicate(
         }
 
     url = f"https://api.replicate.com/v1/models/{model_name}/predictions"
-
     max_attempts = 3
     for attempt in range(max_attempts):
         try:
             async with httpx.AsyncClient() as client:
                 response = await client.post(url, json=payload, headers=headers, timeout=30.0)
-
-            if response.status_code in [200, 201]:
-                prediction = response.json()
-                get_url = prediction.get("urls", {}).get("get")
-                if not get_url:
-                    break
-
-                for _ in range(35):
-                    await asyncio.sleep(0.8)
-                    async with httpx.AsyncClient() as client:
-                        poll_resp = await client.get(get_url, headers=headers, timeout=10.0)
-
-                    if poll_resp.status_code == 200:
-                        poll_data = poll_resp.json()
-                        status = poll_data.get("status")
-
-                        if status == "succeeded":
-                            output = poll_data.get("output", "")
-                            if isinstance(output, list):
-                                return "".join(output).strip()
-                            return str(output).strip()
-
-                        elif status in ["failed", "canceled"]:
-                            logger.error(f"❌ Replicate статус ошибки: {poll_data.get('error')}")
-                            break
+                if response.status_code in [200, 201]:
+                    prediction = response.json()
+                    get_url = prediction.get("urls", {}).get("get")
+                    if not get_url:
+                        break
+                    for _ in range(35):
+                        await asyncio.sleep(0.8)
+                        async with httpx.AsyncClient() as client:
+                            poll_resp = await client.get(get_url, headers=headers, timeout=10.0)
+                            if poll_resp.status_code == 200:
+                                poll_data = poll_resp.json()
+                                status = poll_data.get("status")
+                                if status == "succeeded":
+                                    output = poll_data.get("output", "")
+                                    if isinstance(output, list):
+                                        return "".join(output).strip()
+                                    return str(output).strip()
+                                elif status in ["failed", "canceled"]:
+                                    logger.error(f"❌ Replicate статус ошибки: {poll_data.get('error')}")
+                                    break
         except Exception as exc:
             logger.warning(f"⚠️ Ошибка сети Replicate (попытка {attempt + 1}): {exc}")
             if attempt == max_attempts - 1:
                 break
             await asyncio.sleep(1.0)
-
     return '{"is_correct": false}' if response_json else "Ошибка генерации ответа ИИ."
 
+
+# 🔥 НОВАЯ ФУНКЦИЯ: честная нормализация URL для ИИ
+def build_ai_image_url(raw_url: Optional[str]) -> Optional[str]:
+    """Строит URL картинки, доступный для ИИ-провайдеров."""
+    if not raw_url or not raw_url.strip() or raw_url.strip().lower() in ["none", "null", ""]:
+        return None
+    if raw_url.startswith("http"):
+        if "fipi.ru" in raw_url:
+            # ФИПИ → проксируем через наш домен
+            return f"https://neuro-master.online/imgproxy/?url={quote(raw_url, safe='')}"
+        return raw_url  # Уже публичная ссылка
+    # Локальный путь
+    parts = [p for p in raw_url.split('/') if p and p not in ('docs', 'questions')]
+    return f"https://neuro-master.online/questions/{'/'.join(parts)}" if parts else None
+
+
 async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None, is_english: bool = False) -> tuple[bool, str]:
+    # 🔥 УСИЛЕННЫЙ ПРОМПТ: ИИ сам решает и сверяет по смыслу
     if is_english:
         system_prompt = (
             "Ты — опытный, гибкий и объективный эксперт ОГЭ/ЕГЭ по английскому языку.\n"
-            "Твоя задача — проверить ответ ученика на задание.\n"
+            "АЛГОРИТМ РАБОТЫ:\n"
+            "1) СНАЧАЛА внимательно изучи задание (и картинку, если есть) и САМОСТОЯТЕЛЬНО реши его.\n"
+            "2) ТОЛЬКО ПОТОМ сравни своё решение с ответом ученика.\n"
             "ПРАВИЛА ДЛЯ АНГЛИЙСКОГО:\n"
-            "1. Числительные прописью и цифрами ЭКВИВАЛЕНТНЫ (например, 'five' = '5', 'ten' = '10').\n"
-            "2. Названия городов/имен на английском или русском засчитывай (например, 'Moscow' = 'Московский' = 'Москва').\n"
-            "3. Если это задание Устной части или Эссе: если ученик предоставил связный осмысленный ответ — ставь is_correct: true!\n"
-            "4. Мелкие опечатки не влияющие на смысл — зачитывай.\n"
-            "Верни СТРОГО JSON без markdown-тегов:\n"
+            "1. Числительные прописью и цифрами ЭКВИВАЛЕНТНЫ (five = 5, ten = 10).\n"
+            "2. Названия городов/имен на английском или русском засчитывай (Moscow = Москва).\n"
+            "3. Эссе/устная часть: если ученик дал связный осмысленный ответ по теме — ставь is_correct: true!\n"
+            "4. Мелкие опечатки, не влияющие на смысл — зачитывай.\n"
+            "Верни СТРОГО JSON без markdown:\n"
             '{"is_correct": true, "correct_was": "краткий верный ответ"}'
         )
     else:
         system_prompt = (
             "Ты — строгий, мудрый и объективный эксперт ОГЭ/ЕГЭ и учитель-проверяющий.\n"
-            "Твоя задача — проверить, верен ли ответ ученика на данное задание.\n\n"
+            "АЛГОРИТМ РАБОТЫ:\n"
+            "1) СНАЧАЛА внимательно изучи задание (и картинку, если есть) и САМОСТОЯТЕЛЬНО реши его.\n"
+            "2) ТОЛЬКО ПОТОМ сравни своё решение с ответом ученика.\n"
+            "3) Оценивай ПО СМЫСЛУ, а не по совпадению слов: синонимы, пересказ, другие формулировки = верно.\n"
             "ПРАВИЛА ОЦЕНИВАНИЯ:\n"
-            "1. ТЕРМИНЫ И РАЗМЕРЫ (литература/русский): если ученик назвал верный термин или сущность (например, написал 'хорей' вместо 'размер хорей', 'антитеза', 'анафора') — обязательно ставь is_correct: true!\n"
-            "2. РАЗВЕРНУТЫЕ И СМЫСЛОВЫЕ ОТВЕТЫ: если ответ передает верный смысл вопроса (например, 'ужасным' или 'представляется ужасным') — ставь is_correct: true!\n"
-            "3. МАТЕМАТИКА И ЕСТЕСТВЕННЫЕ НАУКИ: учитывай математические эквивалентности (например [1,4; +inf) и 1.4 <= x), синонимы, опечатки и форму слова.\n"
-            "4. Если ответ содержит явную фактическую ошибку или бессмыслицу — ставь is_correct: false.\n\n"
-            "Верни СТРОГО JSON без markdown-тегов:\n"
+            "1. ТЕРМИНЫ (литература/русский): 'хорей', 'антитеза', 'анафора' — обязательно is_correct: true!\n"
+            "2. РАЗВЕРНУТЫЕ И СМЫСЛОВЫЕ ОТВЕТЫ: если ответ передает верный смысл вопроса — is_correct: true!\n"
+            "   Например, 'ужасным' и 'представляется ужасным' — оба верны.\n"
+            "3. МАТЕМАТИКА И ЕСТЕСТВЕННЫЕ НАУКИ: учитывай эквивалентность (1,4 <= x = [1.4; +∞)), опечатки, формы слова.\n"
+            "4. Только если ответ содержит явную фактическую ошибку или бессмыслицу — is_correct: false.\n"
+            "Верни СТРОГО JSON без markdown:\n"
             '{"is_correct": true, "correct_was": "краткая суть верного ответа"}'
         )
 
     user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
-    has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
 
-    if has_image:
-        # 1. Убираем домен и начальные слэши
-        clean_img = re.sub(r'^https?://[^/]+/', '', image_url).lstrip('/')
-        
-        # 2. Убираем ВСЕ дублирующиеся /questions/ из середины и начала пути
-        parts = [p for p in clean_img.split('/') if p and p not in ['questions', 'docs']]
-        
-        # 3. Собираем правильный путь с ровно ОДНИМ префиксом questions/
-        clean_path = "/".join(parts)
-        image_url = f"https://neuro-master.online/questions/{clean_path}"
+    # 🔥 Нормализация URL картинки через новую функцию
+    normalized_image = build_ai_image_url(image_url)
+    has_image = normalized_image is not None
 
     res_raw = ""
     if TOKENROUTER_API_TOKEN:
         try:
             model_name = "qwen/qwen3.7-plus" if has_image else "deepseek/deepseek-v4-flash"
+            logger.info(f"🚀 Попытка TokenRouter ({'Qwen3.7-Plus' if has_image else 'DeepSeek'}) | image: {bool(normalized_image)}")
             res_raw = await ask_tokenrouter(
                 model_name=model_name,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
-                max_tokens=300,
+                max_tokens=400,
                 response_json=True,
-                image_url=image_url if has_image else None
+                image_url=normalized_image if has_image else None
             )
+            logger.info(f"✅ TokenRouter вернул: {res_raw[:120]}")
         except Exception as tr_err:
             logger.warning(f"⚠️ TokenRouter ({'Qwen' if has_image else 'DeepSeek'}) подвел: {tr_err}. Переключаемся на Replicate!")
+    else:
+        logger.error("❌ TOKENROUTER_API_TOKEN не настроен в .env — каскад сразу падает в Replicate!")
 
     if not res_raw:
         try:
+            logger.info(f"🔄 Fallback в Replicate (Gemini 2.5 Flash)")
             res_raw = await ask_replicate(
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
-                image_url=image_url if has_image else None,
-                max_tokens=300,
+                image_url=normalized_image if has_image else None,
+                max_tokens=400,
                 response_json=True
             )
+            logger.info(f"✅ Replicate вернул: {res_raw[:120]}")
         except Exception as rep_err:
             logger.error(f"❌ Ошибка фолбэка Replicate: {rep_err}")
             return False, "Ошибка проверки ИИ"
@@ -301,38 +354,36 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
             return is_correct, correct_was
     except Exception as parse_err:
         logger.error(f"⚠️ Ошибка парсинга JSON от ИИ-Арбитра: {parse_err}, Ответ был: {res_raw}")
-
     return False, "---"
+
 
 # =========================================================================
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ И АВТОРИЗАЦИЯ
 # =========================================================================
 def verify_vk_auth(student_id: str, vk_params: str) -> bool:
-    if vk_params == INTERNAL_BOT_TOKEN: 
+    if vk_params == INTERNAL_BOT_TOKEN:
         return True
-    if not vk_params or "sign=" not in vk_params: 
+    if not vk_params or "sign=" not in vk_params:
         return False
-
     query_params = dict(parse_qsl(vk_params.lstrip('?'), keep_blank_values=True))
     vk_params_dict = {k: v for k, v in query_params.items() if k.startswith('vk_')}
     sorted_vk_params = dict(sorted(vk_params_dict.items()))
     encoded_params = urlencode(sorted_vk_params)
-
     hash_code = hmac.new(VK_APP_SECRET.encode('utf-8'), encoded_params.encode('utf-8'), hashlib.sha256).digest()
     expected_sign = base64.urlsafe_b64encode(hash_code).decode('utf-8').rstrip('=')
-
     return query_params.get('sign') == expected_sign
+
 
 async def send_vk_message(user_id: str, message: str):
     vk_token = os.getenv("VK_REPETITOR_TOKEN")
-    if not vk_token: 
+    if not vk_token:
         return False
     url = "https://api.vk.com/method/messages.send"
     params = {
-        "user_id": user_id, 
-        "message": message, 
-        "random_id": random.randint(1, 2147483647), 
-        "v": "5.131", 
+        "user_id": user_id,
+        "message": message,
+        "random_id": random.randint(1, 2147483647),
+        "v": "5.131",
         "access_token": vk_token
     }
     try:
@@ -340,16 +391,17 @@ async def send_vk_message(user_id: str, message: str):
             async with session.post(url, data=params) as resp:
                 result = await resp.json()
                 return "error" not in result
-    except Exception: 
+    except Exception:
         return False
+
 
 QUESTIONS_DIR = Path("questions")
 PROGRESS_FILE = Path("user_progress.json")
-
 DATABASES = {}
+
 if QUESTIONS_DIR.exists():
     for json_file in QUESTIONS_DIR.glob("*.json"):
-        if json_file.name == "user_progress.json": 
+        if json_file.name == "user_progress.json":
             continue
         db_key = json_file.stem
         try:
@@ -359,6 +411,7 @@ if QUESTIONS_DIR.exists():
         except Exception as e:
             logger.error(f"❌ Ошибка загрузки {json_file.name}: {e}")
 
+
 def init_vk_db():
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
@@ -366,11 +419,12 @@ def init_vk_db():
     try:
         cursor.execute("ALTER TABLE users ADD COLUMN got_reward INTEGER DEFAULT 0")
     except sqlite3.OperationalError:
-        pass 
+        pass
     conn.commit()
     conn.close()
 
 init_vk_db()
+
 
 def init_vk_user(user_id: str) -> int:
     conn = sqlite3.connect("vk_users.db")
@@ -389,6 +443,7 @@ def init_vk_user(user_id: str) -> int:
     conn.close()
     return balance
 
+
 def change_vk_credits(user_id: str, amount: int) -> int:
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
@@ -399,57 +454,59 @@ def change_vk_credits(user_id: str, amount: int) -> int:
     conn.close()
     return new_balance
 
+
 def get_user_progress(user_id: str):
     if PROGRESS_FILE.exists():
-        with open(PROGRESS_FILE, "r", encoding="utf-8") as f: 
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
             return json.load(f).get(str(user_id), [])
     return []
+
 
 def save_user_progress(user_id: str, task_id: str):
     data = {}
     if PROGRESS_FILE.exists():
-        with open(PROGRESS_FILE, "r", encoding="utf-8") as f: 
+        with open(PROGRESS_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
     uid = str(user_id)
-    if uid not in data: 
+    if uid not in data:
         data[uid] = []
     if task_id not in data[uid]:
         data[uid].append(task_id)
-        with open(PROGRESS_FILE, "w", encoding="utf-8") as f: 
-            json.dump(data, f, ensure_ascii=False, indent=2)
+    with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
 
 def clean_and_normalize(text: str) -> str:
-    if not text: 
+    if not text:
         return ""
     cleaned = str(text)
-    cleaned = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', cleaned)  
-    cleaned = cleaned.replace(',', '.')  
-    cleaned = re.sub(r'[^\w\-.]', '', cleaned)  
+    cleaned = re.sub(r'[\u2012\u2013\u2014\u2212]', '-', cleaned)
+    cleaned = cleaned.replace(',', '.')
+    cleaned = re.sub(r'[^\w\-.]', '', cleaned)
     return cleaned.strip().lower()
 
+
 def check_student_answer(student_ans, correct_ans) -> bool:
-    if not student_ans or not correct_ans: 
+    if not student_ans or not correct_ans:
         return False
     norm_student = clean_and_normalize(student_ans)
     norm_correct = clean_and_normalize(correct_ans)
-
-    if not norm_student or not norm_correct: 
+    if not norm_student or not norm_correct:
         return False
-    if norm_student == norm_correct: 
+    if norm_student == norm_correct:
         return True
-
     if norm_correct.isdigit() and norm_student.isdigit():
         if len(norm_student) == len(norm_correct) and sorted(norm_student) == sorted(norm_correct):
             return True
-
     return False
+
 
 # =========================================================================
 # MODELS & SCHEMAS
 # =========================================================================
 class CheckRequest(BaseModel):
     user_answer: str
-    task_id: str  
+    task_id: str
     student_id: Optional[str] = None
     vk_params: Optional[str] = None
 
@@ -473,6 +530,7 @@ class BuyRequest(BaseModel):
     price: float
     vk_params: str
 
+
 # =========================================================================
 # ENDPOINTS
 # =========================================================================
@@ -480,19 +538,15 @@ class BuyRequest(BaseModel):
 async def create_payment(request: BuyRequest):
     if not verify_vk_auth(request.student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
-
     vk_app_id = "51800000"
     if request.vk_params:
         query_params = dict(parse_qsl(request.vk_params.lstrip('?'), keep_blank_values=True))
         if 'vk_app_id' in query_params:
             vk_app_id = query_params['vk_app_id']
-
     price_map = {15: 150.0, 100: 700.0}
     if request.amount not in price_map:
         return {"success": False, "error": "Неверный пакет кредитов."}
-
     actual_price = price_map[request.amount]
-
     try:
         idempotency_key = str(uuid.uuid4())
         payment = Payment.create({
@@ -506,6 +560,7 @@ async def create_payment(request: BuyRequest):
     except Exception:
         return {"success": False, "error": "Не удалось создать платеж."}
 
+
 @app.post("/yookassa_webhook/")
 async def yookassa_webhook(request: dict):
     try:
@@ -517,49 +572,42 @@ async def yookassa_webhook(request: dict):
                 change_vk_credits(student_id, amount)
                 await send_vk_message(student_id, f"✅ Оплата прошла успешно!\nНа ваш баланс зачислено: {amount} кр.")
                 await send_vk_message(str(ADMIN_VK_IDS[0]), f"💰 ОПЛАТА!\nУченик vk.com/id{student_id} купил {amount} кр.")
-        return {"status": "ok"}
-    except Exception: 
+                return {"status": "ok"}
+    except Exception:
         return {"status": "error"}
+
 
 @app.post("/start_test_payment/")
 async def pay_for_test(request: PaymentRequest):
     student_id = str(request.student_id)
     if not verify_vk_auth(student_id, request.vk_params):
         return {"success": False, "error": "Ошибка безопасности ВК."}
-
-    cost = 3 if request.test_mode == "pro" else 2 
-    if student_id in ["54451631", "12345678"]: 
+    cost = 3 if request.test_mode == "pro" else 2
+    if student_id in ["54451631", "12345678"]:
         return {"success": True, "new_balance": "unlimited", "cost": 0}
-
     current_balance = init_vk_user(student_id)
     if current_balance < cost:
         return {"success": False, "new_balance": current_balance, "cost": cost, "error": "Недостаточно кредитов"}
-
     new_balance = change_vk_credits(student_id, -cost)
     return {"success": True, "new_balance": new_balance, "cost": cost}
 
+
 @app.get("/random_task/")
 async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest", vk_params: str = None):
-    if not verify_vk_auth(student_id, vk_params): 
+    if not verify_vk_auth(student_id, vk_params):
         raise HTTPException(status_code=403, detail="Ошибка авторизации")
-
     db = DATABASES.get(exam_type, [])
-    if not db: 
+    if not db:
         raise HTTPException(status_code=500, detail=f"База {exam_type} пуста или не загружена")
-
     solved_ids = get_user_progress(student_id)
     available_tasks = [t for t in db if isinstance(t, dict) and str(t.get("id")) not in solved_ids and str(t.get("answer", "")).strip().lower() not in ["", "undefined", "none", "null"]]
-
     if not available_tasks:
         return {"id": "done", "topic": "done", "text": "🎉 Все задачи решены!", "image": "", "done": True}
-
     task = random.choice(available_tasks)
     img_path = task.get("image", "")
-
     if img_path and not img_path.startswith("http") and not img_path.startswith("questions/"):
         clean_name = img_path.split('/')[-1]
         base_prefix = exam_type.split('_')[0]
-
         if base_prefix in ["olymp", "vpr"]:
             img_path = f"questions/images_{exam_type}/{clean_name}"
         else:
@@ -569,24 +617,23 @@ async def get_random_task(exam_type: str = "oge_math", student_id: str = "guest"
             elif exam_type == "math_ege": img_path = f"questions/images_ege_math/{clean_name}"
             elif exam_type == "inf_ege": img_path = f"questions/images_ege_inf/{clean_name}"
             elif exam_type == "geo_ege": img_path = f"questions/images_ege_geo/{clean_name}"
-            elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"    
+            elif exam_type == "phys_ege": img_path = f"questions/images_ege_phys/{clean_name}"
             else: img_path = f"questions/images_oge_math/{task.get('topic', 'topic_01')}/{clean_name}"
-
-    return { 
-        "id": task.get("id", "unknown"), 
-        "topic": task.get("topic", "Общая тема"), 
-        "text": task.get("task_text", task.get("text", "")), 
+    return {
+        "id": task.get("id", "unknown"),
+        "topic": task.get("topic", "Общая тема"),
+        "text": task.get("task_text", task.get("text", "")),
         "image": img_path,
         "all_images": task.get("all_images", []),
         "audio": task.get("audio", ""),
         "all_audios": task.get("all_audios", [])
     }
 
+
 @app.post("/check/")
 async def check_answer_smart(request: CheckRequest):
     if not await check_rate_limit(str(request.student_id), limit=5, window=5):
         return {"is_correct": False, "error": "Слишком частые запросы."}
-
     if not verify_vk_auth(str(request.student_id), request.vk_params):
         return {"is_correct": False, "error": "Ошибка безопасности"}
 
@@ -600,10 +647,9 @@ async def check_answer_smart(request: CheckRequest):
                 task = t
                 db_name = key
                 break
-        if task: 
+        if task:
             break
-
-    if not task: 
+    if not task:
         return {"is_correct": False, "error": "Задача не найдена"}
 
     correct_answer = str(task.get("answer", "")).strip()
@@ -616,7 +662,6 @@ async def check_answer_smart(request: CheckRequest):
     ])
 
     is_correct = False
-
     if is_open_task or is_english or "literature" in db_name.lower() or "russian" in db_name.lower():
         is_correct, real_ai_answer = await ask_ai_arbiter_cascade(
             task_text=task_text,
@@ -628,24 +673,21 @@ async def check_answer_smart(request: CheckRequest):
             correct_answer = real_ai_answer
     else:
         is_correct = check_student_answer(request.user_answer, correct_answer)
-
         if not is_correct:
             try:
                 sys_prompt = "Ты — беспристрастный арбитр школьных ответов. Определи, совпадает ли ответ ученика с эталоном по смыслу."
                 user_prompt = f"Эталон: '{correct_answer}'. Ответ ученика: '{request.user_answer}'. Они эквивалентны? Напиши строго JSON: {{\"is_correct\": true}} или {{\"is_correct\": false}}"
-
                 res_ai = await ask_replicate(
-                    system_prompt=sys_prompt, 
-                    user_prompt=user_prompt, 
-                    max_tokens=100, 
+                    system_prompt=sys_prompt,
+                    user_prompt=user_prompt,
+                    max_tokens=100,
                     response_json=True
                 )
-
                 match = re.search(r'\{.*\}', res_ai, re.DOTALL)
                 if match:
                     ai_data = json.loads(match.group(0))
                     is_correct = bool(ai_data.get("is_correct", False))
-            except Exception as e: 
+            except Exception as e:
                 logger.error(f"⚠️ Ошибка ИИ-Арбитра при допроверке: {e}")
                 is_correct = False
 
@@ -657,19 +699,18 @@ async def check_answer_smart(request: CheckRequest):
         f.write(f"{datetime.utcnow().isoformat()},{request.student_id},{task.get('topic','unknown')},{is_correct},{db_name}\n")
 
     return {
-        "is_correct": is_correct, 
-        "topic": task.get("topic"), 
+        "is_correct": is_correct,
+        "topic": task.get("topic"),
         "correct_was": correct_answer if not is_correct else None
     }
+
 
 @app.post("/review/")
 async def explain_mistake(request: ReviewRequest):
     if not await check_rate_limit(str(request.student_id), limit=3, window=5):
         return {"explanation": "⚠️ Слишком много запросов. Подождите пару секунд."}
-
-    if not verify_vk_auth(str(request.student_id), request.vk_params): 
+    if not verify_vk_auth(str(request.student_id), request.vk_params):
         return {"explanation": "⚠️ Действие заблокировано."}
-
     content = request.task_text if request.task_text else "Текст задачи не предоставлен"
     base_prompt = (
         "Ты профессиональный, дружелюбный репетитор ОГЭ/ЕГЭ.\n"
@@ -678,23 +719,24 @@ async def explain_mistake(request: ReviewRequest):
         "ВАЖНО: Если задание про чтение текста вслух, опрос или письмо на английском — давай рекомендации по чтению, "
         "грамматике и теме текста. НЕ связывай ответ с техническими заполнителями вроде названий городов, если их нет в тексте задания!"
     )
-
     user_prompt = (
-        f"Объясни задачу 'на пальцах'. Текст задания: {content}. Ответ ученика: {request.user_answer}. Укажи на ошибку простым языком."  
-        if request.simplify else  
+        f"Объясни задачу 'на пальцах'. Текст задания: {content}. Ответ ученика: {request.user_answer}. Укажи на ошибку простым языком."
+        if request.simplify else
         f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Ответ ученика: {request.user_answer}."
     )
-
     try:
+        # 🔥 Проксируем картинку для разбора ошибок
+        normalized_img = build_ai_image_url(request.image_url)
         explanation = await ask_replicate(
-            system_prompt=base_prompt, 
-            user_prompt=user_prompt, 
-            image_url=request.image_url, 
+            system_prompt=base_prompt,
+            user_prompt=user_prompt,
+            image_url=normalized_img,
             max_tokens=1000
         )
         return {"explanation": explanation.replace("\n", "<br>")}
-    except Exception: 
+    except Exception:
         return {"explanation": "Ошибка при генерации разбора."}
+
 
 class MistakeItem(BaseModel):
     task_text: str
@@ -706,72 +748,67 @@ class AnalyzeGapsRequest(BaseModel):
     student_id: Optional[str] = None
     vk_params: Optional[str] = None
 
+
 @app.post("/analyze_gaps/")
 async def analyze_gaps(request: AnalyzeGapsRequest):
-    if request.student_id and not verify_vk_auth(request.student_id, request.vk_params): 
+    if request.student_id and not verify_vk_auth(request.student_id, request.vk_params):
         return {"analysis": "Ошибка безопасности"}
-    if not request.mistakes: 
+    if not request.mistakes:
         return {"analysis": "У тебя нет ошибок! Ты молодец! 🎉"}
-
     sys_prompt = "Ты эксперт-аналитик пробелов знаний. Отвечай кратко, понятным языком, БЕЗ LATEX И ЗНАКОВ ДОЛЛАРА. Выдели темы, которые нужно повторить."
-    user_prompt = "Проанализируй ошибки ученика в тесте и выяви пробелы:\n\n"
-    for i, m in enumerate(request.mistakes): 
+    user_prompt = "Проанализируй ошибки ученика в тесте и выяви пробелы:\n"
+    for i, m in enumerate(request.mistakes):
         user_prompt += f"{i+1}. Задача: {m.task_text[:250]}\n"
-
     try:
         analysis = await ask_replicate(
-            system_prompt=sys_prompt, 
-            user_prompt=user_prompt, 
+            system_prompt=sys_prompt,
+            user_prompt=user_prompt,
             max_tokens=800
         )
         return {"analysis": analysis.replace("\n", "<br>")}
-    except Exception: 
+    except Exception:
         return {"analysis": "Не удалось сгенерировать анализ."}
+
 
 @app.get("/profile_base/")
 async def get_profile_base(student_id: str, vk_params: str = None):
-    if not verify_vk_auth(student_id, vk_params): 
+    if not verify_vk_auth(student_id, vk_params):
         raise HTTPException(status_code=403, detail="Signature invalid")
-
     current_balance = init_vk_user(student_id)
-
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("SELECT got_reward FROM users WHERE user_id=?", (student_id,))
     row = cursor.fetchone()
     got_reward = row[0] if row else 0
     conn.close()
-
     total_solved = 0
     active_subjects = set()
     subject_counts = {}
-
     if Path("user_stats.log").exists():
         with open("user_stats.log", "r", encoding="utf-8") as f:
             for line in f:
                 parts = line.strip().split(",")
                 if len(parts) >= 4 and parts[1] == student_id:
                     total_solved += 1
-                    if len(parts) >= 5 and parts[4] != "unknown": 
+                    if len(parts) >= 5 and parts[4] != "unknown":
                         active_subjects.add(parts[4])
                         subj = parts[4]
                         subject_counts[subj] = subject_counts.get(subj, 0) + 1
-
     return {
-        "balance": current_balance, 
-        "total_solved": total_solved, 
-        "active_subjects": list(active_subjects), 
-        "subject_counts": subject_counts, 
+        "balance": current_balance,
+        "total_solved": total_solved,
+        "active_subjects": list(active_subjects),
+        "subject_counts": subject_counts,
         "got_reward": got_reward
     }
 
+
 @app.get("/analyze_subject/")
 async def analyze_subject(student_id: str, subject_key: str, vk_params: str = None):
-    if not await check_rate_limit(student_id, limit=2, window=5): 
+    if not await check_rate_limit(student_id, limit=2, window=5):
         return {"analysis": "⏳ Слишком много запросов. Подождите пару секунд и попробуйте снова."}
-    if not verify_vk_auth(student_id, vk_params): 
+    if not verify_vk_auth(student_id, vk_params):
         return {"analysis": "❌ Ошибка безопасности ВК."}
-
     user_records = []
     if Path("user_stats.log").exists():
         with open("user_stats.log", "r", encoding="utf-8") as f:
@@ -779,32 +816,31 @@ async def analyze_subject(student_id: str, subject_key: str, vk_params: str = No
                 parts = line.strip().split(",")
                 if len(parts) >= 5 and parts[1] == student_id and parts[4] == subject_key:
                     user_records.append({"topic": parts[2], "is_correct": parts[3].lower() == "true"})
-
-    if len(user_records) < 8: 
+    if len(user_records) < 8:
         return {"analysis": f"⏳ <b>Недостаточно данных.</b> Ты решил(а) всего {len(user_records)} задач из этого предмета. Пройди хотя бы один полный тест (10 вопросов), чтобы ИИ смог составить точный аналитический отчет!"}
 
     topic_history = {}
     for r in user_records:
         t = r["topic"]
-        if t not in topic_history: 
+        if t not in topic_history:
             topic_history[t] = []
         topic_history[t].append("✅" if r["is_correct"] else "❌")
 
     sys_prompt = "Ты ИИ-куратор учебной платформы. Напиши короткий мотивирующий отчет (2-3 абзаца). ОТВЕЧАЙ СТРОГО БЕЗ LATEX И БЕЗ МАТЕМАТИЧЕСКИХ СПЕЦСИМВОЛОВ."
-    user_prompt = "Вот история ответов ученика по предмету. Темы:\n\n"
-    for t, history in topic_history.items(): 
+    user_prompt = "Вот история ответов ученика по предмету. Темы:\n"
+    for t, history in topic_history.items():
         user_prompt += f"- {TOPIC_NAMES.get(t, t)}: {' '.join(history[-20:])}\n"
     user_prompt += "\nУкажи сильные и слабые темы, дай конкретные советы по подготовке."
-
     try:
         analysis = await ask_replicate(
-            system_prompt=sys_prompt, 
-            user_prompt=user_prompt, 
+            system_prompt=sys_prompt,
+            user_prompt=user_prompt,
             max_tokens=800
         )
         return {"analysis": analysis.replace("\n", "<br>")}
-    except Exception: 
+    except Exception:
         return {"analysis": "⚠️ Ошибка генерации."}
+
 
 class RewardRequest(BaseModel):
     student_id: str
@@ -812,23 +848,21 @@ class RewardRequest(BaseModel):
 
 @app.post("/reward_subscription/")
 async def reward_subscription(req: RewardRequest):
-    if not verify_vk_auth(req.student_id, req.vk_params): 
+    if not verify_vk_auth(req.student_id, req.vk_params):
         return {"success": False}
     conn = sqlite3.connect("vk_users.db")
     cursor = conn.cursor()
     cursor.execute("SELECT got_reward FROM users WHERE user_id=?", (req.student_id,))
     row = cursor.fetchone()
-
     if row and row[0] == 1:
         conn.close()
         return {"success": False, "message": "Bonus already received"}
-
     cursor.execute("UPDATE users SET credits = credits + 3, got_reward = 1 WHERE user_id=?", (req.student_id,))
     conn.commit()
     conn.close()
-
     asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🔔 Подписка на рассылку!\nУченик vk.com/id{req.student_id} получил бонус +3 кр."))
     return {"success": True}
+
 
 class FinishTestRequest(BaseModel):
     student_id: str
@@ -838,10 +872,11 @@ class FinishTestRequest(BaseModel):
 
 @app.post("/notify_test_finish/")
 async def notify_test_finish(req: FinishTestRequest):
-    if not verify_vk_auth(req.student_id, req.vk_params): 
+    if not verify_vk_auth(req.student_id, req.vk_params):
         return {"success": False}
     asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🎓 Тест завершен!\nУченик: vk.com/id{req.student_id}\nРезультат: {req.score} из {req.total}"))
     return {"success": True}
+
 
 # =========================================================================
 # АДМИНКА И ВК-ВЕБХУК
@@ -852,52 +887,47 @@ class VKCallback(BaseModel):
     group_id: Optional[int] = None
     secret: Optional[str] = None
 
+
 @app.post("/vk_bot_webhook/")
 async def vk_bot_webhook(data: VKCallback):
     if data.type == "confirmation":
         return HTMLResponse(content="11b52449", status_code=200)
-
     if data.type == "message_new":
         obj = data.object or {}
         msg = obj.get("message", obj)
         text = msg.get("text", "").strip()
         sender_id = msg.get("from_id")
-
         if sender_id in ADMIN_VK_IDS:
             if text.lower().startswith("рассылка"):
                 broadcast_text = text[8:].strip()
                 if not broadcast_text:
                     await send_vk_message(str(sender_id), "⚠️ Ошибка. Напиши: Рассылка [твой текст]")
                     return HTMLResponse(content="ok", status_code=200)
-
                 await send_vk_message(str(sender_id), "⏳ Начинаю массовую рассылку...")
                 conn = sqlite3.connect("vk_users.db")
                 cursor = conn.cursor()
                 cursor.execute("SELECT user_id FROM users")
                 users = cursor.fetchall()
                 conn.close()
-
                 success = 0
                 for u in users:
                     res = await send_vk_message(u[0], broadcast_text)
-                    if res: 
+                    if res:
                         success += 1
-                    await asyncio.sleep(0.05) 
-
+                    await asyncio.sleep(0.05)
                 await send_vk_message(str(sender_id), f"✅ Рассылка завершена!\nДоставлено: {success} из {len(users)}")
                 return HTMLResponse(content="ok", status_code=200)
 
             parts = text.split()
             is_admin_command = (len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())))
-
             if is_admin_command:
                 target_id = parts[0]
                 amount = int(parts[1])
                 init_vk_user(target_id)
                 new_bal = change_vk_credits(target_id, amount)
                 await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
+                return HTMLResponse(content="ok", status_code=200)
 
-    return HTMLResponse(content="ok", status_code=200)
 
 if __name__ == "__main__":
     import uvicorn
