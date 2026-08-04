@@ -251,13 +251,7 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
 
     # 🛠 Нормализация ссылок на картинки для ИИ:
     if has_image:
-        if image_url.startswith("http://oge.fipi.ru") or image_url.startswith("https://oge.fipi.ru"):
-            clean_path = re.sub(r'^https?://oge\.fipi\.ru/?', '', image_url).lstrip('/')
-            if not clean_path.startswith("docs/"):
-                clean_path = "docs/" + clean_path
-            image_url = f"https://oge.fipi.ru/{clean_path}"
-        if has_image:
-        # Если картинка локальная или идет через oge.fipi.ru, ведем её через наш домен neuro-master.online
+        # Ведем все картинки через наш домен, чтобы внешние нейросети (Qwen / Replicate) не получали 403/404 от ФИПИ
         clean_img = image_url.replace("https://oge.fipi.ru/", "").replace("http://oge.fipi.ru/", "").lstrip('/')
         if not clean_img.startswith("questions/") and not clean_img.startswith("docs/"):
             clean_img = "questions/" + clean_img
