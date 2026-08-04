@@ -225,10 +225,6 @@ async def ask_replicate(
     return '{"is_correct": false}' if response_json else "Ошибка генерации ответа ИИ."
 
 async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None, is_english: bool = False) -> tuple[bool, str]:
-    """
-    Каскадный вызов ИИ-Арбитра для проверки ответов без эталона в базе или для сложных заданий.
-    Поддерживает спец-промпт для Английского языка.
-    """
     if is_english:
         system_prompt = (
             "Ты — опытный, гибкий и объективный эксперт ОГЭ/ЕГЭ по английскому языку.\n"
@@ -236,7 +232,7 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
             "ПРАВИЛА ДЛЯ АНГЛИЙСКОГО:\n"
             "1. Числительные прописью и цифрами ЭКВИВАЛЕНТНЫ (например, 'five' = '5', 'ten' = '10').\n"
             "2. Названия городов/имен на английском или русском засчитывай (например, 'Moscow' = 'Московский' = 'Москва').\n"
-            "3. Если это задание Устной части (чтение вслух, телефонный опрос) или Эссе (письмо другу): если ученик предоставил связный осмысленный ответ по теме — ставь is_correct: true!\n"
+            "3. Если это задание Устной части или Эссе: если ученик предоставил связный осмысленный ответ — ставь is_correct: true!\n"
             "4. Мелкие опечатки не влияющие на смысл — зачитывай.\n"
             "Верни СТРОГО JSON без markdown-тегов:\n"
             '{"is_correct": true, "correct_was": "краткий верный ответ"}'
@@ -244,8 +240,8 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
     else:
         system_prompt = (
             "Ты — строгий, профессиональный и объективный арбитр школьных экзаменов (ОГЭ/ЕГЭ).\n"
-            "Твоя задача — проверить, верен ли ответ ученика на данное задание.\n"
-            "Учитывай синонимы, порядок цифр (если применимо), мелкие опечатки и смысл ответа.\n"
+            "Твоя задача — проверить, верен ли ответ ученика на данное математическое или естественно-научное задание.\n"
+            "Учитывай математические эквивалентности (например [1,4; +inf) и 1.4 <= x), синонимы и мелкие опечатки.\n"
             "Верни СТРОГО JSON без markdown-тегов:\n"
             '{"is_correct": true, "correct_was": "краткий верный ответ"}'
         )
@@ -253,8 +249,15 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
     user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
     has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
 
-    if has_image and not image_url.startswith("http"):
-        image_url = f"https://neuro-master.online/{image_url.lstrip('/')}"
+    # 🛠 Нормализация ссылок на картинки для ИИ:
+    if has_image:
+        if image_url.startswith("http://oge.fipi.ru") or image_url.startswith("https://oge.fipi.ru"):
+            clean_path = re.sub(r'^https?://oge\.fipi\.ru/?', '', image_url).lstrip('/')
+            if not clean_path.startswith("docs/"):
+                clean_path = "docs/" + clean_path
+            image_url = f"https://oge.fipi.ru/{clean_path}"
+        elif not image_url.startswith("http"):
+            image_url = f"https://neuro-master.online/{image_url.lstrip('/')}"
 
     res_raw = ""
     # 1. Запрос к первичному провайдеру (TokenRouter)
@@ -605,16 +608,15 @@ async def check_answer_smart(request: CheckRequest):
     task_text = str(task.get("task_text") or task.get("text", ""))
     is_english = db_name in ["oge_english", "ege_english"] or "english" in db_name.lower()
 
-    # 🎯 Детектор устной/развернутой части (чтобы не сравнивать со словами "Московский" из базы ФИПИ)
-    is_open_or_oral_task = any(kw in task_text.lower() for kw in [
-        "read the text aloud", "telephone survey", "write a message", "задание 35", 
-        "бланк ответов № 2", "услышите запись дважды", "бланк ответов №2"
-    ]) or correct_answer.lower() in ["московский", "---", "", "none", "null", "-"]
+    # 🛠 Ловим любые задания с развернутым ответом или эталоном "---"
+    is_open_task = correct_answer in ["---", "", "none", "null", "-", "undefined"] or any(kw in task_text.lower() for kw in [
+        "решите неравенство", "найдите значение выражения", "решите уравнение", "укажите решение", "дайте развернутый ответ",
+        "read the text aloud", "telephone survey", "write a message", "бланк ответов № 2"
+    ])
 
     is_correct = False
 
-    # 🔥 Передаем каскаду ИИ-Арбитра для сложных/открытых или английских заданий
-    if is_open_or_oral_task or is_english:
+    if is_open_task or is_english:
         is_correct, real_ai_answer = await ask_ai_arbiter_cascade(
             task_text=task_text,
             user_answer=request.user_answer,
