@@ -286,7 +286,7 @@ function showTask() {
         taskTextElement.style.display = 'block';
     } else { taskTextElement.textContent = "Текст не найден"; }
 
-    // 🖼 УМНАЯ ОБРАБОТКА МНОЖЕСТВЕННЫХ КАРТИНОК И СХЕМ (с гарантированной папкой /docs/)
+    // 🖼 УМНАЯ ОБРАБОТКА МНОЖЕСТВЕННЫХ КАРТИНОК И СХЕМ
     let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0 
         ? currentTask.all_images 
         : (currentTask.image ? [currentTask.image] : []);
@@ -294,13 +294,11 @@ function showTask() {
     if (imagesToDisplay.length > 0) {
         let imgsHtml = '';
         imagesToDisplay.forEach(imgUrl => {
-            let cleanPath = imgUrl.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
-            if (!cleanPath.startsWith('docs/')) {
-                cleanPath = 'docs/' + cleanPath;
+            let fullImgUrl = imgUrl;
+            if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+                fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
             }
-            let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
             
-            // image-rendering и max-width убирают «размытость» формул
             imgsHtml += `<div style="text-align:center; margin-top:10px;">
                 <img src="${encodeURI(fullImgUrl)}" class="question-image" 
                      style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" 
@@ -557,12 +555,11 @@ function loadReviewForCurrentMistake(isRestored = false) {
         
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        let cleanPath = mistake.task.image.replace(/^https?:\/\/oge\.fipi\.ru\/?/, '').replace(/^\//, '');
-        if (!cleanPath.startsWith('docs/')) {
-            cleanPath = 'docs/' + cleanPath;
+        let fullImgUrl = mistake.task.image;
+        if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
+            fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
-        let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
-        reviewImgContainer.innerHTML = `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
+        reviewImgContainer.innerHTML = `<div style="text-align:center;"><img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; height:auto; border-radius:6px; cursor:pointer;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')"></div>`;
     } else { reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${mistake.task.task_text || mistake.task.text}</div>`; }
     
     // 🎯 ПОНЯТНЫЙ И ЕДИНЫЙ БЛОК КНОПАК НАВИГАЦИИ
@@ -602,7 +599,7 @@ window.runAIExplanation = async function(simplify = false) {
 
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
     
-    let imageUrl = mistake.task.image ? `https://neuro-master.online/${mistake.task.image}` : null;
+    let imageUrl = mistake.task.image ? `${API_SERVER_URL}/${mistake.task.image.replace(/^\//, '')}` : null;
     try {
         const response = await fetch(`${TEST_API_URL}/review/`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_answer: String(mistake.user_answer), image_url: imageUrl, task_text: mistake.task.task_text || mistake.task.text || "Текст", simplify: simplify, student_id: String(USER_ID || 'guest'), vk_params: VK_SEARCH_PARAMS }) });
         const result = await response.json();
