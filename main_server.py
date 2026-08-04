@@ -254,13 +254,17 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
     has_image = bool(image_url and image_url.strip().lower() not in ["", "none", "null"])
 
     if has_image:
-        # Убираем лишние домены и дублирующиеся слэши
+        # 1. Убираем полный домен
         clean_img = re.sub(r'^https?://[^/]+/', '', image_url).lstrip('/')
-        clean_img = re.sub(r'^(questions/)+', 'questions/', clean_img)
         
+        # 2. Убираем повторяющиеся кусочки /questions/ и /docs/ по всему пути
+        clean_img = re.sub(r'(questions/)+', 'questions/', clean_img)
+        clean_img = re.sub(r'questions/([^/]+)/questions/', r'questions/\1/', clean_img)
+        clean_img = clean_img.lstrip('/')
+
         if not clean_img.startswith("questions/") and not clean_img.startswith("docs/"):
             clean_img = "questions/" + clean_img
-            
+
         image_url = f"https://neuro-master.online/{clean_img}"
 
     res_raw = ""
