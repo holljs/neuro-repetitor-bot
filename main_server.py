@@ -26,7 +26,7 @@ from yookassa import Configuration, Payment
 
 load_dotenv()
 
-app = FastAPI(title="Neuro Repetitor API", version="3.4.0")
+app = FastAPI(title="Neuro Repetitor API", version="3.5.0")
 
 # Настройка ЮKassa
 Configuration.configure(
@@ -88,7 +88,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger("NeuroRepetitor")
 
 # =========================================================================
-# 🖼 ПРОКСИ КАРТИНОК ФИПИ (решает 404 и SSL-ошибки для ИИ)
+# 🖼 ПРОКСИ КАРТИНОК ФИПИ + BASE64 ДЛЯ ИИ
 # =========================================================================
 IMG_CACHE_DIR = Path("questions/cache")
 try:
@@ -96,43 +96,106 @@ try:
 except Exception:
     pass
 
+def _detect_mime(content: bytes, fallback: str = "image/png") -> str:
+    """Определяем тип по байтам — чтобы никогда не сохранять HTML вместо картинки."""
+    if content[:8] == b'\x89PNG\r\n\x1a\n': return "image/png"
+    if content[:3] == b'\xff\xd8\xff': return "image/jpeg"
+    if content[:6] in (b'GIF87a', b'GIF89a'): return "image/gif"
+    if content[:4] == b'RIFF' and content[8:12] == b'WEBP': return "image/webp"
+    return fallback if fallback.startswith("image/") else ""
+
 @app.get("/imgproxy/")
+@app.get("/repetitor-api/imgproxy/")
 async def imgproxy(url: str = Query(...)):
-    """Прокси картинок ФИПИ: ИИ-провайдеры (Qwen, Gemini) не могут качать их напрямую."""
+    """Прокси картинок ФИПИ для учеников и ИИ (оба пути — при любой настройке nginx)."""
     safe = hashlib.md5(url.encode()).hexdigest()
     ext = os.path.splitext(url.split('?')[0])[1].lower()
     if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.webp']:
         ext = '.png'
     cache_file = IMG_CACHE_DIR / f"{safe}{ext}"
     if cache_file.exists():
-        mime = "image/jpeg" if ext in ['.jpg', '.jpeg'] else "image/png"
-        return Response(content=cache_file.read_bytes(), media_type=mime)
+        data = cache_file.read_bytes()
+        return Response(content=data, media_type=_detect_mime(data) or "image/png")
 
-    # ФИПИ иногда отдаёт картинки то с /docs/, то без — пробуем оба варианта
     candidates = [url]
     if 'fipi.ru' in url:
-        m = re.match(r'(https?://[^/]+)/(.*)$', url)
-        if m:
-            if '/docs/' not in url:
+        if '/docs/' in url:
+            candidates.append(url.replace('/docs/', '/', 1))
+        else:
+            m = re.match(r'(https?://[^/]+)/(.*)$', url)
+            if m:
                 candidates.append(f"{m.group(1)}/docs/{m.group(2)}")
-            else:
-                candidates.append(url.replace('/docs/', '/', 1))
 
     async with httpx.AsyncClient(verify=False, follow_redirects=True, timeout=25) as client:
         for cand in candidates:
             try:
                 r = await client.get(cand, headers={
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                    "Accept": "image/*,*/*"
-                })
-                if r.status_code == 200 and len(r.content) > 500 and not r.content.lstrip()[:1] == b'<':
+                    "Accept": "image/*,*/*"})
+                mime = _detect_mime(r.content, r.headers.get("content-type", "").split(";")[0])
+                if r.status_code == 200 and len(r.content) > 200 and mime.startswith("image/"):
                     cache_file.write_bytes(r.content)
-                    content_type = r.headers.get("content-type", "image/png").split(";")[0]
-                    return Response(content=r.content, media_type=content_type)
+                    return Response(content=r.content, media_type=mime)
             except Exception as e:
                 logger.warning(f"⚠️ imgproxy: кандидат {cand} не скачался: {e}")
     raise HTTPException(status_code=404, detail="Image not found")
 
+_img_uri_cache = {}
+
+async def fetch_image_as_data_uri(raw_url: str) -> Optional[str]:
+    """Скачиваем картинку НА СЕРВЕРЕ и отдаём ИИ как base64 data-URI.
+    Тогда Replicate/Qwen никуда не ходят по ссылкам — ни 404, ни E006 невозможны."""
+    url = (raw_url or "").strip()
+    if not url:
+        return None
+    if url in _img_uri_cache:
+        return _img_uri_cache[url]
+
+    candidates = []
+    if url.startswith("http"):
+        candidates.append(url)
+        if "fipi.ru" in url:
+            if "/docs/" in url:
+                candidates.append(url.replace("/docs/", "/", 1))
+            else:
+                m = re.match(r'(https?://[^/]+)/(.*)$', url)
+                if m:
+                    candidates.append(f"{m.group(1)}/docs/{m.group(2)}")
+    else:
+        parts = [p for p in url.split('/') if p and p not in ('docs', 'questions')]
+        local_path = Path("questions") / "/".join(parts)
+        if local_path.exists():
+            data = local_path.read_bytes()
+            uri = f"data:{_detect_mime(data) or 'image/png'};base64,{base64.b64encode(data).decode()}"
+            _img_uri_cache[url] = uri
+            return uri
+
+    async with httpx.AsyncClient(verify=False, follow_redirects=True, timeout=20) as client:
+        for cand in candidates:
+            try:
+                r = await client.get(cand, headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                    "Accept": "image/*,*/*"})
+                mime = _detect_mime(r.content, r.headers.get("content-type", "").split(";")[0])
+                if r.status_code == 200 and len(r.content) > 200 and mime.startswith("image/"):
+                    uri = f"data:{mime};base64,{base64.b64encode(r.content).decode()}"
+                    _img_uri_cache[url] = uri
+                    logger.info(f"🖼 Картинка скачана ({len(r.content)} байт) и закодирована в base64")
+                    return uri
+            except Exception as e:
+                logger.warning(f"⚠️ fetch_image: {cand} -> {e}")
+    return None
+
+def build_ai_image_url(raw_url: Optional[str]) -> Optional[str]:
+    """Запасная ссылка через прокси (если base64 не удался)."""
+    if not raw_url or not raw_url.strip() or raw_url.strip().lower() in ["none", "null", ""]:
+        return None
+    if raw_url.startswith("http"):
+        if "fipi.ru" in raw_url:
+            return f"https://neuro-master.online/repetitor-api/imgproxy/?url={quote(raw_url, safe='')}"
+        return raw_url
+    parts = [p for p in raw_url.split('/') if p and p not in ('docs', 'questions')]
+    return f"https://neuro-master.online/questions/{'/'.join(parts)}" if parts else None
 
 # =========================================================================
 # 🔥 УНИВЕРСАЛЬНЫЙ ИИ-ДВИЖОК С КАСКАДНОЙ ПОДСТРАХОВКОЙ
@@ -257,33 +320,17 @@ async def ask_replicate(
     return '{"is_correct": false}' if response_json else "Ошибка генерации ответа ИИ."
 
 
-# 🔥 НОВАЯ ФУНКЦИЯ: честная нормализация URL для ИИ
-def build_ai_image_url(raw_url: Optional[str]) -> Optional[str]:
-    """Строит URL картинки, доступный для ИИ-провайдеров."""
-    if not raw_url or not raw_url.strip() or raw_url.strip().lower() in ["none", "null", ""]:
-        return None
-    if raw_url.startswith("http"):
-        if "fipi.ru" in raw_url:
-            # ФИПИ → проксируем через наш домен
-            return f"https://neuro-master.online/imgproxy/?url={quote(raw_url, safe='')}"
-        return raw_url  # Уже публичная ссылка
-    # Локальный путь
-    parts = [p for p in raw_url.split('/') if p and p not in ('docs', 'questions')]
-    return f"https://neuro-master.online/questions/{'/'.join(parts)}" if parts else None
-
-
 async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Optional[str] = None, is_english: bool = False) -> tuple[bool, str]:
-    # 🔥 УСИЛЕННЫЙ ПРОМПТ: ИИ сам решает и сверяет по смыслу
     if is_english:
         system_prompt = (
             "Ты — опытный, гибкий и объективный эксперт ОГЭ/ЕГЭ по английскому языку.\n"
             "АЛГОРИТМ РАБОТЫ:\n"
             "1) СНАЧАЛА внимательно изучи задание (и картинку, если есть) и САМОСТОЯТЕЛЬНО реши его.\n"
-            "2) ТОЛЬКО ПОТОМ сравни своё решение с ответом ученика.\n"
+            "2) ТОЛЬКО ПОТОМ сравни своё решение с ответом ученика и оценивай ПО СМЫСЛУ.\n"
             "ПРАВИЛА ДЛЯ АНГЛИЙСКОГО:\n"
             "1. Числительные прописью и цифрами ЭКВИВАЛЕНТНЫ (five = 5, ten = 10).\n"
             "2. Названия городов/имен на английском или русском засчитывай (Moscow = Москва).\n"
-            "3. Эссе/устная часть: если ученик дал связный осмысленный ответ по теме — ставь is_correct: true!\n"
+            "3. Эссе/устная часть: если ученик дал связный осмысленный ответ по теме — is_correct: true!\n"
             "4. Мелкие опечатки, не влияющие на смысл — зачитывай.\n"
             "Верни СТРОГО JSON без markdown:\n"
             '{"is_correct": true, "correct_was": "краткий верный ответ"}'
@@ -297,46 +344,53 @@ async def ask_ai_arbiter_cascade(task_text: str, user_answer: str, image_url: Op
             "3) Оценивай ПО СМЫСЛУ, а не по совпадению слов: синонимы, пересказ, другие формулировки = верно.\n"
             "ПРАВИЛА ОЦЕНИВАНИЯ:\n"
             "1. ТЕРМИНЫ (литература/русский): 'хорей', 'антитеза', 'анафора' — обязательно is_correct: true!\n"
-            "2. РАЗВЕРНУТЫЕ И СМЫСЛОВЫЕ ОТВЕТЫ: если ответ передает верный смысл вопроса — is_correct: true!\n"
-            "   Например, 'ужасным' и 'представляется ужасным' — оба верны.\n"
-            "3. МАТЕМАТИКА И ЕСТЕСТВЕННЫЕ НАУКИ: учитывай эквивалентность (1,4 <= x = [1.4; +∞)), опечатки, формы слова.\n"
-            "4. Только если ответ содержит явную фактическую ошибку или бессмыслицу — is_correct: false.\n"
+            "2. РАЗВЕРНУТЫЕ ОТВЕТЫ: если ответ передает верный смысл ('ужасным' и 'представляется ужасным') — is_correct: true!\n"
+            "3. МАТЕМАТИКА: учитывай эквивалентность ([1,4; +inf) и 1.4 <= x), опечатки, формы слова.\n"
+            "4. Только явная фактическая ошибка или бессмыслица — is_correct: false.\n"
             "Верни СТРОГО JSON без markdown:\n"
             '{"is_correct": true, "correct_was": "краткая суть верного ответа"}'
         )
 
     user_prompt = f"Текст задания:\n{task_text}\n\nОтвет ученика: '{user_answer}'"
 
-    # 🔥 Нормализация URL картинки через новую функцию
+    # 🔥 НОВАЯ ЛОГИКА КАРТИНКИ: base64 data-URI в приоритете, прокси — запасной вариант
     normalized_image = build_ai_image_url(image_url)
     has_image = normalized_image is not None
+    ai_image = normalized_image
+    if has_image:
+        data_uri = await fetch_image_as_data_uri(image_url)
+        if data_uri:
+            ai_image = data_uri
+            logger.info("🖼 Картинка для ИИ: base64 data-URI")
+        else:
+            logger.warning("⚠️ Картинку скачать не удалось — ИИ получит ссылку через прокси")
+    if not TOKENROUTER_API_TOKEN:
+        logger.error("❌ TOKENROUTER_API_TOKEN нет в .env — каскад сразу идёт в Replicate!")
 
     res_raw = ""
     if TOKENROUTER_API_TOKEN:
         try:
             model_name = "qwen/qwen3.7-plus" if has_image else "deepseek/deepseek-v4-flash"
-            logger.info(f"🚀 Попытка TokenRouter ({'Qwen3.7-Plus' if has_image else 'DeepSeek'}) | image: {bool(normalized_image)}")
+            logger.info(f"🚀 Попытка TokenRouter ({'Qwen3.7-Plus' if has_image else 'DeepSeek'}) | image: {has_image}")
             res_raw = await ask_tokenrouter(
                 model_name=model_name,
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
                 max_tokens=400,
                 response_json=True,
-                image_url=normalized_image if has_image else None
+                image_url=ai_image if has_image else None
             )
             logger.info(f"✅ TokenRouter вернул: {res_raw[:120]}")
         except Exception as tr_err:
-            logger.warning(f"⚠️ TokenRouter ({'Qwen' if has_image else 'DeepSeek'}) подвел: {tr_err}. Переключаемся на Replicate!")
-    else:
-        logger.error("❌ TOKENROUTER_API_TOKEN не настроен в .env — каскад сразу падает в Replicate!")
+            logger.warning(f"⚠️ TokenRouter подвел: {tr_err}. Переключаемся на Replicate!")
 
     if not res_raw:
         try:
-            logger.info(f"🔄 Fallback в Replicate (Gemini 2.5 Flash)")
+            logger.info("🔄 Fallback в Replicate (Gemini 2.5 Flash)")
             res_raw = await ask_replicate(
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
-                image_url=normalized_image if has_image else None,
+                image_url=ai_image if has_image else None,
                 max_tokens=400,
                 response_json=True
             )
@@ -725,12 +779,14 @@ async def explain_mistake(request: ReviewRequest):
         f"Напиши короткое пошаговое объяснение решения этой задачи. Текст задания: {content}. Ответ ученика: {request.user_answer}."
     )
     try:
-        # 🔥 Проксируем картинку для разбора ошибок
-        normalized_img = build_ai_image_url(request.image_url)
+        # 🔥 Картинку для разбора тоже отдаём base64
+        image_for_ai = None
+        if request.image_url:
+            image_for_ai = await fetch_image_as_data_uri(request.image_url) or build_ai_image_url(request.image_url)
         explanation = await ask_replicate(
             system_prompt=base_prompt,
             user_prompt=user_prompt,
-            image_url=normalized_img,
+            image_url=image_for_ai,
             max_tokens=1000
         )
         return {"explanation": explanation.replace("\n", "<br>")}
@@ -747,7 +803,6 @@ class AnalyzeGapsRequest(BaseModel):
     mistakes: list[MistakeItem]
     student_id: Optional[str] = None
     vk_params: Optional[str] = None
-
 
 @app.post("/analyze_gaps/")
 async def analyze_gaps(request: AnalyzeGapsRequest):
