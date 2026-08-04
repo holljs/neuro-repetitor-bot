@@ -75,8 +75,22 @@ window.closeModal = function() {
 
 function renderMath(elementId) {
     const el = document.getElementById(elementId);
-    if (el && window.renderMathInElement) {
-        try { renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false }); } catch(e){}
+    if (!el) return;
+
+    if (window.renderMathInElement) {
+        try {
+            renderMathInElement(el, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        } catch(e) {}
+    } else if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([el]).catch((err) => console.log(err));
     }
 }
 
@@ -285,7 +299,13 @@ function showTask() {
                 cleanPath = 'docs/' + cleanPath;
             }
             let fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
-            imgsHtml += `<img src="${encodeURI(fullImgUrl)}" class="question-image" style="width:100%; border-radius:8px; cursor:pointer; margin-top:10px;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')">`;
+            
+            // image-rendering и max-width убирают «размытость» формул
+            imgsHtml += `<div style="text-align:center; margin-top:10px;">
+                <img src="${encodeURI(fullImgUrl)}" class="question-image" 
+                     style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" 
+                     onclick="openImageViewer('${encodeURI(fullImgUrl)}')">
+            </div>`;
         });
         imageContainer.innerHTML = imgsHtml;
         imageContainer.style.display = 'block';
