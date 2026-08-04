@@ -848,7 +848,7 @@ window.openImageViewer = function(url) {
 };
 
 // =========================================================================
-// 🎙 ГОЛОСОВОЙ ВВОД (СТИЛЬ TELEGRAM)
+// 🎙 ГОЛОСОВОЙ ВВОД В СТИЛЕ НЕЙРО-МАСТЕРА
 // =========================================================================
 let recognition = null;
 let isRecording = false;
@@ -877,8 +877,8 @@ window.toggleVoiceInput = function() {
     recognition.onstart = function() {
         isRecording = true;
         if (micBtn) {
-            micBtn.style.background = '#ff5252';
-            micBtn.style.boxShadow = '0 0 12px rgba(255, 82, 82, 0.6)';
+            micBtn.style.color = '#ef4444';
+            micBtn.style.background = '#fee2e2';
             micBtn.innerHTML = `<i data-feather="square" style="width: 18px; height: 18px;"></i>`;
             if (window.feather) feather.replace();
         }
@@ -911,8 +911,8 @@ function stopMicAnimation() {
     isRecording = false;
     const micBtn = document.getElementById('mic-btn');
     if (micBtn) {
-        micBtn.style.background = '#4a76a8';
-        micBtn.style.boxShadow = 'none';
+        micBtn.style.color = '#64748b';
+        micBtn.style.background = 'none';
         micBtn.innerHTML = `<i data-feather="mic" style="width: 20px; height: 20px;"></i>`;
         if (window.feather) feather.replace();
     }
