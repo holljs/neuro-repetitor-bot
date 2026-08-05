@@ -1,289 +1,251 @@
 [
   {
-    "id": "vpr_english_10_2027_t1",
+    "id": "vpr_english_10_2027_t0_2",
     "task_text": "1) Tracy 2) Jack 3 ) Both\nB. Who has a lot of fun in the Moscow Museum of Modern Art?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t2",
+    "id": "vpr_english_10_2027_t0_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nC. Who prefers still life paintings?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t3",
+    "id": "vpr_english_10_2027_t0_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nD. Who is interested in fashion?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t4",
+    "id": "vpr_english_10_2027_t0_2",
     "task_text": "1) Tracy 2) Jack 3 ) Both\nE. Who is hungry?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t5",
+    "id": "vpr_english_10_2027_t0_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\n2 Установите соответствие между текстами A–E и рубриками 1–6. Используйте каждую\nрубрику только один раз. В задании одна рубрика лишняя.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t11",
+    "id": "vpr_english_10_2027_t0_3",
     "task_text": "6. A severe climate\nA. There are some important facts one should know about the climate in Russia. This country\nconsists of several continental zones. For example, in the north winters are long and harsh, in\nsome places there is lots of snowfall and temperatures fall below –40 degrees Celsius. These\nwinters are normal, not only in the northern regions of the country but even in the Far East.\nSummers in these areas don’t even see three warm months out of the year.\nB. Russia may not be the first to come to mind when you think of a food destination, but this\ncountry has plenty of delicious traditional dishes to offer. Visitors are often surprised at the\nvariety and flavour of Russian cuisine, which is influenced by Russia’s connection to different\ncountries in Europe, Asia, and the Middle East. The most classic Russian recipes are made of\nveggies and wheat, such as soups, porridges, and stuffed dough.\nC. The main tourist routes in Russia include visits to Moscow and St. Petersburg, resort\nestablishments in the Krasnodar and Stavropol regions, the Kaliningrad region, the ski resorts of\nthe Caucasus and Siberia, the Golden Ring of Russia, cruises along the Volga, cruises on an\nicebreaker to the national park “Russian Arctic”, trips on the Trans-Siberian Railway (the Altai\nMountains, Lake Baikal), travelling to the volcanoes of Kamchatka and Primorye.\nD. New Year’s Day is one of the most important holidays on the Russian calendar. New Year in\nRussia is a time for being together with family and friends, for gift giving, decorating the New\nYear tree, and watching and setting off fireworks. Midnight is, by tradition, marked by listening\nto the Russian Federation President’s greeting and the Kremlin bells chime.\nE. The Siberian Husky is a beautiful dog with a thick coat that comes in a multitude of colours and\nmarkings. Their blue or multi-coloured eyes add to the appeal of this breed, which originated in\nSiberia. It is easy to see why many people are enchanted by the Husky, but be aware that this\nathletic, intelligent dog can be independent and challenging for first-time dog owners.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\n3 Прочитайте текст и заполните пропуски A–E частями предложений, обозначенными\nцифрами 1–6. Одна из частей в списке 1–6 лишняя.\nThe Bolshoi Theatre\nThe Bolshoi Theatre is a historic theatre in Moscow, famous for its performances of ballet\nand operas. The theatre was initially given permission A______ 1776. At that time, fires happened\nfrequently, and the building of the Bolshoi B______. Over time, and after the fires that destroyed\nmuch of the original building, the theatre was C______ as the Bolshoi Theatre to coincide with the\ncoronation of Tsar Alexander the Second.\nThe word Bolshoi means “big” in Russian. For many years it was the biggest theatre in\nMoscow, and it D______ theatres in t",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t13",
+    "id": "vpr_english_10_2027_t0_4",
     "task_text": "2) to establish theatrical performances in Russia",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p5.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t17",
+    "id": "vpr_english_10_2027_t0_4",
     "task_text": "6) to be built by Empress Catherine the Second in\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами A–F,\n4\nподходящее слово, выбрав его из списка. Каждое из этих слов может быть использовано\nтолько один раз. Два слова в списке 1–8 лишние.\nThe Summer Garden\nThe Summer Garden in St. Petersburg was personally designed by 1. attraction\nPeter the Great in 1704. It is home to marble statues acquired from Europe 2. chapter\nespecially for Russia’s new capital. It was a A______ place for courtly life 3. character\noutside the palace, and balls were held here by the nobility. Russian 4. discussed\naristocrats also B______ simply walking in the Garden. In 1777 the 5. enjoyed\nSummer Garden was severely damaged by flooding: several statues were 6. romantic\ndestroyed and the fountains were broken. The surviving statues were moved 7. took\nindoors, while modern replicas C______ their place in the park. 8. traditional\nA major park D______ was the fountains, the oldest ones in Russia.\nThe park was chosen by Alexander Pushkin as a setting for childhood walks\nof the fictional E______ Eugene Onegin. The Summer Garden Park\nremains one of the most F______ places in St. Petersburg.\nЗапишите в таблицу номера выбранных слов под соответствующими буквами.\nA B C D E F\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nИнструкция по выполнению заданий части 2 проверочной работы\nНа выполнение заданий части 2 проверочной работы по английскому языку отводится\nодин урок (не более 45 минут). Часть 2 включает в себя 3 задания.\nОтветы на задания запишите в поля ответов в тексте работы. В случае записи\nневерного ответа зачеркните его и запишите рядом новый.\nПри выполнении работы не разрешается пользоваться учебниками, рабочими\nтетрадями, справочниками и словарями.\nПри необходимости можно пользоваться черновиком. Записи в черновике\nпроверяться и оцениваться не будут.\nСоветуем выполнять задания в том порядке, в котором они даны. В целях экономии\nвремени пропускайте задание, которое не удаётся выполнить сразу, и переходите\nк следующему. Если после выполнения работы у Вас останется время, то Вы сможете\nвернуться к пропущенным заданиям.\nЖелаем успеха!\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nЧасть 2\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n5\nзаглавными буквами в конце строк с пропусками, обозначенными номерами 1–6, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nMikhail Vasilyevich Lomonosov\nMikhail Vasilyevich Lomonosov (1711–1765) was a very talented Russian\nscientist and writer. He was born in a small village 1__________",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2027_p5.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2027_t26",
-    "task_text": "5. Fortunately\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nКритерии оценивания выполнения задания 7 «Электронное письмо»\nБаллы Решение Организация текста Языковое оформление\nкоммуникативной текста\nзадачи\nК1 К2 К3\n2 Задание выполнено Высказывание логично; Используемый словар-\nполностью: содержание средства логической свя- ный запас и грамма-\nотражает все аспекты, зи использованы пра- тические структуры соот-\nуказанные в задании вильно; текст верно ветствуют базовому уров-\n(даны полные и точные разделён на абзацы; ню сложности задания,\nответы на все вопросы, структурное оформление орфографические и пун-\nзаданы правильно 2 во- текста соответствует ктуационные ошибки\nпроса по указанной теме); нормам, принятым в практически отсутствуют\nстилевое оформление речи стране изучаемого языка (допускаются 1-2 лексико-\nвыбрано правильно с (допускается 1 ошибка в грамматические ошибки\nучётом цели выска- организации текста) И/ИЛИ 1-2 орфогра-\nзывания и адресата; фические и пунктуа-\nсоблюдены принятые в ционные ошибки)\nязыке нормы вежливости\n(допускается 1 неполный\nили неточный аспект)\n1 Задание выполнено не Допущены 2-3 ошибки в Используемый словар-\nполностью: содержание организации текста ный запас и граммати-\nотражает не все аспекты, ческие структуры не\nуказанные в задании (все полностью соответству-\nслучаи, не указанные в ют базовому уровню\nоценивании на 2 балла и сложности задания:\n0 баллов) допущены 3-4 лексико-\nграмматические ошибки,\nИ/ИЛИ допущены 3-4\nорфографические и пун-\nктуационные ошибки\n0 Задание не выполнено: Допущено 4 и более Используемый словар-\n3 и более аспекта содер- ошибки в организации ный запас и граммати-\nжания отсутствуют, текста ческие структуры не\nИЛИ 6 аспектов раскры- соответствуют базовому\nты неполно/ неточно, уровню сложности зада-\nИЛИ 1 аспект не раскрыт, ния: допущено 5 и более\nи 4-5 аспектов раскрыты лексико-грамматических\nнеполно/неточно, ошибок,\nИЛИ 2 аспекта не рас- И/ИЛИ допущено 5 и\nкрыты, и 2-4 раскрыты более орфографических и\nнеполно/неточно, пунктуационных ошибок\nИЛИ ответ не соот-\nветствует требуемому\nобъёму\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nПримечания",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2027_t27",
-    "task_text": "1. При получении 0 баллов по критерию «Решение коммуникативной задачи» ответ на\nзадание оценивается 0 баллов по всем критериям оценивания выполнения этого задания.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2027_t28",
-    "task_text": "2. Правильное использование средств логической связи предполагает обязательные\nлогические связки-переходы между частями высказывания.\nПри оценивании выполнения задания 7 «Электронное письмо» следует учитывать\nтакой параметр, как объём письменного текста, выраженный в количестве слов. Требуемый\nобъём для электронного письма личного характера при выполнении задания 7 –\n100–130 слов. Допустимое отклонение от заданного объёма составляет 10 %. Если в ответе\nна задание 7 менее 90 слов, то ответ на задание проверке не подлежит и оценивается\n0 баллов. При превышении объёма более чем на 10 %, т. е. если в ответе на задание 7 более\n143 слов, проверке подлежит только та часть ответа на задание, которая соответствует\nтребуемому объёму. Таким образом, при проверке ответа на задание 7 отсчитывается от\nначала ответа 130 слов и оценивается только эта часть ответа.\nПри определении соответствия объёма представленной работы указанным выше\nтребованиям считаются все слова, с первого слова по последнее, включая вспомогательные\nглаголы, предлоги, артикли, частицы. В электронном письме обращение и подпись также\nподлежат подсчёту. При этом:\n− стяжённые (краткие) формы can’t, didn’t, isn’t, I’m и т. п. считаются как одно слово;\n− числительные, выраженные цифрами, т. е. 1, 25, 2009, 126 204 и т. п., считаются как\nодно слово;\n− числительные, выраженные цифрами, вместе с условным обозначением процентов,\nт. е. 25 %, 100 % и т. п., считаются как одно слово;\n− числительные, выраженные словами, считаются как слова;\n− сложные слова, такие как good-looking, well-bred, English-speaking, twenty-five,\nсчитаются как одно слово;\n− сокращения, например USA, e-mail, TV, CD-rom, считаются как одно слово.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 38.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–12 13–21 22–32 33–38\n© 2027 Федеральная служба по надзору в сфере образования и науки\nВПР. Английский язык. 10 класс. Образец\nПриложение 2\nДополнительная схема оценивания задания 7 «Электронное письмо»\n© 2027 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 90–143 слова\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Два вопроса заданы\nАспект 5. Нормы вежливости соблюдены: благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты\nАспект 6. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nичадаз\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл –",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2027_t29",
-    "task_text": "3. Языковое оформление текста. ИТОГОВЫЙ БАЛЛ (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2026_t1",
+    "id": "vpr_english_10_2026_t8_2",
     "task_text": "1) Tracy 2) Jack 3 ) Both\nB. Who finds a lot of fun in the National Museum of American Art?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t2",
+    "id": "vpr_english_10_2026_t8_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nC. Who prefers still life paintings?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t3",
+    "id": "vpr_english_10_2026_t8_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nD. Who is interested in fashion?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t4",
+    "id": "vpr_english_10_2026_t8_2",
     "task_text": "1) Tracy 2) Jack 3 ) Both\nE. Who is hungry?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t5",
+    "id": "vpr_english_10_2026_t8_2",
     "task_text": "1) Tracy 2) Jack 3 ) Neither\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\n2 Установите соответствие между текстами A–E и рубриками 1–6. Используйте каждую\nрубрику только один раз. В задании одна рубрика лишняя.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t11",
+    "id": "vpr_english_10_2026_t8_3",
     "task_text": "6. A severe climate\nA. There are some important facts one should know about the climate in Russia. This country\nconsists of several continental zones. For example, in the north winters are long and harsh, in\nsome places there is lots of snowfall and temperatures fall below –40 degrees Celsius. These\nwinters are normal, not only in the northern regions of the country but even in the Far East.\nSummers in these areas don’t even see three warm months out of the year.\nB. Russia may not be the first to come to mind when you think of a food destination, but this\ncountry has plenty of delicious traditional dishes to offer. Visitors are often surprised at the\nvariety and flavour of Russian cuisine, which is influenced by Russia's connection to different\ncountries in Europe, Asia, and the Middle East. The most classic Russian recipes are made of\nveggies and wheat, such as soups, porridges, and stuffed dough.\nC. The main tourist routes in Russia include visits to Moscow and St. Petersburg, resort\nestablishments in the Krasnodar and Stavropol regions, the Kaliningrad region, the ski resorts of\nthe Caucasus and Siberia, the Golden Ring of Russia, cruises along the Volga, cruises on an\nicebreaker to the national park “Russian Arctic”, trips on the Trans-Siberian Railway (the Altai\nMountains, Lake Baikal), travelling to the volcanoes of Kamchatka and Primorye.\nD. New Year’s Day is one of the most important holidays on the Russian calendar. New Year in\nRussia is a time for being together with family and friends, for gift giving, decorating the New\nYear tree, and watching and setting off fireworks. Midnight is, by tradition, marked by listening\nto the Russian Federation President’s greeting and the Kremlin bells chime.\nE. The Siberian Husky is a beautiful dog with a thick coat that comes in a multitude of colours and\nmarkings. Their blue or multi-coloured eyes add to the appeal of this breed, which originated in\nSiberia. It is easy to see why many people are enchanted by the Husky, but be aware that this\nathletic, intelligent dog can be independent and challenging for first-time dog owners.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\n3 Прочитайте текст и заполните пропуски A–E частями предложений, обозначенными\nцифрами 1–6. Одна из частей в списке 1–6 лишняя.\nThe Bolshoi Theatre\nThe Bolshoi Theatre is a historic theatre in Moscow, famous for its performances of ballet\nand operas. The theatre was initially given permission A______ 1776. At that time, fires happened\nfrequently, and the building of the Bolshoi B______. Over time, and after the fires that destroyed\nmuch of the original building, the theatre was C______ as the Bolshoi Theatre to coincide with the\ncoronation of Tsar Alexander the Second.\nThe word Bolshoi means “big” in Russian. For many years it was the biggest theatre in\nMoscow, and it D______ theatres in t",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t13",
+    "id": "vpr_english_10_2026_t8_4",
     "task_text": "2) to establish theatrical performances in Russia",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p5.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t17",
+    "id": "vpr_english_10_2026_t8_4",
     "task_text": "6) to be built by Empress Catherine the Second in\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами A–F,\n4\nподходящее слово, выбрав его из списка. Каждое из этих слов может быть использовано\nтолько один раз. Два слова в списке 1–8 лишние.\nThe Summer Garden\nThe Summer Garden in St. Petersburg was personally designed by 1. attraction\nPeter the Great in 1704. It is home to marble statues acquired from Europe 2. chapter\nespecially for Russia's new capital. It was a A______ place for courtly life 3. character\noutside the palace, and balls were held here by the nobility. Russian 4. discussed\naristocrats also B______ simply walking in the Garden. In 1777 the 5. enjoyed\nSummer Garden was severely damaged by flooding: several statues were 6. romantic\ndestroyed and the fountains were broken. The surviving statues were moved 7. took\nindoors, while modern replicas C______ their place in the park. 8. traditional\nA major park D______ was the fountains, the oldest ones in Russia.\nThe park was chosen by Alexander Pushkin as a setting for childhood walks\nof the fictional E______ Eugene Onegin. The Summer Garden Park\nremains one of the most F______ places in St. Petersburg.\nЗапишите в таблицу номера выбранных слов под соответствующими буквами.\nA B C D E F\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nИнструкция по выполнению заданий части 2 проверочной работы\nНа выполнение заданий части 2 проверочной работы по английскому языку отводится\nодин урок (не более 45 минут). Часть 2 включает в себя 3 задания.\nОтветы на задания запишите в поля ответов в тексте работы. В случае записи\nневерного ответа зачеркните его и запишите рядом новый.\nПри выполнении работы не разрешается пользоваться учебниками, рабочими\nтетрадями, справочниками и словарями.\nПри необходимости можно пользоваться черновиком. Записи в черновике\nпроверяться и оцениваться не будут.\nСоветуем выполнять задания в том порядке, в котором они даны. В целях экономии\nвремени пропускайте задание, которое не удаётся выполнить сразу, и переходите\nк следующему. Если после выполнения работы у Вас останется время, то Вы сможете\nвернуться к пропущенным заданиям.\nЖелаем успеха!\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nЧасть 2\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n5\nзаглавными буквами в конце строк с пропусками, обозначенными номерами 1–6, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nAbraham Lincoln\nOf all the presidents in the history of the United States, Abraham Lincoln is\nprobably the one that Americans remember with the deepest affection.\nA",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p5.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t21",
+    "id": "vpr_english_10_2026_t8_8",
     "task_text": "4) the Thames.\nB. Where does the Changing of the Guard take place?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p9.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t25",
+    "id": "vpr_english_10_2026_t8_8",
     "task_text": "4) In front of Windsor Castle.\nC. \"Guy Fawkes\" Night is observed on …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p9.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t29",
+    "id": "vpr_english_10_2026_t8_8",
     "task_text": "4) the 31st of October.\nD. Mark Twain is a famous writer from …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p9.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t33",
+    "id": "vpr_english_10_2026_t8_8",
     "task_text": "4) Ireland.\nE. Los Angeles is situated in the state of …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p9.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_english_10_2026_t37",
+    "id": "vpr_english_10_2026_t8_8",
     "task_text": "4) Texas.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\n7 You have received an email message from your English-speaking pen-friend Sam:\nFrom: Sam@mail.uk\nTo: Russian_friend@mail.ru\nSubject: Victory Day\n…My grandmother often tells me how her grandfather fought in World War Two. Do you know who\nin your family fought during the Great Patriotic War? How is Victory Day celebrated in your\nschool? What books about the Great Patriotic War have you read?\nBy the way, my parents gave me a new phone…\nWrite a letter to Sam.\nIn your letter:\n– answer his questions;\n– ask 2 questions about the new phone.\nWrite 100–130 words.\nRemember the rules of letter writing.\nОтвет запишите в поле ответа на следующей странице.\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nFrom: Russian_friend@mail.ru\nTo: Sam@mail.uk\nSubject: Victory Day\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n_____________________________",
     "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2026_t42",
-    "task_text": "6. waselected\n6 42331\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nКритерии оценивания выполнения задания 7 «Электронное письмо»\nБаллы Решение Организация текста Языковое оформление\nкоммуникативной текста\nзадачи\nК1 К2 К3\n2 Задание выполнено Высказывание логично; Используемый словар-\nполностью: содержание средства логической свя- ный запас и грамма-\nотражает все аспекты, зи использованы пра- тические структуры соот-\nуказанные в задании вильно; текст верно ветствуют базовому уров-\n(даны полные и точные разделён на абзацы; ню сложности задания,\nответы на все вопросы, структурное оформление орфографические и пун-\nзаданы правильно 2 во- текста соответствует ктуационные ошибки\nпроса по указанной теме); нормам, принятым в практически отсутствуют\nстилевое оформление речи стране изучаемого языка (допускаются 1–2 лексико-\nвыбрано правильно с (допускается 1 ошибка в грамматические ошибки\nучётом цели выска- организации текста) И/ИЛИ 1–2 орфогра-\nзывания и адресата; фические и пунктуа-\nсоблюдены принятые в ционные ошибки)\nязыке нормы вежливости\n(допускается 1 неполный\nили неточный аспект)\n1 Задание выполнено не Допущены 2–3 ошибки в Используемый словар-\nполностью: содержание организации текста ный запас и граммати-\nотражает не все аспекты, ческие структуры не\nуказанные в задании (все полностью соответству-\nслучаи, не указанные в ют базовому уровню\nоценивании на 2 балла и сложности задания:\n0 баллов) допущены 3–4 лексико-\nграмматические ошибки,\nИ/ИЛИ допущены 3–4\nорфографические и пун-\nктуационные ошибки\n0 Задание не выполнено: Допущено 4 и более Используемый словар-\n3 и более аспекта содер- ошибки в организации ный запас и граммати-\nжания отсутствуют, текста ческие структуры не\nИЛИ 6 аспектов раскры- соответствуют базовому\nты неполно/ неточно, уровню сложности зада-\nИЛИ 1 аспект не раскрыт, ния: допущено 5 и более\nи 4–5 аспектов раскрыты лексико-грамматических\nнеполно/ неточно, ошибок,\nИЛИ 2 аспекта не рас- И/ИЛИ допущено 5 и\nкрыты, и 2–4 раскрыты более орфографических и\nнеполно/неточно, пунктуационных ошибок\nИЛИ ответ не соот-\nветствует требуемому\nобъёму\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Английский язык. 10 класс. Образец\nПримечания",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2026_t43",
-    "task_text": "1. При получении 0 баллов по критерию «Решение коммуникативной задачи» ответ на\nзадание оценивается 0 баллов по всем критериям оценивания выполнения этого задания.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2026_t44",
-    "task_text": "2. Правильное использование средств логической связи предполагает обязательные\nлогические связки-переходы между частями высказывания.\nПри оценивании выполнения задания 7 «Электронное письмо» следует учитывать\nтакой параметр, как объём письменного текста, выраженный в количестве слов. Требуемый\nобъём для электронного письма личного характера при выполнении задания 7 –\n100–130 слов. Допустимое отклонение от заданного объёма составляет 10%. Если в ответе на\nзадание 7 менее 90 слов, то ответ на задание проверке не подлежит и оценивается 0 баллов.\nПри превышении объёма более чем на 10%, т.е. если в ответе на задание 7 более 143 слов,\nпроверке подлежит только та часть ответа на задание, которая соответствует требуемому\nобъёму. Таким образом, при проверке ответа на задание 7 отсчитывается от начала ответа\n130 слов, и оценивается только эта часть ответа.\nПри определении соответствия объёма представленной работы указанным выше\nтребованиям считаются все слова, с первого слова по последнее, включая вспомогательные\nглаголы, предлоги, артикли, частицы. В электронном письме обращение и подпись также\nподлежат подсчёту. При этом:\n− стяжённые (краткие) формы can’t, didn’t, isn’t, I’m и т.п. считаются как одно слово;\n− числительные, выраженные цифрами, т.е. 1, 25, 2009, 126 204 и т.п., считаются как\nодно слово;\n− числительные, выраженные цифрами, вместе с условным обозначением процентов,\nт.е. 25%, 100% и т.п., считаются как одно слово;\n− числительные, выраженные словами, считаются как слова;\n− сложные слова, такие как good-looking, well-bred, English-speaking, twenty-five,\nсчитаются как одно слово;\n− сокращения, например USA, e-mail, TV, CD-rom, считаются как одно слово.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 38.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–12 13–21 22–32 33–38\n© 2026 Федеральная служба по надзору в сфере образования и науки\nВПР. Английский язык. 10 класс\nПриложение 2\nДополнительная схема оценивания задания 7 «Электронное письмо»\n© 2025 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 90–143 слова\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Два вопроса заданы\nАспект 5. Нормы вежливости соблюдены: благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты\nАспект 6. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nичадаз\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_10_klass"
-  },
-  {
-    "id": "vpr_english_10_2026_t45",
-    "task_text": "3. Языковое оформление текста. ИТОГОВЫЙ БАЛЛ (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_EN-10_DEMO_2026_p9.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",

@@ -32,3 +32,5 @@ MANIFEST
 *.swp
 *.swo
 *.suo
+questions/images_vpr/
+questions/cache/

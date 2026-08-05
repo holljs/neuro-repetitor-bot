@@ -12,6 +12,7 @@ except ImportError:
 
 PAGE = "https://fioco.ru/obraztsi_i_opisaniya_vpr"
 YEARS = [2025, 2026, 2027]
+IMG_DIR = "questions/images_vpr"
 
 CODE_MAP = {
     "MA": "math", "RU": "russian", "OKR": "okr",
@@ -23,10 +24,12 @@ CODE_MAP = {
     "INF": "informatics",
 }
 
+# ✂️ Всё после этих заголовков — ОТРЕЗАЕМ (это ответы и критерии, не задания!)
+CUT_RE = re.compile(r'(?im)^\s*(Ответы\s*$|Ответы\s+и|Критерии\s+оценивания|Система\s+оценивания|Ключи\s+|Правильные\s+ответы)')
+
 session = requests.Session()
 session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0"})
 
-# --- Скрейбим страницу (ловит 2026+2027 и новые коды) ---
 pdf_links = []
 try:
     r = session.get(PAGE, verify=False, timeout=30)
@@ -40,7 +43,6 @@ except Exception as e:
     print(f"⚠️ Страница не читается: {e}")
 print(f"📄 Со страницы: {len(pdf_links)} PDF")
 
-# --- Перебор URL за все 3 года (ловит 2025 и то, что страница скрыла) ---
 for year in YEARS:
     for folder in [f"ВПР_{year}", f"ВПР-{year}"]:
         for code in CODE_MAP:
@@ -53,8 +55,12 @@ for year in YEARS:
 
 results = {}
 os.makedirs("/tmp/vpr", exist_ok=True)
+os.makedirs(IMG_DIR, exist_ok=True)
 
-def split_tasks(text, subj, grade, level, year):
+def norm(s):
+    return re.sub(r'\s+', ' ', s)
+
+def split_tasks(text):
     tasks = []
     parts = re.split(r'(?m)^(?=Задание\s+\d{1,2})', text)
     if len(parts) < 3:
@@ -65,13 +71,15 @@ def split_tasks(text, subj, grade, level, year):
             continue
         if not re.match(r'(Задание\s+)?\d{1,2}[.\)]?', part):
             continue
+        #  фильтр огрызков критериев
+        if re.search(r'(баллов|оценивается|допущено\s+более)', part) and 'Задание' not in part and len(part) < 400:
+            continue
         tasks.append({
-            "id": f"vpr_{subj}_{grade}_{level}{year}_t{i}",
+            "id": f"tmp_{i}",
             "task_text": part[:3000],
             "image": "", "all_images": [],
             "audio": "", "all_audios": [],
             "answer": "---",
-            "topic": f"vpr_{grade}_klass"
         })
     return tasks
 
@@ -93,21 +101,43 @@ for url in pdf_links:
         r = session.get(url, verify=False, timeout=30)
         if r.status_code != 200 or b"%PDF" not in r.content[:20]:
             continue
-        print(f"✅ {fname}")
-        with open(f"/tmp/vpr/{fname}", "wb") as f:
+        tmp = f"/tmp/vpr/{fname}"
+        with open(tmp, "wb") as f:
             f.write(r.content)
-        text = ""
-        with pdfplumber.open(f"/tmp/vpr/{fname}") as pdf:
-            for page in pdf.pages:
-                text += (page.extract_text() or "") + "\n"
-        tasks = split_tasks(text, subj, grade, level, year)
+        with pdfplumber.open(tmp) as pdf:
+            pages_text = [(p.extract_text() or "") for p in pdf.pages]
+        full = "\n".join(pages_text)
+        cm = CUT_RE.search(full)
+        if cm:
+            full = full[:cm.start()]
+        tasks = split_tasks(full)
+        base = re.sub(r'[^A-Za-z0-9_-]', '_', fname[:-4])
+        needed = {}
+        for t in tasks:
+            snip = norm(t["task_text"])[:40]
+            for idx, pt in enumerate(pages_text):
+                if snip and snip in norm(pt):
+                    t["all_images"] = [f"{IMG_DIR}/{base}_p{idx+1}.jpg"]
+                    t["id"] = f"vpr_{subj}_{grade}_{level}{year}_t{len(results.get(key, []))}_{idx}"
+                    t["topic"] = f"vpr_{grade}_klass"
+                    needed[idx] = True
+                    break
+        if needed:
+            with pdfplumber.open(tmp) as pdf:
+                for idx in needed:
+                    ppath = f"{IMG_DIR}/{base}_p{idx+1}.jpg"
+                    if not os.path.exists(ppath):
+                        try:
+                            pdf.pages[idx].to_image(resolution=100).save(ppath, format="JPEG", quality=70)
+                        except Exception as e:
+                            print(f"⚠️ render: {e}")
         results.setdefault(key, []).extend(tasks)
-        print(f"   → задач: {len(tasks)}")
+        print(f"✅ {fname} → задач: {len(tasks)}, страниц с картинками: {len(needed)}")
     except Exception as e:
         print(f"⚠️ {fname}: {e}")
     time.sleep(0.25)
 
-print("\n=== СОХРАНЕНИЕ (по классам!) ===")
+print("\n=== СОХРАНЕНИЕ ===")
 total = 0
 for key, tasks in results.items():
     if tasks:
@@ -115,4 +145,4 @@ for key, tasks in results.items():
             json.dump(tasks, f, ensure_ascii=False, indent=2)
         print(f"💾 vpr_{key}: {len(tasks)}")
         total += len(tasks)
-print(f"🎉 ВСЕГО: {total} задач ВПР с разбивкой по классам!")
+print(f"🎉 ВСЕГО: {total} задач ВПР (чистые задания + картинки страниц)!")

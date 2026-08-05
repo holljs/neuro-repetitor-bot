@@ -1,309 +1,227 @@
 [
   {
-    "id": "vpr_german_7_2027_t3",
+    "id": "vpr_german_7_2027_t0_1",
     "task_text": "3) einen Ausflug gemacht hat\nB. Die Klasse fährt _____________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t6",
+    "id": "vpr_german_7_2027_t0_1",
     "task_text": "3) mit dem Fahrrad\nC. Paul bringt _____________ mit.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t12",
+    "id": "vpr_german_7_2027_t0_1",
     "task_text": "3) kauft Obst\nE. Die Reise beginnt _________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t15",
+    "id": "vpr_german_7_2027_t0_1",
     "task_text": "3) um 10:00\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nIgor findet eine Lösung\nJeden Abend packt Igor seine Schultasche. Er braucht Bücher, Hefte, Stifte, Sportsachen und viele\nandere Dinge für die Schule. Igor ist für sein Alter ziemlich klein und dünn. Sein Rücken tut ihm oft\nweh, weil seine Schultasche so schwer ist.\nDas kann nicht so weitergehen. Igor hat viel mit seinen Eltern, seinen Freunden und seiner Lehrerin\ngesprochen. Sie haben dann eine Lösung gefunden.\nIn der Klasse sitzt Igor neben seinem Freund Andrej. Andrej bringt jetzt immer das Deutschbuch,\ndas Englischbuch und das Erdkundebuch mit. Und Igor packt immer das Mathematikbuch, das\nBiologiebuch und das Musikbuch ein. So müssen sie beide nur die Hälfte der Bücher in der\nSchultasche tragen. Im Unterricht lesen sie dann zusammen in einem Buch. Das funktioniert gut.\nFür die Hausaufgaben hat dann jeder wieder sein eigenes Buch zu Hause.\nAußerdem steht in der Klasse jetzt ein großer Schrank. Den hat der Schuldirektor dorthin\nhingestellt. Frau Schulz, die Klassenlehrerin, hat jedem Schüler einen Schlüssel gegeben. Da\nkönnen Igor und seine Mitschüler alle Bücher reinlegen, die sie nicht für die Hausaufgaben\nbrauchen.\nDie Eltern von Igor haben auch noch eine gute neue Schultasche für ihn gekauft. Da passt genauso\nviel rein wie in seine alte Schultasche, aber er kann sie auf dem Rücken tragen. Das ist sehr bequem\nund sein Rücken tut nicht mehr weh.\nDer Sportlehrer hat ihm auch noch einen guten Tipp gegeben: Er soll nicht mehr so lange am\nComputer sitzen oder fernsehen, sondern mehr Sport machen. Das tut dem Rücken gut.\nA. Ingo hat Rückenschmerzen, denn …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t19",
+    "id": "vpr_german_7_2027_t0_2",
     "task_text": "4) er muss jeden Tag Sportsachen tragen.\nB. Mit wem hat Igor gesprochen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t23",
+    "id": "vpr_german_7_2027_t0_2",
     "task_text": "4) Mit den Geschwistern.\nC. Wer bringt das Biologiebuch und das Musikbuch mit?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t27",
+    "id": "vpr_german_7_2027_t0_2",
     "task_text": "4) Der Schuldirektor.\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\nD. Wer hat einen großen Schrank in die Klasse hingestellt?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t31",
+    "id": "vpr_german_7_2027_t0_3",
     "task_text": "4) Der Schuldirektor.\nE. Welchen Tipp hat Igor bekommen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t35",
+    "id": "vpr_german_7_2027_t0_3",
     "task_text": "4) Er soll mehr Sport treiben.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е, нужную\n3\nграмматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4).\nFrüher war es anders\nHabe ich dir schon mal erzählt, wo ich groß geworden bin? Nein? Ich wuchs in einem kleinen,\nkleinen Dorf auf. Ja, es war ein wirklich kleines Dorf mit 700 Einwohnern. Wir A_____ im Wald\noder auf der Wiese oder es gab einen kleinen Fußballplatz. Das war immer super. Ich B_____ viele\nFreunde, darum spielten wir den ganzen Tag. Und danach aßen wir zusammen. Wir C_____ mit\nmeiner Familie oder mit der Familie von einem Freund essen. Und wir trafen uns fast jeden Tag\nzum Spielen. Wir gingen zusammen in D_____ Schule oder wir gingen zusammen zum\nFußballspielen. Wir verbrachten viel Zeit zusammen. Das E_____ heute anders. Aber gut, die\nZeiten ändern sich.\nA 1) spielt 2) spieltet 3) spieltest 4) spielten\nB 1) hat 2) gehabt 3) hatte 4) habe\nC 1) konnten 2) könnt 3) konntest 4) kann\nD 1) der 2) die 3) den 4) das\nE 1) seid 2) sind 3) ist 4) bist\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Карима из Египта. Ниже\nприведён отрывок из этого письма.\nVon: Karim@webmail.com.eg\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Seit einer Woche können wir unsere Freizeit in einem Jugendzentrum verbringen. Dort kann man\nSport treiben, Musik hören oder sogar einen Tanzkurs besuchen.\n…Wann hast du Freizeit? Was machst du in deiner Freizeit? Wo kann man in deinem Wohnort die\nFreizeit verbringen?\nНапишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Karim@webmail.com.eg\nBetreff: Freizeit\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n________________________________________________________",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t36",
-    "task_text": "1. Выполнение задания 4 (электронное письмо) оценивается по критериям К1–К4\n(максимальное количество баллов – 10).",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t37",
-    "task_text": "2. При получении обучающимся 0 баллов по критерию «Решение коммуникативной задачи»\nответ на задание 4 по всем критериям оценивается 0 баллов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t38",
-    "task_text": "3. Если объём письма менее 72 слов, то ответ на задание оценивается 0 баллов по всем\nкритериям. Если объём более 99 слов, то проверке подлежат только 90 слов, т. е. та часть\nэлектронного письма, которая соответствует требуемому объёму.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t39",
-    "task_text": "4. При определении соответствия объёма представленной работы требованиям считаются все\nслова, с первого слова по последнее, включая вспомогательные глаголы, предлоги, артикли,\nчастицы. В электронном письме обращение и подпись также подлежат подсчёту. При этом:\n− стяжённые (краткие) формы (например, gibt´s, mach´s) считаются как одно слово;\n− числительные, выраженные цифрами (например, 5, 29, 2010, 123 204), считаются как\nодно слово;\n− числительные, выраженные словами, считаются как слова;\n− сложные слова (например, E-Mail, TV-Sendung, DDR-Mode) считаются как одно слово;\n– сокращения, такие как USA, ABC, BRD и т. п., считаются как одно слово;\n– сокращения, такие как z.B., o.Ä. и т. п., считаются как два слова.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 25.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–9 10–14 15–21 22–25\n© 2027 Федеральная служба по надзору в сфере образования и науки\nВПР. Немецкий язык. 7 класс. Образец\nПриложение 2\nДополнительная схема оценивания задания 4 «Электронное письмо»\n© 2027 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 72–99 слов\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Нормы вежливости соблюдены (благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты)\nАспект 5. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nичадаз\nИТОГОВЫЙ БАЛЛ (максимальный балл – 3)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t40",
-    "task_text": "3. Лексико-грамматическое оформление (максимальный балл – 3)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t41",
-    "task_text": "4. Орфография и пунктуация (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t3",
+    "id": "vpr_german_7_2026_t9_1",
     "task_text": "3) einen Hut\nB. Im Englischen Garten haben Musiker _________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t6",
+    "id": "vpr_german_7_2026_t9_1",
     "task_text": "3) ihre Schallplatten verkauft\nC. Im Englischen Garten haben die Leute _________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t9",
+    "id": "vpr_german_7_2026_t9_1",
     "task_text": "3) viel gelacht\nD. Jetzt ist Gabi _________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t12",
+    "id": "vpr_german_7_2026_t9_1",
     "task_text": "3) auf dem Marktplatz\nE. Gabi möchte _________.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t15",
+    "id": "vpr_german_7_2026_t9_1",
     "task_text": "3) mit ihrem Vater den Olympiapark besuchen\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nIngo findet eine Lösung\nJeden Abend packt Ingo seine Schultasche. Er braucht Bücher, Hefte, Stifte, Sportsachen und viele\nandere Dinge für die Schule. Ingo ist für sein Alter ziemlich klein und dünn. Sein Rücken tut ihm\noft weh, weil seine Schultasche so schwer ist.\nDas kann nicht so weitergehen. Ingo hat viel mit seinen Eltern, seinen Freunden und seiner Lehrerin\ngesprochen. Sie haben dann eine Lösung gefunden.\nIn der Klasse sitzt Ingo neben seinem Freund Markus. Markus bringt jetzt immer das Deutschbuch,\ndas Englischbuch und das Erdkundebuch mit. Und Ingo packt immer das Mathematikbuch, das\nBiologiebuch und das Musikbuch ein. So müssen sie beide nur die Hälfte der Bücher in der\nSchultasche tragen. Im Unterricht lesen sie dann zusammen in einem Buch. Das funktioniert gut.\nFür die Hausaufgaben hat dann jeder wieder sein eigenes Buch zu Hause.\nAußerdem steht in der Klasse jetzt ein großer Schrank. Den hat der Schuldirektor dorthin\nhingestellt. Frau Schulz, die Klassenlehrerin, hat jedem Schüler einen Schlüssel gegeben. Da\nkönnen Ingo und seine Mitschüler alle Bücher reinlegen, die sie nicht für die Hausaufgaben\nbrauchen.\nDie Eltern von Ingo haben auch noch eine gute neue Schultasche für ihn gekauft. Da passt genauso\nviel rein wie in seine alte Schultasche, aber er kann sie auf dem Rücken tragen. Das ist sehr bequem\nund sein Rücken tut nicht mehr weh.\nDer Sportlehrer hat ihm auch noch einen guten Tipp gegeben: Er soll nicht mehr so lange am\nComputer sitzen oder fernsehen, sondern mehr Sport machen. Das tut dem Rücken gut.\nA. Ingo hat Rückenschmerzen, denn …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t19",
+    "id": "vpr_german_7_2026_t9_2",
     "task_text": "4) er muss jeden Tag Sportsachen tragen.\nB. Mit wem hat Ingo gesprochen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t23",
+    "id": "vpr_german_7_2026_t9_2",
     "task_text": "4) Mit den Geschwistern.\nC. Wer bringt das Biologiebuch und das Musikbuch mit?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t27",
+    "id": "vpr_german_7_2026_t9_2",
     "task_text": "4) Der Schuldirektor.\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\nD. Wer hat einen großen Schrank in die Klasse hingestellt?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t31",
+    "id": "vpr_german_7_2026_t9_3",
     "task_text": "4) Der Schuldirektor.\nE. Welchen Tipp hat Ingo bekommen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t35",
+    "id": "vpr_german_7_2026_t9_3",
     "task_text": "4) Er soll mehr Sport treiben.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е, нужную\n3\nграмматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4).\nFrüher war es anders\nHabe ich dir schon mal erzählt, wo ich groß geworden bin? Nein? Ich wuchs in einem kleinen,\nkleinen Dorf auf. Ja, es war ein wirklich kleines Dorf mit 700 Einwohnern. Wir A_____ im Wald\noder auf der Wiese oder es gab einen kleinen Fußballplatz. Das war immer super. Ich B_____ viele\nFreunde, darum spielten wir den ganzen Tag. Und danach aßen wir zusammen. Wir C_____ mit\nmeiner Familie oder mit der Familie von einem Freund essen. Und wir trafen uns fast jeden Tag\nzum Spielen. Wir gingen zusammen in D_____ Schule oder wir gingen zusammen zum\nFußballspielen. Wir verbrachten viel Zeit zusammen. Das E_____ heute anders. Aber gut, die\nZeiten ändern sich.\nA 1) spielt 2) spieltet 3) spieltest 4) spielten\nB 1) hat 2) gehabt 3) hatte 4) habe\nC 1) konnten 2) könnt 3) konntest 4) kann\nD 1) der 2) die 3) den 4) das\nE 1) seid 2) sind 3) ist 4) bist\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Алекса из Германии. Ниже\nприведён отрывок из этого письма.\nVon: Alex@freund.de\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Seit einer Woche können wir unsere Freizeit in einem Jugendzentrum verbringen. Dort kann man\nSport treiben, Musik hören oder sogar einen Tanzkurs besuchen.\n…Wann hast du Freizeit? Was machst du in deiner Freizeit? Wo kann man in deinem Wohnort die\nFreizeit verbringen?\nНапишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Alex@freund.de\nBetreff: Freizeit\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n__________________________________________________________________",
     "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t36",
-    "task_text": "1. Выполнение задания 4 (электронное письмо) оценивается по критериям К1–К4\n(максимальное количество баллов – 10).",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t37",
-    "task_text": "2. При получении обучающимся 0 баллов по критерию «Решение коммуникативной задачи»\nответ на задание 4 по всем критериям оценивается 0 баллов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t38",
-    "task_text": "3. Если объём письма менее 72 слов, то ответ на задание оценивается 0 баллов по всем\nкритериям. Если объём более 99 слов, то проверке подлежат только 90 слов, т.е. та часть\nэлектронного письма, которая соответствует требуемому объёму.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t39",
-    "task_text": "4. При определении соответствия объёма представленной работы требованиям считаются все\nслова, с первого слова по последнее, включая вспомогательные глаголы, предлоги, артикли,\nчастицы. В электронном письме обращение и подпись также подлежат подсчёту. При этом:\n− стяжённые (краткие) формы (например, gibt´s, mach´s) считаются как одно слово;\n− числительные, выраженные цифрами (например, 5, 29, 2010, 123 204), считаются как\nодно слово;\n− числительные, выраженные словами, считаются как слова;\n− сложные слова (например, E-Mail, TV-Sendung, DDR-Mode) считаются как одно слово;\n– сокращения, такие как USA, ABC, BRD и т.п., считаются как одно слово;\n– сокращения, такие как z.B., o.Ä. и т.п., считаются как два слова.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 25.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–9 10–14 15–21 22–25\n© 2026 Федеральная служба по надзору в сфере образования и науки\nВПР. Немецкий язык. 7 класс\nПриложение 2\nДополнительная схема оценивания задания 4 «Электронное письмо»\n© 2026 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 72–99 слов\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Нормы вежливости соблюдены (благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты)\nАспект 5. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nичадаз\nИТОГОВЫЙ БАЛЛ (максимальный балл – 3)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t40",
-    "task_text": "3. Лексико-грамматическое оформление (максимальный балл – 3)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t41",
-    "task_text": "4. Орфография и пунктуация (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-7_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",

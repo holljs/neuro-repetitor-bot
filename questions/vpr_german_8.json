@@ -1,409 +1,347 @@
 [
   {
-    "id": "vpr_german_8_2027_t3",
+    "id": "vpr_german_8_2027_t0_1",
     "task_text": "3) mit seinen Eltern zusammen.\nB. Andreas fährt gern …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t6",
+    "id": "vpr_german_8_2027_t0_1",
     "task_text": "3) Longboard.\nC. Seine Eltern finden Motocross …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t9",
+    "id": "vpr_german_8_2027_t0_1",
     "task_text": "3) attraktiv.\nD. Wie oft verbringt Andreas seinen Urlaub mit seinen Eltern?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t12",
+    "id": "vpr_german_8_2027_t0_1",
     "task_text": "3) manchmal\nE. Wohin möchte Andreas einmal reisen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t15",
+    "id": "vpr_german_8_2027_t0_1",
     "task_text": "3) an den Baikalsee\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nDas Leben in der Stadt\nMein Name ist Sophia und ich bin 13 Jahre alt. Ich wohne mit meiner Familie, das sind meine Mama,\nmein Papa, mein 13-jähriger Bruder und mein Hund Hugo, in einer Wohnung in Moskau. Ich habe ein\neigenes Zimmer mit einem kleinen Schreibtisch, einem Bett, einem Schrank für meine Kleidung und\neinem Bücherregal für meine Schulsachen. Besonders gerne mag ich meinen Teppich, er ist lila! Ich\nhabe auch noch eine sehr schöne, pinke Lampe. Mein Bruder hat auch ein eigenes Zimmer. Meine\nEltern haben auch ein Schlafzimmer mit einem großen Bett und einem sehr großen Schrank. Dann gibt\nes noch ein kleines Wohnzimmer mit einem Fernseher. Mein Bruder und ich spielen am Wochenende\noft am Computer. Das Badezimmer ist klein, aber wir haben eine Badewanne.\nIch mag die Stadt, man kann immer etwas erleben und ich kann viele Sachen machen. Wir gehen zum\nBeispiel oft in den Moskauer Zoo und besichtigen Museen, das finde ich super. Mit dem Bus kann ich\nauch nach der Schule zu meinen Freundinnen fahren und wir gehen dann gemeinsam in den Park.\nManchmal gehen wir auch ins Café und nehmen uns dann ein Eis. In die Schule kann ich auch mit dem\nBus fahren. Wir haben in Moskau immer eine tolle Busverbindung. Ich fahre 20 Minuten lang. Ich will\nspäter studieren und mit dem Bus und der Straßenbahn bin ich dann auch schnell an der Universität.\nIch habe auch eine Freundin: Sie wohnt auf dem Land. Sie sagt, dort ist es sehr ruhig. Aber sie kann\nsich nicht so einfach mit ihren Freundinnen treffen. Dort gibt es nicht so viele Verkehrsmittel und\nauf einen Bus muss man lange warten. Es gibt auch nicht so viele Restaurants.\nManchmal mag ich die Stadt nicht so gerne: Mein Hund Hugo will oft lange spazieren gehen und es\nist nicht so grün und schön in unserem Bezirk. Wir müssen mit Hugo mit dem Auto fahren und\ndann gehen wir mit ihm in der Natur spazieren. Oft fahren wir dann eine Stunde mit dem Auto. Ich\nmag auch den Lärm nicht. Wir haben einen kleinen Balkon, aber wir hören immer unsere\nNachbarinnen und Nachbarn, das nervt. Die Autos sind auch laut und in der Früh kann ich das\nFenster nicht öffnen, es ist zu laut. Ich bin dann neidisch auf meine Freundin, bei ihr ist es ruhig und\nsie hat einen großen Garten und es gibt auch einen kleinen Wald neben ihrem Haus.\nA. Was mag Sophia besonders gerne in ihrem Zimmer?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t19",
+    "id": "vpr_german_8_2027_t0_2",
     "task_text": "4) ihr Bücherregal\nB. Was machen Sophia und ihr Bruder oft am Wochenende?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t23",
+    "id": "vpr_german_8_2027_t0_2",
     "task_text": "4) Sie spielen am Computer.\nC. Wie kommt Sophia nach der Schule zu ihren Freundinnen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t27",
+    "id": "vpr_german_8_2027_t0_2",
     "task_text": "4) zu Fuß\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\nD. Was mag Sophia nicht am Leben in der Stadt?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t31",
+    "id": "vpr_german_8_2027_t0_3",
     "task_text": "4) Zu viele Menschen in Cafés.\nE. Warum ist Sophia manchmal neidisch auf ihre Freundin?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t32",
+    "id": "vpr_german_8_2027_t0_3",
     "task_text": "1) Weil es bei ihr ruhiger ist und sie einen großen Garten hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t33",
+    "id": "vpr_german_8_2027_t0_3",
     "task_text": "2) Weil ihre Freundin mehr Haustiere hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t34",
+    "id": "vpr_german_8_2027_t0_3",
     "task_text": "3) Weil ihre Freundin eine größere Wohnung hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t35",
+    "id": "vpr_german_8_2027_t0_3",
     "task_text": "4) Weil ihre Freundin näher an der Schule wohnt.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n3\nзаглавными буквами в конце строк с пропусками, обозначенными буквами A–E, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nDer Zoo der Stadt Moskau bekam am Montag hohen Besuch. Viele\nA____________________ Personen waren zu Gast. BERÜHMT\nDie Gäste B____________________ aber nicht einfach mal so zum Spaß vorbei. KOMMEN\nSie waren bei der Eröffnung der neuen Anlage für zwei Riesenpandas dabei.\nAb diesem Moment C____________________ alle Zoobesucher die Pandas KÖNNEN\nsehen.\nDie Tiere brachte man vor kurzem aus D____________________ Heimat China IHR\nmit dem Flugzeug nach Russland.\nKein anderer Zoo in Russland hat Riesenpandas. Die schwarz-weißen Bären\nbekommen aber nur Zoos von befreundeten E____________________. LAND\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Рафаэля из Бразилии. Ниже\nприведён отрывок из этого письма.\nVon: Rafael@uol.com.br\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Heute gehen wir endlich Pizza essen. Meine Großeltern kommen mit!\n…Wie oft gehst du aus? Wo verbringst du deine Freizeit? Was ist dein Lieblingsessen?\nНапишите ему ответное письмо объёмом 90–110 слов, ответьте на три его вопроса.\nОформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес\nи дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Rafael@uol.com.br\nBetreff: Freizeit\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n_________________________________________________________________________",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t36",
-    "task_text": "1. Выполнение задания 4 (электронное письмо) оценивается по критериям К1–К4\n(максимальное количество баллов – 10).",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t37",
-    "task_text": "2. При получении обучающимся 0 баллов по критерию «Решение коммуникативной задачи»\nответ на задание 4 по всем критериям оценивается 0 баллов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t38",
-    "task_text": "3. Если объём письма менее 81 слова, то ответ на задание оценивается 0 баллов по всем\nкритериям. Если объём более 121 слова, то проверке подлежат только 110 слов, т. е. та часть\nэлектронного письма, которая соответствует требуемому объёму.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t39",
-    "task_text": "4. При определении соответствия объёма представленной работы требованиям считаются все\nслова, с первого слова по последнее, включая вспомогательные глаголы, предлоги, артикли,\nчастицы.\nВ электронном письме обращение и подпись также подлежат подсчёту. При этом:\n– стяжённые (краткие) формы (например, gibt´s, mach´s) считаются как одно слово;\n– числительные, выраженные цифрами (например, 5, 29, 2010, 123 204), считаются как\nодно слово;\n– числительные, выраженные словами, считаются как одно слово;\n– сложные слова (например, E-Mail, TV-Sendung, DDR-Mode) считаются как одно слово;\n– сокращения (например, USA, ABC, BRD) считаются как одно слово;\n– сокращения, такие как z.B., o.Ä. и т. п., считаются как два слова.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 25.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–9 10–14 15–21 22–25\n© 2027 Федеральная служба по надзору в сфере образования и науки\nВПР. Немецкий язык. 8 класс. Образец\nПриложение 2\nДополнительная схема оценивания задания 4 «Электронное письмо»\n© 2027 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 81–121 слово\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Нормы вежливости соблюдены (благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты)\nАспект 5. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nичадаз\nИТОГОВЫЙ БАЛЛ (максимальный балл – 3)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t40",
-    "task_text": "3. Лексико-грамматическое оформление (максимальный балл – 3)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t41",
-    "task_text": "4. Орфография и пунктуация (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t1",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "1) Andreas wohnt allein in seiner Wohnung.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t2",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "2) Andreas wohnt bei seinen Freunden in der Wohnung.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t3",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "3) Andreas wohnt mit seinen Eltern zusammen.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t4",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "4) Andreas wohnt mit seiner Familie auf dem Bauernhof.\nB. Andreas fährt gern …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t8",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "4) Auto.\nC. Seine Eltern finden Motocross …",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t12",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "4) altmodisch.\nD. Wie oft verbringt Andreas seinen Urlaub mit seinen Eltern?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t16",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "4) nie\nE. Wohin möchte Andreas einmal reisen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t20",
+    "id": "vpr_german_8_2026_t13_1",
     "task_text": "4) an den Baikalsee\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nDas Leben in der Stadt\nMein Name ist Sophia und ich bin 13 Jahre alt. Ich wohne mit meiner Familie, das sind meine Mama,\nmein Papa, mein 13-jähriger Bruder und mein Hund Hugo, in einer Wohnung in Moskau. Ich habe ein\neigenes Zimmer mit einem kleinen Schreibtisch, einem Bett, einem Schrank für meine Kleidung und\neinem Bücherregal für meine Schulsachen. Besonders gerne mag ich meinen Teppich, er ist lila! Ich\nhabe auch noch eine sehr schöne, pinke Lampe. Mein Bruder hat auch ein eigenes Zimmer. Meine\nEltern haben auch ein Schlafzimmer mit einem großen Bett und einem sehr großen Schrank. Dann gibt\nes noch ein kleines Wohnzimmer mit einem Fernseher. Mein Bruder und ich spielen am Wochenende\noft am Computer. Das Badezimmer ist klein, aber wir haben eine Badewanne.\nIch mag die Stadt, man kann immer etwas erleben und ich kann viele Sachen machen. Wir gehen zum\nBeispiel oft in den Moskauer Zoo und besichtigen Museen, das finde ich super. Mit dem Bus kann ich\nauch nach der Schule zu meinen Freundinnen fahren und wir gehen dann gemeinsam in den Park.\nManchmal gehen wir auch ins Café und nehmen uns dann ein Eis. In die Schule kann ich auch mit dem\nBus fahren. Wir haben in Moskau immer eine tolle Busverbindung. Ich fahre 20 Minuten lang. Ich will\nspäter studieren und mit dem Bus und der Straßenbahn bin ich dann auch schnell an der Universität.\nIch habe auch eine Freundin: Sie wohnt auf dem Land. Sie sagt, dort ist es sehr ruhig. Aber sie kann\nsich nicht so einfach mit ihren Freundinnen treffen. Dort gibt es nicht so viele Verkehrsmittel und\nauf einen Bus muss man lange warten. Es gibt auch nicht so viele Restaurants.\nManchmal mag ich die Stadt nicht so gerne: Mein Hund Hugo will oft lange spazieren gehen und es\nist nicht so grün und schön in unserem Bezirk. Wir müssen mit Hugo mit dem Auto fahren und\ndann gehen wir mit ihm in der Natur spazieren. Oft fahren wir dann eine Stunde mit dem Auto. Ich\nmag auch den Lärm nicht. Wir haben einen kleinen Balkon, aber wir hören immer unsere\nNachbarinnen und Nachbarn, das nervt. Die Autos sind auch laut und in der Früh kann ich das\nFenster nicht öffnen, es ist zu laut. Ich bin dann neidisch auf meine Freundin, bei ihr ist es ruhig und\nsie hat einen großen Garten und es gibt auch einen kleinen Wald neben ihrem Haus.\nA. Was mag Sophia besonders gerne in ihrem Zimmer?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t24",
+    "id": "vpr_german_8_2026_t13_2",
     "task_text": "4) ihr Bücherregal\nB. Was machen Sophia und ihr Bruder oft am Wochenende?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t28",
+    "id": "vpr_german_8_2026_t13_2",
     "task_text": "4) Sie spielen am Computer.\nC. Wie kommt Sophia nach der Schule zu ihren Freundinnen?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t32",
+    "id": "vpr_german_8_2026_t13_2",
     "task_text": "4) zu Fuß\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\nD. Was mag Sophia nicht am Leben in der Stadt?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t36",
+    "id": "vpr_german_8_2026_t13_3",
     "task_text": "4) Zu viele Menschen in Cafés.\nE. Warum ist Sophia manchmal neidisch auf ihre Freundin?",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t37",
+    "id": "vpr_german_8_2026_t13_3",
     "task_text": "1) Weil es bei ihr ruhiger ist und sie einen großen Garten hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t38",
+    "id": "vpr_german_8_2026_t13_3",
     "task_text": "2) Weil ihre Freundin mehr Haustiere hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t39",
+    "id": "vpr_german_8_2026_t13_3",
     "task_text": "3) Weil ihre Freundin eine größere Wohnung hat.",
     "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2026_t40",
+    "id": "vpr_german_8_2026_t13_3",
     "task_text": "4) Weil ihre Freundin näher an der Schule wohnt.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n3\nзаглавными буквами в конце строк с пропусками, обозначенными буквами A–E, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nDer Zoo der Stadt Berlin bekam am Mittwoch hohen Besuch. Viele\nA____________________ Personen waren zu Gast. BERÜHMT\nDie Gäste B____________________ aber nicht einfach mal so zum Spaß vorbei. KOMMEN\nSie waren bei der Eröffnung der neuen Anlage für zwei Riesenpandas dabei.\nAb diesem Moment C____________________ alle Zoobesucher die Pandas KÖNNEN\nsehen.\nDie Tiere brachte man vor kurzem aus D____________________ Heimat China IHR\nmit dem Flugzeug nach Deutschland.\nKein anderer Zoo in Deutschland hat Riesenpandas. Die schwarz-weißen Bären\nbekommen aber nur Zoos von befreundeten E____________________. LAND\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Тобиаса из Германии. Ниже\nприведён отрывок из этого письма.\nVon: Tobias@freund.de\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Heute gehen wir endlich Pizza essen. Meine Großeltern kommen mit!\n…Wie oft gehst du aus? Wo verbringst du deine Freizeit? Was ist dein Lieblingsessen?\nНапишите ему ответное письмо объёмом 90–110 слов, ответьте на три его вопроса.\nОформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес\nи дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Tobias@freund.de\nBetreff: Freizeit\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n___________________________________________________________________",
     "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t41",
-    "task_text": "1. Выполнение задания 4 (электронное письмо) оценивается по критериям К1–К4\n(максимальное количество баллов – 10).",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t42",
-    "task_text": "2. При получении обучающимся 0 баллов по критерию «Решение коммуникативной задачи»\nответ на задание 4 по всем критериям оценивается 0 баллов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t43",
-    "task_text": "3. Если объём письма менее 81 слова, то ответ на задание оценивается 0 баллов по всем\nкритериям. Если объём более 121 слова, то проверке подлежат только 110 слов, т.е. та часть\nэлектронного письма, которая соответствует требуемому объёму.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t44",
-    "task_text": "4. При определении соответствия объёма представленной работы требованиям считаются все\nслова, с первого слова по последнее, включая вспомогательные глаголы, предлоги, артикли,\nчастицы.\nВ электронном письме обращение и подпись также подлежат подсчёту. При этом:\n– стяжённые (краткие) формы (например, gibt´s, mach´s) считаются как одно слово;\n– числительные, выраженные цифрами (например, 5, 29, 2010, 123 204), считаются как\nодно слово;\n– числительные, выраженные словами, считаются как одно слово;\n– сложные слова (например, E-Mail, TV-Sendung, DDR-Mode) считаются как одно слово;\n– сокращения (например, USA, ABC, BRD) считаются как одно слово;\n– сокращения, такие как z.B., o.Ä. и т.п., считаются как два слова.\nСистема оценивания выполнения всей работы\nМаксимальный первичный балл за выполнение работы − 25.\nРекомендации по переводу первичных баллов в отметки по пятибалльной шкале\nОтметка по пятибалльной шкале «2» «3» «4» «5»\nПервичные баллы 0–9 10–14 15–21 22–25\n© 2026 Федеральная служба по надзору в сфере образования и науки\nВПР. Немецкий язык. 8 класс\nПриложение 2\nДополнительная схема оценивания задания 4 «Электронное письмо»\n© 2026 Федеральная служба по надзору в сфере образования и науки\nДОК\nАКИНТСАЧУ\nОбъём высказывания соответствует поставленной задаче: 81–121 слово\nАспект 1. Ответ на первый вопрос дан\nАспект 2. Ответ на второй вопрос дан\nАспект 3. Ответ на третий вопрос дан\nАспект 4. Нормы вежливости соблюдены (благодарность за\nполученное письмо или/и выражение положительных эмоций от\nего получения, надежда на последующие контакты)\nАспект 5. Стилевое оформление выбрано правильно: обращение,\nзавершающая фраза, подпись автора в соответствии с неофи-\nциальным стилем\nйонвитакинуммок\nеинешеР\n.1\n)еинажредоС(\nичадаз\nИТОГОВЫЙ БАЛЛ (максимальный балл – 3)\nЛогичность\nДеление на абзацы\nСредства логической связи\nОбращение на отдельной строке\nЗавершающая фраза на отдельной строке\nПодпись на отдельной строке\nатскет\nяицазинагрО\n.2\nИТОГОВЫЙ БАЛЛ (максимальный балл – 2)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t45",
-    "task_text": "3. Лексико-грамматическое оформление (максимальный балл – 3)",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t46",
-    "task_text": "4. Орфография и пунктуация (максимальный балл – 2)\nИТОГО",
-    "image": "",
-    "all_images": [],
+    "all_images": [
+      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
+    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
