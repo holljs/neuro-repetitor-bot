@@ -34,13 +34,13 @@ const OLYMP_SUBJECTS = { "olymp_math": "Олимпиада Математика"
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS, ...OLYMP_SUBJECTS };
 const TEST_LENGTH = 10;
 
-// 🔥 НОВОЕ: защита от спецсимволов
+// 🔥 Защита от спецсимволов
 function escapeHtml(s) {
     if (!s) return "";
     return s.toString().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-// 🔥 НОВОЕ: умная склейка "рваных" строк из старых JSON (формулы-столбики)
+// 🔥 Склейка "рваных" строк из старых JSON
 function compactLines(text) {
     const lines = text.split('\n');
     const out = [];
@@ -49,13 +49,9 @@ function compactLines(text) {
         if (!line) continue;
         if (out.length === 0) { out.push(line); continue; }
         let prev = out[out.length - 1];
-        // склеиваем цифры БЕЗ пробела: "4" + "7" = "47"
-        if (/^\d+$/.test(line) && /\d$/.test(prev)) {
-            out[out.length - 1] = prev + line;
-            continue;
-        }
+        if (/^\d+$/.test(line) && /\d$/.test(prev)) { out[out.length - 1] = prev + line; continue; }
         const isOption = /^\d+[\.\)]/.test(line);
-        const isMarker = /^(📖||🎧)/.test(line);
+        const isMarker = /^(📖|❓|🎧)/.test(line);
         const bothLong = line.length > 20 && prev.length > 20;
         const prevEnds = /[.!?]$/.test(prev);
         if (!isOption && !isMarker && !(bothLong && prevEnds)) {
@@ -65,6 +61,35 @@ function compactLines(text) {
         }
     }
     return out.join('\n');
+}
+
+// 🖼 Авто-фолбэк: если картинка не загрузилась через прокси — пробуем напрямую с ФИПИ
+document.addEventListener('error', function(e) {
+    const t = e.target;
+    if (t && t.tagName === 'IMG' && t.dataset && t.dataset.fallback && !t.dataset.fallbackUsed) {
+        t.dataset.fallbackUsed = "1";
+        t.src = t.dataset.fallback;
+    }
+}, true);
+
+function buildDirectFipiUrl(imgUrl) {
+    let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
+    if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
+    return `https://oge.fipi.ru/${cleanPath}`;
+}
+function fipiProxyUrl(directUrl) {
+    return `${TEST_API_URL}/imgproxy/?url=${encodeURIComponent(directUrl)}`;
+}
+function buildImgTag(imgUrl) {
+    let fullImgUrl = imgUrl;
+    let fallbackUrl = '';
+    if (imgUrl.includes('simg') || imgUrl.includes('docs/') || imgUrl.includes('fipi.ru') || !imgUrl.startsWith('questions/')) {
+        fallbackUrl = buildDirectFipiUrl(imgUrl);
+        fullImgUrl = fipiProxyUrl(fallbackUrl);
+    } else if (!fullImgUrl.startsWith('http')) {
+        fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
+    }
+    return `<img src="${fullImgUrl}" ${fallbackUrl ? `data-fallback="${encodeURI(fallbackUrl)}"` : ''} class="question-image" style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering:-webkit-optimize-contrast; object-fit:contain; margin:4px 0;" onclick="openImageViewer('${encodeURI(fallbackUrl || fullImgUrl)}')">`;
 }
 
 function showScreen(screenElement) {
@@ -279,7 +304,7 @@ async function getRandomTask() {
     } catch (e) { showCustomAlert("Ошибка при загрузке задачи.", "Ошибка"); showScreen(document.getElementById('screen-main-menu')); }
 }
 
-// 🔥 ИСПРАВЛЕНА: текст склеивается, картинки идут НАПРЯМУЮ с ФИПИ (как работало)
+// 🔥 НОВАЯ showTask: картинки-варианты вставляются РЯДОМ с номерами 1) 2) 3) 4)
 function showTask() {
     saveSession('task-screen');
     document.getElementById('test-progress').textContent = `Вопрос ${questionNumber} из ${TEST_LENGTH}`;
@@ -292,41 +317,42 @@ function showTask() {
     const imageContainer = document.getElementById('task-image-container');
     let rawText = currentTask.task_text || currentTask.text || "";
 
+    let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0
+        ? currentTask.all_images
+        : (currentTask.image ? [currentTask.image] : []);
+    const imgTags = imagesToDisplay.map(buildImgTag);
+
+    let textHtml = '';
     if (rawText) {
-        let cleanText = rawText
-            .replace(/Решите уравнения/gi, '')
-            .replace(/^\d+[\.\)]\s*/, '')
-            .trim();
+        let cleanText = rawText.replace(/Решите уравнения/gi, '').replace(/^\d+[\.\)]\s*/, '').trim();
         cleanText = compactLines(cleanText);
-        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${escapeHtml(cleanText).replace(/\n/g, '<br>')}</div>`;
+        textHtml = escapeHtml(cleanText).replace(/\n/g, '<br>');
+    }
+
+    // 🎯 Если варианты ответа — картинки, вставляем их сразу после номеров 1) 2) 3) 4)
+    let interleaved = 0;
+    if (imgTags.length > 1 && textHtml) {
+        textHtml = textHtml.replace(/((?:^|<br>)\d+\))(?=<br>|$)/g, (m) => {
+            if (interleaved < imgTags.length) {
+                return m + `<div style="text-align:center; margin:8px 0;">${imgTags[interleaved++]}</div>`;
+            }
+            return m;
+        });
+    }
+
+    if (rawText) {
+        taskTextElement.innerHTML = `<div style="font-size: 1.1em; line-height: 1.5;">${textHtml}</div>`;
         taskTextElement.style.display = 'block';
     } else {
         taskTextElement.textContent = "Текст не найден";
     }
 
-    // 🖼 КАРТИНКИ: возвращена РАБОЧАЯ схема напрямую с ФИПИ
-    let imagesToDisplay = currentTask.all_images && currentTask.all_images.length > 0
-        ? currentTask.all_images
-        : (currentTask.image ? [currentTask.image] : []);
-
-    if (imagesToDisplay.length > 0) {
-        let imgsHtml = '';
-        imagesToDisplay.forEach(imgUrl => {
-            let fullImgUrl = imgUrl;
-            if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
-                let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
-                if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-                fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
-            } else if (!fullImgUrl.startsWith('http')) {
-                fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
-            }
-            imgsHtml += `<div style="text-align:center; margin-top:10px;">
-                <img src="${encodeURI(fullImgUrl)}" class="question-image"
-                    style="max-width:100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;"
-                    onclick="openImageViewer('${encodeURI(fullImgUrl)}')">
-            </div>`;
-        });
-        imageContainer.innerHTML = imgsHtml;
+    // Если все картинки ушли внутрь текста — сверху не дублируем
+    if (imgTags.length > 0 && interleaved === imgTags.length) {
+        imageContainer.innerHTML = '';
+        imageContainer.style.display = 'none';
+    } else if (imgTags.length > 0) {
+        imageContainer.innerHTML = imgTags.map(t => `<div style="text-align:center; margin-top:10px;">${t}</div>`).join('');
         imageContainer.style.display = 'block';
     } else {
         imageContainer.style.display = 'none';
@@ -554,22 +580,13 @@ function loadReviewForCurrentMistake(isRestored = false) {
 
     const reviewImgContainer = document.getElementById('review-image-container');
     if (mistake.task.image && mistake.task.image.length > 5) {
-        let imgUrl = mistake.task.image;
-        let fullImgUrl = imgUrl;
-        if (imgUrl.includes('simg') || imgUrl.includes('docs/') || !imgUrl.startsWith('questions/')) {
-            let cleanPath = imgUrl.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
-            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-            fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
-        } else if (!fullImgUrl.startsWith('http')) {
-            fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
-        }
-        reviewImgContainer.innerHTML = `<div style="text-align:center;"><img src="${encodeURI(fullImgUrl)}" class="question-image" style="max-width: 100%; height:auto; border-radius:6px; cursor:pointer; image-rendering: -webkit-optimize-contrast; object-fit: contain;" onclick="openImageViewer('${encodeURI(fullImgUrl)}')"></div>`;
+        reviewImgContainer.innerHTML = `<div style="text-align:center;">${buildImgTag(mistake.task.image)}</div>`;
     } else {
         const fbText = mistake.task.task_text || mistake.task.text || '';
         reviewImgContainer.innerHTML = `<div style="padding:15px; background:#f9f9f9;">${escapeHtml(compactLines(fbText)).replace(/\n/g, '<br>')}</div>`;
     }
 
-    let navButtons = `<button class="submit-btn" style="margin-bottom:12px; width: 100%; background:#4a76a8;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>`;
+    let navButtons = `<button class="submit-btn" style="margin-bottom:12px; width:100%; background:#4a76a8;" onclick="runAIExplanation()"><i data-feather="cpu" class="icon-sm"></i> Разбор этой задачи с ИИ</button>`;
     navButtons += `<div style="display:flex; gap:8px; margin-bottom:10px;">`;
     if (currentReviewIndex > 0) {
         navButtons += `<button class="button secondary" style="flex:1;" onclick="prevReview()">⬅️ Назад</button>`;
@@ -599,7 +616,6 @@ window.runAIExplanation = async function(simplify = false) {
 
     explanationBox.innerHTML = `<div style="display:flex; align-items:center; color:#555; margin-bottom:10px;"><div class="spinner" style="width:16px; height:16px; border-width:2px; margin: 0 10px 0 0;"></div> <i>Генерирую...</i></div>` + navButtons;
 
-    // 🔥 Картинку для ИИ НЕ трогаем здесь — сервер сам обернёт её в imgproxy
     let imageUrl = null;
     if (mistake.task.image && mistake.task.image.length > 5) {
         imageUrl = mistake.task.image;
@@ -794,10 +810,8 @@ window.openVKUrl = function(url) {
 window.openImageViewer = function(url) {
     try {
         let fullImgUrl = url;
-        if (url.includes('simg') || url.includes('docs/') || !url.startsWith('questions/')) {
-            let cleanPath = url.replace(/^https?:\/\/[a-z]+\.fipi\.ru\/?/i, '').replace(/^\//, '');
-            if (!cleanPath.startsWith('docs/')) cleanPath = 'docs/' + cleanPath;
-            fullImgUrl = `https://oge.fipi.ru/${cleanPath}`;
+        if (url.includes('simg') || url.includes('docs/') || url.includes('fipi.ru') || !url.startsWith('questions/')) {
+            fullImgUrl = buildDirectFipiUrl(url);
         } else if (!fullImgUrl.startsWith('http://') && !fullImgUrl.startsWith('https://')) {
             fullImgUrl = `${API_SERVER_URL}/${fullImgUrl.replace(/^\//, '')}`;
         }
