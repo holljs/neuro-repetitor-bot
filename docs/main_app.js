@@ -28,8 +28,8 @@ let currentTestMode = "standard";
 let isProcessing = false;
 let analysisCache = {};
 
-const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ" };
-const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
+const OGE_SUBJECTS = { "oge_math": "Математика ОГЭ", "oge_russian": "Русский язык ОГЭ", "oge_informatics": "Информатика ОГЭ", "oge_history": "История ОГЭ", "oge_social": "Обществознание ОГЭ", "oge_geography": "География ОГЭ", "oge_physics": "Физика ОГЭ", "oge_chemistry": "Химия ОГЭ", "oge_biology": "Биология ОГЭ", "oge_english": "Английский ОГЭ", "oge_german": "Немецкий ОГЭ", "oge_french": "Французский ОГЭ", "oge_spanish": "Испанский ОГЭ" };
+const EGE_SUBJECTS = { "math_ege": "Математика (профиль)", "math_base_ege": "Математика (база)", "russian_ege": "Русский язык ЕГЭ", "inf_ege": "Информатика ЕГЭ", "geo_ege": "География ЕГЭ", "phys_ege": "Физика ЕГЭ", "chem_ege": "Химия ЕГЭ", "bio_ege": "Биология ЕГЭ", "history_ege": "История ЕГЭ", "social_ege": "Обществознание ЕГЭ", "ege_english": "Английский ЕГЭ", "ege_german": "Немецкий ЕГЭ", "ege_french": "Французский ЕГЭ", "ege_spanish": "Испанский ЕГЭ", "ege_chinese": "Китайский ЕГЭ", "ege_literature": "Литература ЕГЭ" };
 const OLYMP_SUBJECTS = { "olymp_math": "Олимпиада Математика", "olymp_russian": "Олимпиада Русский язык", "olymp_inf": "Олимпиада Информатика", "olymp_phys": "Олимпиада Физика", "olymp_chem": "Олимпиада Химия" };
 const ALL_SUBJECTS = { ...OGE_SUBJECTS, ...EGE_SUBJECTS, ...OLYMP_SUBJECTS };
 const TEST_LENGTH = 10;
