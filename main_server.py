@@ -708,7 +708,8 @@ async def check_answer_smart(request: CheckRequest):
 
     correct_answer = str(task.get("answer", "")).strip()
     task_text = str(task.get("task_text") or task.get("text", ""))
-    is_english = db_name in ["oge_english", "ege_english"] or "english" in db_name.lower()
+    is_foreign_lang = any(lang in db_name.lower() for lang in ["english", "german", "french", "spanish", "chinese"])
+    is_english = is_foreign_lang
 
     is_open_task = correct_answer in ["---", "", "none", "null", "-", "undefined"] or any(kw in task_text.lower() for kw in [
         "решите неравенство", "найдите значение выражения", "решите уравнение", "укажите решение", "дайте развернутый ответ",

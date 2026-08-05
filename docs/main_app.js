@@ -838,8 +838,20 @@ window.toggleVoiceInput = function() {
         return;
     }
     recognition = new SpeechRecognition();
-    const isEnglishSubj = currentSubjectCode && currentSubjectCode.includes('english');
-    recognition.lang = isEnglishSubj ? 'en-US' : 'ru-RU';
+    const foreignLangMap = {
+        'english': 'en-US',
+        'german': 'de-DE',
+        'french': 'fr-FR',
+        'spanish': 'es-ES',
+        'chinese': 'zh-CN'
+    };
+    let recogLang = 'ru-RU';
+    if (currentSubjectCode) {
+        for (const [key, lang] of Object.entries(foreignLangMap)) {
+            if (currentSubjectCode.includes(key)) { recogLang = lang; break; }
+        }
+    }
+    recognition.lang = recogLang;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
     recognition.onstart = function() {
