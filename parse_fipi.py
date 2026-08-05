@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# 🔥 Карты через СЛОВАРИ — ошибка "unequal length" невозможна
 SUB_DICT = {
     '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
     '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎',
@@ -25,7 +24,6 @@ SUP_MAP = str.maketrans(SUP_DICT)
 
 
 def compact_lines(lines):
-    """Склеивает 'рваные' обрывки формул в нормальные строки."""
     out = []
     for line in lines:
         line = line.strip()
@@ -33,7 +31,6 @@ def compact_lines(lines):
             continue
         if out:
             prev = out[-1]
-            # "4" + "7" -> "47" (без пробела)
             if re.fullmatch(r'\d+', line) and re.search(r'\d$', prev):
                 out[-1] = prev + line
                 continue
@@ -105,7 +102,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                 task_num = re.sub(r'checkform', '', block_id, flags=re.I)
                 raw_html = str(block)
 
-                # 🎵 АУДИО
                 audios = []
                 mp3_in_script = re.findall(r"ShowPictureQ2WH\s*\(\s*['\"]([^'\"]+\.mp3)['\"]", raw_html, re.IGNORECASE)
                 mp3_in_html = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:mp3|wav|ogg|m4a))', raw_html, re.IGNORECASE)
@@ -114,7 +110,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if full_url not in audios:
                         audios.append(full_url)
 
-                # 🖼 КАРТИНКИ
                 imgs = []
                 found_srcs = re.findall(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif))["\']', raw_html, re.IGNORECASE)
                 found_docs = re.findall(r'(?:https?://[^\s\'"<>]+\.fipi\.ru)?(/[^\s\'"<>]+\.(?:jpg|jpeg|png|gif))', raw_html, re.IGNORECASE)
@@ -125,22 +120,18 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if full_url not in imgs and not any(ext in full_url.lower() for ext in ['.mp3', '.wav', '.ogg']):
                         imgs.append(full_url)
 
-                # 🧹 ГЛУБОКАЯ ОЧИСТКА И ПРЕВРАЩЕНИЕ ФОРМУЛ В LATEX
                 clean_block = BeautifulSoup(raw_html, 'html.parser')
 
-                # 1. Оригинальный LaTeX из MathJax / MathML alt-атрибутов (сразу в $...$)
                 for math_tag in clean_block.find_all(['mjx-container', 'math']):
                     latex_attr = math_tag.get('data-semantic-content') or math_tag.get('alt') or math_tag.get('aria-label')
                     if latex_attr:
                         math_tag.replace_with(f" ${latex_attr}$ ")
 
-                # 2. ВЕКТОРЫ (mover)
                 for mover in clean_block.find_all(['mover']):
                     vec_base = mover.get_text().strip()
                     if vec_base:
                         mover.replace_with(f" $\\vec{{{vec_base}}}$ ")
 
-                # 3. ИНДЕКСЫ + СТЕПЕНИ (msubsup)
                 for msubsup in clean_block.find_all(['msubsup']):
                     parts = msubsup.find_all(['mn', 'mi', 'mo', 'span'])
                     if len(parts) >= 3:
@@ -149,7 +140,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                         sup_part = parts[2].get_text().strip()
                         msubsup.replace_with(f" ${subsup_base}_{{{sub_part}}}^{{{sup_part}}}$ ")
 
-                # 4. ДРОБИ (mfrac)
                 for frac in clean_block.find_all(['mfrac', 'mjx-frac']):
                     num = frac.find(['mn', 'mi', 'mjx-num', 'span'])
                     den_tags = frac.find_all(['mn', 'mi', 'mjx-den', 'span'])
@@ -157,7 +147,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     if num and den:
                         frac.replace_with(f" $\\frac{{{num.get_text().strip()}}}{{{den.get_text().strip()}}}$ ")
 
-                # 5. КОРНИ (msqrt, mroot)
                 for sqrt in clean_block.find_all(['msqrt']):
                     sqrt_text = sqrt.get_text().strip()
                     if sqrt_text:
@@ -169,7 +158,6 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     else:
                         mroot.replace_with(f" $\\sqrt{{{mroot.get_text().strip()}}}$ ")
 
-                # 6. СТЕПЕНИ/ИНДЕКСЫ: юникод для простых (химия), LaTeX для сложных
                 for sup in clean_block.find_all(['sup', 'msup']):
                     inner = sup.get_text().strip()
                     if not inner:
@@ -189,11 +177,9 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
                     else:
                         sub.replace_with(f"_{{{inner}}}")
 
-                # 🔥 Остатки <math> схлопываем в ОДНУ строку (конец "столбикам")
                 for math in clean_block.find_all('math'):
                     math.replace_with(' ' + ' '.join(math.get_text().split()) + ' ')
 
-                # 7. Мусор управления
                 for s in clean_block.find_all(['select', 'input', 'button', 'script', 'style']):
                     s.decompose()
                 for hidden in clean_block.find_all(style=re.compile(r'display\s*:\s*none', re.I)):
@@ -201,20 +187,16 @@ def parse_fipi(proj_id, subject_code, max_pages=175):
 
                 block_text = clean_block.get_text(separator="\n")
 
-                # 8. Нормализация LaTeX
                 block_text = re.sub(r'([a-zA-Zа-яА-Я0-9])\s*\^', r'\1^', block_text)
                 block_text = re.sub(r'([a-zA-Zа-яА-Я0-9])\s*\_', r'\1_', block_text)
-                # голые _{...}/^{...} оборачиваем в $...$
                 block_text = re.sub(
                     r'(?<!\$)([A-Za-zА-Яа-яЁё0-9\)\]](?:\s*[_^]\{[^}]*\})+)(?!\$)',
                     r' $\1$ ',
                     block_text
                 )
-                # убираем переносы ВНУТРИ $...$
                 block_text = re.sub(r'\$([^$]+)\$', lambda m: '$' + ' '.join(m.group(1).split()) + '$', block_text)
                 block_text = re.sub(r'\$\s*\$', '', block_text)
 
-                # 9. Фильтр мусорных строк + умная склейка
                 lines = [l.strip() for l in block_text.split("\n") if l.strip()]
                 clean_lines = [l for l in lines if not any(x in l for x in [
                     'Номер:', 'ОТВЕТИТЬ', 'НЕ РЕШЕНО', 'ПОДБОР ЗАДАНИЙ',
