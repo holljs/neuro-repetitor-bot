@@ -1,122 +1,51 @@
 [
   {
-    "id": "vpr_german_5_2027_t0_1",
-    "task_text": "3) 30 Schüler\nB. Wer sitzt neben Lisa auf der Schulbank?",
+    "id": "vpr_german_5_2027_p2_n0",
+    "task_text": "Прослушайте текст и определите, какие из приведённых утверждений A–E соответствуют содержанию текста (1 – Richtig), какие не соответствуют (2 – Falsch). Вы услышите текст дважды.\n\nRichtig Falsch\n1 2\nA. Leonie findet den Winter schön.\nB. Leonie fährt Ski in den Bergen.\nC. Leonies Schwester fährt lieber Snowboard.\nD. Leonie hat keine Schneeschuhe.\nE. Leonie mag den Sommer nicht.\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\n\nОтвет: A B C D E",
+    "answer": "---",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-5_DEMO_2027_p2.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_5_klass"
   },
   {
-    "id": "vpr_german_5_2027_t0_1",
-    "task_text": "3) Alex\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 5 класс. Образец\nC. Welches Fach mag Lisa am liebsten?",
+    "id": "vpr_german_5_2027_p2_n1",
+    "task_text": "Прочитайте текст. Для каждого предложения A–E выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3).\n\nIn der Schule\n\nLisa geht gerne in die Schule. In der Klasse sind dreißig Schüler. Es sind Mädchen und Jungen. Die meisten Lehrer sind nett und der Schuldirektor auch. Neben Lisa auf der Schulbank sitzt ihr bester Freund Klaus. Alex ist ein Klassenkamerad. Er ist auch ein Freund. Im Rucksack hat Lisa ein Buch, Papier zum Schreiben, zwei Kugelschreiber, Buntstifte, Bleistifte und einen Radiergummi. Das Lineal braucht sie für Mathematik. Da ist sie nicht gut. Sie versteht die Aufgaben nicht richtig. In der Pause ist es immer lustig. Die Schüler essen und trinken etwas. In einer großen Pause gehen alle in den Hof und spielen Fußball. Diese Pause ist immer zu kurz. Lisa mag nicht alle Schulfächer gleich gerne. Sport ist ihr Lieblingsfach. Warum ist Sport nicht jeden Tag? Deutsch ist eine schwere Sprache. Lisa muss viele Übungen machen. Dann kann sie es bald besser. Englisch spricht sie gut. Sie macht nur wenige Fehler. Biologie findet Lisa interessant. Sie mag Tiere. Vor den Ferien schreiben alle noch zwei Schularbeiten. Eine in Deutsch und eine in Englisch. Lisa hofft, sie bekommt eine gute Note.\n\nA. Wie viele Schüler sind in Lisas Klasse?\n1) 25 Schüler\n2) 35 Schüler\n3) 30 Schüler\n\nB. Wer sitzt neben Lisa auf der Schulbank?\n1) Klaus\n2) der Schuldirektor\n3) Alex\nC. Welches Fach mag Lisa am liebsten?\n1) Deutsch\n2) Biologie\n3) Sport\n\nD. Welche Sprache spricht Lisa gut?\n1) Englisch\n2) Französisch\n3) Deutsch\n\nE. Wann schreibt Lisa die Schularbeiten?\n1) in den Ferien\n2) vor den Ferien\n3) nach den Ferien\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2027_p2.jpg"
+      "questions/images_vpr/VPR_DE-5_DEMO_2027_p2.jpg",
+      "questions/images_vpr/VPR_DE-5_DEMO_2027_p3.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_5_klass"
   },
   {
-    "id": "vpr_german_5_2027_t0_2",
-    "task_text": "3) Sport\nD. Welche Sprache spricht Lisa gut?",
+    "id": "vpr_german_5_2027_p3_n2",
+    "task_text": "Прочитайте рассказ. Вставьте вместо каждого пропуска, обозначенного буквами A–E, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3).\n\nMichael hat Geburtstag\n\nHeute ist Samstag. Max freut sich auf Michaels Geburtstagsparty. Jetzt ist es schon drei Uhr. Er denkt, er A_____ zu spät kommen. Er läuft jetzt noch B_____. Wo ist C_____ Haus? Ah, da! Aber was ist los? Es ist ganz still. Keine Musik. Keine Kinder spielen im Garten. Warum ist es so ruhig? Er D_____ die Einladung. Da steht: Samstag, drei Uhr. Die Uhrzeit stimmt. Max geht zur Tür und klingelt. Michael macht auf und sieht überrascht aus. Jetzt versteht Max: Heute E_____ er nicht zur Party, denn Michael hat am nächsten Samstag Geburtstag.\n\nA  1) werdet    2) wird    3) wirst\nB  1) schneller    2) am schnellsten    3) schnell\nC  1) die    2) dem    3) das\nD  1) nehme    2) nimmt    3) nehmt\nE  1) dürft    2) darfst    3) darf\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.",
+    "answer": "---",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-5_DEMO_2027_p3.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_5_klass"
   },
   {
-    "id": "vpr_german_5_2027_t0_2",
-    "task_text": "3) Deutsch\nE. Wann schreibt Lisa die Schularbeiten?",
+    "id": "vpr_german_5_2027_p4_n3",
+    "task_text": "Вы получили электронное сообщение от своего друга по переписке Ранбира из Индии. Напишите ему ответное письмо объёмом 40–60 слов, ответьте на два его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него ответного письма.\n\nVon: Ranbir@org.in\nAn: Kontakt@mail.ru\nBetreff: Ferien\n\nIch habe jetzt Ferien. Ich verbringe meine Ferien bei meiner Oma in Moskau. Ich gehe jeden Tag im Sarjadje-Park spazieren. Das ist neben dem Moskauer Kreml.\nWo verbringst du deine Ferien? Was machst du in den Ferien?\nViele Grüße\nRanbir\n\nНачните со слов: Hallo Ranbir! Wie geht's dir?\n\nVon: Kontakt@mail.ru\nAn: Ranbir@org.in\nBetreff: Ferien",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2027_p3.jpg"
+      "questions/images_vpr/VPR_DE-5_DEMO_2027_p4.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2027_t0_2",
-    "task_text": "3) nach den Ferien\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте рассказ. Вставьте вместо каждого пропуска, обозначенного буквами А–Е,\n3\nнужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3).\nMichael hat Geburtstag\nHeute ist Samstag. Max freut sich auf Michaels Geburtstagsparty. Jetzt ist es schon drei Uhr. Er\ndenkt, er A_____ zu spät kommen. Er läuft jetzt noch B_____. Wo ist C_____ Haus? Ah, da! Aber\nwas ist los? Es ist ganz still. Keine Musik. Keine Kinder spielen im Garten. Warum ist es so ruhig?\nEr D_____ die Einladung. Da steht: Samstag, drei Uhr. Die Uhrzeit stimmt. Max geht zur Tür und\nklingelt. Michael macht auf und sieht überrascht aus. Jetzt versteht Max: Heute E_____ er nicht zur\nParty, denn Michael hat am nächsten Samstag Geburtstag.\nA 1) werdet 2) wird 3) wirst\nB 1) schneller 2) am schnellsten 3) schnell\nC 1) die 2) dem 3) das\nD 1) nehme 2) nimmt 3) nehmt\nE 1) dürft 2) darfst 3) darf\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 5 класс. Образец\n4 Вы получили электронное сообщение от своего друга по переписке Ранбира из Индии.\nНапишите ему ответное письмо объёмом 40–60 слов, ответьте на два его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Ranbir@org.in\nAn: Kontakt@mail.ru\nBetreff: Ferien\nIch habe jetzt Ferien. Ich verbringe meine Ferien bei meiner Oma in Moskau. Ich gehe jeden Tag\nim Sarjadje-Park spazieren. Das ist neben dem Moskauer Kreml.\nWo verbringst du deine Ferien? Was machst du in den Ferien?\nViele Grüße\nRanbir\nНачните со слов: Hallo Ranbir! Wie geht´s dir?\nVon: Kontakt@mail.ru\nAn: Ranbir@org.in\nBetreff: Ferien\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n___________________________",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2026_t5_1",
-    "task_text": "3) 30 Schüler.\nB. Wer sitzt neben Lisa auf der Schulbank?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2026_t5_1",
-    "task_text": "3) Florian\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 5 класс. Образец\nC. Welches Fach mag Lisa am liebsten?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2026_t5_2",
-    "task_text": "3) Sport\nD. Welche Sprache spricht Lisa gut?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2026_t5_2",
-    "task_text": "3) Deutsch\nE. Wann schreibt Lisa die Schularbeiten?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_5_klass"
-  },
-  {
-    "id": "vpr_german_5_2026_t5_2",
-    "task_text": "3) nach den Ferien\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте рассказ. Вставьте вместо каждого пропуска, обозначенного буквами А–Е,\n3\nнужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3).\nCarlo hat Geburtstag\nHeute ist Samstag. Olaf freut sich auf Carlos Geburtstagsparty. Gerade A_____ er durch Carlos\nStraße. Was? Schon drei Uhr! Jetzt aber schnell! Er möchte doch nicht zu B_____ kommen.\nEndlich, hier ist Carlos Haus. Aber was ist das? Man hört ja gar nichts. Sind denn die Kinder nicht\nim Garten? Vielleicht hat die Party schon C_____. Olaf nimmt die Einladung heraus. Drei Uhr! Die\nUhrzeit stimmt. Langsam geht Olaf zur Haustür. Er klingelt. Carlo macht die Tür auf.\nEs D_____ aber nicht sein! Er sieht Olaf so komisch an. „Olaf, E_____ bist du aber so früh?“, ruft\nCarlo und lacht. „Aber hier steht Samstag, drei Uhr!“, sagt Olaf. „Das stimmt schon“, sagt Carlo,\n„aber nicht heute! Am nächsten Samstag ist mein Geburtstag“.\nA 1) gehst 2) geht 3) ging\nB 1) spät 2) später 3) am spätestens\nC 1) begann 2) beginnt 3) begonnen\nD 1) darfst 2) darf 3) dürft\nE 1) wie 2) wann 3) warum\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 5 класс. Образец\n4 Вы получили электронное сообщение от своего друга по переписке Хайко из Германии.\nНапишите ему ответное письмо объёмом 40–60 слов, ответьте на два его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Heiko@mail.de\nAn: Kontakt@mail.ru\nBetreff: Ferien\nIch habe jetzt Ferien. Ich verbringe meine Ferien bei meiner Oma in Moskau. Ich gehe jeden Tag\nim Sarjadje-Park spazieren. Das ist neben dem Moskauer Kreml.\nWo verbringst du deine Ferien? Was machst du in den Ferien?\nViele Grüße\nHeiko\nНачните со слов: Hallo Heiko! Wie geht´s dir?\nVon: Kontakt@mail.ru\nAn: Heiko@mail.de\nBetreff: Ferien\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n____________",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-5_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
     "topic": "vpr_5_klass"
   }
 ]

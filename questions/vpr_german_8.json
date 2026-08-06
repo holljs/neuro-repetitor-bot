@@ -1,350 +1,63 @@
 [
   {
-    "id": "vpr_german_8_2027_t0_1",
-    "task_text": "3) mit seinen Eltern zusammen.\nB. Andreas fährt gern …",
+    "id": "vpr_german_8_2027_p2_n0",
+    "task_text": "Вы услышите сообщение. Для каждого предложения A–E выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3). Вы услышите запись дважды. При повторном прослушивании проверьте себя.\n\nA. Andreas wohnt ...\n1) allein in seiner Wohnung.\n2) bei seinen Freunden.\n3) mit seinen Eltern zusammen.\n\nB. Andreas fährt gern ...\n1) Fahrrad.\n2) Motorrad.\n3) Longboard.\n\nC. Seine Eltern finden Motocross ...\n1) spannend.\n2) gefährlich.\n3) attraktiv.\n\nD. Wie oft verbringt Andreas seinen Urlaub mit seinen Eltern?\n1) selten\n2) oft\n3) manchmal\n\nE. Wohin möchte Andreas einmal reisen?\n1) nach Italien\n2) an die Nordsee\n3) an den Baikalsee\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.",
+    "answer": "---",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t0_1",
-    "task_text": "3) Longboard.\nC. Seine Eltern finden Motocross …",
+    "id": "vpr_german_8_2027_p3_n1",
+    "task_text": "Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа из четырёх предложенных (1, 2, 3 или 4).\n\nDas Leben in der Stadt\nMein Name ist Sophia und ich bin 13 Jahre alt. Ich wohne mit meiner Familie, das sind meine Mama, mein Papa, mein 13-jähriger Bruder und mein Hund Hugo, in einer Wohnung in Moskau. Ich habe ein eigenes Zimmer mit einem kleinen Schreibtisch, einem Bett, einem Schrank für meine Kleidung und einem Bücherregal für meine Schulsachen. Besonders gerne mag ich meinen Teppich, er ist lila! Ich habe auch noch eine sehr schöne, pinke Lampe. Mein Bruder hat auch ein eigenes Zimmer. Meine Eltern haben auch ein Schlafzimmer mit einem großen Bett und einem sehr großen Schrank. Dann gibt es noch ein kleines Wohnzimmer mit einem Fernseher. Mein Bruder und ich spielen am Wochenende oft am Computer. Das Badezimmer ist klein, aber wir haben eine Badewanne.\nIch mag die Stadt, man kann immer etwas erleben und ich kann viele Sachen machen. Wir gehen zum Beispiel oft in den Moskauer Zoo und besichtigen Museen, das finde ich super. Mit dem Bus kann ich auch nach der Schule zu meinen Freundinnen fahren und wir gehen dann gemeinsam in den Park. Manchmal gehen wir auch ins Café und nehmen uns dann ein Eis. In die Schule kann ich auch mit dem Bus fahren. Wir haben in Moskau immer eine tolle Busverbindung. Ich fahre 20 Minuten lang. Ich will später studieren und mit dem Bus und der Straßenbahn bin ich dann auch schnell an der Universität.\nIch habe auch eine Freundin: Sie wohnt auf dem Land. Sie sagt, dort ist es sehr ruhig. Aber sie kann sich nicht so einfach mit ihren Freundinnen treffen. Dort gibt es nicht so viele Verkehrsmittel und auf einen Bus muss man lange warten. Es gibt auch nicht so viele Restaurants.\nManchmal mag ich die Stadt nicht so gerne: Mein Hund Hugo will oft lange spazieren gehen und es ist nicht so grün und schön in unserem Bezirk. Wir müssen mit Hugo mit dem Auto fahren und dann gehen wir mit ihm in der Natur spazieren. Oft fahren wir dann eine Stunde mit dem Auto. Ich mag auch den Lärm nicht. Wir haben einen kleinen Balkon, aber wir hören immer unsere Nachbarinnen und Nachbarn, das nervt. Die Autos sind auch laut und in der Früh kann ich das Fenster nicht öffnen, es ist zu laut. Ich bin dann neidisch auf meine Freundin, bei ihr ist es ruhig und sie hat einen großen Garten und es gibt auch einen kleinen Wald neben ihrem Haus.\n\nA. Was mag Sophia besonders gerne in ihrem Zimmer?\n1) ihren Schreibtisch\n2) ihren Teppich\n3) ihren Kleiderschrank\n4) ihr Bücherregal\n\nB. Was machen Sophia und ihr Bruder oft am Wochenende?\n1) Sie gehen ins Café und essen Eis.\n2) Sie gehen in den Park.\n3) Sie besuchen Museen.\n4) Sie spielen am Computer.\n\nC. Wie kommt Sophia nach der Schule zu ihren Freundinnen?\n1) mit dem Auto\n2) mit dem Bus\n3) mit der Bahn\n4) zu Fuß\nD. Was mag Sophia nicht am Leben in der Stadt?\n1) Dreck von Hunden in Parks.\n2) Probleme mit der Busverbindung.\n3) Das Fehlen von Grünflächen.\n4) Zu viele Menschen in Cafès.\n\nE. Warum ist Sophia manchmal neidisch auf ihre Freundin?\n1) Weil es bei ihr ruhiger ist und sie einen großen Garten hat.\n2) Weil ihre Freundin mehr Haustiere hat.\n3) Weil ihre Freundin eine größere Wohnung hat.\n4) Weil ihre Freundin näher an der Schule wohnt.\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg",
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t0_1",
-    "task_text": "3) attraktiv.\nD. Wie oft verbringt Andreas seinen Urlaub mit seinen Eltern?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
+    "id": "vpr_german_8_2027_p4_n2",
+    "task_text": "Прочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные заглавными буквами в конце строк с пропусками, обозначенными буквами A–E, так, чтобы они грамматически соответствовали содержанию текста. Впишите полученные слова на места пропусков разборчивым почерком.\n\nDer Zoo der Stadt Moskau bekam am Montag hohen Besuch. Viele A____________________ Personen waren zu Gast. BERÜHMT\nDie Gäste B____________________ aber nicht einfach mal so zum Spaß vorbei. KOMMEN\nSie waren bei der Eröffnung der neuen Anlage für zwei Riesenpandas dabei.\nAb diesem Moment C____________________ alle Zoobesucher die Pandas sehen. KÖNNEN\nDie Tiere brachte man vor kurzem aus D____________________ Heimat China mit dem Flugzeug nach Russland. IHR\nKein anderer Zoo in Russland hat Riesenpandas. Die schwarz-weißen Bären bekommen aber nur Zoos von befreundeten E____________________. LAND",
     "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_1",
-    "task_text": "3) manchmal\nE. Wohin möchte Andreas einmal reisen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_1",
-    "task_text": "3) an den Baikalsee\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nDas Leben in der Stadt\nMein Name ist Sophia und ich bin 13 Jahre alt. Ich wohne mit meiner Familie, das sind meine Mama,\nmein Papa, mein 13-jähriger Bruder und mein Hund Hugo, in einer Wohnung in Moskau. Ich habe ein\neigenes Zimmer mit einem kleinen Schreibtisch, einem Bett, einem Schrank für meine Kleidung und\neinem Bücherregal für meine Schulsachen. Besonders gerne mag ich meinen Teppich, er ist lila! Ich\nhabe auch noch eine sehr schöne, pinke Lampe. Mein Bruder hat auch ein eigenes Zimmer. Meine\nEltern haben auch ein Schlafzimmer mit einem großen Bett und einem sehr großen Schrank. Dann gibt\nes noch ein kleines Wohnzimmer mit einem Fernseher. Mein Bruder und ich spielen am Wochenende\noft am Computer. Das Badezimmer ist klein, aber wir haben eine Badewanne.\nIch mag die Stadt, man kann immer etwas erleben und ich kann viele Sachen machen. Wir gehen zum\nBeispiel oft in den Moskauer Zoo und besichtigen Museen, das finde ich super. Mit dem Bus kann ich\nauch nach der Schule zu meinen Freundinnen fahren und wir gehen dann gemeinsam in den Park.\nManchmal gehen wir auch ins Café und nehmen uns dann ein Eis. In die Schule kann ich auch mit dem\nBus fahren. Wir haben in Moskau immer eine tolle Busverbindung. Ich fahre 20 Minuten lang. Ich will\nspäter studieren und mit dem Bus und der Straßenbahn bin ich dann auch schnell an der Universität.\nIch habe auch eine Freundin: Sie wohnt auf dem Land. Sie sagt, dort ist es sehr ruhig. Aber sie kann\nsich nicht so einfach mit ihren Freundinnen treffen. Dort gibt es nicht so viele Verkehrsmittel und\nauf einen Bus muss man lange warten. Es gibt auch nicht so viele Restaurants.\nManchmal mag ich die Stadt nicht so gerne: Mein Hund Hugo will oft lange spazieren gehen und es\nist nicht so grün und schön in unserem Bezirk. Wir müssen mit Hugo mit dem Auto fahren und\ndann gehen wir mit ihm in der Natur spazieren. Oft fahren wir dann eine Stunde mit dem Auto. Ich\nmag auch den Lärm nicht. Wir haben einen kleinen Balkon, aber wir hören immer unsere\nNachbarinnen und Nachbarn, das nervt. Die Autos sind auch laut und in der Früh kann ich das\nFenster nicht öffnen, es ist zu laut. Ich bin dann neidisch auf meine Freundin, bei ihr ist es ruhig und\nsie hat einen großen Garten und es gibt auch einen kleinen Wald neben ihrem Haus.\nA. Was mag Sophia besonders gerne in ihrem Zimmer?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_2",
-    "task_text": "4) ihr Bücherregal\nB. Was machen Sophia und ihr Bruder oft am Wochenende?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_2",
-    "task_text": "4) Sie spielen am Computer.\nC. Wie kommt Sophia nach der Schule zu ihren Freundinnen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_2",
-    "task_text": "4) zu Fuß\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\nD. Was mag Sophia nicht am Leben in der Stadt?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_3",
-    "task_text": "4) Zu viele Menschen in Cafés.\nE. Warum ist Sophia manchmal neidisch auf ihre Freundin?",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t0_3",
-    "task_text": "1) Weil es bei ihr ruhiger ist und sie einen großen Garten hat.",
+    "id": "vpr_german_8_2027_p5_n3",
+    "task_text": "Вы получили электронное письмо от Вашего друга по переписке Рафаэля из Бразилии. Ниже приведён отрывок из этого письма.\n\nVon: Rafael@uol.com.br\nAn: Freund@mail.ru\nBetreff: Freizeit\n\n...Heute gehen wir endlich Pizza essen. Meine Großeltern kommen mit!\n...Wie oft gehst du aus? Wo verbringst du deine Freizeit? Was ist dein Lieblingsessen?\n\nНапишите ему ответное письмо объёмом 90–110 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него ответного письма.\n\nVon: Freund@mail.ru\nAn: Rafael@uol.com.br\nBetreff: Freizeit",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p5.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_8_klass"
   },
   {
-    "id": "vpr_german_8_2027_t0_3",
-    "task_text": "2) Weil ihre Freundin mehr Haustiere hat.",
+    "id": "vpr_german_8_2027_p6_n4",
+    "task_text": "Вы услышите сообщение. Для каждого предложения А–Е выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3). Вы услышите запись дважды. При повторном прослушивании проверьте себя.",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
+      "questions/images_vpr/VPR_DE-8_DEMO_2027_p6.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_3",
-    "task_text": "3) Weil ihre Freundin eine größere Wohnung hat.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2027_t0_3",
-    "task_text": "4) Weil ihre Freundin näher an der Schule wohnt.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n3\nзаглавными буквами в конце строк с пропусками, обозначенными буквами A–E, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nDer Zoo der Stadt Moskau bekam am Montag hohen Besuch. Viele\nA____________________ Personen waren zu Gast. BERÜHMT\nDie Gäste B____________________ aber nicht einfach mal so zum Spaß vorbei. KOMMEN\nSie waren bei der Eröffnung der neuen Anlage für zwei Riesenpandas dabei.\nAb diesem Moment C____________________ alle Zoobesucher die Pandas KÖNNEN\nsehen.\nDie Tiere brachte man vor kurzem aus D____________________ Heimat China IHR\nmit dem Flugzeug nach Russland.\nKein anderer Zoo in Russland hat Riesenpandas. Die schwarz-weißen Bären\nbekommen aber nur Zoos von befreundeten E____________________. LAND\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Рафаэля из Бразилии. Ниже\nприведён отрывок из этого письма.\nVon: Rafael@uol.com.br\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Heute gehen wir endlich Pizza essen. Meine Großeltern kommen mit!\n…Wie oft gehst du aus? Wo verbringst du deine Freizeit? Was ist dein Lieblingsessen?\nНапишите ему ответное письмо объёмом 90–110 слов, ответьте на три его вопроса.\nОформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес\nи дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Rafael@uol.com.br\nBetreff: Freizeit\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n_________________________________________________________________________",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2027_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "1) Andreas wohnt allein in seiner Wohnung.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "2) Andreas wohnt bei seinen Freunden in der Wohnung.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "3) Andreas wohnt mit seinen Eltern zusammen.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "4) Andreas wohnt mit seiner Familie auf dem Bauernhof.\nB. Andreas fährt gern …",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "4) Auto.\nC. Seine Eltern finden Motocross …",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "4) altmodisch.\nD. Wie oft verbringt Andreas seinen Urlaub mit seinen Eltern?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "4) nie\nE. Wohin möchte Andreas einmal reisen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_1",
-    "task_text": "4) an den Baikalsee\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nDas Leben in der Stadt\nMein Name ist Sophia und ich bin 13 Jahre alt. Ich wohne mit meiner Familie, das sind meine Mama,\nmein Papa, mein 13-jähriger Bruder und mein Hund Hugo, in einer Wohnung in Moskau. Ich habe ein\neigenes Zimmer mit einem kleinen Schreibtisch, einem Bett, einem Schrank für meine Kleidung und\neinem Bücherregal für meine Schulsachen. Besonders gerne mag ich meinen Teppich, er ist lila! Ich\nhabe auch noch eine sehr schöne, pinke Lampe. Mein Bruder hat auch ein eigenes Zimmer. Meine\nEltern haben auch ein Schlafzimmer mit einem großen Bett und einem sehr großen Schrank. Dann gibt\nes noch ein kleines Wohnzimmer mit einem Fernseher. Mein Bruder und ich spielen am Wochenende\noft am Computer. Das Badezimmer ist klein, aber wir haben eine Badewanne.\nIch mag die Stadt, man kann immer etwas erleben und ich kann viele Sachen machen. Wir gehen zum\nBeispiel oft in den Moskauer Zoo und besichtigen Museen, das finde ich super. Mit dem Bus kann ich\nauch nach der Schule zu meinen Freundinnen fahren und wir gehen dann gemeinsam in den Park.\nManchmal gehen wir auch ins Café und nehmen uns dann ein Eis. In die Schule kann ich auch mit dem\nBus fahren. Wir haben in Moskau immer eine tolle Busverbindung. Ich fahre 20 Minuten lang. Ich will\nspäter studieren und mit dem Bus und der Straßenbahn bin ich dann auch schnell an der Universität.\nIch habe auch eine Freundin: Sie wohnt auf dem Land. Sie sagt, dort ist es sehr ruhig. Aber sie kann\nsich nicht so einfach mit ihren Freundinnen treffen. Dort gibt es nicht so viele Verkehrsmittel und\nauf einen Bus muss man lange warten. Es gibt auch nicht so viele Restaurants.\nManchmal mag ich die Stadt nicht so gerne: Mein Hund Hugo will oft lange spazieren gehen und es\nist nicht so grün und schön in unserem Bezirk. Wir müssen mit Hugo mit dem Auto fahren und\ndann gehen wir mit ihm in der Natur spazieren. Oft fahren wir dann eine Stunde mit dem Auto. Ich\nmag auch den Lärm nicht. Wir haben einen kleinen Balkon, aber wir hören immer unsere\nNachbarinnen und Nachbarn, das nervt. Die Autos sind auch laut und in der Früh kann ich das\nFenster nicht öffnen, es ist zu laut. Ich bin dann neidisch auf meine Freundin, bei ihr ist es ruhig und\nsie hat einen großen Garten und es gibt auch einen kleinen Wald neben ihrem Haus.\nA. Was mag Sophia besonders gerne in ihrem Zimmer?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_2",
-    "task_text": "4) ihr Bücherregal\nB. Was machen Sophia und ihr Bruder oft am Wochenende?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_2",
-    "task_text": "4) Sie spielen am Computer.\nC. Wie kommt Sophia nach der Schule zu ihren Freundinnen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_2",
-    "task_text": "4) zu Fuß\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\nD. Was mag Sophia nicht am Leben in der Stadt?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_3",
-    "task_text": "4) Zu viele Menschen in Cafés.\nE. Warum ist Sophia manchmal neidisch auf ihre Freundin?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_3",
-    "task_text": "1) Weil es bei ihr ruhiger ist und sie einen großen Garten hat.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_3",
-    "task_text": "2) Weil ihre Freundin mehr Haustiere hat.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_3",
-    "task_text": "3) Weil ihre Freundin eine größere Wohnung hat.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_8_klass"
-  },
-  {
-    "id": "vpr_german_8_2026_t13_3",
-    "task_text": "4) Weil ihre Freundin näher an der Schule wohnt.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные\n3\nзаглавными буквами в конце строк с пропусками, обозначенными буквами A–E, так, чтобы\nони грамматически соответствовали содержанию текста. Впишите полученные слова на\nместа пропусков разборчивым почерком.\nDer Zoo der Stadt Berlin bekam am Mittwoch hohen Besuch. Viele\nA____________________ Personen waren zu Gast. BERÜHMT\nDie Gäste B____________________ aber nicht einfach mal so zum Spaß vorbei. KOMMEN\nSie waren bei der Eröffnung der neuen Anlage für zwei Riesenpandas dabei.\nAb diesem Moment C____________________ alle Zoobesucher die Pandas KÖNNEN\nsehen.\nDie Tiere brachte man vor kurzem aus D____________________ Heimat China IHR\nmit dem Flugzeug nach Deutschland.\nKein anderer Zoo in Deutschland hat Riesenpandas. Die schwarz-weißen Bären\nbekommen aber nur Zoos von befreundeten E____________________. LAND\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 8 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Тобиаса из Германии. Ниже\nприведён отрывок из этого письма.\nVon: Tobias@freund.de\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Heute gehen wir endlich Pizza essen. Meine Großeltern kommen mit!\n…Wie oft gehst du aus? Wo verbringst du deine Freizeit? Was ist dein Lieblingsessen?\nНапишите ему ответное письмо объёмом 90–110 слов, ответьте на три его вопроса.\nОформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес\nи дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Tobias@freund.de\nBetreff: Freizeit\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n________________________________________________________________________________\n___________________________________________________________________",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-8_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
     "topic": "vpr_8_klass"
   }
 ]

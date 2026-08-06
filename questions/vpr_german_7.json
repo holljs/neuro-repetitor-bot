@@ -1,230 +1,63 @@
 [
   {
-    "id": "vpr_german_7_2027_t0_1",
-    "task_text": "3) einen Ausflug gemacht hat\nB. Die Klasse fährt _____________.",
+    "id": "vpr_german_7_2027_p2_n0",
+    "task_text": "Вы услышите диалог. Для каждого предложения A–E выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3). Вы услышите запись дважды. При повторном прослушивании проверьте себя.\n\nA. Paul war lange nicht in der Schule, __________.\n1) weil er am Konzert teilgenommen hat\n2) weil er krank war\n3) einen Ausflug gemacht hat\n\nB. Die Klasse fährt __________.\n1) mit dem Zug\n2) mit dem Bus\n3) mit dem Fahrrad\n\nC. Paul bringt __________ mit.\n1) Cola\n2) Gemüse\n3) Obst\n\nD. Die Lehrerin __________.\n1) kauft Würstchen\n2) kauft Cola\n3) kauft Obst\n\nE. Die Reise beginnt __________.\n1) um 08:30\n2) um 09:00\n3) um 10:00\n\nЗапишите в таблицу выбранные цифры под соответствующими буквами.",
+    "answer": "---",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t0_1",
-    "task_text": "3) mit dem Fahrrad\nC. Paul bringt _____________ mit.",
+    "id": "vpr_german_7_2027_p3_n1",
+    "task_text": "Прочитайте текст. Для каждого предложения A–E выберите один правильный вариант ответа из четырёх предложенных (1, 2, 3 или 4).\n\nIgor findet eine Lösung\n\nJeden Abend packt Igor seine Schultasche. Er braucht Bücher, Hefte, Stifte, Sportsachen und viele andere Dinge für die Schule. Igor ist für sein Alter ziemlich klein und dünn. Sein Rücken tut ihm oft weh, weil seine Schultasche so schwer ist.\nDas kann nicht so weitergehen. Igor hat viel mit seinen Eltern, seinen Freunden und seiner Lehrerin gesprochen. Sie haben dann eine Lösung gefunden.\nIn der Klasse sitzt Igor neben seinem Freund Andrej. Andrej bringt jetzt immer das Deutschbuch, das Englischbuch und das Erdkundebuch mit. Und Igor packt immer das Mathematikbuch, das Biologiebuch und das Musikbuch ein. So müssen sie beide nur die Hälfte der Bücher in der Schultasche tragen. Im Unterricht lesen sie dann zusammen in einem Buch. Das funktioniert gut. Für die Hausaufgaben hat dann jeder wieder sein eigenes Buch zu Hause.\nAußerdem steht in der Klasse jetzt ein großer Schrank. Den hat der Schuldirektor dorthin hingestellt. Frau Schulz, die Klassenlehrerin, hat jedem Schüler einen Schlüssel gegeben. Da können Igor und seine Mitschüler alle Bücher reinlegen, die sie nicht für die Hausaufgaben brauchen.\nDie Eltern von Igor haben auch noch eine gute neue Schultasche für ihn gekauft. Da passt genauso viel rein wie in seine alte Schultasche, aber er kann sie auf dem Rücken tragen. Das ist sehr bequem und sein Rücken tut nicht mehr weh.\nDer Sportlehrer hat ihm auch noch einen guten Tipp gegeben: Er soll nicht mehr so lange am Computer sitzen oder fernsehen, sondern mehr Sport machen. Das tut dem Rücken gut.\n\nA. Ingo hat Rückenschmerzen, denn …\n1) er ist klein und dünn.\n2) seine Schultasche ist so schwer.\n3) er treibt zu viel Sport.\n4) er muss jeden Tag Sportsachen tragen.\n\nB. Mit wem hat Igor gesprochen?\n1) Mit dem Schuldirektor.\n2) Mit dem Sportlehrer.\n3) Mit den Eltern.\n4) Mit den Geschwistern.\n\nC. Wer bringt das Biologiebuch und das Musikbuch mit?\n1) Igor.\n2) Andrej.\n3) Frau Schulz.\n4) Der Schuldirektor.\nD. Wer hat einen großen Schrank in die Klasse hingestellt?\n1) Die Klassenlehrerin.\n2) Igor.\n3) Andrej.\n4) Der Schuldirektor.\nE. Welchen Tipp hat Igor bekommen?\n1) Er soll mehr am Computer spielen.\n2) Er soll mehr Bücher lesen.\n3) Er soll mehr draußen spielen.\n4) Er soll mehr Sport treiben.",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg",
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p4.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t0_1",
-    "task_text": "3) kauft Obst\nE. Die Reise beginnt _________.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
+    "id": "vpr_german_7_2027_p4_n2",
+    "task_text": "Прочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами A–E, нужную грамматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4).\n\nFrüher war es anders\n\nHabe ich dir schon mal erzählt, wo ich groß geworden bin? Nein? Ich wuchs in einem kleinen, kleinen Dorf auf. Ja, es war ein wirklich kleines Dorf mit 700 Einwohnern. Wir A_____ im Wald oder auf der Wiese oder es gab einen kleinen Fußballplatz. Das war immer super. Ich B_____ viele Freunde, darum spielten wir den ganzen Tag. Und danach aßen wir zusammen. Wir C_____ mit meiner Familie oder mit der Familie von einem Freund essen. Und wir trafen uns fast jeden Tag zum Spielen. Wir gingen zusammen in D_____ Schule oder wir gingen zusammen zum Fußballspielen. Wir verbrachten viel Zeit zusammen. Das E_____ heute anders. Aber gut, die Zeiten ändern sich.\n\nA | 1) spielt | 2) spieltet | 3) spieltest | 4) spielten\nB | 1) hat | 2) gehabt | 3) hatte | 4) habe\nC | 1) konnten | 2) könnt | 3) konntest | 4) kann\nD | 1) der | 2) die | 3) den | 4) das\nE | 1) seid | 2) sind | 3) ist | 4) bist",
     "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t0_1",
-    "task_text": "3) um 10:00\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nIgor findet eine Lösung\nJeden Abend packt Igor seine Schultasche. Er braucht Bücher, Hefte, Stifte, Sportsachen und viele\nandere Dinge für die Schule. Igor ist für sein Alter ziemlich klein und dünn. Sein Rücken tut ihm oft\nweh, weil seine Schultasche so schwer ist.\nDas kann nicht so weitergehen. Igor hat viel mit seinen Eltern, seinen Freunden und seiner Lehrerin\ngesprochen. Sie haben dann eine Lösung gefunden.\nIn der Klasse sitzt Igor neben seinem Freund Andrej. Andrej bringt jetzt immer das Deutschbuch,\ndas Englischbuch und das Erdkundebuch mit. Und Igor packt immer das Mathematikbuch, das\nBiologiebuch und das Musikbuch ein. So müssen sie beide nur die Hälfte der Bücher in der\nSchultasche tragen. Im Unterricht lesen sie dann zusammen in einem Buch. Das funktioniert gut.\nFür die Hausaufgaben hat dann jeder wieder sein eigenes Buch zu Hause.\nAußerdem steht in der Klasse jetzt ein großer Schrank. Den hat der Schuldirektor dorthin\nhingestellt. Frau Schulz, die Klassenlehrerin, hat jedem Schüler einen Schlüssel gegeben. Da\nkönnen Igor und seine Mitschüler alle Bücher reinlegen, die sie nicht für die Hausaufgaben\nbrauchen.\nDie Eltern von Igor haben auch noch eine gute neue Schultasche für ihn gekauft. Da passt genauso\nviel rein wie in seine alte Schultasche, aber er kann sie auf dem Rücken tragen. Das ist sehr bequem\nund sein Rücken tut nicht mehr weh.\nDer Sportlehrer hat ihm auch noch einen guten Tipp gegeben: Er soll nicht mehr so lange am\nComputer sitzen oder fernsehen, sondern mehr Sport machen. Das tut dem Rücken gut.\nA. Ingo hat Rückenschmerzen, denn …",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t0_2",
-    "task_text": "4) er muss jeden Tag Sportsachen tragen.\nB. Mit wem hat Igor gesprochen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t0_2",
-    "task_text": "4) Mit den Geschwistern.\nC. Wer bringt das Biologiebuch und das Musikbuch mit?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t0_2",
-    "task_text": "4) Der Schuldirektor.\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\nD. Wer hat einen großen Schrank in die Klasse hingestellt?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2027_t0_3",
-    "task_text": "4) Der Schuldirektor.\nE. Welchen Tipp hat Igor bekommen?",
     "image": "",
     "all_images": [
       "questions/images_vpr/VPR_DE-7_DEMO_2027_p4.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2027_t0_3",
-    "task_text": "4) Er soll mehr Sport treiben.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е, нужную\n3\nграмматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4).\nFrüher war es anders\nHabe ich dir schon mal erzählt, wo ich groß geworden bin? Nein? Ich wuchs in einem kleinen,\nkleinen Dorf auf. Ja, es war ein wirklich kleines Dorf mit 700 Einwohnern. Wir A_____ im Wald\noder auf der Wiese oder es gab einen kleinen Fußballplatz. Das war immer super. Ich B_____ viele\nFreunde, darum spielten wir den ganzen Tag. Und danach aßen wir zusammen. Wir C_____ mit\nmeiner Familie oder mit der Familie von einem Freund essen. Und wir trafen uns fast jeden Tag\nzum Spielen. Wir gingen zusammen in D_____ Schule oder wir gingen zusammen zum\nFußballspielen. Wir verbrachten viel Zeit zusammen. Das E_____ heute anders. Aber gut, die\nZeiten ändern sich.\nA 1) spielt 2) spieltet 3) spieltest 4) spielten\nB 1) hat 2) gehabt 3) hatte 4) habe\nC 1) konnten 2) könnt 3) konntest 4) kann\nD 1) der 2) die 3) den 4) das\nE 1) seid 2) sind 3) ist 4) bist\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2027 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Карима из Египта. Ниже\nприведён отрывок из этого письма.\nVon: Karim@webmail.com.eg\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Seit einer Woche können wir unsere Freizeit in einem Jugendzentrum verbringen. Dort kann man\nSport treiben, Musik hören oder sogar einen Tanzkurs besuchen.\n…Wann hast du Freizeit? Was machst du in deiner Freizeit? Wo kann man in deinem Wohnort die\nFreizeit verbringen?\nНапишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Karim@webmail.com.eg\nBetreff: Freizeit\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n________________________________________________________",
+    "id": "vpr_german_7_2027_p5_n3",
+    "task_text": "Вы получили электронное письмо от Вашего друга по переписке Карима из Египта. Ниже приведён отрывок из этого письма.\n\nVon: Karim@webmail.com.eg\nAn: Freund@mail.ru\nBetreff: Freizeit\n\n...Seit einer Woche können wir unsere Freizeit in einem Jugendzentrum verbringen. Dort kann man Sport treiben, Musik hören oder sogar einen Tanzkurs besuchen.\n...Wann hast du Freizeit? Was machst du in deiner Freizeit? Wo kann man in deinem Wohnort die Freizeit verbringen?\n\nНапишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него ответного письма.\n\nVon: Freund@mail.ru\nAn: Karim@webmail.com.eg\nBetreff: Freizeit",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2027_p4.jpg"
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p5.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_german_7_2026_t9_1",
-    "task_text": "3) einen Hut\nB. Im Englischen Garten haben Musiker _________.",
+    "id": "vpr_german_7_2027_p6_n4",
+    "task_text": "Вы услышите диалог. Для каждого предложения А–Е выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3). Вы услышите запись дважды. При повторном прослушивании проверьте себя.\n\nWir beginnen jetzt.\n\nWika: Hallo, Paul! Wie geht`s? Du warst lange nicht in der Schule. Warst du krank?\nPaul: Hallo, Wika! Ja, leider konnte ich am Konzert in der Schule nicht teilnehmen. Aber jetzt bin ich gesund.\nWika: Gut, weißt du, dass wir am Wochenende mit der Klasse einen Ausflug machen?\nPaul: Ich habe darüber gehört. Werden wir Sehenswürdigkeiten besichtigen oder wandern?\nWika: Nein, wir machen ein Picknick.\nPaul: Fahren wir dorthin mit dem Zug oder mit dem Bus?\nWika: Es ist nicht so weit. Wir fahren mit dem Fahrrad.\nPaul: Weißt du, ich habe kein Fahrrad.\nWika: Das ist kein Problem. Wiktor hat zwei Fahrräder. Du kannst ihn bitten.\nPaul: Gute Idee! Und was sollen wir mitnehmen?\nWika: Emma bringt Cola und Klaus nimmt Gemüse mit.\nPaul: Dann kann ich Obst bringen.\nWika: Gut, alle mögen Äpfel und Bananen. Und ich bringe einen Kuchen.\nPaul: Werden wir Würstchen grillen?\nWika: Aber natürlich! Würstchen bringt Frau Schmidt, unsere Lehrerin.\nPaul: Und was werden wir beim Picknick machen? Baden oder angeln?\nWika: Es gibt keinen See in der Nähe, wir werden Badminton spielen.\nPaul: Wann treffen wir uns dann? Um 10:00?\nWika: Nein, um 10:00 sollen wir schon im Wald sein. Wir treffen uns um 08:30 und unsere Reise beginnt um 09:00.\n\nSie haben 15 Sekunden, um die Aufgabe zu lösen.\n(Pause 15 Sekunden.)\n\nJetzt hören Sie das Gespräch noch einmal.\n(Wiederholung.)\n\nDas ist das Ende der Aufgabe. Sie haben 15 Sekunden, um Ihre Antworten zu überprüfen.\n(Pause 15 Sekunden.)\n\nВремя, отведённое на выполнение задания, истекло.",
+    "answer": "---",
     "image": "",
     "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
+      "questions/images_vpr/VPR_DE-7_DEMO_2027_p6.jpg"
     ],
     "audio": "",
     "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_1",
-    "task_text": "3) ihre Schallplatten verkauft\nC. Im Englischen Garten haben die Leute _________.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_1",
-    "task_text": "3) viel gelacht\nD. Jetzt ist Gabi _________.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_1",
-    "task_text": "3) auf dem Marktplatz\nE. Gabi möchte _________.",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_1",
-    "task_text": "3) mit ihrem Vater den Olympiapark besuchen\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n2 Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа\nиз четырёх предложенных (1, 2, 3 или 4).\nIngo findet eine Lösung\nJeden Abend packt Ingo seine Schultasche. Er braucht Bücher, Hefte, Stifte, Sportsachen und viele\nandere Dinge für die Schule. Ingo ist für sein Alter ziemlich klein und dünn. Sein Rücken tut ihm\noft weh, weil seine Schultasche so schwer ist.\nDas kann nicht so weitergehen. Ingo hat viel mit seinen Eltern, seinen Freunden und seiner Lehrerin\ngesprochen. Sie haben dann eine Lösung gefunden.\nIn der Klasse sitzt Ingo neben seinem Freund Markus. Markus bringt jetzt immer das Deutschbuch,\ndas Englischbuch und das Erdkundebuch mit. Und Ingo packt immer das Mathematikbuch, das\nBiologiebuch und das Musikbuch ein. So müssen sie beide nur die Hälfte der Bücher in der\nSchultasche tragen. Im Unterricht lesen sie dann zusammen in einem Buch. Das funktioniert gut.\nFür die Hausaufgaben hat dann jeder wieder sein eigenes Buch zu Hause.\nAußerdem steht in der Klasse jetzt ein großer Schrank. Den hat der Schuldirektor dorthin\nhingestellt. Frau Schulz, die Klassenlehrerin, hat jedem Schüler einen Schlüssel gegeben. Da\nkönnen Ingo und seine Mitschüler alle Bücher reinlegen, die sie nicht für die Hausaufgaben\nbrauchen.\nDie Eltern von Ingo haben auch noch eine gute neue Schultasche für ihn gekauft. Da passt genauso\nviel rein wie in seine alte Schultasche, aber er kann sie auf dem Rücken tragen. Das ist sehr bequem\nund sein Rücken tut nicht mehr weh.\nDer Sportlehrer hat ihm auch noch einen guten Tipp gegeben: Er soll nicht mehr so lange am\nComputer sitzen oder fernsehen, sondern mehr Sport machen. Das tut dem Rücken gut.\nA. Ingo hat Rückenschmerzen, denn …",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p2.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_2",
-    "task_text": "4) er muss jeden Tag Sportsachen tragen.\nB. Mit wem hat Ingo gesprochen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_2",
-    "task_text": "4) Mit den Geschwistern.\nC. Wer bringt das Biologiebuch und das Musikbuch mit?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_2",
-    "task_text": "4) Der Schuldirektor.\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\nD. Wer hat einen großen Schrank in die Klasse hingestellt?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p3.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_3",
-    "task_text": "4) Der Schuldirektor.\nE. Welchen Tipp hat Ingo bekommen?",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_german_7_2026_t9_3",
-    "task_text": "4) Er soll mehr Sport treiben.\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\nПрочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е, нужную\n3\nграмматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4).\nFrüher war es anders\nHabe ich dir schon mal erzählt, wo ich groß geworden bin? Nein? Ich wuchs in einem kleinen,\nkleinen Dorf auf. Ja, es war ein wirklich kleines Dorf mit 700 Einwohnern. Wir A_____ im Wald\noder auf der Wiese oder es gab einen kleinen Fußballplatz. Das war immer super. Ich B_____ viele\nFreunde, darum spielten wir den ganzen Tag. Und danach aßen wir zusammen. Wir C_____ mit\nmeiner Familie oder mit der Familie von einem Freund essen. Und wir trafen uns fast jeden Tag\nzum Spielen. Wir gingen zusammen in D_____ Schule oder wir gingen zusammen zum\nFußballspielen. Wir verbrachten viel Zeit zusammen. Das E_____ heute anders. Aber gut, die\nZeiten ändern sich.\nA 1) spielt 2) spieltet 3) spieltest 4) spielten\nB 1) hat 2) gehabt 3) hatte 4) habe\nC 1) konnten 2) könnt 3) konntest 4) kann\nD 1) der 2) die 3) den 4) das\nE 1) seid 2) sind 3) ist 4) bist\nЗапишите в таблицу выбранные цифры под соответствующими буквами.\nA B C D E\nОтвет:\n© 2026 Федеральная служба по надзору в сфере образования и науки\nКод\nВПР. Немецкий язык. 7 класс. Образец\n4 Вы получили электронное письмо от Вашего друга по переписке Алекса из Германии. Ниже\nприведён отрывок из этого письма.\nVon: Alex@freund.de\nAn: Freund@mail.ru\nBetreff: Freizeit\n…Seit einer Woche können wir unsere Freizeit in einem Jugendzentrum verbringen. Dort kann man\nSport treiben, Musik hören oder sogar einen Tanzkurs besuchen.\n…Wann hast du Freizeit? Was machst du in deiner Freizeit? Wo kann man in deinem Wohnort die\nFreizeit verbringen?\nНапишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите\nсвой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату.\nНе забудьте поблагодарить друга за полученное письмо и написать, что ждёте от него\nответного письма.\nVon: Freund@mail.ru\nAn: Alex@freund.de\nBetreff: Freizeit\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n_________________________________________________________________________________\n__________________________________________________________________",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/VPR_DE-7_DEMO_2026_p4.jpg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
     "topic": "vpr_7_klass"
   }
 ]
