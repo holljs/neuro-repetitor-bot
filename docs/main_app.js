@@ -947,3 +947,27 @@ function stopMicAnimation() {
         if (window.feather) feather.replace();
     }
 }
+
+// 📄 ВПР: прячем целые страницы под кнопку "Показать оригинал"
+(function(){
+  const wrapVprImages = () => {
+    document.querySelectorAll('img[src*="images_vpr"]').forEach(img => {
+      if (img.dataset.vprWrapped) return;
+      img.dataset.vprWrapped = "1";
+      img.style.display = "none";
+      const btn = document.createElement('button');
+      btn.className = 'button secondary';
+      btn.style.cssText = 'display:block; margin:10px auto; font-size:14px; padding:8px 18px;';
+      btn.innerText = '📄 Показать оригинал страницы';
+      btn.onclick = () => {
+        const visible = img.style.display !== 'none';
+        img.style.display = visible ? 'none' : 'block';
+        btn.innerText = visible ? '📄 Показать оригинал страницы' : '🙈 Скрыть страницу';
+      };
+      img.insertAdjacentElement('beforebegin', btn);
+    });
+  };
+  const obs = new MutationObserver(wrapVprImages);
+  obs.observe(document.body, {childList: true, subtree: true});
+  wrapVprImages();
+})();
