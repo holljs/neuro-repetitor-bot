@@ -8,7 +8,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 IMG_DIR = "questions/images_vpr"
 os.makedirs(IMG_DIR, exist_ok=True)
 
-# Поддомены + диапазоны ID для перебора (на основе работающих тестов)
+# Обновлённые диапазоны ID (на основе дебага)
 SUBDOMAINS = [
     ("rus2", "russian", 2, 52000, 54000),
     ("rus4", "russian", 4, 91000, 93000),
@@ -17,12 +17,12 @@ SUBDOMAINS = [
     ("rus7", "russian", 7, 94000, 96000),
     ("rus8", "russian", 8, 95000, 97000),
     ("rus10", "russian", 10, 96000, 98000),
-    ("rus11", "russian", 11, 97000, 99000),
-    ("math4", "math", 4, 4900000, 4950000),
-    ("math5", "math", 5, 4910000, 4960000),
-    ("math6", "math", 6, 4920000, 4970000),
-    ("math7", "math", 7, 4930000, 4980000),
-    ("math8", "math", 8, 4940000, 4990000),
+    ("rus11", "russian", 11, 99000, 101000),  # расширенный диапазон
+    ("math4", "math", 4, 100000, 101000),  # ПРАВИЛЬНЫЙ диапазон!
+    ("math5", "math", 5, 100000, 101000),  # + 200000-201000 ниже
+    ("math6", "math", 6, 101000, 102000),
+    ("math7", "math", 7, 102000, 103000),
+    ("math8", "math", 8, 103000, 104000),
     ("bio5", "biology", 5, 52500, 54500),
     ("bio6", "biology", 6, 53000, 55000),
     ("bio7", "biology", 7, 53500, 55500),
@@ -61,6 +61,9 @@ SUBDOMAINS = [
     ("inf11", "informatics", 11, 63500, 65500),
     ("okr4", "okr", 4, 64000, 66000),
 ]
+
+# Дополнительный диапазон для math5 (200000-201000)
+MATH5_EXTRA = (200000, 201000)
 
 JUNK = re.compile(r'(спиши\s+текст|под\s+диктовку|запиши\s+текст\s+под|внимательно\s+прочитай\s+и\s+спиши)', re.I)
 
@@ -107,7 +110,6 @@ def parse_test(base, html, seen):
     return tasks
 
 def check_test_id(base, tid):
-    """Проверяет один ID теста, возвращает (tid, html) если работает"""
     try:
         r = session.get(f"{base}test?id={tid}", timeout=15)
         if r.status_code == 200 and "prob_maindiv" in r.text:
@@ -118,13 +120,12 @@ def check_test_id(base, tid):
     return None, None
 
 grand = 0
-for sub, subj, grade, start_id, end_id in SUBDOMAINS[:10]:  # Первые 10 для теста
+for sub, subj, grade, start_id, end_id in SUBDOMAINS:
     base = f"https://{sub}-vpr.sdamgia.ru/"
     print(f"\n{'='*60}")
     print(f"🚀 {sub} ({subj} {grade}): перебор ID {start_id}-{end_id}")
     print('='*60)
     
-    # Параллельно проверяем 500 ID
     found_tests = []
     with ThreadPoolExecutor(max_workers=10) as executor:
         futures = {executor.submit(check_test_id, base, tid): tid for tid in range(start_id, start_id + 500)}
@@ -133,13 +134,22 @@ for sub, subj, grade, start_id, end_id in SUBDOMAINS[:10]:  # Первые 10 д
             if tid:
                 found_tests.append((tid, html))
     
+    # Для math5 добавляем второй диапазон
+    if sub == "math5":
+        print(f"   Дополнительный диапазон {MATH5_EXTRA[0]}-{MATH5_EXTRA[1]}...")
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            futures = {executor.submit(check_test_id, base, tid): tid for tid in range(MATH5_EXTRA[0], MATH5_EXTRA[0] + 500)}
+            for future in as_completed(futures):
+                tid, html = future.result()
+                if tid:
+                    found_tests.append((tid, html))
+    
     if not found_tests:
         print(f"   ❌ Рабочих тестов не найдено")
         continue
     
     print(f"   ✅ Найдено тестов: {len(found_tests)}")
     
-    # Парсим первые 15 тестов
     seen_tasks = set()
     all_tasks = []
     for tid, html in found_tests[:15]:
@@ -161,4 +171,4 @@ for sub, subj, grade, start_id, end_id in SUBDOMAINS[:10]:  # Первые 10 д
     print(f"   💾 {subj}_{grade}: {len(all_tasks)} задач")
     grand += len(all_tasks)
 
-print(f"\n🎉 ИТОГО: {grand} задач!")
+print(f"\n🎉 ИТОГО: {grand} задач со Сдамгии!")

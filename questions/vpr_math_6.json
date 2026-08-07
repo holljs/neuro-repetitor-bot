@@ -128,5 +128,1358 @@
     "audio": "",
     "all_audios": [],
     "topic": "vpr_6_klass"
+  },
+  {
+    "id": "vpr_sd_945736",
+    "task_text": "Вычислите: (123 − 49 – 83) : (186 − 195).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945679",
+    "task_text": "Число уменьшили в три раза, и получилось 42. Найдите исходное число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946105",
+    "task_text": "На рисунке изображены жираф и трехэтажный дом. Высота жирафа составляет 5 м. Определите примерную высоту дома в метрах (с точностью до целых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3314"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945914",
+    "task_text": "На диаграмме показаны результаты контрольной работы по математике в 6«В» классе. По вертикальной оси указано число учеников. Сколько человек писали эту контрольную работу?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_90092"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946166",
+    "task_text": "Найдите отрицательное решение уравнения",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_a4390520126139babd1101232090655b.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945826",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3077",
+      "questions/images_vpr/sd_705ca67541501828ac2fe4fd716e58c7.svg",
+      "questions/images_vpr/sd_12e32885d44f7c7226ad7e079c337ae2.svg",
+      "questions/images_vpr/sd_32f1e2bcf45c6cf0fd4dee4c79638fb7.svg",
+      "questions/images_vpr/sd_aba3170e74160865d26ad41c60ec6710.svg",
+      "questions/images_vpr/sd_3158b42e022c62b4aa2e78f2c236c5c0.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945863",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_1e48fb7f10e8fba690e64581dfedd463.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946149",
+    "task_text": "В январе 14 дней шел легкий снег, 8 дней шла метель, 9 дней была ясная и солнечная погода. Запишите в ответе номера верных утверждений без пробелов и знаков препинания. 1) Меньше всего дней шла метель. 2) Дней, когда шел легкий снег на 5 больше, чем дней, когда была ясная и солнечная погода. 3) В январе снег шел 21 день. 4) Ясная и солнечная погода была в общем не дольше недели. Ответ запишите без пробелов, запятых или других дополнительных символов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946077",
+    "task_text": "Цены на крабов сначала понизились на 20%, а затем повысились на 25%. Сколько изначально стоили крабы, если после повышения цен они стоили 150 руб.? Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945836",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3053"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946013",
+    "task_text": "Коля и Петя купили одинаковые беговые лыжи. Сколько стоит одна пара лыж, если Петя уплатил стоимость лыж трёхрублёвыми купюрами, Коля — пятирублёвыми, а всего они дали в кассу меньше 10 купюр?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946116",
+    "task_text": "Когда прочитали 75 страниц, то осталось прочитать книги. Сколько страниц в книге?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_0580caa35cb38096c461dc12b333d6da.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946113",
+    "task_text": "Девочка прочитала книгу за 360 минут. Сколько времени она читала книги?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_6ca8c824c79dbb80005f071431350618.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945850",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_1e0c14648ad3b9e7005b2c11b5f03b54.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945875",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_05beb3204111cfe460e56a94a1ef4a08.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946167",
+    "task_text": "У Андрея было 7 монет достоинством 5 рублей, 6 монет достоинством 2 рубля и 13 монет достоинством в 1 рубль. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) В сумме у Андрея было не больше 60 рублей. 2) Меньше всего у Андрея было монет достоинством 5 рублей. 3) Монет достоинством 2 и 5 рублей у Андрея было столько же, сколько и монет в 1 рубль. 4) В магазине Андрей сможет оплатить покупку на сумму 26 рублей, пользуясь только монетами в 2 и 1 рубль.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946143",
+    "task_text": "Завод за месяц выпустил 350 стиральных машин, 475 пылесосов и 830 утюгов. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) В течение месяца завод преимущественно выпускал утюги. 2) Стиральных машин и пылесосов в сумме завод выпустил больше, чем утюгов. 3) За месяц завод выпустил не более 1660 бытовых приборов. 4) Меньше всего завод выпустил пылесосов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946071",
+    "task_text": "Ванадий собрался в поход на лыжах. В первый день он прошел 25% пути, а во второй день — на 10% больше, чем в первый. Определите, сколько осталось пройти Ванадию, если он запланировал всего пройти 540 км?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946062",
+    "task_text": "Тарас взял в долг у приятеля в сентябре. Каждый месяц, начиная с октября, он выплачивает 25% от оставшейся суммы. Определите, какую сумму взял в долг у своего приятеля Тарас, если он заплатил в ноябре 3000 руб.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945815",
+    "task_text": "На рис. 1 изображены два прямоугольника. Они разбивают плоскость на четыре части. На свободном поле справа, обозначенном как рис. 2, нарисуйте два прямоугольника так, чтобы они разбивали плоскость на пять частей.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3103"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945817",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3093"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946049",
+    "task_text": "Друзья Алеша, Боря и Витя учатся в одном классе. Один из них ездит домой от школы на автобусе, другой — на трамвае, а третий — на троллейбусе. Однажды после уроков Алёша пошёл проводить своего друга до остановки автобуса. Когда мимо них проходил троллейбус, третий друг крикнул из окна: «Боря, ты забыл в школе тетрадку!» Кто на чем ездит домой?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946039",
+    "task_text": "Докажите, что среди любых натуральных чисел найдутся два числа таких, что их разность делится на n .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_4e58d4aa03e8a8505e4f768e17f076fc.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945749",
+    "task_text": "Вычислите: 91 − 108 + 13 − 49.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946115",
+    "task_text": "За 2 часа автобус проезжает 110 километров. Автобус находился в пути часа. Сколько километров он проехал, если его скорость не менялась? В ответе укажите только число .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_4247afb86e24e1a962cb3d66e8f4c54d.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946101",
+    "task_text": "На рисунке изображены шкаф и кресло. Высота шкафа составляет 2,1 м. Определите примерную высоту кресла в метрах (с точностью до десятых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3199"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945766",
+    "task_text": "На диаграмме представлены данные по погоде в Санкт-Петербурге в июле. По вертикальной оси указано количество дней. Сколько июльских дней в Санкт-Петербурге не было осадков?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3160"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945668",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_c83f97e9a5a9cf915632410fbdf36057.svg",
+      "questions/images_vpr/sd_54d244f1d0fd2eaa82a2f1c074d2f6da.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945823",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3090",
+      "questions/images_vpr/sd_c7ba8ef6ebee0e34f44f8e3921972e8a.svg",
+      "questions/images_vpr/sd_8a5c7a509d3e39bed6282d07e7da61f3.svg",
+      "questions/images_vpr/sd_17935ff3e04c84a337cfb6edf102aa1b.svg",
+      "questions/images_vpr/sd_3991f66e128b76d4cb17ddbee0139db4.svg",
+      "questions/images_vpr/sd_1caa6710172caafcb28b45fc2d3fd1df.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945868",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_e3d2e3b2e2e0b31758d9f0ee6b48aab3.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946161",
+    "task_text": "В кондитерской на прилавке лежат 3 булочки с маком, 2 трубочки с кремом, 2 эклера с кремом, 3 медовика. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) Больше всего на прилавке медовиков. 2) Пирожных с кремом — большинство. 3) Трубочек не меньше, чем эклеров. 4) В кондитерской можно взять 3 набора, которые будут состоять из одной булочки с маком и медовика.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946068",
+    "task_text": "На конец воскресенья в магазине было 220 шкафов. В понедельник было продано 40 шкафов. Определите, сколько стало шкафов в магазине, если во вторник их количество пополнилось в размере 40% от оставшихся после продажи в понедельник 40 шкафов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945839",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3060"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945905",
+    "task_text": "На доске написано число. Олег играет в арифметическую игру: он может либо стереть последнюю цифру написанного числа, либо прибавить к написанному числу число 2018 и записать полученный результат, стерев предыдущее число. Может ли Олег, действуя таким образом, в конце концов получить число 1? Если да, покажите как; если нет, объясните почему.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945842",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3050",
+      "questions/images_vpr/sd_1b5b2d97ef46fb94f5352e5646ded321.svg",
+      "questions/images_vpr/sd_e93aef3644f3a0e2ffc48ff352d29ac4.svg",
+      "questions/images_vpr/sd_7e6637bf7cde959dea470d81807c937e.svg",
+      "questions/images_vpr/sd_88f4dade459df94417af63375959ad0b.svg",
+      "questions/images_vpr/sd_1ccb2110fdcd6c3020503d4cdfb1de0b.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945793",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3135",
+      "questions/images_vpr/sd_7c3f6596411c855b08ef2329f6c4a911.svg",
+      "questions/images_vpr/sd_9505e32d892bd4283abd39149a47a92f.svg",
+      "questions/images_vpr/sd_2accee25b51c60eb587d31250d5c27f0.svg",
+      "questions/images_vpr/sd_fa716b0fffee6c3c86ac947929e7e6f8.svg",
+      "questions/images_vpr/sd_c4c21674080f8d7ad29fb6cc70618c46.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945781",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3147",
+      "questions/images_vpr/sd_3ef811b83899ddcdf210e278e88ebc3b.svg",
+      "questions/images_vpr/sd_c6aba6e67701dd848269aecbc5e76604.svg",
+      "questions/images_vpr/sd_40e6cf66e47754de04328912c607e681.svg",
+      "questions/images_vpr/sd_c4f547138d5d36dc65809c47e5cd67ca.svg",
+      "questions/images_vpr/sd_e955ed19c91f189929718600ee934bcc.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945795",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3137",
+      "questions/images_vpr/sd_1e5fd0211fcc8d3ec20e0be8b528ec5f.svg",
+      "questions/images_vpr/sd_93b05c90d14a117ba52da1d743a43ab1.svg",
+      "questions/images_vpr/sd_bd8eacd6ef8c460fea72f998c06d4e7e.svg",
+      "questions/images_vpr/sd_9dfcefacea8b9b0b05f58fc4f72e0ef7.svg",
+      "questions/images_vpr/sd_6a4744f79e6e3bc244e17501393cd8eb.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945750",
+    "task_text": "Вычислите: 37 – 29 + 159 − 86.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946110",
+    "task_text": "На рисунке изображены кружка и чайник. Высота кружки составляет 0,1 м. Определите примерную высоту чайник в метрах (с точностью до десятых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3192"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945727",
+    "task_text": "На диаграмме показаны отчет о тратах семьи за неделю. Определите, сколько было всего потрачено денег, если на развлечения было истрачено 4000 рублей? Единицы измерения писать не нужно.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3183"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946170",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_bdc20ce8fd4d22ab2dc9d70e78e8991c.svg",
+      "questions/images_vpr/sd_ab55d3df449d9bc83637d0d56775f5c3.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945909",
+    "task_text": "В семье Михайловых пятеро детей — три мальчика и две девочки. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) У каждой девочки в семье Михайловых есть две сестры. 2) Дочерей у Михайловых не меньше трёх. 3) Большинство детей в семье Михайловых — мальчики. 4) У каждого мальчика в семье Михайловых сестёр и братьев поровну.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946057",
+    "task_text": "Толя, выполняя физические упражнения, тратит на выполнение приседаний 25% времени, 40% от оставшегося времени уходят на бег. Определите, сколько времени уходит у Толи на выполнение физических упражнений, если на бег он тратит 120 минут. Ответ дайте в минутах.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945802",
+    "task_text": "Игральный кубик прокатили по столу. На рисунке изображён след кубика. Отметьте на рисунке место, в котором грань с шестью точками соприкасалась со столом. У кубика сумма значений на противоположных сторонах равна семи.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3124"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946047",
+    "task_text": "На суде каждый из троих подсудимых обвинял одного из двух других. Оказалось, что первый был единственным, кто говорил правду. Если бы каждый стал обвинять другого из них (но не себя), то второй был бы единственным, кто сказал правду. Кто виновен?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945743",
+    "task_text": "Вычислите: (53 − 27 – 14) : (41 − 29).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946126",
+    "task_text": "Число увеличили на треть, и получилось 164. Найдите исходное число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945764",
+    "task_text": "На диаграмме представлены данные о количестве посетителей шахматного клуба за неделю. По вертикали указано количество посетителей. Сколько человек посетило клуб в будние дни?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3158"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945709",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_cc0620ab835d3b42f21d78ecd33215b9.svg",
+      "questions/images_vpr/sd_13f53430379d5c7506f991df1c1b3cd4.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945800",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3120",
+      "questions/images_vpr/sd_821348fc68d5730389cf720a34de76a8.svg",
+      "questions/images_vpr/sd_99c79fa0b86c0f93318426bf24beaf95.svg",
+      "questions/images_vpr/sd_a622cdf2739d2762ff8b73d00efbdd91.svg",
+      "questions/images_vpr/sd_88f4dade459df94417af63375959ad0b.svg",
+      "questions/images_vpr/sd_5ab7492e38280067db321fec5e5cb20c.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946159",
+    "task_text": "Вагоноремонтный завод отремонтировал за месяц 16 пассажирских вагонов, 23 грузовых вагонов и 5 локомотивов. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) За месяц завод отремонтировал не меньше 39 вагонов. 2) Большинство вагонов, которые ремонтировал завод, были пассажирскими. 3) После окончания ремонта, каждый локомотив сможет увезти 3 пассажирских и 4 грузовых вагона. 4) Если разбить вагоны парами, то к каждому грузовому вагону можно прицепить по одному пассажирскому.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946067",
+    "task_text": "Цена на вальтрап сначала понизилась на 25%, после чего понизилась еще на 20%. Найдите разность между первоначальной и конечной ценой, если после всех превращений вальтрап стал стоить 12000 руб.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945824",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3078"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946027",
+    "task_text": "Двое играют в следующую игру. Имеется три кучки камней: в первой — 10, во второй — 15, в третьей — 20. За ход разрешается разбить любую кучку на две меньшие; проигрывает тот, кто не сможет сделать ход. Кто выиграет?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945761",
+    "task_text": "Вычислите: (39 − 57) : (27 − 18).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946118",
+    "task_text": "Сыну 10 лет. Его возраст составляет треть возраста отца. Сколько лет отцу?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946100",
+    "task_text": "На рисунке изображены человек и овечка. Рост овечки составляет 0,6 м. Определите примерный рост человека в метрах (с точностью до десятых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3317"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945732",
+    "task_text": "На диаграмме показано время, которые ребята тратят на дорогу от дома до школы. По вертикали указано время в минутах. Сколько ребят тратят на дорогу от 14 до 24 минут? В ответе укажите только число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3172"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945708",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_a7b4aee4995311a59627519eae8d7bbd.svg",
+      "questions/images_vpr/sd_c3b08c677cb46abe7b5d6f9ecb95f5b9.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945871",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_06c83830ae7bc118dc622e13b7663525.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946074",
+    "task_text": "Финголфин отправился в поход протяженностью 600 лиг. В первый день он прошел 25% от запланированного пути, а во второй день он прошел 20% от оставшегося расстояния. Сколько лиг прошел Финголфин во второй день?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945831",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3073"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946032",
+    "task_text": "Доказать, что из любых трёх целых чисел можно найти два, сумма которых чётна.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946165",
+    "task_text": "Найдите отрицательное решение уравнения",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_98a045465046f17a88f0ce59590d14fb.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945669",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_fffbfea23610a289b7b7c443eb51885a.svg",
+      "questions/images_vpr/sd_0e54988c658d3784458793106a92dee0.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945675",
+    "task_text": "Найдите значение выражения при Ответ:",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_71d376b9c470a0153823bccdde1a61f8.svg",
+      "questions/images_vpr/sd_381da09753f7f088362a37f6a6819592.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945678",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_8c3c9d6784a24b486aaf3091fb4ef188.svg",
+      "questions/images_vpr/sd_ed4536528eb058890ea3bacfb0bbe7a1.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945699",
+    "task_text": "Найдите значение выражения при и",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_a1772a5d46f19d1557bd38286fdc5a6f.svg",
+      "questions/images_vpr/sd_188e204fda7fc44b54dc2d356157ffd9.svg",
+      "questions/images_vpr/sd_bbdc362ec5899f55eecba19849a98bf8.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945768",
+    "task_text": "Вычислите: (31 − 12) · (32 − 62).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945744",
+    "task_text": "Вычислите: – 73 + 24 – 58 + 96.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945759",
+    "task_text": "Вычислите: (63 − 75) · (110 − 115).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945755",
+    "task_text": "Вычислите: (54 − 75) : 7.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945713",
+    "task_text": "Вычислите: Ответ дайте в виде неправильной дроби. Ответ:",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_224a855422a43cb688e63de0fe251d65.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946175",
+    "task_text": "Число 23 является искомого числа. Найдите это число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_22417f146ced89939510e270d4201b28.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946124",
+    "task_text": "Число уменьшили на четверть, и получилось 99. Найдите исходное число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946133",
+    "task_text": "Число уменьшили в семь раз, и получилось 15. Найдите исходное число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946129",
+    "task_text": "Число 56 является искомого числа. Найдите это число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_22417f146ced89939510e270d4201b28.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945665",
+    "task_text": "Найдите значение выражения при и Ответ:",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_e8836f36fa8ec928283857534d5765a0.svg",
+      "questions/images_vpr/sd_340c07249aa05479c8001efa369d5eeb.svg",
+      "questions/images_vpr/sd_1a12331356408f9bbea328248e5cecbb.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945671",
+    "task_text": "Найдите значение выражения при Ответ дайте в виде неправильной дроби. Ответ:",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_10f0a2bc886efe1dc16614a20c132837.svg",
+      "questions/images_vpr/sd_00da7113580c7c3b9b854a80bf30fd8e.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946171",
+    "task_text": "Найдите положительное решение уравнения",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_e5372cd1e008bdf345fa09575ddf4a63.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945715",
+    "task_text": "Найдите значение выражения при",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_b726019d11b75cede2c6b570fab831bb.svg",
+      "questions/images_vpr/sd_17d8393732d9388448e399f5d8436f71.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945757",
+    "task_text": "Вычислите: (7 − 13) · (192 − 184).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946112",
+    "task_text": "Мальчик за 7 минут прочитал книги. За сколько минут он прочитает её полностью, если будет читать с той же скоростью? Ответ запишите в минутах.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_34ee0d866a9b16250a8dfa9301299290.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946095",
+    "task_text": "На рисунке изображены небольшая лодка и парусная яхта. Длина лодки составляет 3,7 м. Определите примерную длину яхты в метрах (с точностью до целых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3328"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945728",
+    "task_text": "На диаграмме показано время выполнения домашней работы учеником 6 класса. По вертикали указано время в минутах. На сколько минут больше времени уходит у ученика на выполнение математики и русского вместе, чем на все остальные предметы?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3176"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945664",
+    "task_text": "Найдите значение выражения при и",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_a2742fbfd2c29e04113cf1f2ed494b0e.svg",
+      "questions/images_vpr/sd_702b7a793cbdfd34e73b96382a68e45d.svg",
+      "questions/images_vpr/sd_863d6431f2ebd7152f2bcd6da17841b2.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945789",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3139",
+      "questions/images_vpr/sd_93b05c90d14a117ba52da1d743a43ab1.svg",
+      "questions/images_vpr/sd_e61ac22b38ebb8a260ce3ad23c8ed5d3.svg",
+      "questions/images_vpr/sd_185b53e95677d5cf76e4a57ca071f7f1.svg",
+      "questions/images_vpr/sd_9df743fb4a026d67e85ab08111c4aedd.svg",
+      "questions/images_vpr/sd_b92db8878b21e7a0ffc8a498656fe04d.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945848",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_da6855affe8544963549d0c5d79aa7db.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946152",
+    "task_text": "В семье Степановых 7 детей — 3 мальчика и 4 девочки. На праздник им на всех подарили 6 апельсинов, 3 яблока и 5 лимонов. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) Если каждый мальчик получи по яблоку, то хотя бы одна девочка сможет тоже получить яблоко. 2) Каждый ребенок сможет получить по 2 подарка. 3) Меньше всего дети получили яблок. 4) Каждый ребенок получит по апельсину.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946065",
+    "task_text": "Бригада рабочих за первый день сделала 25% от запланированного количества деталей, а во второй день — 40% от оставшегося количества. Определите, сколько деталей запланировала сделать бригада рабочих, если во второй день они сделали 120 деталей.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946011",
+    "task_text": "Найти наименьшее натуральное число, делящееся на 36, в записи которого встречаются все 10 цифр.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945747",
+    "task_text": "Вычислите: 23 – 32 – 24 + 68.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946174",
+    "task_text": "Число 36 является искомого числа. Найдите это число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_6c2e3e2e98abd1fd9a66519db9da8d90.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946088",
+    "task_text": "На рисунке изображены две карты. Длина большей составляет 0,8 м, а ее ширина 0,5 м. Определите примерную площадь меньшей карты в метрах квадратных (с точностью до десятых).",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3211"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945791",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3141",
+      "questions/images_vpr/sd_fd0e579389edb5170ce2b592b2da516f.svg",
+      "questions/images_vpr/sd_d0790590b08978313ca364136312e73c.svg",
+      "questions/images_vpr/sd_1745217e6f001484a812603e3428da64.svg",
+      "questions/images_vpr/sd_24686366565dda9c4a19cbaf04f36146.svg",
+      "questions/images_vpr/sd_007deaa695e2af6ac98e98effca14c1b.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945862",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_5fe92e23cc758576ff8185275840decd.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946140",
+    "task_text": "В состав симфонического оркестра входят 60 музыкантов. Половина из них играет на струнных инструментах, от оставшихся играет на духовых инструментах, а остальные — на ударных. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) Музыкантов, играющих на струнных и ударных инструментах в сумме меньше 25. 2) Тридцать музыкантов в оркестре играет на струнных инструментах. 3) Музыкантов, играющих на ударных инструментах в 6 раз меньше, чем музыкантов, играющих на струнных инструментах. 4) Если бы в оркестре участвовало в 2 раза больше музыкантов с духовыми инструментами, то всего в оркестре принимало бы участие более 90 человек.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_a08f6fd5ee7f72ac3ffbec2809ed9df9.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945741",
+    "task_text": "Вычислите: – 54 : (66 – 84).",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946135",
+    "task_text": "Число 72 является искомого числа. Найдите это число.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_0cce42a3431b1eaa8259a6af2e08470a.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946085",
+    "task_text": "На рисунке изображены гитара и скрипка. Длина скрипки составляет 55 см. Определите примерную длину гитары в метрах (с точностью до десятых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3218"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945729",
+    "task_text": "На диаграмме представлен отчет о тратах семьи за прошедший месяц. По данным диаграммы, определите, сколько рублей потратила семья на развлечения, если известно, что на одежду было истрачено 9750 рублей?",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3177"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945787",
+    "task_text": "На координатной прямой отмечены точки A, B и C. Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3145",
+      "questions/images_vpr/sd_832988cd2b878fc04b9b73a09df422c4.svg",
+      "questions/images_vpr/sd_3fab9f37c2dc61faab2c3f771124fd0f.svg",
+      "questions/images_vpr/sd_add2b5c8b974155f65e931df2054a985.svg",
+      "questions/images_vpr/sd_aa5292fe12a1cdfa6f4a3ff5d7b4b3e8.svg",
+      "questions/images_vpr/sd_9356e8bc51c6657562ce6bdc6c54381e.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946136",
+    "task_text": "Таня заведует складом. На складе у нее есть 12 старинных патефонов, 4 железные кровати и 14 телефонов. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) У Тани на складе преимущественно хранятся телефоны. 2) Старинных патефонов и телефонов в сумме хранится не менее 27. 3) Старинных патефонов и железных кроватей в сумме столько же, сколько и телефонов. 4) Железных кроватей в 3 раза меньше, чем патефонов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945900",
+    "task_text": "Игральный кубик прокатили по столу. На рисунке изображён след кубика. Отметьте на рисунке место, в котором грань с четырьмя точками соприкасалась со столом. Считайте, что сумма чисел на противоположных сторонах кубика равна 7.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_2793"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946012",
+    "task_text": "Докажите, что произведение любых пяти последовательных чисел делится на 30.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946096",
+    "task_text": "На рисунке изображены дверь и коляска. Высота коляски составляет 0,9 м. Определите примерную высоту двери в метрах (с точностью до десятых). Считайте, что фотографии выполнены с одинакового расстояния при одном и том же увеличении .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3323"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945738",
+    "task_text": "На диаграмме представлены результаты некоторых ребят, писавших тест по биологии. По вертикальной оси указаны баллы. Назовите средний балл ребят, набравших больше 75 баллов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3186"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945670",
+    "task_text": "Найдите значение выражения при Ответ:",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_70f2af54158cddde625872479bd0d36e.svg",
+      "questions/images_vpr/sd_5ff009dcf365f130bfa5c666bc936659.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945832",
+    "task_text": "На координатной прямой отмечены точки A , B и C . Установите соответствие между точками и их координатами. ТОЧКИ КООРДИНАТЫ A 1) B 2) C 3) 4) 5) В таблице под каждой буквой укажите номер соответствующей координаты без пробелов, запятых или других дополнительных символов . Ответ: A B C",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_60618",
+      "questions/images_vpr/sd_58de1e7b6a0589ad1a2bf6047147cf46.svg",
+      "questions/images_vpr/sd_3a3eafe9d81858e4efeca16e0f5f5865.svg",
+      "questions/images_vpr/sd_79c944e3c03dfb143103aea688e19be3.svg",
+      "questions/images_vpr/sd_d0156138dd46ecea18d2d8830cfe1f1b.svg",
+      "questions/images_vpr/sd_0b0349df1ee4df8d418b7813678f9415.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945857",
+    "task_text": "Вычислите: Запишите решение и ответ.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_5a27b634bc8950e394472a97af811253.svg"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946151",
+    "task_text": "У Саурона было несколько колец. Три кольца он дал эльфам — для добра их гордого, семь колец он дал пещерным гномам — для труда их горного, девять колец дал он людям Средиземья — для служенья черного и бесстрашия в сражениях смертоносно твердого, а одно — всесильное, он оставил себе, Властелину Мордора. Выберите верные утверждения и запишите в ответе их номера без пробелов, запятых или других дополнительных символов. 1) Гномы получили больше колец, чем эльфы. 2) Изначально у Саурона было не более 19 колец. 3) У Саурона и людей в сумме было столько же колец, сколько у гномов и эльфов вместе. 4) Меньше всего колец было у эльфов.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945838",
+    "task_text": "На рис. 1 на клетчатой бумаге изображены фигуры, симметричные относительно изображённой прямой. Нарисуйте на рис. 2 фигуру, симметричную заштрихованной фигуре относительно данной прямой.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_3058"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_946023",
+    "task_text": "Двое игроков по очереди расставляют между числами от 1 до 20, выписанными в строчку, «+» и «−». После того. как все места заполнены считается результат. Если он чётен, то выигрывает первый игрок, если нечётен, то — второй. Кто из игроков выиграет?",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
   }
 ]
