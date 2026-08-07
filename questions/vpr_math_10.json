@@ -20,16 +20,6 @@
     "topic": "vpr_10_klass"
   },
   {
-    "id": "vpr_math_10_2027_p3_n2",
-    "task_text": "Вычислите: $\\cos(-60^\\circ)+\\sin^2 945^\\circ$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_10_klass"
-  },
-  {
     "id": "vpr_math_10_2027_p4_n3",
     "task_text": "Найдите сумму бесконечно убывающей геометрической прогрессии $16, 8, 4, 2, 1, \\frac{1}{2}, \\ldots$",
     "answer": "---",

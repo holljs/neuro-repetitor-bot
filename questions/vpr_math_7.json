@@ -10,36 +10,6 @@
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_math_7_B2027_p3_n1",
-    "task_text": "Найдите значение выражения $\\frac{2,6-8,4}{2,5}$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_math_7_B2027_p3_n2",
-    "task_text": "Вычислите: $\\frac{14^4}{4^3 \\cdot 49^2}$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_math_7_B2027_p3_n3",
-    "task_text": "Найдите корень уравнения $2(4+3x)=-x-13$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
     "id": "vpr_math_7_B2027_p3_n4",
     "task_text": "Отметьте на числовой прямой точку $A\\left(-2\\frac{6}{7}\\right)$.",
     "answer": "---",
@@ -62,16 +32,6 @@
   {
     "id": "vpr_math_7_B2027_p4_n6",
     "task_text": "Найдите значение выражения $(4-y)^2-y(y+1)$ при $y=-\\frac{1}{9}$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_math_7_B2027_p5_n7",
-    "task_text": "Решите уравнение $6x+(x-5)^2=62+(x+4)(x-12)$.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -190,16 +150,6 @@
     "topic": "vpr_7_klass"
   },
   {
-    "id": "vpr_math_7_U2027_p3_n0",
-    "task_text": "Вычислите: $\\frac{6^4}{4^2 \\cdot 9^3}$.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
     "id": "vpr_math_7_U2027_p3_n1",
     "task_text": "Найдите значение выражения $\\frac{11{,}6^2 - 6{,}4^2}{4{,}3^2 + 2 \\cdot 4{,}3 \\cdot 1{,}7 + 1{,}7^2}$.",
     "answer": "---",
@@ -242,16 +192,6 @@
   {
     "id": "vpr_math_7_U2027_p4_n5",
     "task_text": "В классе некоторые ученики простудились и не ходят в школу. В понедельник тех, кто пришёл в школу, было в 13 раз больше, чем тех, кто не пришёл. Во вторник заболели ещё двое, и в результате тех, кто не пришёл в школу, оказалось в 6 раз меньше, чем тех, кто пришёл. Сколько учеников в этом классе?",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "vpr_7_klass"
-  },
-  {
-    "id": "vpr_math_7_U2027_p4_n6",
-    "task_text": "Решите уравнение $4x(x+2)+3=4x^2-3(7-2x)$.",
     "answer": "---",
     "image": "",
     "all_images": [],
