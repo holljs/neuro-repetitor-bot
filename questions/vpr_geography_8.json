@@ -62,675 +62,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945895",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41721",
-      "questions/images_vpr/sd_get_file_id_41722"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945888",
-    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945889",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41723"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944784",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55180"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944785",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55180"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944895",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Финляндия Азербайджан Украина Япония 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_54370",
-      "questions/images_vpr/sd_get_file_id_54371",
-      "questions/images_vpr/sd_get_file_id_54372",
-      "questions/images_vpr/sd_get_file_id_54373",
-      "questions/images_vpr/sd_get_file_id_41722"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944810",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944811",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945904",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41700",
-      "questions/images_vpr/sd_get_file_id_41701"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945918",
-    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945905",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41702"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944771",
-    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55194",
-      "questions/images_vpr/sd_get_file_id_55195",
-      "questions/images_vpr/sd_get_file_id_55196",
-      "questions/images_vpr/sd_get_file_id_55197",
-      "questions/images_vpr/sd_get_file_id_55198"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944764",
-    "task_text": "На границе с какой страной расположена крайняя южная точка России? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944765",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55200"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945850",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_65541"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945851",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_65541"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945878",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41737",
-      "questions/images_vpr/sd_get_file_id_41736"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945879",
-    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945872",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41738"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944168",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56945"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944169",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56945"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945729",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41808"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945730",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41808"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945736",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41805"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945737",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41805"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944339",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56470"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944332",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56470"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944218",
-    "task_text": "Какая из указанных стран не имеет границы с основной территорией России, а граничит с её полуэксклавом? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944219",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56881"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944766",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55201"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944964",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55759"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944966",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55759"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944917",
-    "task_text": "На рисунках представлены климатограммы, построенные по данным метеонаблюдений в разных частях России. Рассмотрите климатограммы и выполните задания. Определите, какому климатическому поясу / типу климата соответствует каждая климатограмма. Подпишите название климатического пояса / типа климата под соответствующей климатограммой. А Б",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56340",
-      "questions/images_vpr/sd_get_file_id_56341"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944919",
-    "task_text": "Какие климатообразующие факторы определяют климат Красноярска? Запишите в ответе их номера. 1) расположение за Северным полярным кругом 2) удалённость от морских побережий 3) большой угол падения солнечных лучей в течение всего года 4) мощный зимний антициклон 5) горы, препятствующие проникновению холодных воздушных масс 6) близость крупных водных объектов",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944631",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56985"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944915",
-    "task_text": "Используя представленную ниже таблицу и графики динамики численности населения по субъектам Российской Федерации за период 2005−2018 гг., выполните задания. Динамика численности населения, тыс. человек № п/п Субъекты РФ 2005 г. 2010 г. 2012 г. 2014 г. 2018 г. 1 Московская область 6784 7106 7048 7231 7599 2 Магаданская область 170 156 152 148 141 3 Республика Дагестан 2693 2914 2946 2990 3086 4 Вологодская область 1235 1201 1196 1191 1168",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56351"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944908",
-    "task_text": "Используя представленную ниже таблицу и графики динамики численности населения по субъектам Российской Федерации за период 2005−2018 гг., выполните задания. Динамика численности населения, тыс. человек № п/п Субъекты РФ 2005 г. 2010 г. 2012 г. 2014 г. 2018 г. 1 Московская область 6784 7106 7048 7231 7599 2 Магаданская область 170 156 152 148 141 3 Республика Дагестан 2693 2914 2946 2990 3086 4 Вологодская область 1235 1201 1196 1191 1168",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56351"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944905",
-    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56359",
-      "questions/images_vpr/sd_get_file_id_56360",
-      "questions/images_vpr/sd_get_file_id_56361",
-      "questions/images_vpr/sd_get_file_id_56362",
-      "questions/images_vpr/sd_get_file_id_56363"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944906",
-    "task_text": "С какой из указанных стран Россия имеет только сухопутную границу? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944907",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56365"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944727",
-    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55247",
-      "questions/images_vpr/sd_get_file_id_55248",
-      "questions/images_vpr/sd_get_file_id_55249",
-      "questions/images_vpr/sd_get_file_id_55250",
-      "questions/images_vpr/sd_get_file_id_55251"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944720",
-    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944721",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55253"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944887",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Финляндия Китай Польша Азербайджан 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_54386",
-      "questions/images_vpr/sd_get_file_id_54387",
-      "questions/images_vpr/sd_get_file_id_54388",
-      "questions/images_vpr/sd_get_file_id_54389",
-      "questions/images_vpr/sd_get_file_id_50880"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945159",
-    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945152",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_50881"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945868",
-    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41743",
-      "questions/images_vpr/sd_get_file_id_41742"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945869",
-    "task_text": "С какой из указанных Вами стран Россия имеет самую короткую сухопутную границу? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945870",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41744"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944155",
-    "task_text": "На рисунках представлены контуры стран — соседей России c указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56956",
-      "questions/images_vpr/sd_get_file_id_56957",
-      "questions/images_vpr/sd_get_file_id_56958",
-      "questions/images_vpr/sd_get_file_id_56959",
-      "questions/images_vpr/sd_get_file_id_56960"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944148",
-    "task_text": "С какой из указанных Вами стран участок морской границы России проходит по Чёрному морю? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944149",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56962"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944815",
-    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55153",
-      "questions/images_vpr/sd_get_file_id_55154",
-      "questions/images_vpr/sd_get_file_id_55155",
-      "questions/images_vpr/sd_get_file_id_55156",
-      "questions/images_vpr/sd_get_file_id_55157"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944808",
-    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944809",
-    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55160"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944894",
     "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Польша Азербайджан Казахстан Китай 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
     "answer": "---",
@@ -869,6 +200,30 @@
       "questions/images_vpr/sd_get_file_id_57039",
       "questions/images_vpr/sd_get_file_id_57040",
       "questions/images_vpr/sd_get_file_id_57041"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944810",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55159"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944811",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55159"
     ],
     "audio": "",
     "all_audios": [],
@@ -1179,6 +534,673 @@
     "topic": "sdamgia_vpr"
   },
   {
+    "id": "vpr_sd_945729",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41808"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945730",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41808"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945736",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41805"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945737",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41805"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944339",
+    "task_text": "Карта составлена по состоянию на 01.01.2021",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56470"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944332",
+    "task_text": "Карта составлена по состоянию на 01.01.2021",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56470"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945904",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41700",
+      "questions/images_vpr/sd_get_file_id_41701"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945918",
+    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945905",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41702"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945878",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41737",
+      "questions/images_vpr/sd_get_file_id_41736"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945879",
+    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945872",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41738"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944168",
+    "task_text": "Карта составлена по состоянию на 01.01.2021",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56945"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944169",
+    "task_text": "Карта составлена по состоянию на 01.01.2021",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56945"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944218",
+    "task_text": "Какая из указанных стран не имеет границы с основной территорией России, а граничит с её полуэксклавом? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944219",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56881"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944766",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55201"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944964",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55759"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944966",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55759"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944917",
+    "task_text": "На рисунках представлены климатограммы, построенные по данным метеонаблюдений в разных частях России. Рассмотрите климатограммы и выполните задания. Определите, какому климатическому поясу / типу климата соответствует каждая климатограмма. Подпишите название климатического пояса / типа климата под соответствующей климатограммой. А Б",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56340",
+      "questions/images_vpr/sd_get_file_id_56341"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944919",
+    "task_text": "Какие климатообразующие факторы определяют климат Красноярска? Запишите в ответе их номера. 1) расположение за Северным полярным кругом 2) удалённость от морских побережий 3) большой угол падения солнечных лучей в течение всего года 4) мощный зимний антициклон 5) горы, препятствующие проникновению холодных воздушных масс 6) близость крупных водных объектов",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944631",
+    "task_text": "Карта составлена по состоянию на 01.01.2021",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56985"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944915",
+    "task_text": "Используя представленную ниже таблицу и графики динамики численности населения по субъектам Российской Федерации за период 2005−2018 гг., выполните задания. Динамика численности населения, тыс. человек № п/п Субъекты РФ 2005 г. 2010 г. 2012 г. 2014 г. 2018 г. 1 Московская область 6784 7106 7048 7231 7599 2 Магаданская область 170 156 152 148 141 3 Республика Дагестан 2693 2914 2946 2990 3086 4 Вологодская область 1235 1201 1196 1191 1168",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56351"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944908",
+    "task_text": "Используя представленную ниже таблицу и графики динамики численности населения по субъектам Российской Федерации за период 2005−2018 гг., выполните задания. Динамика численности населения, тыс. человек № п/п Субъекты РФ 2005 г. 2010 г. 2012 г. 2014 г. 2018 г. 1 Московская область 6784 7106 7048 7231 7599 2 Магаданская область 170 156 152 148 141 3 Республика Дагестан 2693 2914 2946 2990 3086 4 Вологодская область 1235 1201 1196 1191 1168",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56351"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945868",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41743",
+      "questions/images_vpr/sd_get_file_id_41742"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945869",
+    "task_text": "С какой из указанных Вами стран Россия имеет самую короткую сухопутную границу? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945870",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41744"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944155",
+    "task_text": "На рисунках представлены контуры стран — соседей России c указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56956",
+      "questions/images_vpr/sd_get_file_id_56957",
+      "questions/images_vpr/sd_get_file_id_56958",
+      "questions/images_vpr/sd_get_file_id_56959",
+      "questions/images_vpr/sd_get_file_id_56960"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944148",
+    "task_text": "С какой из указанных Вами стран участок морской границы России проходит по Чёрному морю? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944149",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56962"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944815",
+    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55153",
+      "questions/images_vpr/sd_get_file_id_55154",
+      "questions/images_vpr/sd_get_file_id_55155",
+      "questions/images_vpr/sd_get_file_id_55156",
+      "questions/images_vpr/sd_get_file_id_55157"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944808",
+    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944809",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55160"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944905",
+    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56359",
+      "questions/images_vpr/sd_get_file_id_56360",
+      "questions/images_vpr/sd_get_file_id_56361",
+      "questions/images_vpr/sd_get_file_id_56362",
+      "questions/images_vpr/sd_get_file_id_56363"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944906",
+    "task_text": "С какой из указанных стран Россия имеет только сухопутную границу? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944907",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_56365"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944727",
+    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55247",
+      "questions/images_vpr/sd_get_file_id_55248",
+      "questions/images_vpr/sd_get_file_id_55249",
+      "questions/images_vpr/sd_get_file_id_55250",
+      "questions/images_vpr/sd_get_file_id_55251"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944720",
+    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944721",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55253"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944887",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Финляндия Китай Польша Азербайджан 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_54386",
+      "questions/images_vpr/sd_get_file_id_54387",
+      "questions/images_vpr/sd_get_file_id_54388",
+      "questions/images_vpr/sd_get_file_id_54389",
+      "questions/images_vpr/sd_get_file_id_50880"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945159",
+    "task_text": "С какой из указанных Вами стран Россия не имеет морской границы? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945152",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_50881"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944771",
+    "task_text": "На рисунках представлены контуры стран — соседей России. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных стран на схеме и впишите в пустые квадраты их номера.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55194",
+      "questions/images_vpr/sd_get_file_id_55195",
+      "questions/images_vpr/sd_get_file_id_55196",
+      "questions/images_vpr/sd_get_file_id_55197",
+      "questions/images_vpr/sd_get_file_id_55198"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944764",
+    "task_text": "На границе с какой страной расположена крайняя южная точка России? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944765",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55200"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945850",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_65541"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945851",
+    "task_text": "Карта составлена по состоянию на 01.01.2022",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_65541"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945895",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41721",
+      "questions/images_vpr/sd_get_file_id_41722"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945888",
+    "task_text": "С какой из указанных Вами стран Россия имеет морскую границу? Запишите в ответе название страны.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945889",
+    "task_text": "На диаграмме отображена протяжённость границ России с указанными Вами странами. Установите соответствие между столбцами диаграммы и названиями этих стран. Запишите в ответе номера стран под соответствующими буквами. А Б В Г",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41723"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944784",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55180"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944785",
+    "task_text": "Карта составлена по состоянию на 01.01.2020",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_55180"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944895",
+    "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Финляндия Азербайджан Украина Япония 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_54370",
+      "questions/images_vpr/sd_get_file_id_54371",
+      "questions/images_vpr/sd_get_file_id_54372",
+      "questions/images_vpr/sd_get_file_id_54373",
+      "questions/images_vpr/sd_get_file_id_41722"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945900",
+    "task_text": "Прочитайте текст и выполните задания. Вилюй — река в Восточной Сибири, левый приток реки Лены, самый длинный из всех её притоков. Длина Вилюя составляет 2650 км и превышает длину крупного правого притока Лены — Алдана на 377 км. Вилюй берёт начало на Вилюйском плато в восточной части Среднесибирского плоскогорья на высоте 520 м над уровнем моря. В среднем течении река прорезает узкую долину, напоминающую каньон, здесь построена Вилюйская ГЭС. В нижнем течении, на территории Центрально-Якутской низменности, берега реки представляют собой широкую заболоченную пойму с множеством небольших озёр и островов. Абсолютная высота территории, где Вилюй впадает в Лену, составляет 54 м. Бассейн реки расположен в зоне многолетней мерзлоты. Климат здесь резко континентальный с сильными морозами. С октября по май река скована льдом, поэтому половодье приходится на конец мая — июнь. Питание Вилюя, как и большинства рек России, смешанное с преобладанием снегового. На основе данных, приведённых в тексте, сделайте необходимые расчёты и заполните таблицу. (Для расчётов используйте калькулятор.) Исток Устье Высота истока, м Высота устья, м Длина, км Падение, м Уклон, см/км Тип реки по характеру течения Тип питания Режим реки",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945806",
+    "task_text": "Карта для выполнения заданий 4.2.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_41748"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
     "id": "vpr_sd_944884",
     "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Китай Эстония Украина Норвегия 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
     "answer": "---",
@@ -1266,28 +1288,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945900",
-    "task_text": "Прочитайте текст и выполните задания. Вилюй — река в Восточной Сибири, левый приток реки Лены, самый длинный из всех её притоков. Длина Вилюя составляет 2650 км и превышает длину крупного правого притока Лены — Алдана на 377 км. Вилюй берёт начало на Вилюйском плато в восточной части Среднесибирского плоскогорья на высоте 520 м над уровнем моря. В среднем течении река прорезает узкую долину, напоминающую каньон, здесь построена Вилюйская ГЭС. В нижнем течении, на территории Центрально-Якутской низменности, берега реки представляют собой широкую заболоченную пойму с множеством небольших озёр и островов. Абсолютная высота территории, где Вилюй впадает в Лену, составляет 54 м. Бассейн реки расположен в зоне многолетней мерзлоты. Климат здесь резко континентальный с сильными морозами. С октября по май река скована льдом, поэтому половодье приходится на конец мая — июнь. Питание Вилюя, как и большинства рек России, смешанное с преобладанием снегового. На основе данных, приведённых в тексте, сделайте необходимые расчёты и заполните таблицу. (Для расчётов используйте калькулятор.) Исток Устье Высота истока, м Высота устья, м Длина, км Падение, м Уклон, см/км Тип реки по характеру течения Тип питания Режим реки",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945806",
-    "task_text": "Карта для выполнения заданий 4.2.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41748"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
