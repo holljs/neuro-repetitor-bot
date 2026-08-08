@@ -56,20 +56,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945246",
-    "task_text": "Отметьте на координатной прямой числа и",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_faabbd1025dd61b7c13ec63fba5badba.svg",
-      "questions/images_vpr/sd_5ab299a4c3a4edb7a56841bf4eb67bf2.svg",
-      "questions/images_vpr/sd_get_file_id_66618"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946150",
     "task_text": "Упростите выражение и найдите его значение при В ответ запишите полученное число.",
     "answer": "---",
@@ -888,18 +874,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945902",
-    "task_text": "Решите уравнение Если корней несколько, запишите их в ответ без пробелов в порядке возрастания.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_5d363183011fba77853eea928e280b26.svg"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946017",
     "task_text": "Найдите корень уравнения",
     "answer": "---",
@@ -945,20 +919,6 @@
     "image": "",
     "all_images": [
       "questions/images_vpr/sd_get_file_id_41490"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945240",
-    "task_text": "Отметьте на координатной прямой числа и",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_307c846124e625aa14e61f5d4b80261b.svg",
-      "questions/images_vpr/sd_0024743b3c9dc11176dfdf757e103d18.svg",
-      "questions/images_vpr/sd_get_file_id_66618"
     ],
     "audio": "",
     "all_audios": [],
