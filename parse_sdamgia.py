@@ -84,8 +84,15 @@ def parse_test(base, html, seen):
         if did in seen: continue
         body = main.find("div", class_="pbody")
         if not body: continue
-        for bad in body.find_all(class_=re.compile(r"solution|minor")):
+        # Удаляем решения (solution) целиком
+        for bad in body.find_all(class_=re.compile(r"solution")):
             bad.decompose()
+        # Чистим minor от мусорных фраз, но оставляем формулировки заданий
+        for minor in body.find_all(class_=re.compile(r"minor")):
+            for p in minor.find_all("p"):
+                txt = p.get_text(strip=True)
+                if any(junk in txt.lower() for junk in ["решения заданий", "самостоятельно", "критерии оценивания", "баллы"]):
+                    p.decompose()
         txt = clean_text(body.get_text(" "))
         if len(txt) < 20 or JUNK.search(txt): continue
         seen.add(did)
