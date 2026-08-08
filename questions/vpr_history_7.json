@@ -20,30 +20,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946053",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39320"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946054",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39320"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946086",
     "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Калязинская челобитная» 2) «Великие Четьи-Минеи» 3) 4)",
     "answer": "---",
@@ -240,56 +216,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945996",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39354"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945997",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39354"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945818",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) 2) 3) Повесть «О Ерше Ершовиче» 4) Первая печатная датированная книга «Апостол»",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73535",
-      "questions/images_vpr/sd_get_file_id_73534"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945819",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) 2) 3) Повесть «О Ерше Ершовиче» 4) Первая печатная датированная книга «Апостол»",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73535",
-      "questions/images_vpr/sd_get_file_id_73534"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945740",
     "task_text": "Укажите время, с точностью до десятилетия, когда в России было отменено местничество. Укажите одно любое событие из истории зарубежных стран, относящееся к этому же веку и десятилетию. Не следует указывать событие из истории международных отношений, одной из сторон которого была Россия. Время с точностью до десятилетия: Событие из истории зарубежных стран:",
     "answer": "---",
@@ -340,44 +266,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946079",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39295"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945902",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Сказание о князьях Владимирских» 2) «Калязинская челобитная» 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73527",
-      "questions/images_vpr/sd_get_file_id_73526"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945913",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Сказание о князьях Владимирских» 2) «Калязинская челобитная» 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73527",
-      "questions/images_vpr/sd_get_file_id_73526"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945761",
     "task_text": "Установите соответствие между событиями (процессами) и их участниками: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца. СОБЫТИЯ (ПРОЦЕССЫ) А) образование Речи Посполитой Б) Соляной бунт в Москве В) отмена кормлений УЧАСТНИКИ 1) Алексей Михайлович Тишайший 2) Иван Васильевич Грозный 3) Василий Шуйский 4) Сигизмунд II Август 5) Владислав IV Запишите в ответ цифры, расположив их в порядке, соответствующем буквам: A Б В",
     "answer": "---",
@@ -398,87 +286,11 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946123",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39273"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946073",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Домострой» 2) «Синопсис, или Краткое описание о начале русского народа» 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73565",
-      "questions/images_vpr/sd_get_file_id_73564"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946074",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Домострой» 2) «Синопсис, или Краткое описание о начале русского народа» 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73565",
-      "questions/images_vpr/sd_get_file_id_73564"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945845",
     "task_text": "Установите соответствие между событиями (процессами) и их участниками: к каждой позиции первого столбца подберите соответствующую позицию из второго столбца. СОБЫТИЯ (ПРОЦЕССЫ) А) «Славная революция» в Англии Б) Смута в России В) отмена местничества УЧАСТНИКИ 1) Федор Алексеевич 2) протопоп Аввакум 3) Д. Т. Трубецкой 4) Генрих VII 5) Яков II Стюарт Запишите в ответ цифры, расположив их в порядке, соответствующем буквам: A Б В",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945876",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36463"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945734",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) Немецкая слобода 2) Синопсис 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73540",
-      "questions/images_vpr/sd_get_file_id_73541"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945735",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) Немецкая слобода 2) Синопсис 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73540",
-      "questions/images_vpr/sd_get_file_id_73541"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -499,32 +311,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946117",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Синопсис, или Краткое описание о начале русского народа» 2) Лицевой летописный свод 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73557",
-      "questions/images_vpr/sd_get_file_id_73556"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946118",
-    "task_text": "Ознакомьтесь с приведённым перечнем и изображениями памятников культуры и выполните задания 6, 7. 1) «Синопсис, или Краткое описание о начале русского народа» 2) Лицевой летописный свод 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73557",
-      "questions/images_vpr/sd_get_file_id_73556"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1240,18 +1026,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946097",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_39283"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944172",
     "task_text": "1) «Слово о законе и благодати» 2) «Великие Четьи-Минеи» 3) 4)",
     "answer": "---",
@@ -1283,30 +1057,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945792",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36472"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945805",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36472"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1383,30 +1133,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945900",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36457"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945901",
-    "task_text": "Рассмотрите карту и выполните задания 4, 5.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36457"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

@@ -1,55 +1,10 @@
 [
   {
-    "id": "vpr_sd_945808",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74609",
-      "questions/images_vpr/sd_get_file_id_74610",
-      "questions/images_vpr/sd_get_file_id_74611",
-      "questions/images_vpr/sd_get_file_id_74608"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945763",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74633",
-      "questions/images_vpr/sd_get_file_id_74631",
-      "questions/images_vpr/sd_get_file_id_74632",
-      "questions/images_vpr/sd_get_file_id_74630"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945910",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945789",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74618",
-      "questions/images_vpr/sd_get_file_id_74619",
-      "questions/images_vpr/sd_get_file_id_74620",
-      "questions/images_vpr/sd_get_file_id_74621"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -65,115 +20,11 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946126",
-    "task_text": "Перечень событий (процессов) А) внутренняя и внешняя политика русских земель и княжеств во II половине XIV в. Б) развитие законодательства в Древнерусском государстве В) развитие науки и техники в Западной и Центральной Европе в XV в. Г) окончательная ликвидация зависимости Руси от Орды",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945848",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3333"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945912",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_2799"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946112",
-    "task_text": "Перечень событий (процессов) А) внешняя политика первых русских князей в 882–972 гг. Б) поддержка Русской Православной Церковью процесса объединения русских земель в XIV в. В) возникновение и становление английского парламентаризма Г) укрепление великокняжеской власти во II половине XV в.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945822",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74607",
-      "questions/images_vpr/sd_get_file_id_74604",
-      "questions/images_vpr/sd_get_file_id_74605",
-      "questions/images_vpr/sd_get_file_id_74606"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945729",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74645",
-      "questions/images_vpr/sd_get_file_id_74642",
-      "questions/images_vpr/sd_get_file_id_74644",
-      "questions/images_vpr/sd_get_file_id_74643"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945736",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945762",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74633",
-      "questions/images_vpr/sd_get_file_id_74631",
-      "questions/images_vpr/sd_get_file_id_74632",
-      "questions/images_vpr/sd_get_file_id_74630"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945803",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74617",
-      "questions/images_vpr/sd_get_file_id_74612",
-      "questions/images_vpr/sd_get_file_id_74613",
-      "questions/images_vpr/sd_get_file_id_74614"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -189,65 +40,11 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945802",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74617",
-      "questions/images_vpr/sd_get_file_id_74612",
-      "questions/images_vpr/sd_get_file_id_74613",
-      "questions/images_vpr/sd_get_file_id_74614"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945883",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3330"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945850",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945788",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74618",
-      "questions/images_vpr/sd_get_file_id_74619",
-      "questions/images_vpr/sd_get_file_id_74620",
-      "questions/images_vpr/sd_get_file_id_74621"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945869",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3331"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -263,128 +60,11 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945728",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74645",
-      "questions/images_vpr/sd_get_file_id_74642",
-      "questions/images_vpr/sd_get_file_id_74644",
-      "questions/images_vpr/sd_get_file_id_74643"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945768",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74626",
-      "questions/images_vpr/sd_get_file_id_74627",
-      "questions/images_vpr/sd_get_file_id_74628",
-      "questions/images_vpr/sd_get_file_id_74629"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945919",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_2799"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945868",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3331"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945842",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3334"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945882",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3330"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945823",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74607",
-      "questions/images_vpr/sd_get_file_id_74604",
-      "questions/images_vpr/sd_get_file_id_74605",
-      "questions/images_vpr/sd_get_file_id_74606"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945828",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_36357"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945730",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945862",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3332"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -400,21 +80,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945749",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74634",
-      "questions/images_vpr/sd_get_file_id_74635",
-      "questions/images_vpr/sd_get_file_id_74636",
-      "questions/images_vpr/sd_get_file_id_74637"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945816",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
@@ -425,38 +90,11 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945849",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_3333"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945750",
     "task_text": "Вспомните важнейшие события истории Вашего региона или населённого пункта и выполните задание. Назовите одно любое историческое событие (явление, процесс), произошедшее в Вашем регионе. Какое значение имело указанное Вами событие (явление, процесс) для Вашего региона, или населённого пункта, или нашей страны, или мира в целом?",
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945743",
-    "task_text": "Рассмотрите изображения памятников культуры и выполните задания 8, 9. 1) 2) 3) 4)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_74639",
-      "questions/images_vpr/sd_get_file_id_74638",
-      "questions/images_vpr/sd_get_file_id_74640",
-      "questions/images_vpr/sd_get_file_id_74641"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

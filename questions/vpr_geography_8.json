@@ -38,30 +38,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944370",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56435"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944371",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56435"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944894",
     "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Польша Азербайджан Казахстан Китай 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
     "answer": "---",
@@ -206,162 +182,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944810",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944811",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944945",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56183"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944144",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56963"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944145",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56963"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944146",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56963"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944804",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944805",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944806",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55159"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945207",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_49528"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945796",
-    "task_text": "Карта для выполнения заданий 4.2.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41751"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945797",
-    "task_text": "Карта для выполнения заданий 4.2.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41751"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945793",
-    "task_text": "Карта для выполнения заданий 4.2.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41753"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945767",
     "task_text": "На рисунках представлены климатограммы, построенные по данным метеонаблюдений в разных частях России. Рассмотрите климатограммы и выполните задания. Определите, какому климатическому поясу / типу климата соответствует каждая климатограмма. Подпишите название климатического пояса / типа климата под соответствующей климатограммой. А Б",
     "answer": "---",
@@ -402,54 +222,6 @@
     "all_images": [
       "questions/images_vpr/sd_get_file_id_41787",
       "questions/images_vpr/sd_get_file_id_41786"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944604",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_57004"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944605",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_57004"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944606",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_57004"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944822",
-    "task_text": "Карта для выполнения заданий 6.1, 8.1 Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55145"
     ],
     "audio": "",
     "all_audios": [],
@@ -502,18 +274,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944812",
-    "task_text": "Карта для выполнения заданий 6.1, 8.1 Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55145"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944813",
     "task_text": "Школьники — члены клуба юных географов участвовали в проекте «Географическая экспедиция по родному краю». Цель экспедиции, основные вопросы, поставленные перед экспедицией, и результаты исследований они оформили в виде приведённой ниже таблицы. Выполните задания и заполните таблицу Цель экспедиции: изучение природы своего региона Название региона (субъекта РФ):________________ Административный центр:______________________ Вопросы Специальность Результаты исследования 1. Какими природными ресурсами богат регион? 2. Каковы особенности рельефа территории региона, какие формы рельефа представлены? 3. Какие представители флоры и фауны, занесённые в Красную книгу, распространены/обитают на территории региона?",
     "answer": "---",
@@ -529,78 +289,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945729",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41808"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945730",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41808"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945736",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41805"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945737",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41805"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944339",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56470"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944332",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56470"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -676,30 +364,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944168",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56945"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944169",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56945"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944218",
     "task_text": "Какая из указанных стран не имеет границы с основной территорией России, а граничит с её полуэксклавом? Запишите в ответе название страны.",
     "answer": "---",
@@ -716,42 +380,6 @@
     "image": "",
     "all_images": [
       "questions/images_vpr/sd_get_file_id_56881"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944766",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55201"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944964",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55759"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944966",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55759"
     ],
     "audio": "",
     "all_audios": [],
@@ -776,18 +404,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944631",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56985"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1080,30 +696,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945850",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_65541"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945851",
-    "task_text": "Карта составлена по состоянию на 01.01.2022",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_65541"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945895",
     "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название соответствующей страны. Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
     "answer": "---",
@@ -1139,30 +731,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944784",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55180"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944785",
-    "task_text": "Карта составлена по состоянию на 01.01.2020",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_55180"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944895",
     "task_text": "На рисунках представлены контуры стран — соседей России с указанием столиц этих стран. Подпишите под каждым рисунком рядом с номером название столицы соответствующей страны. Финляндия Азербайджан Украина Япония 1 — _________ 2 — _________ 3 — _________ 4 — _________ Определите расположение указанных Вами стран на схеме и впишите в пустые квадраты их номера .",
     "answer": "---",
@@ -1184,18 +752,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945806",
-    "task_text": "Карта для выполнения заданий 4.2.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_41748"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1233,30 +789,6 @@
     "image": "",
     "all_images": [
       "questions/images_vpr/sd_get_file_id_41720"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944238",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56857"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944239",
-    "task_text": "Карта составлена по состоянию на 01.01.2021",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_56857"
     ],
     "audio": "",
     "all_audios": [],
