@@ -312,16 +312,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945887",
-    "task_text": "Установите соответствие между текстами и их темами, выбрав тему из выпадающего списка. Используйте каждую тему только один раз. В задании одна тема лишняя. This text deals with … 1. Polite Neighbours 2. A Working TV set 3. Night Visitors 4. Anxious Night 5. Ready to Defend Myself 6. Strangers in the Garden A. Last night, at about three o’clock in the morning, I heard a strange noise downstairs. I got out of bed and put on my dressing gown. With my heart beating fast, I slowly went to the top of the stairs. It sounded like there were people talking in the kitchen. B. I didn’t know what to do. Finally, I decided to go downstairs. I made my way quietly down the stairs and listened at the kitchen door. A man asked: “Did you kill him?” and a woman replied: “Yes, I shot him.” Then the man asked: ’’Why did you do that?” Suddenly I realised that there were not really any people in the kitchen. It was just the TV. But why did it turn itself on in the middle of the night? C. While I was standing in the kitchen wondering about the TV, I looked out of the window. It was dark, but I could see a figure outside. Someone was walking slowly across the garden! He whispered something. He was talking to another person! What were they doing in my garden? D. I was wondering what to do when they started walking towards the kitchen window. They were coming towards me! I didn’t know what to do so I grabbed a knife and waited. They were getting closer and closer. I was so frightened. They came right up to the window, and I saw their faces. It was my neighbours, Anna and Larry! E. They obviously were not trying to break into my house, so why were they talking in my garden in the middle of the night? I opened the kitchen door and Anna and Larry came in. They sat down, and I made them both a cup of coffee. This is what Anna told me: “We were sleeping in our bedroom when we heard a loud noise coming from your kitchen. So Alan and I decided to investigate. We came down to your garden, but couldn’t see any lights on. Запишите в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_942489",
     "task_text": "Вы получили электронное письмо от Вашего друга по переписке Майлза из Великобритании. Ниже приведён отрывок из этого письма. From: Miles@friend.uk // To: Russian Friend@mail.ru // Subject: Vacation // ...I’m planning my summer vacation. Where do you usually go on vacation? Do you prefer the beach or the mountains? What activities do you like to do during the summer? Напишите ему ответное письмо объёмом 80−90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо.",
     "answer": "---",
@@ -421,26 +411,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_37072.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_943316",
-    "task_text": "Прочитайте текст вслух. У вас есть полторы минуты на подготовку и полторы минуты, чтобы прочитать текст вслух. A lot of people enjoy camping. It is a great chance to spend some time in the fresh air. If you want to go camping, you need to get some things. First of all, you will need a tent. You may also wish to buy a sleeping bag or a mat. This way you can go camping even if it's raining. You will also need food which is easy to cook. Take a camera. You will want to take pictures of all the beautiful things that you see around you. Your mobile phone and a compass are a must. Do not take too many things. However, safety comes first — do not forget a first aid kit.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945891",
-    "task_text": "Прочитайте текст вслух. У вас есть полторы минуты на подготовку и полторы минуты, чтобы прочитать текст вслух. Every person loves the place where he or she was born, but people are always wondering whether the country or the city is the ideal place to live. Let us consider what the advantages and the disadvantages of life in the city and life in the country are. It is clear that fishing, walks in the forest or just enjoying the sunrise can be a part of your daily life if you live in the countryside. Besides, living in the countryside is cheaper and safer than in a city. Finally, life in the countryside is quiet, peaceful, and healthy. The problem of employment in the countryside is really crucial today. It is especially acute for young people and professionals. In 330 BC, Aristotle wrote that, by nature, a man belonged to a city. Many people love busy city life. The first thing that needs to be said is living in a metropolis provides plentiful opportunities, both in career and studies. Different sorts of entertainment such as museums, music halls, theaters, exhibitions, restaurants, nightclubs are located in cities. However, among the disadvantages, there are high prices, crime, enormous traffic jams with overcrowded noisy streets. Also, pollution is the greatest disadvantage of city life today.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -670,16 +640,6 @@
   {
     "id": "vpr_sd_944007",
     "task_text": "Прочитайте текст и вставьте вместо каждого пропуска нужную грамматическую форму, выбрав её из четырёх предложенных вариантов. The wind and the sun The wind and the sun argued one day over which one was the strongest. They saw a man walking along the road and they wanted to see which one could take the coat from the A __________ back the quickest. The wind B _________ to blow. He blew strong gusts of air, but the man kept the coat tight against C ________ The wind blew still D ______ but the man held his coat tightly. The wind could not take the coat from the man. It was now the sun's turn. The sun did very little, just quietly shone upon the man until he became so warm that he E _________ off his coat. A 1) traveller 2) travellers 3) traveller's 4) travellers' B 1) began 2) begun 3) begins 4) begin C 1) his 2) him 3) them 4) they D 1) harder 2) hardly 3) hardest 4) more hard E 1) takes 2) has taken 3) was taking 4) took A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_942216",
-    "task_text": "Прочитайте текст и вставьте вместо каждого пропуска нужную грамматическую форму, выбрав её из выпадающего списка. The Lion and the Elephant Once upon a time there lived Lion. He was afraid of nothing but chickens. One day he A____ his friend Elephant about his fear. Elephant thought he had never heard a B____ joke than that one. He started making fun of Lion, \"You are so big and you are afraid of small chickens!\" While he C____ at the Lion, he saw a mosquito. Then another mosquito flew and then one more. Elephant started crying. It turned out that the Elephant D____ afraid of small mosquitoes. It helped both Lion and Elephant see these fears as others see C____ . The animals realized that most of fears make no sense. A 1) tell 2) told 3) was told 4) has told B 1) good 2) better 3) more good 4) best C 1) laugh 2) laughed 3) was laughing 4) has laughed D 1) are 2) will be 3) were 4) was E 1) them 2) themselves 3) they 4) their Запишите в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],

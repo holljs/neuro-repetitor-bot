@@ -1,41 +1,7 @@
 [
   {
-    "id": "vpr_sd_945755",
-    "task_text": "Ты услышишь сообщение. Для каждого предложения A–⁠E выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Ты услышишь текст дважды. А. What subject does Tom hope to get a good mark in? He hopes to get a good mark in... 1) Science. 2) History. 3) Art. В. What does Tom like learning about? He likes learning about... 1) painting. 2) the past. 3) football. С. Who is Sam? Sam is Tom’s... 1) father. 2) friend. 3) teacher. D. What does Tom plan to do after school? He plans to... 1) meet his friend at the park. 2) go to the museum. 3) go home. E. What time will Tom be at home? He will be at home at... 1) 3 p. m. 2) 4 p. m. 3) 5 p. m. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_92683.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_92683.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945745",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами A–⁠E , нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). The 1 st of September It was September 1. Jane was very excited. It was her A _____ day in the 5th grade. She woke up B _____ 6 o’clock in the morning and put on a new dress. Her mum made pancakes for breakfast. After breakfast Jane C _____ to school. At school the children talked about their summer. The teacher showed new classrooms to D _____. Jane was happy to meet her new teacher. They played fun games in the playground. It was one of the E _____ days in her life! A | 1) first | 2) one | 3) ones // B | 1) in | 2) on | 3) at // C | 1) go | 2) going | 3) went // D | 1) they | 2) them | 3) their // E | 1) happier | 2) happiest | 3) most happy Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945759",
-    "task_text": "Ты услышишь сообщение. Для каждого предложения A–⁠E выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Ты услышишь текст дважды. А. What is Tom going to have at the first lesson? He is going to have... 1) a history test. 2) a science test. 3) an art competition. В. Which class is after Science? ... is after Science. 1) Art 2) Math 3) History С. What country will they talk about in his History class? They will talk about... 1) Greece. 2) Rome. 3) Egypt. D. What does Tom want to do in his Art class? He wants to... 1) draw a picture for his friend. 2) paint a picture for the competition. 3) write a story about a castle. E. What does Tom plan to do with Sam? He wants to... 1) do their homework. 2) go to the museum. 3) play football. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_92635.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_92635.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945891",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Ann and summer It’s summer now. The school is closed for summer vacations. Ann is spending her vacations in the village. The weather is great, the sun is shining. Ann likes nature and she often likes walking in a small forest with her parents. There are many beautiful flowers and old trees in the forest. Ann likes listening to birds’ whistling. She is chasing butterflies and picking flowers. “Ann, do not get lost. Come closer to us, it’s very easy to get lost in the forest,” says Mom. “All right, Mom. Don’t worry,” answered the girl. Ann is 10 years old and she knows how to behave in the forest. After the walk the family comes home and has tea in the yard. In summer the evening in the village is warm and beautiful. Ann likes summer. A. Why isn't Ann at school now? 1) She is sick. 2) The school is closed for summer holidays. 3) Alice went to the village and there is no school there. B. Does Ann go to the forest alone? 1) Yes, she does. She likes nature and will never get lost. 2) No, she doesn't. She goes there with her friends to pick berries and mushrooms. 3) No, she doesn't. She goes there with her parents. C. Is Ann worried that she can get lost in the forest? 1) Yes, she is. She always stays close to her parents. 2) No, she isn't. She knows how to behave in the forest. 3) No, she isn't. She doesn't think about that and has no idea that such a thing can happen to her. D. Has her family got a yard near the house? 1) Not, there is no yard there. 2) We do not know. 3) Yes, they have got a yard and drink tea there after the walk. E. Is it cold to stay outside in the evening? 1) Yes, it is. Ann is freezing. 2) No, it isn't. The evening in summer is warm. 3) Yes, it is. Ann wants to go home. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -66,16 +32,6 @@
   {
     "id": "vpr_sd_945736",
     "task_text": "Прочитай текст. Для каждого предложения A– E выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). The Fox and Bear In a sunny forest there lived a clever fox and a strong bear. One day the fox wanted to have a race. The bear agreed, and they decided to run to the biggest tree in the forest. All the animals came to watch the race. The fox ran very fast at the start. The bear ran slowly. It was difficult to believe that the bear could win. As the race went on, the fox saw beautiful flowers. The fox loved flowers and stopped to look at them. The bear continued running. The bear came to the biggest tree first and won the race. The fox was sad because he wanted to win. The bear was happy but he was also kind. He told the fox that it was important to be focused on the race. The fox learned a lesson that day. The fox and the bear became good friends and often raced together, always helping each other. A. What did the bear and the fox want to do? They wanted to... 1) watch a race. 2) run a race. 3) find the biggest tree in the forest. B. Choose the true sentence. 1) At the beginning of the race the fox and the bear started to run very fast. 2) The fox ran slowly at the start. 3) At the beginning of the race the fox started to run very fast. C. Why did the fox stop? The fox stopped because... 1) there were some flowers in the forest. 2) he saw the bear. 3) he met his friends. D. Why was the bear happy? The bear was happy because... 1) the fox won the race. 2) he helped the fox. 3) he was the winner. E. Choose the true sentence. 1) The fox and the bear never helped each other. 2) The fox found a new friend. 3) The fox and the bear never raced together. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945865",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Helen is A _____ have her B _____ day at new school tomorrow. She is very excited. Her family moved from another city only a week ago and she didn't make any new friends yet. Though, that girl who lives opposite Helen's home looks very nice, maybe she could be Helen's friend. Helen is C _____ her school bag. Helen is putting her books and a pencil case. She chooses her D _____ school dress for tomorrow. She brushes her E _____ expecially well. She is ready. No she needs a good sleep and tomorrow everything will be fine. A | 1) go | 2) goes | 3) going to // B | 1) first | 2) one | 3) start // C | 1) pack | 2) packing | 3) packs // D | 1) best | 2) good | 3) better // E | 1) toothes | 2) teeth | 3) tooth Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -148,48 +104,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945890",
-    "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Diego Salvatore Diego lives in Madrid. Madrid is the capital of Spain. Diego is 11 years old. He has got a sister and a brother. He has got a little parrot which can sing. Diego likes playing basketball. He likes singing, dancing and having fun with his friends. Diego doesn't really like his school but he enjoys Music lessons. After school he sometimes go to a cafe with his friends and has his favourite strawberry milkshake. Diego likes winter holidays and Christmas most of all. Name | 1. // Age | 2. // Country | 3. // Number of children in the family | 4. // Pet | 5. // Favourite subject | 6. // Favourite drink | 7. // Favourite sport | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945861",
     "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Andrew Filonov Andrew Filonov and his family live in Vyborg, Russia. Andrew has got an older sister Mary. Andrew is 9 years old. He likes singing and sings in a choir. He is fond of soccer and plays in a local team. He has got a hamster Julius. It is brown, with small black eyes. Andrew will soon have birthday. He will go to a cafe with his friends and will taste all the flavours of his favourite ice cream. Andrew likes school and it's easy for him to study. His favourite subject is History. Andrew likes summer and summer holidays because in summer he has a lot of spare time to play soccer with his friends. Name | 1. // Age | 2. // Country | 3. // City | 4. // Number of children in the family | 5. // Pet | 6. // Favourite subject | 7. // Favourite season | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945886",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Jack and his friends Jack is a young blue⁠-⁠eyed boy. He is nine years old. He lives with his parents. Jack likes going to the cinema with his friends. It’s Sunday now. But he stays at home to rest. He has nothing to do today so he can spend this day with his friends. The boys walk in the yard and play soccer. Then they will come to Jack’s flat to have tea. The weather is fine today, it’s hot. The sun is shining. Jack is very glad. In the evening the boy will do his homework because he has to go to school on Monday. Jack likes his school. He likes reading and writing. “You are a good student, Jack,” says his teacher. A. What colour are Jack's eyes? 1) His eyes are brown. 2) His eyes are green. 3) His eyes are blue. B. What does Jack like to do with his friends? 1) He likes going to a cafe with his friends. 2) He likes going to the cinema with his friends. 3) He likes staying at home with his friends. C. Was the weather fine that Sunday? 1) No, it wasn't. That's why Jack decided to stay at home. 2) Yes, it was. But is was windy, Jack had to wear his jacket. 3) Yes, it was. It was hot and the sun was shining. D. Did Jack do all his homework on Sunday morning? 1) No, he didn't. He was going to do it in the evening. 2) Yes, he did. He is a good student. 3) No, he didn't. He had holidays. E. Does Jack like studying? 1) No, he doesn't. He likes playing soccer and having rest. 2) Yes, he does. He likes singing and learning new German words. 3) Yes, he does. He likes reading and writing. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945881",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). My city My name is Alexandra and I live in Saint-Petersburg. I live with my parents and my little brother. I’m 11 years old. My city is very big and beautiful. It is quite young but is has interesting history. There are many museums, palaces and cathedrals in my city. I like walking around the city with my family or my friends. We also like taking boat tours. We have two or three favourite cafes which we visit to drink some hot chocolate or eat home-made ice cream. I like my city, and I like walking when the weather is fine. It’s so nice to spend time with my family in our beautiful city. Last weekend we went to the Russian museum. I saw a lot of beautiful pictures. I like painting and I go to an Art school. Maybe, I will become a painter. A. Has Alexandra got any brothers or sisters? 1) No, she hasn't. She lives only with her parents. 2) Yes, she has. She has got an older brother. 3) Yes, she has. She has got a younger brother. B. Is the girl fond of her city? 1) Yes, she is. She says, it is very beautiful and she likes walking around the city. 2) No, she isn't. She likes museums more. 3) No, she isn't. She doesn't like anything about her city. C. Where did Alexandra go last weekend? 1) She went to Russia. 2) She went to the Russian museum. 3) She went to a cafe with her frieds. D. What is Alexandra's hobby? 1) It is painting. 2) We do not know. 3) She likes boat tours. E. What are the girl's plans for the future? 1) She wants to become a writer. 2) She wants to become a tour guide. 3) She wants to become a painter. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945744",
-    "task_text": "Прочитай текст. Для каждого предложения A– E выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). In a little hole under a big tree in the garden, there lived a clever hedgehog named Harry. Harry loved travelling and finding something new and interesting. One sunny day he went to the nearby forest. Harry put some tasty berries in his small bag and started his travelling. On the first day he found a beautiful garden filled with colourful flowers and beautiful butterflies. On the second day he saw a little river. Suddenly he heard a strange sound. It was a little bird named Bella. She fell down into the river and couldn’t swim! Harry wanted to help Bella. Harry tried to swim, but it was hard. Just then, a wise old rabbit named Ruby saw Harry and Bella. Ruby could swim well and quickly. She helped the bird and the hedgehog! Harry came to his garden four days later. He became friends with Bella and they enjoyed playing together every weekend. A. Where did Harry live? Harry lived in... 1) a forest. 2) a big tree. 3) a hole. B. Where did he find flowers and butterflies? He found them... 1) in the forest. 2) in the garden. 3) under the tree. C. Choose the true sentence. 1) Bella was in the river and needed help. 2) Bella wanted to swim in the river. 3) Bella wanted to see colourful flowers. D. Who helped the bird? 1) The clever hedgehog did. 2) The beautiful butterflies did. 3) The wise old rabbit did. E. When did the hedgehog come home? He came home... 1) in four days. 2) in a week. 3) on the second day. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -210,16 +126,6 @@
   {
     "id": "vpr_sd_945876",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). My family My name is Paul. I’m 11 years old. I have got a big family. I have got a mother, a father, two sisters and a brother. I’m the oldest boy but my sisters are older than me. My sisters and I go to school every day. My brother goes to the kindergarten. My parents work a lot. My Mom is a doctor and my Dad is a scientist. I like reading and doing sports. I don’t like Music because I hate singing. My sisters and I like listening to music and we have the same favourite singer. We will to go his concert next month. My sisters are very beautiful, they are tall, with long dark hair and big green eyes. My eyes are blue but my brother has got green eyes just like our sisters. My little brother likes playing soccer so we sometimes play with him in the yard. I love my family, my sisters and brother are my best friends. A. Has Paul got a big family? 1) Yes, he has. He has got parents and three brothers. 2) Yes, he has. He has got parents, two sisters and a brother. 3) No, he hasn't. He lives with his parents and a sister. B. Is Paul the youngest child in the family? 1) No, he isn't. He has got a younger brother. 2) No, he isn't. He has got two younger sisters. 3) Yes, he is the youngest child in his family. C. Do all of the children have green eyes? 1) Yes, they all have green eyes and long dark hair. 2) No, all the children have blue eyes. 3) No, Paul has blue eyes. D. Is anyone in his family fond of soccer? 1) No, they like listening to music. 2) Yes, all the children like playing soccer. 3) Yes, Paul's younger brother is fond of soccer. E. Which school subject is Paul's least favourite? 1) He does't like reading, so it is Literature. 2) He doesn't like sports, so it is PE. 3) He doesn't like singing, so it is Music. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945887",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Oscar A _____ his shoes. He was B _____ them for 5 years. They still fit but they look very old. The lower part of the shoes is even C _____. \"Oscar,you need to buy new shoes,\"his wife said.\"No! I love my shoes,\" he answered. D_____ wife decided to surprise him. She bought him a pair of Nikes.Oscar loved _____ very much. A | 1) love | 2) loves | 3) lovs // B | 1) wearing | 2) wear | 3) wore // C | 1) the worst | 2) bad | 3) worse // D | 1) him | 2) his | 3) he // E | 1) them | 2) they | 3) their Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -268,16 +174,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945858",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Vlad was A _____ take a flight to another city. He packed his backpack and B _____ ready to go. Suddenly, he realised that he forgot C _____ passport. He started looking for it everywhere but could not find it. Finally, he was ready to give up but asked his little son to help him. The little boy went to the kitchen, opened the fridge and found his D _____ passport on one of the shelves. Vlad was the E _____ person in the world. A | 1) go to | 2) going to | 3) goes // B | 1) was | 2) is | 3) were // C | 1) her | 2) him | 3) his // D | 1) fathers | 2) father's | 3) father // E | 1) happiest | 2) happy | 3) happier Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945733",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами A–⁠E , нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Kaliningrad Zoo Kaliningrad Zoo is a fun place to visit. It is one of the A _____ places in the centre of the city, near the beautiful Kaliningrad Central Park. Children from all over the world B _____ to see the amazing animals. They can watch playful monkeys swinging in the trees and majestic lions lying in the sun. Beautiful birds sing happily, and funny elephants play in C _____ water pools. Children learn about rare animals. Every visit D _____ a wonderful adventure. The zoo is not just a home for animals, it is a place where children will find new friends! Last year I E _____. Kaliningrad Zoo and it was amazing! A | 1) good | 2) better | 3) best // B | 1) coming | 2) come | 3) comes // C | 1) they | 2) them | 3) their // D | 1) be | 2) is | 3) are // E | 1) visited | 2) visit | 3) visits Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -308,16 +204,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945869",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). My name is Mary, I'm 9 years old. I live with my mother and father. My parents gave me a kitten. His name is Piff. He is very little. He is white and he has got blue eyes. We like playing together. Piff likes drinking milk and eating his food. He always sleeps with me. My Mom says that he is my friend. I think so too. I love my kitten. I like cats and dogs and other pets. I'm going to become a veterinarian. My friend has got a dog. We often walk with my friend and his dog. I like dancing and playing the piano. My friends and I yesterday had a concert in our village concert hall. There were many people there, including my parents and parents of all my friends. I was a little bit afraid but I was happy to take part in the concert. A. Who gave Mary her pet? 1) Her parents gave her a kitten. 2) Her grandparents gave her a puppy. 3) Her parents gave her a turtle. B. What does Piff like to do? 1) He likes catching mice. 2) He likes drinking milk, eating his food and playing with Mary. 3) He likes walking with a dog. C. What is the dream job for Mary? 1) She wants to become a pianist. 2) She wants to become a dancer. 3) She wants to become a veterinarian. D. Does Mary live in a city? 1) Yes, she does. The city is big, there are many people there. 2) No, she doesn't. She lives in a village. 3) No, she doesn't. She lives in a little town. E. Did Mary enjoy being a part of the concert? 1) No, she was too nervous. 2) No, she didn't like the concert. 3) Yes, she was happy to take part in the concert. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945894",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Mary and her family It’s winter now. The weather is fine. Sometimes it snows. Mary lives in a beautiful city. Mary’s twelve years old and she likes going to school. Her school is right near her home. Mary can walk to school. Mary takes her school bag every morning. She takes student books, notebooks, pencil case, pencils and her favourite little toy. Mom takes Mary to school and then goes to work. After the lessons Mom will pick Mary up and they will together go to the market to buy a present for the grandfather. He is having a birthday in three days. Mary loves her grandfather very much. They always have a lot of fun together. A. What season is it now? 1) It is summer. 2) It sometimes snows. 3) It's winter. B. How old is Mary? 1) She is 9 years old. 2) She is 11 years old. 3) She is 12 years old. C. How far is the school from Mary's home? 1) It is right near Mary's home. 2) It is far away from Mary's home. 3) We don't know. D. Where does Mary's Mom go after she takes Mary to school? 1) She goes to the market. 2) She goes to work. 3) She goes to her grandfather. E. Why are Mary and her Mom going to buy a present for Mary's grandfather? 1) They simply love him. 2) He will have birthday in three days. 3) Mary doesn't want to go to school. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -328,28 +214,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945893",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Oleg and his family It’s winter now. The weather is fine. It’s snowing now. Oleg lives in a little town. Oleg is 9 years old and he likes going to school. His school is far from his home. Oleg has to go to school by bus. Oleg packs his school bag every morning. He packs his student books, notebooks, pencil case, pencils and sweets. Mom takes Oleg to school and then goes to work. After school Oleg goes outside with his friends. They run, play hide-and-seek and have fun. “I like playing outside in winter. When there is much snow my friends and I play snowballs and ski,” says Oleg. “We also like making a snowman,” say his friends. A. What's the weather in Oleg's town now? 1) It's raining. 2) It's sunny. 3) It's snowing. B. Is Oleg's school far from his home? 1) We do not know. 2) Yes, it is far from his home. 3) No, it is close to his home. C. When does Oleg always pack his school bag? 1) He packs it every morning. 2) He packs it every evening. 3) He doesn't pack it. His Mom does it for him. D. Who takes Oleg to school? 1) His Dad takes him to school. 2) His Mom takes hime to school. 3) He walks to school alone. E. What do Oleg and is friends do after school in winter? 1) They don't like playing outside in winter. 2) They go home. 3) They play snowballs, ski and make snowmen. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945874",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Hayden's neighbour moved out a month ago.Hayden was happy.She hated her old neighbor,who played music loudly. Because of that,Hayden could not focus on her homework. A new neighbor moved in yesterday.Hayden wanted to say hello.Hayden knocked on her neighbor's door. A girl of her age opened the door. \"Hi,how can I help you?\" she asked. \"I just wanted to say hi. I'm your neighbour,\" Hayden said.\"Oh cool! I'm Betty. \"Do you go to George Cramer high school?\" Hayden asked. \"Yes!\" Betty said. Hayden was happy. They could study together. A. Why did Hayden hate her old neighbour? 1) Because he was ugly. 2) Because he didn't help her with her homework. 3) Because of his loud music. B. When did the new neighbour move into his new house? 1) A month ago. 2) Last weekend. 3) He moved in yesterday. C. Why did Hayden go to her new neightbour? 1) To say hello and introduce herself. 2) To tell him that his music is too loud. 3) She was looking for her classmate. D. What school did Hayden go to? 1) She went to Betty High School. 2) She went to George Cramer high school. 3) We do not know. E. Was the girl who opened the door younger or older than Hayden? 1) She was younger than Hayden. 2) She was older than Hayden. 3) She was neither older nor younger than Hayden. She was of the same age. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945829",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Kazan My uncle lives in Kazan. He says that it is A _____ favourite city. Many people come B _____ Kazan to visit the Kazan Kremlin. It is a fortress of the 10th century. People who like traditional Tatar food visit the Kazan Chak-chak Museum. Children like the Kazan Zoological and Botanical Garden. It is the C _____ in Russia and Europe. It D _____ zoological and botanical collections. I E _____ all these places when I visited my uncle last summer. A | 1) he’s | 2) him | 3) his // B | 1) to | 2) at | 3) in // C | 1) old | 2) older | 3) oldest // D | 1) has | 2) have | 3) having // E | 1) see | 2) saw | 3) will see Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -370,16 +236,6 @@
   {
     "id": "vpr_sd_945899",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Lake Baikal Last year Mark needed a book about starts. He A _____ to prepare for a test. His mom took him to the library. There were so B ______ books there. There were books about everything. Mark liked C _______ the library very much. This year Mark goes to the library himself. He likes reading and he can sit at the library for the whole evening. The librarians already know Mark and always greet him cheerfully and give D _____something tasty to eat on his way home because noone can eat at the library. Today Mark E _____ to show his favourite friend Paola. He hopes she will like it too. A | 1) have | 2) had | 3) has // B | 1) much | 2) a lot of | 3) many // C | 1) visit | 2) visiting | 3) visited // D | 1) him | 2) he | 3) his // E | 1) go | 2) goes | 3) is going Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945875",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Tom was very lazy. He didn't want to A _____ in the morning. He didn't want to brush his teeth or comb his hair. He wanted only to play computer games and watch TV. His parents B _____ very worried about him. Finally his Mom thought she should do C _____. She made Tom go to karate classes. And it helped. The coach told Tom that if he wants to be the D _____ fighter, he should do everything himself, otherwise he will stay the weakest one in his group. It was last year. This year Tom does everything himself and he E _____ win his first championship. A | 1) gets up | 2) got up | 3) get up // B | 1) were | 2) was | 3) are // C | 1) nothing | 2) something | 3) anything // D | 1) best | 2) good | 3) better // E | 1) went to | 2) goes to | 3) is going to Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],

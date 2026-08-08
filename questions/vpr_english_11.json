@@ -1,17 +1,5 @@
 [
   {
-    "id": "vpr_sd_944814",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes surfing? 1) Amanda 2) Trevor 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39099.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944815",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. How often does Trevor go to the beach? 1) Every day. 2) Every weekend. 3) Very seldom.",
     "answer": "---",
@@ -102,16 +90,6 @@
   {
     "id": "vpr_sd_944760",
     "task_text": "Преобразуйте, если это необходимо, слово IT так, чтобы оно грамматически соответствовало содержанию текста. The main reason tourists from all over the world visit Altai is __________________ magnificent nature. You can choose many different ways to enjoy the local landscapes, for example, it can be a horseback riding tour.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945444",
-    "task_text": "Преобразуйте, если это необходимо, слово SHOW так, чтобы оно грамматически соответствовало содержанию текста. The parade __________________ on TV so that the whole country can enjoy the spectacular sight.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -244,16 +222,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945634",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Sport 2. Literature 3. Travel industry 4. Shops 5. Transport 6. Hobbies A. Ecotourism is becoming more and more popular in Russia. The cultural and environmental heritage of the country is so rich and various, that Russiacan be called one of the most promising countries for the development of the ecotourism. The ecological tours give apossibility to discover the country, which could seem familiar. There is a lot to see in each region of Russia. B. So iconic is this travel bookshop it even gets a mention in Arthur Conan Doyle’s «Hound of the Baskervilles». Opened in 1901, it’s one of the largest specialist travel bookshops in theworld and an essential destination for explorers, backpackers and map fanatics. There arethree floors stacked high with travel writing, guides, maps and gifts and also regular eventsfrom the great and good of exploration and travel writing. C. Lapta is a traditional Russian game, which is more than 400 years old. Two teams with aminimum of three players each are needed to play the game. A rubber ball (or tennis ball)and bats are used. A traditional lapta bat has a spade-like shape. But today round ones are also used, similar to baseball bats. The field is around 30-40 yards wide and 40–55 yardslong. D. Set up by Edward Stanford in 1853, the Stanfords flagship bookstore has been situated in a grand old building in London since 1901. The customers can find a great variety of travel guides, maps, gifts and more spread over three floors. Stanfords claims to be the world’slargest specialist travel bookstore. There’s also a cafe located in the store that serves cakes,pastries and hot drinks. E. Alexander Sergeevich Pushkin was a Russian Romantic author who is considered to be thegreatest Russian poet. In his poems and plays he created a style of storytelling — mixing drama, romance, and satire — associated with Russian style ever since and greatlyinfluencing later Russian writers. Pushkin published his first poem at the age of fifteen. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944764",
     "task_text": "Преобразуйте, если это необходимо, слово BEAUTIFUL так, чтобы оно грамматически соответствовало содержанию текста. Visiting Altai Have you ever been to Altai? It is one of the __________________ areas of Russia.",
     "answer": "---",
@@ -366,18 +334,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945633",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going out tonight? 1) Jack 2) Irene 3) Neither",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34678.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944636",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Ecology 2. History 3. Cooking 4. Agriculture 5. Economy 6. Geography A. Coffee drinking was first mentioned in the 15 th century. Scientists believe it was at that time when people started making coffee the way we make it now. It was probably in Yemen where people started roasting and brewing coffee beans but there are other theories as well. In the 16lh century coffee was brought to Turkey and it was exported to Western Europe from there. B. There are several ways of growing coffee. The traditional method is to place 20 seeds in each hole at the beginning of the rainy season. This method loses about 50% of the seeds because half of them fail to grow into coffee plants. A more effective process of growing coffee, used in Brazil, is to raise coffee plants in special greenhouses and then plant them outside at six to twelve months. C. Scientists think that shade-growm coffee is better for the environment than full-sun systems because the shade is needed by a lot of living organisms like birds and insects. Still, there are a lot of environmental problems connected with growing coffee. One of them is the amount of water necessary for it because coffee is mainly grown in the countries where there’s water shortage. D. Coffee export can bring a lot of money for the country which does it. In 2016, world production of green coffee beans was 9.2 million tons, led by Brazil. This country alone produces 33% of the total amount of coffee. Vietnam, Colombia and Indonesia were other major producers. These countries greatly depend on coffee export in their economic systems. E. Once made, coffee may be drunk in a variety of ways. You may make strong or weak coffee. Coffee with milk is called white coffee whereas if you don’t add milk to your coffee, you drink it black. Some people like to have their coffee hot, but others prefer cold coffee. You may also make flavoured coffee. In coffee houses you may get a cappuccino, a latte or an espresso. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -393,20 +349,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945264",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: 1) where and when the photo was taken 2) what/who is in the photo 3) what is happening 4) why you keep the photo in your album 5) why you decided to show the picture to your friend You have to talk continuously, starting with: “I’ve chosen photo number … ”",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94385.png",
-      "questions/images_vpr/sd_get_file_id_94387.png",
-      "questions/images_vpr/sd_get_file_id_94390.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -468,16 +410,6 @@
   {
     "id": "vpr_sd_944841",
     "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. When you look at Kizhi, the __________________ thing that you see is the beautiful main building with dozens of teardrop-shaped roofs. There are two smaller buildings with a similar design nearby, which are also very impressive.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945525",
-    "task_text": "The «Arkhangelskoye» estate The country estate «Arkhangelskoye» is a wonderful monument of Russian 13 ______ from the end of the XVIII to the beginning of the XIX century. It is famous for the magnificent 14 ______ of its garden and park ensemble and its splendid 15 ______ of paintings, drawings, sculptures and pieces of applied art and apart from it the superb store of rare books. Arkhangelskoye belonged to the prince Golitsinsky’s 16 ______ until 1809 but in 1810 it was bought by the richest Russian noble the prince Yusupov, who was a collector and patron of art. It took Yusupov 50 years to build and 17 ______ the ensemble. He invited such well-known architects as Gern, Trombaro, Pettondi, Gonzago, Bove and 18 ______. The first third of the XIX century was the period of golden age for Arkhangelskoye.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -557,30 +489,6 @@
     "all_images": [],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945265",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a headache? 1) Tracy 2) Jack 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34656.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945266",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who finds a lot of fun in the National Museum of American Art? 1) Tracy 2) Jack 3) Neither",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34656.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -840,16 +748,6 @@
   {
     "id": "vpr_sd_944632",
     "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Most of _____________ are ancient buildings.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944762",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Salt What do you know about salt? Today we 13 ______ salt for granted, but many years ago salt was scarce, it was used as money. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1194,16 +1092,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944837",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. In the past, when explorers arrived in a 16 ______ place, they put up their tents or cooked a meal. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944838",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. But 17 ______, when explorers arrive in a new place, they log on to their social networking site using a satellite phone. Sites like Facebook and Twitter also help if we have a problem. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
     "answer": "---",
@@ -1256,16 +1144,6 @@
   {
     "id": "vpr_sd_944931",
     "task_text": "Преобразуйте, если это необходимо, слово CAN так, чтобы оно грамматически соответствовало содержанию текста. Only very wealthy people _____________ buy it at that time.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945485",
-    "task_text": "An Eye in the Sky More than 400 years ago, Galileo Galilei built a telescope. He was an Italian 13 ______. He used the telescope to study space. Since then, scientists have used telescopes to make 14 ______ discoveries. The Hubble Space Telescope was sent to 15 ______ in 1990. It has sent back more than a million 16 ______. Soon, a new telescope will take over for Hubble. It is the James Webb Space Telescope. It is also called JWST, and Webb. In 2018, a 17 ______ will take JWST into space. The new telescope will explore farther into space than Hubble. It will travel a million miles from Earth. This will give scientists a better 18 ______ of the universe. «Hubble rewrote astronomy textbooks,» Maggie Masetti told TFK. She works on the Webb project. «Webb is going to do the same thing.»",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1420,16 +1298,6 @@
   {
     "id": "vpr_sd_944232",
     "task_text": "Преобразуйте, если это необходимо, слово WOMAN так, чтобы оно грамматически соответствовало содержанию текста. On this day _____________ congratulate their fathers and give presents to them.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945589",
-    "task_text": "Преобразуйте, если это необходимо, слово TELL так, чтобы оно грамматически соответствовало содержанию текста. Lomonosov was born in 1711 in a village. He __________________ by his parents to continue the family business but he wanted to study very much.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1684,28 +1552,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944144",
-    "task_text": "Преобразуйте, если это необходимо, слово INVENT так, чтобы оно грамматически соответствовало содержанию текста. Ice pops In fact, this tasty food_____________ by chance by an 11-year-old boy in 1905.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944184",
     "task_text": "Преобразуйте, если это необходимо, слово BIG так, чтобы оно грамматически соответствовало содержанию текста. It is one of the _____________ statues in the world (85 metres). The statue is the symbol of strength and courage of Russian people. It is impossible to forget a visit to Mamayev Kurgan.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945153",
-    "task_text": "Peterhof If you are travelling to St. Petersburg, a visit you can’t miss is to Peterhof. Peterhof is about 30 km from St. Petersburg, and is located next to the Gulf of Finland. This small town was created by order of Peter the Great and is 13 ______ all over the world. It is popular for palaces and gardens that were the residence of the czars until the Revolution of 1917. In 1918 the Peterhof complex was transformed into a series of 14 ______. During World War II it was occupied and destroyed by German troops. After World War II it 15 ______ its restoration, which still continues. The gardens of Peterhof are 16 ______ with many fountains and man-made canals. The water there 17 ______ from natural springs. Samson’s fountain is one of the best known in Peterhof. Visitors always take 18 ______ of it.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1872,16 +1720,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944146",
-    "task_text": "Преобразуйте, если это необходимо, слово NOT REMEMBER так, чтобы оно грамматически соответствовало содержанию текста. Ice pops He ____________ about it until the next morning. The night was very cold and the soda had frozen the glass. The boy was surprised to find out how tasty the ice was.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944209",
     "task_text": "Преобразуйте, если это необходимо, слово NOT CAN так, чтобы оно грамматически соответствовало содержанию текста. His professor ________ say a word when he saw it.",
     "answer": "---",
@@ -1982,56 +1820,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944774",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who came in a hybrid car? 1) Peter 2) Linda 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39130.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944775",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to buy a hybrid car? 1) Peter 2) Linda 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39130.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944768",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is thinking of protecting environment? 1) Peter 2) Linda 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39130.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944769",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who used to drive a conventional Honda Civic? 1) Peter 2) Linda 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39130.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944770",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is disappointed in hybrid cars? 1) Peter 2) Linda 3) Neither",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2332,18 +2122,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945452",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to share some recommendations with his/her students? 1) Bill 2) Toni 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34695.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945453",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks that students often make the same spelling mistakes? 1) Bill 2) Toni 3) Both",
     "answer": "---",
@@ -2468,16 +2246,6 @@
   {
     "id": "vpr_sd_945256",
     "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Most historians credit the origins of the game to 11 th or 12 th century French monks, who began playing a ball against __________________ monastery walls.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945178",
-    "task_text": "Преобразуйте, если это необходимо, слово NOT MEAN так, чтобы оно грамматически соответствовало содержанию текста. However, Italian records from a decade earlier indicate that pasta was a favourite dish of the Romans, years before Marco’s return. This __________________ that pasta had been invented in Italy before it became a popular dish in China. The opposite is probably true: at least 3,000 years ago, the Chinese were making pasta out of bean and rice flour. But Italy likely developed the dish without any help from China.",
     "answer": "---",
     "image": "",
     "all_images": [],
