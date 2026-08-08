@@ -22,28 +22,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945898",
-    "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Maxim Gordejew Maxim wohnt in Nowgorod. Das ist eine schöne Stadt Russlands. Maxim geht gerne mit der Familie spazieren. Sie besichtigen historische Denkmäler. Maxim ist 11 Jahre alt. Er hat eine Schwester und einen Bruder. Er hat einen kleinen Hund Tim. Maxim spielt Fußball gern. Er will ein bekannter Sportler werden. Maxim mag seine Schule. Er macht immer Hausaufgaben. Er mag Mathematik. Maxim mag Sommer und Sommerferien sehr. Vorname | 1. // Alter | 2. // Land | 3. // Zahl der Geschwister | 4. // Haustiere | 5. // Lieblingssport | 6. // Traumberuf | 7. // Lieblingsfach | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945864",
-    "task_text": "Ты услышишь сообщение. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Ты услышишь текст дважды. А. Was stimmt? 1) Jana ist 9 Jahre alt. 2) Jana ist 10 Jahre alt. 3) Jana ist 11 Jahre alt. В. Mit wem lebt Jana zusammen? 1) Mit ihrer Tante. 2) Mit ihren Großeltern. 3) Mit ihren Eltern. С. Janas Vater hat … 1) einen Hund. 2) eine Katze. 3) ein Kaninchen. D. Woher hat Janas Mutter die Katze Petzi bekommen? 1) Von den Nachbarn. 2) Von einem Tierheim. 3) Aus einem Geschäft. E. Was frisst Janas Kaninchen Richard gern? 1) Äpfel und Karotten. 2) Brot und Karotten. 3) Gras und Karotten. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_82811.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_82811.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945881",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Im Wald Mein Großvater und ich gehen in den Wald, wenn das Wetter gut ist. A ___ sammeln gern Pilze. B ___ Großvater kennt den Wald gut und erzählt C ___ viele interessante Geschichten. Im Wald hören wir viele Vögel. Sie singen wunderschön. Ich finde gerne Pilze unter Blättern. Letztes Mal haben wir einen Hasen D ___. Ich E ___ unsere Spaziergänge im Wald. A | 1) ich | 2) er | 3) wir // B | 1) mein | 2) meine | 3) meiner // C | 1) mein | 2) mir | 3) mich // D | 1) sehen | 2) geseht | 3) gesehen // E | 1) möge | 2) mag | 3) möchte Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -134,16 +112,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945883",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Neuer Schüler Gestern ist ein neuer Schüler in unsere Klasse A ___. Sein Name ist Wowa. B ___ hat in Saratow gelebt. Das ist C ___ schöne Stadt in Russland. Wowa ist 10 Jahre alt. Er D ___ eine Schwester und zwei Brüder. Wowa mag Katzen. Er hat eine graue Katze. Wowa treibt gern Sport. E ___ Lieblingssport ist Fußball. Er spielt jeden Tag Fußball. Er will Fußballspieler werden. A | 1) kommen | 2) kommt | 3) gekommen // B | 1) er | 2) sie | 3) es // C | 1) ein | 2) eine | 3) einer // D | 1) haben | 2) habt | 3) hat // E | 1) sein | 2) seine | 3) seiner Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945887",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Olgas Geburtstag Olga hat ihre Freunde zu ihrem Geburtstag eingeladen. Sie A ___ ihren Freunden das Zimmer und ihre Spielsachen. Die Mutter kocht B ___ Essen. Die Kinder gehen zum Tisch. Da C ___viele leckere Speisen. Sie essen Pizza und Kuchen, trinken Saft und Tee. Sie D ___ und lachen. Die Kinder sind sehr zufrieden. Dann spielen E ___ Brettspiele und gehen spazieren. Olga ist glücklich. A | 1) zeigen | 2) zeigt | 3) gezeigt // B | 1) der | 2) die | 3) das // C | 1) sein | 2) ist | 3) sind // D | 1) sprechen | 2) spricht | 3) gesprochen // E | 1) er | 2) sie | 3) es Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -204,28 +172,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945915",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Winter Es ist der Winter. Das Wetter ist gut. Manchmal schneit es. Es ist kalt. Jegor wohnt in einer schönen Stadt. Jegor ist neun Jahre alt und er geht gerne in die Schule. Seine Schule liegt weit vom Haus. Er muss in die Schule mit dem Bus fahren. Alle tragen Winterjacken, Mützen und Schale. Im Bus ist es warm. Jegors Mutter fährt zur Arbeit mit dem Auto. Aber ihre Arbeit ist weit von der Schule. Nach den Stunden geht Jegor mit seinen Freunden spazieren. Manchmal gehen sie zu Eisbahn. Da laufen sie Schlittschuh. Aber am liebsten fährt er Ski. An diesem Wochenende fährt er mit seinen Eltern in den Wald. «Der Winter ist meine Lieblingsjahreszeit», — sagt Jegor. «Wenn es schneit, haben wir eine Schneeballschlacht.» «Wir machen noch gern einen Schneemann», — antworten die Freunde. Die Jungen mögen Winteraktivitäten. Sie spielen und lachen. Es ist lustig. A. Wie ist das Wetter? 1) Es ist kalt. 2) Es ist warm. 3) Es ist sonnig. B. Wie alt ist Jegor? 1) Er ist 8. 2) Er ist 9. 3) Er ist 10. C. Wie geht er zur Schule? 1) Die Schule ist weit, er fährt mit dem Bus. 2) Die Schule ist weit, die Mutter bringt ihn mit dem Auto. 3) Die Schule ist nicht weit, er geht zu Fuß. D. Was macht Jegor am liebsten? 1) Am liebsten fährt Jegor Schlittschuh. 2) Am liebsten fährt Jegor Ski. 3) Am liebsten fährt Jegor in den Wald. E. Welche Jahreszeit mag Jegor? 1) Er mag den Sommer. 2) Er mag den Herbst. 3) Er mag den Winter. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945865",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Meine Familie Ich bin Tim und bin zwölf Jahre alt. Bei uns zu Hause ist es nie langweilig, denn wir sind drei Kinder. Meine Mutter ist sehr kreativ und bastelt gerne mit mir. Mein Vater ist oft im Garten und verbringt viel Zeit mit Bäumen und Pflanzen. Am Wochenende gehen wir alle zusammen in den Park und spielen Federball. Meine beste Freundin heißt Emma. Wir sind Nachbarn, und sie kommt oft zu mir. Wir bauen dann zusammen Lego und denken uns spannende Geschichten für unsere Figuren aus. Mein Bruder Felix ist sieben und will auch immer mitmachen. Er ist schon richtig gut im Lego-Bauen. Meine Schwester Lena ist fünfzehn und hat andere Hobbys. Sie geht ins Fitnessstudio oder macht Yoga im Wohnzimmer. Ich mag Haustiere. Ich habe eine Schildkröte. Sie heißt Speedy. Speedy ist schon fünf Jahre alt und badet gern in ihrem Terrarium. Sie frisst am liebsten Salatblätter und Möhren. Manchmal nehme ich sie mit in den Garten. Dort kann sie langsam durch das Gras spazieren. A. Wie viele Geschwister hat Tim? 1) Zwei. 2) Drei. 3) Vier. B. Wo verbringt Tims Vater viel Zeit? 1) Zu Hause. 2) Im Park. 3) Im Garten. C. Was spielt Tims Familie am Wochenende im Park? 1) Fußball. 2) Federball. 3) Lego-Bauen. D. Welches Hobby hat Tims Schwester? 1) Zeichnen. 2) Basteln. 3) Sport. E. Was frisst Tims Schildkröte Speedy am liebsten? 1) Salatblätter und Möhren. 2) Gurken und Karotten. 3) Äpfel und Bananen. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945904",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Meine Familie Ich heiße Paul. Ich bin elf Jahre alt. Meine Familie ist groß. Das sind meine Mutter, mein Vater, zwei Brüder und eine Schwester. Meine Mutter ist Ärztin, sie arbeitet in einem Krankenhaus. Mein Vater ist Ingenieur, er arbeitet in einem Werk. Die Brüder sind dreizehn und fünfzehn, sie lernen noch in der Schule. Die Schwester ist zwanzig, sie studiert schon. Wir haben verschiedene Hobbys. Ich lese gern und treibe Sport. Meine Brüder und ich spielen zusammen Fußball. Die Schwester mag Musik und singt gern. Ich höre auch gern Musik. Aber ich mag moderne Musik. Am Wochenende machen wir zusammen Ausflüge oder spielen zu Hause Brettspiele. Am Sonntagabend essen wir gemütlich im Familienkreis. Die Mutter und die Schwester kochen und wir helfen ihnen. Dann sitzen wir lange am Tisch, sprechen miteinander, lachen. Ich mag das sehr. A. Hat Paul Geschwister? 1) Er hat eine Schwester. 2) Er hat zwei Brüder. 3) Er hat drei Geschwister. B. Was macht Pauls Schwester? 1) Sie lernt noch. 2) Sie studiert schon. 3) Sie arbeitet schon. C. Wer spielt Fußball? 1) Pauls Bruder spielt Fußball. 2) Pauls Brüder spielen Fußball. 3) Paul und seine Brüder spielen Fußball. D. Wer singt gern? 1) Paul 2) Pauls Schwester 3) Pauls Mutter E. Wer sitzt am Sonntagabend am Tisch? 1) Die ganze Familie. 2) Paul und seine Geschwister. 3) Die Mutter und die Schwester. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -336,16 +284,6 @@
   {
     "id": "vpr_sd_945876",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Geburtstagsparty Tanja hat Geburtstag. Sie A ___ ihre Freunde zur Geburtstagsparty eingeladen. Die Gäste kommen und bringen Geschenke. Die Kinder spielen zusammen, B ___ hören Musik und tanzen. Dann setzen sie sich an den Tisch und C ___. Auf dem Tisch sind Pizzas, Pommes frites und Hähnchennuggets. Später bringt D ___ Mutter Geburtstagskuchen mit Kerzen. Tanja E ___ sehr froh. A | 1) haben | 2) hast | 3) hat // B | 1) er | 2) sie | 3) es // C | 1) essen | 2) esst | 3) isst // D | 1) die | 2) der | 3) dem // E | 1) bin | 2) ist | 3) sein Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945863",
-    "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Elias König Das ist Elias. Er ist 13 Jahre alt und wohnt in Köln. Elias hat ein Aquarium mit Fischen. Elias hat eine ältere Schwester namens Sophie. Sophie spielt Geige und manchmal hört Elias ihr gerne zu. In der Schule gefällt ihm besonders Biologie, denn er lernt gerne über Tiere. Er mag Orangensaft und spielt gern Badminton im Park. Vorname | 1. // Alter | 2. // Stadt | 3. // Geschwister | 4. // Haustiere | 5. // Lieblingsfach | 6. // Lieblingsgetränk | 7. // Lieblingssport | 8.",
     "answer": "---",
     "image": "",
     "all_images": [],

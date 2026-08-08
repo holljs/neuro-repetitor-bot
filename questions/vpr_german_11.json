@@ -24,18 +24,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945788",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Als Tim als Auktionator arbeitete, musste er ständig ... 1) vor vielen Leuten sprechen. 2) Autos hin und her fahren. 3) Fortbildungen machen.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6128.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6128.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945236",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Extreme Sportarten weniger attraktiv 2. Schule in Not geholfen 3. Motivation durch Familie 4. Männersport zum Frauensport gemacht 5. Jung, aber karrierebewusst 6. Ein richtiges Kinderfest A. Als die Turnhalle eines Kölner Gymnasiums geschlossen wurde, um renoviert zu werden, da wurden die Schüler und deren Eltern traurig. Denn das war der einzige Ort, wo der Sportunterricht bisher stattgefunden hat. Seit diesem Dienstag müssen die Schüler aber auf den Sportunterricht nicht mehr verzichten. Dank ihrem Sportlehrer. Er kam auf die Idee, für die Zeit der Renovierung einen Kooperationsvertrag mit dem naheliegenden Sportverein abzuschließen. B. Wer gestern den Marathonlauf in Göttingen verfolgt hatte, dem ist sicher das Läufer-Trio im gelben Trikot aufgefallen. Die drei haben vor kurzem ins Sportverein „Merkur“ gewechselt. Aus ganz einfachem Grund: Beim „Merkur“ ist die Konkurrenz stärker, so die 12-jährige Angela. Und wenn man zum besten Marathonläufer werden will, dann kommt es nicht nur auf die Bedingungen an. C. Die Schule kann es ohne Eltern nicht: Das ist das Ergebnis eines Experiments, das man an zwei Erfurter Grundschulen unternommen hat. Auf Initiative der Sportlehrer hat man dort einen Kurs für Eltern organisiert, in dem es um Thema „Sport“ ging, und feierte großen Erfolg: Die Kinder, deren Eltern den Kurs besucht hatten, kamen viel motivierter in den Sportunterricht. Und was wichtiger ist: blieben länger gesund. D. Mit vier Jahren ging es los. Mit acht hat sie ihr erstes Spiel hinter sich. Mit zwölf wurde sie in einen Eishockeyverein aufgenommen, und als sie sechszehn war, kam ihr erster Erfolg: Sie durfte zum ersten Mal aufs Feld, dabei in der Männermannschaft. Als Torhüterin. Damit hat auch die Geschichte des Frauenhockeys angefangen. Dass Frauen auch Hockey spielen wollen und können, war damals unvorstellbar. E. Wie sieht eine Ausstellung aus? Tausende Leute gehen von einem Stand zum anderen, stellen Fragen und stecken einen Werbeprospekt nach dem anderen in ihre Plastiktüten. Das wollten gerade die Veranstalter der Sportausstellung vermeiden. Um Kinder anzulocken, ließen sie die Kleinen an jedem Stand klettern, springen, hängen, werfen und schießen. Sogar Reiten stand auf dem Programm. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -48,16 +36,6 @@
   {
     "id": "vpr_sd_945671",
     "task_text": "Преобразуйте, если это необходимо, слово VERANSTALTEN так, чтобы оно грамматически соответствовало содержанию текста. Im Dezember 1911 wurde die erste Ausstellung der Künstlergruppe_________.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946150",
-    "task_text": "Преобразуйте, если это необходимо, слово ERSCHEINEN так, чтобы оно грамматически соответствовало содержанию текста. Im April 1912 _________ der Almanach „Der Blaue Reiter“. Eine Besonderheit dieser Künstlergruppe war, dass ihre Mitglieder keinen gemeinsamen Stil hatten.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -111,20 +89,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945988",
-    "task_text": "Stellen Sie sich vor, dass Sie auf einer Wochenendreise einige Fotos gemacht haben. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. 1 2 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12–15 Sätze). Halten Sie sich — wenn Sie über das gewählte Foto erzählen — an folgende Stichpunkte: • wann haben Sie das Foto gemacht • was oder wen zeigt das Foto • was passiert da gerade • warum bewahren Sie das Foto in Ihrem Fotoalbum auf • warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № … gewählt“.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_245872.png",
-      "questions/images_vpr/sd_get_file_id_245873.png",
-      "questions/images_vpr/sd_get_file_id_245874.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -454,18 +418,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945848",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Der Autor hat den dritten Band von Winnetou nicht gelesen, weil... 1) das Buch ihm zu traurig schien. 2) es das Buch in der Bücherei nicht gab. 3) er lieber Tiergeschichten und Krimis las.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6059.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6059.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945823",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Heute liest der Autor am liebsten ... 1) Krimis. 2) Romane 3) Gedichte",
     "answer": "---",
@@ -492,16 +444,6 @@
   {
     "id": "vpr_sd_945229",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Die Anwenderzahl steigt stetig 2. Mehr als ein Telefon 3. Fahrschulbögen auf dem Smartphone 4. Beziehungs-und Gefuhlsmanagement 5. Selbstdarstellung und Spaß 6. Handys sind höchstwahrscheinlich ungefährlich A. Auch mit dem Mobiltelefon kann jetzt für die theoretische Führerscheinprüfung gelernt werden. Mit einer kostenlosen Anwendung (App) für das iPhone und für Android-basierte Smartphones wendet sich der Deutsche Verkehrssicherheitsrat (DVR) in Bonn an alle, die sich auf die theoretische Fahrprüfung vorbereiten oder einfach ihr Wissen über die Regeln im Straßenverkehr testen wollen. Der komplette amtliche Fragenkatalog einschließlich der dazugehörigen Bilder ist nach Fahrzeugklasse und Themengebiet geordnet, egal ob Pkw, Lkw oder Bus. B. Acht von zehn Handys, die heute verkauft werden, sind bereits Smartphones. Betrachtet man das Betriebssystem, so hat hier Googles Android die Nase vorn. Laut Google sind weltweit bereits 135 Millionen Smartphones mit Android ausgestattet, täglich kommen etwa eine halbe Million Geräte hinzu. Marktforscher von IDC meinen, dass im Jahr 2015 Google Android auf einen Anteil von rund4. Prozent kommen und Nokia verdrängen wird. C. Die Benutzung eines Mobiltelefons erhöht bei Kindern und Jugendlichen sehr wahrscheinlich nicht das Risiko, an einem Hirntumor zu erkranken. Für die Studie wurden Daten von Kindern und Erwachsenen mit Gehirntumoren aus Dänemark, Norwegen, Schweden und der Schweiz herangezogen. Dadurch konnte kein direkter Zusammenhang zwischen der Handy-Benutzung und der Entstehung von Hirntumoren festgestellt werden. Das Risiko dafür sei auch fünf Jahre nach der ersten Handy-Nutzung nicht erhöht. D. Mit Handys kann man nicht nur telefonieren oder SMS schreiben. In den letzten Jahren sind die kleinen Alltagsbegleiter mehr und mehr zu Multifunktionsgeräten geworden. Viele Kinder und Jugendliche verwenden ihr Mobiltelefon auch gerne zum Fotografieren, Filmen, Musik hören und zum Spielen. Um Fotos, Musik, Videos oder Spiele untereinander auszutauschen, senden Kinder und Jugendliche entweder kostenpflichtige Bildnachrichten (MMS) oder nutzen kabellose Schnittstellen wie Bluetooth oder austauschbare Speicherkarten. E. Handy ist ein unverzichtbares Organisationsmedium, z.B. zum Freizeit planen, um gemeinsam Hausübungen zu lösen oder schulische Neuigkeiten auszutauschen. Außerdem haben heute viele Jugendliche eine starke emotionale Bindung zu ihrem Handy. Durch verschiedene Gestaltungsmöglichkeiten (Klingeltöne, Hintergrundbilder, Handyschmuck etc.) kann es einerseits individuell gestaltet werden. Andererseits dient es der persönlichen Kommunikation, der Pflege von Netzwerken und Freundschaften sowie dem Austausch von Gefühlen und Stimmungen. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945699",
-    "task_text": "Преобразуйте, если это необходимо, слово KLEID так, чтобы оно грамматически соответствовало содержанию текста. Wie die Arbeit uns anzieht Privat trägt sie gerne Jeans und T-Shirts. Ihr neues Leben als Berufspolitikerin brachte dann aber einen Garderobenwechsel mit sich – mit mehr Blusen und __________________, Stoffhosen statt Jeans.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -699,18 +641,6 @@
     ],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945857",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Alia ist die einzige Frau in diesem Beruf in ihrem Land, weil … 1) Frauen nicht als Ingenieure oder Ärzte arbeiten dürfen. 2) der Beruf selten und die Ausbildung teuer ist. 3) Frauen in diesem Beruf zu viel Aufmerksamkeit bekommen.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18762.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18762.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1002,30 +932,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945883",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Die Fahrt mit dem Bus nach Berlin war sehr... 1) lang. 2) langweilig. 3) anstrengend.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6048.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6048.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945851",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Das Abendessen im Hotel hat... 1) nur den Jungs geschmeckt. 2) wie Mamas Küche geschmeckt. 3) allen nicht sehr gut geschmeckt.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6048.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6048.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945818",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Nach dem Abendessen haben die Jugendlichen ... 1) sich die Umgebung angesehen. 2) die Betten bezogen. 3) das Willy-Brandt-Haus besucht.",
     "answer": "---",
@@ -1202,18 +1108,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945802",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Was findet Sabine spannend? 1) Ihr Fachwissen auf die Probe zu stellen. 2) So zu machen, dass jeder sich angesprochen fühlt. 3) Die Reaktion der Schüler auf sie.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_27781.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_27781.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945227",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Eine neue Art des Fremdsprachenunterrichts 2. Internettechnologien fördern Kontakte 3. Weniger Artikel über Umweltschutz 4. Wälder unter Dauerstress 5. Alltag im Ausland mal erleben 6. Klimawandel bedroht die Umwelt A. Die Folgen des anthropogenen Einflusses auf das globale Klima sind unverkennbar — und sie sind so beunruhigend, weil sie in einem extrem kurzen geologischen Zeitraum ablaufen. Seit Beginn des Industriezeitalters hat sich die durchschnittliche Lufttemperatur um 0,76 Grad erwärmt. Infolge dessen schmilzt das Eis der Erde. Es verschwinden nicht nur die Gletscher in allen großen Gebirgsketten, auch an den Polen hat das große Tauen eingesetzt. Um das Jahr 2050 wird das arktische Meereis gänzlich zerronnen sein. B. Das Sprachen lernen mit Skype mit einem Sprachpartner, ist heute der beste Weg, sofern man nicht gleich einen Sprachaufenthalt machen kann. Skype ermöglicht dir mit deinem Computer andere Skype-Benutzer kostenlos anzurufen, sowie günstig auf Festnetz- und Mobiltelefone anzurufen. Skype ist eine Software, welche du auf deinem Computer installieren musst. Besuche einfach die Website von Skype. Gleich auf der Startseite findest du einen großen Button Skype herunterladen. Klicke diesen und lade die Datei runter. C. Der klassische Schüleraustausch wird in der Schule angeboten. Eine deutsche Mittelstufenklasse und eine ausländische Klasse mit gleichaltrigen Schülern besuchen sich gegenseitig. Sie leben in den Familien der Schüler und nehmen am Unterricht teil. Für viele Schüler ist es die erste Fahrt ins Ausland ohne Eltern. Sie leben sich in den Alltag einer anderen Familie ein und wenden ihre bisher nur theoretischen Sprachkenntnisse endlich einmal praktisch an. D. Der Stickstoff wirkt in Böden und Gewässern wie Dünger und führt zu sauren Böden. Die Belastung durch Ozon führt zu Blatt- und Nadelschäden im Wald. Die Kronenverlichtung der Waldbäume hat seit den 80er-Jahren zugenommen und variierte in den vergangenen Jahren stark. Obwohl nicht mehr von einem Waldsterben gesprochen wird, sind die Wälder stark gestresst, was sie schwächer gegenüber Krankheiten und meteorologischen Extremereignissen macht. E. Die im Laufe des Schulaustausches entstandenen Freundschaften zur Familie, zu Mitschülern, Sportteams und anderen Menschen im Ausland können natürlich weiter gepflegt werden. Per Skype, Facebook und Emails ist es heute ganz einfach, den Kontakt zu halten und auszubauen. Es gibt gemeinsame Erlebnisse und Bekannte, über die die Jugendlichen sich austauschen können. Die Sprachfertigkeiten werden — unbeabsichtigt und automatisch — immer weiter entwickelt. Sogar der Fremdsprachenunterricht gewinnt dadurch eine andere Bedeutung. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -1236,18 +1130,6 @@
   {
     "id": "vpr_sd_945884",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. In die Schule … 1) geht Veronika zu Fuß. 2) fährt Veronika mit dem Fahrrad. 3) fährt Veronika mit dem Bus.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_12388.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_12388.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945852",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Vor dem Unterricht … 1) geht Veronika in die Bücherei, um Bücher auszuleihen. 2) spricht Veronika mit ihren Bekannten über das Lernen. 3) steht Veronika mit den Freundinnen und hört ihnen zu.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1482,42 +1364,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945895",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Lea … 1) besucht schon die Oberstufe. 2) hat die Schule schon abgeschlossen. 3) studiert an einer Hochschule.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23400.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23400.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945863",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Lea ist darüber glücklich, dass… 1) in ihrem Bundesland das Oberstufensystem nicht so kompliziert ist. 2) sie das Abitur erfolgreich bestanden hat und das Studium anfangen kann. 3) es eine Broschüre „Leitfaden für die Oberstufe“ als Hilfe für Schüler und Eltern gibt.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23400.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23400.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945830",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Das Kinderzimmer ist … 1) ein Raum, wo die Schüler der Oberstufe sich in den Freistunden aufhalten können. 2) ein Spielzimmer im Nebengebäude für die Schüler aus den Klassen 5 bis 11. 3) ein fester Klassenraum für jede Klasse mit einer Spiel- und Sitzecke.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23400.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23400.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945797",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Was wird Lea vermissen? 1) Die Freistunden. 2) Die Kuckucksuhr. 3) Das Kinderzimmer.",
     "answer": "---",
@@ -1527,28 +1373,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_23400.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945764",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Welches Fach hat Lea abgewählt? 1) Musik 2) Sport 3) Chemie",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23400.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23400.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945395",
-    "task_text": "Deutschlands Zeitungsmarkt Deutschlands Zeitungsmarkt ist der 13______ Europas. Die Leserinnen und Leser können zwischen rund 350 Zeitungen wählen — jeden Tag. Das 14______ reicht von kleinen Lokalblättern, über große Regionalzeitungen, bis hin zu überregionalen Tageszeitungen. Derzeit werden in Deutschland über 25 Millionen 15______ gedruckt. Davon 16______ knapp 20 Millionen Exemplare auf Tageszeitungen und rund fünf Millionen auf Wochen- und Sonntagszeitungen. Trotz der Konkurrenz durch den Rundfunk und das Internet lesen über 70 Prozent der Deutschen über 14 Jahre 17______ eine Tageszeitung. Das sind etwa 46 Millionen Männer und Frauen. Diese Zahlen zeigen: das Medium Zeitung ist nach wie vor 18______.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1828,18 +1652,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945862",
-    "task_text": "Als Herr Messner jeden von 14 Achttausendern dieser Erde bestieg, war es ihm wichtig, … 1) eine Wette zu gewinnen. 2) mehr über sein Team zu erfahren. 3) seine Möglichkeiten zu prüfen.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23910.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23910.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945829",
     "task_text": "Was denkt Herr Messner über Bergsteiger? – Er findet sie … 1) unvernünftig. 2) erfahren. 3) tapfer.",
     "answer": "---",
@@ -1866,16 +1678,6 @@
   {
     "id": "vpr_sd_945233",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Die Chefs sind dagegen 2. Unerwünschte Briefe 3. Schutz ist notwendig 4. Schnell informiert 5. Online den ganzen Tag 6. Schnell und günstig A. Ich kann mir mein Leben ohne Computer nicht mehr vorstellen. Ich kaufe sogar überwiegend über den Computer ein. Die Web-Seiten, die den Preisvergleich anbieten, sind äußerst hilfreich und geben meistens zuverlässige Information. Aber am meisten fasziniert mich, dass man innerhalb von Sekunden viele Antworten auf fast beliebige Fragen bekommen kann. Wenn ich einen Bericht oder Essey schreibe muss ich nicht in die Bibliothek. Ich muss nur den richtigen Knopf drücken um Informationen bei Wikipedia oder auf anderen Seiten zu bekommen. B. Ich habe Anti-Virus-Programme auf meinem Computer und einen Anti-Spam-Filter. Mein Provider hat auch einen Anti-Spam-Filter. Jedoch bekomme ich täglich eine Unmenge von Spam. Das besorgt mich zunehmend, weil diese Mails viel gefährliches Material enthalten können. Wir haben vor kurzem in der Schule einen Vortrag über die Computer-Sicherheit gehört. Es gibt eine reale Gefahr durch Spam-Attacken auch Geld zu verlieren. Ganz zu schweigen von der Werbung für Drogen oder ähnlichen Kram. C. Soziale Netzwerke sind die Gemeinschaften von Menschen mit ähnlichen Interessen, die gerne miteinander chaten. Die Netzwerke wie Facebook sind unter den Jugendlichen beliebt. Obwohl es auch andere Web-Seiten mit ähnlichen Zielen und Absichten gibt, hat Facebook schon über 300 Millionen Benutzer weltweit. Nur die Arbeitgeber sind mit der Entwicklung nicht unbedingt glücklich. Sie würden am liebsten die Nutzung des Internets am Arbeitsplatz verbieten. Für sie sind solche Web-Seiten Zeitverschwendung. D. Ich verstehe die Motivation von solchen Leuten nicht. Was ist das? Eine Art Rache gegen die Gesellschaft? Die Jugendlichen (und es sind meistens junge Leute), die Virus-Programme schreiben und in die Welt schicken, verursachen unkalkulierbaren Schaden. Heutzutage braucht jeder Anti-Virus-Programme. Wenn man die Up-Dates berücksichtigt ist das nicht billig. Aber heutzutage kannst du nicht einfach on-line gehen ohne die entsprechenden Maßnahmen zum Schutz deiner Computersicherheit zu treffen. E. Das ist erstaunlich, dass erst vor2. Jahren Briefe auf Papier mit Tinte geschrieben wurden. Und diese Briefe wurden in Briefumschlägen mit Poststempeln und Briefmarken verschickt. Und wenn du einen Brief geschrieben hast, hat dein Adressat die Nachricht erst nach 2-3-4 Tagen bekommen. Geschäftspost oder amtliche Post wird natürlich auch heutzutage verschickt. Aber auch das weniger als früher. Und erst privat... Wer schickt heutzutage noch private Briefe? Kaum jemand. Wie viele E-Mails kannst du in einer Stunde schicken, fast umsonst? Und was werden dich genau soviel Briefe kosten an Geld und Zeit? Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945700",
-    "task_text": "Преобразуйте, если это необходимо, слова GUT и MÖCHTE так, чтобы оно грамматически соответствовало содержанию текста. Eine Reise nach Australien Am besten besorgt man sich schon im Vorfeld eine Menge Literatur und Reiseführer über das Zielland. So kann man am ____________ abschätzen, was man auf jeden Fall sehen _______________.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2018,16 +1820,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945656",
-    "task_text": "Prjaniki Die russische Küche ist 13 ______ an vielen köstlichen Törtchen, Keksen und weiterem Kleingebäck. Prjaniki sind ein in Russland sehrf 14 ______ Gebäck, die russische Variante des Lebkuchens. Es gibt viele verschiedene Sorten von Prjaniki und entsprechend viele 15______ dafür. Das Feingebäck wird oft als Nachtisch zum russischen Tee oder Kaffee gereicht. Aber es ist auch ideal zum Naschen zwischendurch. Die 16______ der Prjaniki geht einfach und schnell. Nur zum 17______ der Zuckerglasur muss man dem Gebäck Zeit lassen. ln der Stadt Tula werden Prjaniki spätestens seit dem 17. Jahrhundert in vielfältiger Form und Geschmacksrichtung 18______ Heute gibt es hier ein Lebkuchen-Museum, wo Besucher Prjaniki verkosten können.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945893",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Vor dem Beginn seiner nächsten Reise in die Wüste freut sich Herr Martin darauf, dass … 1) es für ihn leicht ist, die nötige Richtung in der Wüste zu finden. 2) er seine Grundbedürfnisse befriedigt hat. 3) er Probleme des europäischen Lebens hinter sich lässt.",
     "answer": "---",
@@ -2052,18 +1844,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945803",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Was nimmt Herr Martin auf seine Reisen unbedingt mit? 1) Sachen, die für das Überleben in der Wüste wichtig sind. 2) Ein Zelt, weil es gefährlich ist, unter freiem Himmel zu übernachten. 3) Tomatenmark und Nudeln, weil er Nudelsuppe kochen mag.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_25005.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_25005.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945770",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Mit wem reist Herr Martin durch die Wüste? 1) Mit einem großen Team. 2) Mit wenigen Menschen. 3) Nur mit Freunden.",
     "answer": "---",
@@ -2078,16 +1858,6 @@
   {
     "id": "vpr_sd_945234",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Nicht zu Ende 2. Ein glücklicher Anfang 3. Schwer zu erklären 4. Schwer zu glauben 5. Hilft Krisen zu überstehen 6. Hilft die Arbeit zu organisieren A. «Skeletor» ist der Name für eine Investitionsruine in Krakau. Es handelt sich um ein 92 Meter (24 Etagen) hohes, unvollendetes Hochhaus, das ursprünglich Hauptsitz einer großen polnischen Firma werden sollte. Mit dem Bau des Hauses wurde 1975 begonnen. 1979 wurden die Bauarbeiten jedoch aufgrund von wirtschaftlichen und finanziellen Problemen eingestellt. Seinen Spitznamen Skeletor erhielt die an ein Skelett erinnernde Bauruine von der Figur Skeletor aus der in den achtziger Jahren populären Comicserie «Masters of the Universe». Das Gebäude wird wahrscheinlich nie zu Ende gebaut und die Demontage ist zu teuer. B. In der letzten Zeit wurden merkwürdig gehäuft UFO's (Unbekannte Flug-Objekte) «gesehen». In diesem Jahr hat man 394 Berichte registriert im Vergleich zu 118 im letzten Jahr — mehr als eine dreifache Steigerung. Das ist eine seltsame Tatsache. Womit könnte das zu tun haben? Vielleicht ist bei den Außerirdischen eine große Urlaubsperiode eingetreten und die Touristen von anderen Planeten haben den Planeten Erde als besonders interessantes Ziel eingestuft? In diesem Fall können wir stolz darauf sein eine Touristenattraktion des Universums zu sein, eine der populärsten «Urlaubsregionen» des Universums. C. Die Auswirkungen der Finanzkrise greifen immer weiter um sich. Konnte man anfangs noch annehmen, es träfe nur gierige Manager und Bänker, wird mittlerweile deutlich: es trifft uns alle. Aber die gegenwärtige Situation zeigt, wie wir auf Krisen reagieren. Jammern, andere beschuldigen, den Kopf in den Sand stecken oder vorausschauend handeln? Meine Empfehlung in diesen unberechenbaren Zeiten ist zu investieren. Aber nicht in Aktien oder Fonds. Investieren Sie in sich selbst. In Ihre Persönlichkeit. Denn egal wie unsicher die Zeiten werden oder welche schwierige Situationen auf Sie zukommen mögen — mit einer starken Persönlichkeit werden Sie besser damit fertig werden. D. Die Klebenotizen «Post-it» sind ein Teil des Büroalltags geworden. Die gibt es heutzutage in verschiedenen Farben und Größen. Das Bequeme dabei ist, dass sie überall vorübergehend angeklebt und dann an andere Stellen problemlos versetzt werden können. Die sind auch ein sehr bequemes Mittel um Gedanken für eine Zeit festzuhalten oder bei der Ablage in Ordnern bestimmte Stellen zu markieren. Wer hat diese kleine Bequemlichkeit ausgedacht? Dem Erfinder gilt unser Dank, denn wir arbeiten viel effektiver und angenehmer mit Hilfe von diesen kleinen Zetteln. E. Im Jahre 1979 publiziert Walter Kellner aus München eine Geschichte, die mit ihm auf dem See passiert ist. Sein Kleinflugzeug ist abgestürzt und er musste viele Stunden in Lebensgefahr auf dem Wasser verbringen, bevor er gerettet wurde. Diese Geschichte wurde von einem anderen Walther Kellner gelesen, einem Mann aus Australien. Der Australier verklagte den Münchner, weil der angeblich seine Geschichte gestohlen hat. In der Tat haben beide Kellner eine ähnliche Geschichte fast am gleichen Ort erlebt, zwischen Sardinien und Sizilien. Die beiden sind mit ihren Flugzeugen abgestürzt und wurden gerettet. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945383",
-    "task_text": "Berliner Ausstellungen Am 31. Oktober 2017 13______ sich die Veröffentlichung von Martin Luthers Thesen zum 500 Mal. Die Initiatoren des «Lutherjahres 2017» 14______ mit diesem Themenjahr die Auswirkungen der Reformation auf viele Bereiche der Gesellschaft in das Bewusstsein der Öffentlichkeit 15______. Auch in Berlin finden 16______ Veranstaltungen zum großen Reformationsjubiläum statt. Die 17______ Berliner Ausstellungen sind der Festakt zur Eröffnung des Reformationsjubiläums mit einem Festgottesdienst in der Berliner Marienkirche, eine Ausstellung mit Luther-Thesen in der 18______ zu Berlin, die 500 Jahre Protestantismus in der Welt beleuchtet.",
     "answer": "---",
     "image": "",
     "all_images": [],

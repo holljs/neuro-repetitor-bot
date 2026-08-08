@@ -244,18 +244,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945788",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Dominique, qu’est-ce qu’il a fait après le baccalauréat ? 1) Il a commencé à travailler dans une petite agence de voyages. 2) Il a participé à des concours différents. 3) Il est entré à l'école des aux Beaux-Arts, à Paris.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6386.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6386.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945253",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Une nouvelle fonction critiquée 2. Double connexion à la recherche de la sécurité 3. Le smartphone dans le rôle de télécommande 4. Arracher un enfant à son jeu vidéo 5. Une tablette qui peut tout ! 6. Jouer de manière équilibrée A. Comment faire quand on est dans son canapé avec la télécommande hors de portée de main et qu'on ne veut pas voir la publicité ? Yamine Bena, fondateur et programmateur de FreeMute, a mis en place un système qui permet de couper le son de la télévision lors des plages de publicité. Son concept ? Que l'utilisateur siffle ou claque des mains à proximité de son téléphone. Le téléphone doit être un smartphone, et il faut que la télévision soit branchée à une box internet. B. Jeux de mémoire, alphabets, puzzles, histoires à écouter et à lire, cours de musique, énigmes… : les contenus ludo-éducatifs conçus pour les tablettes numériques ne cessent de se multiplier. La variété des « applications » destinées aux enfants et les possibilités offertes par les tablettes sont étonnantes ! C. Le réseau social inclut désormais la reconnaissance faciale qui permet aux utilisateurs d'identifier automatiquement leurs amis sur des photos. On critique fort Facebook qui a mis en ligne une fonction de reconnaissance faciale permettant aux utilisateurs d'identifier automatiquement leurs amis sur le réseau social. D. Victime d'une spectaculaire attaque informatique la semaine dernière, Twitter étudie la possibilité de renforcer son dispositif de sécurité. Le nouveau système de connexion fonctionnerait en deux temps. Le mot de passe du compte Twitter ne suffirait plus pour se connecter et pourrait être secondé par un code d'accès transmis à la personne directement sur son téléphone portable. E. Certains parents se font obéir facilement quand ils demandent à leur enfant d’arrêter leur jeu vidéo. D’autres ont beaucoup plus de mal. C'est aux parents d'imposer aux enfants d'arrêter de jouer car ils sont encore « trop petits » pour réussir à décrocher seuls. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -432,18 +420,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945898",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D'habitude, le sportif Renaud Lavillenie s'entraîne... 1) du matin au soir. 2) de 12h au soir. 3) sans horaires fixes.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_28155.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_28155.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945865",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Renaud Lavillenie a quitté son entraîneur précédent car celui-ci... 1) était déjà vieux et voulait prendre la retraite. 2) a voulu travailler avec un autre sportif. 3) ne le satisfaisait pas.",
     "answer": "---",
@@ -470,18 +446,6 @@
   {
     "id": "vpr_sd_945807",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Philippe D’Encausse utilise-t-il son expérience d'ancien sportif dans son travail actuel d'entraîneur ? 1) Oui, il l'utilise pleinement. 2) Non, il ne l'utilise pas du tout. 3) Il n'utilise qu'une partie de son expérience",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_28155.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_28155.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945774",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D'après Philippe D’Encausse, l'entraînement... 1) a évolué. 2) est moins orienté sur la qualité. 3) reste toujours le même.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -596,18 +560,6 @@
   {
     "id": "vpr_sd_945861",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle est la profession de Sylvie Octobre ? 1) Elle est professeure. 2) Elle est sociologue. 3) Elle est psycholoque.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23446.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23446.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945803",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Combien de pour cent de jeunes de 17 ans lisent chaque jour pour plaisir ? 1) 9 % 2) 19 % 3) 39 %",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -848,32 +800,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945864",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Au début de sa carrière, Pascale Poret a chanté ... 1) en anglais. 2) en français. 3) en allemand.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_31034.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_31034.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945839",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Pourquoi Pascale Poret est-elle devenue chanteuse ? 1) Elle voulait chanter avec ses amis. 2) Elle a toujours rêvé d’être chanteuse. 3) Elle voulait faire connaître ses chansons.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_31034.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_31034.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945806",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Ce qui demande à Pascale Poret le plus d’efforts, c’est ... 1) de composer de la musique. 2) de s’entraîner tous les jours à chanter. 3) d’écrire les textes des chansons.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -893,16 +821,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_31034.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945700",
-    "task_text": "Преобразуйте, если это необходимо, слово PUBLIER так, чтобы оно грамматически соответствовало содержанию текста. Guy de Maupassant Ami de Gustave Flaubert et d'Emile Zola, Maupassant a écrit de très nombreux contes, presque toujours __________________ d'abord dans un journal, puis rassemblés en volumes.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1272,16 +1190,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945699",
-    "task_text": "Преобразуйте, если это необходимо, слово ARRIVER так, чтобы оно грамматически соответствовало содержанию текста. Les 3 souhaits Il était une fois un bûcheron très pauvre. Il n’a jamais eu de chance. Un jour, alors qu’il travaillait, un inconnu __________________ et lui a dit :",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945668",
     "task_text": "Преобразуйте, если это необходимо, слово HABITER так, чтобы оно грамматически соответствовало содержанию текста. Elle m'a invitée à manger chez ses parents, avec lesquels elle _________________ encore. D'abord, j'ai été en retard, ce qui est impossible en Chine. En plus, j'ai apporté des fleurs ce qui est mal vu aussi.",
     "answer": "---",
@@ -1346,32 +1254,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945883",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Comment Philippe a-t-il débuté au patinage artistique ? Son entraîneur l'a remarqué … 1) sur la patinoire du collège. 2) au lycée. 3) quand il était élève à l'école primaire.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6094.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6094.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945850",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Les parents de Philippe qu'est-ce qu'ils faisaient dans la vie ? 1) Son père était maçon et sa mère était comptable. 2) Son père était entraîneur et sa mère était femme au foyé. 3) Ils étaient patineurs tous les deux.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6094.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6094.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945817",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. À quel âge est-il devenu champion pour la première fois ? 1) À l'âge de 10 ans. 2) À l'âge de 8 ans. 3) À l'âge de 12 ans.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1486,16 +1370,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945383",
-    "task_text": "Déchets recyclables Les déchets recyclables sont ceux qui 13______ être triés et connaître une nouvelle vie sous un conditionnement différent. Les déchets 14______ se classent en quatre grandes catégories : le plastique, le verre, le papier et le métal. Bien que le 15______ et le recyclage ne soient pas toujours faciles ils sont 16______. Seul le système de ramassage change d'une Mairie à l'autre. Pour éviter toute erreur, il suffit de se renseigner en Mairie ou de 17______ les indications collées sur les contenaires de ramassage. Si on hésite sur un 18______ il est préférable de le mettre avec les non recyclables.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946023",
     "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Tous les diamants sont formés sous l'immense chaleur et la pression sous la terre et sont remontés à la surface dans les éruptions volcaniques. Ils sont formés de 100 miles métros. La plupart se trouvent dans la roche volcanique et sont extraits dans des régions où l'activité volcanique est encore monnaie courante. Tous les autres diamants sont desserrés. Vingt pays dans le monde produisent des diamants. Afrique du Sud est maintenant le cinquième plus grand. Les diamants sont constitués de carbone pur. Ainsi est le graphite, à partir du quel sont fabriqués les mines de crayon, mais avec les atomes de carbone disposés différemment. Le diamant est l'une des substances naturelles la plus dure sur terre, mais le graphite est l'un des plus doux avec un score de un an et demi. Le plus gros diamant connu est de 2500 miles à travers et mesure dix milliards de trillions de trillions de carats. Trouvé directement au-dessus de l'Australie, le diamant est conservé à l'intérieur de l'étoile Lucy.",
     "answer": "---",
@@ -1548,18 +1422,6 @@
   {
     "id": "vpr_sd_945890",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Patrick Poivre d'Arvor que fait-il dans la vie ? 1) Il est journaliste. 2) Il est aviateur. 3) Il est diplomate.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17111.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17111.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945857",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Il collabore avec... 1) les chaînes de la télévision. 2) le ministère de l'Education Nationale. 3) le magazine \"Phosphore\".",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1631,30 +1493,6 @@
     "all_images": [],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945895",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. La rencontre d’Arthur Ténor avec les collégiens a été … 1) difficile. 2) positive. 3) spontanée.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_20072.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_20072.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945862",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Que fait Arthur Ténor pour donner vie à ses personnages ? 1) Il demande conseil à ses lecteurs. 2) Il décrit des gens qu’il connaît bien. 3) Il se met à la place du personnage.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_20072.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_20072.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1754,18 +1592,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945820",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Il a sauté une première fois avec … 1) d’autres sportifs dans un club de parachutisme. 2) son instructeur. 3) son ami.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6388.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6388.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945762",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Pour fixer un record du monde il y avait … 1) un photographe spécial. 2) une équipe de photograhes. 3) un caméra spécial.",
     "answer": "---",
@@ -1774,30 +1600,6 @@
     "audio": "questions/audio_vpr/sd_6388.mp3.mp3",
     "all_audios": [
       "questions/audio_vpr/sd_6388.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945885",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Que fait Philippe Vandel dans la vie ? 1) C’est un footballeur talentueux. 2) C’est un chanteur extravagant. 3) Il est animateur de TV.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_10569.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_10569.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945852",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle place la télévision occupe-t-elle dans sa vie ? 1) La télévision occupe toutes ses pensées. 2) Il passe toute sa vie devant l’écran. 3) La télévision n'occupe pas tout son temps.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_10569.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_10569.mp3.mp3"
     ],
     "topic": "sdamgia_vpr"
   },
@@ -1868,44 +1670,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945863",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D'après Hélène Soumet, un texte philosophique ... 1) ressemble à un texte littéraire. 2) n'a rien à voir avec un texte littéraire. 3) est plus facile à lire qu'un texte littéraire.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18775.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18775.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945830",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle qualité nécessaire pour réussir en philosophie évoque Hélène Soumet ? 1) L'assiduité 2) L'intelligence 3) La modestie",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18775.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18775.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945797",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Comment apprendre aux élèves à penser ? 1) En lisant tout seul des textes des grands auteurs. 2) En réfléchissant aux problèmes de l'humanité. 3) En discutant en classe, avec le professeur, des textes de philosophie.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18775.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18775.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945764",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle est la méthodologie de l'étude des oeuvres des grands philosophes ? 1) Étudier un grand nombre de travaux à la fois. 2) Progresser étape par étape. 3) Noter ses propres pensées, écrire des essais.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1976,16 +1742,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945395",
-    "task_text": "Les produits issus de l’agriculture biologique Les 13______ issus de l’agriculture biologique sont moins chargés en substances toxiques, pesticides et nitrates. Il serait donc logique de penser qu’ils sont 14______ pour la santé. Néanmoins, si l’on connaît les effets nocifs des pesticides à forte dose, on ignore encore si, à faible dose, ils sont susceptibles d’influer sur la 15______. Il y a un petit 16______ : une étude britannique a mis en évidence que le lait bio contenait plus de vitamines et d’acides 17______ essentiels que le lait conventionnel. Mais, 18______, les études ne montrent pas de supériorité nutritionnelle des aliments bio.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946121",
     "task_text": "Преобразуйте, если это необходимо, слово ROYAL так, чтобы оно грамматически соответствовало содержанию текста. Le château de Brissac Que les plus petits se le disent : voici un géant ! Avec ses sept étages et ses deux cents pièces, Brissac est considéré comme le plus haut des châteaux __________________.",
     "answer": "---",
@@ -2032,18 +1788,6 @@
   {
     "id": "vpr_sd_945835",
     "task_text": "Ludovic Tézier est allé à l’opéra pour la première fois à … 1) 3 ans. 2) 13 ans. 3) 9 ans.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23913.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23913.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945802",
-    "task_text": "Ludovic Tézier est né à … 1) Toulouse. 2) Marseille. 3) Paris.",
     "answer": "---",
     "image": "",
     "all_images": [],
