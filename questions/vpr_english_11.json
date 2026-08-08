@@ -378,16 +378,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945236",
-    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. Some years __________________ General Logan organized another ceremony, this time for the soldiers who survived the war.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944826",
     "task_text": "Преобразуйте, если это необходимо, слово SEE так, чтобы оно грамматически соответствовало содержанию текста. He __________________ it as the northern capital of Russia.",
     "answer": "---",
@@ -942,18 +932,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945573",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to the gym the next day? 1) Mary 2) Peter 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34683.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944954",
     "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Pereslavl-Zalessky Have you ever beento Pereslavl-Zalessky? This charming town _____________ in 1152.",
     "answer": "---",
@@ -966,16 +944,6 @@
   {
     "id": "vpr_sd_945196",
     "task_text": "Преобразуйте, если это необходимо, слово BRING так, чтобы оно грамматически соответствовало содержанию текста. Born in Florida, Missouri, on November 30, 1835, he __________________ up in a small sleepy town on the western bank of the Mississippi River.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945451",
-    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. __________________ the sky will be full of planes and helicopters. The main participants of the parade are, of course, the veterans who pass through the square in trucks or watch the parade from the stands. Veterans wear their medals and anyone can go and congratulate them, give them flowers, or just say thank you.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1020,18 +988,6 @@
   {
     "id": "vpr_sd_945207",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a newspaper? 1) Fred 2) Jane 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34669.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945200",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who sleeps badly after watching a horror film? 1) Fred 2) Jane 3) Both",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1114,16 +1070,6 @@
   {
     "id": "vpr_sd_945629",
     "task_text": "Преобразуйте, если это необходимо, слово FOLLOW так, чтобы оно грамматически соответствовало содержанию текста. Perhaps Russian people enjoy celebrating New Year because it __________________ by really long holidays.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945258",
-    "task_text": "Преобразуйте, если это необходимо, слово BECOME так, чтобы оно грамматически соответствовало содержанию текста. Time passed and the game __________________ more popular.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1222,28 +1168,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945488",
-    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. He was the __________________ person who started the microcomputer revolution.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944189",
     "task_text": "Преобразуйте, если это необходимо, слово TAKE так, чтобы оно грамматически соответствовало содержанию текста. Volgograd is the city where in 1942−1943 great battles between the Soviet and fascist armies ___________ place.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945490",
-    "task_text": "Преобразуйте, если это необходимо, слово NOT ENJOY так, чтобы оно грамматически соответствовало содержанию текста. At the same time, few people know details about his biography and personal life. For example, Steve Jobs was adopted at a very young age. He was a rebellious kid and he __________________ high school.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1352,18 +1278,6 @@
   {
     "id": "vpr_sd_945247",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes tennis? 1) Kathy 2) Joey 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34661.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945240",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who stopped playing tennis because of a health problem? 1) Kathy 2) Joey 3) Both",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1488,16 +1402,6 @@
   {
     "id": "vpr_sd_944228",
     "task_text": "Преобразуйте, если это необходимо, слово CELEBRATE так, чтобы оно грамматически соответствовало содержанию текста. Sorry to say, in Russia there is no such a celebration. Perhaps Russians should start _____________ it too.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945645",
-    "task_text": "The White Nights From late May to early July the nights are bright in St. Petersburg. The brightest period, the White Nights, normally 13 ______ from June 11th to July 2nd. St. Petersburg is а northern city. At this time of year the sun never fully sets, it does not go below the horizon enough for the 14 ______ to grow dark. In fact night 15 ______ like day. A walk along the banks of the city’s rivers and canals in almost broad daylight any time of day or night is very romantic. One of the traditions of the White Nights is watching the Neva bridges open to let through boat 16 ______. The White Nights season is 17 ______ with tourists. They have more hours to do sightseeing and go shopping as shops stay open late. The atmosphere on the streets of St. Petersburg is very 18 ______.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1780,28 +1684,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945450",
-    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. You can see soldiers and cadets in __________________ uniforms as well as modern military equipment.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944880",
     "task_text": "Преобразуйте, если это необходимо, слово GET так, чтобы оно грамматически соответствовало содержанию текста. Russia __________________ Vyborg in 1710 in the Northern War.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945469",
-    "task_text": "Преобразуйте, если это необходимо, слово SEND так, чтобы оно грамматически соответствовало содержанию текста. Last summer she __________________ a letter to Vladimir Putin, asking for a chihuahua dog.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1910,18 +1794,6 @@
   {
     "id": "vpr_sd_945552",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has already bought a present for Anna? 1) Sandra 2) Jim 3) Neither",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34686.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945553",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going shopping tomorrow night? 1) Sandra 2) Jim 3) Both",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2063,16 +1935,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_64471.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945489",
-    "task_text": "Преобразуйте, если это необходимо, слово INTRODUCE так, чтобы оно грамматически соответствовало содержанию текста. He also co-founded Apple Inc. When the iPhone __________________ to public in 2007, it changed the mobile market once and forever.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {

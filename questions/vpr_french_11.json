@@ -36,16 +36,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945240",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Quel avenir pour les jeunes médecins ? 2. Inflation : mesures urgentes 3. Fin de « l’enfant unique » 4. Les Corses sont-ils racistes ? 5. L’année la plus chaude ! 6. Fraude fiscale A. Aux 195 pays qui, le 12 décembre, à Paris, ont conclu un accord historique pour contrecarrer le réchauffement planétaire, le bilan climatique de l’année 2015 apporte une légitimation elle aussi historique. La colonne de mercure a en effet grimpé à un niveau inégalé depuis 1880, date des premiers relevés. Une poussée de fièvre largement imputable à un épisode El Niño particulièrement puissant, un phénomène océanique et atmosphérique dont l’effet s’ajoute à la tendance lourde, le réchauffement dû aux émissions humaines de gaz à effet de serre. B. Apple Italia a été accusée par les services antifraude de ne pas avoir payé l’IRES, l’impôt sur les revenus, de 2008 à 2013. Après plusieurs mois de négociations, Apple Italia, qui dépend du siège européen d’Apple en Irlande, a accepté de faire un chèque de 318 millions d’euros, alors que la somme réclamée atteignait près de 880 millions d’euros. Le quotidien estime que cette décision pourrait constituer un précédent dans d’autres procédures en Europe. C. Le 1er janvier 2016, la Chine abandonne officiellement la politique selon laquelle chaque famille ne pouvait avoir qu’un enfant. La mise en place en 1979 de cette politique, trois ans après la mort de Mao et au moment où Deng Xiaoping lançait sa politique de réformes et d’ouverture, s’expliquait par des raisons économiques. Tout comme son abandon, près de quarante ans plus tard, dans une Chine grisonnante et en quête d’un nouveau modèle de développement qui donne une part plus importante à la consommation. D. Comme il faut compter entre dix et quinze ans entre l’admission au concours d’un étudiant en PACES (première année commune aux études de santé) et son installation en tant que jeune médecin, « les étudiants sélectionnés aujourd’hui arriveront à la fin de leurs études en 2025-2030, quand les déserts médicaux n’existeront plus », déplore Maxime Rifad. Il juge l’accompagnement à l’installation des jeunes médecins dans les zones désertées bien « plus efficace et plus immédiat ». E. Les débordements qui ont suivi l’agression de pompiers dans un quartier sensible d’Ajaccio viennent relancer un débat nourri d’épisodes xénophobes passés, bien réels, mais dont la portée est souvent surévaluée, ou interprétée à la lumière d’analyses simplifiées, pour ne pas dire simplistes. Les dernières données disponibles de la Commission nationale consultative des droits de l’homme (2013) font état d’un niveau de violence à caractère raciste sur l’île globalement comparable à celui des autres régions françaises – il est même parfois nettement inférieur. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945701",
     "task_text": "Преобразуйте, если это необходимо, слово RENCONTRER так, чтобы оно грамматически соответствовало содержанию текста. Un conseil que je peux donner aux voyageurs, c'est de se renseigner un minimum sur les coutumes des pays qu'ils visitent. Ce n'était pas mon cas quand je suis allée en Chine. Quelques jours après mon arrivée, j' _________________ une jeune fille très gentille.",
     "answer": "---",
@@ -68,16 +58,6 @@
   {
     "id": "vpr_sd_946163",
     "task_text": "Преобразуйте, если это необходимо, слово NAITRE так, чтобы оно грамматически соответствовало содержанию текста. Jacques- Yves Cousteau __________________ il y a plus de quatre-vingts ans près de Bordeaux, dans le sud-ouest de la France, mais c'est à Paris qu'il a fait ses études.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946116",
-    "task_text": "Преобразуйте, если это необходимо, слово S’ARRÊTER так, чтобы оно грамматически соответствовало содержанию текста. Le sourire d’un ange Visitez la très belle ville de Reims, puis __________________ devant la cathédrale Notre-Dame.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -122,16 +102,6 @@
   {
     "id": "vpr_sd_946144",
     "task_text": "Преобразуйте, если это необходимо, слово PRENDRE так, чтобы оно грамматически соответствовало содержанию текста. Restez vigilant, protégez-vous et __________________ garde aux pickpockets !",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946103",
-    "task_text": "Преобразуйте, если это необходимо, слово VISITER так, чтобы оно грамматически соответствовало содержанию текста. et le 18 novembre 1793, pour la première fois, les Parisiens sont venus __________________ le nouveau musée. Depuis cette date, le Louvre est toujours un musée mais il a beaucoup changé.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -288,16 +258,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946096",
-    "task_text": "Преобразуйте, если это необходимо, слово CONSTRUIRE так, чтобы оно грамматически соответствовало содержанию текста. Un pont traverse cette rivière et sur ce pont on __________ au XVI siècle une longue salle de danse.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946048",
     "task_text": "Преобразуйте, если это необходимо, слово CE так, чтобы оно грамматически соответствовало содержанию текста. Et ce qui caractérise leur comportement, c’est premièrement leur désir de jouir d'une liberté absolue. _________________ aspiration à l’indépendance suscite un nombre infini de conflits entre les adultes et les ados :",
     "answer": "---",
@@ -430,18 +390,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945894",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Dans quel pays a-t-on constaté que la lecture devient un passe-temps honteux pour les jeunes ? 1) En France 2) Aux Etats-Unis 3) Au Royaume-Uni",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23446.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23446.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945861",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle est la profession de Sylvie Octobre ? 1) Elle est professeure. 2) Elle est sociologue. 3) Elle est psycholoque.",
     "answer": "---",
@@ -562,16 +510,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945918",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui adore lire ? 1) Anne-Marie 2) Nicolas 3) Les deux Аудиозапись к этому заданию отсутствует, приводим текст. Anne-Marie : Tu as lu ça, Nicolas ? Sur ce site Internet on peut voter pour nos livres préférés de tous les temps. Tu voterais pour quel livre, toi ? Nicolas : Mon livre préféré, c’est « Les Misérables » de Victor Hugo, car c’est un livre à la fois passionnant et triste, et en plus il évoque les émotions et les événements de l’époque dans laquelle il se situe. Et toi, Anne-Marie, as tu un livre favori ? Anne-Marie : Moi, le livre que je préfère c’est « Le Petit Prince » de Saint-Exupéry. Même si c’est un livre pour les enfants, je trouve que les thèmes et les messages sont valables pour tous, et à mon avis, c’est l’un des livres français les plus mystérieux : le narrateur c’est un aviateur mais on ne sait pas qui c’est exactement. Nicolas : Moi, j’aurais du mal à choisir le meilleur livre de tous les temps. C’est presque impossible. Je pense qu’on choisit des livres pour des raisons totalement différentes : il y a des livres qui traitent des sujets difficiles et qui ont eu beaucoup d’influence sur des gens. Mais pour le plaisir je choisirais par exemple « Les Trois Mousquetaires » de Dumas. C’est un auteur qui me passionne toujours et dont j’admire l’esprit et le style. Anne-Marie, qu’est-ce que tu en penses, toi qui as toujours un livre à la main ? Anne-Marie : J’ai le même problème que toi, Nicolas. J’ai beaucoup de livres préférés, car tout dépend de mon humeur, de l’endroit où je me trouve, de mes préoccupations. Il y a des romans classiques qui sont formidables, comme « Le Rouge et le Noir » de Stendhal que je lis et relis régulièrement, et il y a des livres classiques pour enfants qui me rappellent mon enfance comme « Le grand Meaulnes ». Ces deux livres sont en quelque sorte des livres magiques pour moi. Nicolas : Là tu as raison, les classiques c’est une valeur sûre, sans doute, mais n’oublions pas nos contemporains. Il y a plein de nouveaux romans qui m’inspirent, comme « Le Scaphandre et le Papillon » qui m’a émerveillé. L’auteur traite d’un sujet grave et triste sur un ton comique. Et pourquoi pas les bandes dessinées, après tout ? Anne-Marie : Ah, ça — non ! Ce n’est pas de la littérature ! Nicolas : Peut-être, mais quand je me sens triste ou préoccupé, j’aime lire Tintin ou Asterix. Et puis, les BD sont des ouvrages importants de notre culture. Alors, pour les livres comme pour toutes les choses — tous les goûts sont dans la nature !",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945919",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui choisit son livre à lire selon la situation ? 1) Anne-Marie 2) Nicolas 3) Les deux Аудиозапись к этому заданию отсутствует, приводим текст. Anne-Marie : Tu as lu ça, Nicolas ? Sur ce site Internet on peut voter pour nos livres préférés de tous les temps. Tu voterais pour quel livre, toi ? Nicolas : Mon livre préféré, c’est « Les Misérables » de Victor Hugo, car c’est un livre à la fois passionnant et triste, et en plus il évoque les émotions et les événements de l’époque dans laquelle il se situe. Et toi, Anne-Marie, as tu un livre favori ? Anne-Marie : Moi, le livre que je préfère c’est « Le Petit Prince » de Saint-Exupéry. Même si c’est un livre pour les enfants, je trouve que les thèmes et les messages sont valables pour tous, et à mon avis, c’est l’un des livres français les plus mystérieux : le narrateur c’est un aviateur mais on ne sait pas qui c’est exactement. Nicolas : Moi, j’aurais du mal à choisir le meilleur livre de tous les temps. C’est presque impossible. Je pense qu’on choisit des livres pour des raisons totalement différentes : il y a des livres qui traitent des sujets difficiles et qui ont eu beaucoup d’influence sur des gens. Mais pour le plaisir je choisirais par exemple « Les Trois Mousquetaires » de Dumas. C’est un auteur qui me passionne toujours et dont j’admire l’esprit et le style. Anne-Marie, qu’est-ce que tu en penses, toi qui as toujours un livre à la main ? Anne-Marie : J’ai le même problème que toi, Nicolas. J’ai beaucoup de livres préférés, car tout dépend de mon humeur, de l’endroit où je me trouve, de mes préoccupations. Il y a des romans classiques qui sont formidables, comme « Le Rouge et le Noir » de Stendhal que je lis et relis régulièrement, et il y a des livres classiques pour enfants qui me rappellent mon enfance comme « Le grand Meaulnes ». Ces deux livres sont en quelque sorte des livres magiques pour moi. Nicolas : Là tu as raison, les classiques c’est une valeur sûre, sans doute, mais n’oublions pas nos contemporains. Il y a plein de nouveaux romans qui m’inspirent, comme « Le Scaphandre et le Papillon » qui m’a émerveillé. L’auteur traite d’un sujet grave et triste sur un ton comique. Et pourquoi pas les bandes dessinées, après tout ? Anne-Marie : Ah, ça — non ! Ce n’est pas de la littérature ! Nicolas : Peut-être, mais quand je me sens triste ou préoccupé, j’aime lire Tintin ou Asterix. Et puis, les BD sont des ouvrages importants de notre culture. Alors, pour les livres comme pour toutes les choses — tous les goûts sont dans la nature !",
     "answer": "---",
@@ -584,16 +522,6 @@
   {
     "id": "vpr_sd_945912",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui aime aussi les oeuvres des écrivains modernes ? 1) Anne-Marie 2) Nicolas 3) Personne Аудиозапись к этому заданию отсутствует, приводим текст. Anne-Marie : Tu as lu ça, Nicolas ? Sur ce site Internet on peut voter pour nos livres préférés de tous les temps. Tu voterais pour quel livre, toi ? Nicolas : Mon livre préféré, c’est « Les Misérables » de Victor Hugo, car c’est un livre à la fois passionnant et triste, et en plus il évoque les émotions et les événements de l’époque dans laquelle il se situe. Et toi, Anne-Marie, as tu un livre favori ? Anne-Marie : Moi, le livre que je préfère c’est « Le Petit Prince » de Saint-Exupéry. Même si c’est un livre pour les enfants, je trouve que les thèmes et les messages sont valables pour tous, et à mon avis, c’est l’un des livres français les plus mystérieux : le narrateur c’est un aviateur mais on ne sait pas qui c’est exactement. Nicolas : Moi, j’aurais du mal à choisir le meilleur livre de tous les temps. C’est presque impossible. Je pense qu’on choisit des livres pour des raisons totalement différentes : il y a des livres qui traitent des sujets difficiles et qui ont eu beaucoup d’influence sur des gens. Mais pour le plaisir je choisirais par exemple « Les Trois Mousquetaires » de Dumas. C’est un auteur qui me passionne toujours et dont j’admire l’esprit et le style. Anne-Marie, qu’est-ce que tu en penses, toi qui as toujours un livre à la main ? Anne-Marie : J’ai le même problème que toi, Nicolas. J’ai beaucoup de livres préférés, car tout dépend de mon humeur, de l’endroit où je me trouve, de mes préoccupations. Il y a des romans classiques qui sont formidables, comme « Le Rouge et le Noir » de Stendhal que je lis et relis régulièrement, et il y a des livres classiques pour enfants qui me rappellent mon enfance comme « Le grand Meaulnes ». Ces deux livres sont en quelque sorte des livres magiques pour moi. Nicolas : Là tu as raison, les classiques c’est une valeur sûre, sans doute, mais n’oublions pas nos contemporains. Il y a plein de nouveaux romans qui m’inspirent, comme « Le Scaphandre et le Papillon » qui m’a émerveillé. L’auteur traite d’un sujet grave et triste sur un ton comique. Et pourquoi pas les bandes dessinées, après tout ? Anne-Marie : Ah, ça — non ! Ce n’est pas de la littérature ! Nicolas : Peut-être, mais quand je me sens triste ou préoccupé, j’aime lire Tintin ou Asterix. Et puis, les BD sont des ouvrages importants de notre culture. Alors, pour les livres comme pour toutes les choses — tous les goûts sont dans la nature !",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945913",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui dit que les bandes dessinées ne méritent pas d'être lues ? 1) Anne-Marie 2) Nicolas 3) Personne Аудиозапись к этому заданию отсутствует, приводим текст. Anne-Marie : Tu as lu ça, Nicolas ? Sur ce site Internet on peut voter pour nos livres préférés de tous les temps. Tu voterais pour quel livre, toi ? Nicolas : Mon livre préféré, c’est « Les Misérables » de Victor Hugo, car c’est un livre à la fois passionnant et triste, et en plus il évoque les émotions et les événements de l’époque dans laquelle il se situe. Et toi, Anne-Marie, as tu un livre favori ? Anne-Marie : Moi, le livre que je préfère c’est « Le Petit Prince » de Saint-Exupéry. Même si c’est un livre pour les enfants, je trouve que les thèmes et les messages sont valables pour tous, et à mon avis, c’est l’un des livres français les plus mystérieux : le narrateur c’est un aviateur mais on ne sait pas qui c’est exactement. Nicolas : Moi, j’aurais du mal à choisir le meilleur livre de tous les temps. C’est presque impossible. Je pense qu’on choisit des livres pour des raisons totalement différentes : il y a des livres qui traitent des sujets difficiles et qui ont eu beaucoup d’influence sur des gens. Mais pour le plaisir je choisirais par exemple « Les Trois Mousquetaires » de Dumas. C’est un auteur qui me passionne toujours et dont j’admire l’esprit et le style. Anne-Marie, qu’est-ce que tu en penses, toi qui as toujours un livre à la main ? Anne-Marie : J’ai le même problème que toi, Nicolas. J’ai beaucoup de livres préférés, car tout dépend de mon humeur, de l’endroit où je me trouve, de mes préoccupations. Il y a des romans classiques qui sont formidables, comme « Le Rouge et le Noir » de Stendhal que je lis et relis régulièrement, et il y a des livres classiques pour enfants qui me rappellent mon enfance comme « Le grand Meaulnes ». Ces deux livres sont en quelque sorte des livres magiques pour moi. Nicolas : Là tu as raison, les classiques c’est une valeur sûre, sans doute, mais n’oublions pas nos contemporains. Il y a plein de nouveaux romans qui m’inspirent, comme « Le Scaphandre et le Papillon » qui m’a émerveillé. L’auteur traite d’un sujet grave et triste sur un ton comique. Et pourquoi pas les bandes dessinées, après tout ? Anne-Marie : Ah, ça — non ! Ce n’est pas de la littérature ! Nicolas : Peut-être, mais quand je me sens triste ou préoccupé, j’aime lire Tintin ou Asterix. Et puis, les BD sont des ouvrages importants de notre culture. Alors, pour les livres comme pour toutes les choses — tous les goûts sont dans la nature !",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -696,16 +624,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945855",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Raymond commença à comprendre la réelle valeur des livres de James Bond après : 1) avoir eu la chance de les lire tous. 2) avoir vu son premier film James Bond. 3) avoir lu tous les livres pour la deuxième fois.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945822",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Grâce à internet, les fans de James Bond d'aujourd'hui : 1) sont devenus beaucoup plus unis qu'il ne l'étaient auparavant. 2) peuvent publier plus de magazines à propos de Bond. 3) tiennent moins de conventions consacrées à Bond.",
     "answer": "---",
@@ -798,16 +716,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946030",
-    "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Qui a inventé la machine à vapeur ? Heron de l'Egypte. Heron a vécu en Alexandrie et est surtout connu comme un mathématicien et géomètre. Malheureusement pour Heron, personne n'était en mesure de voir sa fonction pratique, de sorte qu'il a été considéré comme rien de plus qu'une nouveauté amusante. Etonnamment, par rapport Heron, le chemin de fer avait déjà été inventé 700 années plus tôt. Le principe des chemins de fer a ensuite été complètement oublié pendant près de 500 autres années, jusqu'à ce que les gens ont eu l'idée de les utiliser dans les mines au XIVe siècle. L'historien Arnold Toynbee a écrit un brillant essai où il spéculait ce qui serait arrivé si les deux inventions ont été combinées pour créer un empire grec global, basé sur un réseau ferroviaire rapide. Heron a également inventé le distributeur de boissons — pour quatre drachmes vous avez un coup d'eau bénite — et un dispositif portable pour s'assurer que personne d'autre ne pouvait boire le vin que vous avez apporté à un niveau précis de la bouteille.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945242",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1) Histoire 2) Environnement 3) Voyages 4) Géographie 5) Sortie 6) Espace А. Le réchauffement de la planète est un problème mondial. Les gouvernements tentent de trouver des solutions pour limiter la quantité de gaz à effet de serre. Mais ils ont du mal à se mettre d’accord. Tout un chacun peut aussi contribuer à la lutte contre ce réchauffement, en réduisant ses déplacements en automobile ou en éteignant les lumières et les appareils électriques non utilisés. В. L’Océanie est le plus petit des 6 continents et le moins peuplé après l’Antarctique. Ce continent regroupe des dizaines de milliers d’îles dans l’océan Pacifique. Les îles de l’Océanie représentent une surface relativement petite. Toute la région est généralement divisée en 4 grands ensembles : l’Australasie, la Mélanésie, la Micronésie et la Polynésie. C. Après la découverte de l’Amérique par Colomb, les pays européens se lancent dans la colonisation des nouveaux territoires. L’Espagne et le Portugal s’implantent en Amérique du Sud, la France et l’Angleterre – en Amérique du Nord. En Asie, les Européens s’installent principalement en Inde et en Indonésie. Au XIXe siècle, ils se lancent à la conquête du continent africain. D. Le musée des Beaux-Arts Pouchkine conserve des trésors qui justifient bien sa visite. Dans les salles consacrées à l’art héllénistique et copte, les portraits du Fayoum étonnent par la profondeur des visages peints par des artistes grecs. En point d’orgue aux écoles du Nord (XIIe-XVII s.), des oeuvres majeures de Lucas Cranagh L’Ancien, de Pieter Brueghel le Jeune et de Rembrandt. E. À partir des années 1920, les scientifiques mettent au point des fusées assez rapides pour échapper à la gravité. Grâce à ces progrès, l’Union soviétique lance le premier satellite artificiel de la Terre le 4 octobre 1957 : Spoutnik-1. En 1957, l’URSS envoie un chien en orbite. Le 12 avril 1961, Youri Gagarine devient le premier homme à tourner autour de la Terre. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -880,16 +788,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945710",
-    "task_text": "Преобразуйте, если это необходимо, слово VOULOIR так, чтобы оно грамматически соответствовало содержанию текста. Le château de ma mère Tous les matins, vers quatre heures, mon père ouvrait la porte de ma chambre et chuchotait : « __________________ – tu venir» ?",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946161",
     "task_text": "Преобразуйте, если это необходимо, слово DEVENIR так, чтобы оно грамматически соответствовало содержанию текста. C'est il y a un peu plus de deux siècles, à l’époque de la Révolution que le Louvre __________________ un musée.",
     "answer": "---",
@@ -920,18 +818,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945884",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Marie Claire Gerardin, coach... 1) travaille pour la société ProActa. 2) a fondé la société ProActa. 3) a un contrat avec la société ProActa.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_12394.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_12394.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945859",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. C'est en Belgique que Mme Gerardin... 1) a fait ses études. 2) a travaillé pendant deux ans. 3) a fait un stage.",
     "answer": "---",
@@ -941,16 +827,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_12394.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945668",
-    "task_text": "Преобразуйте, если это необходимо, слово HABITER так, чтобы оно грамматически соответствовало содержанию текста. Elle m'a invitée à manger chez ses parents, avec lesquels elle _________________ encore. D'abord, j'ai été en retard, ce qui est impossible en Chine. En plus, j'ai apporté des fleurs ce qui est mal vu aussi.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -999,26 +875,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_6094.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945258",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Sport 2. Législation 3. Circulation 4. Santé 5. Faits divers 6. Syndicats A. Le ministre de Transports a demandé à 12 préfets des départements les plus touchés par les accidents de la route de lancer les actions plus ciblées pour diminuer le nombre des morts et des blessés qui a augmenté de 1,2 % en novembre par rapport au même mois 2005. B. En 2007 le Président russe V. Poutine a signé une loi imposant des restrictions (une amende de 2 à 9 euros) quant à la consommation de bière et d’alcool dans les lieux publics. La même somme devra être versée par toute personne impliquant des mineurs. C. De nombreuses cérémonies ont eu lieu un peu partout au Canada, pour fêter le 17e anniversaire de la mort des 14 jeunes filles de l’école de Montréal tuées lors d’une fusillade. L’auteur des faits, M. Lépine, s’est suicidé ensuite après avoir déclaré que des féministes avaient détruit sa vie. D. L’ancien Premier ministre britannique Margaret Thatcher, 80 ans, a quitté hier l’hôpital de Londres où elle avait été admise après s’être sentie faible en fin d’après-midi. E. Après une défaite malheureuse contre Gravelines, le Paris Basket Racing devra retrouver la route de la victoire face à Reims, sur son parquet du stade Pierre-de-Coubertin. Il doit gagner s’il veut réitérer sa fabuleuse série de cinq victoires consécutives obtenues en novembre 2005. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945715",
-    "task_text": "Преобразуйте, если это необходимо, слово CONSTRUIRE так, чтобы оно грамматически соответствовало содержанию текста. Avant de devenir un musée, le Louvre a été un palais royal pendant des siècles. C'était d’abord une forteresse __________________sous le règne de Philippe Auguste.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1084,16 +940,6 @@
   {
     "id": "vpr_sd_945256",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Environnement 2. Musique 3. Médecine 4. Economie 5. Religion 6. Hobby A. A voir et à entendre Lionel Melka. Ses textes sont des petites histoires de la vie de tous les jours, avec des mots simples. Il chante l’amour comme personne et se met, tel un comédien, dans la peau de ses personnages. B. Les Français considèrent la laïcité comme une liberté. A cent ans, depuis 1905, elle reste une valeur sacrée. 51 % des Français la définissent comme « la possibilité laissée à chaque citoyen de pratiquer sa religion » ,64 % jugent qu’elle est menacée et 74 % des interviewés estiment qu’il faut la conserver. C. La généalogie, une pratique à la mode. Ils sont une vingtaine à venir une fois par mois à la section locale de l’association généalogique de l’Oise. Ils nourrissent tous une même ambition : se construire un arbre de vie pour mieux comprendre leurs origines. D. Au Danemark s’est mis en place un «écosystème industriel». Les rejets d’une centrale électrique au charbon servent de matière première aux autres. Bilan : d’importantes économies d’énergie et zéro déchets en sortie. E. Soigner les femmes pakistanaises défigurées c’est l’une des missions «Opérations sourire» lancées par Médecins du monde. Au Cambodge, à Madagascar, en Ethiopie, les chirurgiens de MDM rendent le sourire à des enfants pourvus de malformations faciales. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945673",
-    "task_text": "Преобразуйте, если это необходимо, слово ITALIEN так, чтобы оно грамматически соответствовало содержанию текста. L'édifice, réputé sain et sûr, ouvrit également la porte à la Renaissance __________ et à Léonard de Vinci.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1198,16 +1044,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946087",
-    "task_text": "Преобразуйте, если это необходимо, слово ALLER так, чтобы оно грамматически соответствовало содержанию текста. Avant, le samedi matin, il y avait classe. Maintenant les enfants __________________ à l’école quatre jours par semaine, on appelle cela la semaine de quatre jours.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945969",
     "task_text": "Des applications Des applications permettent aux fêtards d'organiser des 13______ ou de contrôler leur taux d'alcoolémie. Les réseaux 14______ peuvent aussi aider les jeunes à rentrer en toute sécurité après le réveillon de fin d'année. Ainsi Axa Prévention s'est associé à Facebook pour leur 15______ un service gratuit. Ce service leur 16______ de planifier et d'organiser leurs déplacements en soirée. Cette 17______ permet de visualiser tous les événements créés sur Facebook et auxquels les amis participent. Sur le modèle du covoiturage, 18______ peut ensuite proposer des places dans son véhicule ou identifier qui peut le raccompagner. Donc on peut conduire sans risque grâce aux applications.",
     "answer": "---",
@@ -1270,18 +1106,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945794",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quelle tenue a-t-il devant la caméra ? 1) Il met un t-shirt et une veste. 2) Il porte un costume classique et une chemise. 3) Il porte un jean et un pull.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_10569.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_10569.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945957",
     "task_text": "Aider les patients Les 13______essaient d’aider les personnes âgées grâce aux ours. Ils 14______ que la vieillesse ressemble à la 15______ pendant laquelle les ours entrent en hibernation. Aujourd’hui les scientifiques se penchent sur les 16______ spéciaux qui se passent dans le corps des ours. Grâce à ces mécanismes ces derniers réussissent à ne pas trop perdre de muscles, alors qu’ils sont 17______durant plusieurs mois. Comme l’explique une vidéo proposée par Universcience, comprendre les facultés antiatrophiques de l’ours serait utile aux personnes âgées et aux malades alités pendant de 18______ périodes.",
     "answer": "---",
@@ -1302,40 +1126,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945797",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Comment apprendre aux élèves à penser ? 1) En lisant tout seul des textes des grands auteurs. 2) En réfléchissant aux problèmes de l'humanité. 3) En discutant en classe, avec le professeur, des textes de philosophie.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18775.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18775.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945711",
-    "task_text": "Преобразуйте, если это необходимо, слово MÉLANGER так, чтобы оно грамматически соответствовало содержанию текста. L’origine du français La langue française d’aujourd’hui est le résultat d’une longue évolution. D’abord, il y a eu le gallo-romain, une langue qui __________________ la langue gauloise du peuple celte et le latin des Romains, aux premiers siècles.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946098",
     "task_text": "Преобразуйте, если это необходимо, слово COMMENCER так, чтобы оно грамматически соответствовало содержанию текста. NOTRE-DAME Erigée sur le lieu même où une basilique chrétienne avait déjà pris la place d’un temple de l’époque romaine, Notre-Dame a résulté de la décision de Maurice Sully qui, en 1163, a fait __________________ la construction du choeur.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945979",
-    "task_text": "Pluton La neuvième planète du système solaire fut découverte en 1930. Les astronomes la 13______ depuis longtemps. Leurs calculs avaient prédit la présence d'une planète au delà de Neptune, mais il n’en y avait pas de preuves. Elle était trop éloignée pour qu’on puisse l’ 14______ avec les téléscopes d’autrefois. Pourtant un jeune astronome amateur 15______ réussit à faire ses photos. Il n’avait que vingt quatre ans et il n’avait pas de formation 16______. Mais il était passionné d’astronomie et poursuivait les 17______ de la neuvième planète. Pluton à été nommée en référence au dieu romain des enfers, dans la mythologie. Ce 18______ fut proposé par une fille britannique qui avait 11 ans.",
     "answer": "---",
     "image": "",
     "all_images": [],

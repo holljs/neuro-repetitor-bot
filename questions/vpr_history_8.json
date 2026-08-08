@@ -622,18 +622,5 @@
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945596",
-    "task_text": "1) «Сказание о князьях Владимирских» 2) «Повесть о Шемякином суде» 3) ода «Фелица» 4) 5)",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_73508.png",
-      "questions/images_vpr/sd_get_file_id_73507.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
   }
 ]
