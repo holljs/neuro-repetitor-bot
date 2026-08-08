@@ -806,18 +806,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945766",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Alias Arbeitskollegen haben … 1) am Anfang gezweifelt, dass sie die Arbeit gut machen kann. 2) gedacht, dass sie das College nach drei Monaten verlässt. 3) alles dafür getan, damit sie das Team schnell verlässt.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18762.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18762.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945242",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Energiequelle für die Muskeln 2. Überall ist sie super! 3. Deutsche Leser lieben Krimis 4. Von der Bergwiese in die Antarktis 5. Theaterspiel für jedermann 6. Illegale Downloads schaden den Künstlern A. In unmittelbarer Nähe des Deutschen Auswandererhauses wurde die neueste Touristenattraktion an der Nordsee eröffnet: das Klimahaus Bremerhaven 8° Ost. Auf 11.500 Quadratmetern Ausstellungsfläche sind die Klimazonen der Erde simuliert. Die Besucher werden auf1. Ebenen zu einer Wiese in der Schweiz geführt, nach Sardinien, in die Halbwüste Sahelzone, nach Kamerun, Samoa, in die Antarktis, nach Alaska und ins Wattenmeer. B. Die Hoffnungen, die in das Internet gesetzt wurden, haben sich nicht erfüllt. Viele Musiker müssen nun um ihre Existenz kämpfen. 2006 war für Ekkehard Ehlers die Welt noch in Ordnung. Er brachte die CD „A Life Without Fear“ heraus und wurde in der Presse gefeiert. Wochen später kam für Ehlers der Schock: „Ich habe in ganz Schweden nur zwei CDs verkauft!“ Gleichzeitig wurden Ehlers Songs im Internet mindestens 25.000-mal illegal heruntergeladen. C. Fett ist für einige Menschen ein schreckliches Wort. Dabei braucht jeder Körper Fett. Durch Fett schmeckt nicht nur das Essen besser. Der Körper nimmt bestimmte Vitamine nur zusammen mit Fett auf. Im Vergleich zu den Kohlehydraten enthalten Fette doppelt so viel Energie. Bei anstrengendem Sport oder Ausdauersport wie Radrennen oder Fußball bedient sich der Körper zwar bei den Energiereserven der Muskeln. D. In den Buchhandlungen haben Krimis Hochkonjunktur. Denn die Leser lieben spannende Unterhaltung. Vor allem Bücher von heimischen Autoren werden momentan immer beliebter. Wer einen guten Krimi liest, der vergisst alles um sich herum: die Zeit, das Telefon, und manchmal sogar das Essen. Jedes vierte Buch, das in Deutschland verkauft wird, ist ein Krimi. Doch was fasziniert den Leser eigentlich so an den Geschichten? E. Julia Jentsch ist eine Vollblutschauspielerin. Sie ist auf der Theaterbühne ebenso zu Hause wie im Kino und im Fernsehen. Sie spielte die Orphise in Hugo von Hofmannstahls „Die Lästigen“, das Gretchen in Goethes „Urfaust“ und Julia in „Blaubart — Hoffnung der Frauen“. 2000 erhielt sie den Max-Reinhardt-Preis für ihre Rolle in „Die Perser“ und im Februar 2005 den Silbernen Bären als beste Schauspielerin. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -1008,16 +996,6 @@
   {
     "id": "vpr_sd_945191",
     "task_text": "Преобразуйте, если это необходимо, слово VERSTEHEN так, чтобы оно грамматически соответствовало содержанию текста. Die veränderte Perspektive auf die Stadt vom Wasser aus ist sehenswert, außerdem __________________ man dann den zweiten Namen Sankt Petersburgs: Venedig des Nordens. Man sagt, hier gibt cs 340 Brücken. Kanäle sind in der ganzen Stadt zu sehen.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945617",
-    "task_text": "Die Nordsee wird wärmer An die Nordsee fahren viele Kinder mit ihren Eltern in den 13 ______. Experten haben sich angesehen, wie 14 ______ das Wasser der Nordsee ist. Die Temperaturen sind in den vergangenen 45 Jahren um fast zwei Grad Celsius 15 ______. Die Nordsee erwărmt sich sogar doppelt so schnell wie die weltweiten Ozeane. Nicht alle Fische zum Beispiel kommen mit hŏheren 16 ______ zurecht. So mag es der Kabeljau eher kühler. Der Fisch könnte deshalb weiter in den 17 ______ ziehen. Dafür siedeln sich andere Arten in der Nordsee an. Die Zahlen kommen vom deutschen Umweltministerium. Im deutschen Umweltministerium arbeiten Politiker und Fachleute. Sie müssen sich darum kümmern, dass in Deutschland die 18 ______ geschützt wird. Wälder, Meere und Flüsse sollen in gutem Zustand sein.",
     "answer": "---",
     "image": "",
     "all_images": [],

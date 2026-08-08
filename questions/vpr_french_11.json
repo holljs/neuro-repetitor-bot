@@ -306,16 +306,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945910",
-    "task_text": "Invitation au voyage … à travers la Russie La Russie se trouve à cheval sur l’Europe et l’Asie. C’est le plus vaste État de la planète. Véritable mosaïque de peuples et de territoires, le pays promet à __________________ (SON) visiteurs des voyages riches en découvertes inoubliables. À commencer par les deux capitales, Moscou et Saint-Pétesbours, qui __________________ (SE DISPUTER) les préférences des voyageurs. Peu importe l’ordre choisi pour les visiter : la Place Rouge et les cathédrales du Kremlin plaisent autant que le magnifique quartier de l’Ermitage et les palais élégants bordés de __________________ (CANAL) . Les touristes les plus courageux partiront ensuite à bord du transsibérien pour traverser les steppes infinies jusqu’à l’__________________ (ORIENTAL) ville de Vladivostok. En chemin, ils découvriront les __________________ (EAU) du plus profond lac de la planète, le lac Baïkal. Ils __________________ (AVOIR) également le privilège de rencontrer des gens chaleureux, en partageant avec eux un bol de borchtch ou des concombres marinés.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946080",
     "task_text": "Преобразуйте, если это необходимо, слово CE так, чтобы оно грамматически соответствовало содержанию текста. Tout d'abord, je tiens à vous dire que j'ai suivi la formation avec beaucoup de plaisir et sans grande difficulté, grâce à __________________ formation, j'ai retrouvé confiance en moi.",
     "answer": "---",
@@ -1746,18 +1736,6 @@
   {
     "id": "vpr_sd_945799",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. À partir de quel âge il a eu la passion pour la lecture ? 1) 5 ans 2) 10 ans 3) 15 ans",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17111.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17111.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945766",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quel est le titre de son premier livre ? 1) Envoyé spécial 2) Saint-Exupéry 3) Les Enfants de l'aube",
     "answer": "---",
     "image": "",
     "all_images": [],

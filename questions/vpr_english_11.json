@@ -294,16 +294,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945528",
-    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Each member of the family had their own decorated Christmas tree. A nice table with many beautiful presents stood near all of __________________.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944866",
     "task_text": "Преобразуйте, если это необходимо, слово BUILD так, чтобы оно грамматически соответствовало содержанию текста. It __________________ between 1891 and 1916.",
     "answer": "---",
@@ -440,16 +430,6 @@
   {
     "id": "vpr_sd_944784",
     "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Visiting Russia Have you ever been to Pereslavl-Zalessky? This charming town __________________ in 1152.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944886",
-    "task_text": "Преобразуйте, если это необходимо, слово CHOOSE так, чтобы оно грамматически соответствовало содержанию текста. The Swedish __________________ a very good place for the castle.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1656,16 +1636,6 @@
   {
     "id": "vpr_sd_945490",
     "task_text": "Преобразуйте, если это необходимо, слово NOT ENJOY так, чтобы оно грамматически соответствовало содержанию текста. At the same time, few people know details about his biography and personal life. For example, Steve Jobs was adopted at a very young age. He was a rebellious kid and he __________________ high school.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945419",
-    "task_text": "Преобразуйте, если это необходимо, слово CALL так, чтобы оно грамматически соответствовало содержанию текста. There are many kinds of Monopoly now. There is even a version which __________________ Russian Monopoly with beautiful figures and pictures of Russian sights.",
     "answer": "---",
     "image": "",
     "all_images": [],
