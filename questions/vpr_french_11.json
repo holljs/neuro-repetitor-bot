@@ -746,18 +746,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945831",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Selon N. Harry, pourquoi la quantité d'adoptions augmente-t-elle malgré la crise ? 1) Les gens reprennent les valeurs familiales. 2) Les gens n'ont plus d'argent pour s'acheter un animal de race. 3) Les gens préfèrent adopter des animaux plutôt qu’avoir des enfants.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17936.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17936.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945798",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quel public est le plus enclin à adopter un animal ? 1) Les familles avec des enfants. 2) Les personnes âgées. 3) On ne peut pas le préciser",
     "answer": "---",
@@ -1036,26 +1024,6 @@
   {
     "id": "vpr_sd_945822",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Grâce à internet, les fans de James Bond d'aujourd'hui : 1) sont devenus beaucoup plus unis qu'il ne l'étaient auparavant. 2) peuvent publier plus de magazines à propos de Bond. 3) tiennent moins de conventions consacrées à Bond.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945789",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Raymond est toujours un fan de Bond, mais maintenant il : 1) n'aime pas les nouveaux films sur James Bond. 2) écrit moins d'articles sur Bond. 3) a une plus grande sphère d'intérêt.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945756",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Raymond pense que Ian Fleming aurait : 1) aimé les films récents sur James Bond s'il les avait vus. 2) aurait été surpris de la durée du succès de James Bond. 3) aurait aimé la manière dont est décrit Bond aujourd'hui.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1842,18 +1810,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945796",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Antoine Vachet obtient de bons résultats grâce à … 1) l’expérience 2) l’inventivité. 3) la pédagogie classique.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_20072.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_20072.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945771",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Pendant l’écriture du roman l’auteur craignait de ne pas bien connaître … 1) la guerre. 2) l’injustice. 3) les réalités d’aujourd’hui.",
     "answer": "---",
@@ -1938,18 +1894,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945853",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Il a commencé à faire du parachutisme … 1) après avoir vu un film. 2) après avoir lu un livre. 3) après avoir fait connaissance avec son instructeur.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6388.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6388.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945820",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Il a sauté une première fois avec … 1) d’autres sportifs dans un club de parachutisme. 2) son instructeur. 3) son ami.",
     "answer": "---",
@@ -1983,16 +1927,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_6388.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945669",
-    "task_text": "Преобразуйте, если это необходимо, слово LE так, чтобы оно грамматически соответствовало содержанию текста. Ceux qui sont présentés ici nous ont semblé représentatifs de l’ensemble de la classe, mais nous tenons à féliciter tous les élèves et nous __________________ remercions pour ce qu’ils nous ont donné à lire.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {

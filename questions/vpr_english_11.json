@@ -764,16 +764,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945549",
-    "task_text": "Преобразуйте, если это необходимо, слово NOT GET так, чтобы оно грамматически соответствовало содержанию текста. Everybody knows that with valenki you __________________ frozen even in Siberia. Until the 18th century, valenki were handmade and produced only in Siberia and several Northern regions where manual labour was long and hard.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945417",
     "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. __________________ the game developed new rules and opportunities.",
     "answer": "---",
@@ -1134,16 +1124,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944831",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. History 2. Geography 3. Healthy life 4. Customs 5. Eating out 6. Technology A. Taganay is a national park located in the Southern Urals, in the western part of the Chelyabinsk region, 130 km from Chelyabinsk. The territorial centre of the park is the city of Zlatoust. The total area of the park is 568 sq. km. The Meteorological Station “TaganayGora” is the most remote shelter of the national park located on a picturesque mountain plateau. B. Valdai bells were first made in the 17th century. In 1656 state craftsman Alexander Grigoriev cast the first road bell. Since then, they say, bells have been cast in Valdai. In the first place, these bells were necessary on Moscow — St. Petersburg high road, Russia's busiest road. Production centre was set up in Valdai which is situated halway between the two cities. C. New Rosphere robot is the “eyes” of the farmer. It can move in gardens and vegetable gardens, controlling them. This robot, moving along garden beds, collects information about the state of plants and land, ripeness of fruit and a variety of other factors that may affect the crop. Farmers have only to monitor the relevant information using a computer and take certain measures when necessary. D. When you attend a restaurant or visit a house of a local resident in Bali, make sure you do not sit with your legs crossed. This position is considered a sign of secrecy, mistrust and disrespect. In general, the people of Bali are very cordial and friendly. They are happy to help tourists to get to the local places of interest and will actively support a conversation on any subject. E. Young people are recommended to eat two portions of fish a week, one of which should be oily. Tinned fish, such as salmon, is good for heart. Meat is a good source of protein, vitamin B12 and iron. Processed meats and chicken products should be limited as they tend to be high in fat and salt and lower in iron. From the age of 11, everyone should try to eat no more than 6 grams of salt a day. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944511",
     "task_text": "Преобразуйте, если это необходимо, слово DISCOVER так, чтобы оно грамматически соответствовало содержанию текста. A clever solution Isaac Newton was a great British scientist. Many laws of physics ______ by him in the 17 th century.",
     "answer": "---",
@@ -1251,16 +1231,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_34683.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945474",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Photography 2. Adventures 3. Sightseeing 4. Sports 5. Holidays 6. Children’s activities A. The Ostankino estate, situated in the northern part of Moscow, is a uniquely well-preserved monument of the 18th century Russian architecture. In the past it was a country estate, while currently it is situated at a 20 minute ride away from the Kremlin. The estate attracts beauty lovers by its austere forms of the classical architecture. B. For most Americans, the holiday season begins around Thanksgiving. However, for Kathy Rombeiro and her dad, Edmundo, it starts in September, when they begin the laborious process of converting their Novato, California home into a winter wonderland. By the first Sunday of December, the ordinary suburban home is transformed into a magical «Christmas House». C. Ever since Apple introduced the front-facing camera, or selfie camera in 2010, selfies have become the undisputed king of social media. The never-ending need to share breathtaking self-portraits on popular mobile photo services like Instagram and Snapchat has often proved to be dangerous and, in some cases, even deadly. D. Kids, whose vivid imaginations know few boundaries, frequently come up with invention ideas that range from life-changing to downright wacky. However, few see them come to life mainly because adults are not convinced of their practicality. That is about to change thanks to Little Inventors, an innovative project that connects aspiring inventors tomanufacturers. E. When former world number one Andy Murray withdrew from the Australian Open in Melbourne last week, it was not exactly news. A few days earlier he had with drawn from the Brisbane International, having not competed in any tennis tournament since Wimbledon last year. The big news would have been if he had finally pronounced himself fit. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {

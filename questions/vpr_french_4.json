@@ -150,16 +150,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945853",
-    "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Natacha Smirnova Moi, c’est Natacha, je suis Russe. J’habite Saint-Pétersbourg. Saint-Pétersbourg est situé sur la Neva. Mon papa et ma maman sont médecins tous les deux. Je partage la chambre avec mes deux sœurs. J’aime lire. Le livre que j’adore c’est « Cendrillon ». À l’école j’apprends le français. J’aime aussi les plats que prépare ma mère, surtout la pizza. Prénom | 1. // Nationalité | 2. // Ville | 3. // Nombre de personnes dans la famille | 4. // Profession de papa | 5. // Langue étudiée | 6. // Livre préféré | 7. // Plat préféré | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945883",
     "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Tim Morozov Tim habite à Moscou. Il a 10 ans. Moscou est la capitale de la Russie. Tim a une sœur et un frère. Il a un petit chaton Joule. Tim aime beaucoup son chaton. Tim aime jouer au football. Il veut devenir un athlète célèbre. Tim aime son école. Sa matière préférée est le sport. Tim fait du sport chaque jour. Il est fort. Tim aime beaucoup l'été et les vacances d'été. Prénom | 1. // Pays | 2. // Ville | 3. // Nombre d’enfants dans la famille | 4. // Animal | 5. // Sport préféré | 6. // Matière préférée | 7. // Saison préférée | 8.",
     "answer": "---",
