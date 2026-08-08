@@ -12,32 +12,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945866",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Dans le Grand Nord, les chiens sont très sensibles ... 1) à la neige. 2) au froid. 3) au vent.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_28103.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_28103.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945833",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D’après Romain Beaumard pour les chiens courir est ... 1) une nécessité. 2) une contrainte. 3) un plaisir.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_28103.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_28103.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945800",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D’après Romain Beaumard, quel est le but des chiens d’aller le plus vite possible ? 1) d’avoir plus de temps de se reposer. 2) d’avoir plus de nourriture. 3) de faire plaisir au maître.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -266,18 +242,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945854",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Dominique est né à Clermont-Ferrand dans une famille ... 1) d'ingénieurs. 2) de paysans. 3) d'artistes.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6386.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6386.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945821",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. À l'âge de 15 ans Dominique a décidé ... 1) de s'occuper de la science. 2) de se vouer au monde de l'art. 3) d'explorer les monts d'Auvergne, la faune et la flore.",
     "answer": "---",
@@ -292,18 +256,6 @@
   {
     "id": "vpr_sd_945788",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Dominique, qu’est-ce qu’il a fait après le baccalauréat ? 1) Il a commencé à travailler dans une petite agence de voyages. 2) Il a participé à des concours différents. 3) Il est entré à l'école des aux Beaux-Arts, à Paris.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6386.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6386.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945763",
-    "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Sa première oeuvre, qu'il a entièrement conçue, dessinée et suivie était ... 1) l'école des aux Beaux-Arts, à Paris. 2) la nouvelle Bibliothèque nationale de France, à Paris. 3) une école d'ingénieurs à Marne-la-vallée.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -698,18 +650,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945828",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Aujourd'hui, la lecture reste une partie importante de la vie des jeunes qui sont... 1) à l'école primaire. 2) au collège. 3) au lycée.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23446.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23446.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945803",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Combien de pour cent de jeunes de 17 ans lisent chaque jour pour plaisir ? 1) 9 % 2) 19 % 3) 39 %",
     "answer": "---",
@@ -816,18 +756,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945856",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D'après Natacha Harry, on adopte le plus d'animaux... 1) de mai à septembre. 2) de septembre à mai. 3) en mai et en septembre.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17936.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17936.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945831",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Selon N. Harry, pourquoi la quantité d'adoptions augmente-t-elle malgré la crise ? 1) Les gens reprennent les valeurs familiales. 2) Les gens n'ont plus d'argent pour s'acheter un animal de race. 3) Les gens préfèrent adopter des animaux plutôt qu’avoir des enfants.",
     "answer": "---",
@@ -886,26 +814,6 @@
   {
     "id": "vpr_sd_946055",
     "task_text": "Преобразуйте, если это необходимо, слово APPRENDRE так, чтобы оно грамматически соответствовало содержанию текста. Je travaille au sein d'une clinique psychiatrique pour adolescents. Cela a été très rapide et j'espère mettre en pratique tout ce que j’ __________________ au cours de ma formation.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945359",
-    "task_text": "Recyclage des plastiques Le premier stade du 13______ des plastiques se fait à la maison. Chaque famille 14______ ses plastiques et les place dans le conteneur prévu à cet effet. Le premier tri effectué, les plastiques sont triés manuellement ou mécaniquement et ils sont séparés en trois types de 15______. Les plastiques sont compactés en grosses balles. Les balles sont expédiées dans le 16______ de traitement. Là, les plastiques seront 17______, nettoyés et broyés en paillettes ou granulés. Les granulés ou paillettes peuvent alors être vendues aux 18______ pour être transformés en nouveaux emballages ou produits.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946026",
-    "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Les St Bernards n'ont jamais porté de cognac. La mission du chien est tout à fait différente — en dehors de toute autre chose donner brandy à quelqu'un ayant une hypothermie est une erreur désastreuse — mais les touristes ont toujours aimé cette idée, de sorte qu'ils en ont fait une sorte de mythe. Avant ils ont été formés comme chiens de sauvetage en montagne, ils ont été utilisés par les moines de l'hospice pour porter la nourriture car leur grande taille et leur tempérament docile font d'eux de bons animaux à former. Le baril de brandy était l'idée d'un jeune Anglais, qui a été beaucoup favorisée par la reine Victoria. Il était un peintre renommé pour ses paysages et ses animaux, mieux connu pour sa peinture Monarch of the Glen et pour sculpter les lions autour de la base de la colonne de Nelson. À l'origine, le saint-bernard était connu comme chien Barry, qui a sauvé une quarantaine de personnes, mais a malheureusement été tué par la quarante et unième, qui l'a pris pour un loup.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1028,18 +936,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945897",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quel est le titre du deuxième album de Pascale Poret ? 1) «Sans sucre, s’il vous plaît». 2) «L’été indien». 3) «Le grand jeu».",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_31034.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_31034.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945864",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Au début de sa carrière, Pascale Poret a chanté ... 1) en anglais. 2) en français. 3) en allemand.",
     "answer": "---",
@@ -1130,16 +1026,6 @@
   {
     "id": "vpr_sd_946020",
     "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Nelson n'a jamais porté de cache-œil. Il ne portait bien quelque chose sur son œil droit endommagé. Bien qu'il ait eu un œil-ombre intégré dans son chapeau pour protéger son œil gauche du soleil, Nelson n'a pas eu de cache-œil pour son œil droit. Son œil droit une a été gravement endommagé au siège en 1794. Un boulet de canon français a jeté du sable et des débris dans son œil, mais il avait l'air tout à fait normal, si normal, en fait, qu'il avait du mal à convaincre la Royal Navy, d'être admis à une pension d'invalidité. Il n'y a pas de portrait contemporain de Nelson vêtu d'un cache-œil, et malgré ce que la plupart des gens se souviennent d'avoir vu, la colonne de premier plan le montre sans cache-œil. Ce ne est qu'après sa mort que le cache-œil a été utilisé pour ajouter du carisme aux portraits. Nelson a utilisé l'œil endommagé à son avantage. Lors de la bataille de Copenhague, il a ignoré le signal de rappel émis par son supérieur.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945880",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Raymond a commencé à comprendre la valeur véritable des livres sur James Bond après... #mp3.6235# 1) avoir la chance de les lire tous. 2) avoir vu la version cinématographique. 3) les avoir lus la deuxieme fois.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1296,18 +1182,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945767",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Quel est le titre du premier court-métrage de Carine ? 1) «L’Aȋné de mes soucis». 2) «Les Baisers des autres». 3) «Le Cordon».",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17012.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17012.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945249",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Un été particulièrement maussade 2. «Rovio» : le nouveau dirigeant 3. Le logement par profits et pertes 4. «Une zone de non-droit du travail» 5. Une forte hausse de revenus ! 6. Pas de contrats avec les entreprises qui emploient des mineurs A. Vingt-quatre heures après que « Bouygues Télécom » a publié des bénéfices en chute libre, la maison-mère de « Free » a une fois de plus agacé ses concurrents en publiant d'excellents résultats financiers pour le premier semestre. Le chiffre d'affaires est — encore — en hausse de 10. Son grand rival, « Bouygues Telecom », dont « Free » essaie, jusqu'à présent sans succès, de se rapprocher, fait pâle figure à côté, avec un recul de 5 % de son chiffre d'affaires au premier semestre. B. Une vingtaine de coiffeuses originaires de la Côte d'Ivoire, de la Guinée, du Nigeria ou du Mali ont porté plainte pour « conditions de travail indignes, abus de vulnérabilité, rétribution inexistante ou insuffisante ». Elles étaient payées « à la tâche », ce qui est illégal, soit environ 400 euros par mois en travaillant sept jours sur sept, de 9 heures à 23 heures. Elles se sont mises en grève sous la pression de la CGT pour obtenir des contrats de travail. C. La société finlandaise, créatrice du jeu vidéo « Angry Birds », a annoncé vendredi un changement de Président-Directeur général au profit d'une personne récemment recrutée, alors que la société peine à suivre la croissance de concurrents agressifs. Le PDG actuel sera remplacé le 1er janvier par Pekka Rantala, un autre Finlandais. Ce dernier était arrivé dans l'entreprise en mai après avoir fait l'essentiel de sa carrière au sein du fabricant de téléphones portables Nokia, dont il a dirigé le marketing de 2008 à 2011. D. Obligé de suspendre son contrat avec un fournisseur chinois qui employait des mineurs, « Samsung » doit une nouvelle fois faire face à des accusations du même type. Elles concernent cette fois-ci « HEG Technology », un soustraitant sis lui aussi en Chine. L'entreprise, également sous-traitante du fabricant chinois d'ordinateurs « Lenovo », numéro un mondial des PC, a par ailleurs employé 117 étudiants astreints à travailler jusqu'à 12,5 heures par jour en moyenne. Les étudiants ont quitté leur emploi mais affirment ne pas avoir reçu la totalité de leur salaire. E. Ce fut franchement gris. Et cette fois, c'est Météo France qui le dit. Dans son bilan climatique de l'été, l'organisme note que « malgré un mois de juin chaud et ensoleillé, la France a connu un été exceptionnellement pluvieux et une fraîcheur très marquée en août ». Ainsi, si le mois de juin fut riche de promesses, avec un ensoleillement « exceptionnellement élevé » qui le classe parmi les cinq mois de juin les plus chauds depuis 1900, on ne peut pas dire des deux mois suivants qu'ils les ont tenues. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -1415,30 +1289,6 @@
     "all_images": [],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945327",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui arrive dans une nouvelle école ? 1) Noémie 2) Théo 3) Les deux",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_40567.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_40567.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945320",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui n’est pas fort en allemand ? 1) Noémie 2) Théo 3) Personne",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_40567.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_40567.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1562,32 +1412,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945826",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Le travail d'un coach est surtout concentré sur... 1) le développement des qualités personnelles des clients. 2) le développement des documents du règlement intérieur de l'entreprise. 3) les stratégies de recherche de clients.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_12394.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_12394.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945793",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. À Madagascar, l’'idée du développement de la personnalité pour en tirer des bénéfices... 1) n'est pas appréciée. 2) est assez neuve. 3) est connue depuis longtemps.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_12394.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_12394.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945760",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Où habite Mme Gerardin à présent ? 1) En Belgique 2) En France 3) À Madagascar",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1647,16 +1473,6 @@
       "questions/images_vpr/sd_get_file_id_94459.png",
       "questions/images_vpr/sd_get_file_id_94460.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945683",
-    "task_text": "Преобразуйте, если это необходимо, слово COMMENCER так, чтобы оно грамматически соответствовало содержанию текста. Il vaut mieux _______________par le château Chambord. C’est un des plus beaux châteaux de la Loire.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -2189,16 +2005,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_6388.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945696",
-    "task_text": "Преобразуйте, если это необходимо, слово MONTRER так, чтобы оно грамматически соответствовало содержанию текста. Passeport, visa Depuis les accords de Schengen, les ressortissants de l'Union européenne n'ont plus besoin de __________________ leurs papiers à la frontière. Ils sont cependant tenus d'avoir leur carte d'identité ou un passeport sur eux.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {

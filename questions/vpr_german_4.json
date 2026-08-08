@@ -22,16 +22,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945866",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Am See Das ist Max. Er hat ein Fahrrad. Max A _____ gerne durch den Park. Heute will er eine Runde mit seinem Freund Tom fahren. Tom hat ein Skateboard. Er B _____ schnell fahren. Am Nachmittag wollen sie zum See fahren. Aber zuerst machen sie ein Wettrennen. Max ist C _____ als Tom, aber Tom möchte beim nächsten Mal gewinnen. Am See sitzen sie auf D _____ Bank und essen ihre Brötchen. Danach wollen sie noch ein paar Tricks üben. Es E _____ aber schon dunkel. A | 1) fahrt | 2) fährst | 3) fährt // B | 1) mag | 2) magst | 3) mögen // C | 1) schnell | 2) am schnellsten | 3) schneller // D | 1) ein | 2) einem | 3) einer // E | 1) bin | 2) ist | 3) seid Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945877",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Sommerferien Kolja A ___ Sommerferien. Die Ferien dauern drei Monate. Zuerst B ___ er mit seiner Oma auf die Datscha. Da hat C ___ viele Freunde. Er spielt mit Freunden Fußball und fährt Fahrrad. Dann verbringt er Zeit mit D ___ Eltern, denn sie haben auch Urlaub. E ___ fahren zusammen ans Meer. Dort ist es heiß und sonnig. Kolja schwimmt und sonnt sich gern. A | 1) mögen | 2) mögt | 3) mag // B | 1) fahren | 2) fahrt | 3) fährt // C | 1) er | 2) wir | 3) ihr // D | 1) ihren | 2) seinen | 3) unseren // E | 1) er | 2) sie | 3) es Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -144,28 +134,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945897",
-    "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Tim Morosow Tim wohnt in Moskau. Er ist 10 Jahre alt. Moskau ist die Hauptstadt von Russland. Tim hat Geschwister: eine Schwester und einen Bruder. Tim hat eine kleine Katze Mimi. Tim mag seine Katze sehr. Tim spielt Fußball gern. Er will ein bekannter Sportler werden. Tim mag seine Schule. Sein Lieblingsfach ist Sport. Tim treibt Sport jeden Tag. Er ist stark. Tim mag Sommer und Sommerferien sehr. Vorname | 1. // Alter | 2. // Land | 3. // Zahl der Geschwister | 4. // Haustiere | 5. // Lieblingssport | 6. // Traumberuf | 7. // Lieblingsfach | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945856",
-    "task_text": "Ты услышишь сообщение. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Ты услышишь текст дважды. А. Was stimmt? 1) Simon hat einen Papagei. 2) Simon hat einen Kater. 3) Simon hat einen Hund. В. Wo hat Simons Mutter Fritz gefunden? 1) Im Laden. 2) Im Internet. 3) Im Park. С.Fritz´Fell ist … 1) schwarz und kurz. 2)grau und weich. 3)braun und lang. D.Was frisst Fritz? 1) Gemüse und Fleisch. 2) Obst und Gemüse. 3) Gemüse und Fisch. E. Was macht Fritz nach dem Frühstück? 1) Er geht mit Simon spazieren. 2) Er schläft auf dem Sofa. 3) Er spielt mit dem Ball. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_82816.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_82816.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945919",
     "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Familie Blum macht Picknick Herbert und Karin Blum machen Picknick. Sie A _____ am Strand und sprechen miteinander. Das Wetter ist schön. Die Sonne scheint und es ist B _____. Irene ist die Tochter von Herbert und Karin. Sie ist schon groß. Sie hat C _____ Tasche mit Brot, Wurst, Käse und Saft. Alle D _____ Hunger. Später am Nachmittag trinken alle noch zusammen Tee und essen Kuchen. Irene ist sehr müde. Sie E _____ jetzt im Gras unter dem Baum. A | 1) sitzen | 2) sitzt | 3) sitze // B | 1) wärmer | 2) warm | 3) am wärmsten // C | 1) einen | 2) ein | 3) eine // D | 1) hast | 2) habt | 3) haben // E | 1) schläft | 2) schlaft | 3) schläfst Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -196,16 +164,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945880",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Sommerferien Alle Schüler haben Sommerferien. Petja A ___ mit seinen Eltern ans Meer. Da B ___ es heiß und sonnig. Petja schwimmt und sonnt sich gern. Er lernt andere Jungen kennen. Auch seine Mutter und C ___ Vater entspannen sich gerne am Meer. D ___ machen viele Fotos, gehen spazieren, kaufen Souvenirs. „Ich mag Sommer E ___ “, sagt Petya. A | 1) fahren | 2) fahrt | 3) fährt // B | 1) sein | 2) ist | 3) seid // C | 1) sein | 2) ihr | 3) seine // D | 1) er | 2) sie | 3) ihr // E | 1) am liebsten | 2) am gernsten | 3) am gerner Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945889",
     "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Alisa Petrowa Alisa wohnt in Saratow. Das ist eine schöne Stadt Russlands. Da gibt es viele historische Denkmäler. Alisa ist 10 Jahre alt. Sie hat eine große Familie. Sie hat eine Schwester und drei Brüder. Alissa hat einen Hund und zwei Katzen. Alisa mag ihre Haustiere. Sie spielt gerne Klavier. Sie hat dreimal pro Woche Musikstunden. Sie will Klavierspielerin werden. Sie mag ihre Schule. Ihr Lieblingsfach ist Russisch. Sie mag Sommer und Sommerferien sehr. Vorname | 1. // Alter | 2. // Land | 3. // Zahl der Geschwister | 4. // Haustiere | 5. // Hobby | 6. // Traumberuf | 7. // Lieblingsfach | 8.",
     "answer": "---",
@@ -218,16 +176,6 @@
   {
     "id": "vpr_sd_945896",
     "task_text": "Помоги своему другу заполнить анкету для сайта «Друзья онлайн». Прочитай текст и запиши информацию в таблицу. Под каждым номером запиши только одно слово (без артиклей). Числа необходимо записать словами. Petja Sutejew Petja wohnt in Moskau. Er ist 10 Jahre alt. Moskau ist die Hauptstadt von Russland. Diese Stadt ist groß. Sie ist schön. Petja hat eine Schwester und zwei Brüder. Sie hat eine kleine Katze Murka. Er mag seine Katze. Er spielt gerne Tennis. Er will ein bekannter Sportler werden. Petja mag seine Schule. Sein Lieblingsfach ist Russisch. Petja mag Sommer und Sommerferien. Er hat viele Freunde. Vorname | 1. // Alter | 2. // Land | 3. // Zahl der Geschwister | 4. // Haustiere | 5. // Lieblingssport | 6. // Traumberuf | 7. // Lieblingsfach | 8.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945878",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Frühling Dascha liebt den Frühling. Es A ___ wärmer, es taut. Die Tage werden länger und B ___ Nächte werden kürzer. Die Natur wacht auf. Das Gras wird grün und die ersten Blumen blühen. Die Luft C ___ frisch. Dascha geht gerne mit D ___ Eltern im Park spazieren. Sie genießen die Natur und machen viele Fotos. Dascha hört die Vögel und füttert E ___. A | 1) werden | 2) werdet | 3) wird // B | 1) der | 2) die | 3) das // C | 1) sein | 2) ist | 3) sind // D | 1) meinen | 2) seinen | 3) ihren // E | 1) sie | 2) uns | 3) euch Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -278,16 +226,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945911",
-    "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Meine Stadt Ich heiße Darina. Ich wohne in einer großen und schönen Stadt. Es gibt viele breite Straßen und schöne Plätze, grüne Parks. Die Häuser sind hoch. Es gibt auch moderne Kinos und alte Theater. Ich wohne mit meiner Familie. Wir wohnen nicht im Zentrum, aber am Wochenende fahren wir oft ins Stadtzentrum. Wir spazieren dort gern. Dann gehen wir zusammen ins Café, essen Kuchen und trinken heiße Schokolade. Meine Familie ist groß. Meine Mutter heißt Polina. Mein Vater heißt Alex. Ich habe auch zwei Schwestern. Besonders schön ist die Stadt im Winter am Abend. Alle Straßen sind geschmückt. Es gibt viele Lichter. Auf den Plätzen stehen Tannenbäume. Wir besuchen gern Weihnachtmärkte und genießen die Schönheit. Manchmal treffen wir uns mit unseren Freunden. Wir haben Lieblingsorte, wohin wir zusammen gehen. Ich mag meine Heimatstadt. A. Wo wohnt Darina? 1) Darina wohnt in der Stadt. 2) Darina wohnt im Dorf. 3) Darina wohnt auf dem Land. B. Wohin fährt Darina am Wochenende? 1) Ins Zentrum. 2) Ins Cafe. 3) Ins Kino. C. Was macht Darina im Café? 1) Sie isst Kuchen. 2) Sie trinkt Schokolade. 3) Sie isst Kuchen und trinkt Schokolade. D. Hat Darina Geschwister? 1) Sie hat eine Schwester. 2) Sie hat zwei Schwestern. 3) Sie hat keine Geschwister. E. Wann ist die Stadt besonders schön? 1) Am Wochenende. 2) In der Woche. 3) Im Winter. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945907",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Herbst Es ist Herbst. Es sind drei Herbstmonate: September, Oktober und November. Die Tage werden kürzer und die Nächte werden länger. Es regnet oft. Die Blätter auf den Bäumen werden bunt und schön und danach fallen sie hin. Alles wird grau und traurig. Die Sommerferien sind vorbei. Die Kinder gehen in die Schule und lernen viel Neues. Tanja lernt schon in der 4. Klasse. Sie mag die Schule. Ihre Schule liegt nicht weit von ihrem Haus. Sie geht zu Fuß. Wenn es regnet, nimmt sie ihren Regenschirm und trägt Gummistiefel. Die erste Stunde beginnt um 9 Uhr. Um 13:50 ist die Schule zu Ende. Nach der Schule kann sie noch etwas spazieren. Es ist noch hell. Am Abend kann Tanja nicht allein draußen gehen, denn es ist schon dunkel. Am Wochenende geht sie gerne mit ihren Eltern im Park spazieren. Wenn es regnet, dann bleibt sie zu Hause und liest Bücher. Tanja mag Herbst nicht besonders. Ihre Lieblingsjahreszeit ist Sommer. A. Wie heißen Herbstmonate? 1) Dezember, Januar und Februar. 2) März, April und Mai. 3) September, Oktober und November. B. Wie sind die Blätter im Herbst? 1) Sie sind grau und traurig. 2) Sie sind bunt und schön. 3) Sie sind weiß und langweilig. C. Was machen die Kinder in der Schule? 1) Sie lernen. 2) Sie schlafen. 3) Sie spazieren. D. Wann geht Tanja im Park spazieren? 1) Um neun Uhr. 2) Im Sommer. 3) Am Wochenende. E. Was macht Tanja, wenn es regnet. 1) Sie liest Bücher. 2) Sie geht spazieren. 3) Sie geht in die Schule. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -330,16 +268,6 @@
   {
     "id": "vpr_sd_945915",
     "task_text": "Прочитай текст. Для каждого предложения А − Е выбери один правильный вариант ответа из трёх предложенных (1, 2 или 3). Winter Es ist der Winter. Das Wetter ist gut. Manchmal schneit es. Es ist kalt. Jegor wohnt in einer schönen Stadt. Jegor ist neun Jahre alt und er geht gerne in die Schule. Seine Schule liegt weit vom Haus. Er muss in die Schule mit dem Bus fahren. Alle tragen Winterjacken, Mützen und Schale. Im Bus ist es warm. Jegors Mutter fährt zur Arbeit mit dem Auto. Aber ihre Arbeit ist weit von der Schule. Nach den Stunden geht Jegor mit seinen Freunden spazieren. Manchmal gehen sie zu Eisbahn. Da laufen sie Schlittschuh. Aber am liebsten fährt er Ski. An diesem Wochenende fährt er mit seinen Eltern in den Wald. «Der Winter ist meine Lieblingsjahreszeit», — sagt Jegor. «Wenn es schneit, haben wir eine Schneeballschlacht.» «Wir machen noch gern einen Schneemann», — antworten die Freunde. Die Jungen mögen Winteraktivitäten. Sie spielen und lachen. Es ist lustig. A. Wie ist das Wetter? 1) Es ist kalt. 2) Es ist warm. 3) Es ist sonnig. B. Wie alt ist Jegor? 1) Er ist 8. 2) Er ist 9. 3) Er ist 10. C. Wie geht er zur Schule? 1) Die Schule ist weit, er fährt mit dem Bus. 2) Die Schule ist weit, die Mutter bringt ihn mit dem Auto. 3) Die Schule ist nicht weit, er geht zu Fuß. D. Was macht Jegor am liebsten? 1) Am liebsten fährt Jegor Schlittschuh. 2) Am liebsten fährt Jegor Ski. 3) Am liebsten fährt Jegor in den Wald. E. Welche Jahreszeit mag Jegor? 1) Er mag den Sommer. 2) Er mag den Herbst. 3) Er mag den Winter. Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945868",
-    "task_text": "Прочитай рассказ. Вставь вместо каждого пропуска, обозначенного буквами А − Е, нужную грамматическую форму, выбрав её из трёх предложенных вариантов (1, 2 или 3). Gestern habe ich A ___ Freund Andrej besucht. B ___ lernt in unserer Klasse. Nach der Schule gehen wir in unseren Hof und spielen Fußball. Am Abend C ___ wir zusammen Musik und spielen am Computer. Im Winter fahren wir zusammen in D ___ Park und laufen da Ski und Schlittschuh. Andrejs Mutter E ___ uns immer mit Süßigkeiten. Gestern haben wir Tee getrunken und Kuchen gegessen. A | 1) mein | 2) meine | 3) meinen // B | 1) ich | 2) er | 3) wir // C | 1) hören | 2) höre | 3) hört // D | 1) der | 2) dem | 3) den // E | 1) verwöhnen | 2) verwöhnt | 3) verwöhnst Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],

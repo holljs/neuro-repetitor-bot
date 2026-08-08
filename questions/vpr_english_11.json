@@ -502,18 +502,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945657",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34675.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945658",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has travelled a lot? 1) Jill 2) Matthew 3) Neither",
     "answer": "---",
@@ -562,16 +550,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945654",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Literature 2. Historical facts 3. Outstanding people 4. Good manners 5. Souvenirs 6. Places to stay A. Lapta, a traditional Russian sports game, is over four centuries old. Balls and bats datingback to the 14th century have been found among the ruins of Novgorod the Great. In the 18th century lapta was an important activity for physically preparing the soldiers of Peter the Great’s army. Later the game became a major pastime. Today lapta is not very popular. B. Apologies are the way to build good friendships and relationships. When you say «I’msorry» (and really mean it), it’s because you probably feel bad that something you did or said hurt another person. Saying you’re sorry is morethan just words. You’re also saying that you respect the other person and you care about his or her feelings. Apologizing shows youhave empathy. C. The Russian doll, or matryoshka, to use the Russian name, is one of the most recognizablesymbols of Russia. It as an example of the nation’s ancient traditions of woodworking and decorative handicrafts. There has always been a demand for the matryoshka, both as achildren’s toy and as a gift, and the doll has always been a symbol of the family. D. Anna Lawrence is a fantastic storyteller and the truth behind the character’s family creates amystery for the reader. The book reflects the social problems of the city where the action takes place. But what really makes the author’s style special is her skill of describing thecharacters; they are real humans in search of their identity and place in the world. E. The Stolby nature reserve is one of the most popular tourism destinations in Siberia. We recommend booking a nice cottage when you go there. There are separate small cottages for six and eight people, and a hostel. The cottages area is called ‘the village’ and is a bit of a hike from the reserve’s main reception buildings but there is a car service for when you firstarrive with your luggage. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945236",
     "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. Some years __________________ General Logan organized another ceremony, this time for the soldiers who survived the war.",
     "answer": "---",
@@ -584,16 +562,6 @@
   {
     "id": "vpr_sd_944826",
     "task_text": "Преобразуйте, если это необходимо, слово SEE так, чтобы оно грамматически соответствовало содержанию текста. He __________________ it as the northern capital of Russia.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944887",
-    "task_text": "Преобразуйте, если это необходимо, слово IMPORTANT так, чтобы оно грамматически соответствовало содержанию текста. Thanks to that, the town became one of the __________________ trading centres in the area.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -838,16 +806,6 @@
   {
     "id": "vpr_sd_945591",
     "task_text": "Преобразуйте, если это необходимо, слово BEGIN так, чтобы оно грамматически соответствовало содержанию текста. Upon his return to Russia, Lomonosov __________________ his teaching career at the St. Petersburg Academy of Sciences.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945172",
-    "task_text": "Преобразуйте, если это необходимо, слово EAT так, чтобы оно грамматически соответствовало содержанию текста. It gained popularity thanks to Thomas Jefferson who __________________ macaroni during his stay in Paris in 1784–1789.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1106,16 +1064,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944756",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. The soldiers in Julius Caesar’s army received salt, called salarium, as part of their 15 ______. From this came the word ‘salary’. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944757",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. In Great Britain four or five hundred years ago, at the great feasts of the ruling families, the saler, or salt container, was 16 ______ in the middle of the long dining tables. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
     "answer": "---",
@@ -1348,16 +1296,6 @@
   {
     "id": "vpr_sd_945196",
     "task_text": "Преобразуйте, если это необходимо, слово BRING так, чтобы оно грамматически соответствовало содержанию текста. Born in Florida, Missouri, on November 30, 1835, he __________________ up in a small sleepy town on the western bank of the Mississippi River.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945649",
-    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. He came up to the __________________ policeman he saw and asked him in Italian the way to the bus station. The policeman was Italian too and he answered Mr. Scotti in Italian.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1758,18 +1696,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944875",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has never heard of the Dream Theatre? 1) Bob 2) Sally 3) Neither",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_39069.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944868",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes Rock music? 1) Bob 2) Sally 3) Neither",
     "answer": "---",
@@ -1936,16 +1862,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945605",
-    "task_text": "Hyde Park Hyde Park is one of London's eight Royal Parks. Set right in the heart of London. it 13_____________an area of 350 acres. Hyde Park 14_____________both world-class events and concerts together w ith plenty of quiet places to relax and unw ind. Speaker's Comer is a 15_____________area within Hyde Park. In 1872, an act of parliament set aside this part of Hyde Park for public speaking. It has been a 16_____________site for public speeches and debates since the mid 1800's. It has acquired an international reputation for demonstrations and other protests due to its tolerance of free speech. Even today, on a Sunday morning, it’s not unusual to 17_____________crowds gathering at Speakers’ Comer. Anyone can turn up unannounced to 18_____________ on any subject, as long as the police consider their speeches lawful.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944559",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is a school student? 1) Charlie 2) Lily 3) Both",
     "answer": "---",
@@ -2018,16 +1934,6 @@
   {
     "id": "vpr_sd_945628",
     "task_text": "Преобразуйте, если это необходимо, слово POPULAR так, чтобы оно грамматически соответствовало содержанию текста. In Russia New Year is one of the __________________ holidays.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945650",
-    "task_text": "Преобразуйте, если это необходимо, слово TELL так, чтобы оно грамматически соответствовало содержанию текста. After twelve hours travelling round on a bus, Scotti __________________ that he was in New York and not in Rome.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2296,16 +2202,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945608",
-    "task_text": "Преобразуйте, если это необходимо, слово TEACH так, чтобы оно грамматически соответствовало содержанию текста. It is interesting to know that Anton Chekhov __________________ to become a doctor and never thought of being a writer when he was young.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945509",
     "task_text": "Преобразуйте, если это необходимо, слово HE так, чтобы оно грамматически соответствовало содержанию текста. In September Liza sent a letter to the president. She wrote __________________ about the dog of her dream, and that she hoped that one day she would have a fluffy friend.",
     "answer": "---",
@@ -2388,16 +2284,6 @@
   {
     "id": "vpr_sd_944209",
     "task_text": "Преобразуйте, если это необходимо, слово NOT CAN так, чтобы оно грамматически соответствовало содержанию текста. His professor ________ say a word when he saw it.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944821",
-    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. __________________ days the Winter Palace is part of the Hermitage — a cultural and historical museum.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2508,16 +2394,6 @@
   {
     "id": "vpr_sd_945469",
     "task_text": "Преобразуйте, если это необходимо, слово SEND так, чтобы оно грамматически соответствовало содержанию текста. Last summer she __________________ a letter to Vladimir Putin, asking for a chihuahua dog.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945610",
-    "task_text": "Преобразуйте, если это необходимо, слово WRITE так, чтобы оно грамматически соответствовало содержанию текста. So he often __________________ humorous letters to them. Very soon Chekhov got really interested in writing and sent some stories to publishers. Newspaper periodicals and literary journals started to publish his short stories.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2832,16 +2708,6 @@
   {
     "id": "vpr_sd_945489",
     "task_text": "Преобразуйте, если это необходимо, слово INTRODUCE так, чтобы оно грамматически соответствовало содержанию текста. He also co-founded Apple Inc. When the iPhone __________________ to public in 2007, it changed the mobile market once and forever.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945158",
-    "task_text": "Преобразуйте, если это необходимо, слово SELL так, чтобы оно грамматически соответствовало содержанию текста. «Then you must accompany him on the piano,» said the boy’s father. This time all the tickets __________________.",
     "answer": "---",
     "image": "",
     "all_images": [],
