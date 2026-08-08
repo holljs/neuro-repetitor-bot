@@ -86,16 +86,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946090",
-    "task_text": "Преобразуйте, если это необходимо, слово ÊTRE так, чтобы оно грамматически соответствовало содержанию текста. Mon premier jour au collège. Coralie \"Le matin, quand mon réveil a sonné, je me sentais super contente, et en même temps j’_______________ quand même un peu inquiète. Pour aller au collège, j’ai pris le car. Dans le car, on n’a parlé que du collège.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946065",
     "task_text": "Преобразуйте, если это необходимо, слово S’ATTAQUER так, чтобы оно грамматически соответствовало содержанию текста. Puis on __________________ à la construction des chapelles des nefs et de celles de choeur, sous la direction de l’architecte Jean des Chelles.",
     "answer": "---",
@@ -366,30 +356,6 @@
     "audio": "questions/audio_vpr/sd_33265.mp3.mp3",
     "all_audios": [
       "questions/audio_vpr/sd_33265.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945341",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui choisit son livre à lire selon la situation ? 1) Anne-Marie 2) Nicolas 3) Les deux",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_33266.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_33266.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945342",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui aime aussi les oeuvres des écrivains modernes ? 1) Anne-Marie 2) Nicolas 3) Personne",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_33267.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_33267.mp3.mp3"
     ],
     "topic": "sdamgia_vpr"
   },
@@ -674,16 +640,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945702",
-    "task_text": "Преобразуйте, если это необходимо, слово SON так, чтобы оно грамматически соответствовало содержанию текста. Les vacances Mon premier jour au collège. Nina Dans le cadre d’un travail mené en français sur le thème « De l’école au Collège », les élèves ont écrit un texte sur _____________________ journée au collège.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945319",
     "task_text": "Прочитайте приведённый ниже текст. Преобразуйте, если необходимо, слова, напечатанные заглавными буквами в конце строк, обозначенных номерами 7–12, так, чтобы они грамматически соответствовали содержанию текста. Заполните пропуски полученными словами. Каждый пропуск соответствует отдельному заданию из группы 7–12. Les premiers prianik étaient simplement appelés « pains d’épices ». On les __________________(PRÉPARER) à base de jus de baies, de farine de seigle et de miel.",
     "answer": "---",
@@ -731,18 +687,6 @@
     "all_images": [],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945889",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Durant des années précédant la crise, la quantité des cas d'adoptions d'animaux... 1) augmentait. 2) diminuait. 3) restait le même.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_17936.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_17936.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -809,16 +753,6 @@
       "questions/images_vpr/sd_get_file_id_94272.png",
       "questions/images_vpr/sd_get_file_id_94273.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945917",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui parle du vote pour le meilleur livre ? 1) Anne-Marie 2) Nicolas 3) Personne Аудиозапись к этому заданию отсутствует, приводим текст. Anne-Marie : Tu as lu ça, Nicolas ? Sur ce site Internet on peut voter pour nos livres préférés de tous les temps. Tu voterais pour quel livre, toi ? Nicolas : Mon livre préféré, c’est « Les Misérables » de Victor Hugo, car c’est un livre à la fois passionnant et triste, et en plus il évoque les émotions et les événements de l’époque dans laquelle il se situe. Et toi, Anne-Marie, as tu un livre favori ? Anne-Marie : Moi, le livre que je préfère c’est « Le Petit Prince » de Saint-Exupéry. Même si c’est un livre pour les enfants, je trouve que les thèmes et les messages sont valables pour tous, et à mon avis, c’est l’un des livres français les plus mystérieux : le narrateur c’est un aviateur mais on ne sait pas qui c’est exactement. Nicolas : Moi, j’aurais du mal à choisir le meilleur livre de tous les temps. C’est presque impossible. Je pense qu’on choisit des livres pour des raisons totalement différentes : il y a des livres qui traitent des sujets difficiles et qui ont eu beaucoup d’influence sur des gens. Mais pour le plaisir je choisirais par exemple « Les Trois Mousquetaires » de Dumas. C’est un auteur qui me passionne toujours et dont j’admire l’esprit et le style. Anne-Marie, qu’est-ce que tu en penses, toi qui as toujours un livre à la main ? Anne-Marie : J’ai le même problème que toi, Nicolas. J’ai beaucoup de livres préférés, car tout dépend de mon humeur, de l’endroit où je me trouve, de mes préoccupations. Il y a des romans classiques qui sont formidables, comme « Le Rouge et le Noir » de Stendhal que je lis et relis régulièrement, et il y a des livres classiques pour enfants qui me rappellent mon enfance comme « Le grand Meaulnes ». Ces deux livres sont en quelque sorte des livres magiques pour moi. Nicolas : Là tu as raison, les classiques c’est une valeur sûre, sans doute, mais n’oublions pas nos contemporains. Il y a plein de nouveaux romans qui m’inspirent, comme « Le Scaphandre et le Papillon » qui m’a émerveillé. L’auteur traite d’un sujet grave et triste sur un ton comique. Et pourquoi pas les bandes dessinées, après tout ? Anne-Marie : Ah, ça — non ! Ce n’est pas de la littérature ! Nicolas : Peut-être, mais quand je me sens triste ou préoccupé, j’aime lire Tintin ou Asterix. Et puis, les BD sont des ouvrages importants de notre culture. Alors, pour les livres comme pour toutes les choses — tous les goûts sont dans la nature !",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1002,16 +936,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946020",
-    "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Nelson n'a jamais porté de cache-œil. Il ne portait bien quelque chose sur son œil droit endommagé. Bien qu'il ait eu un œil-ombre intégré dans son chapeau pour protéger son œil gauche du soleil, Nelson n'a pas eu de cache-œil pour son œil droit. Son œil droit une a été gravement endommagé au siège en 1794. Un boulet de canon français a jeté du sable et des débris dans son œil, mais il avait l'air tout à fait normal, si normal, en fait, qu'il avait du mal à convaincre la Royal Navy, d'être admis à une pension d'invalidité. Il n'y a pas de portrait contemporain de Nelson vêtu d'un cache-œil, et malgré ce que la plupart des gens se souviennent d'avoir vu, la colonne de premier plan le montre sans cache-œil. Ce ne est qu'après sa mort que le cache-œil a été utilisé pour ajouter du carisme aux portraits. Nelson a utilisé l'œil endommagé à son avantage. Lors de la bataille de Copenhague, il a ignoré le signal de rappel émis par son supérieur.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945855",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Raymond commença à comprendre la réelle valeur des livres de James Bond après : 1) avoir eu la chance de les lire tous. 2) avoir vu son premier film James Bond. 3) avoir lu tous les livres pour la deuxième fois.",
     "answer": "---",
@@ -1024,16 +948,6 @@
   {
     "id": "vpr_sd_945822",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. #mp3.6235# Grâce à internet, les fans de James Bond d'aujourd'hui : 1) sont devenus beaucoup plus unis qu'il ne l'étaient auparavant. 2) peuvent publier plus de magazines à propos de Bond. 3) tiennent moins de conventions consacrées à Bond.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945263",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Sport 2. Carnet du jour 3. Syndicats 4. Juridiction 5. Météo 6. Archéologie A. Les mosaïques chrétiennes du IIIe siècle qui recouvraient le sol de la plus ancienne église de Terre sainte ont été découvertes sous le sol de la prison israélienne. Selon les spécialistes, les ruines datent d’avant la légalisation du christianisme dans l’empire byzantin. B. Meilleur pilote français de rallye dans les années 80, Jean Ragnotti a réalisé une carrière de 20 ans au cours de laquelle il a gagné trois manches du championnat du monde. Il n’a jamais entendu parler du dopage dans le monde automobile. Mais il perdait trois kilos par jour lors d’un rallye. C. Picardie. Le temps ensoleillé en matinée. Le ciel se voile puis se couvre en cours d’après-midi avec quelques pluies. Mardi, l’alternance de passages nuageux et de belles périodes ensoleillées dans l’intérieur des terres, sur le littoral le soleil est moins généreux. D. Dans le cadre de la manifestation les Arts au vert, J.-M. Pelt anime la conférence « Les langages de la nature : la communication chez les animaux et les plantes » , suivie d’un débat sur la conversation de la flore. E. La notion « le harcèlement au travail » a fait son apparition dans le code du travail grâce à la loi du 11 juin 2002 qui vise à protéger les travailleurs et oblige l’employeur à prendre les mesures de prévention. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1250,32 +1164,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945321",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui parle de ses professeurs ? 1) Noémie 2) Théo 3) Les deux",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_40567.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_40567.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945322",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui fait du théâtre ? 1) Noémie 2) Théo 3) Les deux",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_40567.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_40567.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945323",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Qui va parler au professeur de français ? 1) Noémie 2) Théo 3) Personne",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1448,16 +1338,6 @@
   {
     "id": "vpr_sd_946113",
     "task_text": "Преобразуйте, если это необходимо, слово TERMINER так, чтобы оно грамматически соответствовало содержанию текста. Une formation utile Je viens de __________________ ma formation et quelle récompense : une semaine après, j'avais déjà trouvé un emploi.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_946025",
-    "task_text": "Imaginez que vous êtes en train de préparer un projet avec votre ami. Vous avez trouvé un texte très intéressant et vous voulez le lire à votre ami. Vous avez 2 mn pour lire ce texte en silence, puis 2 mn pour le lire à haute voix. Seulement sept prisonniers ont été libérés par la prise de la Bastille. En France, le 14 Juillet est une fête nationale et un symbole national glorieux. De peintures entraînantes de la scène où vous pourriez penser que des centaines de révolutionnaires fiers dans les rues inondées en agitant des drapeaux tricolores. En fait, seulement un peu plus d'une demi-douzaine de personnes étaient détenues au moment du siège. Une centaine de vies ont été perdues dans l'attaque, y compris celle du gouverneur, dont la tête a été accrochée à Paris sur un pique. Les conditions étaient assez confortable pour la plupart des détenus, avec les heures de visite détendues et logements meublés. Le croquis du peintre Jean Fragonard apparu en 1785 montre des dames à la mode se promenant autour de la cour avec les prisonniers, qui ont reçu une allocation de dépenses généreuse, abondance de tabac et d'alcool, et ont été autorisés à garder les animaux domestiques.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -1754,26 +1634,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_946061",
-    "task_text": "Преобразуйте, если это необходимо, слово CONSTRUIRE так, чтобы оно грамматически соответствовало содержанию текста. Et il est vrai que ce château, __________ après la Guerre de Cent ans, a deux faces : l’une pour la guerre, l'autre pour l'amour.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945371",
-    "task_text": "Champs de foire À proximité des grandes villes on trouve des parcs des 13______ qui hébergent des salons ou des foires le samedi et le dimanche. Ces salons sont une très bonne 14______ de sortie pour ceux qui ne savent pas quoi faire le week-end. Il en 15______ pour tous les goûts. À Paris, par exemple, tout au long de l'année le parc des expositions de la Porte de Versailles, au sud de Paris, abrite toute l'année de 16______ manifestations. Parmi 17______ : le salon de l'agriculture, la foire de Paris, le salon du nautisme ou encore le salon du chocolat. Ne 18______ pas l’occasion de vous rendre à un salon ou une foire à côté de vous !",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945895",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. La rencontre d’Arthur Ténor avec les collégiens a été … 1) difficile. 2) positive. 3) spontanée.",
     "answer": "---",
@@ -1906,18 +1766,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945795",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Il a obtenu le record du monde … 1) tout seul. 2) avec son ami. 3) faisant partie de l'équipe.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_6388.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_6388.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945762",
     "task_text": "Вы услышите репортаж дважды. Выберите правильный ответ 1, 2 или 3. Pour fixer un record du monde il y avait … 1) un photographe spécial. 2) une équipe de photograhes. 3) un caméra spécial.",
     "answer": "---",
@@ -2017,18 +1865,6 @@
     "all_images": [],
     "audio": "",
     "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945888",
-    "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. D'après Hélène Soumet, pourquoi certains élèves craignent de ne pas réussir en philosophie ? 1) Les textes philosophiques sont assez compliqués avec beaucoup de termes difficiles. 2) Pour réussir, il faudra étudier une énorme quantité de textes. 3) La philosophie n'est pas une science exacte, elle ne donne pas de réponses précises.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_18775.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_18775.mp3.mp3"
-    ],
     "topic": "sdamgia_vpr"
   },
   {
@@ -2150,16 +1986,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945709",
-    "task_text": "Преобразуйте, если это необходимо, слово SUIVRE так, чтобы оно грамматически соответствовало содержанию текста. Jacques-Yves Cousteau Qui n'a pas vu sur son écran de télévision apparaître le visage énergique du commandant Cousteau ? Qui n'a pas __________________une de ses nombreuses explorations sous-marines ou lu ses récits sur les requins, les dauphins ou les baleines ?",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_946121",
     "task_text": "Преобразуйте, если это необходимо, слово ROYAL так, чтобы оно грамматически соответствовало содержанию текста. Le château de Brissac Que les plus petits se le disent : voici un géant ! Avec ses sept étages et ses deux cents pièces, Brissac est considéré comme le plus haut des châteaux __________________.",
     "answer": "---",
@@ -2228,30 +2054,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945769",
-    "task_text": "Qui a conseillé a Ludovic Tézier d’entrer au Centre de Formation Lyrique ? 1) Sa professeur de chant. 2) Ses parents. 3) Sa soeur aînée.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_23913.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_23913.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945262",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Transport 2. Carnet du jour 3. Finances 4. Sport 5. Météo 6. Culture A. Drowning Pool perd son chanteur. Dave Williams, chanteur du groupe de néo-métal Drow-ning Pool, est mort jeudi après-midi à bord de l'autobus utilisé par les musiciens pour les tournées. Agé de 30 ans, Dave Williams, surnommé Stage (du fait de sa surexcitation durant les concerts), était le leader de ce groupe texan dont le premier album, Sinner, est sorti en juillet 2001. On ne connaît pas encore les causes du décès. B. Le temps aujourd'hui et demain. Samedi 17: le ciel se couvrira en Bretagne et il pleuvra faiblement. Sur la Normandie et les Pays de Loire le ciel se voilera dans l'après-midi. Sur le relief des Alpes et des Pyrénées quelques orages éclateront en fin d'après-midi. Sur les autres régions le temps sera beau et très chaud. C. Flessel, une pastille de trop. La double championne olympique d'escrime a été contrôlée positive : elle aurait pris un stimulant sans savoir qu'il figurait parmi les produits dopants. L'affaire coïncide avec l'ouverture, à Lisbonne, du championnat du monde. D. Désir de Tapies. Le musée Picasso d'Antibes propose, à travers une soixantaine d'œuvres du plasticien catalan, une passionnante réflexion sur le corps et la chair. E. Un analyste viré avec 32 millions de dollars. Jack Grubman, analyste vedette de la banque Salomon Smith Barney a «démissionné» jeudi après ses évaluations peu fiables sur WorldCom, aujourd'hui en faillite. Il va néanmoins toucher 32 millions de dollars de sa firme. Outre les indemnités de départ (1,2 million de dollars), Salomon Smith Barney a accepté d'effacer un prêt de 19 millions accordé à l'analyste en 1998. Celui-ci va aussi récupérer 12 millions sous forme d'actions et de stock-options et conservera 15 millions touchés à son arrivée en 1998. Текст | A | B | C | D | E // Заголовок | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945704",
-    "task_text": "Преобразуйте, если это необходимо, слово DIRE так, чтобы оно грамматически соответствовало содержанию текста. Les vacances Ce qui m’étonne, moi, c’est qu’à la maison on n’a pas encore parlé de vacances ! Les autres années, papa dit qu’il veut aller quelque part, maman dit qu’elle veut aller ailleurs. Papa et maman discutent. Ils __________________ qu’ils préfèrent alors rester à la maison, moi je pleure, et puis on va où voulait maman.",
     "answer": "---",
     "image": "",
     "all_images": [],

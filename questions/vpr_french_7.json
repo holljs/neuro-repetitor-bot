@@ -1,17 +1,5 @@
 [
   {
-    "id": "vpr_sd_945917",
-    "task_text": "Вы услышите диалог. Для каждого предложения А–Е выберите один правильный вариант ответа из трёх предложенных (1, 2 или 3). Вы услышите запись дважды. При повторном прослушивании проверьте себя. A. Julien téléphone à __________. 1) son père 2) son grand-père 3) son frère B. Julien a acheté __________ à la boutique. 1) une chemise 2) un jean 3) un T-shirt C. Dans le Jardin municipal, des musiciens _________. 1) jouaient des instruments de musique 2) dansaient 3) vendaient leurs disques D. Maintenant, Julien est _________. 1) dans le parc d'attractions 2) aux Jeux Olympiques 3) à un concert E. Julien veut envoyer _________. 1) une lettre 2) un message électronique 3) un cadeau Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_79809.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_79809.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945850",
     "task_text": "Прочитайте текст. Для каждого предложения А–Е выберите один правильный вариант ответа из четырёх предложенных (1, 2, 3 или 4). Au bout d`un mois, les cauchemairs continuant à perturber mes nuits, il m`a semblé necessaires de faire le point de la situation. J`étais un bon élève, seules me manquaient les connaissances en matiere de football pour m`intégrer à la classe. Les copains étaient sympa dans l`ensemble, meme s`ils me choisissaient toujours en dernier lorsque nous formions les équipes pour les matchs de la récréation. Comme disait JP : — Toi, tu es doué avec ta tête, mais pour ce qui est des jambеs c`est plutôt la catastrophe ! Il avait raison. Impossible d`effectuer un controle de balle correct, mes passes atterissaient systématiquement chez l`adversaire, ne parlons pas de mes tentatives de dribble puisque je me mélanjeais les pinceaux au point de me retrouver par terre... J`ai parfait mon éducation en lisant tous les magazines de football que possédait le marchand de journaux du coin de la rue. D’après Jean-Luc Luciani « La ville qui rend foot » А. Quel élève était le héros du texte ? 1) un bon élève 2) un élève moyen 3) un très bon élève 4) un mauvais élève В. Quels étaient les copains du personnage principal ? 1) les copains étaient sympa 2) les copains étaient gentils 3) les copains étaient méchants 4) les copains étaient bons C. J`étais un bon élève, seules me manquaient les connaissances en matiere de ... pour m`intégrer à la classe. 1) mathématique 2) football 3) volleyball 4) lecture D. J`ai parfait mon éducation en lisant tous ... de football. 1) les magazines 2) livres 3) textes 4) textes de l'article E. Où était le marchand de journaux ? 1) près de la maison 2) dans la rue voisine 3) au coin de la rue 4) au bout de la rue Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -56,16 +44,6 @@
   {
     "id": "vpr_sd_945876",
     "task_text": "Прочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е , нужную грамматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4). Bonheur félin Le matin à Paris était beau. Il A _______ chaud. Un embouteillage B ___________ sur l'une des autoroutes. Dans l'une des voitures, la famille était C __________ : maman, papa, fille et chat. Ils ont emmené le chaton chez le vétérinaire. Lucy dormait avec Poupou (c'est le nom du chat) sur la banquette. Poupou s'est réveillé et a sauté de l'épaule de Lucy. Il s'est assis sur le siège à côté et a commencé à lécher. Soudain, un \" miaou \" félin retentit de la fenêtre ouverte D ________ voiture. Poupou s`est levé à la fenêtre sur E _________ pattes de derrière et regardait partout. Dans la fenêtre d'une autre voiture, un chat blanc miaulait sur lui. Le chat et le chat ont commencé à se reconnaître. A | 1) faisait | 2) faisaient | 3) faisais | 4) fait // B | 1) se sont formé | 2) s'est formé | 3) s'est formée | 4) s'est formés // C | 1) assis | 2) assise | 3) assises | 4) assit // D | 1) de la | 2) — | 3) du | 4) de // E | 1) son | 2) tes | 3) leur | 4) ses Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945888",
-    "task_text": "Вы получили электронное письмо от Вашего друга по переписке Жана из Франции. Ниже приведён отрывок из этого письма De : Jean@laposte.fr // À : Ami e russe@mail.ru // Objet : Fête // ... Hier, nous avons celebré une fête de nos amis. Et toi, aimes-tu les fêtes? Pourquoi ? Quelle est ta fête préféré ? Напишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -206,16 +184,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945867",
-    "task_text": "Вы получили электронное письмо от Вашей подруги по переписке Анны из Франции. Ниже приведён отрывок из этого письма. De : Anna@laposte.fr // À : Ami_e_russe@mail.ru // Objet : Langues étrangères // ...En France, les collégiens apprennent obligatoirement deux langues étrangères ! Moi, j’apprends l'anglais et l'espagnol. Et toi, quelle(s) langue(s) étrangère(s) apprends-tu à l'école? Que faites-vous aux cours de français ? Est-ce que tu utilises Internet pour apprendre le français ?... Напишите ей ответное письмо объёмом 80–90 слов, ответьте на три её вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить подругу за полученное письмо.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945899",
     "task_text": "Вы получили электронное письмо от Вашего друга по переписке Жюли из Франции. Ниже приведён отрывок из этого письма De : Julie@laposte.fr // À : Ami e russe@mail.ru // Objet : Fête // ... Demain, je fêterai mon anniversaire. Et toi, aimes-tu inviter tes amis pour ton anniversaire? Pourquoi ? Comment passes-tu cette journée?... Напишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо.",
     "answer": "---",
@@ -326,16 +294,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945889",
-    "task_text": "Вы получили электронное письмо от Вашего друга по переписке Жана из Франции. Ниже приведён отрывок из этого письма De : Jean@laposte.fr // À : Ami e russe@mail.ru // Objet : Ville // ... Ma famille et moi nous avons visité votre capitale. Et toi, est-ce que tu étais dans votre capitale ? Pourquoi ? Quelle est ta ville préférée?... Напишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945884",
     "task_text": "Вы получили электронное письмо от Вашего друга по переписке Поля из Франции. Ниже приведён отрывок из этого письма De : Paul@laposte.fr // À : Ami e russe@mail.ru // Objet : Amitié // ... Samedi, j`irai au théatre avec mon meilleur ami. Et toi, as-tu beaucoup d'amis? Pourquoi ? Quel est ton meilleur ami? Напишите ему ответное письмо объёмом 80–90 слов, ответьте на три его вопроса. Оформите свой ответ в соответствии с правилами оформления письма. Не пишите адрес и дату. Не забудьте поблагодарить друга за полученное письмо.",
     "answer": "---",
@@ -398,26 +356,6 @@
   {
     "id": "vpr_sd_945862",
     "task_text": "Прочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е , нужную грамматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4). En voie de disparition Au début du XX e siècle, plus de 100000 tigres A _____ en liberté dans le monde. Aujourd'hui, il en reste environ 3000 en Inde. En Russie on compte environ 500 tigres. Victimes du braconnage et de la vente illégale, les tigres trouvent refuge dans des parcs B _____ où ils sont protégés. Incroyable, mais vrai ! Un jour, trois animaux bébés (un tigre, un ours et un lion) ont été sauvés par la police. On C _____ a appelés Shere Khan, Léo et Baloo. D _____ animaux ont été déplacés dans un des parcs naturels aux États-Unis. À la surprise des soigneurs, les bébés ont refusé d'être E _____. Les trois amis ont vécu ensemble toute leur vie. A | 1) vivent | 2) vivaient | 3) vivraient | 4) vivront // B | 1) nationales | 2) nationale | 3) national | 4) nationaux // C | 1) les | 2) l' | 3) ils | 4) leur // D | 1) Ce | 2) Cet | 3) Cette | 4) Ces // E | 1) séparé | 2) séparée | 3) séparés | 4) séparées Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945871",
-    "task_text": "Прочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е , нужную грамматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4). Les Gaulois Les gaulois étaient des agriculteurs et des guerriers actifs. A __________ vêtements étaient simples. Ils B _________ des chemises en soie, des manteaux sans manches, des pantalons, des chaussures légères. Leurs chaussures n'étaient connues qu'en France, c'est pourquoi elles s'appelaient les chaussures des gaulois ou des galoches. Les Gaulois adoraient les bijoux. Les hommes comme C _________ femmes portaient des bracelets en bronze, en fer et en or. Ces bijoux étaient très lourds. Les Gaulois ont isolé D _______ maisons avec des peaux d'animaux, de la paille et des branches sèches. Les gaulois mangeaient beaucoup de viande, de pain, E _________ une boisson faite d'eau et de miel. A | 1) leurs | 2) ses | 3) leur | 4) des // B | 1) portaient | 2) portent | 3) portais | 4) portait // C | 1) — | 2) des | 3) la | 4) les // D | 1) leurs | 2) leur | 3) ses | 4) des // E | 1) boivent | 2) buvait | 3) buvais | 4) buvaient Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945882",
-    "task_text": "Прочитайте текст и вставьте вместо каждого пропуска, обозначенного буквами А–Е , нужную грамматическую форму, выбрав её из четырёх предложенных вариантов (1, 2, 3 или 4). Ils ont vu la Terre de l`Espace L'exploration spatiale a commencé en 1957 lorsque le premier satellite A ____ a été lancé en orbite. Dans les années suivantes, notre pays a inscrit à son actif une grande série de premières spatiales. Le 12 avril 1961, le B ________ vol spatial de l'histoire et le plus spectaculaire a été C _______ par Youri Gagarine. Valentina Terechkova est la première femme lancé dans l`Espace. À bord D ____ vaisseau spatial Vostok 1, il a effectué une révolution autour de la Terre. Alexei Leonov est devenu le premier cosmonaute qui est sorti dans une scaphandre dans l'Espace. Il E _________ devenu le premier “ piéton ” du Cosmos. A | 1) artificiel | 2) artificielle | 3) artificiels | 4) artificielles // B | 1) premier | 2) première | 3) premiers | 4) premières // C | 1) effectu | 2) effectuée | 3) effectués | 4) effectué // D | 1) du | 2) de | 3) d'un | 4) d'une // E | 1) est | 2) a | 3) as | 4) es Запиши в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
     "image": "",
     "all_images": [],

@@ -60,16 +60,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945182",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Jobs 2. Food 3. Transport 4. Free time 5. Education 6. History A. A full course of study at the Russian school takes 11 years. It aims to develop the abilities that will allow a student to adapt to life in society as well as to choose their futureprofession. Every school teaches academic subjects such as literature, the Russian language, history, maths and sciences. In addition, there are specialized schools concentrating on specific subjects. B. Many young people all over the world want to be flight attendants. This career path has a huge amount of benefits. For example, flight attendants are able to fly around the world,explore new places and get to meet new cultures. This profession broadens your horizonsand improves your communicating skills. Despite some drawbacks, the advantages outweigheverything. C. The first recorded use of standardized dress in education was in England in 1222. However, the origin of the modern school uniform can be traced to the 16th century England, when the children attending the Christ’s Hospital boarding school wore blue cloaks along with yellow stockings. In later centuries, school uniforms became associated with the upper class. D. It is easy to come to Russia. You can fly to Moscow and St. Petersburg from most major international airports. However, if there isn’t a direct flight to other Russian cities from your closest airport, you can usually take a connecting flight. There are a lot of modern andcomfortable airports in Russia. Most airlines serve a nice dinner to make your flightenjoyable. E. Many airlines offer food to their passengers depending upon the class of travel. Food may beserved on one tray or in multiple courses with no tray. Often the dishes are reflective of the culture of the country the airline is based in. Anairline dinner typically includes meat (most commonly chicken or beef), fish or pasta, a salad or a vegetable, and a dessert. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944637",
     "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Vladimir Vladimir is one of the cities which belong to the Golden Ring. It _____________ in 990. It is one of the oldest cities in Russia and a must-see for anyone who is interested in Russian history.",
     "answer": "---",
@@ -428,38 +418,8 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944784",
-    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Visiting Russia Have you ever been to Pereslavl-Zalessky? This charming town __________________ in 1152.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945630",
-    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. In Russia people have nine or ten days off in a row at the beginning of the month. __________________ have long school holidays too.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945624",
     "task_text": "Преобразуйте, если это необходимо, слово NOT WEAR так, чтобы оно грамматически соответствовало содержанию текста. Kids are waiting for Father Frost who looks much like Santa Clause but he __________________ glasses and travels together with his granddaughter Snow Maiden.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945585",
-    "task_text": "Important scientific discovery Four new elements were discovered and added to the periodic table. That’s a 13 ______ deal! The atoms of the elements are so 14 ______ that half a million of them could line up across a single human hair. Atoms are made up of protons, neutrons and electrons. Different atoms have different amounts of them which 15 ______ tell us what kind of element it is. An element can’t be broken down any further. And 16 ______ element has its own personality or characteristic. A Russian scientist named Mendeleev figured all of this out and 17 ______ the elements into a chart — The Periodic Table of Elements. He even knew, in 1869, that there would be more elements discovered. And we’re still adding them nearly 150 years 18 ______! This is the first time in 5 years that any have been added.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -496,30 +456,6 @@
   {
     "id": "vpr_sd_945659",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a grandmother of German origin? 1) Jill 2) Matthew 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34675.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945652",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who never eats soup? 1) Jill 2) Matthew 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34675.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945653",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who will cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -654,16 +590,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945192",
-    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. His life was not easy but he was a man who rose above tragedy to carry on. The stories he wrote still delight millions of __________________ and adults around the world.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944635",
     "task_text": "Stevie Wonder Stevie Wonder achieved early success as a hit-making musician. He is 13_____________for his unusual style. When Wonder was four, he 14_____________singing in the church choir and banging out rhythms on his mom's pots and pans. A family friend gave Wonder a harmonica, which he played day and night. Everybody knew that little Wonder was really 15_____________in music. Then a neighbour let him play their piano.The boy came to the neighbour every day and 16_____________ a lot of time playing the piano. When he was 9, self-taught Wonder would make music shows for the neighbours. It was 17_____________ to see how he switched from instrument to instrument and played with great enthusiasm and style. At just 11, Wonder released his first album. He 18_____________ remains the youngest solo singer to get to the top of the pop charts.",
     "answer": "---",
@@ -712,18 +638,6 @@
   {
     "id": "vpr_sd_945260",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is interested in fashion? 1) Tracy 2) Jack 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34656.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945261",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is hungry? 1) Tracy 2) Jack 3) Neither",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -971,26 +885,6 @@
     "all_audios": [
       "questions/audio_vpr/sd_64433.mp3.mp3"
     ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945222",
-    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Animal facts 2. Geography 3. Culture 4. Food 5. Weather 6. History A. Most of Russia has a continental climate, with long, cold winters and brief summers. There is a wide range of summer and winter temperatures. A record low temperature of −71 °C was registered in 1974 at the northeast Siberian village of Oymyakon, which is the lowesttemperature ever recorded anywhere in the world for an inhabited region. B. We usually don’t think about ice too much, unless there’s none in the freezer and all we have to drink is a warm can of Coke. Before the invention of artificial refrigeration in theearly 1900s, ice was the only way to keep things cool and food from spoiling. While therewere ice-making machines in use in the mid- to late-1800’s, they were mostly for commercial use. C. Traditionally, Russian clothing had two main colours — the natural colour of the material — white, and red. «Red» is the same word that was used in the old days to call everythingbeautiful. That is, red elements in clothing became beautiful elements. Interaction withnature led to the appearance of very interesting new colours in Russian clothing: yellow,gold, blue and many others. D. Polar bears live along shores and on sea ice in the icy cold Arctic. When sea ice forms over the ocean in cold weather, many polar bears head out onto the ice to hunt seals. Male polar bears may grow 10 feet tall and weigh over 1400 pounds. Females reach seven feet and weigh more than 650 pounds. In the wild polar bears live up to age 25. E. Stroganina is a raw frozen fish delicacy from Yakutia, in northern Russia. It is a winter dish, consisting of long, thin slices of frozen Arctic river fish such as whitefishe, white salmon orsturgeon. It is sometimes decorated withwild red berries and greens. Some of the best stroganina is made of freshly caught fish, frozen once. The taste, according to Yakutians, issoft, fresh and frosty. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945263",
-    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. Tennis Some people believe that the name «tennis» comes from the ancient Egyptian town of Tinnis alongside the Nile and the word racquet evolved from the Arabic word for palm of the hand, rahat. Aside from __________________ two words, there is no evidence for any form of tennis preceding the year 1000.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
     "topic": "sdamgia_vpr"
   },
   {
@@ -1332,28 +1226,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945201",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to the cinema tonight? 1) Fred 2) Jane 3) Neither",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_34669.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945243",
-    "task_text": "Преобразуйте, если это необходимо, слово BURY так, чтобы оно грамматически соответствовало содержанию текста. Memorial Day Memorial Day, a national US holiday has an interesting history. In 1866 the country was recovering slowly from the long and bloody Civil War between the North and the South. Henry Welles, a drugstore owner at Waterloo, suggested that all the shops in town should close for one day to honor the soldiers who __________________ in the Waterloo cemetery.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_945276",
     "task_text": "Преобразуйте, если это необходимо, слово FIND так, чтобы оно грамматически соответствовало содержанию текста. As a child he had to help his father with the heavy daily tasks of a farmer but he always __________________ time to read. He was really a self-made man.",
     "answer": "---",
@@ -1404,16 +1276,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944843",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. We are at the beginning of the Karimskaya River in the 14 ______ of Kamchatka. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944836",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It’s a bright sunny day and in the far 15 ______ I can see the Karimski volcano. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
     "answer": "---",
@@ -1446,16 +1308,6 @@
   {
     "id": "vpr_sd_944839",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Someone in our group touched a strange plant and suddenly his skin was red and 18 ______. I asked for advice on Twitter. Minutes later, someone who knew this part of Russia replied, ‘Probably a Pushki plant. If it is, it’ll hurt but it won’t kill you!’ 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944825",
-    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. The city __________________ in 1703 by Peter I.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2022,26 +1874,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_945283",
-    "task_text": "Преобразуйте, если это необходимо, слово CALL так, чтобы оно грамматически соответствовало содержанию текста. Abraham Lincoln Of all the presidents in the history of the United States, Abraham Lincoln is probably the one that Americans remember with the deepest affection. Abraham Lincoln was born on February 12, 1809, in a one room cabin. He proved that an ordinary man could become the president of the country. He __________________ “honest Abe”.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945237",
-    "task_text": "Преобразуйте, если это необходимо, слово SING так, чтобы оно грамматически соответствовало содержанию текста. The two ceremonies were joined in 1868, and northern states commemorated the day on May 30. Children read poems and __________________ civil war songs,",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944867",
     "task_text": "Преобразуйте, если это необходимо, слово THAT так, чтобы оно грамматически соответствовало содержанию текста. In __________________ times, Russian tsars used it.",
     "answer": "---",
@@ -2074,18 +1906,6 @@
   {
     "id": "vpr_sd_944936",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has seen The Patriot ? 1) Linda 2) Frank 3) Both",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
-    "all_audios": [
-      "questions/audio_vpr/sd_53926.mp3.mp3"
-    ],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944937",
-    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. The main character in The Patriot is ... 1) good. 2) weak. 3) indifferent.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2134,16 +1954,6 @@
   {
     "id": "vpr_sd_945574",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Weather 2. Sports 3. Health 4. Sightseeing 5. Safety on transport 6. Politics A. The central feature of the Kuskovo estate, the Palace with its splendid forecourt and magnificent formal garden, is the best preserved part of the estate. The forecourt is combination of the designing principles of the old boyar estate and the eighteenth-century country residence. The irregular arrangement of the buildings gives the forecourt apicturesque quality. B. Seeing a dog sticking its head out the car window enjoying the sights and smells on a sunnyday is super cute, but is it safe? Increasingly, many are saying it’s not. Experts say that in a car with brakes being applied while driving 35 milesper hour, even a small dog can create a force the equivalent of 2,700 poundbaby elephant! Bad for your dog … and could be badfor you too. C. In an exciting game, Barca was up 5-1 with just moments left — so close, but they’d need one more for the miracle win. Then, in stoppage time (after regulation time is done and where time lost during the game is made up) … with seconds left, Barca passed it to substituteplayer, Sergi Roberto, who placed a perfectly timed foot on the ball … and scored! D. In the presidential elections in Francea win for Marine Le Pen would have resulted in a verydifferent vision. Ms. Le Pen had wanted a Frexit, France’s exit from the European Union (similar to Brexit, Britain’s recent exit from European Union membership). During thecampaign, her views were often compared to President Trump’s. E. The rain overwhelmed rivers and streams causing “flash floods” as the banks couldn’t absorb or contain the water. The force of the rushing waters uprooted homes and cars as it went by, snapped roads and bridges in half, and breached dams meant to contain the water.Many towns can be reached now only by helicopters. Текст | A | B | C | D | E // Рубрика | | | | |",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945509",
-    "task_text": "Преобразуйте, если это необходимо, слово HE так, чтобы оно грамматически соответствовало содержанию текста. In September Liza sent a letter to the president. She wrote __________________ about the dog of her dream, and that she hoped that one day she would have a fluffy friend.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2262,16 +2072,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_sd_944817",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Meanwhile, tour companies have been promoting the traditional package holiday with a new twist to attract more customers — but with 16 ______ results. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_sd_944818",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. They have filled all the places on its spa holidays in Spain, but they have 17 ______ only half of their available luxury breaks in Egypt. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
     "answer": "---",
@@ -2314,16 +2114,6 @@
   {
     "id": "vpr_sd_944880",
     "task_text": "Преобразуйте, если это необходимо, слово GET так, чтобы оно грамматически соответствовало содержанию текста. Russia __________________ Vyborg in 1710 in the Northern War.",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_945588",
-    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. Mikhail Lomonosov was the __________________ Russian scientist who became well-known internationally. He also made an important contribution to the formation of the modern Russian language.",
     "answer": "---",
     "image": "",
     "all_images": [],
@@ -2928,16 +2718,6 @@
   {
     "id": "vpr_sd_944798",
     "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Hiking is becoming very popular. People like to spend their days off in the country, closer to nature. There are 17 ______ places with forests, lakes and rivers, waterfalls and hills, and whatnot. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_sd_944799",
-    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It is 18 ______ to spend a day bathing and suntanning oneself on a river bank, a lakeshore or at a seaside, to chat and joke with your friends round a campfire. Happy hikers return home to plan new hikes for the coming weekend. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
     "answer": "---",
     "image": "",
     "all_images": [],
