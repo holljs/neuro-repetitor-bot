@@ -1,36 +1,11 @@
-# Секретные файлы
-.env
-.env.local
-.env.production
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# IDE / Editor
-.idea/
-.vscode/
-*.swp
-*.swo
-*.suo
+# Медиафайлы слишком большие для GitHub
 questions/images_vpr/
-questions/cache/
+questions/audio_vpr/
+questions/images_oge*/
+questions/images_ege*/
+questions/hist_ege_raw/
+*.log
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store

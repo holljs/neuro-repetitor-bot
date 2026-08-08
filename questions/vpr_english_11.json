@@ -1,0 +1,3172 @@
+[
+  {
+    "id": "vpr_sd_944814",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes surfing? 1) Amanda 2) Trevor 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39099.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944815",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. How often does Trevor go to the beach? 1) Every day. 2) Every weekend. 3) Very seldom.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39099.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944808",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. How old is Trevor? 1) 10 2) 15 3) 25",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39099.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944809",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. For how long has Trevor been practising surfing? 1) 25 years 2) 10 years 3) 15 years",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39099.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944810",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Trevor says that Australian beaches as compared with other countries … 1) are smaller. 2) are bigger. 3) lack sand",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39099.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39099.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945182",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Jobs 2. Food 3. Transport 4. Free time 5. Education 6. History A. A full course of study at the Russian school takes 11 years. It aims to develop the abilities that will allow a student to adapt to life in society as well as to choose their futureprofession. Every school teaches academic subjects such as literature, the Russian language, history, maths and sciences. In addition, there are specialized schools concentrating on specific subjects. B. Many young people all over the world want to be flight attendants. This career path has a huge amount of benefits. For example, flight attendants are able to fly around the world,explore new places and get to meet new cultures. This profession broadens your horizonsand improves your communicating skills. Despite some drawbacks, the advantages outweigheverything. C. The first recorded use of standardized dress in education was in England in 1222. However, the origin of the modern school uniform can be traced to the 16th century England, when the children attending the Christ’s Hospital boarding school wore blue cloaks along with yellow stockings. In later centuries, school uniforms became associated with the upper class. D. It is easy to come to Russia. You can fly to Moscow and St. Petersburg from most major international airports. However, if there isn’t a direct flight to other Russian cities from your closest airport, you can usually take a connecting flight. There are a lot of modern andcomfortable airports in Russia. Most airlines serve a nice dinner to make your flightenjoyable. E. Many airlines offer food to their passengers depending upon the class of travel. Food may beserved on one tray or in multiple courses with no tray. Often the dishes are reflective of the culture of the country the airline is based in. Anairline dinner typically includes meat (most commonly chicken or beef), fish or pasta, a salad or a vegetable, and a dessert. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944637",
+    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Vladimir Vladimir is one of the cities which belong to the Golden Ring. It _____________ in 990. It is one of the oldest cities in Russia and a must-see for anyone who is interested in Russian history.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945548",
+    "task_text": "Преобразуйте, если это необходимо, слово FOOT так, чтобы оно грамматически соответствовало содержанию текста. Thanks to unique qualities of the sheep’s wool, __________________ stay in comfort all day long.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944613",
+    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. The morning of 9 May begins with the Victory Parade on Red Square in Moscow, _____________ especially enjoy the parade because it is a spectacular event.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944614",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. You can see soldiers and cadets in _____________ uniforms as well as modern military equipment.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944760",
+    "task_text": "Преобразуйте, если это необходимо, слово IT так, чтобы оно грамматически соответствовало содержанию текста. The main reason tourists from all over the world visit Altai is __________________ magnificent nature. You can choose many different ways to enjoy the local landscapes, for example, it can be a horseback riding tour.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945444",
+    "task_text": "Преобразуйте, если это необходимо, слово SHOW так, чтобы оно грамматически соответствовало содержанию текста. The parade __________________ on TV so that the whole country can enjoy the spectacular sight.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944862",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Twenty-first century cowboys What do you know about twenty-first century cowboys? Cowboys have always had a 13 ______ image. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944863",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. When people first watched Hollywood films, being a cowboy wasn’t a 14 ______. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944856",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It was a life of adventure, freedom, horses. It was a classic 15 ______ of the United States of America. In reality, American cowboys have lived and worked here in the west and south-west of the United States for over three centuries, long before Hollywood. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944857",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. The adventure and romance have disappeared but the 16 ______ work and long hours are the same as they’ve always been. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944858",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It’s also difficult to define a twenty-first century cowboy. Surely it can’t be the big cattle owners who do business with a seventy-billion dollar beef industry? These 17 ______ ranches use the latest technology and employ accountants. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944859",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. But even some of the old 18 ______ cattle ranches make more money nowadays by offering holidays to tourists. 1. hard 2. hobby 3. job 4. interesting 5. modern 6. romantic 7. symbol 8. traditional",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945483",
+    "task_text": "Imagine that you are preparing a project with your friend. You have found some interesting material for the presentation and you want to read this text to your friend. You have 2 minutes to read the text silently, then be ready to read it out aloud. You will not have more than 2 minutes to read it. A cave is a natural area or space under the surface of the Earth. You can find caves in any part of the world. People study how caves form and develop. Usually caves are formed because of water or volcanic forces. Caves often make up a system. It is so because they are connected with one another. Some animals prefer to live in caves. These are bats, fish, insects and spiders. Such animals can live in the dark as there’s no light in caves. Historically people used caves to live there or to hide things there. In some cultures caves were used for ceremonies. Now people explore caves. This is a popular hobby. If a person explores caves, it’s called caving. Caving can be dangerous so it’s considered to be a risky sport. You see, caves can be very deep.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944246",
+    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken; — what/who is in the photo; — what is happening; — why you keep the photo in your album; — why you decided to show the picture to your friend. You have to talk continuously, starting with: “I’ve chosen photo number...”.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_94444.png",
+      "questions/images_vpr/sd_get_file_id_94446.png",
+      "questions/images_vpr/sd_get_file_id_94447.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945517",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to have a test in History? 1) Mary 2) James 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34690.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34690.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945518",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks Mary’s parents did a good thing? 1) Mary 2) James 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34690.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34690.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945519",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks beige is a good colour for a room? 1) Mary 2) James 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34690.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34690.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945512",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has read about popular colours in a magazine? 1) Mary 2) James 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34690.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34690.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945513",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is inviting guests next weekend? 1) Mary 2) James 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34690.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34690.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945634",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Sport 2. Literature 3. Travel industry 4. Shops 5. Transport 6. Hobbies A. Ecotourism is becoming more and more popular in Russia. The cultural and environmental heritage of the country is so rich and various, that Russiacan be called one of the most promising countries for the development of the ecotourism. The ecological tours give apossibility to discover the country, which could seem familiar. There is a lot to see in each region of Russia. B. So iconic is this travel bookshop it even gets a mention in Arthur Conan Doyle’s «Hound of the Baskervilles». Opened in 1901, it’s one of the largest specialist travel bookshops in theworld and an essential destination for explorers, backpackers and map fanatics. There arethree floors stacked high with travel writing, guides, maps and gifts and also regular eventsfrom the great and good of exploration and travel writing. C. Lapta is a traditional Russian game, which is more than 400 years old. Two teams with aminimum of three players each are needed to play the game. A rubber ball (or tennis ball)and bats are used. A traditional lapta bat has a spade-like shape. But today round ones are also used, similar to baseball bats. The field is around 30-40 yards wide and 40–55 yardslong. D. Set up by Edward Stanford in 1853, the Stanfords flagship bookstore has been situated in a grand old building in London since 1901. The customers can find a great variety of travel guides, maps, gifts and more spread over three floors. Stanfords claims to be the world’slargest specialist travel bookstore. There’s also a cafe located in the store that serves cakes,pastries and hot drinks. E. Alexander Sergeevich Pushkin was a Russian Romantic author who is considered to be thegreatest Russian poet. In his poems and plays he created a style of storytelling — mixing drama, romance, and satire — associated with Russian style ever since and greatlyinfluencing later Russian writers. Pushkin published his first poem at the age of fifteen. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944764",
+    "task_text": "Преобразуйте, если это необходимо, слово BEAUTIFUL так, чтобы оно грамматически соответствовало содержанию текста. Visiting Altai Have you ever been to Altai? It is one of the __________________ areas of Russia.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945528",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Each member of the family had their own decorated Christmas tree. A nice table with many beautiful presents stood near all of __________________.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944866",
+    "task_text": "Преобразуйте, если это необходимо, слово BUILD так, чтобы оно грамматически соответствовало содержанию текста. It __________________ between 1891 and 1916.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944807",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT BE так, чтобы оно грамматически соответствовало содержанию текста. Russian winters are cold but it __________________ a reason to stay indoors.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945631",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. Traditionally, the New Year is a family holiday. People usually spend __________________ days at home with loved ones, but some Russians go out to the city’s main square where all the fun usually focuses. The restaurants arrange a New Year’s show.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945212",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Believe it or not, when New York replaced many of its older subway cars in the 1950’s, some of __________________ had been in use for over 40 years.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944211",
+    "task_text": "Exploring China Marco Polo is one of the greatest explorers in the world ever. He travelled to China and the Far East from Europe. Marco had to travel across the great Gobi Desert to get to China. lt 13_____________ him months only to cross the desert. When he came to China three years later, Marco was 14_____________ by the wealth and luxury. The capital city was large, but well-organized and clean. Wide roads and huge engineering projects like the Grand Canal were astonishing. It was much better than anything he had ever seen or 15_____________. Everything from the food to the animals, like orangutans and rhinos, was new and 16_____________. After travelling around China for several years, Marco 17_____________ to go back to Venice. He left home in 1271 and finally returned in 1295. Thus, Marco Polo 18_____________ 24 years on his adventure to China.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944833",
+    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: 1. where and when the photo was taken 2. what/who is in the photo 3. what is happening 4. why you keep the photo in your album 5. why you decided to show the picture to your friend You have to talk continuously, starting with: “I’ve chosen photo number … ”",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_94413.png",
+      "questions/images_vpr/sd_get_file_id_94414.png",
+      "questions/images_vpr/sd_get_file_id_94415.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945637",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who had a busy week? 1) Jack 2) Irene 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34678.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945638",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is fond of music? 1) Jack 2) Irene 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34678.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945639",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a father who likes rock music? 1) Jack 2) Irene 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34678.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945632",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes country music? 1) Jack 2) Irene 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34678.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945633",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going out tonight? 1) Jack 2) Irene 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34678.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34678.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944636",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Ecology 2. History 3. Cooking 4. Agriculture 5. Economy 6. Geography A. Coffee drinking was first mentioned in the 15 th century. Scientists believe it was at that time when people started making coffee the way we make it now. It was probably in Yemen where people started roasting and brewing coffee beans but there are other theories as well. In the 16lh century coffee was brought to Turkey and it was exported to Western Europe from there. B. There are several ways of growing coffee. The traditional method is to place 20 seeds in each hole at the beginning of the rainy season. This method loses about 50% of the seeds because half of them fail to grow into coffee plants. A more effective process of growing coffee, used in Brazil, is to raise coffee plants in special greenhouses and then plant them outside at six to twelve months. C. Scientists think that shade-growm coffee is better for the environment than full-sun systems because the shade is needed by a lot of living organisms like birds and insects. Still, there are a lot of environmental problems connected with growing coffee. One of them is the amount of water necessary for it because coffee is mainly grown in the countries where there’s water shortage. D. Coffee export can bring a lot of money for the country which does it. In 2016, world production of green coffee beans was 9.2 million tons, led by Brazil. This country alone produces 33% of the total amount of coffee. Vietnam, Colombia and Indonesia were other major producers. These countries greatly depend on coffee export in their economic systems. E. Once made, coffee may be drunk in a variety of ways. You may make strong or weak coffee. Coffee with milk is called white coffee whereas if you don’t add milk to your coffee, you drink it black. Some people like to have their coffee hot, but others prefer cold coffee. You may also make flavoured coffee. In coffee houses you may get a cappuccino, a latte or an espresso. Текст | A | B | C | D | E // Заголовок | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944784",
+    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Visiting Russia Have you ever been to Pereslavl-Zalessky? This charming town __________________ in 1152.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944886",
+    "task_text": "Преобразуйте, если это необходимо, слово CHOOSE так, чтобы оно грамматически соответствовало содержанию текста. The Swedish __________________ a very good place for the castle.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945630",
+    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. In Russia people have nine or ten days off in a row at the beginning of the month. __________________ have long school holidays too.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945624",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT WEAR так, чтобы оно грамматически соответствовало содержанию текста. Kids are waiting for Father Frost who looks much like Santa Clause but he __________________ glasses and travels together with his granddaughter Snow Maiden.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945585",
+    "task_text": "Important scientific discovery Four new elements were discovered and added to the periodic table. That’s a 13 ______ deal! The atoms of the elements are so 14 ______ that half a million of them could line up across a single human hair. Atoms are made up of protons, neutrons and electrons. Different atoms have different amounts of them which 15 ______ tell us what kind of element it is. An element can’t be broken down any further. And 16 ______ element has its own personality or characteristic. A Russian scientist named Mendeleev figured all of this out and 17 ______ the elements into a chart — The Periodic Table of Elements. He even knew, in 1869, that there would be more elements discovered. And we’re still adding them nearly 150 years 18 ______! This is the first time in 5 years that any have been added.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945264",
+    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: 1) where and when the photo was taken 2) what/who is in the photo 3) what is happening 4) why you keep the photo in your album 5) why you decided to show the picture to your friend You have to talk continuously, starting with: “I’ve chosen photo number … ”",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_94385.png",
+      "questions/images_vpr/sd_get_file_id_94387.png",
+      "questions/images_vpr/sd_get_file_id_94390.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945657",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34675.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945658",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has travelled a lot? 1) Jill 2) Matthew 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34675.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945659",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a grandmother of German origin? 1) Jill 2) Matthew 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34675.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945652",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who never eats soup? 1) Jill 2) Matthew 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34675.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945653",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who will cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34675.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34675.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945654",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Literature 2. Historical facts 3. Outstanding people 4. Good manners 5. Souvenirs 6. Places to stay A. Lapta, a traditional Russian sports game, is over four centuries old. Balls and bats datingback to the 14th century have been found among the ruins of Novgorod the Great. In the 18th century lapta was an important activity for physically preparing the soldiers of Peter the Great’s army. Later the game became a major pastime. Today lapta is not very popular. B. Apologies are the way to build good friendships and relationships. When you say «I’msorry» (and really mean it), it’s because you probably feel bad that something you did or said hurt another person. Saying you’re sorry is morethan just words. You’re also saying that you respect the other person and you care about his or her feelings. Apologizing shows youhave empathy. C. The Russian doll, or matryoshka, to use the Russian name, is one of the most recognizablesymbols of Russia. It as an example of the nation’s ancient traditions of woodworking and decorative handicrafts. There has always been a demand for the matryoshka, both as achildren’s toy and as a gift, and the doll has always been a symbol of the family. D. Anna Lawrence is a fantastic storyteller and the truth behind the character’s family creates amystery for the reader. The book reflects the social problems of the city where the action takes place. But what really makes the author’s style special is her skill of describing thecharacters; they are real humans in search of their identity and place in the world. E. The Stolby nature reserve is one of the most popular tourism destinations in Siberia. We recommend booking a nice cottage when you go there. There are separate small cottages for six and eight people, and a hostel. The cottages area is called ‘the village’ and is a bit of a hike from the reserve’s main reception buildings but there is a car service for when you firstarrive with your luggage. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945236",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. Some years __________________ General Logan organized another ceremony, this time for the soldiers who survived the war.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944826",
+    "task_text": "Преобразуйте, если это необходимо, слово SEE так, чтобы оно грамматически соответствовало содержанию текста. He __________________ it as the northern capital of Russia.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944887",
+    "task_text": "Преобразуйте, если это необходимо, слово IMPORTANT так, чтобы оно грамматически соответствовало содержанию текста. Thanks to that, the town became one of the __________________ trading centres in the area.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945571",
+    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. __________________ build beautiful snow castles in parks. Squares host concerts where everybody sings and dances.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944841",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. When you look at Kizhi, the __________________ thing that you see is the beautiful main building with dozens of teardrop-shaped roofs. There are two smaller buildings with a similar design nearby, which are also very impressive.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945525",
+    "task_text": "The «Arkhangelskoye» estate The country estate «Arkhangelskoye» is a wonderful monument of Russian 13 ______ from the end of the XVIII to the beginning of the XIX century. It is famous for the magnificent 14 ______ of its garden and park ensemble and its splendid 15 ______ of paintings, drawings, sculptures and pieces of applied art and apart from it the superb store of rare books. Arkhangelskoye belonged to the prince Golitsinsky’s 16 ______ until 1809 but in 1810 it was bought by the richest Russian noble the prince Yusupov, who was a collector and patron of art. It took Yusupov 50 years to build and 17 ______ the ensemble. He invited such well-known architects as Gern, Trombaro, Pettondi, Gonzago, Bove and 18 ______. The first third of the XIX century was the period of golden age for Arkhangelskoye.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944512",
+    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. Photo 1 Photo 2 Photo 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken; — what/who is in the photo; — what is happening; — why you keep the photo in your album; — why you decided to show the picture to your friend. You have to talk continuously, starting with: “I’ve chosen photo number...”.",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_94397.png",
+      "questions/images_vpr/sd_get_file_id_94398.png",
+      "questions/images_vpr/sd_get_file_id_94401.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945514",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Sports 2. Exhibitions 3. Sightseeing 4. Health 5. War victims 6. Politics A. Kuskovo was built between 1740 and 1780. The bulk of the construction was carriedout in the 1750s. The eighteenth-century engravings and drawings give us an idea of thespecial layout of the estate. The axis more than three kilometers long serves to link upthree component parts — the ground beyond the lake, the formal park, and the landscapepark. B. Last year a staggering 65 million people had to leave their homes. 23 million of them had toleave their country (are refugees). Half of those — over 11 million — are children. It’s the largest amount of people we know of that have had to leave their situation according to the United Nations Refugee Agency. And the children in particular haven’t done anything to bein the situation they are in. C. The Golden State Warriors are headed to the NBA Championships after an epic comeback inthe best of 7 series against the Oklahoma City Thunder. The Warriors were down threegames to one. They had to win three games in a row under tremendous pressure. But theGolden State Warriors are proving to be no ordinary team. D. The cold never bothered Harbin, China… in fact they thrive on it, hosting the world’slargest snow and ice festival every year. It’s under way right now. Around 7,000 sculptorsworked tirelessly to build … basically a city, complete with buildings, sculptures, and slides — all made of ice and snow! There are replicas of the Great Wall of China as well as world-record sized sculptures. E. Today the U.N. has 193 member countries. All are invited to attend the General Assembly. Each Assembly is given a number. This year it was the sixty-seventh session, or the 67th Assembly since the U.N. was founded in 1945. A secretary-general leads the U.N. Its current leader is Ban Ki-moon. He is a former diplomat from South Korea. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944619",
+    "task_text": "Преобразуйте, если это необходимо, слово IMPORTANT так, чтобы оно грамматически соответствовало содержанию текста. Victory Day in Russia Victory Day in Russia is celebrated on the 9th May. It is one of the _____________ holidays in Russia. It is dedicated to the Victory in the Great Patriotic War of 1941−1945.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944955",
+    "task_text": "Преобразуйте, если это необходимо, слово BE так, чтобы оно грамматически соответствовало содержанию текста. It _____________ very difficult to build it because of the swamps around it.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945569",
+    "task_text": "Преобразуйте, если это необходимо, слово CELEBRATE так, чтобы оно грамматически соответствовало содержанию текста. It has no fixed date but usually it __________________ at the end of February or at the beginning of March. It lasts a week and each year the dates are different so you should check the calendar of Russian holidays and festivals for the current year.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945218",
+    "task_text": "Преобразуйте, если это необходимо, слово BUILD так, чтобы оно грамматически соответствовало содержанию текста. Many people think that the first subway in the world __________________ in New York City. However, Boston was the first city in the U.S. to open a subway in 1897.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944253",
+    "task_text": "Преобразуйте, если это необходимо, слово POPULAR так, чтобы оно грамматически соответствовало содержанию текста. Now goldfish is one of the ________ pets in many parts of the world.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945192",
+    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. His life was not easy but he was a man who rose above tragedy to carry on. The stories he wrote still delight millions of __________________ and adults around the world.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944635",
+    "task_text": "Stevie Wonder Stevie Wonder achieved early success as a hit-making musician. He is 13_____________for his unusual style. When Wonder was four, he 14_____________singing in the church choir and banging out rhythms on his mom's pots and pans. A family friend gave Wonder a harmonica, which he played day and night. Everybody knew that little Wonder was really 15_____________in music. Then a neighbour let him play their piano.The boy came to the neighbour every day and 16_____________ a lot of time playing the piano. When he was 9, self-taught Wonder would make music shows for the neighbours. It was 17_____________ to see how he switched from instrument to instrument and played with great enthusiasm and style. At just 11, Wonder released his first album. He 18_____________ remains the youngest solo singer to get to the top of the pop charts.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945265",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a headache? 1) Tracy 2) Jack 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34656.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945266",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who finds a lot of fun in the National Museum of American Art? 1) Tracy 2) Jack 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34656.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945267",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who prefers still life paintings? 1) Tracy 2) Jack 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34656.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945260",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is interested in fashion? 1) Tracy 2) Jack 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34656.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945261",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is hungry? 1) Tracy 2) Jack 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34656.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34656.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945242",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Free time 2. Food 3. Advice 4. Sightseeing 5. Animal facts 6. Weather A. Russian summers are warm, but cities such as Moscow (and even those as far east as Tomsk), can experience intense heat waves that drive residents out of doors, and in somecases, out of town. High humidity makes the summers feel even hotter. Brief showers occur unexpectedly; it’s good to carry a small travel umbrella with you even on the sunniest days. B. Fish is a major ingredient in the Finnish cuisine. The large amount of lakes and rivers provide interesting opportunities to catch your own delicious dinner and prepare it on openfire. There is one dish Finns particularly love to prepare when spending time in their summercottages: the smoked whitefish. Whitefish can be caught in lakes, rivers and the Baltic Sea. C. When you’re sightseeing or touring in the summer, be sure to remember to wear sunblock.Getting sunburned early in your trip will make the rest of your visit less pleasant. Don’t forget to protect your ears, the back of your knees, face, and other areas of exposed skin with a good-quality sunscreen that will last throughout the day. Be sure that your clothing is breathable. D. Russians prefer escaping from the noisy city on the weekends or for a vacation to enjoy their summer cottage, or dacha. Dachas are located on the outskirts of cities and towns. SomeRussians maintain beautiful gardens there, but the intention of the dacha is to provide a place away from the heat and noise of the city where families can relax and commune with nature. E. Some sharks seem to eat all the time. For example, the Great White Shark is always on thehunt: in a year it eats 11 tons of food! To compare, an average person eats half a ton of foodper year. Most sharks eat a meal every couple of days. If necessary, though, they can go for a few weeks without eating. Like people, sharks can store extra energy as fat, for use laterwhen food is limited. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944844",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. Kizhi There are some places in the world which look as if they are from a fairy tale. Kizhi is one of __________________ places.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944785",
+    "task_text": "Преобразуйте, если это необходимо, слово BE так, чтобы оно грамматически соответствовало содержанию текста. It __________________ very difficult to build it because of the swamps around it",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945549",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT GET так, чтобы оно грамматически соответствовало содержанию текста. Everybody knows that with valenki you __________________ frozen even in Siberia. Until the 18th century, valenki were handmade and produced only in Siberia and several Northern regions where manual labour was long and hard.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945417",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. __________________ the game developed new rules and opportunities.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945591",
+    "task_text": "Преобразуйте, если это необходимо, слово BEGIN так, чтобы оно грамматически соответствовало содержанию текста. Upon his return to Russia, Lomonosov __________________ his teaching career at the St. Petersburg Academy of Sciences.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945172",
+    "task_text": "Преобразуйте, если это необходимо, слово EAT так, чтобы оно грамматически соответствовало содержанию текста. It gained popularity thanks to Thomas Jefferson who __________________ macaroni during his stay in Paris in 1784–1789.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945545",
+    "task_text": "Flower festival Flower festivals are celebrated all over the world. One of them is the Brussels’ Flower Carpet — a special show that 13 ______ every two years. For five short days a huge carpet of flowers (75 metres by 25 metres) is laid out on the 14 ______ square of Brussels, the Grand Place, in front of the City Hall. 15 ______ are drawn up for the Flower Carpet a year in advance. The designers 16 ______ on colours and number of flowers to be grown for the year’s festival. The Flower Carpet appears on postcards, 17 ______ and images of Brussels for years to come, but only those who visit the city in August are lucky enough to see it in person. The viewing is free, but visitors can buy 18 ______ to get a better panoramic view from the balcony of the City Hall.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944212",
+    "task_text": "Установите соответствие между текстами A−E и рубриками 1−6. Занесите свои ответы в таблицу. Используйте каждую цифру только один раз. В задании одна рубрика лишняя. 1. Holiday destinations 2. Languages 3. Education 4. Sport 5. What to eat 6. Health tips A. Stroganoff is a Russian dish that is served on dinner tables worldwide, eating stroganoff from its Russian source is everything you would expect- tastier, smoother and creamier than you’ve ever had at home. The credit goes in part to Russian sour cream, but Russia is also home to some of the best and widest variation of mushrooms. You'll definitely want to try this dish again. B. If you are preparing to study at a university where the first language is English, this course aims to help you understand what is expected, develop skills to help you learn independently, and build your confidence. You will have the opportunity to review the key vocabulary and concepts used in a university setting, and discover what tutors expect from students. C. A biathlon competition consists of a race in which contestants ski through a cross-country trail system whose total distance is divided into either two or four shooting rounds, half in prone position, the other half standing. Depending on the shooting performance, extra distance or lime is added to the contestant's total skiing distance/time. The contestant with the shortest total time wins. D. A great way to relax and chill is to rent a cottage at Lake Teletskoye in the Altai Mountains. These cottages are available for rent and you can have some really delicious food while you are staying near the lake. A visit to Altai Reserve gives you the opportunity to explore wildlife in Russia animals and plants. So, if you are a nature lover, there is no other place than this reserve. E. Regular exercise and good eating habits are crucial to your physical condition and well-being. Teens should get 60 minutes of physical activity each day. Exercise can include aerobics, flexibility exercises and strength training. It is important to find an activity or multiple activities you enjoy. Sports like weight lifting, aerobics class, swimming, walking or running will do you a lot of good. Текст | A | B | C | D | E // Заголовок | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945595",
+    "task_text": "Преобразуйте, если это необходимо, слово FAMOUS так, чтобы оно грамматически соответствовало содержанию текста. Mikhail Lomonosov Everybody knows about Mikhail Lomonosov. He is one of the __________________ Russian scientists. He was also a poet, a geologist, and an astronomer.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944233",
+    "task_text": "Преобразуйте, если это необходимо, слово THREE так, чтобы оно грамматически соответствовало содержанию текста. In Turkey or the USA it is the ___________ Sunday of July.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944252",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. The __________ European man to see goldfish was Marco Polo.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945511",
+    "task_text": "Преобразуйте, если это необходимо, слово GOOD так, чтобы оно грамматически соответствовало содержанию текста. Liza admitted that it was the __________________ present ever. She called the pedigreed puppy Sam, who had to journey across the country from Nizhny Novgorod to Kavalerovo.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945604",
+    "task_text": "Преобразуйте, если это необходимо, слово MAKE так, чтобы оно грамматически соответствовало содержанию текста. It __________________ him concentrate on quality work. The result of this is what we know today as modern short story.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944882",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Last days of the rickshaw Kolkata, previously called Calcutta, is the famous capital of West Bengal in India. The traffic jams and engine fumes begin early in the morning with long lines of private cars, 13 ______ buses, taxis, etc. There aren’t many alternatives. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944883",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. You can 14 ______ a train through the city or take the underground but sooner or later you have to go on foot. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944876",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. So when I crossed a small road on my first day in the city, I saw a tiny man pulling a rickshaw. For many people, the rickshaw is a symbol of Kolkata and they have many 15 ______. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944877",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. When the traffic is bad, rickshaws 16 ______ a way through the traffic. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944878",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Some local officials want to ban rickshaws. They believe it is wrong for one man to pull another person when there is 17 ______ transport in the city. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944879",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. If the city bans rickshaws, the drivers won’t have a 18 ______ or income. 1. advantages 2. catch 3. find 4. job 5. keep 6. modern 7. popular 8. public",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944197",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is disappointed about summer holidays? 1) Cindy 2) Peter 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64433.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64433.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944198",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who worked hard during the school year? 1) Cindy 2) Peter 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64433.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64433.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944199",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has experience in hiking? 1) Cindy 2) Peter 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64433.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64433.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944192",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who dislikes Wales? 1) Cindy 2) Peter 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64433.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64433.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944193",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is fond of badminton? 1) Cindy 2) Peter 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64433.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64433.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945222",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Animal facts 2. Geography 3. Culture 4. Food 5. Weather 6. History A. Most of Russia has a continental climate, with long, cold winters and brief summers. There is a wide range of summer and winter temperatures. A record low temperature of −71 °C was registered in 1974 at the northeast Siberian village of Oymyakon, which is the lowesttemperature ever recorded anywhere in the world for an inhabited region. B. We usually don’t think about ice too much, unless there’s none in the freezer and all we have to drink is a warm can of Coke. Before the invention of artificial refrigeration in theearly 1900s, ice was the only way to keep things cool and food from spoiling. While therewere ice-making machines in use in the mid- to late-1800’s, they were mostly for commercial use. C. Traditionally, Russian clothing had two main colours — the natural colour of the material — white, and red. «Red» is the same word that was used in the old days to call everythingbeautiful. That is, red elements in clothing became beautiful elements. Interaction withnature led to the appearance of very interesting new colours in Russian clothing: yellow,gold, blue and many others. D. Polar bears live along shores and on sea ice in the icy cold Arctic. When sea ice forms over the ocean in cold weather, many polar bears head out onto the ice to hunt seals. Male polar bears may grow 10 feet tall and weigh over 1400 pounds. Females reach seven feet and weigh more than 650 pounds. In the wild polar bears live up to age 25. E. Stroganina is a raw frozen fish delicacy from Yakutia, in northern Russia. It is a winter dish, consisting of long, thin slices of frozen Arctic river fish such as whitefishe, white salmon orsturgeon. It is sometimes decorated withwild red berries and greens. Some of the best stroganina is made of freshly caught fish, frozen once. The taste, according to Yakutians, issoft, fresh and frosty. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945263",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. Tennis Some people believe that the name «tennis» comes from the ancient Egyptian town of Tinnis alongside the Nile and the word racquet evolved from the Arabic word for palm of the hand, rahat. Aside from __________________ two words, there is no evidence for any form of tennis preceding the year 1000.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945416",
+    "task_text": "Преобразуйте, если это необходимо, слово BECOME так, чтобы оно грамматически соответствовало содержанию текста. The game __________________ so popular because it explained laws of economics to common people in a simple way.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944632",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Most of _____________ are ancient buildings.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944762",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Salt What do you know about salt? Today we 13 ______ salt for granted, but many years ago salt was scarce, it was used as money. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944763",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. African traders 14 ______ it for twice its weight in gold. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944756",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. The soldiers in Julius Caesar’s army received salt, called salarium, as part of their 15 ______. From this came the word ‘salary’. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944757",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. In Great Britain four or five hundred years ago, at the great feasts of the ruling families, the saler, or salt container, was 16 ______ in the middle of the long dining tables. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944758",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Those who were seated above the saler, closest to the host, were the honoured guests. Those who sat below the saler were the common people. Our name for a salt container, “salt cellar”, comes from the word “saler.” When salt was scarce, it was 17 ______ bad luck to spill any of it. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944759",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Many people still 18 ______ this. 1. believe 2. considered 3. exchanged 4. hold 5. pay 6. placed 7. take 8. wealth",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944894",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Ben is Anna’s … 1) classmate. 2) brother. 3) father.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39061.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39061.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944895",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is enthusiastic about going to Disneyland? 1) Anna 2) Ben 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39061.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39061.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944888",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks of being too old to watch cartoons? 1) Anna 2) Ben 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39061.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39061.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944889",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who went to see How to Train Your Dragon ? 1) Anna 2) Ben 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39061.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39061.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944890",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks that Disney cartoons are for little children? 1) Anna 2) Ben 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39061.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39061.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944831",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. History 2. Geography 3. Healthy life 4. Customs 5. Eating out 6. Technology A. Taganay is a national park located in the Southern Urals, in the western part of the Chelyabinsk region, 130 km from Chelyabinsk. The territorial centre of the park is the city of Zlatoust. The total area of the park is 568 sq. km. The Meteorological Station “TaganayGora” is the most remote shelter of the national park located on a picturesque mountain plateau. B. Valdai bells were first made in the 17th century. In 1656 state craftsman Alexander Grigoriev cast the first road bell. Since then, they say, bells have been cast in Valdai. In the first place, these bells were necessary on Moscow — St. Petersburg high road, Russia's busiest road. Production centre was set up in Valdai which is situated halway between the two cities. C. New Rosphere robot is the “eyes” of the farmer. It can move in gardens and vegetable gardens, controlling them. This robot, moving along garden beds, collects information about the state of plants and land, ripeness of fruit and a variety of other factors that may affect the crop. Farmers have only to monitor the relevant information using a computer and take certain measures when necessary. D. When you attend a restaurant or visit a house of a local resident in Bali, make sure you do not sit with your legs crossed. This position is considered a sign of secrecy, mistrust and disrespect. In general, the people of Bali are very cordial and friendly. They are happy to help tourists to get to the local places of interest and will actively support a conversation on any subject. E. Young people are recommended to eat two portions of fish a week, one of which should be oily. Tinned fish, such as salmon, is good for heart. Meat is a good source of protein, vitamin B12 and iron. Processed meats and chicken products should be limited as they tend to be high in fat and salt and lower in iron. From the age of 11, everyone should try to eat no more than 6 grams of salt a day. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944511",
+    "task_text": "Преобразуйте, если это необходимо, слово DISCOVER так, чтобы оно грамматически соответствовало содержанию текста. A clever solution Isaac Newton was a great British scientist. Many laws of physics ______ by him in the 17 th century.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944948",
+    "task_text": "Преобразуйте, если это необходимо, слово BEAUTIFUL так, чтобы оно грамматически соответствовало содержанию текста. It is certainly one of the ___________ places in Russia.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944208",
+    "task_text": "Преобразуйте, если это необходимо, слово DIFFICULT так, чтобы оно грамматически соответствовало содержанию текста. He solved the problems though they were much __________ than his regular homework.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945531",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT WANT так, чтобы оно грамматически соответствовало содержанию текста. The party was so good that children __________________ to go home.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944500",
+    "task_text": "Преобразуйте, если это необходимо, слово LIGHT так, чтобы оно грамматически соответствовало содержанию текста. Still, each time they did it the coins got ______ than before and lost the value. Newton offered to make round coins so that it was impossible to cut off the corners.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945577",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has recently started going to the gym? 1) Mary 2) Peter 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34683.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945578",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who knows that junk food is bad for one’s health? 1) Mary 2) Peter 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34683.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945579",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who knew that eggs are not good for breakfast? 1) Mary 2) Peter 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34683.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945572",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks it’s quite difficult for him/her to go to bed early? 1) Mary 2) Peter 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34683.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945573",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to the gym the next day? 1) Mary 2) Peter 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34683.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34683.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945474",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Photography 2. Adventures 3. Sightseeing 4. Sports 5. Holidays 6. Children’s activities A. The Ostankino estate, situated in the northern part of Moscow, is a uniquely well-preserved monument of the 18th century Russian architecture. In the past it was a country estate, while currently it is situated at a 20 minute ride away from the Kremlin. The estate attracts beauty lovers by its austere forms of the classical architecture. B. For most Americans, the holiday season begins around Thanksgiving. However, for Kathy Rombeiro and her dad, Edmundo, it starts in September, when they begin the laborious process of converting their Novato, California home into a winter wonderland. By the first Sunday of December, the ordinary suburban home is transformed into a magical «Christmas House». C. Ever since Apple introduced the front-facing camera, or selfie camera in 2010, selfies have become the undisputed king of social media. The never-ending need to share breathtaking self-portraits on popular mobile photo services like Instagram and Snapchat has often proved to be dangerous and, in some cases, even deadly. D. Kids, whose vivid imaginations know few boundaries, frequently come up with invention ideas that range from life-changing to downright wacky. However, few see them come to life mainly because adults are not convinced of their practicality. That is about to change thanks to Little Inventors, an innovative project that connects aspiring inventors tomanufacturers. E. When former world number one Andy Murray withdrew from the Australian Open in Melbourne last week, it was not exactly news. A few days earlier he had with drawn from the Brisbane International, having not competed in any tennis tournament since Wimbledon last year. The big news would have been if he had finally pronounced himself fit. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944954",
+    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. Pereslavl-Zalessky Have you ever beento Pereslavl-Zalessky? This charming town _____________ in 1152.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945196",
+    "task_text": "Преобразуйте, если это необходимо, слово BRING так, чтобы оно грамматически соответствовало содержанию текста. Born in Florida, Missouri, on November 30, 1835, he __________________ up in a small sleepy town on the western bank of the Mississippi River.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945649",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. He came up to the __________________ policeman he saw and asked him in Italian the way to the bus station. The policeman was Italian too and he answered Mr. Scotti in Italian.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945451",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. __________________ the sky will be full of planes and helicopters. The main participants of the parade are, of course, the veterans who pass through the square in trucks or watch the parade from the stands. Veterans wear their medals and anyone can go and congratulate them, give them flowers, or just say thank you.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944781",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT FORGET так, чтобы оно грамматически соответствовало содержанию текста. You __________________ seeing Pereslavl-Zalessky from the air.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945412",
+    "task_text": "Measuring health and happiness How do you measure happiness? Perhaps health is the best way because a famous doctor once said. \"Happy people generally don't get sick.\" It’s aLso 13_____________to measure how many people feel ill or unhealthy in a country. For example, one survey says Iceland is the \"healthiest country in the world\" because men and women live a long time there, the air is very 14_____________ and there are more doctors available per person than anywhere 15_____________ in the world. However, there was another survey of the happiest countries in the world and Iceland was not 16_____________ the top. The questions on this survey 17____________: How much do you earn? How healthy are you? How safe do you feel? After visiting 155 different countries, the researchers 18___________that Denmark feels happier than other countries.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945205",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who won’t be able to study tonight? 1) Fred 2) Jane 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34669.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945206",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who knows what is on in the cinema that night? 1) Fred 2) Jane 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34669.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945207",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a newspaper? 1) Fred 2) Jane 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34669.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945200",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who sleeps badly after watching a horror film? 1) Fred 2) Jane 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34669.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945201",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to the cinema tonight? 1) Fred 2) Jane 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34669.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34669.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945243",
+    "task_text": "Преобразуйте, если это необходимо, слово BURY так, чтобы оно грамматически соответствовало содержанию текста. Memorial Day Memorial Day, a national US holiday has an interesting history. In 1866 the country was recovering slowly from the long and bloody Civil War between the North and the South. Henry Welles, a drugstore owner at Waterloo, suggested that all the shops in town should close for one day to honor the soldiers who __________________ in the Waterloo cemetery.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945276",
+    "task_text": "Преобразуйте, если это необходимо, слово FIND так, чтобы оно грамматически соответствовало содержанию текста. As a child he had to help his father with the heavy daily tasks of a farmer but he always __________________ time to read. He was really a self-made man.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944929",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT EAT так, чтобы оно грамматически соответствовало содержанию текста. However, salt is good only if you __________ too much of it. One teaspoonofsalt a day is enough.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944820",
+    "task_text": "Преобразуйте, если это необходимо, слово USE так, чтобы оно грамматически соответствовало содержанию текста. From 1762 to 1904 it __________________ as the official winter residence of the Russian emperors.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945504",
+    "task_text": "Преобразуйте, если это необходимо, слово CHILD так, чтобы оно грамматически соответствовало содержанию текста. Russian President is really keen on giving personal presents to __________________ from different regions of the country.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944842",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Kamchatka Project After travelling round the world for almost half a week and moving through nineteen time zones, we 13 ______ step off the helicopter. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944843",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. We are at the beginning of the Karimskaya River in the 14 ______ of Kamchatka. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944836",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It’s a bright sunny day and in the far 15 ______ I can see the Karimski volcano. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944837",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. In the past, when explorers arrived in a 16 ______ place, they put up their tents or cooked a meal. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944838",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. But 17 ______, when explorers arrive in a new place, they log on to their social networking site using a satellite phone. Sites like Facebook and Twitter also help if we have a problem. 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944839",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Someone in our group touched a strange plant and suddenly his skin was red and 18 ______. I asked for advice on Twitter. Minutes later, someone who knew this part of Russia replied, ‘Probably a Pushki plant. If it is, it’ll hurt but it won’t kill you!’ 1. distance 2. exciting 3. finally 4. nowadays 5. painful 6. region 7. strange 8. usually",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944825",
+    "task_text": "Преобразуйте, если это необходимо, слово FOUND так, чтобы оно грамматически соответствовало содержанию текста. The city __________________ in 1703 by Peter I.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945629",
+    "task_text": "Преобразуйте, если это необходимо, слово FOLLOW так, чтобы оно грамматически соответствовало содержанию текста. Perhaps Russian people enjoy celebrating New Year because it __________________ by really long holidays.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945258",
+    "task_text": "Преобразуйте, если это необходимо, слово BECOME так, чтобы оно грамматически соответствовало содержанию текста. Time passed and the game __________________ more popular.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944800",
+    "task_text": "Преобразуйте, если это необходимо, слово ENJOY так, чтобы оно грамматически соответствовало содержанию текста. There are various extreme winter activities. You __________________ driving a snowmobile on frozen Lake Baikal or climbing Elbrus.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944931",
+    "task_text": "Преобразуйте, если это необходимо, слово CAN так, чтобы оно грамматически соответствовало содержанию текста. Only very wealthy people _____________ buy it at that time.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945485",
+    "task_text": "An Eye in the Sky More than 400 years ago, Galileo Galilei built a telescope. He was an Italian 13 ______. He used the telescope to study space. Since then, scientists have used telescopes to make 14 ______ discoveries. The Hubble Space Telescope was sent to 15 ______ in 1990. It has sent back more than a million 16 ______. Soon, a new telescope will take over for Hubble. It is the James Webb Space Telescope. It is also called JWST, and Webb. In 2018, a 17 ______ will take JWST into space. The new telescope will explore farther into space than Hubble. It will travel a million miles from Earth. This will give scientists a better 18 ______ of the universe. «Hubble rewrote astronomy textbooks,» Maggie Masetti told TFK. She works on the Webb project. «Webb is going to do the same thing.»",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944179",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has got classes today? 1) John 2) Anna 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64439.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64439.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944172",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has something to give back to school? 1) John 2) Anna 3) Both 4) Neithe",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64439.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64439.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944173",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has got nothing to do? 1) John 2) Anna 3) Both 4) Neithe",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64439.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64439.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944174",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who’s interested in swimming? 1) John 2) Anna 3) Both 4) Neithe",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64439.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64439.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944175",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who’s NOT interested in yoga? 1) John 2) Anna 3) Both 4) Neithe",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64439.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64439.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944257",
+    "task_text": "Преобразуйте, если это необходимо, слово THINK так, чтобы оно грамматически соответствовало содержанию текста. Goldfish Have you ever had goldfish as pets? In fact, people in medieval Europe_____________that goldfish was a mythical creature.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945488",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. He was the __________________ person who started the microcomputer revolution.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944189",
+    "task_text": "Преобразуйте, если это необходимо, слово TAKE так, чтобы оно грамматически соответствовало содержанию текста. Volgograd is the city where in 1942−1943 great battles between the Soviet and fascist armies ___________ place.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945490",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT ENJOY так, чтобы оно грамматически соответствовало содержанию текста. At the same time, few people know details about his biography and personal life. For example, Steve Jobs was adopted at a very young age. He was a rebellious kid and he __________________ high school.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945419",
+    "task_text": "Преобразуйте, если это необходимо, слово CALL так, чтобы оно грамматически соответствовало содержанию текста. There are many kinds of Monopoly now. There is even a version which __________________ Russian Monopoly with beautiful figures and pictures of Russian sights.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944944",
+    "task_text": "Alex Ovechkin Alex Ovechkin is one of the top ice hockey players in the world. Some of the most 13________ goals in hockey history have been scored by Ovechkin. Alex was born in Moscow in 1985. He 14________ up in Russia in an athletic family. His dad was a professional soccer player and his mom was an Olympic Gold Medallist in basketball. At a young age Alex chose hockey as his sport. He loved playing and watching it on TV. He was working 15__________ to achieve success. Alex 16_________ up early in the morning to have a training before school. He soon became a star in the Moscow youth hockey Dynamo league. Alex was 17____________ to become the youngest ever member of Russia’s national team. Overall, Ovechkin has represented Russia at eleven World Championships and three Olympics in his career, 18_________ the World Championship three times.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944874",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has got the tickets for the Saturday concert? 1) Bob 2) Sally 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39069.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944875",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has never heard of the Dream Theatre? 1) Bob 2) Sally 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39069.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944868",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes Rock music? 1) Bob 2) Sally 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39069.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944869",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who prefers classical music? 1) Bob 2) Sally 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39069.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944870",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who will go to the Saturday concert? 1) Bob 2) Sally 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39069.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39069.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945575",
+    "task_text": "Преобразуйте, если это необходимо, слово POPULAR так, чтобы оно грамматически соответствовало содержанию текста. Maslenitsa Everybody in Russia loves Maslenitsa. It is one of the __________________ holidays in the country.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944232",
+    "task_text": "Преобразуйте, если это необходимо, слово WOMAN так, чтобы оно грамматически соответствовало содержанию текста. On this day _____________ congratulate their fathers and give presents to them.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945589",
+    "task_text": "Преобразуйте, если это необходимо, слово TELL так, чтобы оно грамматически соответствовало содержанию текста. Lomonosov was born in 1711 in a village. He __________________ by his parents to continue the family business but he wanted to study very much.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944827",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. The __________________ thing which tourists want to see in Saint Petersburg is usually the Winter Palace. It is on Palace Square.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944147",
+    "task_text": "Преобразуйте, если это необходимо, слово PRODUCE так, чтобы оно грамматически соответствовало содержанию текста. Ice pops In 18 years people started ____________ ice pops.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945245",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has just come back to England? 1) Kathy 2) Joey 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34661.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945246",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who will make a cake? 1) Kathy 2) Joey 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34661.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945247",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes tennis? 1) Kathy 2) Joey 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34661.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945240",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who stopped playing tennis because of a health problem? 1) Kathy 2) Joey 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34661.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945241",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a class in half an hour? 1) Kathy 2) Joey 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34661.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34661.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944780",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. __________________ churches belong to the best examples of Russian architecture. Beside them, you can visit many lovely small museums in Pereslavl-Zalessky. An exciting opportunity is to have a ride on a hot air balloon above the town.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944140",
+    "task_text": "Преобразуйте, если это необходимо, слово GOOD так, чтобы оно грамматически соответствовало содержанию текста. Ice pops Now ice pop is one of the ____________ treats for kids.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945605",
+    "task_text": "Hyde Park Hyde Park is one of London's eight Royal Parks. Set right in the heart of London. it 13_____________an area of 350 acres. Hyde Park 14_____________both world-class events and concerts together w ith plenty of quiet places to relax and unw ind. Speaker's Comer is a 15_____________area within Hyde Park. In 1872, an act of parliament set aside this part of Hyde Park for public speaking. It has been a 16_____________site for public speeches and debates since the mid 1800's. It has acquired an international reputation for demonstrations and other protests due to its tolerance of free speech. Even today, on a Sunday morning, it’s not unusual to 17_____________crowds gathering at Speakers’ Comer. Anyone can turn up unannounced to 18_____________ on any subject, as long as the police consider their speeches lawful.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944559",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is a school student? 1) Charlie 2) Lily 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_67476.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_67476.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944552",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes swimming? 1) Charlie 2) Lily 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_67476.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_67476.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944553",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who prefers gyms to swimming pools? 1) Charlie 2) Lily 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_67476.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_67476.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944554",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to become thinner? 1) Charlie 2) Lily 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_67476.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_67476.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944555",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks going to the swimming pool is expensive? 1) Charlie 2) Lily 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_67476.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_67476.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944891",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Travel advice 2. Events 3. Art 4. Nature 5. Literature 6. History A. Kamchatka, a peninsula stretching from north to south for 1,200 km, is located in the northeastern part of Eurasia, in Russia. This is one of the most beautiful regions in the country known mainly for its volcanoes. One of the interesting places can be found at a distance of one-day walk from Pauzhetka village. The water in the local rivers and waterfalls has a unique white colour. B. The first written records of the ancient Olympic Games date to 776 B.C., when a cook named Koroibos became the first Olympic champion. However, it is generally believed that the Games had been going on for many years by that time. The ancient Olympics were held every four years between August 6 and September 19 during a religious festival honouring Zeus. C. Alexey Belous, a graphic designer from Tula, created 44 posters for the 2018 World Cup. The posters are dedicated to the cities and stadiums of the championship, as well as to all national teams. On the posters dedicated to the stadiums, the author shows how this sports festival is held in the cities with football stadiums in their centres. D. Sports World serves as the activity core for youth sports competitions and family activities at the Expo Centre. Located in the Bricker Building, the 2019 Sports World is a fun-filled, two-day festival of sports, talent and fitness designed for families with children of all ages. It will feature more than 20 sports areas with an action-packed schedule of challenging contests and games. E. There’s such a great variety of things to see and do in Russia, one interesting way to explore this massive country is to add a theme to your visit. For those who are passionate about classic literature, this is a land which has inspired some of the greatest classic authors and their works, providing us with an opportunity to visit locations that undoubtedly inspired their writings. You should try it! Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945628",
+    "task_text": "Преобразуйте, если это необходимо, слово POPULAR так, чтобы оно грамматически соответствовало содержанию текста. In Russia New Year is one of the __________________ holidays.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945650",
+    "task_text": "Преобразуйте, если это необходимо, слово TELL так, чтобы оно грамматически соответствовало содержанию текста. After twelve hours travelling round on a bus, Scotti __________________ that he was in New York and not in Rome.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944228",
+    "task_text": "Преобразуйте, если это необходимо, слово CELEBRATE так, чтобы оно грамматически соответствовало содержанию текста. Sorry to say, in Russia there is no such a celebration. Perhaps Russians should start _____________ it too.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945645",
+    "task_text": "The White Nights From late May to early July the nights are bright in St. Petersburg. The brightest period, the White Nights, normally 13 ______ from June 11th to July 2nd. St. Petersburg is а northern city. At this time of year the sun never fully sets, it does not go below the horizon enough for the 14 ______ to grow dark. In fact night 15 ______ like day. A walk along the banks of the city’s rivers and canals in almost broad daylight any time of day or night is very romantic. One of the traditions of the White Nights is watching the Neva bridges open to let through boat 16 ______. The White Nights season is 17 ______ with tourists. They have more hours to do sightseeing and go shopping as shops stay open late. The atmosphere on the streets of St. Petersburg is very 18 ______.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944834",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who was ill recently? 1) Mike 2) Anna 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39091.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39091.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944835",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who had a birthday two weeks ago? 1) Mike 2) Anna 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39091.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39091.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944828",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is at school for the last year? 1) Mike 2) Anna 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39091.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39091.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944829",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is good at computers? 1) Mike 2) Anna 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39091.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39091.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944830",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes photography? 1) Mike 2) Anna 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39091.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39091.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945494",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Natural science 2. Environmental protection 3. Risky business 4. Space travel 5. Sightseeing 6. Sports A. The unusual Ostankino Palace was designed by the famous Russian architects F. Camporesi, V. Brenna and I. Starov. The design was implemented by the serf architects A. Mironov and P. Argunov. The construction works lasted from 1792 to 1798. The palace is built completely out of wood; however, its plastered walls seem to be out of stone. B. While reducing plastic waste is something most consumer wish to do, it is not an easy goalto achieve. That’s because the cheap and durable material is found in almost everyhousehold item. Now, an Indonesian-based startup has come up with a delicious and nutritious solution to help reduce our dependence on this environmental danger. C. Houston residents finally have something to cheer about — a World Series victory. The first in many years. Thousands of delighted fans lined up on the city streets on Friday, November 3 for a parade celebrating the Houston Astros who won the baseball championship with a resounding 5-1 score against the Los Angeles Dodgers in the seventh game. D. In 1974, American stuntman Evel Knievel attempted to cross Idaho’s Snake River Canyonaboard a steam-powered rocket. Unfortunately, a parachute deployed prematurely andcaused the rocket and its occupant to drift to the canyon’s bottom. While Knievel emerged relatively unscathed from the incident, he never got a chance to attempt the stunt again. E. Facial recognition is a complex task which requires as many as 200 neurons to fire upsimultaneously within milliseconds. Hence the skill has always been believed to be therealm of “intelligent” animals such as humans, monkeys, apes, dogs, and horses. Now,British scientists have found that the simple cud-chewing sheep also possess this skill. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944144",
+    "task_text": "Преобразуйте, если это необходимо, слово INVENT так, чтобы оно грамматически соответствовало содержанию текста. Ice pops In fact, this tasty food_____________ by chance by an 11-year-old boy in 1905.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945510",
+    "task_text": "Преобразуйте, если это необходимо, слово PRESENT так, чтобы оно грамматически соответствовало содержанию текста. In fact, this young schoolgirl didn’t expect this present. She was almost crying when the cutest Spitz puppy __________________ to her by the president’s assistant.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944184",
+    "task_text": "Преобразуйте, если это необходимо, слово BIG так, чтобы оно грамматически соответствовало содержанию текста. It is one of the _____________ statues in the world (85 metres). The statue is the symbol of strength and courage of Russian people. It is impossible to forget a visit to Mamayev Kurgan.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945153",
+    "task_text": "Peterhof If you are travelling to St. Petersburg, a visit you can’t miss is to Peterhof. Peterhof is about 30 km from St. Petersburg, and is located next to the Gulf of Finland. This small town was created by order of Peter the Great and is 13 ______ all over the world. It is popular for palaces and gardens that were the residence of the czars until the Revolution of 1917. In 1918 the Peterhof complex was transformed into a series of 14 ______. During World War II it was occupied and destroyed by German troops. After World War II it 15 ______ its restoration, which still continues. The gardens of Peterhof are 16 ______ with many fountains and man-made canals. The water there 17 ______ from natural springs. Samson’s fountain is one of the best known in Peterhof. Visitors always take 18 ______ of it.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944238",
+    "task_text": "Установите соответствие между текстами A−E и рубриками 1−6. Занесите свои ответы в таблицу. Используйте каждую цифру только один раз. В задании одна рубрика лишняя. 1. Politics 2. History 3. Education 4. Geography 5. Culture 6. Economy A. Canada is a country in the northern part of North America. It includes ten provinces and three territories from the Atlantic to the Pacific and northward into the Arctic Ocean, covering 9.98 million square kilometres. It is the world’s second largest country by the total area. It borders with the USA. Ottawa is the capital city. Other big cities are Toronto, Montreal and Vancouver. B. In about 1000 BCE, the Scandinavians sailed to the lands which are the present-day Canada. Further European exploration of Canadian lands took place in 1497, when the Italian sailor John Cabot explored and claimed Canada’s Atlantic coast in the name of King Henry VII of England. In 1534, the French explorer Jacques Cartier explored the Gulf of Saint Lawrence and claimed it French. C. Now Canada is a rich country and a member of G8. It is highly globalized and belongs to the top trading nations of the world. Canada’s import is equal to its export but Canada is a net exporter of energy. Canada used to be an agricultural state but now manufacturing, mining, and service sectors are highly developed. The main industries are forestry and petroleum. D. Canada ranks first worldwide in the number of adults with a university degree. The Canadian government invests much in schools, colleges and universities. Students can study in both French and English. Children must go to school starting from the age 5−7 and up to the age of 16−18. A special research shows that Canadian children are especially good at mathematics, sciences, and reading. E. Canadian literature is often divided into French and English language literatures, which are based on the literary traditions of France and Britain. Some of Canadian literature is viewed as top books. Canadian visual art is also quite popular. The most famous painter is Tom Thomson, the landscape artist. The main source of inspiration for Canadian art is certainly its beautiful nature. Текст | A | B | C | D | E // Заголовок | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945283",
+    "task_text": "Преобразуйте, если это необходимо, слово CALL так, чтобы оно грамматически соответствовало содержанию текста. Abraham Lincoln Of all the presidents in the history of the United States, Abraham Lincoln is probably the one that Americans remember with the deepest affection. Abraham Lincoln was born on February 12, 1809, in a one room cabin. He proved that an ordinary man could become the president of the country. He __________________ “honest Abe”.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945237",
+    "task_text": "Преобразуйте, если это необходимо, слово SING так, чтобы оно грамматически соответствовало содержанию текста. The two ceremonies were joined in 1868, and northern states commemorated the day on May 30. Children read poems and __________________ civil war songs,",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944867",
+    "task_text": "Преобразуйте, если это необходимо, слово THAT так, чтобы оно грамматически соответствовало содержанию текста. In __________________ times, Russian tsars used it.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945259",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. In __________________ years, courtyard playing areas changed into indoor courts.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944167",
+    "task_text": "Tea Do you like tea? Strictly speaking, tea is not a 13_____________ at all, but a suitable occasion for social intercourse, when people often come in for a chat over their cup of tea. There are two kinds of tea, \"afternoon tea\" and \"high tea\". \"Afternoon tea\" takes 14_____________ between 3.30 and 4.30 and consists of tea, bread, butter and jam. cakes and biscuits. \"High tea\", howev er, is more substantial. It is 15_____________ between 5.30 and 6.30 by families which do not usually have a late 16_____________. In a well-to-do family it will 17_____________ ham or tongue and tomatoes and salad, or tinned salmon, with strong tea, bread and butter. These are 18_____________ by stewed fruit, or tinned pears, apricots or pineapple with cream or custard and cake.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944936",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has seen The Patriot ? 1) Linda 2) Frank 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_53926.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944937",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. The main character in The Patriot is ... 1) good. 2) weak. 3) indifferent.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_53926.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944938",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. The Patriot has good... 1) dialogue. 2) story. 3) photography.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_53926.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944939",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who likes historical films? 1) Linda 2) Frank 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_53926.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944932",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going to see The Patriot that night? 1) Linda 2) Frank 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_53926.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_53926.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945574",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Weather 2. Sports 3. Health 4. Sightseeing 5. Safety on transport 6. Politics A. The central feature of the Kuskovo estate, the Palace with its splendid forecourt and magnificent formal garden, is the best preserved part of the estate. The forecourt is combination of the designing principles of the old boyar estate and the eighteenth-century country residence. The irregular arrangement of the buildings gives the forecourt apicturesque quality. B. Seeing a dog sticking its head out the car window enjoying the sights and smells on a sunnyday is super cute, but is it safe? Increasingly, many are saying it’s not. Experts say that in a car with brakes being applied while driving 35 milesper hour, even a small dog can create a force the equivalent of 2,700 poundbaby elephant! Bad for your dog … and could be badfor you too. C. In an exciting game, Barca was up 5-1 with just moments left — so close, but they’d need one more for the miracle win. Then, in stoppage time (after regulation time is done and where time lost during the game is made up) … with seconds left, Barca passed it to substituteplayer, Sergi Roberto, who placed a perfectly timed foot on the ball … and scored! D. In the presidential elections in Francea win for Marine Le Pen would have resulted in a verydifferent vision. Ms. Le Pen had wanted a Frexit, France’s exit from the European Union (similar to Brexit, Britain’s recent exit from European Union membership). During thecampaign, her views were often compared to President Trump’s. E. The rain overwhelmed rivers and streams causing “flash floods” as the banks couldn’t absorb or contain the water. The force of the rushing waters uprooted homes and cars as it went by, snapped roads and bridges in half, and breached dams meant to contain the water.Many towns can be reached now only by helicopters. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945608",
+    "task_text": "Преобразуйте, если это необходимо, слово TEACH так, чтобы оно грамматически соответствовало содержанию текста. It is interesting to know that Anton Chekhov __________________ to become a doctor and never thought of being a writer when he was young.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945509",
+    "task_text": "Преобразуйте, если это необходимо, слово HE так, чтобы оно грамматически соответствовало содержанию текста. In September Liza sent a letter to the president. She wrote __________________ about the dog of her dream, and that she hoped that one day she would have a fluffy friend.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945238",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. and veterans came to school wearing __________________ medals to tell students about the Civil War.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945199",
+    "task_text": "Преобразуйте, если это необходимо, слово BECOME так, чтобы оно грамматически соответствовало содержанию текста. In 1863, he took the name Mark Twain. By doing it, Sam Clemens __________________ a new personality, a famous writer.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944861",
+    "task_text": "Преобразуйте, если это необходимо, слово GOOD так, чтобы оно грамматически соответствовало содержанию текста. Now it is even __________________, with trains some of which have private bathrooms and showers.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944481",
+    "task_text": "Bunchie Young: One to Watch When Los Angeles-based trainer Mike Evans talks about Maxwell \"Bunchie\" Young, it can seem like he's describing some 13 ______ college football recruits. \"Bunchie is a kid that comes around once every 10 years,\" Evans said. Maxwell \"Bunchie\" Young, 10, is a 14 ______ and track star. He lives in Los Angeles, California. He has been named the 2017 SportsKid of the Year by Sports Illustrated Kids 15 ______. He is known for his speed. Bunchie has a positive attitude. That has helped him 16 ______. He bounces back quickly from criticism. \"I don't worry about that,\" he told Sports Illustrated Kids. \"I just go out and have a 17 ______ game the next time.\" Bunchie is a natural leader, even off the field. He has a spot on his school's 18 ______ council. And he spends much of his free time volunteering for charities.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945223",
+    "task_text": "Преобразуйте, если это необходимо, слово BEGIN так, чтобы оно грамматически соответствовало содержанию текста. Subway, underground, tube, metro It is known by different names in different countries, but it is equally popular all over the world. The home of the subway is London. The first system, called the London Transport Executive, __________________ to operate in 1863.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944885",
+    "task_text": "Преобразуйте, если это необходимо, слово BUILD так, чтобы оно грамматически соответствовало содержанию текста. It __________________ by the Swedish in 1293.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944146",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT REMEMBER так, чтобы оно грамматически соответствовало содержанию текста. Ice pops He ____________ about it until the next morning. The night was very cold and the soda had frozen the glass. The boy was surprised to find out how tasty the ice was.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944209",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT CAN так, чтобы оно грамматически соответствовало содержанию текста. His professor ________ say a word when he saw it.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944821",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. __________________ days the Winter Palace is part of the Hermitage — a cultural and historical museum.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944822",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Geography Once, the traditional British holiday was a week at the seaside. It could be either in the UK or somewhere with more 13 ______ weather like the Mediterranean. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944823",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. But recently, holidaymakers have been looking for a 14 ______ holiday experience. Perhaps inspired by wildlife documentaries on television, tourists have been flocking to places like Kenya and South Africa for safaris and bush camp holidays. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944816",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Interest in China has been growing too. About half a million UK tourists have visited China on 15 ______ tours since the 2008 Olympic Games. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944817",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Meanwhile, tour companies have been promoting the traditional package holiday with a new twist to attract more customers — but with 16 ______ results. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944818",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. They have filled all the places on its spa holidays in Spain, but they have 17 ______ only half of their available luxury breaks in Egypt. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944819",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. One of the most notable changes is that the number of holidaymakers over 60 has 18 ______ in the last three years. 1. cultural 2. different 3. doubled 4. kept 5. mixed 6. reliable 7. sold 8. usual",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945534",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Economy 2. Nature 3. Sightseeing 4. Politics 5. Outer space 6. Sports A. The main entrance to the Kuskovo Palace is made in the form of a high six-column portico with the monogram PS incised on the central pediment. Two gently sloping sandstone rampslead from the entrance and end with sphinx figures on their parapets. The Palace wasintended solely for receptions and this accounts for its layout and décor. B. Legendary soccer team, FC Barcelona, pulled off one of the greatest sports comebacks of all-time in a game against rival Paris St. Germain. The problem for Barcelona was that they lost the first game 4-0. That meant that they’d have to win by 5 goals in the next name … against a tough team, in a game where final scores are often more like 1-0. C. You probably haven’t given much thought (or even known) about the garbage in space,floating just above Earth. But it’s there. And there’s a lot more of it than you’d think. Space junk is basically stuff left over from satellites and rocket launches, all man-made things. The problem in addition to there being a lot of it is that each piece travels at about 17,500 milesper hour! D. Spiders eat mostly insects. They’re natural enemies for the most part. Without spiders theinsect population would be out of control. And since insects eat plants and trees we have a lot to thank spiders for. \"Spiders thus make an essential contribution to maintaining theecological balance of nature,\" said Dr. Nyffeler. He’s been studying spiders for 40 years! E. While many people are focusing on Mr. Macron’s landslide win and characterizing Ms. LePen’s defeat as a big one, others are pointing out that Ms. Le Pen’s party, Front National, did the best it ever has and that there’s growing support for her ideas. Francehas a population of 66 million people and in terms of land is a bit larger than the state of Texas. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945450",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. You can see soldiers and cadets in __________________ uniforms as well as modern military equipment.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944880",
+    "task_text": "Преобразуйте, если это необходимо, слово GET так, чтобы оно грамматически соответствовало содержанию текста. Russia __________________ Vyborg in 1710 in the Northern War.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945588",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. Mikhail Lomonosov was the __________________ Russian scientist who became well-known internationally. He also made an important contribution to the formation of the modern Russian language.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945469",
+    "task_text": "Преобразуйте, если это необходимо, слово SEND так, чтобы оно грамматически соответствовало содержанию текста. Last summer she __________________ a letter to Vladimir Putin, asking for a chihuahua dog.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945610",
+    "task_text": "Преобразуйте, если это необходимо, слово WRITE так, чтобы оно грамматически соответствовало содержанию текста. So he often __________________ humorous letters to them. Very soon Chekhov got really interested in writing and sent some stories to publishers. Newspaper periodicals and literary journals started to publish his short stories.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944547",
+    "task_text": "FEDOR FEDOR is a Russian super robot. It can perform many different functions, such as driving a car or 13 ______ physical exercises. FEDOR can also do household tasks like open doors, insert a key into a lock and lift 14 ______ weights. The robot can work independently, respond to voice, and it can be 15 ______ from different places. FEDOR will be good at 16 ______ decisions. FEDOR will also fly into space by 2022. Russian engineers do not say what the robot will do in space. Perhaps, it will work outside the aircraft to take on tasks too 17 ______ for astronauts. Theoretically, robots like FEDOR could be used in 18 ______ towns on Mars and other planets. Russian scientists hope that FEDOR can be brought into space with a human crew in 2019.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944774",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who came in a hybrid car? 1) Peter 2) Linda 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39130.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944775",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to buy a hybrid car? 1) Peter 2) Linda 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39130.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944768",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is thinking of protecting environment? 1) Peter 2) Linda 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39130.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944769",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who used to drive a conventional Honda Civic? 1) Peter 2) Linda 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39130.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944770",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is disappointed in hybrid cars? 1) Peter 2) Linda 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_39130.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_39130.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945594",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Nature 2. Health 3. Weather 4. Politics 5. Architecture 6. Sightseeing A. Kuskovo is first mentioned in documents dating from the beginning of the sixteenth century.It was a small boyar estate only about seven kilometers from Moscow. The land was not good for cultivation, and was thus of little economic significance. The estate was however an ideal hunting ground. In 1715 the Kuskovo estate was bought by Count BorisSheremetev. B. Amazingly, there are an estimated 1,000 spiders for every square meter. There are approximately 25 million tons of spiders in the world and 45,000 different species of them.So they’re the top predator because that’s a lot of spiders eating a lot of food! Humans, by comparison, consume about 400 million tons of meat and fish, according to the Food and Agriculture Organization of the United Nations. C. There was snow on the ground recently in 49 of the 50 states! Can anyone guess which statedidn’t have it? It was Florida. Even Hawaii had seven inches of snow atop an inactive volcano called Mauna Kea! Even though this is really rare, it has happened before.Meteorologists say it happened on February 10, 2010. That time it was Hawaii that didn’t have snow. D. The citizens of France voted for a new leader over the weekend and the winner is… Emmanuel Macron. He’s France’s youngest president ever at just 39 years old. He’s alsonever been elected to any kind of political office before. In fact, he started his own politicalparty, En Marche, about a year ago. He did, however, serve as France’s Economy Minister. E. Researchers in Michigan secretly observed nearly 3,800 people at restrooms to see if people washed their hands properly. The answer was: NO. 10% didn’t even pretend to wash their hands. 23% washed … but didn’t actually use any soap. The rest used soap but most of themnot for long enough. Only 5% washed their hands with soap for 15 seconds or more. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944884",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. The Castle of Vyborg Have you ever been to Vyborg? It is a beautiful Russian town close to Saint Petersburg. When you come to Vyborg, the __________________ thing which you will see is the Castle of Vyborg.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945278",
+    "task_text": "Преобразуйте, если это необходимо, слово SHE так, чтобы оно грамматически соответствовало содержанию текста. In fact, he was very poor when he was courting Mary Todd as a young man. He proposed after a year and __________________ family did not approve.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945471",
+    "task_text": "Преобразуйте, если это необходимо, слово CALL так, чтобы оно грамматически соответствовало содержанию текста. However, one afternoon they __________________ by the president’s assistant telling them about the fluffy present.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945557",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is Anna’s best friend? 1) Sandra 2) Jim 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34686.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945558",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who feels guilty about his/her behaviour towards Anna? 1) Sandra 2) Jim 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34686.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945559",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks gift certificates don’t make a good present? 1) Sandra 2) Jim 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34686.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945552",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has already bought a present for Anna? 1) Sandra 2) Jim 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34686.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945553",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is going shopping tomorrow night? 1) Sandra 2) Jim 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34686.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34686.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944195",
+    "task_text": "Преобразуйте, если это необходимо, слово IT так, чтобы оно грамматически соответствовало содержанию текста. Mamayev Kurgan Have you ever been to Volgograd? This city is famous for _____________memorial architectural complex Mamayev Kurgan.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944638",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. When you arrive in Vladimir, the _____________ thing you must do is to go to the medieval Golden Gate.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945177",
+    "task_text": "Преобразуйте, если это необходимо, слово BRING так, чтобы оно грамматически соответствовало содержанию текста. The popular story, of course, is that Marco Polo __________________ pasta back from his trips to China sometime around 1295.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944805",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. Obviously, sightseeing may be the __________________ thing to come to your mind.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944507",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT CAN так, чтобы оно грамматически соответствовало содержанию текста. People ______ see it at once.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944501",
+    "task_text": "Pets Perhaps the British are too good to their pets, but more interesting is a recent theory amongst psychologists that pets are very good for us. The basic meaning of 'pet' is an animal we keep for 13 ______ rather than economic reasons. A pet animal is kept as a companion, and we all need companions to keep us feeling happy. But pets 14 ______ us more than mere companionship, they 15 ______ us to love and be loved. Many owners feel their pets understand them, for animals are quick to sense anger and sorrow. Often a cat or dog can comfort us at times when human words don't help. We feel loved, too, by the way pets 16 ______ on us for a home, for food and drink. Dogs especially look up to their owners, which makes them feel 17 ______ and needed. A pet can be something 18 ______ to each member of the family, but for all of us pets provide pleasure and companionship.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944943",
+    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken — what/who is in the photo — what is happening — why you keep the photo in your album — why you decided to show the picture to your friend You have to talk continuously, starting with: «I’ve chosen photo one (or two / three)...»",
+    "answer": "---",
+    "image": "",
+    "all_images": [
+      "questions/images_vpr/sd_get_file_id_94443.png",
+      "questions/images_vpr/sd_get_file_id_94445.png",
+      "questions/images_vpr/sd_get_file_id_94448.png"
+    ],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944135",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64471.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64471.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944128",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has travelled a lot? 1) Jill 2) Matthew 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64471.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64471.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944129",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has a grandmother of German origin? 1) Jill 2) Matthew 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64471.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64471.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944130",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who never eats soup? 1) Jill 2) Matthew 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64471.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64471.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944131",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who will cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both 4) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_64471.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_64471.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945489",
+    "task_text": "Преобразуйте, если это необходимо, слово INTRODUCE так, чтобы оно грамматически соответствовало содержанию текста. He also co-founded Apple Inc. When the iPhone __________________ to public in 2007, it changed the mobile market once and forever.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945158",
+    "task_text": "Преобразуйте, если это необходимо, слово SELL так, чтобы оно грамматически соответствовало содержанию текста. «Then you must accompany him on the piano,» said the boy’s father. This time all the tickets __________________.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945179",
+    "task_text": "Преобразуйте, если это необходимо, слово ONE так, чтобы оно грамматически соответствовало содержанию текста. Early Spanish settlers were among the __________________ to bring pasta to America.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945457",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who is writing a report? 1) Bill 2) Toni 3) Neither",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34695.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945458",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who think it’s not difficult to write a report? 1) Bill 2) Toni 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34695.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945459",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who says that students often don’t write a plan for their report? 1) Bill 2) Toni 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34695.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945452",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to share some recommendations with his/her students? 1) Bill 2) Toni 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34695.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945453",
+    "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who thinks that students often make the same spelling mistakes? 1) Bill 2) Toni 3) Both",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "questions/audio_vpr/sd_34695.mp3.mp3",
+    "all_audios": [
+      "questions/audio_vpr/sd_34695.mp3.mp3"
+    ],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945554",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Weather 2. People 3. Health 4. Sports 5. Sightseeing 6. Nature A. The Kuskovo Palace was built on the site of an old manor-house under the direction of the Moscow architect Karl Blank (1728–1793). The Palace was built in 1769-1775 inthe style of early classicism. The Palace is built in wood, the traditional building material used by Russian architects. The lower floor is built in brick. B. For many days now, there have been historic and devastating floods in the state of Colorado, in and around the city of Boulder. And it’s all because of a huge amount of rain in a shortperiod of time! One area near Denver received as much rain in one day … as it usually does almost all year. That’s an all-time record for that area, according to NBC News. C. What would you say the top predator in the world is? Lions? Elephants? Whales? People? According to Dr. Martin Nyffeler from the University of Basel in Switzerland, it’s … the spider. If you took every spider in the world and measured howmuch they all ate, it turns out to be an astronomical 400-800 million tons of prey each year. D. First Lady Michelle Obama unveiled a new design today showing us what healthy eatinglooks like. And it’s simple. Half your meal should be fruits and vegetables. Some other important parts of her meal plan: —drink water instead of sugary drinks; —avoid oversized portions; —switch to low-fat milk; —compare salt on food packages and go with the onesthat have less. E. The Chicago Cubs won the World Series for the first time since 1908, ending the longeststretch of time for a team between World Series’ wins — over a century. The Cubs had been down three games to one in this best of seven series, the Cleveland Indians being just onewin away from winning it all … three games in a row. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944213",
+    "task_text": "Преобразуйте, если это необходимо, слово CONSIDER так, чтобы оно грамматически соответствовало содержанию текста. By chance George Dantzig was a famous US mathematician. He _____________ to be one of the most talented scientists of his time.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944786",
+    "task_text": "Преобразуйте, если это необходимо, слово BEAUTIFUL так, чтобы оно грамматически соответствовало содержанию текста. It is certainly one of the __________________ places in Russia.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945530",
+    "task_text": "Преобразуйте, если это необходимо, слово CHOOSE так, чтобы оно грамматически соответствовало содержанию текста. After the festive meal the children themselves __________________ a toy from the Christmas tree as a souvenir.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944615",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. _____________ the sky will be full of planes and helicopters. The main participants of the parade are, of course, the veterans who pass through the square in trucks or watch the parade from the stands. Veterans wear their medals and anyone can go and congratulate them, give them flowers, or just say thank you.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944608",
+    "task_text": "Преобразуйте, если это необходимо, слово SHOW так, чтобы оно грамматически соответствовало содержанию текста. The parade _____________ on TV so that the whole country can enjoy the spectacular sight.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944782",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Can animals talk? People have always liked to imagine that animals could speak our language. Is it really 13 ______, though, for animals to talk? 1. able 2. case 3. certain 4. perfectly 5. possible 6. quickly 7. usually 8. way",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944783",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Parrots are very good mimics. They can imitate sounds 14 ______, including the human voice, but to use language we need to understand what we are saying, and parrots are not 15 ______ to do this. 1. able 2. case 3. certain 4. perfectly 5. possible 6. quickly 7. usually 8. way",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944777",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Some animals, including dogs and many circus animals, are intelligent enough to be trained to obey 16 ______ commands. 1. able 2. case 3. certain 4. perfectly 5. possible 6. quickly 7. usually 8. way",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944778",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Again, this is not the same as using language and, in any 17 ______, it is our tone of voice which is more important than the actual words. Chimpanzees, however, are nearer to humans in intelligence. 1. able 2. case 3. certain 4. perfectly 5. possible 6. quickly 7. usually 8. way",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944779",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. In the 1960s an American couple tried to teach a chimp the sign language used by deaf people. The experiment was a great success. The chimp learnt very 18 ______ to communicate at a simple level. 1. able 2. case 3. certain 4. perfectly 5. possible 6. quickly 7. usually 8. way",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944804",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Visiting Russia Russia is an attractive place for tourists from all over the world. When foreign tourists think of Russia as __________________ future travel destination, it is usually about sights.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945256",
+    "task_text": "Преобразуйте, если это необходимо, слово THEY так, чтобы оно грамматически соответствовало содержанию текста. Most historians credit the origins of the game to 11 th or 12 th century French monks, who began playing a ball against __________________ monastery walls.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945178",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT MEAN так, чтобы оно грамматически соответствовало содержанию текста. However, Italian records from a decade earlier indicate that pasta was a favourite dish of the Romans, years before Marco’s return. This __________________ that pasta had been invented in Italy before it became a popular dish in China. The opposite is probably true: at least 3,000 years ago, the Chinese were making pasta out of bean and rice flour. But Italy likely developed the dish without any help from China.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944928",
+    "task_text": "Преобразуйте, если это необходимо, слово TASTY так, чтобы оно грамматически соответствовало содержанию текста. Many people think that food is much ___________ when eaten with salt.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944951",
+    "task_text": "Преобразуйте, если это необходимо, слово NOT FORGET так, чтобы оно грамматически соответствовало содержанию текста. You _____________ seeing Pereslavl-Zalessky from the air.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944802",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Holidays Thousands of people nowadays spend their holidays travelling. They travel by train, bus, motorcycle, or in their own car. They go cruising on rivers and seas, in private yachts or 13 ______ steamers. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944803",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. They hike in forests, visit natural preserves and other places. Visiting 14 ______ wonders is called “ecology tourism”. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944796",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Some people 15 ______ hitch-hiking on highways. Some go in for mount-climbing or alpine hiking. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944797",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Travelling by car has its own fun as you do not 16 ______ on timetables and can swiftly get to almost any place you like. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944798",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. Hiking is becoming very popular. People like to spend their days off in the country, closer to nature. There are 17 ______ places with forests, lakes and rivers, waterfalls and hills, and whatnot. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944799",
+    "task_text": "Прочитайте текст и заполните пропуски 13−18 словами, напечатанными в правой колонке под цифрами 1−8. Каждое из этих слов может быть использовано только один раз. В ответе укажите цифры, под которыми значатся выбранные Вами слова. Два слова в этом списке 1−8 лишние. It is 18 ______ to spend a day bathing and suntanning oneself on a river bank, a lakeshore or at a seaside, to chat and joke with your friends round a campfire. Happy hikers return home to plan new hikes for the coming weekend. 1. comfortable 2. country 3. depend 4. nature 5. picturesque 6. prefer 7. provide 8. wonderful",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945421",
+    "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список: 1. Events 2. Traditions 3. Literature 4. Sightseeing 5. History 6. Geography A. Ulan-Ude is a city with a population of 435 thousand people located about 100 km east of Lake Baikal. It is the capital of the Republic of Buryatia, a major cultural, scientific, industrial centre of Eastern Siberia. Ulan-Ude has a unique historical and cultural heritage. There are more than 200 cultural heritage sites in the city: monuments of architecture and city planning, and monuments of art. B. The Museum of Wooden Architecture and Peasant Life is one of the most visited museums in Suzdal. Here you can see rare monuments of wooden architecture of Vladimir-Suzdal land. The museum is not large, it has only 17 wooden buildings: churches, a merchant’s house, peasant houses with interiors of the peasant way of life, windmills, granaries, wells. C. Considered one of the greatest psychologists in world prose, Fyodor Dostoevsky is perhaps best known for his work Crime and Punishment, or subsequent novels such as The Idiot and Demons. Many of his great works offer an unrivalled view of life in Tsarist Russia during the mid-to-late 19th century, shaped by the environment in which he lived and worked. D. Larmer Tree Festival is a wonderful well-established festival in one of the most gorgeous Victorian Pleasure Gardens in the UK. Everyone is welcome here whether you are 1 or 101. Provision for kids is nothing short of excellent – rhyme times, storytelling, arts and crafts and dance workshops. Music is eclectic, activities are varied fantastic, and there really is something for everyone. E. Scotland's shipbuilding industry became important in the 19th century, as steam-power began to replace sail power. Scottish inventors and engineers gained a reputation for being experts in marine engineering. Around 1850, the shipyards of Glasgow and Dumbarton were building half the iron steamships built in the United Kingdom. In the 1880s steel began to replace iron. Текст | A | B | C | D | E // Рубрика | | | | |",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_945197",
+    "task_text": "Преобразуйте, если это необходимо, слово LATE так, чтобы оно грамматически соответствовало содержанию текста. In 1847 Sam’s father died and he had to go to work at the age of 12 as a printer’s apprentice. __________________ he worked as a printer, a steamboat pilot, a silver miner and then he started writing humorous sketches.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  },
+  {
+    "id": "vpr_sd_944950",
+    "task_text": "Преобразуйте, если это необходимо, слово THIS так, чтобы оно грамматически соответствовало содержанию текста. ________ churches belong to the best examples of Russian architecture. Beside them, you can visit many lovely small museums in Pereslavl-Zalessky. An exciting opportunity is to have a ride on a hot air balloon above the town.",
+    "answer": "---",
+    "image": "",
+    "all_images": [],
+    "audio": "",
+    "all_audios": [],
+    "topic": "sdamgia_vpr"
+  }
+]
