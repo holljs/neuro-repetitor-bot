@@ -428,6 +428,28 @@ def verify_vk_auth(student_id: str, vk_params: str) -> bool:
     return query_params.get('sign') == expected_sign
 
 
+async def send_admin_notify(message: str):
+    """Оповещение админу ОТ ИМЕНИ группы Нейро-Дети"""
+    vk_token = os.getenv("VK_NEIRO_DETI_TOKEN") or os.getenv("VK_REPETITOR_TOKEN")
+    if not vk_token:
+        return False
+    url = "https://api.vk.com/method/messages.send"
+    params = {
+        "user_id": str(ADMIN_VK_IDS[0]),
+        "message": message,
+        "random_id": random.randint(1, 2147483647),
+        "v": "5.131",
+        "access_token": vk_token
+    }
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, data=params) as resp:
+                result = await resp.json()
+                return "error" not in result
+    except Exception:
+        return False
+
+
 async def send_vk_message(user_id: str, message: str):
     vk_token = os.getenv("VK_REPETITOR_TOKEN")
     if not vk_token:
@@ -489,7 +511,7 @@ def init_vk_user(user_id: str) -> int:
         cursor.execute("INSERT INTO users (user_id, credits, last_activity, got_reward) VALUES (?, ?, datetime('now'), 0)", (user_id, 6))
         conn.commit()
         balance = 6
-        asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"👤 Новый ученик в приложении!\nСсылка: vk.com/id{user_id}"))
+        asyncio.create_task(send_admin_notify(f"👤 Новый ученик в приложении!\nСсылка: vk.com/id{user_id}"))
     else:
         cursor.execute("UPDATE users SET last_activity=datetime('now') WHERE user_id=?", (user_id,))
         conn.commit()
@@ -625,7 +647,7 @@ async def yookassa_webhook(request: dict):
             if student_id and amount:
                 change_vk_credits(student_id, amount)
                 await send_vk_message(student_id, f"✅ Оплата прошла успешно!\nНа ваш баланс зачислено: {amount} кр.")
-                await send_vk_message(str(ADMIN_VK_IDS[0]), f"💰 ОПЛАТА!\nУченик vk.com/id{student_id} купил {amount} кр.")
+                await send_admin_notify(f"💰 ОПЛАТА!\nУченик vk.com/id{student_id} купил {amount} кр.")
                 return {"status": "ok"}
     except Exception:
         return {"status": "error"}
@@ -916,7 +938,7 @@ async def reward_subscription(req: RewardRequest):
     cursor.execute("UPDATE users SET credits = credits + 3, got_reward = 1 WHERE user_id=?", (req.student_id,))
     conn.commit()
     conn.close()
-    asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🔔 Подписка на рассылку!\nУченик vk.com/id{req.student_id} получил бонус +3 кр."))
+    asyncio.create_task(send_admin_notify(f"🔔 Подписка на рассылку!\nУченик vk.com/id{req.student_id} получил бонус +3 кр."))
     return {"success": True}
 
 
@@ -930,7 +952,7 @@ class FinishTestRequest(BaseModel):
 async def notify_test_finish(req: FinishTestRequest):
     if not verify_vk_auth(req.student_id, req.vk_params):
         return {"success": False}
-    asyncio.create_task(send_vk_message(str(ADMIN_VK_IDS[0]), f"🎓 Тест завершен!\nУченик: vk.com/id{req.student_id}\nРезультат: {req.score} из {req.total}"))
+    asyncio.create_task(send_admin_notify(f"🎓 Тест завершен!\nУченик: vk.com/id{req.student_id}\nРезультат: {req.score} из {req.total}"))
     return {"success": True}
 
 
