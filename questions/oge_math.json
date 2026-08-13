@@ -68,26 +68,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qF89C42",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 8 ⋅ a 17 : a 20 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F89C42",
-    "task_text": "Найдите значение выражения a 8 ⋅ a 17 : a 20 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qFD6745",
     "task_text": "Впишите правильный ответ.\nВ среднем из 80 карманных фонариков, поступивших в продажу, двенадцать неисправных. Найдите вероятность того, что выбранный наудачу в магазине фонарик окажется исправен.",
     "image": "",
@@ -352,26 +332,6 @@
   {
     "id": "fipi_041048",
     "task_text": "В фирме «Чистая вода» стоимость (в рублях) колодца из железобетонных колец рассчитывается по формуле C = 6500 + 4000 n , где n — число колец, установленных в колодце. Пользуясь этой формулой, рассчитайте стоимость колодца из 11 колец. Ответ дайте в рублях.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q71C14F",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 9 ⋅ a 12 a 18 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_71C14F",
-    "task_text": "Найдите значение выражения a 9 ⋅ a 12 a 18 при a = 4 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -1240,26 +1200,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qD4F24A",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 116 ⋅ x 6 y 4 при x = 2 и y = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_D4F24A",
-    "task_text": "Найдите значение выражения 116 ⋅ x 6 y 4 при x = 2 и y = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qD32446",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения 9 − 6 ⋅ 91597 .",
     "image": "",
@@ -1420,26 +1360,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q508746",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 8 ⋅ ( − a ) 4 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_508746",
-    "task_text": "Найдите значение выражения a 8 ⋅ ( − a ) 4 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qACC044",
     "task_text": "Впишите правильный ответ.\nВ ходе распада радиоактивного изотопа его масса уменьшается вдвое каждые 7 минут. В начальный момент масса изотопа составляла 640 мг. Найдите массу изотопа через 42 минуты. Ответ дайте в миллиграммах.",
     "image": "",
@@ -1452,46 +1372,6 @@
   {
     "id": "fipi_ACC044",
     "task_text": "В ходе распада радиоактивного изотопа его масса уменьшается вдвое каждые 7 минут. В начальный момент масса изотопа составляла 640 мг. Найдите массу изотопа через 42 минуты. Ответ дайте в миллиграммах.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qA61940",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 16 a 14 a 8 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_A61940",
-    "task_text": "Найдите значение выражения 16 a 14 a 8 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qA79C42",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 125 ⋅ x 8 y 2 при x = 3 и y = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_A79C42",
-    "task_text": "Найдите значение выражения 125 ⋅ x 8 y 2 при x = 3 и y = 5 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -2858,38 +2738,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q393749",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 1023\n2) 1123\n3) 1323\n4) 1423",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_6_1734421361.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_6_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_7_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_8_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_9_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_10_1734421361.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_393749",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 1023\n2) 1123\n3) 1323\n4) 1423",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_6_1734421361.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_6_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_7_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_8_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_9_1734421361.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EBEB36BC382BF9143CA13E83D5FF253/xs3qstsrc0EBEB36BC382BF9143CA13E83D5FF253_10_1734421361.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q383C46",
     "task_text": "Впишите правильный ответ.\nНа клетчатой бумаге с размером клетки 1 × 1 изображена трапеция. Найдите её площадь.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/0EDEFAA810A09F3740FA5C59468D0740/xs3qstsrc0EDEFAA810A09F3740FA5C59468D0740_1_1458037304.png",
@@ -2946,26 +2794,6 @@
   {
     "id": "fipi_8EE344",
     "task_text": "Найдите значение выражения 11 − 3 ⋅ 1112118 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q807E4F",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 9 ⋅ a 8 a 12 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_807E4F",
-    "task_text": "Найдите значение выражения a 9 ⋅ a 8 a 12 при a = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -3126,26 +2954,6 @@
   {
     "id": "fipi_8EC646",
     "task_text": "В ходе биологического эксперимента в чашку Петри с питательной средой поместили колонию микроорганизмов массой 18 мг. За каждые 20 минут масса колонии увеличивается в 3 раза. Найдите массу колонии микроорганизмов через 60 минут после начала эксперимента. Ответ дайте в миллиграммах.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q889D48",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 16 x 4 y 6 при x = 4 и y = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_889D48",
-    "task_text": "Найдите значение выражения 16 x 4 y 6 при x = 4 и y = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -3466,26 +3274,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qF484F4",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 3781 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F484F4",
-    "task_text": "Найдите значение выражения 3781 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qFFCFFF",
     "task_text": "Впишите правильный ответ.\nНа экзамене 20 билетов, Андрей не выучил 1 из них. Найдите вероятность того, что ему попадётся выученный билет.",
     "image": "",
@@ -3590,38 +3378,6 @@
     "task_text": "Постройте график функции y = x | x | + 2 | x | − 3 x .\nОпределите, при каких значениях m прямая y = m имеет с графиком ровно две общие точки.",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qF212F1",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 311\n2) 711\n3) 811\n4) 1311",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_6_1734421299.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_6_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_7_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_8_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_9_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_10_1734421299.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F212F1",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 311\n2) 711\n3) 811\n4) 1311",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_6_1734421299.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_6_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_7_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_8_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_9_1734421299.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/115566C9E236B2834743228F6BC6CE2B/xs3qstsrc115566C9E236B2834743228F6BC6CE2B_10_1734421299.png"
-    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -3830,26 +3586,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/12B6C4E7B0E8906847F707BE6A045144/xs3qstsrc12B6C4E7B0E8906847F707BE6A045144_1_1456417351.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q038EFE",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 56 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_038EFE",
-    "task_text": "Найдите значение выражения 56 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -4130,26 +3866,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qB213FA",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 9 ) 3 ⋅ a 7 a 29 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_B213FA",
-    "task_text": "Найдите значение выражения ( a 9 ) 3 ⋅ a 7 a 29 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qB7EAFA",
     "task_text": "Установите соответствие и впишите ответ.\nУстановите соответствие между функциями и их графиками. ФУНКЦИИ А) y = − 2 x + 4 Б) y = 2 x − 4 В) y = 2 x + 4 ГРАФИКИ\n1)\n2)\n3) В таблице под каждой буквой укажите соответствующий номер. А Б В",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/149C398C150CA3F943970FE20D6FA81B/xs3qvrsrc530F7EFAF255835042EB88AAA33981ED_1_1457677119.png",
@@ -4210,26 +3926,6 @@
   {
     "id": "fipi_116CF0",
     "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1) Длина гипотенузы прямоугольного треугольника меньше суммы длин его катетов.\n2) В тупоугольном треугольнике все углы тупые.\n3) Средняя линия трапеции равна полусумме её оснований.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q1B7BF7",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 23 ⋅ ( b 5 ) 4 ( a ⋅ b ) 20 при a = 2 и b = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_1B7BF7",
-    "task_text": "Найдите значение выражения a 23 ⋅ ( b 5 ) 4 ( a ⋅ b ) 20 при a = 2 и b = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -4414,26 +4110,6 @@
   {
     "id": "fipi_253AF7",
     "task_text": "Какое из следующих утверждений является истинным высказыванием?\n1) В параллелограмме есть два равных угла.\n2) В тупоугольном треугольнике все углы тупые.\n3) Площадь прямоугольника равна произведению длин всех его сторон.\nВ ответ запишите номер истинного высказывания.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q2AFEF1",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 6 , sin α = 37 , a S = 18 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_2AFEF1",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 6 , sin α = 37 , a S = 18 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -4700,26 +4376,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/174B40E175ADABF04138FCD441DCD35D/xs3qstsrc174B40E175ADABF04138FCD441DCD35D_1_1456297797.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qD217FD",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 36 x 4 y 2 при x = 6 и y = 9 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_D217FD",
-    "task_text": "Найдите значение выражения 36 x 4 y 2 при x = 6 и y = 9 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -5552,26 +5208,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qE98BF1",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 16 , sin α = 58 , a S = 45 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_E98BF1",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 16 , sin α = 58 , a S = 45 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qEF17F5",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения 7 ⋅ 18 ⋅ 14 .",
     "image": "",
@@ -5584,26 +5220,6 @@
   {
     "id": "fipi_EF17F5",
     "task_text": "Найдите значение выражения 7 ⋅ 18 ⋅ 14 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qEC48FA",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 3 ) 8 ⋅ a 7 a 29 при a = 7 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_EC48FA",
-    "task_text": "Найдите значение выражения ( a 3 ) 8 ⋅ a 7 a 29 при a = 7 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -5768,38 +5384,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q6A8FF7",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 623\n2) 923\n3) 1023\n4) 1223",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_6_1734421314.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_6_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_7_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_8_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_9_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_10_1734421314.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_6A8FF7",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 623\n2) 923\n3) 1023\n4) 1223",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_6_1734421314.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_6_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_7_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_8_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_9_1734421314.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D3F91FC285EA2B74D641E612C31CD80/xs3qstsrc1D3F91FC285EA2B74D641E612C31CD80_10_1734421314.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q686EFB",
     "task_text": "Впишите правильный ответ.\nНа клетчатой бумаге с размером клетки 1 × 1 изображён треугольник A B C . Найдите длину его средней линии, параллельной стороне A C .",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/1D4DFC79DB509305468B41DF5E36DF14/xs3qstsrc1D4DFC79DB509305468B41DF5E36DF14_1_1458010482.png",
@@ -5836,26 +5420,6 @@
   {
     "id": "fipi_6925F1",
     "task_text": "Найдите значение выражения 417 ⋅ 52 ⋅ 34 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q63D1F1",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 16 ⋅ a − 7 a 6 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_63D1F1",
-    "task_text": "Найдите значение выражения a 16 ⋅ a − 7 a 6 при a = 3 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -6390,26 +5954,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q81F1F8",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 93 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_81F1F8",
-    "task_text": "Найдите значение выражения 93 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q4CAF07",
     "task_text": "Впишите правильный ответ.\nПериметр ромба равен 36, а один из углов равен 30 ° . Найдите площадь этого ромба.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2039A1DB09F4B43D496AEF020B41C2C6/xs3qstsrc2039A1DB09F4B43D496AEF020B41C2C6_1_1456317986.png",
@@ -6446,26 +5990,6 @@
   {
     "id": "fipi_4C0E02",
     "task_text": "Каучуковый мячик с силой бросили на асфальт. Отскочив, мячик подпрыгнул на 3,6 м, а при каждом следующем прыжке он поднимался на высоту в три раза меньше предыдущей. При каком по счёту прыжке мячик в первый раз не достигнет высоты 15 см?",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q436D02",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 5 ) 5 ⋅ a 6 a 27 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_436D02",
-    "task_text": "Найдите значение выражения ( a 5 ) 5 ⋅ a 6 a 27 при a = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -6658,26 +6182,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q03A10C",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 64 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_03A10C",
-    "task_text": "Найдите значение выражения 64 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q01D606",
     "task_text": "Впишите правильный ответ.\nСторона квадрата равна 242 . Найдите радиус окружности, описанной около этого квадрата.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/22D75D52FC3CAD814F75D56A9BE2B0B2/xs3qstsrc22D75D52FC3CAD814F75D56A9BE2B0B2_1_1487085188.png",
@@ -6750,38 +6254,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q7D0807",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 27\n2) 47\n3) 107\n4) 117",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_6_1734420651.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_6_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_7_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_8_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_9_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_10_1734420651.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_7D0807",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 27\n2) 47\n3) 107\n4) 117",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_6_1734420651.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_6_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_7_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_8_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_9_1734420651.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/23327F19B58CA40A404CAC25FAEC52E0/xs3qstsrc23327F19B58CA40A404CAC25FAEC52E0_10_1734420651.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q7B6202",
     "task_text": "Впишите правильный ответ.\nЦентр окружности, описанной около треугольника A B C , лежит на стороне A B . Радиус окружности равен 6,5. Найдите A C , если B C = 12 .",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/236D467964EEA8004A16223166243D6C/xs3qstsrc236D467964EEA8004A16223166243D6C_1_1457537198.png",
@@ -6818,26 +6290,6 @@
   {
     "id": "fipi_72120D",
     "task_text": "Найдите значение выражения ( 3 ⋅ 10 ) 836 ⋅ 107 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q73ED0C",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 6 , sin α = 111 , a S = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_73ED0C",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 6 , sin α = 111 , a S = 3 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -7010,26 +6462,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qB3790C",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 14 ⋅ ( b 6 ) 2 ( a ⋅ b ) 12 при a = 6 и b = 6 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_B3790C",
-    "task_text": "Найдите значение выражения a 14 ⋅ ( b 6 ) 2 ( a ⋅ b ) 12 при a = 6 и b = 6 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qB11709",
     "task_text": "Выберите правильный ответ.\nКакое из следующих утверждений является истинным высказыванием?\n1) Диагональ трапеции делит её на два равных треугольника.\n2) Косинус острого угла прямоугольного треугольника равен отношению гипотенузы к прилежащему к этому углу катету.\n3) Расстояние от точки, лежащей на окружности, до центра окружности равно радиусу.\nВ ответ запишите номер истинного высказывания.",
     "image": "",
@@ -7070,26 +6502,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q12D604",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 36 a 21 a 15 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_12D604",
-    "task_text": "Найдите значение выражения 36 a 21 a 15 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q1D2900",
     "task_text": "Дайте развернутый ответ.\nПостройте график функции y = | x | ⋅ ( x − 1 ) − 2 x .\nОпределите, при каких значениях m прямая y = m имеет с графиком ровно две общие точки.",
     "image": "",
@@ -7122,26 +6534,6 @@
   {
     "id": "fipi_1AA200",
     "task_text": "Найдите значение выражения ( 20 + 5 ) ⋅ 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q1FCC0B",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения a 13 ⋅ a 11 : a 21 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_1FCC0B",
-    "task_text": "Найдите значение выражения a 13 ⋅ a 11 : a 21 при a = 4 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -7598,26 +6990,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qD90D09",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 18 ⋅ a − 6 a 10 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_D90D09",
-    "task_text": "Найдите значение выражения a 18 ⋅ a − 6 a 10 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qDEA70E",
     "task_text": "Впишите правильный ответ.\nНа клетчатой бумаге с размером клетки 1 × 1 изображён ромб. Найдите длину его большей диагонали.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/27C9C3E1D875A9A3434CEEB979487D88/xs3qstsrc27C9C3E1D875A9A3434CEEB979487D88_1_1458023665.png",
@@ -7764,26 +7136,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/289E0EB201B5B3814F95C32B0765D5BA/xs3qstsrc289E0EB201B5B3814F95C32B0765D5BA_1_1485519697.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q5EC609",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 10 ⋅ a 12 a 19 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_5EC609",
-    "task_text": "Найдите значение выражения a 10 ⋅ a 12 a 19 при a = 2 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -9078,38 +8430,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q8A3F0C",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 411\n2) 811\n3) 911\n4) 1311",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_6_1734421344.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_6_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_7_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_8_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_9_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_10_1734421344.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_8A3F0C",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 411\n2) 811\n3) 911\n4) 1311",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_6_1734421344.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_6_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_7_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_8_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_9_1734421344.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/2FAE91C37C5BBC5A4A11A9996CF2C427/xs3qstsrc2FAE91C37C5BBC5A4A11A9996CF2C427_10_1734421344.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q41017F",
     "task_text": "Впишите правильный ответ. В треугольнике A B C известно, что A C = 38 , B M — медиана, B M = 17 . Найдите A M .",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/30125562CF27B02544426C59955DE4AB/xs3qstsrc30125562CF27B02544426C59955DE4AB_1_1456206295.png",
@@ -9624,26 +8944,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q09BC71",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 254 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_09BC71",
-    "task_text": "Найдите значение выражения 254 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q0A9675",
     "task_text": "Впишите правильный ответ.\nРодительский комитет закупил 25 пазлов для подарков детям в связи с окончанием учебного года, из них 18 с машинами и 7 с видами городов. Подарки распределяются случайным образом между 25 детьми, среди которых есть Володя. Найдите вероятность того, что Володе достанется пазл с машиной.",
     "image": "",
@@ -9658,38 +8958,6 @@
     "task_text": "Родительский комитет закупил 25 пазлов для подарков детям в связи с окончанием учебного года, из них 18 с машинами и 7 с видами городов. Подарки распределяются случайным образом между 25 детьми, среди которых есть Володя. Найдите вероятность того, что Володе достанется пазл с машиной.",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q06EB7E",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 1017\n2) 1117\n3) 1317\n4) 1417",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_6_1734421393.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_6_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_7_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_8_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_9_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_10_1734421393.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_06EB7E",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 1017\n2) 1117\n3) 1317\n4) 1417",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_6_1734421393.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_6_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_7_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_8_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_9_1734421393.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/32CCD452AA94969746351FD428C21F03/xs3qstsrc32CCD452AA94969746351FD428C21F03_10_1734421393.png"
-    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -9972,26 +9240,6 @@
   {
     "id": "fipi_7D3079",
     "task_text": "Найдите значение выражения 8,3 + 5,4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q7F0B7E",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 7 ⋅ a 19 : a 23 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_7F0B7E",
-    "task_text": "Найдите значение выражения a 7 ⋅ a 19 : a 23 при a = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -10480,38 +9728,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q2C6175",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой А . Какое это число?\n1) 223\n2) 323\n3) 523\n4) 1123",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_6_1734420634.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_6_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_7_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_8_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_9_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_10_1734420634.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_2C6175",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой А . Какое это число?\n1) 223\n2) 323\n3) 523\n4) 1123",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_6_1734420634.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_6_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_7_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_8_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_9_1734420634.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/368DA5E4D6D1AC024C1312572AB8CE21/xs3qstsrc368DA5E4D6D1AC024C1312572AB8CE21_10_1734420634.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q20ED7A",
     "task_text": "Впишите правильный ответ.\nРадиус окружности, описанной около квадрата, равен 342 . Найдите длину стороны этого квадрата.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/369C27CD4C168B5248C7D53880F1AD94/xs3qstsrc369C27CD4C168B5248C7D53880F1AD94_1_1485515827.png",
@@ -10556,26 +9772,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q247573",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 15 , sin α = 25 , a S = 36 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_247573",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 15 , sin α = 25 , a S = 36 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qDBBC7F",
     "task_text": "Выберите один или несколько правильных ответов.\nКакие из следующих утверждений являются истинными высказываниями?\n1) Существуют три прямые, которые проходят через одну точку.\n2) Боковые стороны любой трапеции равны.\n3) Сумма углов равнобедренного треугольника равна 180 градусам.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
     "image": "",
@@ -10588,46 +9784,6 @@
   {
     "id": "fipi_DBBC7F",
     "task_text": "Какие из следующих утверждений являются истинными высказываниями?\n1) Существуют три прямые, которые проходят через одну точку.\n2) Боковые стороны любой трапеции равны.\n3) Сумма углов равнобедренного треугольника равна 180 градусам.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qD1557F",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 3527 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_D1557F",
-    "task_text": "Найдите значение выражения 3527 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qDE5571",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 18 , sin α = 13 , a S = 27 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_DE5571",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 18 , sin α = 13 , a S = 27 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -10848,26 +10004,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q52A077",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 116 ⋅ x 10 y 2 при x = 2 и y = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_52A077",
-    "task_text": "Найдите значение выражения 116 ⋅ x 10 y 2 при x = 2 и y = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q5DF571",
     "task_text": "Впишите правильный ответ. Найдите значение выражения a 2 − 12 a b + 36 b 2 при a = 8 и b = 3 .",
     "image": "",
@@ -10900,26 +10036,6 @@
   {
     "id": "fipi_54927D",
     "task_text": "Найдите значение выражения 2 − 7 ⋅ ( 24 ) 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q524A7A",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 2 ⋅ ( − a ) 2 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_524A7A",
-    "task_text": "Найдите значение выражения a 2 ⋅ ( − a ) 2 при a = 4 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -11024,26 +10140,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/39100577119BA8874E70480DDAFF1D59/xs3qstsrc39100577119BA8874E70480DDAFF1D59_1_1455881261.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qA80875",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 10 , sin α = 111 , a S = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_A80875",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 10 , sin α = 111 , a S = 5 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -12172,26 +11268,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q3B3A79",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 19 ⋅ a − 8 : a 9 при a = 6 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_3B3A79",
-    "task_text": "Найдите значение выражения a 19 ⋅ a − 8 : a 9 при a = 6 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q383979",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 2 − 8 a b + 16 b 2 при a = 4 и b = 3 .",
     "image": "",
@@ -12604,46 +11680,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q4FB8B1",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 84 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_4FB8B1",
-    "task_text": "Найдите значение выражения 84 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q4FDDB2",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 25 a 15 a 9 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_4FDDB2",
-    "task_text": "Найдите значение выражения 25 a 15 a 9 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q4AD6B2",
     "task_text": "Установите соответствие и впишите ответ.\nНа рисунках изображены графики функций вида y = k x + b . Установите соответствие между графиками функций и знаками коэффициентов k и b . ГРАФИКИ А) Б) В) КОЭФФИЦИЕНТЫ\n1) k < 0 , b < 0\n2) k > 0 , b < 0\n3) k < 0 , b > 0 В таблице под каждой буквой укажите соответствующий номер. А Б В",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/40679D7D7251A20D41ACDE38CA199FCB/xs3qvrsrcE4C14DD88BEBA1644726EB4FD9BF192E_1_1433248773.png",
@@ -12734,26 +11770,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4113567FA7D396A94A926A93F125E06F/xs3qstsrc4113567FA7D396A94A926A93F125E06F_1_1456297791.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qFDEFBF",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 4 ) 4 ⋅ a 5 a 18 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_FDEFBF",
-    "task_text": "Найдите значение выражения ( a 4 ) 4 ⋅ a 5 a 18 при a = 3 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -13298,26 +12314,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/438384744EA28F734D13ADEBC7E1310E/xs3qstsrc438384744EA28F734D13ADEBC7E1310E_1_1485432424.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qBF92B1",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 16 , sin α = 25 , a S = 12,8 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_BF92B1",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 16 , sin α = 25 , a S = 12,8 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -14404,26 +13400,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qA012B5",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 17 ⋅ ( b 5 ) 3 ( a ⋅ b ) 15 при a = 7 и b = 7 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_A012B5",
-    "task_text": "Найдите значение выражения a 17 ⋅ ( b 5 ) 3 ( a ⋅ b ) 15 при a = 7 и b = 7 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qA594B5",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения 9,8 + 8,6 .",
     "image": "",
@@ -14492,26 +13468,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qA87EB6",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 4516 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_A87EB6",
-    "task_text": "Найдите значение выражения 4516 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qAB32B8",
     "task_text": "Впишите правильный ответ.\nРадиус окружности, вписанной в равносторонний треугольник, равен 33 . Найдите длину стороны этого треугольника.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/49FE4647AA7EB96549B845037D4B62FC/xs3qstsrc49FE4647AA7EB96549B845037D4B62FC_1_1485520930.png",
@@ -14530,26 +13486,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/49FE4647AA7EB96549B845037D4B62FC/xs3qstsrc49FE4647AA7EB96549B845037D4B62FC_1_1485520930.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qC5C5BB",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 7 , sin α = 611 , a S = 21 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_C5C5BB",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 7 , sin α = 611 , a S = 21 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -14940,26 +13876,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qEF00B1",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 3 ) 5 ⋅ a 6 a 19 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_EF00B1",
-    "task_text": "Найдите значение выражения ( a 3 ) 5 ⋅ a 6 a 19 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qE568B1",
     "task_text": "Впишите правильный ответ. В треугольнике A B C известно, что A C = 16 , B M — медиана, B M = 12 . Найдите A M .",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4C5D8F70C5F29B6641692DD96335DF6C/xs3qstsrc4C5D8F70C5F29B6641692DD96335DF6C_1_1456206283.png",
@@ -15072,26 +13988,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q6DAEB5",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 17 , sin α = 13 , a S = 51 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_6DAEB5",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 17 , sin α = 13 , a S = 51 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q6C04BC",
     "task_text": "Выберите правильный ответ.\nУкажите решение неравенства 8 x − x 2 > 0 .\n1)\n2)\n3)\n4)",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4DA2A0A9912FBC1B41E34A3B7B430FD3/xs3qvrsrc96759F2A85A089B14684DA76C9C9BF8D_1_1455822834.png",
@@ -15136,58 +14032,6 @@
     "task_text": "Постройте график функции y = x 2 − 5 x − 5 | x − 2 | + 6 и определите, при каких значениях m прямая y = m имеет с графиком ровно три общие точки.",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q68A7BC",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 7 ) 3 ⋅ a 10 a 28 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_68A7BC",
-    "task_text": "Найдите значение выражения ( a 7 ) 3 ⋅ a 10 a 28 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q3D87BB",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 623\n2) 723\n3) 1123\n4) 1223",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_6_1734421267.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_6_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_7_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_8_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_9_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_10_1734421267.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_3D87BB",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 623\n2) 723\n3) 1123\n4) 1223",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_6_1734421267.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_6_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_7_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_8_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_9_1734421267.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/4E4F735572B199784F382C4E7112CF6C/xs3qstsrc4E4F735572B199784F382C4E7112CF6C_10_1734421267.png"
-    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -15488,26 +14332,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/50C1488CF05EA7B949585838EDA1D4F4/xs3qstsrc50C1488CF05EA7B949585838EDA1D4F4_1_1455881287.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q450B16",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 21 ⋅ ( b 9 ) 2 ( a ⋅ b ) 18 при a = 5 и b = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_450B16",
-    "task_text": "Найдите значение выражения a 21 ⋅ ( b 9 ) 2 ( a ⋅ b ) 18 при a = 5 и b = 5 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -18540,26 +17364,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q7DEA2D",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 6 ⋅ a 19 : a 22 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_7DEA2D",
-    "task_text": "Найдите значение выражения a 6 ⋅ a 19 : a 22 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q73C42C",
     "task_text": "Впишите правильный ответ.\nНа экзамене 25 билетов, Стас не выучил 5 из них. Найдите вероятность того, что ему попадётся выученный билет.",
     "image": "",
@@ -21416,26 +20220,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q2DA8D7",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения a 7 ⋅ a 10 : a 14 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_2DA8D7",
-    "task_text": "Найдите значение выражения a 7 ⋅ a 10 : a 14 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q2360D1",
     "task_text": "Впишите правильный ответ.\nНа окружности по разные стороны от диаметра A B взяты точки M и N . Известно, что ∠ N B A = 36 ° . Найдите угол N M B . Ответ дайте в градусах.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/765DE21A1DF7B57C408FC43DA3FFB174/xs3qstsrc765DE21A1DF7B57C408FC43DA3FFB174_1_1456218019.png",
@@ -21538,38 +20322,6 @@
     "task_text": "Решите уравнение 8 x 2 = 72 x .\nЕсли уравнение имеет более одного корня, в ответ запишите меньший из корней.",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q2099DE",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 217\n2) 417\n3) 817\n4) 917",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_6_1734421236.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_6_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_7_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_8_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_9_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_10_1734421236.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_2099DE",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой A . Какое это число?\n1) 217\n2) 417\n3) 817\n4) 917",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_6_1734421236.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_6_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_7_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_8_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_9_1734421236.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/76CB2B63C904A8204BAE9ABB59403FF4/xs3qstsrc76CB2B63C904A8204BAE9ABB59403FF4_10_1734421236.png"
-    ],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -21702,26 +20454,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/77535E52633C90544A1023D555FAB90E/xs3qstsrc77535E52633C90544A1023D555FAB90E_1_1485515155.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qDAC4D1",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 17 ⋅ a − 6 a 9 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_DAC4D1",
-    "task_text": "Найдите значение выражения a 17 ⋅ a − 6 a 9 при a = 4 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -22772,26 +21504,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q6DEBD3",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 46 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_6DEBD3",
-    "task_text": "Найдите значение выражения 46 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q361CDF",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 2 + 10 a b + 25 b 2 при a = 8 и b = − 2 .",
     "image": "",
@@ -22912,46 +21624,6 @@
   {
     "id": "fipi_30E6D6",
     "task_text": "Мощность постоянного тока (в ваттах) вычисляется по формуле P = I 2 R , где I — сила тока (в амперах), R — сопротивление (в омах). Пользуясь этой формулой, найдите сопротивление R , если мощность составляет 6,75 Вт, а сила тока равна 1,5 А. Ответ дайте в омах.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q3F04D3",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 369 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_3F04D3",
-    "task_text": "Найдите значение выражения 369 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q3D7BD8",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 6 ⋅ ( − a ) 4 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_3D7BD8",
-    "task_text": "Найдите значение выражения a 6 ⋅ ( − a ) 4 при a = 2 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -24434,26 +23106,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qE9D652",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 4464 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_E9D652",
-    "task_text": "Найдите значение выражения 4464 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qE5AF5A",
     "task_text": "Впишите правильный ответ.\nРадиус окружности, вписанной в трапецию, равен 26. Найдите высоту этой трапеции.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8C99815E54A1BC60483018C804A34935/xs3qstsrc8C99815E54A1BC60483018C804A34935_1_1487085436.png",
@@ -24538,48 +23190,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qE2C456",
-    "task_text": "Выберите правильный ответ.\nНа координатной прямой отмечены точки , , , и .\nОдна из них соответствует числу . Какая это точка?\n1) точка\n2) точка\n3) точка\n4) точка",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg0.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg0.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg1.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg2.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg3.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg4.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg5.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg6.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg7.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg8.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg9.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_E2C456",
-    "task_text": "На координатной прямой отмечены точки , , , и .\nОдна из них соответствует числу . Какая это точка?\n1) точка\n2) точка\n3) точка\n4) точка",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg0.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg0.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg1.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg2.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg3.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg4.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg5.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg6.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg7.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg8.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/8CDA60CAF21CA59E47A7D08F1261A49E/innerimg9.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qEDC956",
     "task_text": "Впишите правильный ответ.\nВ амфитеатре 12 рядов. В первом ряду 18 мест, а в каждом следующем на 2 места больше, чем в предыдущем. Сколько всего мест в амфитеатре?",
     "image": "",
@@ -24592,26 +23202,6 @@
   {
     "id": "fipi_EDC956",
     "task_text": "В амфитеатре 12 рядов. В первом ряду 18 мест, а в каждом следующем на 2 места больше, чем в предыдущем. Сколько всего мест в амфитеатре?",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q6D275F",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 14 , sin α = 112 , a S = 8,75 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_6D275F",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 14 , sin α = 112 , a S = 8,75 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -25562,26 +24152,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q4052A9",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 6 ⋅ ( − a ) 2 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_4052A9",
-    "task_text": "Найдите значение выражения a 6 ⋅ ( − a ) 2 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q47FBAE",
     "task_text": "Установите соответствие и впишите ответ.\nУстановите соответствие между функциями и их графиками. ФУНКЦИИ А) y = − 12 x − 2 Б) y = 12 x + 2 В) y = 12 x − 2 ГРАФИКИ\n1)\n2)\n3) В таблице под каждой буквой укажите соответствующий номер. А Б В",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/90C13444313DA43C4ADB7FDB6D8A2954/xs3qvrsrc871DF094DDBC97C04B48950E85470403_1_1457677166.jpg",
@@ -25628,26 +24198,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/90D028BF227CBB7C4208FA0A8EFC16D6/xs3qstsrc90D028BF227CBB7C4208FA0A8EFC16D6_1_1457537182.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qF522AD",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 14 ⋅ x 4 y 6 при x = 2 и y = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F522AD",
-    "task_text": "Найдите значение выражения 14 ⋅ x 4 y 6 при x = 2 и y = 3 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -25876,26 +24426,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/92F3C709AF92ADAB4FFE302F24CAFFD4/xs3qstsrc92F3C709AF92ADAB4FFE302F24CAFFD4_1_1455888330.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q0068A8",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 26 ⋅ a − 15 : a 9 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_0068A8",
-    "task_text": "Найдите значение выражения a 26 ⋅ a − 15 : a 9 при a = 3 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -26620,26 +25150,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/96AE0F0A0B8EA58F4BEF3190D9792B81/xs3qstsrc96AE0F0A0B8EA58F4BEF3190D9792B81_1_1456298659.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q230AA3",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 9 a 19 a 9 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_230AA3",
-    "task_text": "Найдите значение выражения 9 a 19 a 9 при a = 2 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -29430,46 +27940,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qC81FCE",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 44 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_C81FCE",
-    "task_text": "Найдите значение выражения 44 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qC730CE",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 4 a 16 a 12 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_C730CE",
-    "task_text": "Найдите значение выражения 4 a 16 a 12 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qCC94C6",
     "task_text": "Выберите один или несколько правильных ответов.\nКакие из следующих утверждений являются истинными высказываниями?\n1) Все высоты равностороннего треугольника равны.\n2) Существуют три прямые, которые проходят через одну точку.\n3) Если диагонали параллелограмма равны, то этот параллелограмм является ромбом.\nВ ответ запишите номера истинных высказываний без пробелов, запятых и других дополнительных символов.",
     "image": "",
@@ -29514,46 +27984,6 @@
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/AB04D0F79A3B8B1B49CD388D9A8B072E/xs3qvrsrcF897F722BB56B1E64692943488B87A2A_1_1455812899.png",
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/AB04D0F79A3B8B1B49CD388D9A8B072E/xs3qvrsrc71D3FB945D82BA83420F4BF428029C8A_1_1455812906.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q9BC0CF",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 19 ⋅ x 4 y 10 при x = 3 и y = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_9BC0CF",
-    "task_text": "Найдите значение выражения 19 ⋅ x 4 y 10 при x = 3 и y = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q9753C7",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 11 , sin α = 712 , a S = 57,75 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_9753C7",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 11 , sin α = 712 , a S = 57,75 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
@@ -30484,26 +28914,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qF3B197",
-    "task_text": "Впишите правильный ответ. Найдите значение выражения 9 x 4 y 6 при x = 9 и y = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F3B197",
-    "task_text": "Найдите значение выражения 9 x 4 y 6 при x = 9 и y = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qFA3992",
     "task_text": "Впишите правильный ответ.\nНайдите значение выражения a − 12 ⋅ ( a 7 ) 2 при a = 6 .",
     "image": "",
@@ -30668,26 +29078,6 @@
   {
     "id": "fipi_078690",
     "task_text": "В среднем из 80 карманных фонариков, поступивших в продажу, четыре неисправных. Найдите вероятность того, что выбранный наудачу в магазине фонарик окажется исправен.",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q04BD97",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 9 ⋅ a 12 : a 17 при a = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_04BD97",
-    "task_text": "Найдите значение выражения a 9 ⋅ a 12 : a 17 при a = 3 .",
     "image": "",
     "all_images": [],
     "audio": "",
@@ -31940,26 +30330,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q5EA593",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 4 , sin α = 57 , a S = 10 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_5EA593",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 2 , если d 1 = 4 , sin α = 57 , a S = 10 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q5ECD98",
     "task_text": "Впишите правильный ответ.\nОснования трапеции равны 2 и 9. Найдите больший из отрезков, на которые делит среднюю линию этой трапеции одна из её диагоналей.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/B8FAC7ECEF6E8BC24BFD70C06DA12B81/xs3qstsrcB8FAC7ECEF6E8BC24BFD70C06DA12B81_1_1456478372.png",
@@ -32676,26 +31046,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qEA1790",
-    "task_text": "Впишите правильный ответ.\nПлощадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 14 , sin α = 314 , a S = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_EA1790",
-    "task_text": "Площадь четырёхугольника можно вычислить по формуле S = d 1 d 2 sin α 2 , где d 1 и d 2 — длины диагоналей четырёхугольника, α — угол между диагоналями. Пользуясь этой формулой, найдите длину диагонали d 1 , если d 2 = 14 , sin α = 314 , a S = 3 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qE1CD90",
     "task_text": "Впишите правильный ответ.\nВ амфитеатре 18 рядов, причём в каждом следующем ряду на одно и то же число мест больше, чем в предыдущем. В шестом ряду 26 мест, а в восьмом ряду 30 мест. Сколько мест в последнем ряду амфитеатра?",
     "image": "",
@@ -32757,48 +31107,6 @@
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC4A7657F8C6B50F4A90D3FFEAEF4211/xs3qstsrcBC4A7657F8C6B50F4A90D3FFEAEF4211_1_1456317993.png",
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC4A7657F8C6B50F4A90D3FFEAEF4211/xs3qstsrcBC4A7657F8C6B50F4A90D3FFEAEF4211_1_1456317993.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qE2D291",
-    "task_text": "Выберите правильный ответ.\nНа координатной прямой отмечены точки , , , и .\nОдна из них соответствует числу . Какая это точка?\n1) точка\n2) точка\n3) точка\n4) точка",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg0.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg0.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg1.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg2.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg3.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg4.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg5.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg6.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg7.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg8.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg9.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_E2D291",
-    "task_text": "На координатной прямой отмечены точки , , , и .\nОдна из них соответствует числу . Какая это точка?\n1) точка\n2) точка\n3) точка\n4) точка",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg0.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg0.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg1.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg2.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg3.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg4.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg5.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg6.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg7.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg8.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BC5766987ED8BE1C40939CC6030338B3/innerimg9.png"
     ],
     "audio": "",
     "all_audios": [],
@@ -32970,26 +31278,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q687290",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения a 2 ⋅ ( − a ) 4 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_687290",
-    "task_text": "Найдите значение выражения a 2 ⋅ ( − a ) 4 при a = 4 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q6B5090",
     "task_text": "Выберите правильный ответ.\nКакое из следующих утверждений является истинным высказыванием?\n1) Смежные углы всегда равны.\n2) Каждая из биссектрис равнобедренного треугольника является его высотой .\n3) Существует прямоугольник, диагонали которого взаимно перпендикулярны .\nВ ответ запишите номер истинного высказывания.",
     "image": "",
@@ -33143,38 +31431,6 @@
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE070531B661A7A24FE8B202FD6C8768/xs3qstsrcBE070531B661A7A24FE8B202FD6C8768_1_1456297021.png",
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE070531B661A7A24FE8B202FD6C8768/xs3qstsrcBE070531B661A7A24FE8B202FD6C8768_1_1456297021.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_q334690",
-    "task_text": "Выберите правильный ответ. Одно из чисел , , и отмечено на числовой прямой точкой А . Какое это число?\n1) 59\n2) 119\n3) 139\n4) 149",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_6_1734423916.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_6_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_7_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_8_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_9_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_10_1734423916.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_334690",
-    "task_text": "Одно из чисел , , и отмечено на числовой прямой точкой А . Какое это число?\n1) 59\n2) 119\n3) 139\n4) 149",
-    "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_6_1734423916.png",
-    "all_images": [
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_6_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_7_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_8_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_9_1734423916.png",
-      "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/BE20ED551FA5A27A4B06E2DD422674BA/xs3qstsrcBE20ED551FA5A27A4B06E2DD422674BA_10_1734423916.png"
     ],
     "audio": "",
     "all_audios": [],
@@ -33514,26 +31770,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_q4749E0",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 3 ) 4 ⋅ a 12 a 21 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_4749E0",
-    "task_text": "Найдите значение выражения ( a 3 ) 4 ⋅ a 12 a 21 при a = 5 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_q44DCE7",
     "task_text": "Впишите правильный ответ.\nНа окружности по разные стороны от диаметра A B взяты точки M и N . Известно, что ∠ N B A = 32 ° . Найдите угол N M B . Ответ дайте в градусах.",
     "image": "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C0370A780578879547E64B93BDE83070/xs3qstsrcC0370A780578879547E64B93BDE83070_1_1456218034.png",
@@ -33794,26 +32030,6 @@
     "topic": "oge_math"
   },
   {
-    "id": "fipi_qFFC5E0",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения 94 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_FFC5E0",
-    "task_text": "Найдите значение выражения 94 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
     "id": "fipi_qFABBE7",
     "task_text": "Впишите правильный ответ.\nВ среднем из 100 карманных фонариков, поступивших в продажу, девять неисправных. Найдите вероятность того, что выбранный наудачу в магазине фонарик окажется исправен.",
     "image": "",
@@ -33896,26 +32112,6 @@
     "all_images": [
       "https://oge.fipi.ru/DE0E276E497AB3784C3FC4CC20248DC0/questions/C1C715491F1E9E384BBB33AD3078FBE3/xs3qstsrcC1C715491F1E9E384BBB33AD3078FBE3_1_1473942250.png"
     ],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_qF2B2E6",
-    "task_text": "Впишите правильный ответ.\nНайдите значение выражения ( a 7 ) 3 ⋅ a 10 a 28 при a = 2 .",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "answer": "---",
-    "topic": "oge_math"
-  },
-  {
-    "id": "fipi_F2B2E6",
-    "task_text": "Найдите значение выражения ( a 7 ) 3 ⋅ a 10 a 28 при a = 2 .",
-    "image": "",
-    "all_images": [],
     "audio": "",
     "all_audios": [],
     "answer": "---",
