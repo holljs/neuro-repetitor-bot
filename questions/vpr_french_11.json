@@ -588,16 +588,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_french_11_sd_945676",
-    "task_text": "Преобразуйте, если это необходимо, слово ETRE так, чтобы оно грамматически соответствовало содержанию текста. L'officier de marine Jacques- Yves Cousteau, nommé directeur du Musée océanographique de Monaco en 1957, __________________ depuis longtemps connu et populaire dans le monde entier...",
-    "answer": "---",
-    "image": "",
-    "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_french_11_sd_946151",
     "task_text": "Преобразуйте, если это необходимо, слово SAVOIR так, чтобы оно грамматически соответствовало содержанию текста. _________________ encore qu’il faut choisir une bonne tenue : mettez plutôt des vêtements unis, sans motifs, sinon vous ne serez pas très joli(e) sur l’écran !",
     "answer": "---",
