@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 VK_TOKEN = os.getenv("VK_REPETITOR_TOKEN")
 ADMIN_VK_ID = 233876992  # Твой ID
-GROUP_ID = 235924452     # ⚠️ ВАЖНО: ЗАМЕНИ НА ID ТВОЕЙ ГРУППЫ РЕПЕТИТОРА!
+GROUP_ID = 235924452     # ⚠️ ID ТВОЕЙ ГРУППЫ РЕПЕТИТОРА!
 
 # Подключаемся к ВК как ГРУППА
 vk_session = vk_api.VkApi(token=VK_TOKEN)
@@ -20,79 +20,98 @@ vk = vk_session.get_api()
 
 print("🎓 VK-бот (Швейцар + Админка Репетитора) запущен...")
 
-# --- ФУНКЦИИ БАЗЫ ДАННЫХ ---
+# --- БАЗА ДАННЫХ (С АВТОМИГРАЦИЕЙ) ---
 DB_PATH = "vk_users.db"
+BONUS_AMOUNT = 6
 
-def get_balance(user_id):
+def init_db():
+    """Создает таблицу и добавляет колонку has_bonus, если её нет"""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute("SELECT credits FROM users WHERE user_id=?", (str(user_id),))
-    res = cursor.fetchone()
-    conn.close()
-    return res[0] if res else None
-
-def add_credits(user_id, amount):
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("SELECT credits FROM users WHERE user_id=?", (str(user_id),))
-    if cursor.fetchone():
-        cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id=?", (amount, str(user_id)))
-    else:
-        cursor.execute("INSERT INTO users (user_id, credits, last_activity) VALUES (?, ?, datetime('now'))", (str(user_id), amount))
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+        user_id TEXT PRIMARY KEY,
+        credits INTEGER DEFAULT 0,
+        has_bonus INTEGER DEFAULT 0,
+        last_activity DATETIME DEFAULT CURRENT_TIMESTAMP
+    )''')
+    try:
+        # Пытаемся добавить колонку для старых баз
+        cursor.execute("ALTER TABLE users ADD COLUMN has_bonus INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass # Колонка уже есть
     conn.commit()
     conn.close()
 
+init_db() # Запускаем при старте бота
+
+def get_balance(user_id):
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT credits FROM users WHERE user_id=?", (str(user_id),))
+        res = cursor.fetchone()
+        return res[0] if res else None
+
+def add_credits(user_id, amount):
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT credits FROM users WHERE user_id=?", (str(user_id),))
+        if cursor.fetchone():
+            cursor.execute("UPDATE users SET credits = credits + ? WHERE user_id=?", (amount, str(user_id)))
+        else:
+            cursor.execute("INSERT INTO users (user_id, credits, has_bonus) VALUES (?, ?, 0)", (str(user_id), amount))
+        conn.commit()
+
 def count_users():
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM users")
-    res = cursor.fetchone()
-    conn.close()
-    return res[0] if res else 0
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM users")
+        return cursor.fetchone()[0]
 
 def get_all_users():
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("SELECT user_id FROM users")
-    res = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return res
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT user_id FROM users")
+        return [row[0] for row in cursor.fetchall()]
 
-# --- СИСТЕМА БОНУСОВ ---
-BONUS_FILE = "claimed_bonuses.txt"
-BONUS_AMOUNT = 6
-
+# --- СИСТЕМА БОНУСОВ (Теперь мгновенная через SQLite!) ---
 def check_and_give_bonus(user_id):
-    if not os.path.exists(BONUS_FILE):
-        open(BONUS_FILE, 'w').close()
-    
-    with open(BONUS_FILE, 'r', encoding='utf-8') as f:
-        claimed = f.read().splitlines()
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT has_bonus FROM users WHERE user_id=?", (str(user_id),))
+        res = cursor.fetchone()
         
-    if str(user_id) not in claimed:
-        add_credits(user_id, BONUS_AMOUNT)
-        with open(BONUS_FILE, 'a', encoding='utf-8') as f:
-            f.write(f"{user_id}\n")
+        if res and res[0] == 1:
+            return False # Уже получал бонус
+            
+        # Начисляем бонус и ставим флаг 1
+        if res:
+            cursor.execute("UPDATE users SET credits = credits + ?, has_bonus = 1 WHERE user_id=?", (BONUS_AMOUNT, str(user_id)))
+        else:
+            cursor.execute("INSERT INTO users (user_id, credits, has_bonus) VALUES (?, ?, 1)", (str(user_id), BONUS_AMOUNT))
+        conn.commit()
         return True
-    return False
 
 # --- ФУНКЦИИ ВК ---
-def send_message(user_id, message, keyboard=None):
+def send_message(user_id, message, keyboard=None, attachment=None):
     params = {
         "user_id": user_id,
         "message": message,
-        "random_id": random.randint(0, 2**32)
+        "random_id": random.getrandbits(64)
     }
     if keyboard: 
-        try:
-            params["keyboard"] = keyboard.get_keyboard()
-        except AttributeError:
-            params["keyboard"] = keyboard
+        try: params["keyboard"] = keyboard.get_keyboard()
+        except AttributeError: params["keyboard"] = keyboard
+    if attachment:
+        params["attachment"] = attachment
 
     try: 
         vk.messages.send(**params)
     except Exception as e: 
-        print(f"Ошибка отправки сообщения {user_id}: {e}")
+        # 901 = юзер запретил сообщения от группы, 900 = юзер удалился
+        if "901" in str(e) or "900" in str(e) or "936" in str(e):
+            pass # Молча игнорируем заблокировавших нас
+        else:
+            print(f"Ошибка отправки {user_id}: {e}")
 
 def get_app_keyboard():
     keyboard = VkKeyboard(inline=True)
@@ -105,9 +124,15 @@ def get_app_keyboard():
 # --- ГЛАВНЫЙ ЦИКЛ БОТА ---
 for event in longpoll.listen():
     if event.type == VkBotEventType.MESSAGE_NEW:
-        user_id = event.message.from_id
-        original_text = event.message.text.strip()
+        # 🔥 ПРАВИЛЬНОЕ ОБРАЩЕНИЕ К СООБЩЕНИЮ ДЛЯ ГРУПП
+        message = event.obj.message 
+        user_id = message.from_id
+        original_text = message.text.strip()
         text = original_text.lower()
+
+        # Игнорируем сообщения от других сообществ (у них отрицательный ID)
+        if user_id < 0:
+            continue
 
         # ---------------- СЕКРЕТНАЯ АДМИНКА ----------------
         if user_id == ADMIN_VK_ID:
@@ -117,11 +142,9 @@ for event in longpoll.listen():
                     parts = text.split()
                     target_id = int(parts[1])
                     amount = int(parts[2])
-                    
                     add_credits(target_id, amount)
-                    new_balance = get_balance(target_id)
-                    send_message(user_id, f"✅ Успешно!\nУченику @id{target_id} начислено {amount} кр.\nЕго баланс: {new_balance} кр.")
-                except Exception as e:
+                    send_message(user_id, f"✅ Успешно!\nУченику @id{target_id} начислено {amount} кр.\nЕго баланс: {get_balance(target_id)} кр.")
+                except:
                     send_message(user_id, "❌ Формат: выдать 12345678 50")
                 continue
                 
@@ -129,7 +152,6 @@ for event in longpoll.listen():
                 try:
                     target_id = int(text.split()[1])
                     balance = get_balance(target_id)
-                    
                     if balance is None:
                         send_message(user_id, f"❌ Ученик @id{target_id} не найден в базе!")
                     else:
@@ -138,66 +160,52 @@ for event in longpoll.listen():
                     send_message(user_id, "❌ Формат: проверить 12345678")
                 continue
                 
-            elif text == "стата" or text == "статистика":
+            elif text in ["стата", "статистика"]:
                 try:
                     total_users = count_users()
-                    with open(BONUS_FILE, 'r') as f:
-                        subscribers = len(f.read().splitlines())
-                    send_message(user_id, f"📊 СТАТИСТИКА РЕПЕТИТОРА:\n\n👥 Всего в базе: {total_users} чел.\n🔔 Получили бонус (подписчики): {subscribers} чел.")
+                    send_message(user_id, f"📊 СТАТИСТИКА РЕПЕТИТОРА:\n\n👥 Всего учеников в базе: {total_users} чел.")
                 except Exception as e:
                     send_message(user_id, f"❌ Ошибка: {e}")
                 continue
                 
             elif text.startswith("рассылка"):
                 try:
-                    broadcast_text = original_text[9:].strip() 
+                    # 🔥 УМНОЕ РАЗДЕЛЕНИЕ: не съест первую букву текста!
+                    parts = original_text.split(maxsplit=1)
+                    broadcast_text = parts[1].strip() if len(parts) > 1 else ""
                     
                     attachments = []
-                    if hasattr(event.message, 'attachments'):
-                        for att in event.message.attachments:
+                    if message.attachments:
+                        for att in message.attachments:
                             if att['type'] == 'photo':
                                 photo = att['photo']
                                 attachments.append(f"photo{photo['owner_id']}_{photo['id']}")
                     att_string = ",".join(attachments) if attachments else None
+
+                    if not broadcast_text and not att_string:
+                        send_message(user_id, "❌ Пустая рассылка! Напиши текст или прикрепи фото.")
+                        continue
 
                     users = get_all_users()
                     if not users:
                         send_message(user_id, "❌ База данных пуста!")
                         continue
 
-                    success_count = 0
-                    error_count = 0
-                    
+                    success_count, error_count = 0, 0
                     send_message(user_id, f"⏳ Начинаю рассылку по базе: {len(users)} чел.")
                     
                     for user_db_id in users:
-                        try:
-                            vk.messages.send(
-                                user_id=int(user_db_id),
-                                message=broadcast_text,
-                                attachment=att_string,
-                                random_id=random.randint(0, 2**31)
-                            )
-                            success_count += 1
-                            time.sleep(0.1) 
-                        except Exception:
-                            error_count += 1
-                            continue 
+                        send_message(int(user_db_id), broadcast_text, attachment=att_string)
+                        success_count += 1
+                        time.sleep(0.07) # Чуть быстрее, лимит ВК 20/сек
                     
-                    send_message(user_id, f"✅ Рассылка завершена!\n\n📈 Статистика:\n— Успешно: {success_count}\n— Ошибки: {error_count}\n— Всего: {len(users)}")
+                    send_message(user_id, f"✅ Рассылка завершена!\n\n📈 Успешно: {success_count}\n❌ Ошибок: {error_count}")
                 except Exception as e:
                     send_message(user_id, f"❌ Критическая ошибка рассылки: {e}")
                 continue
 
-       # ---------------- КОНЕЦ АДМИНКИ ----------------
-
-        # Проверяем, не является ли сообщение админской командой
-        # Если это команда (выдать, стата, рассылка и т.д.), то Long Poll бот должен МОЛЧАТЬ,
-        # так как на эти команды уже ответил (или ответит) Callback сервер.
-        admin_keywords = ["выдать", "проверить", "баланс", "стата", "статистика", "рассылка"]
-        if user_id == ADMIN_VK_ID and any(text.startswith(kw) for kw in admin_keywords):
-            continue # Пропускаем отправку приветствия для админских команд
-
+        # ---------------- ЛОГИКА ДЛЯ ОБЫЧНЫХ ПОЛЬЗОВАТЕЛЕЙ ----------------
+        
         is_new_subscriber = check_and_give_bonus(user_id)
         
         if is_new_subscriber:
