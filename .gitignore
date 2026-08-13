@@ -1,24 +1,6 @@
-# База данных и логи (меняются при работе бота)
-vk_users.db
-user_progress.json
-user_stats.log
-
-# Кэш загруженных вопросов
-questions/cache/
-
-# Служебные скрипты
-overnight_fix.sh
-*.log
-
-# Секреты
 .env
-.env.*
-
-# Виртуальное окружение и кэш
-venv/
+*.db
+*.log
+user_progress.json
 __pycache__/
-*.pyc
-
-# Тяжёлые медиа-вопросы
-questions/audio_vpr/
-questions/images_vpr/
+.vscode/
