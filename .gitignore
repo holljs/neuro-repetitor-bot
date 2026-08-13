@@ -7,3 +7,8 @@ questions/cache/
 *.log
 __pycache__/
 .vscode/
+venv/
+.env
+*.db
+*.log
+questions/quarantine/
