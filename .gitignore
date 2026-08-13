@@ -12,3 +12,7 @@ venv/
 *.db
 *.log
 questions/quarantine/
+users.db
+vk_users.db
+*.json
+broken_tasks_to_remove.json
