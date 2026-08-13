@@ -1,6 +1,9 @@
 .env
+vk_users.db
+user_stats.log
+user_progress.json
+questions/cache/
 *.db
 *.log
-user_progress.json
 __pycache__/
 .vscode/
