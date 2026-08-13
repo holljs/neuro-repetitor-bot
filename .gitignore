@@ -1,16 +1,11 @@
-# Медиафайлы слишком большие для GitHub
-questions/images_vpr/
-questions/audio_vpr/
-questions/images_oge*/
-questions/images_ege*/
-questions/hist_ege_raw/
-*.log
-__pycache__/
-*.pyc
-*.pyo
-.DS_Store
+# База данных и логи (меняются при работе бота)
+vk_users.db
+user_progress.json
+user_stats.log
 
-# Секреты
-.env
-.env.local
-*.secret
+# Кэш загруженных вопросов
+questions/cache/
+
+# Служебные скрипты
+overnight_fix.sh
+*.log
