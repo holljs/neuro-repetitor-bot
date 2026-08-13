@@ -9,3 +9,16 @@ questions/cache/
 # Служебные скрипты
 overnight_fix.sh
 *.log
+
+# Секреты
+.env
+.env.*
+
+# Виртуальное окружение и кэш
+venv/
+__pycache__/
+*.pyc
+
+# Тяжёлые медиа-вопросы
+questions/audio_vpr/
+questions/images_vpr/
