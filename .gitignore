@@ -16,3 +16,8 @@ users.db
 vk_users.db
 *.json
 broken_tasks_to_remove.json
+.env.*
+*.pyc
+backups/
+*.backup
+*.bak
