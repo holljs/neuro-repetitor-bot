@@ -977,7 +977,7 @@ async def vk_bot_webhook(data: VKCallback):
         sender_id = msg.get("from_id")
         if sender_id in ADMIN_VK_IDS:
             if text.lower().startswith("рассылка"):
-                broadcast_text = text[8:].strip()
+                broadcast_text = text[9:].strip() if len(text) > 9 else ""
                 if not broadcast_text:
                     await send_vk_message(str(sender_id), "⚠️ Ошибка. Напиши: Рассылка [твой текст]")
                     return HTMLResponse(content="ok", status_code=200)
@@ -996,6 +996,46 @@ async def vk_bot_webhook(data: VKCallback):
                 await send_vk_message(str(sender_id), f"✅ Рассылка завершена!\nДоставлено: {success} из {len(users)}")
                 return HTMLResponse(content="ok", status_code=200)
 
+            # === СТАТИСТИКА ===
+            if text.lower() in ["стата", "статистика"]:
+                conn = sqlite3.connect("vk_users.db")
+                cursor = conn.cursor()
+                cursor.execute("SELECT COUNT(*) FROM users")
+                total = cursor.fetchone()[0]
+                conn.close()
+                await send_vk_message(str(sender_id), f"📊 СТАТИСТИКА РЕПЕТИТОРА:\n\n👥 Всего учеников: {total} чел.")
+                return HTMLResponse(content="ok", status_code=200)
+            
+            # === ВЫДАТЬ КРЕДИТЫ ===
+            if text.lower().startswith("выдать "):
+                try:
+                    parts = text.split()
+                    target_id = parts[1]
+                    amount = int(parts[2])
+                    init_vk_user(target_id)
+                    new_bal = change_vk_credits(target_id, amount)
+                    await send_vk_message(str(sender_id), f"✅ Успешно!\nПользователь: {target_id}\nНачислено: {amount}\nНовый баланс: {new_bal} кр.")
+                except:
+                    await send_vk_message(str(sender_id), "❌ Формат: выдать 12345678 50")
+                return HTMLResponse(content="ok", status_code=200)
+            
+            # === ПРОВЕРИТЬ БАЛАНС ===
+            if text.lower().startswith("проверить "):
+                try:
+                    target_id = text.split()[1]
+                    conn = sqlite3.connect("vk_users.db")
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT credits FROM users WHERE user_id=?", (target_id,))
+                    res = cursor.fetchone()
+                    conn.close()
+                    if res:
+                        await send_vk_message(str(sender_id), f"🔍 Баланс @id{target_id}:\n💰 {res[0]} кредитов")
+                    else:
+                        await send_vk_message(str(sender_id), f"❌ Пользователь @id{target_id} не найден")
+                except:
+                    await send_vk_message(str(sender_id), "❌ Формат: проверить 12345678")
+                return HTMLResponse(content="ok", status_code=200)
+            
             parts = text.split()
             is_admin_command = (len(parts) == 2 and parts[0].isdigit() and (parts[1].isdigit() or (parts[1].startswith('-') and parts[1][1:].isdigit())))
             if is_admin_command:
