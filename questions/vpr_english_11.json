@@ -190,20 +190,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_english_11_sd_944512",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. Photo 1 Photo 2 Photo 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken; — what/who is in the photo; — what is happening; — why you keep the photo in your album; — why you decided to show the picture to your friend. You have to talk continuously, starting with: “I’ve chosen photo number...”.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94397.png",
-      "questions/images_vpr/sd_get_file_id_94398.png",
-      "questions/images_vpr/sd_get_file_id_94401.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_english_11_sd_945637",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who had a busy week? 1) Jack 2) Irene 3) Neither",
     "answer": "---",
@@ -514,20 +500,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_english_11_sd_944246",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken; — what/who is in the photo; — what is happening; — why you keep the photo in your album; — why you decided to show the picture to your friend. You have to talk continuously, starting with: “I’ve chosen photo number...”.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94444.png",
-      "questions/images_vpr/sd_get_file_id_94446.png",
-      "questions/images_vpr/sd_get_file_id_94447.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_english_11_sd_945657",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who wants to cook something special for the birthday dinner? 1) Jill 2) Matthew 3) Both",
     "answer": "---",
@@ -758,20 +730,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_english_11_sd_944833",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: 1. where and when the photo was taken 2. what/who is in the photo 3. what is happening 4. why you keep the photo in your album 5. why you decided to show the picture to your friend You have to talk continuously, starting with: “I’ve chosen photo number … ”",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94413.png",
-      "questions/images_vpr/sd_get_file_id_94414.png",
-      "questions/images_vpr/sd_get_file_id_94415.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_english_11_sd_945245",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2 или 3, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Who has just come back to England? 1) Kathy 2) Joey 3) Both",
     "answer": "---",
@@ -947,20 +905,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_english_11_sd_945264",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: 1) where and when the photo was taken 2) what/who is in the photo 3) what is happening 4) why you keep the photo in your album 5) why you decided to show the picture to your friend You have to talk continuously, starting with: “I’ve chosen photo number … ”",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94385.png",
-      "questions/images_vpr/sd_get_file_id_94387.png",
-      "questions/images_vpr/sd_get_file_id_94390.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -2231,20 +2175,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_english_11_sd_944943",
-    "task_text": "These are photos from your photo album. Choose one photo to describe to your friend. 1 2 3 You will have to start speaking in 2 minutes and will speak for not more than 2 minutes (12–15 sentences). In your talk remember to speak about: — where and when the photo was taken — what/who is in the photo — what is happening — why you keep the photo in your album — why you decided to show the picture to your friend You have to talk continuously, starting with: «I’ve chosen photo one (or two / three)...»",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94443.png",
-      "questions/images_vpr/sd_get_file_id_94445.png",
-      "questions/images_vpr/sd_get_file_id_94448.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

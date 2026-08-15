@@ -120,20 +120,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_german_11_sd_945988",
-    "task_text": "Stellen Sie sich vor, dass Sie auf einer Wochenendreise einige Fotos gemacht haben. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. 1 2 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12–15 Sätze). Halten Sie sich — wenn Sie über das gewählte Foto erzählen — an folgende Stichpunkte: • wann haben Sie das Foto gemacht • was oder wen zeigt das Foto • was passiert da gerade • warum bewahren Sie das Foto in Ihrem Fotoalbum auf • warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № … gewählt“.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_245872.png",
-      "questions/images_vpr/sd_get_file_id_245873.png",
-      "questions/images_vpr/sd_get_file_id_245874.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_german_11_sd_945917",
     "task_text": "Wer hat an einem Schüleraustauschprogramm teilgenommen? 1) Oliver 2) Maja 3) Beide",
     "answer": "---",
@@ -259,20 +245,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_german_11_sd_945896",
-    "task_text": "Diese Fotos stammen aus Ihrem Fotoalbum. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. Foto 1 Foto 2 Foto 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12–15 Sätze). Halten Sie sich an folgende Stichpunkte: 1) wann haben Sie das Foto gemacht 2) was oder wen zeigt das Foto 3) was passiert da gerade 4) warum bewahren Sie das Foto in Ihrem Fotoalbum auf 5) warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № … gewählt“.",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94271.png",
-      "questions/images_vpr/sd_get_file_id_94272.png",
-      "questions/images_vpr/sd_get_file_id_94273.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1148,20 +1120,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_german_11_sd_945655",
-    "task_text": "Stellen Sie sich vor, dass Sie auf einer Wochenendreise einige Fotos gemacht haben. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. Foto 1 Foto 2 Foto 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12-15 Sätze). Halten Sie sich an folgende Stichpunkte: — wann haben Sie das Foto gemacht — was oder wen zeigt das Foto — was passiert da gerade — warum bewahren Sie das Foto in Ihrem Fotoalbum auf — warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № ... gewählt\".",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94234.png",
-      "questions/images_vpr/sd_get_file_id_94235.png",
-      "questions/images_vpr/sd_get_file_id_94237.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_german_11_sd_945156",
     "task_text": "Вы услышите диалог. Запишите в поле ответа цифру 1, 2, 3 или 4, соответствующую выбранному Вами варианту ответа. Вы услышите запись дважды. Wer schlägt vor, die Präsentation über Gutenberg zu machen? 1) Neie 2) Max 3) Beide 4) Niemand",
     "answer": "---",
@@ -1572,20 +1530,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_german_11_sd_945203",
-    "task_text": "Diese Fotos stammen aus Ihrem Fotoalbum. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. Foto 1 Foto 2 Foto 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12-15 Sätze). Halten Sie sich an folgende Stichpunkte: — wann haben Sie das Foto gemacht — was oder wen zeigt das Foto — was passiert da gerade — warum bewahren Sie das Foto in Ihrem Fotoalbum auf — warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № ... gewählt\".",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94369.png",
-      "questions/images_vpr/sd_get_file_id_94370.png",
-      "questions/images_vpr/sd_get_file_id_94372.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_german_11_sd_945193",
     "task_text": "Установите соответствие между текстами и рубриками, выбрав рубрику из выпадающего списка. Используйте каждую рубрику только один раз. В задании одна рубрика лишняя. Выпадающий список : 1. Umweltschutz 2. Geschichte unseres Planeten 3. Schulprojekte 4. Wissenschaftliche Begriffe 5. Umweltfreundliche Tipps 6. Erderwärmung A. \"Klima\" ist ein Wort, das aus dem Griechischen stammt. Heute verstehen wir darunter das Wetter in einer Gegend. Wenn du dich kurz aus dem Fenster lehnst und hinausschaust, siehst du. wie das Wetter ist. Wenn du jeden Tag am Fenster sitzt und das Wetter beobachtest, kannst du etwas über das Klima an deinem Wohnort sagen. Wetter ist also das kurzfristige. Klima — das langfristige Phänomen. B. Als die Dinosaurier noch die Erde bevölkerten, war es zum Beispiel wärmer als heute. In weiten Teilen des heutigen Europas und auch Amerikas wuchsen damals Pflanzen, die es heute nur noch in den Tropen gibt. Vor etwa 65 Millionen Jahren kam cs dann jedoch zu einer massiven Klimaveränderung. Der Auslöser war sehr wahrscheinlich ein Meteoriteneinschlag in Mexiko. C. Heutzutage ist in erster Linie der Mensch für die Klimaveränderungen verantwortlich — und das in einer vergleichsweise extrem kurzen Zeitspanne. Wenn wir nichts dagegen tun, könnte sich die Erde bis ins Jahr 2100 um ganze 4 °Celsius erwärmen. Das würde das gesamte Leben auf unserem Planeten vor große Anpassungsschwierigkeiten stellen. D. Kann man noch das Klima retten? Ja! Wichtig ist, dass alle Länder der Welt mitmachen müssen. Klima ist weltumspannend und kann nur durch weltweites Handeln geschützt werden. Zwar kann man nicht mehr verhindern, dass sich das Klima aufgrund unseres Lebenswandels verändert. Aberdas Tempo dieser Entwicklung kann der Mensch sehr wohl noch beeinflussen. E. Das Auto sollte stehen bleiben, wann immer es geht. Zur Schule, zum Sportverein oder zu deinen Freunden kommst du sicher auch zu Fuß. mit dem Fahrrad oder mit öffentlichen Verkehrsmitteln. Elektrogeräte bitte nicht in den Stand-by-Modus schalten, der frisst nämlich auch Strom. Wer nicht gleich die Heizung anschaltet, wenn es draußen kühler w ird, spart Energie. Запишите в ответ цифры, расположив их в порядке, соответствующем буквам. Текст | A | B | C | D | E // Заголовок | | | | |",
     "answer": "---",
@@ -1991,20 +1935,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_german_11_sd_945163",
-    "task_text": "Diese Fotos stammen aus Ihrem Fotoalbum. Wählen Sie ein Foto, um es Ihrem Freund/Ihrer Freundin zu zeigen und darüber zu erzählen. 1 2 3 Sie haben 2 Minuten Zeit zur Vorbereitung und danach höchstens 2 Minuten Zeit zum Sprechen (12-15 Sätze). Halten Sie sich an folgende Stichpunkte: — wann haben Sie das Foto gemacht — was oder wen zeigt das Foto — was passiert da gerade — warum bewahren Sie das Foto in Ihrem Fotoalbum auf — warum haben Sie beschlossen, das Foto zu zeigen Sprechen Sie zusammenhängend. Fangen Sie mit folgendem Satz an: „Ich habe das Foto № ... gewählt\".",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94380.png",
-      "questions/images_vpr/sd_get_file_id_94381.png",
-      "questions/images_vpr/sd_get_file_id_94382.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

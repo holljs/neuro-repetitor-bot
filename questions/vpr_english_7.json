@@ -52,20 +52,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_english_7_sd_945776",
-    "task_text": "Выберите фотографию и опишите ее. У вас есть полторы минуты на подготовку и не более двух минут для ответа. У вас должен получиться связный рассказ (7–8 предложений). План ответа поможет вам: — the place; — the action; — the appearance of the person; — whether you like the picture or not; — why. Start with: “I’d like to describe picture № ... . The picture shows …” 1 2 3",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94136.png",
-      "questions/images_vpr/sd_get_file_id_94143.png",
-      "questions/images_vpr/sd_get_file_id_94144.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_english_7_sd_945887",
     "task_text": "Установите соответствие между текстами и их темами, выбрав тему из выпадающего списка. Используйте каждую тему только один раз. В задании одна тема лишняя. This text deals with … 1. Polite Neighbours 2. A Working TV set 3. Night Visitors 4. Anxious Night 5. Ready to Defend Myself 6. Strangers in the Garden A. Last night, at about three o’clock in the morning, I heard a strange noise downstairs. I got out of bed and put on my dressing gown. With my heart beating fast, I slowly went to the top of the stairs. It sounded like there were people talking in the kitchen. B. I didn’t know what to do. Finally, I decided to go downstairs. I made my way quietly down the stairs and listened at the kitchen door. A man asked: “Did you kill him?” and a woman replied: “Yes, I shot him.” Then the man asked: ’’Why did you do that?” Suddenly I realised that there were not really any people in the kitchen. It was just the TV. But why did it turn itself on in the middle of the night? C. While I was standing in the kitchen wondering about the TV, I looked out of the window. It was dark, but I could see a figure outside. Someone was walking slowly across the garden! He whispered something. He was talking to another person! What were they doing in my garden? D. I was wondering what to do when they started walking towards the kitchen window. They were coming towards me! I didn’t know what to do so I grabbed a knife and waited. They were getting closer and closer. I was so frightened. They came right up to the window, and I saw their faces. It was my neighbours, Anna and Larry! E. They obviously were not trying to break into my house, so why were they talking in my garden in the middle of the night? I opened the kitchen door and Anna and Larry came in. They sat down, and I made them both a cup of coffee. This is what Anna told me: “We were sleeping in our bedroom when we heard a loud noise coming from your kitchen. So Alan and I decided to investigate. We came down to your garden, but couldn’t see any lights on. Запишите в таблицу выбранные цифры под соответствующими буквами. A | B | C | D | E // | | | |",
     "answer": "---",
@@ -487,20 +473,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_english_7_sd_942671",
-    "task_text": "Выберите фотографию и опишите человека на ней. У вас есть полторы минуты на подготовку и не более двух минут для ответа. У вас должен получиться связный рассказ (7–8 предложений). План ответа поможет вам: — the place; — the action; — the person’s appearance; — whether you like the picture or not; — why. Start with: “I’d like to describe picture one (two, three). The picture shows …” Photo 1 Photo 2 Photo 3",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94289.png",
-      "questions/images_vpr/sd_get_file_id_98104.png",
-      "questions/images_vpr/sd_get_file_id_94296.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

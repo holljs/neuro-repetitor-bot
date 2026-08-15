@@ -12,20 +12,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_german_7_sd_945914",
-    "task_text": "Выберите фотографию и опишите человека на ней. У вас есть полторы минуты на подготовку и не более двух минут для ответа. У вас должен получиться связный рассказ (7−8 предложений). План ответа поможет вам: • Ort • Aktivität • Aussehen der Person • Gefällt Ihnen das Foto oder nicht? • Warum? Beginnen Sie mit: “Ich möchte das Foto № ... beschreiben. Auf dem Foto ist …” 1 2 3",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94094.png",
-      "questions/images_vpr/sd_get_file_id_94092.png",
-      "questions/images_vpr/sd_get_file_id_94093.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_german_7_sd_945906",
     "task_text": "Прочитайте текст вслух. У Вас есть полторы минуты на подготовку и полторы минуты, чтобы прочитать текст вслух. Heutzutage kann man per Mausklick alles über Gesundheitsfragen erfahren. Man informiert sich im Internet über die neueste Diät und über chronische Krankheiten. Man bekommt Tipps und Empfehlungen, im virtuellen Sprechzimmer kann man sogar einen Arzt konsultieren. Durch Internet werden die Patienten immer besser informiert. Aber es wird deutlich: wer viele Beschwerden hat, soll möglichst schnell zum Arzt gehen und nicht bei Professor Internet eine Antwort suchen.",
     "answer": "---",

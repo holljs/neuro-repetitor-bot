@@ -130,20 +130,6 @@
     "topic": "sdamgia_vpr"
   },
   {
-    "id": "vpr_french_11_sd_945990",
-    "task_text": "Ces photos appartiennent à votre album. Choisissez-en une et décrivez-la à votre ami/e. 1 2 3 Après 2 mn de réflexion, vous décrivez la photo choisie. Votre réponse ne dépasse pas 2 minutes (12–15 phrases). En décrivant la photo choisie, n’oubliez pas de mentionner : • où et quand elle a été prise • qui ou quoi y est représenté • ce qui se passe • pourquoi vous tenez à la garder dans votre album • pourquoi vous avez décidé de la montrer à votre ami/e Organisez votre description sous forme de monologue cohérent et logique. Commencez votre réponse par dire \"J’ai choisi la photo N°...\".",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_245878.png",
-      "questions/images_vpr/sd_get_file_id_245879.png",
-      "questions/images_vpr/sd_get_file_id_245880.png"
-    ],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
     "id": "vpr_french_11_sd_945889",
     "task_text": "Вы услышите интервью дважды. Выберите правильный ответ 1, 2 или 3. Durant des années précédant la crise, la quantité des cas d'adoptions d'animaux... 1) augmentait. 2) diminuait. 3) restait le même.",
     "answer": "---",
@@ -289,20 +275,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_french_11_sd_945896",
-    "task_text": "Activité 3. Ces photos appartiennent à votre album. Choisissez-en une pour la montrer à votre ami/e. 1 2 3 Après 2 mn de réflexion, vous décrivez la photo choisie. Votre réponse ne dépasse pas 2 minutes (12–15 phrases). En décrivant la photo choisie, n’oubliez pas de mentionner : 1) où et quand elle a été prise ; 2) qui ou quoi y est représenté ; 3) ce qui se passe ; 4) pourquoi vous tenez à la garder dans votre album ; 5) pourquoi vous avez décidé de la montrer à votre ami/e Organisez votre description sous forme d’un monologue cohérent et logique. Commencez votre réponse par dire « J’ai choisi la photo N°... »",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94271.png",
-      "questions/images_vpr/sd_get_file_id_94272.png",
-      "questions/images_vpr/sd_get_file_id_94273.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"
@@ -1753,20 +1725,6 @@
     "answer": "---",
     "image": "",
     "all_images": [],
-    "audio": "",
-    "all_audios": [],
-    "topic": "sdamgia_vpr"
-  },
-  {
-    "id": "vpr_french_11_sd_945306",
-    "task_text": "Ces photos appartiennent à votre album. Choisissez-en une pour la montrer à votre ami/e. 1 2 3 Après 2 mn de réflexion, vous décrivez la photo choisie. Votre réponse ne dépasse pas 2 minutes (12–15 phrases). En décrivant la photo choisie, n’oubliez pas de mentionner : 1) où et quand elle a été prise ; 2) qui ou quoi y est représenté ; 3) ce qui se passe ; 4) pourquoi vous tenez à la garder dans votre album ; 5) pourquoi vous avez décidé de la montrer à votre ami/e. Organisez votre description sous forme d’un monologue cohérent et logique. Commencez votre réponse par dire « J’ai choisi la photo N°... »",
-    "answer": "---",
-    "image": "",
-    "all_images": [
-      "questions/images_vpr/sd_get_file_id_94458.png",
-      "questions/images_vpr/sd_get_file_id_94459.png",
-      "questions/images_vpr/sd_get_file_id_94460.png"
-    ],
     "audio": "",
     "all_audios": [],
     "topic": "sdamgia_vpr"

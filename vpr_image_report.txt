@@ -1,0 +1,39 @@
+Уникальных URL: 1462
+прогресс: 1000/1462, мёртвых: 1000
+
+❌ Мёртвых URL: 1462 из 1462
+
+📦 vpr_biology_10.json: в карантин 19, осталось 102
+📦 vpr_biology_5.json: в карантин 91, осталось 122
+📦 vpr_biology_6.json: в карантин 145, осталось 96
+📦 vpr_biology_7.json: в карантин 128, осталось 173
+📦 vpr_biology_8.json: в карантин 85, осталось 172
+📦 vpr_chemistry_11.json: в карантин 6, осталось 61
+📦 vpr_chemistry_8.json: в карантин 19, осталось 146
+📦 vpr_english_11.json: в карантин 5, осталось 258
+📦 vpr_english_7.json: в карантин 2, осталось 79
+📦 vpr_french_11.json: в карантин 3, осталось 225
+📦 vpr_geography_5.json: в карантин 4, осталось 38
+📦 vpr_geography_6.json: в карантин 27, осталось 82
+📦 vpr_geography_7.json: в карантин 52, осталось 36
+📦 vpr_geography_8.json: в карантин 30, осталось 28
+📦 vpr_german_11.json: в карантин 5, осталось 224
+📦 vpr_german_7.json: в карантин 1, осталось 21
+📦 vpr_history_7.json: в карантин 1, осталось 112
+📦 vpr_history_8.json: в карантин 30, осталось 19
+📦 vpr_informatics_7.json: в карантин 1, осталось 98
+📦 vpr_informatics_8.json: в карантин 3, осталось 133
+📦 vpr_math_4.json: в карантин 10, осталось 190
+📦 vpr_math_5.json: в карантин 14, осталось 154
+📦 vpr_math_6.json: в карантин 24, осталось 109
+📦 vpr_math_7.json: в карантин 17, осталось 152
+📦 vpr_okr_4.json: в карантин 81, осталось 99
+📦 vpr_physics_11.json: в карантин 127, осталось 142
+📦 vpr_physics_7.json: в карантин 5, осталось 147
+📦 vpr_physics_8.json: в карантин 12, осталось 126
+📦 vpr_social_6.json: в карантин 39, осталось 118
+📦 vpr_social_7.json: в карантин 20, осталось 149
+📦 vpr_social_8.json: в карантин 18, осталось 241
+
+ВСЕГО в карантине: 1024
+DONE ✅
